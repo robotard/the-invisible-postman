@@ -1,0 +1,518 @@
+BEYOND HIDING IN PLAIN SIGHT  |  THEORY-BASED DESIGN PROPOSAL
+BEYOND HIDING
+IN PLAIN SIGHT
+A Theory-Based Proposal for Authenticated,
+Image-Carried Cryptographic Messaging
+Architecture • Key Management • Steganography • Distributed Access Control
+Design evolution, threat model, and evaluation programme
+Consolidated research thesis and design rationale
+Version 1.0 • 25 October 2026
+STATUS: PROPOSED THEORY AND ARCHITECTURE
+This document describes a proposed system and a research programme. It does not claim that the complete protocol has been implemented, formally verified, independently audited, or proven secure.
+
+Abstract
+This thesis proposes an architecture for secure first-contact messaging in which encrypted messages may be carried by images and, where useful, concealed through steganography. The design goal is not to invent a new cipher. It is to combine established cryptographic mechanisms with a carefully bounded relay, explicit identity verification, optional image-based concealment, linked message capsules, and clearly defined access and recovery policies.
+The proposal separates properties that are often mistakenly conflated. Authenticated encryption protects message confidentiality and detects tampering; authenticated key agreement and explicit identity checks address who is communicating with whom; steganography attempts to make the existence of a payload less apparent; capsule manifests make multi-part messages parseable and verifiable; and threshold secret sharing, if adopted, can require multiple independent shares to recover a secret. None of these functions should be treated as a substitute for another.
+A key contribution of the work is its record of design evolution. Ideas such as deriving secret material from a unique or remote image, using generic double encryption to achieve both secrecy and identity, and treating a chain of image references as a distributed secret are examined against their underlying assumptions. The revised proposal treats image carriers as transport or concealment objects rather than sources of cryptographic entropy, replaces vague encryption layering with distinct security properties, and separates ciphertext fragmentation from threshold-based secret control.
+The thesis presents a threat model, candidate protocol components, lifecycle limits, failure cases, and an evaluation programme. Its conclusions are deliberately bounded: the architecture is a theory-based proposal requiring precise protocol specification, adversarial testing, cryptographic review, usability evaluation, and operational hardening before deployment with sensitive information.
+Executive Summary
+• Core proposition: build an authenticated messaging protocol first, then optionally carry its encrypted payload in an image.
+• Trust boundary: endpoints hold identity and session secrets; the bot, transport, image provider, and storage services are untrusted with respect to plaintext confidentiality.
+• First contact: public-key agreement alone does not prove human identity. Users need an explicit key-verification mechanism, such as a safety code or independently verified fingerprint.
+• Cryptography: select maintained implementations of established primitives. Candidate components include X25519-based authenticated key agreement, HKDF-SHA-256, Ed25519 signatures where appropriate, and XChaCha20-Poly1305 AEAD. The exact protocol and library choices remain subject to review.
+• Images: image uniqueness, URLs, metadata, and hashes are not secret entropy. A remote image service must not be an indispensable decryption dependency.
+• Multi-image messages: bind fragments to a versioned manifest and reject missing, duplicated, reordered, or mixed fragments. This is not the same as splitting a decryption secret.
+• Access control: threshold schemes are optional and should be introduced only for a defined use case. Expiry and revocation can restrict future actions but cannot recall plaintext already copied.
+• Evidence status: this is a design proposal, not an audited protocol or proof of security.
+How to Read This Thesis
+The document distinguishes three categories of statement. “Established principle” refers to a widely accepted cryptographic or systems concept. “Proposed design” describes the architecture recommended here. “Open question” marks an issue that needs a concrete decision, testing, or independent review. This distinction matters: naming a sound primitive does not automatically make a protocol sound.
+The original product and cryptography specifications are treated as the project’s baseline vocabulary and architecture. This thesis consolidates those specifications with the preceding exploration of salts, nonces, image-derived material, double encryption, linked capsules, and remote revocation. Where the earlier exploratory idea is not documented as an agreed requirement, it is presented as a design question rather than a historical fact.
+Contents
+• 1. Problem Statement and Research Questions
+• 2. Scope, Assumptions, and Contributions
+• 3. Conceptual Foundations
+• 4. Proposed System Architecture
+• 5. Cryptographic Protocol Model
+• 6. Image Carriers and Steganographic Layer
+• 7. Linked Capsules and Threshold Access
+• 8. Identity, First Contact, and Sender Authentication
+• 9. Lifecycle Policy: Expiry, Revocation, Recovery
+• 10. Threat Model and Failure Analysis
+• 11. Design Evolution and Decision Register
+• 12. Evaluation and Research Programme
+• 13. Limitations and Open Questions
+• 14. Conclusion
+• Appendix A. Candidate Message Envelope
+• Appendix B. Security Review Checklist
+• Appendix C. Glossary
+• References and Further Reading
+
+1. Problem Statement and Research Questions
+Secure messaging is not a single cryptographic operation. A system must protect message contents, bind messages to the intended conversation, establish or verify identities, resist modification and replay, manage keys over time, and communicate failure states without misleading users. If a message is carried through a bot or third-party service, the design must also define what that intermediary can see and what happens when it is compromised or unavailable.
+Image-based communication introduces another layer. An image can act as a carrier for encrypted bytes, and steganography may make those bytes less obvious. But concealment does not solve key exchange, identity, tampering, replay, endpoint compromise, or recovery. A secure architecture must remain secure even if an observer recognises that a carrier contains hidden data.
+1.1 Research questions
+1. How can two users establish a protected session when they have no pre-shared secret, while making the limits of first-contact identity verification explicit?
+2. How should confidentiality, integrity, sender authentication, concealment, and access policy be separated so that each claim has a clear mechanism?
+3. What security properties are gained by carrying ciphertext in images, and what properties are not gained?
+4. How should multi-image messages be bound together, and when is threshold secret sharing justified instead of ordinary fragmentation?
+5. How can expiry, revocation, and recovery be described honestly when a recipient may already possess plaintext or keys?
+6. Which experiments and reviews would be needed to move from a coherent proposal to a credible implementation?
+1.2 Working thesis
+The working thesis is that an image-carried messaging system is defensible only when its core security comes from a conventional, explicitly specified cryptographic protocol, while the image layer remains optional and non-authoritative. The most useful design novelty lies in the integration and user experience of first-contact authentication, encrypted capsules, multi-part delivery, and policy controls, not in replacing established cryptographic primitives.
+2. Scope, Assumptions, and Contributions
+2.1 In scope
+• End-to-end confidentiality and integrity for message payloads.
+• Authenticated first-contact key establishment and a visible identity-verification step.
+• An untrusted relay or bot that routes opaque payloads and limited metadata.
+• Optional image-carried capsules and optional steganographic embedding.
+• Versioned message envelopes and multi-image manifest validation.
+• Optional threshold-controlled key recovery or access, with assumptions documented.
+• Expiry, revocation, recovery, privacy, logging, and usability limitations.
+• A practical programme of unit, integration, adversarial, and independent security testing.
+2.2 Out of scope
+• Inventing a new cipher, hash function, key exchange, or secret-sharing primitive.
+• Claiming that a unique image, URL, username, or chat identifier proves identity.
+• Guaranteeing that steganographic content is undetectable by all statistical or machine-learning analysis.
+• Guaranteeing deletion of plaintext or keys from a recipient-controlled device.
+• Treating a conceptual architecture as a formally verified protocol.
+• Promising protection against a fully compromised sender or recipient endpoint.
+2.3 Design assumptions
+The endpoint devices are the principal trust anchors. The system assumes they can use a cryptographically secure random number generator and store private keys with reasonable protection. The relay, transport network, carrier-image source, and ordinary storage are not trusted to keep plaintext or sole decryption capability. They may still observe timing, message sizes, routing identifiers, and other metadata unless the design explicitly reduces those leaks.
+2.4 Intended contribution
+The contribution is a disciplined systems proposal: clear security properties, explicit trust boundaries, a separation of cryptographic and steganographic responsibilities, a record of rejected or refined ideas, and a falsifiable plan for evaluating the design. It is not a claim of a new cryptographic result.
+3. Conceptual Foundations
+3.1 Confidentiality, integrity, and authenticity
+Confidentiality means that unauthorised parties cannot feasibly recover message contents. Integrity means unauthorised changes are detected. Authentication concerns the origin or identity bound to a message or session. These are related but distinct properties. Authenticated encryption with associated data (AEAD) provides confidentiality and ciphertext integrity under its key; it does not by itself establish that a human sender is the person the recipient believes they are.
+3.2 Steganography is not encryption
+Steganography aims to conceal the existence of information within a carrier. Encryption transforms information into ciphertext so that the contents remain protected without the key. If hidden data is discovered, strong encryption should still protect its contents. Conversely, encrypted data can be recognisable as ciphertext even when its contents are safe. The proposed design therefore treats steganography as an optional layer, not the primary security boundary.
+3.3 Salt, nonce, key, and entropy
+Term
+Purpose
+What it is not
+Salt
+Public, usually random input to a KDF; helps prevent identical passwords producing identical derived keys.
+Not a password, not a secret, and not extra entropy added to a weak password.
+Nonce
+Per-encryption value required by an encryption construction; must obey the algorithm's uniqueness requirements.
+Not a secret key. Reusing a nonce with the same key can be catastrophic for many AEAD schemes.
+Key
+Secret cryptographic material that controls encryption, decryption, signing, or agreement.
+Not something to infer from a public image hash or a predictable identifier.
+Entropy
+Unpredictability in a random variable, assessed under a defined model.
+Not the same as uniqueness, length, complexity, or visual novelty.
+ 
+For password-based encryption, a KDF such as Argon2id may be appropriate, with a fresh public salt and parameters stored in the envelope. For a public-key session protocol, a password KDF may not be needed at all. These are different architectures and should not be blended without a concrete requirement.
+3.4 Authenticated key agreement and key separation
+A first-contact protocol may use an authenticated key-agreement construction to derive shared session material. Candidate building blocks include X25519 for Diffie–Hellman key agreement, HKDF-SHA-256 for deriving purpose-specific keys, and Ed25519 signatures where signatures are the chosen authentication mechanism. These are candidate components, not a complete protocol specification. Key confirmation, transcript binding, downgrade resistance, replay handling, and identity verification must be designed as a coherent whole.
+HKDF context labels should separate purposes such as sending, receiving, header protection, attachment encryption, and rekeying. Reusing one key for unrelated tasks makes the design harder to analyse and can create cross-protocol failures.
+3.5 Why not simply encrypt twice?
+Applying two encryption layers is not automatically stronger. Its value depends on independent keys, distinct trust boundaries, composition properties, and a threat model that explains what the second layer protects against. If both layers depend on the same weak password, the same compromised endpoint, or poorly separated keys, the apparent redundancy may add complexity without meaningful resilience.
+The project’s more defensible duality is functional: one set of mechanisms protects the message for the intended recipient, while another binds the message or session to an authenticated sender. This is not literally “two encryptions.” It is a deliberate combination of confidentiality, integrity, and authentication properties.
+3.6 Public-key agreement does not prove a human identity
+A protocol can establish a shared key with the holder of a particular public key, but the user still needs a reason to believe that key belongs to the intended person. On first contact, the design should expose a safety number, QR fingerprint, or other independently verifiable identity check. Telegram usernames, chat IDs, and possession of an image are not sufficient identity proofs on their own.
+4. Proposed System Architecture
+The system is organised around endpoint-controlled cryptography and an untrusted relay. The relay may help users initiate contact, route carriers, enforce coarse delivery policy, and maintain non-secret references. It must not receive plaintext or be the only place where decryption capability exists.
+
+Figure 1. Proposed trust boundaries and major responsibilities.
+4.1 Components
+Component
+Responsibilities
+Trust stance
+Sender endpoint
+Compose message; verify recipient key; derive or obtain session keys; encrypt and authenticate locally; optionally embed ciphertext.
+Trusted with sender plaintext and sender-side secrets, subject to endpoint security.
+Recipient endpoint
+Validate envelope and manifest; verify sender/session binding; authenticate/decrypt locally; reject invalid payloads.
+Trusted with recipient plaintext and recipient-side secrets, subject to endpoint security.
+Bot / relay
+Contact orchestration, routing, carrier references, coarse policy enforcement, delivery status.
+Untrusted for plaintext confidentiality and sender forgery prevention.
+Image provider
+Optional source of carrier images or storage for carriers.
+Untrusted; not a key authority or source of secret entropy.
+Key store
+Protect identity keys and session state; support rotation and recovery policy.
+Security-critical; compromise can undermine endpoint guarantees.
+Optional threshold participants
+Hold independent shares or approve access under an explicit policy.
+Each participant and collusion assumption must be modelled.
+ 
+4.2 Core invariants
+• The relay never needs plaintext to route a message.
+• The relay cannot forge a valid sender authentication result merely by changing routing metadata.
+• Every encrypted payload is bound to a versioned, unambiguous envelope.
+• Any identity claim is backed by an explicit authentication and verification process.
+• A missing, altered, duplicated, reordered, or mixed fragment is detected before the message is accepted.
+• Failure to authenticate or decrypt produces no plaintext output.
+• Logs do not contain plaintext, passwords, private keys, session keys, or secret shares.
+4.3 First-contact sequence
+A high-level sequence is: (1) sender and recipient exchange public-key material through the relay; (2) endpoints perform the selected authenticated key-agreement protocol; (3) the protocol derives session keys using explicit context and transcript binding; (4) users compare or verify a safety code through a suitable channel; (5) only after the expected verification state is reached does the UI mark the contact as verified; and (6) messages are encrypted and authenticated locally before being passed to the carrier and relay layers.
+The exact order and cryptographic transcript must be specified by the selected protocol. The sequence above is a conceptual workflow, not an instruction to implement a custom handshake from scratch.
+5. Cryptographic Protocol Model
+
+Figure 2. Separation between message encryption, envelope formatting, and the optional carrier layer.
+5.1 Candidate primitives
+Function
+Candidate
+Caveat
+Key agreement
+X25519-based protocol
+Must be integrated into an authenticated, reviewed handshake; raw X25519 alone does not authenticate identity.
+Key derivation
+HKDF-SHA-256
+Use domain separation and context labels; do not treat HKDF as a password-hardening KDF.
+Message protection
+XChaCha20-Poly1305 AEAD
+Use a maintained library API; obey nonce requirements and authenticate relevant metadata as associated data.
+Signatures
+Ed25519, if the protocol requires signatures
+Define exactly what is signed and how identity keys are authenticated; signatures do not replace key agreement.
+Password-derived keys
+Argon2id, only if passwords are a real part of the product
+Benchmark parameters, rate-limit online attempts, and define recovery. Do not add a password KDF to a public-key design without a reason.
+ 
+5.2 Message protection and associated data
+The payload should be encrypted with a vetted AEAD construction. Public fields that must not be modified without detection, such as protocol version, conversation identifier, message identifier, sender/recipient key identifiers, or capsule-set identifier, should be included in authenticated associated data or cryptographically bound through the protocol transcript. The exact encoding must be canonical and unambiguous.
+5.3 Nonce discipline
+A fresh nonce must be generated according to the selected AEAD’s requirements. The nonce can normally be transmitted with the ciphertext; secrecy is not its purpose. Nonce-generation logic should use the operating system’s cryptographic random source or a vetted library facility. Tests should check that code does not accidentally reuse a key/nonce pair, particularly across retries, restarts, or duplicated message IDs.
+5.4 Versioned envelope
+A payload format should include a magic identifier, version, algorithm identifiers where needed, bounded lengths, key/session identifiers, nonce, ciphertext and authentication tag, and any public metadata needed for parsing. Unknown versions and unsupported algorithms must fail closed. The parser must reject truncated, oversized, ambiguous, or malformed inputs before attempting expensive processing.
+5.5 Replay and ordering
+Authentication does not automatically prevent replay. The protocol should bind unique message identifiers, conversation/session context, and relevant sequence numbers or freshness values. Receivers should record enough state to identify duplicates without exposing sensitive content in logs. Multi-device and offline-delivery behaviour must be specified rather than left to incidental implementation details.
+6. Image Carriers and Steganographic Layer
+6.1 The image is a carrier, not a key
+The design should not treat an image’s apparent uniqueness, URL, pixel hash, metadata, or obscurity as secret key material. If an image is publicly retrievable, an attacker can generally obtain the same public information. A hash of public information remains public information. A random image might contain randomness in an information-theoretic sense, but using it as key material requires a precisely defined extraction process and threat model; casual image-derived keying is not a safe substitute for a real key-management protocol.
+A remote image service can be useful for obtaining a carrier, but making it a required source of decryption material creates an availability and trust dependency. If the service changes an image, deletes it, rate-limits access, or disappears, recipients may lose access. If it is compromised, an attacker may manipulate carrier selection or metadata. These are reasons to keep carrier selection separate from key derivation.
+6.2 Optional concealment
+Steganographic embedding should accept an already encrypted binary payload. It should not know passwords, identity private keys, or session keys. Extraction should return bytes to the cryptographic layer, which then validates the envelope and authenticates the ciphertext. This modular boundary allows the carrier format to change without redesigning the cryptographic protocol.
+6.3 Practical constraints
+• Image recompression, resizing, palette conversion, metadata stripping, and platform transformations may destroy a hidden payload.
+• A successful extraction does not establish that the payload is authentic; cryptographic authentication remains necessary.
+• A carrier may leak identifying metadata, timestamps, source information, or correlations between users.
+• The existence of hidden content may be detectable by statistical analysis; no universal undetectability claim should be made.
+• Capacity, robustness, perceptual quality, and detectability can trade off against one another.
+6.4 Carrier integrity and provenance
+The application should specify whether it embeds into lossless formats, whether it re-encodes images, and how it handles colour profiles and metadata. If a provider returns an image, the system should validate the downloaded content type, size, dimensions, and decoding behaviour. The carrier itself is untrusted input and must be processed with resource limits and secure image libraries.
+7. Linked Capsules and Threshold Access
+7.1 Fragmentation is not secret sharing
+Splitting ciphertext across multiple image capsules can support transport limits, staged delivery, or a multi-image user experience. If all fragments are required to reconstruct the ciphertext, missing or altered fragments can make the message unavailable. But if a party collects every fragment, the ciphertext can be reconstructed; fragmentation alone does not require multiple parties to cooperate in releasing the decryption key.
+Threshold secret sharing is different. A secret is divided into shares such that a defined threshold of shares can reconstruct it, while fewer than the threshold should reveal no information about the secret under the scheme’s assumptions. The secret may be a random key or recovery secret, not the ciphertext itself. A threshold design introduces operational complexity: share distribution, participant authentication, loss, refresh, backup, collusion, and recovery all need explicit policy.
+Approach
+What is divided?
+What security property it can provide
+Main caveat
+Ciphertext fragmentation
+Encrypted payload bytes
+Completeness checks; delivery across multiple carriers; transport flexibility
+All fragments together may be enough for any holder to reconstruct ciphertext; no threshold key control.
+Secret sharing
+A secret key or recovery secret
+Require a threshold of independent shares for reconstruction
+Share holders, collusion, loss, refresh, and recovery become security-critical.
+Hybrid
+Ciphertext plus separately shared key/recovery material
+Combines multi-part transport with threshold-controlled decryption capability
+More moving parts; requires careful protocol and usability review.
+ 
+7.2 Manifest requirements
+A linked capsule set should use a versioned manifest that binds a set identifier, message identifier, fragment index, total count, expected length, digest or authentication binding, expiry metadata where applicable, and the protocol version. The cryptographic design must decide which manifest fields are authenticated by the AEAD or transcript and which are merely transport hints.
+• Reject missing, duplicate, reordered, malformed, or out-of-range fragment indices.
+• Reject fragments from different sets even if their lengths or visible labels match.
+• Verify exact byte reconstruction and cryptographic authentication before releasing plaintext.
+• Apply strict limits to fragment count, individual size, aggregate size, and processing time.
+• Treat links and human-readable labels as discovery aids, not secret material or proof of authority.
+7.3 When threshold authorisation is worth the cost
+Threshold authorisation should be an optional feature driven by a concrete requirement, such as organisational dual control or recovery that must not depend on a single device. It should not be added merely because it sounds more secure. The design must specify n participants, threshold t, participant authentication, share format and versioning, secure storage, revocation and refresh, backup, recovery after loss, and the assumed collusion model. Use reviewed schemes and libraries rather than inventing a custom sharing algorithm.
+8. Identity, First Contact, and Sender Authentication
+8.1 Identity is a protocol property and a user decision
+A cryptographic key identifies a key, not automatically a person. A service account, username, chat identifier, profile image, or carrier URL can help route a message but should not be treated as proof of human identity. First-contact security must make the distinction visible to users.
+8.2 Verification states
+State
+Meaning
+Recommended UI treatment
+Unverified
+A key or contact record exists, but the user has not independently confirmed the intended identity.
+Clearly warn that impersonation remains possible.
+Verified
+The relevant key fingerprint or safety code was compared through an appropriate independent channel.
+Show a durable, understandable verified state.
+Changed key
+The key or identity binding differs from the previously verified state.
+Do not silently accept; require an explicit re-verification decision.
+Invalid message
+Authentication, signature, manifest, or protocol validation failed.
+Do not display plaintext; provide a safe, non-sensitive error.
+ 
+8.3 Sender authentication
+The system should use a reviewed authenticated protocol or a precisely defined signature mechanism to bind sender identity, recipient, protocol version, session, and message context. If signatures are used, the signed transcript or message representation must be canonical and must cover the fields whose alteration would change the meaning or destination of the message. Signatures are not a magic badge: key-to-person verification and key lifecycle remain essential.
+8.4 Human factors
+Users can be trained to compare a safety code, but the workflow must be realistic. Verification should be easy to find, hard to bypass accidentally, and repeated when a key changes. The interface should not label a contact “secure” merely because encryption succeeded. It should distinguish encrypted, authenticated, identity-verified, and steganographically concealed states.
+9. Lifecycle Policy: Expiry, Revocation, Recovery
+9.1 What expiry can mean
+Expiry can remove a message from a service, stop future downloads, disable future session establishment, or cause a client to refuse new operations after a deadline. The specification should name the exact effect. It should not promise that an already delivered message will vanish from screenshots, backups, exports, memory, or a malicious recipient’s device.
+9.2 Revocation limits
+Revocation can invalidate future use of a key, session, token, or server-side access grant. It cannot reliably retract plaintext or keys already obtained. A remote service can be part of a policy-enforcement mechanism, but it must not be the only holder of the capability needed to decrypt a message if service loss would make legitimate access impossible.
+9.3 Recovery model
+Recovery is a security feature and an attack surface. A 2-of-3 model, for example, could require any two of three independently controlled shares or recovery paths. That is an illustrative pattern, not a complete protocol: the shares must be generated, stored, authenticated, versioned, and combined safely. The design must also decide what happens if a share is lost, a participant is compromised, or two participants collude.
+9.4 Operational controls
+• Define session expiry separately from message retention and cryptographic key rotation.
+• Document which policy checks occur locally and which depend on the relay.
+• Ensure server-side expiry does not imply cryptographic erasure unless key material is actually rendered unrecoverable.
+• Use auditable, minimal metadata and avoid logging secrets or plaintext.
+• Define account recovery and device migration before launch, not after the first user loses a key.
+10. Threat Model and Failure Analysis
+10.1 Adversaries
+Adversary
+Capabilities
+Desired protection / limitation
+Curious relay operator
+Reads stored messages, routing metadata, timestamps, and carrier references.
+Should not recover plaintext or forge sender authentication; metadata leakage remains possible.
+Compromised relay
+Alters, reorders, duplicates, drops, or substitutes payloads; may deny service.
+Endpoint authentication detects tampering and substitution; availability cannot be guaranteed by cryptography alone.
+Carrier provider
+Changes, removes, recompresses, or serves malicious images.
+Carrier validation and authenticated ciphertext detect corruption; provider may still cause denial of service.
+Network observer
+Observes traffic patterns, size, timing, and endpoints.
+Transport protection and traffic-shaping may reduce exposure, but metadata cannot be assumed hidden.
+Impersonator at first contact
+Substitutes public keys or deceives a user about the contact identity.
+Authenticated key agreement plus independent safety-code verification; user verification failure remains a risk.
+Malicious recipient
+Copies plaintext, screenshots, keys, or exported files.
+Cannot reliably be prevented from retaining data already delivered.
+Compromised endpoint
+Reads plaintext or private keys on an endpoint.
+Generally outside the guarantee of transport/relay cryptography; endpoint hardening and key protection required.
+Colluding share holders
+Combine threshold shares or abuse recovery process.
+Must be addressed by threshold choice, participant independence, and explicit collusion assumptions.
+ 
+10.2 Failure cases and expected behaviour
+• AEAD tag failure: reject the payload; do not release partial or unauthenticated plaintext.
+• Unsupported protocol version: fail closed and report that the payload is unsupported.
+• Wrong recipient/session binding: reject rather than attempting a fallback interpretation.
+• Missing or mixed image fragment: report an incomplete set; never silently assemble by visual similarity or URL order.
+• Expired server reference: explain that the reference is unavailable; do not imply that previously downloaded copies were erased.
+• Lost threshold share: follow a documented recovery policy or accept that recovery may be impossible.
+• Changed identity key: require a new verification decision; do not silently downgrade to an unverified state.
+• Malformed image: enforce decoding limits and isolate image parsing from cryptographic secrets.
+10.3 Metadata and privacy
+Even when plaintext remains confidential, message sizes, timestamps, contact relationships, carrier reuse, and access patterns can reveal sensitive information. The product should minimise stored metadata, define retention periods, restrict access to operational logs, and explain residual visibility. Steganography may reduce casual recognition of a payload but should not be marketed as comprehensive traffic-analysis resistance.
+11. Design Evolution and Decision Register
+This section records the reasoning behind the principal design decisions. It is deliberately candid: an exploratory idea can be useful because it reveals the question we need to answer, even when it does not survive as a production mechanism.
+
+Figure 3. Major design refinements from intuitive mechanisms to explicit security properties.
+Exploratory idea / question
+Reason for challenge
+Revised decision
+Status
+Use a unique image, URL, or image hash as key material.
+Uniqueness is not secret entropy; public inputs can be collected and recomputed.
+Use established key agreement and KDFs for cryptographic keys. Treat the image as carrier metadata.
+Rejected as a source of secrecy.
+Have a remote image service contribute an indispensable secret.
+Creates availability and trust dependency; service loss or change can lock out legitimate users.
+Keep external image service optional and outside the key schedule unless a formal key-management model justifies it.
+Not part of baseline.
+Use a salt as a secret ingredient.
+Salt is public KDF input; it individualises derivation but does not make a weak password strong.
+Store salt and KDF parameters in the envelope when password-based derivation is actually used.
+Clarified.
+Use two encryption layers to obtain secrecy and sender identity.
+Encryption alone does not establish human sender identity; generic layering may add complexity without a clear threat model.
+Specify recipient confidentiality and sender authentication as separate protocol properties.
+Reframed.
+Link several images and treat the chain as a distributed secret.
+Links can aid discovery/completeness but do not inherently split key material or enforce a threshold.
+Use manifests for fragment binding; add reviewed threshold secret sharing only when required.
+Separated into two mechanisms.
+Use remote expiry or a kill switch to make a message disappear.
+A recipient may already have copied plaintext or keys; a service cannot recall local copies.
+Define expiry as a limit on future access or sessions, with explicit residual-copy warning.
+Narrowed claim.
+Trust a Telegram identity or contact record as proof of personhood.
+Routing identifiers do not independently prove a human identity.
+Use key authentication and visible out-of-band verification for first contact.
+Rejected as sole identity proof.
+Build the whole product around steganography first.
+Concealment cannot repair weak key management, unauthenticated ciphertext, or bad identity binding.
+Build and test the cryptographic protocol first; add carrier concealment as a separate module.
+Architecture principle.
+Add threshold cryptography because more layers sound safer.
+Threshold mechanisms add operational and recovery complexity and may not match the threat model.
+Make threshold access optional and justify it with a concrete multi-party requirement.
+Deferred pending use case.
+ 
+11.1 Why documenting changes matters
+A design rationale makes assumptions inspectable. Without it, later developers may reintroduce a rejected idea because the original motivation looks attractive and the reason for rejecting it has disappeared. The register also helps reviewers distinguish intentional trade-offs from accidental omissions. It is not a claim that every earlier idea was implemented or formally adopted; it is a record of the design questions raised during exploration and the current recommended disposition.
+11.2 What remains stable
+The stable ambition is to make secure first-contact communication accessible while offering image-carried delivery and optional concealment. The implementation means are deliberately allowed to change. The proposal favours explicit guarantees over clever-sounding mechanisms, reviewed primitives over home-grown cryptography, and honest lifecycle limits over promises of perfect control.
+12. Evaluation and Research Programme
+12.1 Stage 1: protocol specification
+• Select and document the exact authenticated key-agreement protocol and supported library versions.
+• Define message envelope and manifest encodings, canonicalisation rules, size limits, and version negotiation.
+• Specify sender/recipient binding, key verification states, replay prevention, and key-change behaviour.
+• Document key lifecycle, device migration, recovery, and threshold assumptions if threshold access is in scope.
+12.2 Stage 2: component testing
+• Test encryption/decryption round trips and authentication failure handling.
+• Test malformed, truncated, oversized, unsupported, and ambiguous envelopes.
+• Test nonce generation and key separation across sessions and message types.
+• Test manifest validation against missing, duplicated, reordered, mixed, and corrupted fragments.
+• Test image parsing and embedding against decompression bombs, invalid formats, and resource exhaustion.
+• Test that no error path returns plaintext before authentication succeeds.
+12.3 Stage 3: adversarial integration tests
+• Replace the relay with a malicious test double that tampers with every available field.
+• Substitute public keys during first contact and verify that the user-facing safety-code process catches the mismatch.
+• Replay old messages, reorder capsules, mix fragments from different sets, and alter version fields.
+• Simulate provider outage, image recompression, deleted carrier references, and unavailable threshold participants.
+• Inspect logs, crash reports, metrics, and telemetry for accidental secret or plaintext exposure.
+12.4 Stage 4: steganographic evaluation
+Evaluate payload capacity, image distortion, robustness to common platform transformations, and detectability under stated test conditions. Test across image formats and realistic sharing paths. Results should report the dataset, transformations, detection method, error rates, and limits. A successful demonstration on a small set of images is not evidence of general undetectability.
+12.5 Stage 5: independent review
+Before use with sensitive information, obtain review by qualified cryptographic and application-security practitioners. The review should examine the protocol composition, implementation, dependency selection, key storage, recovery, abuse controls, and operational deployment. Formal verification or a proof may be appropriate for selected protocol properties, but only after the protocol is specified precisely enough to analyse.
+12.6 Proposed acceptance criteria
+Area
+Minimum evidence before a credible release
+Confidentiality
+Relay and storage tests cannot recover plaintext without endpoint keys; threat assumptions documented.
+Authentication
+Tampered messages and incorrect sender/session bindings fail verification; identity-verification state is explicit.
+Parser safety
+Malformed and oversized inputs fail safely under resource limits.
+Fragment handling
+Missing, duplicated, reordered, and mixed fragments are rejected deterministically.
+Key management
+Rotation, loss, recovery, and key-change behaviour are documented and tested.
+Logging/privacy
+Automated checks and review find no plaintext, passwords, private keys, or shares in logs.
+Steganography
+Performance and detectability claims are bounded by reproducible tests.
+Review
+Independent security review findings are resolved or explicitly accepted with documented risk.
+ 
+13. Limitations and Open Questions
+• The exact authenticated key-agreement protocol has not been selected or fully specified here.
+• The identity model needs a product decision: safety-code comparison, QR fingerprint, trusted directory, or another verifiable mechanism.
+• The intended role of steganography needs a defined adversary: casual observer, platform scanning, or a stronger statistical detector.
+• The product must decide whether image carriers are only a presentation layer, a transport constraint, or a meaningful part of the user experience.
+• The use case for threshold authorisation must be concrete before choosing a scheme and setting its threshold.
+• The threat model must define supported endpoint platforms, local key storage, backups, and device migration.
+• Metadata minimisation and retention policies require product and operational decisions.
+• Expiry, deletion, and revocation terminology must match what the implementation can actually enforce.
+• The proposed primitive set requires dependency and API verification before implementation.
+• No performance, usability, robustness, or security claims should be made until supported by reproducible evidence.
+13.1 The remote kill-switch question
+A remote service can deny future access, invalidate a token, stop new session creation, or refuse to deliver an unrequested fragment. It cannot reliably revoke information already delivered. If a remote image or server secret is required for every decryption, the service becomes a single point of failure and may become a hidden escrow authority. If that dependency is intentional, it must be described as a key-management decision with explicit availability, compromise, and coercion risks, not as a clever salt.
+13.2 A practical boundary for innovation
+The system can innovate in the orchestration, user experience, carrier workflow, and policy model while using established cryptographic components. That is a sound engineering boundary. A new protocol may eventually be justified by a specific unmet requirement, but it should emerge from a written threat model and formal review rather than from the desire to make the cryptography feel more elaborate.
+14. Conclusion
+This proposal argues for a simple but demanding principle: each security claim should have a named mechanism, a stated assumption, and a test that could show the claim to be false. Encryption should protect content; authentication should bind content or sessions to keys and identities; first-contact verification should help users connect those keys to the intended person; steganography may conceal the presence of a payload; manifests should bind linked capsules; threshold secret sharing should control a secret only when that is the actual requirement; and lifecycle policy should describe what the system can enforce without promising to erase copies it no longer controls.
+The design’s evolution is part of its value. Moving away from image-derived secrecy, vague double encryption, and ambiguous “kill switch” claims is not a retreat from the original ambition. It is the process by which the proposal becomes clearer, more testable, and more credible. The image remains useful, but in the right role. The relay remains useful, but outside the plaintext trust boundary. Multiple capsules remain useful, but their function is defined precisely. And the cryptography remains deliberately unglamorous: established tools, carefully composed, are more valuable than novel-looking complexity.
+The next milestone should not be a marketing claim or a rushed prototype. It should be a frozen protocol specification, a minimal implementation using vetted libraries, a suite of adversarial tests, and an independent review. Only after those steps should the system make stronger claims about its security.
+Appendix A. Candidate Message Envelope
+The following is a conceptual field list, not a final binary encoding. Every field needs a specified type, length, encoding, and validation rule.
+Field
+Purpose
+Notes
+Magic + version
+Identify format and version.
+Unknown versions fail closed.
+Algorithm identifiers
+Identify approved cryptographic suite.
+Avoid unsafe downgrade or ambiguous negotiation.
+Conversation/session ID
+Bind message to the expected session.
+Use canonical encoding and authenticate it.
+Sender/recipient key IDs
+Identify the relevant authenticated keys.
+IDs are references, not proof of identity.
+Message ID / sequence
+Support replay and duplicate detection.
+Define state and offline delivery behaviour.
+Capsule-set ID + manifest
+Bind multi-part delivery.
+Authenticate relevant fields and validate count/indices.
+Nonce
+AEAD per-message value.
+Not secret; obey selected algorithm’s requirements.
+Ciphertext + authentication tag
+Protected message bytes.
+No plaintext release before authentication.
+Optional expiry metadata
+Express policy deadline.
+Define whether enforced by client, relay, or both.
+Optional carrier metadata
+Help locate or decode the carrier.
+Must not contain secret key material by assumption.
+ 
+Appendix B. Security Review Checklist
+• ☐ Is the protocol based on a reviewed authenticated key-agreement design rather than a custom handshake?
+• ☐ Are keys and nonces generated with appropriate cryptographic randomness and used according to library requirements?
+• ☐ Are all security-relevant headers bound to the ciphertext or authenticated transcript?
+• ☐ Are identity verification and sender authentication distinguished in the user interface?
+• ☐ Are replay, duplicate, downgrade, key-change, and cross-session attacks addressed?
+• ☐ Can the relay read plaintext or forge sender authentication under the stated threat model?
+• ☐ Are carrier images treated as untrusted input and external providers kept out of the key schedule?
+• ☐ Are linked fragments validated against a versioned manifest with strict resource limits?
+• ☐ If threshold sharing is used, are t-of-n assumptions, share lifecycle, recovery, and collusion documented?
+• ☐ Are expiry and revocation claims consistent with recipient-side copies and offline access?
+• ☐ Do error handling and logs avoid plaintext, passwords, private keys, and shares?
+• ☐ Have dependency versions, deployment configuration, and independent review requirements been recorded?
+Appendix C. Glossary
+Term
+Definition
+AEAD
+Authenticated encryption with associated data; protects plaintext confidentiality and detects tampering, while authenticating selected unencrypted metadata.
+Associated data
+Public data authenticated alongside ciphertext but not itself encrypted.
+Capsule
+A versioned package containing encrypted payload and metadata, optionally carried in an image.
+Ciphertext fragmentation
+Dividing ciphertext bytes into pieces for transport or reconstruction.
+Entropy
+A measure of uncertainty or unpredictability under a specified probability model.
+HKDF
+A key derivation function used to derive keys from input keying material; not intended to harden low-entropy passwords.
+KDF
+Key derivation function.
+Nonce
+A per-operation value used by a cryptographic construction according to its uniqueness requirements.
+Out-of-band verification
+Checking key identity through a channel independent of the channel that delivered the key.
+Secret sharing
+A method for dividing a secret into shares such that a specified threshold can reconstruct it.
+Steganography
+Techniques intended to conceal the existence of information within a carrier.
+Threat model
+An explicit description of assets, adversaries, capabilities, assumptions, and security goals.
+ 
+References and Further Reading
+The following sources are starting points for a future implementation review. Their inclusion does not imply that the proposed protocol has been formally analysed or that every candidate primitive is final.
+• RFC 7748. Elliptic Curves for Security: X25519 and X448. https://www.rfc-editor.org/rfc/rfc7748
+• RFC 5869. HMAC-based Extract-and-Expand Key Derivation Function (HKDF). https://www.rfc-editor.org/rfc/rfc5869
+• RFC 8032. Edwards-Curve Digital Signature Algorithm (EdDSA). https://www.rfc-editor.org/rfc/rfc8032
+• RFC 9106. Argon2 Memory-Hard Function for Password Hashing and Proof-of-Work Applications. https://www.rfc-editor.org/rfc/rfc9106
+• RFC 5116. An Interface and Algorithms for Authenticated Encryption. https://www.rfc-editor.org/rfc/rfc5116
+• Signal Protocol documentation. Protocol documentation and implementation-oriented references; consult current project materials before selection. https://signal.org/docs/
+• libsodium documentation. Documentation for high-level cryptographic APIs; confirm exact algorithm support and version. https://doc.libsodium.org/
+Document Control
+Item
+Value
+Title
+Beyond Hiding in Plain Sight: A Theory-Based Proposal for Authenticated, Image-Carried Cryptographic Messaging
+Version
+1.0
+Date
+25 October 2026
+Status
+Proposed theory and architecture; not an audited protocol
+Baseline
+Project Product Design Brief & System Specification and Cryptography & Identity Engineering Specification, plus prior design discussions
+Next gate
+Freeze protocol requirements; choose reviewed protocol/library; build adversarial test suite; obtain independent review.
+ 
+Research proposal • Not an audited or production-certified protocol
