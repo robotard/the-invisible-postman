@@ -23,7 +23,7 @@ An intermediary may coordinate or transport messages, but is not trusted with pl
 9. [Integrated thesis](thesis.md) — consolidated argument and current design position.
 10. [Security notes](SECURITY.md) — scope, limitations and repository hygiene.
 11. [Review questions](review/REVIEW_QUESTIONS.md) — critical review agenda.
-12. [Diagrams](diagrams/) — editable Mermaid source diagrams.
+12. [Diagrams](diagrams/) — four editable Mermaid source diagrams, including the W6 protocol decision flow.
 
 ## Core principles
 
