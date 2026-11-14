@@ -1,0 +1,1 @@
+Temporary connector write-path test. This file is removed immediately after verification.
