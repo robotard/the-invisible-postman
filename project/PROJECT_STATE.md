@@ -1,56 +1,54 @@
 # The Invisible Postman: Project State
 
-**Researcher:** @robotard  
 **Working title:** The Invisible Postman: A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging  
-**Checkpoint:** 2026-10-29  
+**Checkpoint:** 2026-11-14  
 **Status:** Theory only · No implementation · Not audited
 
-## Purpose
-Living progress record. `WORKPLAN.md` remains the stable roadmap. Update this file after meaningful work and verify saved/published changes before claiming completion.
+## Verified repository state
 
-## Latest verified starting state
-- W0: workplan exists in the project and on GitHub.
-- W1: research framing draft exists in project files; repository publication was not verified.
-- W2: threat model draft exists in project files; repository publication was not verified.
-- The latest uploaded thesis DOCX and Markdown thesis sources are available in the working environment.
-- Three original thesis diagrams were available; this package includes styled replacements as separate PNGs and embeds them in a copy of the thesis DOCX.
-- The public GitHub repository was readable. `WORKPLAN.md` exists on `main`; `README.md` previously contained placeholder content.
-- `PROJECT_STATE.md` was not found among the conversation files at the start of this run. This copy is included in the package but its publication to GitHub is not claimed.
+The following files were fetched from the GitHub `main` branch during this checkpoint:
 
-## Work completed in this run
-- Prepared repository documentation and folder structure.
-- Created three styled diagrams: trust boundaries, message/carrier flow, and design decisions.
-- Created a thesis DOCX copy with the three embedded diagram images replaced, if the source contained three inline images.
-- Included the thesis, W1, W2, workplan, security note, changelog, review questions, and upload instructions.
-- Built a ZIP archive and verified its internal listing and key files.
+- `README.md`
+- `thesis.md`
+- `project/PROJECT_STATE.md`
+- `project/WORKPLAN.md`
+- `docs/w1-research-framing.md`
+- `docs/w2-threat-model.md`
+- `docs/w3-architecture.md`
+- `docs/w4-risks-and-evaluation.md`
+- `docs/traceability.md`
 
-## Remaining work
-- Manually inspect the final DOCX layout in Word/LibreOffice, including figure placement, captions, and page breaks.
-- Confirm the source thesis contained exactly three replaceable inline diagrams; if not, inspect and repair manually.
-- Verify final README and archive contents against the desired public disclosure scope.
-- Publish the ZIP contents to GitHub through an authorised workflow and verify the resulting commit and file contents.
-- Resolve prior GitHub write HTTP 403 if publishing through the connector is still desired.
-- Consider reconciling thesis headings/captions and diagram numbering before final publication.
+W1–W4 and traceability are substantive documents and form a coherent research sequence around endpoint-held cryptographic authority, untrusted transport, authenticated identity and context, image-carried capsules, multipart validation, lifecycle limits and evidence-led evaluation.
 
-## Blockers and limitations
-- GitHub write attempts previously returned HTTP 403 (`Resource not accessible by integration`). Read access does not prove write access.
-- This package is a documentation/research bundle, not an executable messaging system.
-- No implementation, formal proof, steganographic robustness testing, or independent security audit is claimed.
-- `P_S` was not located in the current conversation file listing at the start of this run; this checkpoint is generated from the latest verified records available here.
+## Material discrepancy found
 
-## Next action
-1. Inspect the generated ZIP and thesis DOCX visually.
-2. If sound, provide the ZIP for download.
-3. Upload contents manually or through an authorised Git workflow.
-4. Verify repository state and update this checkpoint with the actual publication result.
+The previous `thesis.md` described a different, single-user Python/Flask prototype based on password-derived keys, Argon2id, XChaCha20-Poly1305 and image embedding. It did not represent the newer endpoint-to-endpoint architecture in W1–W4.
 
-## Package verification record
-- ZIP path: `/mnt/data/invisible-postman-repository-package.zip`
-- ZIP size before final checkpoint update: 792,590 bytes
-- File count before final checkpoint update: 19
-- ZIP integrity test: passed (`testzip()` returned no corrupt member)
-- Required-file check: passed
-- Thesis DOCX reopened with python-docx; inline images detected: 3
-- Replaced diagram image blobs: 3
-- Important remaining verification: visually inspect Word layout and confirm figure captions remain paired with intended diagrams. This was not a full visual QA.
-- GitHub publication: not performed.
+That earlier proposal is exploratory history, not an adopted protocol. Its candidate primitives and implementation plan must not silently override the current research framing. The integrated thesis now follows W1–W4 and records the earlier prototype direction as superseded exploration.
+
+## Repository corrections in this checkpoint
+
+- Replaced stale README links and claims with paths verified against the repository.
+- Added security-scope notes and a focused technical review agenda.
+- Added editable Mermaid diagrams for trust boundaries, lifecycle and research traceability.
+- Reconciled the thesis with W1–W4 while preserving the earlier proposal's status as exploratory work.
+- Removed obsolete checkpoint claims about an available ZIP, embedded DOCX diagrams and unresolved GitHub write access.
+- Updated the workplan to reflect the documents that already exist.
+
+## Remaining research work
+
+1. Resolve protocol decisions: authenticated key establishment, first-contact verification, canonical encoding, key separation, nonce policy, sender authentication and replay state.
+2. Specify the authenticated multipart manifest and precise rejection behaviour.
+3. Define metadata visibility, retention and coordinator permissions.
+4. Decide whether concealment offers a defensible benefit for any stated threat model.
+5. Decide whether recovery is justified; it remains outside the minimum architecture.
+6. Define reproducible tests and justified acceptance thresholds before implementation.
+7. Obtain independent cryptographic and implementation review before making security claims.
+
+## Verification and publication
+
+This checkpoint records the files and changes actually verified in the repository workflow. It does not claim a rendered diagram review, executable tests, protocol validation, implementation, formal proof or independent audit.
+
+The reconciliation changes are being prepared on a dedicated branch. They must be committed and then verified by fetching the resulting branch contents and commit metadata before publication is described as complete.
+
+**Theory only · No implementation · Not audited.**
