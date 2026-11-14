@@ -211,9 +211,9 @@ A candidate manifest should include:
 - fixed fragment payload size or explicit per-fragment lengths;
 - fragment index convention;
 - message/session binding reference; and
-- a digest or equivalent integrity reference for the complete protected object.
+A digest is not required for cryptographic authenticity. If an optional checksum is included, it is only an early corruption hint and must not be trusted as authentication.
 
-The manifest and its relevant fields must be bound into authenticated message context. The exact construction must avoid circular dependencies between ciphertext, manifest and associated data. One possible ordering is to determine plaintext length and fragment sizing first, derive the expected protected-object length (including fixed cryptographic overhead), construct the manifest, authenticate that manifest as context, then encrypt and split the resulting protected object. This ordering must be validated against the selected envelope and AEAD before adoption.
+The manifest and its relevant fields must be bound into authenticated message context. The exact construction must avoid circular dependencies between ciphertext, manifest and associated data. One possible ordering is to determine plaintext length and fragment sizing first, derive the expected protected-object length (including fixed cryptographic overhead), construct the manifest, authenticate that manifest as context, then encrypt and split the resulting protected object. This ordering must be validated against the selected envelope and AEAD before adoption. A digest of the ciphertext cannot be included in pre-encryption associated data because it is not known until encryption has completed. If a post-encryption checksum is carried for early corruption detection, it remains an untrusted hint; final authenticity and integrity come from successful verification of the reconstructed protected object.
 
 Receiver rules:
 1. Enforce strict upper bounds on declared object size, fragment count and fragment length before allocating large resources.
