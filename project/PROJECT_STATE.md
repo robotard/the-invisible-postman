@@ -4,51 +4,60 @@
 **Checkpoint:** 2026-11-14  
 **Status:** Theory only · No implementation · Not audited
 
-## Verified repository state
+## Verified repository and publication state
 
-The following files were fetched from the GitHub `main` branch during this checkpoint:
+The current working branch is `work/reconcile-research-and-repository`.
 
-- `README.md`
-- `thesis.md`
-- `project/PROJECT_STATE.md`
-- `project/WORKPLAN.md`
-- `docs/w1-research-framing.md`
-- `docs/w2-threat-model.md`
-- `docs/w3-architecture.md`
-- `docs/w4-risks-and-evaluation.md`
-- `docs/traceability.md`
+The repository reconciliation work was pushed to GitHub and verified by fetching all ten changed files from the branch. Pull request [#1 · Reconcile thesis and research repository](https://github.com/robotard/the-invisible-postman/pull/1) is open and unmerged. The changes are not yet part of `main`.
 
-W1–W4 and traceability are substantive documents and form a coherent research sequence around endpoint-held cryptographic authority, untrusted transport, authenticated identity and context, image-carried capsules, multipart validation, lifecycle limits and evidence-led evaluation.
+The reconciliation includes:
+- corrected README navigation;
+- thesis aligned with W1–W4;
+- updated project state and workplan;
+- security-scope notes;
+- critical review questions; and
+- three editable Mermaid diagrams.
 
-## Material discrepancy found
+## Research status
 
-The previous `thesis.md` described a different, single-user Python/Flask prototype based on password-derived keys, Argon2id, XChaCha20-Poly1305 and image embedding. It did not represent the newer endpoint-to-endpoint architecture in W1–W4.
+- W0–W5: completed as research/documentation waypoints.
+- W1–W4: substantive research framing, threat model, architecture and evaluation documents exist.
+- Thesis: integrated working edition aligned to W1–W4.
+- W6: protocol specification dossier drafted; major decisions remain open.
+- W7–W8: not started.
 
-That earlier proposal is exploratory history, not an adopted protocol. Its candidate primitives and implementation plan must not silently override the current research framing. The integrated thesis now follows W1–W4 and records the earlier prototype direction as superseded exploration.
+## W6 progress
 
-## Repository corrections in this checkpoint
+Created `docs/w6-protocol-specification.md` as a protocol design dossier. It identifies:
+- synchronous versus asynchronous/offline delivery as a foundational decision;
+- identity-key binding and first-contact verification;
+- recipient-side sender authentication versus transferable signatures;
+- canonical envelope and authenticated associated data;
+- key separation, KDF and nonce requirements;
+- replay-state persistence and rollback;
+- authenticated multipart manifest and bounded reconstruction;
+- versioning, downgrade, metadata and resource limits.
 
-- Replaced stale README links and claims with paths verified against the repository.
-- Added security-scope notes and a focused technical review agenda.
-- Added editable Mermaid diagrams for trust boundaries, lifecycle and research traceability.
-- Reconciled the thesis with W1–W4 while preserving the earlier proposal's status as exploratory work.
-- Removed obsolete checkpoint claims about an available ZIP, embedded DOCX diagrams and unresolved GitHub write access.
-- Updated the workplan to reflect the documents that already exist.
+The draft deliberately does not select a final cryptographic suite or invent a bespoke handshake. A technical correction is recorded in the multipart section: a ciphertext digest cannot be included in pre-encryption associated data; any post-encryption checksum is only an untrusted early-corruption hint, while the reconstructed object must pass the selected authenticated-encryption verification.
 
 ## Remaining research work
 
-1. Resolve protocol decisions: authenticated key establishment, first-contact verification, canonical encoding, key separation, nonce policy, sender authentication and replay state.
-2. Specify the authenticated multipart manifest and precise rejection behaviour.
-3. Define metadata visibility, retention and coordinator permissions.
-4. Decide whether concealment offers a defensible benefit for any stated threat model.
-5. Decide whether recovery is justified; it remains outside the minimum architecture.
-6. Define reproducible tests and justified acceptance thresholds before implementation.
-7. Obtain independent cryptographic and implementation review before making security claims.
+1. Decide whether asynchronous sending to offline recipients is a core requirement.
+2. Decide the required sender-authentication semantics: recipient-side peer authentication or transferable signatures.
+3. Select and review an authenticated session-establishment design appropriate to the operating model.
+4. Specify identity verification, key changes, device lifecycle and compromise response.
+5. Finalise canonical envelope encoding, cryptographic profile, key separation and nonce policy.
+6. Specify replay-state scope, persistence and rollback behaviour.
+7. Validate the multipart manifest construction, size limits and rejection rules.
+8. Define metadata visibility, retention and coordinator permissions.
+9. Decide whether concealment offers a defensible benefit; recovery remains outside the minimum architecture.
+10. Define reproducible adversarial tests and justified acceptance thresholds.
+11. Obtain independent cryptographic and implementation review before implementation or security claims.
 
-## Verification and publication
+## Verification limits
 
-This checkpoint records the files and changes actually verified in the repository workflow. It does not claim a rendered diagram review, executable tests, protocol validation, implementation, formal proof or independent audit.
+Files added or updated on the working branch must be fetched back before they are described as verified. Mermaid source files are editable, but their rendered appearance has not yet been visually reviewed. No implementation, executable protocol tests, formal proof, independent review or security audit is claimed.
 
-The reconciliation changes are being prepared on a dedicated branch. They must be committed and then verified by fetching the resulting branch contents and commit metadata before publication is described as complete.
+The open pull request is not a merged publication to `main`.
 
 **Theory only · No implementation · Not audited.**
