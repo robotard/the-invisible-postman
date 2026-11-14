@@ -62,6 +62,17 @@ These questions are intended to challenge the proposal, not validate it by defau
 34. What tests cover key substitution, tampering, replay, fragment mixing, media transformation and secret leakage?
 35. What independent expertise is needed before any implementation or security claim?
 
+## 8. Protocol specification and asynchronous delivery
+
+36. Is sending to an offline recipient a mandatory requirement, or can the first protocol profile require both endpoints online?
+37. If asynchronous delivery is required, which reviewed protocol supports it, and how are prekeys or equivalent one-time material published, consumed, replenished and protected against replay?
+38. What exact event establishes key confirmation and permits a session or message to be accepted?
+39. Is sender authentication intended only for the recipient, or must a third party be able to verify a signature?
+40. If symmetric message-authentication keys are used, how is the fact that the recipient also knows the key reflected in claims about authorship?
+41. How are long-term identity keys, key-agreement credentials and message/session keys bound and separated?
+42. Does the multipart manifest avoid circular dependence between ciphertext and associated data, and are any post-encryption checksums incorrectly treated as authentication?
+43. What happens to replay protection and one-time key state after backup restoration, rollback, concurrent initiation or device replacement?
+
 ## Review outcome
 
 For each question, record:
