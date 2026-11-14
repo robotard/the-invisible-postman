@@ -22,9 +22,9 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 - Not a guarantee of anonymity, delivery, remote erasure, or metadata protection.
 
 ## Start here
-1. `WORKPLAN.md` — stable roadmap and waypoint definitions.
-2. `PROJECT_STATE.md` — changing progress record.
-3. `docs/thesis.md` — thesis text in Markdown.
+1. `project/WORKPLAN.md` — stable roadmap and waypoint definitions.
+2. `project/PROJECT_STATE.md` — changing progress record.
+3. `thesis.md` — thesis text in Markdown.
 4. `docs/the-invisible-postman-thesis.docx` — thesis copy with styled diagram assets embedded.
 5. `docs/W1-research-framing.md` and `docs/W2-threat-model.md` — supporting research artifacts.
 6. `review/REVIEW_QUESTIONS.md` — open questions for critical review.
