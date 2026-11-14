@@ -228,6 +228,8 @@ Before implementation, the research must resolve:
 9. Supported carrier formats and transformation tolerance.
 10. Expiry, revocation, device replacement and compromise response.
 11. Whether recovery or concealment is justified by evidence.
+12. Whether offline/asynchronous sending is mandatory and which reviewed session protocol supports it.
+13. Whether sender authentication means recipient-side peer authentication or transferable signatures.
 
 ## 16. Conclusion
 
@@ -243,6 +245,7 @@ The architecture establishes responsibilities and trust boundaries before commit
 - [W2 · Threat model](docs/w2-threat-model.md)
 - [W3 · Architecture](docs/w3-architecture.md)
 - [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md)
+- [W6 · Protocol specification dossier](docs/w6-protocol-specification.md)
 - [Traceability register](docs/traceability.md)
 - [Critical review questions](review/REVIEW_QUESTIONS.md)
 - [Editable architecture diagrams](diagrams/README.md)
