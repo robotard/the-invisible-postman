@@ -1,424 +1,248 @@
-# Steganography and Cryptographic Messaging
+# The Invisible Postman
 
-*Architecture, Security Fundamentals, Implementation Plan, and Threat Model*  
-Design thesis and implementation blueprint | 25 October 2026
+## A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging
 
-> **Document status:** Consolidated design thesis and implementation blueprint. This document corrects earlier exploratory code and is not a security audit or a claim that a complete application has already been implemented.
+**Research thesis · Integrated working edition · 14 November 2026**
+
+> **Theory only · No implementation · Not audited.**
 
 ## Abstract
 
-This document consolidates the design developed for a Python web application that encrypts a text message and embeds the resulting ciphertext in an image. It separates cryptographic key derivation, authenticated encryption, steganographic embedding, web application responsibilities, transport security, and operational concerns. It also corrects several unsafe or technically inaccurate ideas that appeared in earlier exploratory examples.
+This thesis examines whether image-carried messaging can be designed so that an untrusted intermediary transports or coordinates protected messages without gaining plaintext access or the ability to impersonate authenticated participants. It treats participant-controlled endpoints as the cryptographic trust boundary, while messaging platforms, bots, image hosts and storage providers remain untrusted for plaintext confidentiality.
 
-The central recommendation is to use Argon2id for password-based key derivation, XChaCha20-Poly1305 for authenticated encryption, a carefully specified image embedding/extraction method, and HTTPS for browser-to-server communication. Cryptography and steganography serve different purposes: encryption protects the message's contents, while steganography attempts to conceal the presence of a message. Neither should be mistaken for a substitute for the other.
+The proposal separates five concerns that are often blurred together: confidentiality, sender authentication, identity verification, message integrity and concealment. Images are treated as carriers rather than cryptographic credentials. Optional steganography is therefore subordinate to a protected message format and is not assumed to survive media processing or resist detection.
 
-## 1. Purpose and Scope
+The architecture also treats multipart delivery as an authenticated reconstruction problem, and treats expiry, revocation and recovery as lifecycle decisions with explicit limits. The result is a research architecture and evaluation agenda, not a completed protocol or implemented system.
 
-The proposed application accepts a carrier image, a password, and text to protect. It derives a key from the password and a random salt, encrypts the message, embeds the resulting binary payload in an image, and returns the modified image. A recipient can upload the resulting image, supply the password, extract the payload, and decrypt the message.
+## 1. Research problem
 
-The intended system is a learning-oriented prototype that can be developed into a carefully reviewed application. The examples and architecture in this document are not a cryptographic certification. Before protecting high-value information, the implementation should be reviewed, tested, and threat-modelled by qualified security practitioners.
+Messaging systems commonly rely on intermediary services for delivery, storage, coordination or media handling. Such services may be operationally useful without being trusted with message plaintext or cryptographic authority.
 
-## 2. Fundamental Concepts
+Image-carried messaging introduces additional questions. A carrier may be transformed, stripped, resized, recompressed, retained or inspected. A multipart message may be incomplete, reordered, duplicated or mixed with fragments from another message. Concealment may reduce casual visibility while creating fragility and no guarantee against steganalysis.
 
-2.1 Encryption. Encryption transforms readable plaintext into ciphertext using a key. Correctly implemented authenticated encryption also detects unauthorized modification of the encrypted payload.
+The central research problem is therefore not simply how to hide text in an image. It is how to define an endpoint-controlled messaging architecture in which protected message content remains confidential and authenticated across an untrusted transport path, while carrier processing and concealment remain separate, explicitly evaluated concerns.
 
-2.2 Steganography. Steganography embeds data in a carrier, such as an image, with the goal of making the existence of the data less apparent. It does not inherently encrypt or authenticate the hidden data.
+## 2. Central research question
 
-2.3 Key derivation. A key derivation function (KDF) transforms input material, such as a password, into a cryptographic key of a specified length. Passwords usually have much less entropy than randomly generated keys, so password-based derivation should be deliberately expensive.
+**Can image-carried messaging be designed so that an untrusted intermediary transports or coordinates encrypted messages without being able to decrypt them or impersonate authenticated participants, while accounting explicitly for concealment, multipart delivery, expiry, revocation and recovery?**
 
-2.4 Salt. A salt is a non-secret, usually random value supplied to a password-based KDF. It prevents identical passwords from automatically producing identical derived keys when different salts are used, and makes precomputed password attacks less reusable. The salt must be stored with the encrypted payload; it is not itself a password or secret key.
+Supporting questions:
 
-2.5 Nonce. A nonce is a value used by an encryption algorithm for an individual encryption operation. XChaCha20-Poly1305 uses a 24-byte nonce. Generate a fresh nonce for every encryption operation and never reuse a nonce with the same key.
+1. Which cryptographic responsibilities must remain at participant endpoints?
+2. How are confidentiality, sender authentication, identity verification and key agreement distinguished?
+3. What can an intermediary, platform or image host observe, alter, suppress or retain?
+4. How can multipart capsules be bound to one message set and validated before reconstruction?
+5. What can expiry and revocation actually enforce after data has left an endpoint?
+6. Does optional concealment provide a defensible benefit under a defined adversary model?
+7. What evidence would be needed to justify the architecture or reject it?
 
-2.6 Authentication tag. XChaCha20-Poly1305 appends an authentication tag to the ciphertext. Decryption must verify this tag before accepting the plaintext. If verification fails, the application must return a generic failure and must not release unauthenticated plaintext.
+## 3. Scope and non-goals
 
-## 3. Recommended Cryptographic Design
+The research addresses logical architecture, trust boundaries, threat modelling, message lifecycle, carrier handling, multipart integrity, metadata exposure and evaluation requirements.
 
-3.1 Password-based key derivation. Prefer Argon2id, a password-hashing/key-derivation construction designed to make large-scale password guessing expensive. Choose memory, time, and parallelism parameters through benchmarking on the target environment. The parameters should be recorded in the payload format or its metadata so that the recipient can derive the same key later. Do not silently choose very weak parameters just to make the application feel fast.
+It does not currently specify a complete cryptographic protocol, choose a final algorithm suite, define a complete identity ceremony, demonstrate robust steganography, provide anonymity, guarantee delivery, or establish secure remote deletion.
 
-3.2 Salt generation. Generate a fresh random salt for each independently encrypted payload, for example with Python's secrets.token_bytes(16). Store the salt alongside the ciphertext. A 16-byte salt is a reasonable conventional starting point, subject to the selected library and protocol requirements.
+It does not claim a working application, formal verification, empirical security results or independent audit. Implementation is deliberately deferred until the protocol-level decisions are sufficiently specified and reviewed.
 
-3.3 Authenticated encryption. Use a vetted implementation of XChaCha20-Poly1305. Do not manually combine a stream cipher and a separate authenticator, and do not use ad hoc padding. XChaCha20-Poly1305 is an AEAD construction and accepts arbitrary-length plaintext.
+## 4. Security properties are distinct
 
-3.4 Nonce generation. Generate a fresh 24-byte nonce for each encryption operation. The nonce is not a secret and must be available to the recipient. Do not reuse it with the same key.
+The architecture must not treat the following properties as interchangeable:
 
-3.5 Payload format. Use a versioned, unambiguous binary format. A practical conceptual layout is: magic identifier, format version, KDF identifier and parameters, salt length and salt, nonce, ciphertext including authentication tag, and any required length fields. The precise encoding must be specified and tested; do not rely on informal string concatenation or guesswork during extraction.
+- **Confidentiality:** unauthorised parties cannot read message contents under the stated cryptographic assumptions.
+- **Sender authentication:** a protected message is cryptographically associated with a signing or authenticated sending identity.
+- **Identity verification:** participants establish that a cryptographic identity belongs to the intended person or entity.
+- **Integrity:** unauthorised alteration of protected content or bound context is detected.
+- **Concealment:** the presence of a message may be made less apparent to some observers, subject to separate evaluation.
+- **Availability:** messages can be delivered when services and networks permit; a malicious intermediary may still suppress or delay them.
 
-3.6 Key separation. Keep the password-derived key inside the cryptographic layer. If a future design derives multiple keys from one shared secret, use a standard KDF such as HKDF with explicit context labels to separate purposes. Avoid reusing one key for unrelated cryptographic functions.
+Encryption alone does not establish a human identity. A platform username or bot account is not proof that a public key belongs to the intended person. Steganography does not encrypt or authenticate a message. Authenticated encryption does not conceal traffic timing, participants or message size.
 
-## 4. Argon2 and Salt: Correct Mental Model
+## 5. Proposed trust model
 
-The password and salt are inputs to Argon2id. Argon2id produces a derived key, typically 32 bytes for a 256-bit symmetric key. XChaCha20-Poly1305 then uses that key and a fresh nonce to encrypt the message.
+The trust boundary is located at the participant-controlled endpoints.
 
-Conceptually: password + random salt + KDF parameters → Argon2id → key; key + nonce + plaintext → XChaCha20-Poly1305 → ciphertext and authentication tag.
+### 5.1 Sender endpoint
 
-The salt does not need to be hidden in the image, and hiding it provides no meaningful cryptographic secrecy. Keeping it in the encrypted payload's public metadata is simpler and more robust. A fixed demonstration salt such as the text 'salty' should not be used as a production default.
+The sender endpoint creates plaintext, holds private keys, verifies peer identity material, establishes authenticated cryptographic context, protects the message and forms capsule data.
 
-A salt is not the same as a pepper. A pepper is a separate secret value kept outside the stored password-derived record. A pepper introduces key-management and recovery requirements and is not needed for the basic message-encryption design described here.
+### 5.2 Recipient endpoint
 
-## 5. Why XChaCha20-Poly1305 Instead of Hand-Built Encryption
+The recipient endpoint extracts carrier data, validates the capsule structure and message set, checks authenticity and freshness, decrypts protected content and applies local lifecycle policy.
 
-XChaCha20-Poly1305 provides confidentiality and integrity in one established construction. The extended nonce makes random nonce generation practical for applications encrypting many messages under a key, although nonce reuse must still be avoided.
+### 5.3 Identity and key-management boundary
 
-Use a maintained library that exposes XChaCha20-Poly1305 directly. Do not assume that every version of the Python cryptography package provides this exact algorithm. Confirm the API and version of the chosen dependency; PyNaCl/libsodium is a common option for XChaCha20-Poly1305 in Python.
+Cryptographic identities must be explicitly bound to verified peers. First-contact verification, key changes, device replacement, key rotation and compromise response remain protocol decisions requiring definition.
 
-Earlier exploratory snippets attempted to construct XChaCha20-Poly1305 using low-level Cipher, algorithms, and modes APIs, and in some cases paired XChaCha20 with Poly1305 as if they were interchangeable generic modes. Those examples are not valid production implementations. Use the high-level AEAD API provided by a vetted library.
+### 5.4 Untrusted coordinator and transport
 
-## 6. Software Architecture and Separation of Responsibilities
+A bot or coordinator may route references, coordinate capsule delivery and report observable delivery state. Messaging platforms, image hosts and storage providers may retain, inspect, transform, reorder, suppress or remove carrier objects and metadata.
 
-The application should separate the cryptographic workflow from image processing and web request handling. This improves testability, makes security boundaries visible, and reduces the chance that a change to one component silently breaks another.
+No intermediary is trusted with plaintext confidentiality, sole decryption authority or the power to establish human identity merely through a platform identifier.
 
-Recommended conceptual modules:
+### 5.5 Residual endpoint risk
 
-- Argon2KeyDerivation: accepts a password, salt, and approved Argon2id parameters; derives a key. It does not manipulate images or handle HTTP requests.
-- XChaEncryption: wraps a vetted XChaCha20-Poly1305 implementation; encrypts and decrypts byte strings and handles nonce and authentication-tag semantics according to the chosen library API.
-- SecureCommunicator: orchestrates key derivation and authenticated encryption. It creates or consumes the payload metadata and exposes simple encrypt/decrypt methods. It should not implement steganography.
-- DCTSteganography or another embedding module: accepts image bytes or a decoded image and a binary payload; embeds or extracts the payload. It should not derive keys or decrypt messages.
-- Flask application layer: validates uploads and form fields, invokes the service classes, returns a generated image or a decryption result, and maps errors to safe responses.
-The class names are design labels, not a claim that the earlier example implementations were complete or correct. Interfaces should be settled before files are implemented so that byte formats, method arguments, and return values remain consistent.
+A compromised endpoint may expose plaintext before encryption or after decryption, as well as private keys and local state. Message encryption does not solve endpoint compromise.
 
-## 7. Suggested Project Structure
+## 6. Logical architecture
 
-stego_app/
+The architecture is divided by responsibility, not by a requirement to deploy separate services.
 
-```text
-app.py
-```
+1. **Participant endpoint:** plaintext handling, private-key custody, peer verification and local policy.
+2. **Identity and key management:** identity representation, key-to-identity binding, verification, rotation and revocation.
+3. **Session establishment:** authenticated key agreement, peer/session binding and key confirmation.
+4. **Message protection and envelope:** versioned message representation, encryption, authentication and context binding.
+5. **Capsule and multipart manager:** message-set identifiers, manifest, fragment indexing, completeness and reconstruction.
+6. **Carrier encoder/decoder:** carrier packaging and extraction, with optional concealment kept separate.
+7. **Coordinator/transport:** least-privilege delivery coordination without plaintext authority.
+8. **Lifecycle and local state:** replay tracking, expiry, key changes, retirement and local retention.
+9. **Optional recovery boundary:** excluded from the minimum design unless a specific need and defensible trust model are established.
 
-```text
-requirements.txt
-```
+A component is justified only when it maps to a research objective or threat and provides a demonstrable benefit.
 
-```text
-README.md
-```
+## 7. Message lifecycle
 
-```text
-modules/
-```
+The proposed logical lifecycle is:
 
-```text
-__init__.py
-```
+1. Participants establish and verify relevant cryptographic identities.
+2. Endpoints establish authenticated cryptographic context.
+3. The sender creates plaintext and message context.
+4. The sender protects the message using a specified authenticated construction.
+5. The protected object is packaged as one capsule or a linked multipart set.
+6. Capsules are encoded into supported image carriers; optional concealment is a separate step.
+7. An untrusted intermediary coordinates or transports carrier objects.
+8. The recipient extracts capsule data and validates its structure.
+9. The recipient validates message-set identity, completeness, uniqueness, ordering and version.
+10. The recipient verifies authenticity, context and freshness.
+11. Only after successful validation does the endpoint decrypt and release plaintext.
+12. Local replay, expiry, key and retention policies are applied.
 
-```text
-encryption/
-```
+Invalid, incomplete or ambiguous input must not be silently presented as a valid message.
 
-```text
-__init__.py
-```
+## 8. Message envelope and cryptographic decisions
 
-```text
-argon2_kdf.py
-```
+A protected message is expected to bind the context necessary to prevent ambiguity or substitution, including as applicable:
 
-```text
-xchacha.py
-```
+- protocol version;
+- sender and recipient cryptographic identities;
+- session or context identifier;
+- unique message identifier;
+- payload type and length;
+- multipart manifest reference;
+- freshness or expiry information; and
+- authenticated ciphertext and associated metadata.
 
-```text
-secure_communicator.py
-```
+The exact canonical encoding, field layout, algorithm suite, nonce construction, signature arrangement and key lifecycle are unresolved.
 
-```text
-steganography/
-```
+Candidate mechanisms for research include X25519 for key agreement, HKDF-SHA-256 for key derivation, Ed25519 for signatures where appropriate, and XChaCha20-Poly1305 for authenticated encryption. These are candidates, not adopted protocol decisions. The complete construction must specify identity binding, key confirmation, key separation, nonce policy, associated data, versioning, error handling and key-use limits.
 
-```text
-__init__.py
-```
+A previous exploratory proposal considered password-derived Argon2id keys and a Python/Flask application. That model is not the current architecture: password-based single-user encryption does not, by itself, establish authenticated peer identity or endpoint-to-endpoint session security. Its algorithm choices may inform later comparison, but they are not silently carried forward as design decisions.
 
-```text
-dct.py
-```
+## 9. Multipart capsules
 
-```text
-payload_format.py
-```
+Multipart delivery is a transport and packaging concern, not a recovery guarantee.
 
-```text
-services/
-```
+A set must bind its message-set identity, version, total count, fragment indices and relevant content integrity through authenticated context or an authenticated manifest. The receiver must detect or reject missing, duplicate, conflicting, reordered and cross-message fragments according to explicit rules.
 
-```text
-__init__.py
-```
+Fragmentation is not threshold secret sharing. It does not imply redundancy, confidentiality through distribution or recoverability after loss. The format and rejection rules remain to be specified.
 
-```text
-image_loader.py
-```
+## 10. Image carriers and optional concealment
 
-```text
-validation.py
-```
+An image is a carrier, not a key, identity credential or source of guaranteed cryptographic entropy. The protected capsule must remain cryptographically meaningful independently of the concealment method.
 
-```text
-templates/
-```
+Carrier processing may resize, recompress, transcode, strip metadata or otherwise damage embedded content. Supported transformations must be defined and tested. Unsupported or corrupted carriers must fail safely.
 
-```text
-index.html
-```
+No universal resistance to steganalysis or platform transformation is claimed. Concealment should be retained only if evaluation demonstrates a meaningful benefit against a clearly stated threat model that justifies its fragility and complexity.
 
-```text
-result.html
-```
+## 11. Lifecycle, expiry and revocation
 
-```text
-static/
-```
+Lifecycle policy must distinguish:
 
-```text
-css/
-```
+- rejection of a message for a new decryption attempt;
+- retirement or replacement of a cryptographic identity;
+- retirement of a session or message key;
+- local deletion of a particular copy; and
+- plaintext or keys already copied, observed or retained elsewhere.
 
-```text
-styles.css
-```
+Expiry and revocation may constrain future acceptance or future communication. They cannot reliably recall plaintext already obtained by a recipient, intermediary or attacker.
 
-```text
-tests/
-```
+Replay protection requires a defined freshness policy and state model. The design must account for state loss, rollback, delayed delivery and device replacement.
 
-```text
-test_encryption.py
-```
+## 12. Recovery
 
-```text
-test_payload_format.py
-```
+Recovery is excluded from the minimum architecture.
 
-```text
-test_steganography.py
-```
+If research later justifies threshold-controlled recovery, it must be specified separately, including authority and authorisation, share creation and distribution, participant authentication, threshold and collusion assumptions, share protection, lifecycle, auditability and failure handling.
 
-```text
-test_routes.py
-```
+Recovery must not be added merely because it is technically possible. It introduces additional secrets, participants and potential authorities, and may undermine endpoint control.
 
-The application should preferably accept image uploads rather than arbitrary remote image URLs. If URL fetching is required, it must be designed to prevent server-side request forgery (SSRF), restrict schemes and destinations, limit redirects and response sizes, and enforce timeouts.
+## 13. Threats and residual risks
 
-## 8. End-to-End Encryption Workflow
+The principal threats include:
 
-Encryption workflow:
+- first-contact key substitution and identity impersonation;
+- platform identifiers mistaken for verified identities;
+- ciphertext or authenticated-context tampering;
+- replay and stale-message acceptance;
+- fragment mixing, omission, duplication and reordering;
+- carrier transformation or extraction failure;
+- metadata correlation and traffic analysis;
+- intermediary compromise or excessive permissions;
+- secret leakage through logs, diagnostics, backups or notifications;
+- recovery-share theft or collusion, if recovery is introduced; and
+- endpoint compromise.
 
-1. Validate the request and enforce message and image size limits.
+The architecture proposes endpoint-held keys, explicit identity verification, authenticated context, strict multipart validation, least-privilege coordination and secret-safe handling as design responses. These are intentions requiring specification and evaluation, not demonstrated mitigations.
 
-2. Read and decode the carrier image using a safe image-processing library.
+Availability against a malicious intermediary, anonymity, unlinkability, universal concealment, endpoint security and remote deletion remain outside the guarantees of this proposal.
 
-3. Generate a fresh random salt and derive a key using Argon2id and the stored KDF parameters.
+## 14. Evaluation framework
 
-4. Generate a fresh 24-byte XChaCha20-Poly1305 nonce.
+Evaluation must be threat-led and capable of rejecting the architecture. It should address:
 
-5. Serialize the plaintext as bytes using a specified encoding, normally UTF-8.
+1. Whether an intermediary can obtain plaintext or sole decryption authority.
+2. Whether first-contact key substitution is detectable.
+3. Whether sender, recipient, session and message context are cryptographically bound.
+4. Whether altered, replayed, incomplete, duplicate, reordered and mixed capsule sets are rejected.
+5. Whether media transformations cause safe failure and whether any claimed transformation tolerance is reproducible.
+6. Whether logs and diagnostics expose secrets or protected content.
+7. Whether key rotation, expiry, revocation and replay state behave according to their stated limits.
+8. What metadata remains observable and retained.
+9. Whether optional recovery, if proposed, withstands its stated theft and collusion scenarios.
 
-6. Encrypt with the vetted AEAD implementation. The encrypted payload must include enough metadata for the recipient to derive the key and identify the nonce.
+Each scenario should record preconditions, attacker capability, expected behaviour, observable evidence, pass/fail/inconclusive result, residual risk and resulting design change.
 
-7. Embed the complete payload in the image using the selected steganographic method. Check capacity before modifying the image.
+Evidence maturity must be reported honestly: proposed, specified, analysed, tested and independently reviewed are different states. A design intention is not a test result; a test suite is not an audit.
 
-8. Save the output in a format that preserves the embedding. For a simple spatial-domain scheme, lossless PNG is generally safer than JPEG recompression.
+## 15. Open protocol decisions
 
-9. Return the generated image as a download and avoid logging passwords, plaintext, keys, or sensitive ciphertext metadata unnecessarily.
+Before implementation, the research must resolve:
 
-## 9. End-to-End Decryption Workflow
+1. Authenticated key establishment and key confirmation.
+2. First-contact identity verification and identity-key change procedure.
+3. Canonical message encoding, versioning and authenticated field layout.
+4. Algorithm suite, key separation, nonce generation and key-use limits.
+5. Sender authentication and signing context.
+6. Replay-state persistence and freshness policy.
+7. Multipart manifest, digest, reconstruction and rejection rules.
+8. Metadata minimisation, retention and coordinator permissions.
+9. Supported carrier formats and transformation tolerance.
+10. Expiry, revocation, device replacement and compromise response.
+11. Whether recovery or concealment is justified by evidence.
 
-1. Accept the stego image as an upload and validate its file type, dimensions, and size.
+## 16. Conclusion
 
-2. Extract the payload using the matching steganography algorithm and its framing rules.
+The research supports a minimal, endpoint-controlled architecture in which cryptographic authority remains with participants and intermediaries are restricted to transport and coordination. Image carriers are subordinate to a protected message format. Multipart delivery is treated as an integrity and context-binding problem. Concealment and recovery remain optional and evidence-dependent.
 
-3. Parse the versioned payload with strict length and parameter checks. Reject malformed or implausibly expensive KDF parameters before performing resource-intensive work.
+The architecture establishes responsibilities and trust boundaries before committing to a protocol or deployment topology. Its central claim remains a research proposition to be challenged through specification, adversarial evaluation and independent review.
 
-4. Read the salt, nonce, and ciphertext from the payload.
+**Theory only · No implementation · Not audited.**
 
-5. Ask the user for the password and derive the key using the same KDF parameters.
+## Related research artefacts
 
-6. Run authenticated decryption. If the password is wrong or the payload was modified, authentication should fail.
-
-7. Return plaintext only after successful authentication. Do not reveal whether a failure was caused by a wrong password, a modified image, or malformed ciphertext unless the application has a compelling reason to distinguish those cases.
-
-## 10. Steganography: LSB and DCT
-
-10.1 LSB substitution. Least-significant-bit methods alter low-order pixel bits to encode data. They are straightforward to understand and implement, but naive implementations are easy to detect statistically and can be destroyed by resizing, filtering, colour conversion, or lossy compression.
-
-10.2 DCT-based embedding. The Discrete Cosine Transform represents image data in terms of frequency coefficients. Carefully designed schemes can embed data in selected coefficients, often in block-based transforms. However, simply applying a DCT to an entire multi-channel image and replacing the parity of every coefficient is not a correct robust DCT steganography scheme.
-
-10.3 Important correction to the earlier code. The previous sample used cv2.dct on a three-dimensional image array, treated arbitrary coefficient integer parity as a bit channel, repeated the secret text cyclically, and did not encode a length or authenticated framing. OpenCV's DCT API and its input dimensionality requirements also make that exact approach unsuitable as written. The decode example did not reliably reverse the encoding. Do not use those snippets as a working implementation.
-
-10.4 Practical recommendation. Start with a documented, tested lossless PNG embedding scheme with explicit payload length, capacity checks, and an end marker or length prefix. Once the end-to-end encrypted payload format works, evaluate a well-studied transform-domain method if resilience against ordinary image transformations is a requirement. DCT is not automatically more secure or more robust simply because it sounds mathematically impressive.
-
-10.5 Capacity. Payload capacity depends on image dimensions, channels, embedding rate, framing overhead, and the method used. Capacity must be computed before embedding. If the encrypted payload does not fit, reject the operation rather than truncating data or repeating bits.
-
-## 11. Flask Web Application and User Interface
-
-The browser interface can provide an encryption form with an image upload, password, and message, and a decryption form with an image upload and password. A salt field is not necessary in the normal user experience when the server generates a random salt and stores it in the payload.
-
-The encryption endpoint should return a downloadable generated image, not simply report that the operation succeeded. The decryption endpoint should return plaintext only after successful authenticated decryption. Use separate routes or a clearly structured service layer, and avoid storing temporary uploads indefinitely.
-
-Validate every input server-side. HTML form validation improves usability but is not a security boundary. Set request-size limits, image pixel limits, processing timeouts, and clear error handling. Use secure temporary-file handling and clean up temporary artifacts.
-
-For deployment, run Flask behind a production WSGI server and a properly configured reverse proxy or hosting platform. Do not deploy Flask's development server or debug mode to the public internet.
-
-## 12. Browser-to-Server Transport Security
-
-Use HTTPS with modern TLS for all browser-to-server traffic. TLS provides encryption in transit, integrity protection, and server authentication when certificate validation is performed correctly. HTTPS is the baseline; a custom JavaScript encryption layer is not a substitute for it.
-
-PyCryptodome is a Python library and does not run directly in an ordinary browser page. Browser-side cryptography can use the Web Crypto API, but client-side encryption adds key-management, compatibility, and implementation complexity. If the browser encrypts with a public key, the server must have a corresponding private key, and the public key must be authenticated so an attacker cannot substitute their own.
-
-Client-side encryption may be valuable if the goal is to prevent the application server from seeing plaintext. That is a distinct threat model from merely protecting data in transit. It requires a carefully designed protocol, authenticated key distribution, and attention to JavaScript delivery: a compromised server could serve malicious code that captures secrets before encryption.
-
-For the first version, use HTTPS and keep cryptographic processing in a clearly defined backend service. If a zero-knowledge or server-blind design becomes a requirement, treat it as a separate architectural milestone.
-
-## 13. Diffie-Hellman and Elliptic-Curve Diffie-Hellman
-
-Diffie-Hellman (DH) and Elliptic-Curve Diffie-Hellman (ECDH) allow two parties to derive a shared secret over a network without transmitting the shared secret itself. ECDH uses elliptic-curve operations and can provide strong security with comparatively compact public keys.
-
-Key exchange is not automatically authentication. An unauthenticated DH/ECDH exchange is vulnerable to a man-in-the-middle attack: an attacker can establish separate shared secrets with both parties. Real protocols authenticate the exchange, often using certificates, signatures, or a pre-established trust relationship.
-
-For a browser-to-server application, TLS already performs authenticated key agreement and derives traffic keys. A separate key-exchange server is not normally needed just to protect web traffic. If the system later needs end-to-end encrypted communication between users, use an established protocol or vetted library rather than inventing a bespoke exchange protocol.
-
-Argon2 and ECDH solve different problems. Argon2 derives a key from a password. ECDH establishes shared secret material between parties with key pairs. They are not interchangeable, and combining them should only be done through a specified, reviewed protocol.
-
-## 14. Image-Derived Credentials and Hidden Factors
-
-The project explored making access depend on a separate image, perhaps by hashing the image and using the result as additional secret material. This can create a possession factor, but only if the image data is stable, securely controlled, and not easily replaceable or copied by an attacker.
-
-Hashing an image and calling the result a salt does not make the image a secret. If the image is public, its hash is public too. If the image is modified or recompressed, its hash may change completely, causing permanent lockout unless recovery is provided.
-
-If image possession is a genuine requirement, treat the image as a key file or credential input rather than as a salt. Define how the exact bytes are obtained, how backups and recovery work, how users replace the credential, and how compromise is handled. Consider a dedicated random key file or hardware-backed credential instead of relying on an image's pixels.
-
-A hidden text fragment inside an image may be used as an additional factor in an experimental design, but it should not be treated as a substitute for cryptographic key management. If it is meant to be secret, it needs adequate entropy, protected storage, and a secure recovery strategy.
-
-## 15. Threat Model and Security Boundaries
-
-Assets to protect include plaintext messages, passwords, derived keys, encryption metadata, and any sensitive relationship between the carrier image and the hidden payload.
-
-Potential adversaries include network eavesdroppers, users who obtain a stego image but not the password, attackers who modify the image or ciphertext, malicious uploaders, and attackers attempting to exhaust server resources.
-
-Security goals include confidentiality of message contents, detection of tampering, bounded resource use, and reasonable concealment of the payload's existence. These goals are different. AEAD can detect ciphertext modification, but it does not prevent detection of steganography. Steganography can conceal a payload's existence, but it does not stop decryption if the password is compromised.
-
-Out of scope for a simple prototype are guarantees against a compromised endpoint, malicious browser extensions, a compromised server, a malicious operating system, or advanced steganalysis under an unspecified adversary model. These risks should be documented rather than hidden behind claims of being 'unbreakable'.
-
-## 16. Common Failure Modes and Corrections
-
-- Incorrect primitive composition: do not construct XChaCha20-Poly1305 from incompatible low-level cipher and mode classes. Use a vetted high-level AEAD implementation.
-- Reusing a salt: generate a fresh random salt for each independent password-derived payload and store it with the payload.
-- Reusing a nonce: generate a fresh nonce for every encryption operation under a given key.
-- Missing payload framing: include a version and explicit lengths so extraction knows exactly how many bytes to read.
-- No capacity check: verify that the full serialized encrypted payload fits before embedding.
-- Treating a URL as a local file path: safely fetch and validate a remote image if URL input is supported; do not pass a URL directly to an image library expecting a filesystem path.
-- JPEG output after fragile embedding: use a format and embedding method that preserve the embedded data. JPEG recompression can destroy spatial-domain payload bits.
-- Incorrect DCT implementation: the earlier whole-image DCT parity example is illustrative only and should not be used. Implement and test a specified method.
-- Missing nonce and salt during decryption: package them with the ciphertext; do not rely on variables left over from an earlier request.
-- Reusing a KDF object: many KDF implementations permit derive() only once per instance. Create a new KDF object for each derivation, or use the chosen library's documented interface.
-- Revealing plaintext before tag verification: return plaintext only if AEAD authentication succeeds.
-- Debug deployment: never expose Flask debug mode to untrusted networks.
-- Overclaiming security: using several algorithms does not automatically create a stronger system. Correct composition, key management, and tested implementations matter more than algorithm count.
-## 17. Testing and Verification Plan
-
-Unit tests should verify that encryption followed by decryption returns the original byte sequence; a wrong password fails; a modified ciphertext fails authentication; random salts and nonces are generated as expected; and malformed payloads are rejected safely.
-
-Steganography tests should cover empty payloads, payloads at maximum capacity, oversized payloads, binary data containing zero bytes, Unicode messages, corrupted images, unsupported image formats, and extraction from saved output files. Test the actual save/reopen path rather than only in-memory arrays.
-
-Integration tests should exercise the Flask upload and download routes, confirm that temporary files are cleaned up, and check that errors do not leak passwords, keys, plaintext, stack traces, or server filesystem paths.
-
-Security testing should include dependency review, file upload fuzzing, resource-exhaustion checks, SSRF checks if URL fetching exists, HTTPS configuration review, and a threat-model review before public deployment.
-
-## 18. Implementation Roadmap
-
-Phase 1: Establish the environment and dependencies. Pin supported package versions and document the supported Python version.
-
-Phase 2: Implement and test Argon2id derivation and XChaCha20-Poly1305 encryption/decryption independently. Use the library's high-level APIs.
-
-Phase 3: Define and test a versioned binary payload format containing KDF parameters, salt, nonce, and ciphertext.
-
-Phase 4: Implement a simple lossless-image embedding method with payload framing and capacity checks. Verify byte-for-byte recovery after saving and reopening the image.
-
-Phase 5: Add the SecureCommunicator orchestration class and test the complete cryptographic workflow.
-
-Phase 6: Integrate the services into Flask with upload validation, safe responses, size limits, temporary-file cleanup, and HTTPS deployment guidance.
-
-Phase 7: Evaluate the threat model and decide whether a more robust transform-domain steganography method, client-side encryption, or a user-to-user authenticated key exchange is actually required.
-
-Phase 8: Conduct security review and publish clear limitations and recovery procedures.
-
-## 19. Glossary
-
-AEAD: Authenticated Encryption with Associated Data. A construction that provides confidentiality and integrity/authenticity for encrypted data.
-
-Argon2id: A password hashing and key derivation variant designed to make password guessing expensive, using both memory and computation.
-
-Ciphertext: The encrypted representation of plaintext.
-
-DCT: Discrete Cosine Transform, a transform used in image and signal processing.
-
-ECDH: Elliptic-Curve Diffie-Hellman, a key-agreement method.
-
-KDF: Key Derivation Function, a function that derives cryptographic key material from input material.
-
-LSB: Least Significant Bit, often used in simple image data embedding.
-
-Nonce: A value used once per encryption operation under the relevant key, according to the algorithm's requirements.
-
-Plaintext: The original readable message before encryption.
-
-Salt: A non-secret random input to password-based key derivation.
-
-Steganalysis: Techniques used to detect or analyse hidden data.
-
-Steganography: Concealing the existence of a message within a carrier.
-
-TLS: Transport Layer Security, the protocol used by HTTPS to protect network traffic.
-
-## 20. Final Recommendations
-
-Use Argon2id with a fresh random salt, XChaCha20-Poly1305 through a vetted high-level library, and a fresh 24-byte nonce for each encryption operation. Store the salt, nonce, KDF parameters, version, and ciphertext in a defined payload format.
-
-Keep the key derivation, authenticated encryption, steganography, and web routes in separate modules. Let a small orchestration class connect the cryptographic components; do not bury cryptography inside the image-processing code.
-
-Use HTTPS for all browser/server communication. Prefer image uploads over arbitrary remote URLs unless safe URL fetching is a real requirement. Begin with a tested lossless image embedding approach and do not rely on the earlier DCT parity snippets.
-
-Do not claim that a hidden image or multiple layers of algorithms make the system invulnerable. The strongest practical design is one whose cryptographic primitives are standard, whose interfaces are precisely specified, whose failure cases are tested, and whose limits are honestly documented.
-
-## Appendix A: Conceptual Data Flow
-
-**ENCRYPTION**
-
-User message → UTF-8 bytes → Argon2id(password, random salt) → key → XChaCha20-Poly1305(key, fresh nonce, plaintext) → versioned payload → steganographic embedding → lossless output image.
-
-**DECRYPTION**
-
-Input image → extract payload → validate version and lengths → read salt, nonce, and ciphertext → Argon2id(password, salt, parameters) → key → authenticated decryption → plaintext only after tag verification.
-
-**TRANSPORT**
-
-Browser ⇄ HTTPS/TLS ⇄ Flask application. TLS protects traffic in transit; payload encryption protects message contents beyond the transport connection, subject to password and endpoint security.
-
-## Appendix B: Deployment Checklist
-
-- [ ] Supported Python and dependency versions documented and pinned.
-- [ ] Argon2id parameters benchmarked and validated.
-- [ ] Random salt and nonce generated using a cryptographically secure random source.
-- [ ] AEAD high-level API used correctly; no custom cipher composition.
-- [ ] Payload format versioned, length-delimited, and tested.
-- [ ] Image capacity checked before embedding.
-- [ ] Output format preserves the embedding.
-- [ ] Upload size, image dimensions, and processing time bounded.
-- [ ] URL fetching, if present, protected against SSRF.
-- [ ] HTTPS enabled and certificates validated.
-- [ ] Flask debug mode disabled in production.
-- [ ] Passwords, keys, and plaintext excluded from logs.
-- [ ] Temporary files securely managed and cleaned up.
-- [ ] Wrong-password, tampering, malformed-input, and capacity tests pass.
-- [ ] Recovery and limitations documented.
-- [ ] Security review completed before use with high-value data.
-
-
-## Styled diagrams
-
-The companion diagram assets in `../diagrams/` provide a styled visual treatment of the proposed architecture and design decisions:
-
-1. ![Proposed trust boundaries](../diagrams/01-trust-boundaries.png)
-2. ![Message and carrier flow](../diagrams/02-message-carrier-flow.png)
-3. ![Design decision register](../diagrams/03-design-decisions.png)
-
-These figures illustrate a proposed design only. They are not evidence of an implemented or audited protocol.
+- [W1 · Research framing](docs/w1-research-framing.md)
+- [W2 · Threat model](docs/w2-threat-model.md)
+- [W3 · Architecture](docs/w3-architecture.md)
+- [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md)
+- [Traceability register](docs/traceability.md)
+- [Critical review questions](review/REVIEW_QUESTIONS.md)
+- [Editable architecture diagrams](diagrams/README.md)
