@@ -1,0 +1,8 @@
+flowchart LR
+  W1["W1 · Research questions"] --> W2["W2 · Threat model"]
+  W2 --> W3["W3 · Architecture"]
+  W3 --> W4["W4 · Risks and evaluation"]
+  W4 --> T["Traceability register"]
+  T --> R["Critical review"]
+  R -->|"Findings and counter-evidence"| W1
+  R -->|"Required design changes"| W3
