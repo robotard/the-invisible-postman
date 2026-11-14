@@ -43,7 +43,7 @@ X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated as candida
 - Repository: https://github.com/robotard/the-invisible-postman
 - Default branch: `main`
 - W1–W4 and traceability are present as substantive documents.
-- W6 protocol design dossier is drafted at `docs/w6-protocol-specification.md`; it is not a final protocol specification.
+- W6 protocol design dossier is drafted at `docs/w6-protocol-specification.md`, with a protocol decision-flow diagram; neither is a final protocol specification.
 - Reconciliation changes are pushed on `work/reconcile-research-and-repository`; PR #1 is open and not merged.
 - The earlier Python/Flask password-based proposal is retained in the thesis as historical exploration, not the current architecture.
 - No implementation, formal proof or independent security audit is claimed.
