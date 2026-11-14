@@ -1,0 +1,21 @@
+flowchart TD
+  A["Define delivery requirement"] --> B{"Must sender deliver while recipient is offline?"}
+  B -->|No| C["Evaluate reviewed synchronous authenticated session designs"]
+  B -->|Yes| D["Evaluate reviewed asynchronous / prekey-based designs"]
+  C --> E["Bind protocol credentials to verified participant identity"]
+  D --> E
+  E --> F{"What does sender authentication mean?"}
+  F -->|Recipient-side peer authentication| G["Specify directional session authentication"]
+  F -->|Transferable proof required| H["Specify message signatures and attribution limits"]
+  G --> I["Freeze canonical envelope and authenticated context"]
+  H --> I
+  I --> J["Select reviewed KDF / AEAD profile and nonce rules"]
+  J --> K["Specify replay state and key lifecycle"]
+  K --> L["Bind bounded multipart manifest and reconstruction rules"]
+  L --> M["Threat review and adversarial test plan"]
+  M --> N["Only then consider implementation readiness"]
+
+  classDef decision fill:#fff1cc,stroke:#9a6b00,color:#503700
+  classDef output fill:#dcefe5,stroke:#28734a,color:#123d28
+  class B,F decision
+  class C,D,E,G,H,I,J,K,L,M,N output

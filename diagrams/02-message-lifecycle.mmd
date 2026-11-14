@@ -1,0 +1,20 @@
+flowchart TD
+  A["Compose message"] --> B["Verify peer identity"]
+  B --> C["Establish authenticated session"]
+  C --> D["Create versioned message context"]
+  D --> E["Encrypt and authenticate"]
+  E --> F["Form capsule or authenticated multipart set"]
+  F --> G{"Optional concealment?"}
+  G -->|Yes| H["Encode capsule in image carrier"]
+  G -->|No| I["Use supported carrier packaging"]
+  H --> J["Untrusted transport / coordinator"]
+  I --> J
+  J --> K["Extract capsule data"]
+  K --> L["Validate format, set identity, count and ordering"]
+  L --> M{"Complete and consistent?"}
+  M -->|No| X["Reject; do not release plaintext"]
+  M -->|Yes| N["Verify authentication, context and freshness"]
+  N --> O{"Valid?"}
+  O -->|No| X
+  O -->|Yes| P["Decrypt and release plaintext"]
+  P --> Q["Apply local replay and lifecycle policy"]

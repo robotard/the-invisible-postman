@@ -83,10 +83,27 @@ The following decisions must remain open until the research and specification ju
 8. Metadata exposure, retention and coordinator permissions.
 9. Recovery authority, threshold, collusion and share-protection assumptions.
 10. Test methods, justified acceptance criteria and independent review scope.
+11. Synchronous versus asynchronous/offline delivery model and corresponding session protocol.
+12. Recipient-side sender authentication versus transferable message signatures.
 
 Candidate cryptographic primitives must not be treated as a selected or complete protocol.
 
-7. Change-control rule
+7. W6 protocol-decision traceability
+
+W6 decision	Related research/threat	W4 evaluation	Required evidence or decision
+D1: Synchronous or asynchronous delivery	Delayed delivery, recipient offline, prekey exhaustion and replay	E2, E4, E9	Explicit operating requirement and comparison of reviewed session protocols
+D2: Sender-authentication semantics	Impersonation, key substitution and attribution ambiguity	E2, E3	State whether recipient authentication is sufficient or transferable signatures are required
+D3: Identity and key-agreement key relationship	Key substitution and key-purpose confusion	E2, E7	Documented identity bundle and key-binding/rotation rules
+D4: First-contact and key-change ceremony	First-contact substitution and compromised identity key	E2, E7	Verifiable ceremony, failure behaviour and compromised-key recovery path
+D5: Canonical envelope encoding	Ambiguous parsing, downgrade and cross-context substitution	E3	Versioned encoding, bounded fields and authenticated context definition
+D6: KDF, AEAD, key separation and nonce policy	Key reuse, nonce reuse and cryptographic misuse	E1, E3	Complete reviewed profile, domain separation and state/usage bounds
+D7: Replay-state scope and persistence	Replay, stale delivery, rollback and backup restore	E4, E7	Durable state model and fail-safe recovery behaviour
+D8: Multipart manifest and reconstruction	Missing, duplicate, conflicting and cross-message fragments	E3, E5	Authenticated manifest, size bounds and rejection test cases
+D9: Metadata and coordinator data contract	Traffic analysis and intermediary overreach	E1, E9	Metadata inventory, minimum permissions and retention policy
+D10: Carrier profile	Transformation and extraction failure	E6	Defined supported formats and reproducible transformation evidence
+D11: Recovery/concealment necessity	Additional authority, collusion and concealment claims	E1, E6, E8	Evidence of benefit against a defined threat; otherwise remain deferred
+
+8. Change-control rule
 
 When a research finding changes an architectural decision:
 
@@ -99,7 +116,7 @@ When a research finding changes an architectural decision:
 
 Do not silently retrofit the narrative to make a later decision appear inevitable.
 
-8. Current conclusion
+9. Current conclusion
 
 The research currently supports a minimal, endpoint-controlled architecture with an untrusted transport coordinator, cryptographic message protection, optional image-carrier encoding and strict multipart validation.
 
