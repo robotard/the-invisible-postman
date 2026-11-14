@@ -71,6 +71,8 @@ Costs and limits:
 
 Do not invent a custom handshake to bridge these models. First decide whether offline delivery is a core requirement. Then evaluate established, reviewed protocol designs that actually support the required operating model.
 
+**Working recommendation:** Treat asynchronous, recipient-offline delivery as in-scope unless the intended use case is explicitly narrowed. Store-and-forward coordination and image-carrier transport naturally permit delayed delivery; requiring both endpoints online would materially constrain the system. This remains a research assumption to validate, not an adopted protocol decision.
+
 **Open decision D1:** Is asynchronous, recipient-offline sending a mandatory system requirement, or is an online session acceptable for the first research profile?
 
 This decision blocks final selection of the session-establishment protocol.
@@ -328,3 +330,4 @@ The project should not proceed by selecting familiar algorithm names and improvi
 - [Research traceability](traceability.md)
 - [Critical review questions](../review/REVIEW_QUESTIONS.md)
 - [Integrated thesis](../thesis.md)
+- [W6 protocol decision flow](../diagrams/04-protocol-decision-flow.mmd)
