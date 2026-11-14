@@ -28,7 +28,7 @@ The repository records reasoning, design evolution, assumptions, limitations and
 - [x] **W3 · Architecture** — components, message lifecycle, cryptographic boundaries, linked capsules and deferred recovery.
 - [x] **W4 · Risks and evaluation** — failure modes, abuse cases, proposed acceptance criteria and limitations.
 - [x] **W5 · Initial thesis reconciliation** — thesis aligned to W1–W4; protocol details remain open.
-- [ ] **W6 · Protocol specification** — authenticated identity and key establishment, envelope, nonce and key lifecycle, replay and multipart format.
+- [ ] **W6 · Protocol specification (in progress)** — protocol design dossier drafted; asynchronous delivery, sender-authentication semantics, identity binding, cryptographic profile, replay state and multipart rules remain unresolved.
 - [ ] **W7 · Critical review and evaluation design** — adversarial scenarios, test methods, justified thresholds and independent review scope.
 - [ ] **W8 · Publication verification** — link/path checks, diagram rendering, reproducibility and disclosure review.
 
@@ -36,13 +36,15 @@ A checked waypoint means the research artefact exists, not that its proposed sec
 
 ## Candidate technical direction
 
-X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated as candidate mechanisms. They are not an adopted or complete protocol. Key confirmation, identity binding, nonce rules, versioning, error handling, metadata leakage and recovery semantics require explicit specification.
+X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated as candidate mechanisms. They are not an adopted or complete protocol. A reviewed session-establishment framework must be selected to match synchronous or asynchronous delivery. Key confirmation, identity binding, sender-authentication semantics, nonce rules, versioning, error handling, metadata leakage and recovery semantics require explicit specification.
 
 ## Current state
 
 - Repository: https://github.com/robotard/the-invisible-postman
 - Default branch: `main`
 - W1–W4 and traceability are present as substantive documents.
+- W6 protocol design dossier is drafted at `docs/w6-protocol-specification.md`; it is not a final protocol specification.
+- Reconciliation changes are pushed on `work/reconcile-research-and-repository`; PR #1 is open and not merged.
 - The earlier Python/Flask password-based proposal is retained in the thesis as historical exploration, not the current architecture.
 - No implementation, formal proof or independent security audit is claimed.
 
@@ -54,9 +56,10 @@ Do not hide design weaknesses under the label of security through obscurity.
 
 ## Immediate next steps
 
-1. Specify identity verification and authenticated session establishment.
-2. Define a versioned canonical message envelope and authenticated context.
-3. Define nonce, key separation, replay and lifecycle rules.
-4. Specify multipart manifest, completeness and rejection rules.
-5. Evaluate metadata exposure and whether concealment or recovery is justified.
-6. Build a threat-led evaluation plan before any implementation work.
+1. Decide whether offline/asynchronous sending is a core requirement.
+2. Define sender-authentication semantics and the identity/key-binding model.
+3. Select a reviewed session-establishment construction for the chosen operating model.
+4. Finalise the canonical envelope, authenticated context, key separation and nonce policy.
+5. Specify replay-state persistence and multipart manifest/rejection rules.
+6. Evaluate metadata exposure and whether concealment or recovery is justified.
+7. Build a threat-led evaluation plan before any implementation work.
