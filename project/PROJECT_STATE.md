@@ -16,7 +16,7 @@ The reconciliation includes:
 - updated project state and workplan;
 - security-scope notes;
 - critical review questions; and
-- three editable Mermaid diagrams.
+- four editable Mermaid diagrams.
 
 ## Research status
 
@@ -28,7 +28,7 @@ The reconciliation includes:
 
 ## W6 progress
 
-Created `docs/w6-protocol-specification.md` as a protocol design dossier. It identifies:
+Created `docs/w6-protocol-specification.md` as a protocol design dossier and `diagrams/04-protocol-decision-flow.mmd` as its dependency map. It identifies:
 - synchronous versus asynchronous/offline delivery as a foundational decision;
 - identity-key binding and first-contact verification;
 - recipient-side sender authentication versus transferable signatures;
@@ -38,7 +38,7 @@ Created `docs/w6-protocol-specification.md` as a protocol design dossier. It ide
 - authenticated multipart manifest and bounded reconstruction;
 - versioning, downgrade, metadata and resource limits.
 
-The draft deliberately does not select a final cryptographic suite or invent a bespoke handshake. A technical correction is recorded in the multipart section: a ciphertext digest cannot be included in pre-encryption associated data; any post-encryption checksum is only an untrusted early-corruption hint, while the reconstructed object must pass the selected authenticated-encryption verification.
+The draft recommends treating asynchronous delivery as in-scope unless the use case is explicitly narrowed, while leaving D1 open for confirmation. It deliberately does not select a final cryptographic suite or invent a bespoke handshake. A technical correction is recorded in the multipart section: a ciphertext digest cannot be included in pre-encryption associated data; any post-encryption checksum is only an untrusted early-corruption hint, while the reconstructed object must pass the selected authenticated-encryption verification.
 
 ## Remaining research work
 
