@@ -1,0 +1,298 @@
+W4 · Risks and Evaluation
+
+Status: Proposed evaluation framework
+Research basis: W1 · Research Framing; W2 · Threat Model; W3 · Architecture
+Assurance status: Theory only · No implementation · Not audited.
+
+1. Purpose
+
+W4 defines how the proposed architecture should be challenged and evaluated.
+
+It does not report completed tests, measured results or verified security properties. Its purpose is to turn the W2 threat model and W3 architectural responsibilities into explicit evaluation questions, acceptance conditions and unresolved risks.
+
+The evaluation must be capable of rejecting the proposed architecture or requiring its revision. It must not simply confirm the assumptions on which it was designed.
+
+2. Evaluation principles
+
+1. Threat-led: every evaluation activity must map to an identified threat or research question.
+2. Property-specific: confidentiality, authentication, integrity, concealment and availability must not be treated as interchangeable.
+3. Adversarial: tests must consider active manipulation, not just normal message delivery.
+4. Fail-safe: invalid, incomplete or ambiguous inputs must not be silently accepted.
+5. Evidence-based: distinguish design rationale, proposed acceptance criteria, test results and independent assurance.
+6. Proportionate: additional mechanisms require evidence of a corresponding improvement.
+7. Honest limitations: successful evaluation of one property does not establish overall system security.
+
+3. Evaluation domains
+
+E1. Confidentiality and intermediary authority
+
+Threats: unauthorised disclosure, intermediary compromise, excessive service privileges.
+
+Evaluation questions:
+
+* Can the intermediary obtain plaintext from the information and permissions available to it?
+* Does any central component possess the sole means of decryption?
+* Are private keys, plaintext and recovery material excluded from intermediary operations?
+* Are operational logs, diagnostics and error reports capable of exposing protected content?
+
+Proposed acceptance conditions:
+
+* The documented architecture does not grant the intermediary plaintext access or sole decryption authority.
+* The key-management model identifies where every relevant private key is held and used.
+* Inspection of service data flows and logs finds no unintended disclosure of protected content or secret material.
+
+E2. Identity and sender authentication
+
+Threats: first-contact key substitution, impersonation, platform identity confusion.
+
+Evaluation questions:
+
+* How does a participant verify a peer’s cryptographic identity?
+* Can an attacker substitute a public key without detection?
+* Is the sender identity bound to the protected message?
+* What happens when an identity key changes or is compromised?
+
+Proposed acceptance conditions:
+
+* First-contact verification is explicitly specified.
+* Sender authentication is distinct from transport account identification.
+* Substituted or untrusted identity material cannot silently become an accepted peer identity.
+* Identity-key changes trigger a defined verification process.
+
+E3. Message integrity and context binding
+
+Threats: tampering, cross-recipient substitution, cross-session substitution, malformed messages.
+
+Evaluation questions:
+
+* Are sender, recipient, session and message-set context bound to the protected message?
+* Can authenticated metadata be altered independently of the ciphertext?
+* Are unsupported versions and ambiguous encodings rejected?
+* Is the cryptographic construction specified as a complete protocol?
+
+Proposed acceptance conditions:
+
+* Alteration of authenticated content or context is detected.
+* Messages cannot be silently reassigned to another recipient or session.
+* Unsupported or ambiguous message formats are rejected.
+* Algorithm selection, nonce construction, key separation and associated-data rules are documented and independently reviewed.
+
+E4. Replay and freshness
+
+Threats: replayed messages, stale messages, duplicate acceptance.
+
+Evaluation questions:
+
+* What makes a message unique?
+* What freshness policy is applied?
+* How is replay state maintained?
+* What happens if local replay state is lost or restored from backup?
+
+Proposed acceptance conditions:
+
+* Replayed messages are identified according to a documented policy.
+* Duplicate acceptance is prevented within the stated replay-state assumptions.
+* Clock dependence and state-loss behaviour are documented.
+* Expiry is not presented as a substitute for replay protection.
+
+E5. Multipart integrity and reconstruction
+
+Threats: missing, duplicated, reordered, mixed or substituted capsules.
+
+Evaluation questions:
+
+* Can fragments from different messages be combined?
+* Can a partial set be presented as a complete message?
+* Are index, count, set identity and version authenticated?
+* What happens when a fragment is corrupted or permanently unavailable?
+
+Proposed acceptance conditions:
+
+* Incomplete sets are not silently accepted as complete.
+* Duplicate, conflicting, reordered and cross-message capsules are detected or rejected according to explicit rules.
+* Reconstruction produces the original protected message object or fails.
+* Fragmentation is not represented as a confidentiality, redundancy or recovery guarantee.
+
+E6. Carrier integrity and transformation
+
+Threats: resizing, recompression, transcoding, metadata stripping, extraction failure and concealment detection.
+
+Evaluation questions:
+
+* Which carrier transformations are expected to preserve capsule data?
+* Which transformations cause extraction failure?
+* Can corruption be distinguished from an incomplete message?
+* Does optional concealment materially improve a stated objective?
+
+Proposed acceptance conditions:
+
+* Supported transformations are explicitly identified and tested.
+* Unsupported transformations cause safe failure.
+* Extraction errors cannot bypass message authentication.
+* Any concealment claim is limited to the tested carrier formats, transformations, detection methods and threat assumptions.
+
+No claim of universal steganographic resistance is acceptable.
+
+E7. Lifecycle, key rotation and revocation
+
+Threats: compromised keys, stale identities, false expiry or deletion claims.
+
+Evaluation questions:
+
+* How are keys retired and replaced?
+* How are future messages prevented from using revoked identities?
+* What happens to pending or delayed messages?
+* What can and cannot be revoked after plaintext has been obtained?
+
+Proposed acceptance conditions:
+
+* Key rotation and identity-key replacement have documented procedures.
+* Revocation affects future acceptance according to a defined policy.
+* Expiry and revocation do not claim to erase previously obtained plaintext or copies.
+* Device replacement and key compromise are treated as explicit lifecycle events.
+
+E8. Secret handling and endpoint compromise
+
+Threats: logs, crash reports, notifications, backups, local storage and compromised devices.
+
+Evaluation questions:
+
+* Where does plaintext exist during the message lifecycle?
+* Which components can access private keys?
+* Can secrets appear in logs, telemetry, crash reports or notifications?
+* What is the response to suspected endpoint compromise?
+
+Proposed acceptance conditions:
+
+* Secret-handling rules are documented for each endpoint and service boundary.
+* Logging and diagnostics are inspected for accidental secret disclosure.
+* Key compromise has a defined response.
+* The residual risk of a compromised endpoint is explicitly acknowledged.
+
+E9. Metadata and availability
+
+Threats: traffic analysis, participant correlation, timing and volume observation, delivery suppression.
+
+Evaluation questions:
+
+* What can the coordinator and platform observe?
+* Which identifiers, timestamps, sizes and routing relationships are exposed?
+* What information is retained and for how long?
+* Can a malicious intermediary delay, suppress or refuse delivery?
+
+Proposed acceptance conditions:
+
+* Observable metadata is inventoried.
+* Retention and access are documented.
+* No anonymity or unlinkability claim is made without separate evidence.
+* Availability limitations are explicit and are not confused with confidentiality.
+
+4. Cross-cutting adversarial evaluation
+
+Evaluation should include scenarios that combine multiple threats rather than testing every component only in isolation.
+
+Candidate scenarios:
+
+1. A malicious coordinator substitutes a recipient key during first contact.
+2. An attacker replays an otherwise valid message after its intended acceptance period.
+3. A platform recompresses an image carrying one capsule in a multipart message.
+4. An attacker combines valid capsules from two different message sets.
+5. A recipient receives a valid but incomplete capsule set.
+6. A service error causes diagnostic output to include sensitive message material.
+7. A participant replaces a device after suspected key compromise.
+8. Recovery participants collude or disclose their shares, if recovery is eventually included.
+
+Each scenario should record:
+
+* Preconditions and attacker capability.
+* Expected system behaviour.
+* Observable evidence.
+* Pass, fail or inconclusive outcome.
+* Residual risk.
+* Any resulting architecture or protocol change.
+
+5. Evaluation evidence and maturity
+
+The project must distinguish the following evidence levels:
+
+Level	Meaning
+L0 · Conceptual	A requirement or design intention has been stated
+L1 · Specified	A mechanism and its assumptions have been documented
+L2 · Analysed	The design has been examined against identified threats
+L3 · Tested	Defined tests have been executed and results recorded
+L4 · Independently reviewed	Relevant independent specialist review has been completed
+
+These levels are a proposed project evidence model, not an external certification standard.
+
+A documented design intention must never be described as a tested security property. Passing a test suite does not automatically establish resistance to untested attacks.
+
+6. Evaluation artefacts
+
+The evaluation process should eventually produce:
+
+* Threat-to-component traceability.
+* Protocol and message-format specification.
+* Test-case register.
+* Test results and reproducible procedures.
+* Known limitations and residual-risk register.
+* Key-management and lifecycle review.
+* Carrier transformation results, if applicable.
+* Independent cryptographic and implementation review findings.
+
+No numerical thresholds are fixed at this stage. They must be justified by the relevant property and test environment rather than invented to make a design appear measurable.
+
+7. Risks requiring continued scrutiny
+
+Risk	Why it matters	Current treatment
+Identity verification remains underspecified	Authenticated encryption cannot establish who a person is without a trustworthy identity binding	Open protocol decision
+Key lifecycle complexity	Rotation, replacement and compromise may undermine otherwise sound message protection	Open protocol decision
+Metadata exposure	Confidential content does not prevent participant and activity correlation	Explicit residual risk
+Carrier fragility	Media processing may destroy embedded data	Requires testing
+Multipart complexity	Reconstruction creates opportunities for ambiguity and manipulation	Strict validation proposed
+Recovery expansion	Additional participants and shares create new trust and collusion risks	Deferred
+Endpoint compromise	Plaintext and keys are exposed at the endpoints	Residual risk
+False lifecycle claims	Expiry cannot erase information already obtained	Explicit limitation
+Protocol composition errors	Individually sound primitives can be combined incorrectly	Requires complete specification and review
+Excessive architecture	Additional services and dependencies expand the attack surface	Complexity must demonstrate value
+
+8. Evaluation gates
+
+The following gates are proposed before progression to implementation:
+
+Gate 1 · Architecture coherence
+
+* W1 questions map to W2 threats.
+* W2 threats map to W3 responsibilities.
+* No component lacks a stated purpose.
+* Trust boundaries and residual risks are explicit.
+
+Gate 2 · Protocol specification
+
+* Identity verification and authenticated key establishment are defined.
+* Message encoding and cryptographic context are specified.
+* Nonce, key separation, replay and multipart rules are defined.
+* Lifecycle and recovery decisions are explicit.
+
+Gate 3 · Adversarial test design
+
+* Threat scenarios have reproducible test procedures.
+* Expected rejection and failure behaviour is specified.
+* Test assumptions and acceptance criteria are justified.
+
+Gate 4 · Independent review
+
+* Cryptographic design receives appropriate specialist review.
+* Implementation receives separate security review if built.
+* Unresolved findings are recorded rather than hidden by a successful demonstration.
+
+Passing a gate requires evidence. Progression must not be inferred merely because the relevant document exists.
+
+9. W4 conclusion
+
+The architecture is not validated by its elegance, number of components or choice of cryptographic primitives. It must demonstrate that the identified threats are addressed under explicit assumptions, and that its remaining limitations are honestly represented.
+
+The next research priority is to close the protocol decisions that materially affect identity, key establishment, authenticated message context, replay protection and multipart integrity.
+
+Optional concealment and threshold recovery remain conditional. They should advance only if their benefits can be evaluated against their additional risks and complexity.
+
+Theory only · No implementation · Not audited.
