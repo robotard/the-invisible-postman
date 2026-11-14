@@ -71,7 +71,7 @@ These questions are intended to challenge the proposal, not validate it by defau
 40. If symmetric message-authentication keys are used, how is the fact that the recipient also knows the key reflected in claims about authorship?
 41. How are long-term identity keys, key-agreement credentials and message/session keys bound and separated?
 42. Does the multipart manifest avoid circular dependence between ciphertext and associated data, and are any post-encryption checksums incorrectly treated as authentication?
-43. What happens to replay protection and one-time key state after backup restoration, rollback, concurrent initiation or device replacement?
+43. What happens to replay protection and one-time key state after backup restoration, rollback, concurrent initiation or device replacement?\n44. Is post-quantum confidentiality or forward secrecy a requirement, and what does the chosen protocol actually provide for authentication?\n45. What server trust, metadata exposure and denial-of-service risks are introduced by prekey publication and retrieval?\n46. Do the intended privacy properties require deniability, and would transferable signatures undermine that goal?
 
 ## Review outcome
 
