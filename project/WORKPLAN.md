@@ -58,7 +58,7 @@ Do not hide design weaknesses under the label of security through obscurity.
 
 1. Decide whether offline/asynchronous sending is a core requirement.
 2. Define sender-authentication semantics and the identity/key-binding model.
-3. Select a reviewed session-establishment construction for the chosen operating model.
+3. Compare Signal PQXDH and ratcheting designs with Noise-based interactive sessions, then select a reviewed construction for the chosen operating model.
 4. Finalise the canonical envelope, authenticated context, key separation and nonce policy.
 5. Specify replay-state persistence and multipart manifest/rejection rules.
 6. Evaluate metadata exposure and whether concealment or recovery is justified.
