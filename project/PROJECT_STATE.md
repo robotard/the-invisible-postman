@@ -38,13 +38,13 @@ Created `docs/w6-protocol-specification.md` as a protocol design dossier and `di
 - authenticated multipart manifest and bounded reconstruction;
 - versioning, downgrade, metadata and resource limits.
 
-The draft recommends treating asynchronous delivery as in-scope unless the use case is explicitly narrowed, while leaving D1 open for confirmation. It deliberately does not select a final cryptographic suite or invent a bespoke handshake. A technical correction is recorded in the multipart section: a ciphertext digest cannot be included in pre-encryption associated data; any post-encryption checksum is only an untrusted early-corruption hint, while the reconstructed object must pass the selected authenticated-encryption verification.
+The draft recommends treating asynchronous delivery as in-scope unless the use case is explicitly narrowed, and compares Signal PQXDH/ratcheting designs with Noise for interactive sessions. D1 remains open for confirmation. Official protocol references are linked in W6. It deliberately does not select a final cryptographic suite or invent a bespoke handshake. A technical correction is recorded in the multipart section: a ciphertext digest cannot be included in pre-encryption associated data; any post-encryption checksum is only an untrusted early-corruption hint, while the reconstructed object must pass the selected authenticated-encryption verification.
 
 ## Remaining research work
 
 1. Decide whether asynchronous sending to offline recipients is a core requirement.
 2. Decide the required sender-authentication semantics: recipient-side peer authentication or transferable signatures.
-3. Select and review an authenticated session-establishment design appropriate to the operating model.
+3. Compare PQXDH plus a ratcheting message protocol against synchronous Noise-based sessions; select and review a design appropriate to the operating model.
 4. Specify identity verification, key changes, device lifecycle and compromise response.
 5. Finalise canonical envelope encoding, cryptographic profile, key separation and nonce policy.
 6. Specify replay-state scope, persistence and rollback behaviour.
