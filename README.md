@@ -18,11 +18,12 @@ An intermediary may coordinate or transport messages, but is not trusted with pl
 4. [W2 · Threat model](docs/w2-threat-model.md) — assets, actors, assumptions and security goals.
 5. [W3 · Architecture](docs/w3-architecture.md) — component boundaries and message lifecycle.
 6. [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md) — adversarial evaluation framework.
-7. [Traceability](docs/traceability.md) — research-to-threat-to-architecture-to-evaluation mapping.
-8. [Integrated thesis](thesis.md) — consolidated argument and current design position.
-9. [Security notes](SECURITY.md) — scope, limitations and repository hygiene.
-10. [Review questions](review/REVIEW_QUESTIONS.md) — critical review agenda.
-11. [Diagrams](diagrams/) — editable Mermaid source diagrams.
+7. [W6 · Protocol specification dossier](docs/w6-protocol-specification.md) — protocol decisions, envelope, identity, replay and multipart design.
+8. [Traceability](docs/traceability.md) — research-to-threat-to-architecture-to-evaluation mapping.
+9. [Integrated thesis](thesis.md) — consolidated argument and current design position.
+10. [Security notes](SECURITY.md) — scope, limitations and repository hygiene.
+11. [Review questions](review/REVIEW_QUESTIONS.md) — critical review agenda.
+12. [Diagrams](diagrams/) — editable Mermaid source diagrams.
 
 ## Core principles
 
