@@ -281,6 +281,24 @@ No profile is selected in this draft.
 
 Selection requires a written rationale, threat mapping, known limitations, independent cryptographic review and testable acceptance criteria.
 
+### 14.1 Existing protocol families to compare
+
+The following are reference designs for comparison, not automatic adoption:
+
+**Signal PQXDH with a ratcheting message protocol.** The published PQXDH specification is explicitly designed for asynchronous initiation when the recipient is offline and publishes identity/prekey material through a server. It provides post-quantum forward secrecy in the specified construction, while the current specification states that mutual authentication still relies on the discrete-log assumption. It also discusses server trust, replay and identity binding. This makes it a strong comparison point for D1, but its prekey service, key lifecycle, authentication assumptions and metadata exposure must be examined against W2.
+
+The [Signal Double Ratchet specification](https://signal.org/docs/specifications/doubleratchet/) describes per-message keys, a symmetric-key ratchet and a Diffie-Hellman ratchet. It addresses delayed and out-of-order messages using message counters and bounded skipped-message-key storage. It is a candidate for ongoing one-to-one messaging after an initial shared secret is established, not a substitute for identity verification or a complete application protocol. The current specification also discusses post-quantum ratchet extensions; their bandwidth, state and complexity costs need separate evaluation.
+
+**Noise Protocol Framework.** Noise is a framework for specifying authenticated Diffie-Hellman handshakes using defined message patterns, key derivation and AEAD protection. It is useful as a comparison point for interactive session establishment, but it is not by itself a complete asynchronous prekey directory, store-and-forward delivery system or ongoing ratcheting application. Its application responsibilities and chosen handshake pattern must be specified carefully.
+
+### 14.2 W6 recommendation
+
+Given the project's intermediary/coordinator and carrier model, the working baseline should be **asynchronous one-to-one delivery**, unless the intended use case explicitly excludes offline recipients.
+
+For that baseline, compare a documented PQXDH-style asynchronous initial key agreement followed by a reviewed ratcheting message protocol against simpler synchronous Noise-based alternatives. Do not design a new handshake. Do not claim post-quantum authentication merely because a post-quantum KEM is included: the authentication assumptions of the selected revision must be stated.
+
+This is a research recommendation, not a protocol selection. The project still needs to decide whether post-quantum protection is a requirement, how the prekey service is trusted or constrained, and whether deniability or transferable signatures are desired.
+
 ## 15. Decisions register
 
 | ID | Decision | Current status | Blocking consequence |
@@ -313,7 +331,15 @@ Implementation should not begin until the following are specified and reviewed:
 - versioning, downgrade and error-handling rules; and
 - threat-led test cases with justified acceptance criteria.
 
-## 17. Conclusion
+## 17. Reference specifications
+
+- [Signal · PQXDH Key Agreement Protocol](https://signal.org/docs/specifications/pqxdh/) — asynchronous initial key agreement, offline recipient model, prekeys, authentication, replay and server-trust considerations.
+- [Signal · Double Ratchet Algorithm](https://signal.org/docs/specifications/doubleratchet/) — per-message key derivation, ratcheting, out-of-order handling and current post-quantum extension discussion.
+- [Noise Protocol Framework](https://noiseprotocol.org/noise.html) — interactive handshake patterns, key derivation, AEAD processing and application responsibilities.
+
+These references are starting points for protocol comparison, not evidence that The Invisible Postman adopts or implements them.
+
+## 18. Conclusion
 
 W6 narrows the next research task from broad architectural responsibilities to explicit protocol decisions. It identifies asynchronous delivery, identity binding, sender-authentication semantics, canonical encoding, nonce and replay state, and multipart construction as interdependent design problems.
 
