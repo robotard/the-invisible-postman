@@ -109,8 +109,9 @@ Evaluation questions:
 Proposed acceptance conditions:
 
 * Incomplete sets are not silently accepted as complete.
-* Duplicate, conflicting, reordered and cross-message capsules are detected or rejected according to explicit rules.
-* Reconstruction produces the original protected message object or fails.
+* Authenticated logical indices and manifest context permit valid capsules to be reassembled when transport delivery order differs from logical order; arrival order alone is not treated as proof of tampering.
+* A duplicate capsule is never counted as an additional distinct piece. The policy for identical duplicates is explicit; conflicting content for the same index, cross-message substitution, invalid indices and ambiguous manifests fail closed.
+* Reconstruction produces the original protected message object or fails, with explicit size, count, timeout and resource limits.
 * Fragmentation is not represented as a confidentiality, redundancy or recovery guarantee.
 
 E6. Transport-route, carrier integrity and transformation
@@ -119,7 +120,7 @@ Threats: route-specific metadata exposure, size/capacity limits, resizing, recom
 
 The image-carriage route is required within the research scope. Other routes, including file/attachment carriage and conventional messaging transport, are comparison profiles. Comparing routes does not presume that any route is superior or that they provide equivalent delivery semantics.
 
-The evaluation must distinguish the participant-side cryptographic topology from the standalone train. The train is assessed as a low-fidelity, replaceable carriage element, not as a source of cryptographic protection. Encapsulation is assessed for framing, route-context handling, truncation/substitution detection and safe extraction; it must not be credited with confidentiality, authentication, anonymity or integrity unless those properties are supplied and authenticated by the endpoint protocol.
+The evaluation must distinguish the participant-side cryptographic topology from the standalone train. The train is assessed as a low-fidelity, replaceable carriage element, not as a source of cryptographic protection. Sender-side encapsulation and receiving-side decapsulation are assessed for bounded framing, declared-length handling, format/version checks, parser limits, truncation detection, extraction completeness and safe failure. These structural checks do not prove origin or authenticity. Any security-relevant route or capsule binding must be authenticated by the endpoint protocol and verified by the endpoint.
 
 A separate transport-level unlinkability objective may be evaluated for the train: unique image envelopes per carriage instance and variable carrier placement may make simple correlation through carrier reuse or predictable location less straightforward. Evaluate this narrowly under an explicit observer model; do not equate it with participant anonymity.
 
@@ -132,7 +133,9 @@ Evaluation questions:
 * What route profiles are in scope, and what assumptions does each make about the transport service?
 * Can the train be removed or replaced without changing the participant-side cryptographic trust model?
 * Which encapsulation fields are merely operational route metadata, and which require endpoint-authenticated binding?
-* Does any failure of the train or encapsulation layer cause unsafe reinterpretation, partial release or false acceptance?
+* Can the recipient discover the changing carrier through a mechanism that is authenticated without creating a stable, observable rendezvous point?
+* Are carrier metadata removal and the retained-field allowlist verified on the actual output and after relevant platform processing?
+* Does any failure of the train, route adapter, discovery channel or decapsulation layer cause unsafe reinterpretation, partial release or false acceptance?
 * What capacity, size, ordering, metadata, timing and delivery-state information does each route expose or constrain?
 * Which image transformations are expected to preserve capsule data, and which cause extraction failure?
 * How do route substitution, duplicate delivery, delayed delivery, loss and cross-route retries affect message-set validation?
