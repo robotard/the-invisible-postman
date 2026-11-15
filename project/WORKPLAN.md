@@ -43,24 +43,24 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](..
 
 Each work unit should produce a complete, independently useful artifact before dependent work advances. Progress and evidence belong in project/PROJECT_STATE.md, not in this stable roadmap.
 
-### Phase 1 · Repository foundation and critical research practice
+### Phase 1 · Repository foundation and source reconciliation
 
 - [ ] **W0.1 · Repository housekeeping** — verify the live repository and authoritative paths; remove obsolete or conflicting workflow instructions; correct README navigation and stale references; preserve historical files and commit history; establish the current verified baseline.
-- [ ] **W0.2 · Critical self-examination and collaborative research practice** — critically examine the central proposition and existing assumptions; define author responsibility and the purpose of peer discussion; identify relevant disciplinary perspectives; specify how criticism, evidence, dissent, responses and unresolved questions will be recorded; define the requirements for future asynchronous review. The working method is documented in docs/research-practice.md; initial author-identified challenges and evidence needs are recorded in docs/self-review-register.md. The proposed Collaborative Research Governance Framework is documented in docs/collaborative-governance.md, with contribution and decision templates under docs/templates/ and the current project-scoped baseline in docs/adopted-practices.md. The baseline is maintainer-adopted and awaits external review; it is not presented as universally ratified. It explicitly adapts selected practices from OpenSSF, Apache, IETF, CRediT and GitHub, while rejecting inappropriate transfer of badge/score claims, silence-based consensus or running-code requirements to a theory-only project.
-- [ ] **W0.3 · Research-source reconciliation** — compare W1–W4, the active thesis, decision register, traceability and historical source material; identify contradictions, missing provenance, stale references and unsupported claims without erasing useful design history.
+- [ ] **W0.2 · Research-practice foundation** — maintain the existing method for author responsibility, evidence, dissent, attribution and future peer discussion. The core documents already exist: docs/research-practice.md, docs/self-review-register.md, docs/collaborative-governance.md, docs/templates/ and docs/adopted-practices.md. Do not expand review administration or continue routine author challenge reviews during thesis construction unless a specific issue blocks progress or risks embedding a material error. The adopted-practices baseline remains maintainer-adopted and awaits external review; no external ratification is claimed.
+- [ ] **W0.3 · Research-source reconciliation** — immediate construction priority. Compare W1–W4, the active thesis, decision register, traceability and preserved historical source material; identify contradictions, missing provenance, stale references and unsupported claims without erasing useful design history. Integrate the reconciled reasoning into the active thesis and supporting documents.
 
-### Phase 2 · Research foundations
+### Phase 2 · Research foundations and alignment
 
-- [ ] **W1 · Research framing** — problem statement, central question, supporting questions, contribution, scope and non-goals.
-- [ ] **W2 · Threat model** — assets, actors, trust boundaries, attacker capabilities, assumptions and security goals.
-- [ ] **W3 · Architecture** — components, message lifecycle, cryptographic boundaries, linked capsules and recovery model.
-- [ ] **W4 · Risks and evaluation** — failure modes, abuse cases, acceptance criteria, evaluation plan and limitations.
+- [ ] **W1 · Research framing** — align the problem statement, central question, supporting questions, contribution, scope and non-goals with the complete thesis.
+- [ ] **W2 · Threat model** — align assets, actors, trust boundaries, attacker capabilities, assumptions and security goals with the complete thesis.
+- [ ] **W3 · Architecture** — reconcile components, message lifecycle, cryptographic boundaries, transport encapsulation, train/decapsulation, linked capsules and optional recovery.
+- [ ] **W4 · Risks and evaluation** — connect failure modes, abuse cases, route comparisons, acceptance criteria, evaluation plans and limitations to the thesis claims.
 
-### Phase 3 · Review and manuscript development
+### Phase 3 · Thesis construction, traceability and later review
 
-- [ ] **W5 · Review framework** — reviewer guidance, structured issues, evidence requirements, contribution workflow, response register and explicit handling of dissent. Use repository discussion tools only as available; do not imply a live forum or active reviewer group where none exists.
-- [ ] **W6 · Integrated thesis** — develop the full research argument across problem framing, design evolution, security-property distinctions, trust model, endpoint cryptographic reasoning, message structure, carriage-method comparison, lifecycle, evaluation and limitations. Keep transport substantial but proportionate. Reconcile W1–W4, decisions, traceability, sources and author self-critique; preserve unresolved questions and review prompts. The current structural revision is a working draft, not completion of W6.
-- [ ] **W7 · Research traceability and decision reconciliation** — ensure research questions, threats, claims, architectural choices, evaluation proposals and reviewer contributions remain linked.
+- [ ] **W6 · Integrated thesis** — current substantive priority. Develop the full research argument across problem framing, design evolution, security-property distinctions, trust model, endpoint cryptographic reasoning, message structure, carriage-method comparison, lifecycle, evaluation and limitations. Keep transport substantial but proportionate. Reconcile W1–W4, decisions, traceability, sources and only those author challenges that materially affect correctness. Preserve unresolved questions and avoid unsupported claims. The current structural revision is a working draft, not completion of W6.
+- [ ] **W7 · Research traceability and decision reconciliation** — maintain links among research questions, threats, claims, architectural choices, evaluation proposals, source evidence and any future contributions.
+- [ ] **W5 · Review framework and reviewer preparation** — defer substantive expansion until a workable thesis candidate exists. Then prepare concise reviewer guidance, evidence requirements, contribution workflow, response register and explicit handling of dissent. Use repository discussion tools only as available; do not imply a live forum or active reviewer group where none exists. External peer review remains the lowest priority until the thesis is coherent enough to review as a whole.
 
 ### Phase 4 · Visual communication and publication
 
