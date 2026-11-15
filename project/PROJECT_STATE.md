@@ -328,3 +328,42 @@ Continue author-led SELF-04 to SELF-12 and W0.3 source reconciliation. Then defi
 - Verified W4 and traceability read-back after commits c5e3b35d32726c0dd13b1f30f0f9800d7127b3cb and 5629dbd5b488d44cd83c81e067c8422ad6fc1b20.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Research-construction priority reset
+
+### Researcher direction
+
+The researcher has clarified the immediate sequencing:
+
+- Routine author-led review is lower priority unless a specific issue blocks responsible progress or risks embedding a material error.
+- External peer review is the lowest priority until a workable, coherent thesis exists.
+- The current runway should be used to build, reconcile and strengthen the thesis rather than repeatedly presenting fragments for review or expanding review administration.
+- The researcher wants concise summaries of items actually committed to GitHub, with direct links and verification status, before undertaking their own review.
+
+### Operating response
+
+- Added a research-construction priority and review-gate section to `project/WORKPLAN.md`.
+- Added a GitHub deployment-digest protocol: report exact changed paths, purpose, commit SHA and link, read-back/verification performed, remaining gaps and any genuinely blocking decision.
+- The digest must be based on live GitHub results. Uncommitted drafts and planned work must not be described as deployed.
+- Clarified that this is a GitHub-first execution/reporting routine, not a new CI bot. Do not add untested GitHub Actions or automated research-quality judgements.
+- Existing author-review and peer-governance records are preserved, but they must not displace construction of the integrated thesis.
+
+### Verified deployment
+
+- `project/WORKPLAN.md` updated and read back successfully.
+- Commit: `2042d79f4e25b832a69fef3f6e59f0d0c53035d2`
+- Blob SHA after read-back: `b04f2384001d4cbee4af13e1f54c7573cc329720`
+
+### Next construction work
+
+1. Reconcile the integrated thesis against W1–W4, decision register and traceability.
+2. Inspect W3's component inventory and lifecycle for the standalone train, encapsulation, unique carrier envelope, placement, recipient discovery, decapsulation and metadata-removal boundaries.
+3. Reconcile W2/W4 actor-specific metadata and behavioural-linkability threats with the thesis.
+4. Build the route comparison and failure-semantics reasoning, keeping image carriage required and alternative routes comparative.
+5. Integrate and verify primary sources and claim boundaries.
+6. Only surface researcher decisions where a genuine blocking ambiguity remains.
+
+No author review or external peer review is being represented as completed or invited.
+
+**Theory only · No implementation · Not audited.**
