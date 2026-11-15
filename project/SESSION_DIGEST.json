@@ -49,23 +49,31 @@
     "No unsupported security or review claims"
   ],
   "last_verified": {
-    "active_markdown": 20,
-    "relative_links_checked": 51,
-    "broken_links": 0,
+    "active_markdown": 22,
+    "relative_links_checked": 0,
+    "broken_links": null,
     "status_string_present": true,
     "active_archive_instructions": false,
-    "tree_files": 26,
-    "tree_markdown": 21
+    "tree_files": 27,
+    "tree_markdown": 22
   },
-  "verification_scope": "Repository path/link and status audit only; excludes external URL availability, heading-anchor rendering, formal correctness and security audit.",
+  "verification_scope": "Targeted read-back of assessment, source register, project state, work log, digest, README and diagram index; recursive tree confirmed 27 files. No new full-tree relative-link audit was run in this batch.",
   "open_research_threads": [
-    "recipient discovery/retrieval privacy: full-scan, stable locator, one-use capability and oblivious retrieval",
-    "carrier metadata allowlist distinguishing descriptive fields, structural/codec requirements and signal-level traces",
-    "platform-specific image transformation and carrier extraction behaviour",
+    "originality gap and direct comparison with closest existing systems",
+    "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
+    "carrier metadata allowlist and platform transformations",
     "traffic/access-pattern and behavioural correlation evaluation",
-    "parser/resource-exhaustion and multipart safety budgets",
-    "full-text verification of source claims, including OMR formal guarantees and performance"
+    "parser/resource-exhaustion and multipart safety evidence",
+    "full-text verification of newly added prior-art sources"
   ],
-  "last_verified_batch": "2026-11-15: hard contribution/bias assessment added; source register expanded with SRC-024–SRC-027; project checkpoint pending read-back.",
-  "audit_boundary": "Assessment and source-register writes require read-back verification; no full-tree link/status audit run in this batch."
+  "last_verified_batch": "2026-11-15: hard contribution/bias assessment added and read back; SRC-024–SRC-027 added and source register read back; project state, work log, README and diagram index updated and read back; recursive main tree confirmed 27 files.",
+  "audit_boundary": "Assessment and source-register writes require read-back verification; no full-tree link/status audit run in this batch.",
+  "last_commits": {
+    "assessment": "9271cc79db1716d2d2b8e90affeffed8e6c06ae9",
+    "source_register": "c3286a2208578ae08341fc6f7a7ef13cfe9e1241",
+    "project_state": "e0b6e2704fff337ff32419aa52d2e32608b9ea0b",
+    "work_log": "5d0263a73128cf0c32092ab35b0cf51c43c922bf",
+    "readme": "b347d4c8083859d34d4c9a17fdc405bee19659f1",
+    "diagram_index": "c27626e11f82c1a75a2434304709ff26e9e72451"
+  }
 }
