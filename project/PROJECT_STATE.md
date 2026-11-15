@@ -1,3 +1,11 @@
+## 2026-11-15 · Method correction and mandatory session continuity rule
+
+- Retracted the premature use of **hypothesis** for the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
+- Research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions must remain distinct.
+- Concrete operating rule: every work session must use and reconcile all three working documents: this project state, [the workplan](WORKPLAN.md) and [the work log](WORK_LOG.md).
+- Before stopping, all three must agree on what is complete or explicitly parked. A parked item must include its current state, evidence, blockers/dependencies, exact next action and relevant repository paths. The session digest is refreshed after these three documents, not used as their substitute.
+- This rule applies to every future session and is now recorded in the machine-readable digest and workplan.
+
 # The Invisible Postman: Project State
 
 **Researcher:** @robotard  
@@ -10,10 +18,10 @@
 ### Completed and read-back verified
 
 - Added [the thesis contribution and bias assessment](../docs/thesis-contribution-and-bias-assessment.md), with a weighted, explicitly provisional assessment of originality, theoretical coherence, usefulness, security/privacy reasoning, falsifiability and scope feasibility.
-- Identified the strongest current contribution hypothesis as a lifecycle-wide analysis of endpoint-controlled messaging over replaceable untrusted carriage, especially the interaction between image carriage, recipient discovery/retrieval and cross-layer privacy leakage. This remains a hypothesis, not an originality finding.
+- Identified the strongest current contribution direction as an emergent proposition: a lifecycle-wide analysis of endpoint-controlled messaging over replaceable untrusted carriage, especially the interaction between image carriage, recipient discovery/retrieval and cross-layer privacy leakage. Its originality remains unestablished.
 - Recorded bias controls for image-route commitment, architecture-by-accumulation, novelty-by-combination, security-language inflation, threat-model sprawl, source-confirmation bias and metaphor/terminology bias.
 - Expanded the source register with PerfOMR (2024), Oblivious Signaling (2026), dead-drop covert messaging (2024) and image-based diffusion covert messaging (2025). Newly added works are explicitly marked as abstract/overview-level inspections; full-text verification remains outstanding.
-- Added a direct “go” decision: continue thesis construction, but do not claim originality as established. Candidate B (end-to-end delivery privacy analysis) is the leading contribution hypothesis, supported by A (responsibility-separated architecture) and C (route comparison/evaluation).
+- Added a direct “go” decision: continue thesis construction, but do not claim originality as established. Candidate B (end-to-end delivery privacy analysis) is the leading potential contribution direction, supported by A (responsibility-separated architecture) and C (route comparison/evaluation).
 - No diagram work or implementation was started. Diagrams remain downstream of the contribution and argument being stable.
 
 ### Hard judgement
