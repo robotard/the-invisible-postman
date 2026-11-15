@@ -51,7 +51,7 @@ This is theory-led architectural research. It proceeds by making the proposition
 
 The method is iterative rather than confirmatory. A design choice is not treated as correct because it is elegant, familiar or already recorded in the repository. Each choice must state the problem it addresses, the assumptions it needs, the alternatives considered, the costs it introduces and the evidence that could challenge it. Where evidence is absent, the document must say so. Where a decision is unresolved, the thesis must preserve that uncertainty rather than fill it with an attractive guess.
 
-The work is informed by the active research framing, threat model, architecture and evaluation documents, the decision register and author-led self-review. Those supporting documents are working research artifacts, not independent validation. Source reconciliation and a claim-to-source register remain necessary before the manuscript can be considered academically complete.
+The work is informed by the active research framing, threat model, architecture and evaluation documents, the decision register and author-led self-review. Those supporting documents are working research artifacts, not independent validation. Source reconciliation and a claim-to-source register remain necessary before the manuscript can be considered academically complete. The current [prior-art comparison](docs/prior-art-comparison.md) records the full-text comparisons and the limits of what those sources establish; it is a working research artifact, not a settled originality finding.
 
 ## 2. Origin and evolution of the research
 
