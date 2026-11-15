@@ -159,3 +159,38 @@ Continue Phase 1 in order:
 7. Stabilise the manuscript before further diagrams and reviewer PDF work.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Established framework comparison and adaptation
+
+### Completed and verified
+
+- Compared the proposed collaborative governance model with official OpenSSF Best Practices Badge criteria, OpenSSF Scorecard, Apache Software Foundation governance, IETF RFC 7282 rough-consensus guidance, CRediT contributor roles and GitHub review controls.
+- Updated docs/collaborative-governance.md with an explicit "borrow, adapt and refuse carefully" analysis for each model.
+- Added D-09 to docs/decision-register.md, recording the selected adaptations and explicit exclusions.
+- Updated project/WORKPLAN.md so future work uses established frameworks rather than inventing governance mechanisms unnecessarily.
+- Confirmed the distinctions:
+  - OpenSSF Badge criteria can inform an evidence-backed checklist, but this theory-only repository must not claim a badge or treat self-assessment as peer review.
+  - OpenSSF Scorecard may later assess software repository security posture, but cannot score thesis quality, protocol correctness or scientific validity.
+  - Apache's public asynchronous deliberation and reasoned objections are useful; its institutional roles and lazy-consensus rules are not imported, and silence is not consent.
+  - IETF rough-consensus objection handling is useful; "running code" is not made a gate for theory-only work.
+  - CRediT offers a contribution vocabulary, not an authorship test; attribution remains consent-based and tied to accepted work.
+  - GitHub issues, pull requests and protected-branch reviews are useful mechanisms, subject to actual permissions and settings.
+- Added primary source links for each framework in the governance document.
+- Verified successful commits:
+  - Governance framework: c35304dade24a5483e5ac01ae76c76cde4808190
+  - Decision register D-09: 97f2e4b1ea53fe10c1488b070d2284c32746b8c0
+  - Workplan adaptation note: pending verification below.
+
+### Not completed
+
+- The frameworks have not been independently reviewed or formally ratified by external participants.
+- No OpenSSF badge, Scorecard run, GitHub protection rule or automated adoption workflow has been enabled.
+- No multi-party consortium is claimed.
+- This is a research-method and governance-document adaptation only, not implementation of the messaging system.
+
+### Next
+
+Continue W0.2/W0.3: complete author-led claim review and reconcile the active thesis with W1–W4 and the decision register. Invite external review of the governance framework before operationalising its proposed ratification rules.
+
+**Theory only · No implementation · Not audited.**
