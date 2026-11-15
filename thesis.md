@@ -10,9 +10,9 @@
 
 ## Abstract
 
-The Invisible Postman investigates whether image-carried messaging can be designed so communicating endpoints retain control of plaintext and cryptographic authority while bots, messaging platforms, image hosts, and storage services act as untrusted intermediaries. Images may transport encrypted message material; optional steganographic techniques may attempt to conceal its presence. Neither the carrier nor concealment provides cryptographic confidentiality, sender authentication, or identity assurance.
+The Invisible Postman investigates whether image-carried messaging can be designed so communicating endpoints retain control of plaintext and cryptographic authority while bots, messaging platforms, image hosts, and storage services act as untrusted intermediaries. Image carriage is a required transport route within the research. Other routes may be compared as distinct carriage profiles. Optional steganographic techniques may attempt to conceal the presence of encrypted material within an image, but do not provide cryptographic protection. Neither the carrier nor concealment provides cryptographic confidentiality, sender authentication, or identity assurance.
 
-The architecture separates endpoint identity and key management, authenticated key establishment, message encryption, sender authentication, message-envelope integrity, multipart capsule handling, carrier processing, intermediary coordination, and lifecycle policy. Recovery is treated as a separate capability with explicit governance and collusion assumptions, not as a synonym for ciphertext fragmentation.
+The architecture separates endpoint identity and key management, authenticated key establishment, message encryption, sender authentication, message-envelope integrity, multipart capsule handling, a first-class transport-route layer, carrier-specific processing, intermediary coordination, and lifecycle policy. Recovery is treated as a separate capability with explicit governance and collusion assumptions, not as a synonym for ciphertext fragmentation.
 
 The intended contribution is a transparent architecture whose trust boundaries, assumptions, failure modes, and limitations can be examined. The design remains provisional. Its cryptographic primitives, message format, identity-verification process, recovery model, and carrier strategy require further specification and evaluation.
 
@@ -26,7 +26,7 @@ Supporting questions concern endpoint trust; intermediary visibility and capabil
 
 ## 2. Scope, contribution, and non-goals
 
-The research considers user-controlled endpoints, endpoint-held plaintext and private keys, authenticated key establishment, explicit peer verification, authenticated encryption, sender authentication, versioned message context, image-carried capsules, optional concealment, untrusted coordination, expiry/revocation, and optional threshold-controlled recovery.
+The research considers user-controlled endpoints, endpoint-held plaintext and private keys, authenticated key establishment, explicit peer verification, authenticated encryption, sender authentication, versioned message context, a transport-route layer with image carriage as a required route, optional concealment, untrusted coordination, expiry/revocation, and optional threshold-controlled recovery. Alternative carriage routes are comparison profiles, not substitutes for examining the image route.
 
 The intended contribution is a theory-led architecture and rationale that separates security properties, makes trust boundaries explicit, records assumptions and failure modes, distinguishes fragmentation from secret sharing, and proposes testable acceptance criteria.
 
