@@ -8,7 +8,7 @@
 
 This document records how research questions and identified threats influence the proposed architecture, how design responses should be evaluated, and how critical feedback should be connected to changes in the research.
 
-It preserves the reasoning chain from research to design. It must not imply that a proposed mitigation has been implemented, tested or independently verified.
+It preserves the reasoning chain from research to design. It must not imply that a proposed mitigation has been implemented, tested or independently verified. The [prior-art comparison](prior-art-comparison.md) records the current full-text comparison of recipient-retrieval and covert-carriage systems; its conclusions remain provisional.
 
 The governing design principle is:
 
