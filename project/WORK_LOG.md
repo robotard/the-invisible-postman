@@ -279,3 +279,15 @@ No cryptographic protocol or transport implementation has been created. No secur
 - Workplan: recorded in the subsequent roadmap commit.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Thesis-first execution and GitHub review digest
+
+- Researcher reprioritised the work: defer routine author-led review unless necessary to unblock or prevent a material error; keep external peer review at the lowest priority until a workable thesis exists.
+- Updated `project/WORKPLAN.md` with an explicit construction-first sequence and review gates.
+- Added a GitHub deployment-digest routine requiring exact paths, purpose, commit links, actual read-back/verification, outstanding gaps and only genuinely blocking decisions.
+- Explicitly did not add a CI bot or untested GitHub Actions. The digest is generated from actual GitHub writes and read-backs.
+- Updated `project/PROJECT_STATE.md` with the new priority, verified workplan commit and next construction tasks.
+- Verified both updated files by fetching them after successful commits.
+
+**Theory only · No implementation · Not audited.**
