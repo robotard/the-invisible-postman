@@ -140,8 +140,8 @@ An issue remains open until its evidence, response and disposition are recorded.
 - **Section/location:** Thesis §§10–11; W1 RQ7; W4 §§2–9; traceability evidence model
 - **Claim or assumption challenged:** The evaluation domains are broad, but measurable acceptance criteria, baselines, reproducible procedures and stopping rules remain incomplete.
 - **Reviewer question:** Which observations would count as failure of the central proposition? How will the work compare with simpler alternatives? Which tests can support only narrow claims, and which questions require formal analysis or specialist review?
-- **Evidence needed:** Research-method justification; testable hypotheses; baseline systems; defined adversary and test environment; measurable outcomes; reproducibility plan; independent review criteria.
-- **Proposed action:** Build an evaluation matrix linking each research question and threat to a hypothesis, method, evidence type, limitation and falsification condition. Do not invent numerical thresholds before their rationale is established.
+- **Evidence needed:** Research-method justification; claims or propositions to be evaluated; baseline systems; defined adversary and test environment; measurable outcomes; reproducibility plan; independent review criteria.
+- **Proposed action:** Build an evaluation matrix linking each research question and threat to the relevant claim or emergent proposition, evaluation method, evidence type, limitation and conditions that would weaken or displace it. Do not invent numerical thresholds before their rationale is established.
 - **Priority:** Critical
 - **Status:** Open · Author-identified; not externally reviewed
 - **Response/resolution:** W4 defines evaluation domains and proposed conditions, but does not yet provide a complete experimental or analytical protocol.
