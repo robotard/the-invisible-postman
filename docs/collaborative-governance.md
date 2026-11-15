@@ -266,15 +266,93 @@ A practice may be proposed for adoption only when all applicable items are evide
 - [ ] Merge commit SHA and baseline version recorded.
 - [ ] Automated repository checks passed, where configured.
 
-## 13. External foundations and source notes
+## 13. Existing frameworks: borrow, adapt and refuse carefully
 
-- CRediT Contributor Role Taxonomy, official resource hub: https://credit.niso.org/
-- CRediT contributor roles and guidance on role assignment and contributor confirmation: https://credit.niso.org/contributor-roles/
-- GitHub documentation, protected branches and required pull-request reviews: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches
-- GitHub documentation, standardising pull requests: https://docs.github.com/en/pull-requests/reference/managing-and-standardizing-pull-requests
+This framework should not reinvent mature open-source and research-governance practice. The following models provide useful components, but each has a different purpose and must not be treated as interchangeable.
 
-These sources inform attribution vocabulary and available repository controls. They do not validate this project's governance design or its research claims.
+### 13.1 OpenSSF Best Practices Badge
 
-## 14. Assurance
+**Borrow:** its public, criteria-based self-assessment; explicit contribution instructions; documented governance and roles; traceable version-controlled changes; and progressively stronger maturity expectations.
+
+**Adapt:** maintain a local evidence-backed checklist for the research repository. Mark each criterion as applicable, not applicable with rationale, met with evidence, partially met or not yet assessed. Do not award ourselves a badge or imply certification.
+
+**Do not copy blindly:** the OpenSSF criteria are designed for FLOSS software projects. This repository is currently a theory-only research project with no implementation. Software-specific requirements must be marked not applicable or deferred, not claimed as satisfied. The badge is voluntary project self-certification, not independent peer review and not proof that a research claim is correct.
+
+Source: https://openssf.org/projects/best-practices-badge/ and https://www.bestpractices.dev/en/criteria
+
+### 13.2 OpenSSF Scorecard
+
+**Borrow:** the principle that repeatable, automated checks can expose specific repository security and maintenance risks.
+
+**Adapt:** later, use narrowly scoped checks for repository hygiene and supply-chain posture if software is introduced: branch protection, dependency update practices, token permissions, signed releases and workflow hardening, where applicable.
+
+**Do not misuse:** Scorecard assesses software-project security practices. Its scores must not become a score for thesis quality, cryptographic correctness, reviewer competence or scientific validity. It is not a substitute for threat analysis or independent protocol review.
+
+Source: https://openssf.org/projects/scorecard/
+
+### 13.3 Apache project governance
+
+**Borrow:** transparent asynchronous discussion, documented roles, public decision records, and the expectation that objections explain their technical concern and, where possible, suggest an alternative.
+
+**Adapt:** invite reviewers to state the technical basis of objections and possible remedies, while preserving a right to raise a valid concern without being forced to design the replacement themselves.
+
+**Do not copy blindly:** Apache's "lazy consensus", committer/PMC roles and voting rules belong to its established project communities and institutional governance. This single-owner research repository does not yet have that community, representation or authority. Silence must not be interpreted as consent here.
+
+Source: https://www.apache.org/foundation/how-it-works/
+
+### 13.4 IETF rough consensus
+
+**Borrow:** evaluate whether objections have been understood and substantively addressed rather than counting votes or requiring unanimity. Preserve dissent where the group decides an objection does not block progress.
+
+**Adapt:** require a written disposition for each material objection: accepted, partly accepted, rejected with reasons, unresolved, or deferred pending evidence.
+
+**Do not import "running code" as a gate:** IETF's engineering context includes running implementations. This project is explicitly theory-only. Practical implementation evidence may be proposed as future research, but its absence must not be hidden or replaced with a false claim of validation.
+
+Source: RFC 7282, https://www.rfc-editor.org/rfc/rfc7282
+
+### 13.5 CRediT contributor roles
+
+**Borrow:** the standardised vocabulary for describing multiple kinds of research contribution and the recommendation that contributors can review and confirm their assigned roles.
+
+**Adapt:** map each accepted contribution to the precise text, analysis, decision or artifact affected. Use the taxonomy as a description of contribution, not as an automatic authorship test or a proxy for endorsement.
+
+Source: https://credit.niso.org/ and https://credit.niso.org/contributor-roles/
+
+### 13.6 GitHub-native collaboration controls
+
+**Borrow:** issues for discussion, pull requests for proposed changes, version-specific review records, protected branches and required reviews where available.
+
+**Adapt:** begin with transparent manual review and durable records. Enable repository controls only after the actual permission model and reviewer participation are understood.
+
+**Do not assume:** a comment from an external participant is the same as a formal approving review under GitHub's permission model. Record the actual form of review. Repository protection status remains unverified until the relevant settings can be inspected.
+
+Source: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches
+
+### 13.7 Synthesis for this project
+
+The proposed governance model is a deliberate combination, not a claim of novelty:
+
+- OpenSSF contributes the evidence-backed checklist and repository-practice maturity idea.
+- Apache and IETF contribute transparent asynchronous deliberation and reasoned objection handling, adapted without importing their institutional authority or silence-based consensus.
+- CRediT contributes a common vocabulary for contribution attribution.
+- GitHub contributes versioned discussion, review and merge mechanisms.
+- Human maintainers remain accountable for research judgement, scope, adoption and dissent.
+
+The resulting method should be tested as a manual process before any automation is enabled. No framework, badge, score or workflow can certify the thesis as true.
+
+## 14. External foundations and source notes
+
+- OpenSSF Best Practices Badge: https://openssf.org/projects/best-practices-badge/
+- OpenSSF Best Practices criteria: https://www.bestpractices.dev/en/criteria
+- OpenSSF Scorecard: https://openssf.org/projects/scorecard/
+- Apache Software Foundation, How it works: https://www.apache.org/foundation/how-it-works/
+- IETF RFC 7282, On Consensus and Humming in the IETF: https://www.rfc-editor.org/rfc/rfc7282
+- CRediT Contributor Role Taxonomy: https://credit.niso.org/
+- CRediT role descriptions: https://credit.niso.org/contributor-roles/
+- GitHub protected branches and required reviews: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches
+
+These sources inform the adapted governance design. They do not validate this project's governance model, its security architecture or any thesis claim.
+
+## 15. Assurance
 
 **Theory only · No implementation · Not audited.**
