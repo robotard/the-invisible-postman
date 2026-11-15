@@ -224,3 +224,16 @@ Continue W0.2/W0.3: complete author-led claim review and reconcile the active th
 Resume W0.2 author-led claim review and W0.3 source reconciliation. Do not automate ratification or enable branch protection before the manual process, contributor permissions and review model have been independently examined.
 
 **Theory only · No implementation · Not audited.**
+
+
+### Follow-up repository audit
+
+- Rechecked the recursive main-branch tree after the governance work: 22 files, 18 Markdown files (17 active Markdown files plus one preserved archived Markdown source).
+- Rechecked active Markdown status statements: all 17 active Markdown files contain the exact required status. The archived short thesis remains unchanged.
+- Rechecked relative Markdown links: 34 links, zero broken targets.
+- Rechecked active documents for ZIP/archive-generation instructions: none found.
+- Added the exact project status statement to both active templates and verified their saved contents:
+  - Contribution/review template: ad7ee31500b2eec37b23a2a827f5ac763d1ca4e9
+  - Decision template: 2b5153411800efbf26dcd84eacef749a7de7d340
+
+**Theory only · No implementation · Not audited.**
