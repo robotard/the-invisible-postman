@@ -28,6 +28,12 @@ These figures should be designed only after the manuscript, terminology and supp
 | 11 · Lifecycle, revocation and recovery boundaries | Section 9 | Session/key lifecycle, device loss, expiry, revocation and optional recovery | Show what cannot be recalled after plaintext or keys are obtained |
 | 12 · Claim-to-evidence traceability | Section 10 | Research questions, objectives, threats, components, tests and evidence maturity | Separate proposals, tested observations and independently reviewed claims |
 
+## Current gating decision · 2026-11-15
+
+The hard contribution and bias checkpoint is recorded in [the thesis contribution assessment](../docs/thesis-contribution-and-bias-assessment.md). The central contribution is not yet established; the leading hypothesis concerns lifecycle-wide delivery privacy across endpoint authority, replaceable carriage, recipient discovery/retrieval and cross-layer leakage. Existing prior art on dead-drop pipelines, image steganography and oblivious retrieval must be compared in full before new figures are drawn.
+
+Do not create Figures 02 or 04–12 yet. First stabilise the central claim and the prior-art comparison. Existing Figures 01 and 03 remain historical/conceptual aids and must not be treated as evidence that the current architecture is final.
+
 ## Figure design rules
 
 1. Place each figure beside the argument it explains; do not collect all diagrams at the end as a substitute for exposition.
