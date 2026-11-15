@@ -12,9 +12,9 @@
   ],
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
   "priority": [
-    "W0.3 source reconciliation",
+    "W0.3 source reconciliation and full-text source review",
     "W6 integrated thesis construction",
-    "W7 traceability"
+    "W7 traceability and decision reconciliation"
   ],
   "defer": [
     "routine author review unless blocking/material",
@@ -23,11 +23,14 @@
     "implementation"
   ],
   "next": [
-    "Verify current branch/head and reread read_first files",
-    "continue claim-level source review and thesis-to-W1–W4 reconciliation",
-    "resolve recipient discovery/rendezvous, metadata allowlist, observer model, multipart failure semantics",
-    "deploy only verified changes and read them back",
-    "refresh this digest and checkpoint"
+    "Verify current branch/head and reread authoritative project documents",
+    "Review SRC-020 formal definitions, proof assumptions, construction and performance",
+    "Continue discovery/retrieval comparison without selecting a mechanism prematurely",
+    "Develop format-specific metadata classification after carrier encoding assumptions are clearer",
+    "Research parser resource bounds and derive profile-dependent limits",
+    "Continue thesis-to-W1–W4 reconciliation and claim-level source verification",
+    "Deploy only verified changes and read them back",
+    "Refresh digest and project checkpoint"
   ],
   "open": [
     "source full-text verification and literature gaps",
@@ -53,5 +56,15 @@
     "tree_files": 26,
     "tree_markdown": 21
   },
-  "verification_scope": "Repository path/link and status audit only; excludes external URL availability, heading-anchor rendering, formal correctness and security audit."
+  "verification_scope": "Repository path/link and status audit only; excludes external URL availability, heading-anchor rendering, formal correctness and security audit.",
+  "open_research_threads": [
+    "recipient discovery/retrieval privacy: full-scan, stable locator, one-use capability and oblivious retrieval",
+    "carrier metadata allowlist distinguishing descriptive fields, structural/codec requirements and signal-level traces",
+    "platform-specific image transformation and carrier extraction behaviour",
+    "traffic/access-pattern and behavioural correlation evaluation",
+    "parser/resource-exhaustion and multipart safety budgets",
+    "full-text verification of source claims, including OMR formal guarantees and performance"
+  ],
+  "last_verified_batch": "2026-11-15: SRC-020–SRC-023 added; thesis, W2, W3, W4, traceability, workplan, work log and project state updated and read back.",
+  "audit_boundary": "Changed documents were fetched after their writes. No new full-tree link/status audit was run in this batch."
 }
