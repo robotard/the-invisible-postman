@@ -379,6 +379,7 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/decision-register.md` — design decisions, rationale and unresolved status.
 - `docs/self-review-register.md` — author-identified challenges and evidence needs.
 - `docs/traceability.md` — links between research questions, threats, components and evaluation.
+- `docs/source-register.md` — authoritative technical sources, protocol comparators, metadata standards and claim-to-source gaps.
 - `project/WORKPLAN.md` and `project/PROJECT_STATE.md` — roadmap and verified checkpoint.
 
 ## Appendix D. Illustration guide
