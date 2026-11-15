@@ -65,6 +65,6 @@
     "parser/resource-exhaustion and multipart safety budgets",
     "full-text verification of source claims, including OMR formal guarantees and performance"
   ],
-  "last_verified_batch": "2026-11-15: SRC-020–SRC-023 added; thesis, W2, W3, W4, traceability, workplan, work log and project state updated and read back.",
+  "last_verified_batch": "2026-11-15: SRC-020–SRC-023 added; thesis, W1–W4, traceability, workplan, work log and project state updated and read back.",
   "audit_boundary": "Changed documents were fetched after their writes. No new full-tree link/status audit was run in this batch."
 }
