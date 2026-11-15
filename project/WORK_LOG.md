@@ -173,3 +173,15 @@ Re-read the active thesis and W1–W4 before updating the author challenge regis
 - No substantive scope decision was forced before evidence gathering.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Transport routes and contributor continuity
+
+- Researcher clarified that message carriage must be represented as explicit transport routes. Image carriage is a required route and remains central to the research; alternative routes are comparison profiles, not replacements. Recorded D-10.
+- Corrected SELF-01: the prior suggestion to demote image carriage to an optional case study was too broad. The remaining question is comparative value and trade-offs, not whether the image route belongs in scope.
+- Updated thesis, W1 and W3 to introduce a first-class transport-route layer and route-specific adapters.
+- Added docs/idea-intake-and-continuity.md for durable idea capture, provenance, triage, resurfacing, absent/dormant contributors, contributor return and the no-contributor operating mode.
+- Updated collaborative governance, README and WORKPLAN.
+- All changed files were read back after successful commits. No external review, contributor activity or automation is claimed.
+
+**Theory only · No implementation · Not audited.**
