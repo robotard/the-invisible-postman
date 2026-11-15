@@ -407,3 +407,42 @@ Scope note: this audit covers relative path targets, not external URL availabili
 - No CI bot, GitHub Action, messaging implementation or diagram was added.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Hard contribution and bias checkpoint
+
+### Completed and read-back verified
+
+- Added [the thesis contribution and bias assessment](../docs/thesis-contribution-and-bias-assessment.md), with a weighted, explicitly provisional assessment of originality, theoretical coherence, usefulness, security/privacy reasoning, falsifiability and scope feasibility.
+- Identified the strongest current contribution hypothesis as a lifecycle-wide analysis of endpoint-controlled messaging over replaceable untrusted carriage, especially the interaction between image carriage, recipient discovery/retrieval and cross-layer privacy leakage. This remains a hypothesis, not an originality finding.
+- Recorded bias controls for image-route commitment, architecture-by-accumulation, novelty-by-combination, security-language inflation, threat-model sprawl, source-confirmation bias and metaphor/terminology bias.
+- Expanded the source register with PerfOMR (2024), Oblivious Signaling (2026), dead-drop covert messaging (2024) and image-based diffusion covert messaging (2025). Newly added works are explicitly marked as abstract/overview-level inspections; full-text verification remains outstanding.
+- Added a direct “go” decision: continue thesis construction, but do not claim originality as established. Candidate B (end-to-end delivery privacy analysis) is the leading contribution hypothesis, supported by A (responsibility-separated architecture) and C (route comparison/evaluation).
+- No diagram work or implementation was started. Diagrams remain downstream of the contribution and argument being stable.
+
+### Hard judgement
+
+The thesis's strongest reasoning is the separation of security properties and the insistence that endpoint cryptographic authority remain independent of carrier and intermediary. Its most promising potential contribution is treating publication, discovery, retrieval, collection, decapsulation, validation and human/metadata correlation as one connected delivery-privacy problem.
+
+The largest academic risk is originality. Existing work already addresses image steganography, dead-drop messaging pipelines and private recipient retrieval. Combining known mechanisms is not sufficient. A direct prior-art matrix and full-text comparison are now required before the contribution can be stated strongly.
+
+### Provisional weighted assessment
+
+- Originality/differentiation: 2/5 (low confidence; 25% weight)
+- Theoretical coherence: 4/5 (medium confidence; 20%)
+- Practical usefulness: 3/5 (low–medium confidence; 15%)
+- Security/privacy reasoning: 4/5 (medium confidence; 15%)
+- Evaluation/falsifiability: 3/5 (medium confidence; 15%)
+- Scope/feasibility: 2.5/5 (medium confidence; 10%)
+- Indicative weighted construction-readiness: 3.0/5. This is a planning signal, not a thesis grade, novelty score or security rating.
+
+### Next construction priority
+
+1. Full-text compare OMR, PerfOMR and Oblivious Signaling.
+2. Full-text compare the 2024 dead-drop pipeline and 2025 image-diffusion work.
+3. Build a prior-art matrix mapping candidate contributions to existing work and remaining gaps.
+4. Sharpen the central research question and contribution statement from that matrix.
+5. Reassess which thesis diagrams are stable enough to represent the resulting argument.
+
+**Theory only · No implementation · Not audited.**
+
