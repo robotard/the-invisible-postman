@@ -88,6 +88,8 @@ Use the W4 evidence model:
 
 These are internal project labels, not certification levels.
 
+The initial [research source register](source-register.md) records authoritative specifications, protocol comparators, metadata standards, source status and claim areas. It is a starting bibliography, not evidence that every thesis claim has been verified against the full source.
+
 Current evidence is predominantly conceptual and specified. Some architectural reasoning has been analysed against the threat model. No implementation tests or independent audit are claimed. No external peer review should be implied until contributions have actually been received and evaluated.
 
 ## 6. Unresolved decisions
