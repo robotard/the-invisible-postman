@@ -178,3 +178,6 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/w3-architecture.md` — components, lifecycle, envelope concepts, capsule handling, and open decisions.
 
 The design-decision diagram is maintained at `diagrams/03-design-decisions.svg`. It includes the original password-derived choice, its rationale and the later architectural evolution. The figure is explanatory only and does not imply implementation or validation.
+
+
+The ideation and design-evolution workflow is illustrated in `diagrams/01-ideation-and-design-evolution.svg`. It records the rationale for the initial password-derived model and the subsequent expansion of the research scope.
