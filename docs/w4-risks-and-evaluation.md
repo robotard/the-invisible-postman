@@ -112,6 +112,8 @@ Proposed acceptance conditions:
 * Authenticated logical indices and manifest context permit valid capsules to be reassembled when transport delivery order differs from logical order; arrival order alone is not treated as proof of tampering.
 * A duplicate capsule is never counted as an additional distinct piece. The policy for identical duplicates is explicit; conflicting content for the same index, cross-message substitution, invalid indices and ambiguous manifests fail closed.
 * Reconstruction produces the original protected message object or fails, with explicit size, count, timeout and resource limits.
+* Tests exercise declared-length mismatches, excessive fragment counts, oversized manifests/headers, malformed nesting, decompression expansion, repeated retries and concurrent incomplete sets; record CPU, memory, disk and elapsed-time behaviour.
+* Limits are justified against an explicit device and route profile, and rejection occurs before unbounded allocation or expensive decoding where possible.
 * Fragmentation is not represented as a confidentiality, redundancy or recovery guarantee.
 
 E6. Transport-route, carrier integrity and transformation
@@ -212,6 +214,8 @@ Evaluation questions:
 * Which identifiers, timestamps, sizes, flow durations, packet/byte counts, service endpoints, carrier fingerprints and routing relationships are exposed?
 * What information is retained, by whom, for how long and under which access assumptions?
 * Can a stable locator, publication schedule or retrieval pattern link a recipient to a carrier?
+* How do recipient-side full scanning, stable authenticated locators, one-use/short-lived capabilities and private or oblivious retrieval compare under the same observer and collusion assumptions?
+* Does capability delivery merely move the observable link to another channel, and what does the lookup service learn from each request, retry or failure?
 * Can timing and size observations correlate sender and recipient events even when message contents remain encrypted?
 * How do repeated schedules, response intervals, device/platform habits and staged social-engineering prompts affect correlation?
 * Can a malicious intermediary delay, suppress or refuse delivery?
@@ -222,6 +226,7 @@ The evaluation must distinguish a baseline that merely rotates carriers or varie
 Proposed acceptance conditions:
 
 * An actor-by-actor metadata and observer inventory is recorded, including publication, discovery and retrieval.
+* Carrier metadata tests distinguish descriptive EXIF/IPTC/XMP fields, filenames and embedded previews from structural/codec information and image-signal fingerprints. Each named platform/route is tested separately for resizing, recompression, transcoding, field retention and extraction success.
 * Retention and access assumptions are documented.
 * Correlation experiments state the observer vantage, dataset, event definition, features, thresholds, false-positive/negative rates and limitations.
 * Carrier uniqueness and variable placement are not treated as evidence of anonymity or unlinkability.
