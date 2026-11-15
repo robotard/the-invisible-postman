@@ -141,7 +141,7 @@ Recommended sequence:
 10. Run repository checks for required metadata, valid links, unique IDs and consistent status labels.
 11. If a later challenge succeeds, create a superseding decision rather than silently rewriting history.
 
-The baseline should be a versioned document, not an invisible convention. Each adopted entry links to its originating proposal, review record, decision and merge commit.
+The baseline is maintained in [Adopted Research Practices](adopted-practices.md), a versioned document rather than an invisible convention. Each adopted entry links to its originating proposal, review record, decision and merge commit. The current index is explicitly maintainer-adopted and awaiting external review; it does not claim consortium ratification.
 
 ## 8. Attribution and contributor recognition
 
@@ -197,6 +197,12 @@ For each adopted decision, record a mapping:
 | Person or pseudonym | Exact work supplied | Role(s) | File, section, issue or commit | What was actually incorporated | Yes / No / Pending |
 
 A person's suggestion may be partly accepted, adapted or rejected. Record that accurately. Do not imply that the contributor endorses the final form unless they explicitly confirm it.
+
+### 8.5 Contribution-rights attestation and DCO
+
+The Developer Certificate of Origin (DCO) is a useful model for attesting that a contributor has the right to submit a contribution under the project's stated licence. It is not a review record, authorship taxonomy, originality guarantee or endorsement. The repository currently has no verified `LICENSE` file or declared contribution licence in its root. For that reason, a DCO sign-off requirement is deferred until the project chooses and documents its licensing and contribution terms. Do not request a DCO sign-off against an unspecified licence.
+
+Source: https://developercertificate.org/ and https://www.eclipse.org/legal/dco/dco.html
 
 ## 9. Asynchronous collaboration through GitHub
 
