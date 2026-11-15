@@ -110,3 +110,22 @@ This register records why significant design choices were made, changed, narrowe
 **Source basis:** See [Collaborative Research Governance Framework, section 13](collaborative-governance.md#13-existing-frameworks-borrow-adapt-and-refuse-carefully).
 
 **Review trigger:** Reassess when independent reviewers participate, when the repository becomes a software project, or when a genuine multi-party consortium is formed.
+
+
+## D-11 · Separate the passenger security topology from the standalone train
+
+**Status:** Adopted as an architectural clarification by the researcher · Exact cryptographic protocol and transport encapsulation remain open.
+
+**Decision:** Treat the participant-side cryptographic topology and the transport "train" as separate architectural elements with distinct responsibilities. The participants ("passengers") perform their own concise, necessary cryptographic roles within the stronger endpoint topology. This includes the intended agreement/key-establishment and message-protection responsibilities; the precise meaning and construction of any anonymous agreement remain to be specified. The train is a standalone, deliberately limited, low-fidelity transport element that carries an already protected object. It must not become a dependency for participant trust, key agreement, identity, encryption, sender authentication or message authority.
+
+**Encapsulation boundary:** A carrier-facing encapsulation layer may package the protected object into a form the train can carry, preserve framing and route context, and support detection of truncation, substitution or extraction failure. Any security-relevant binding must be authenticated by the endpoint-controlled message protocol. Encapsulation by itself is not encryption, authentication, anonymity or a guarantee of integrity.
+
+**Train boundary:** The train may provide carriage, route selection, basic transport coordination and route-specific handling. It may be inspected, delayed, copied, transformed, substituted or unavailable. Its design should minimise assumptions and expose its limits. It must not inspect or reinterpret protected message semantics beyond what carriage requires.
+
+**Image route:** Steganography or another image-carriage technique may be used as a low-fidelity route mechanism. It belongs to the train/carrier side, not the passenger security topology. Image carriage remains a required research route under D-10. Steganography is optional and is not a security foundation. Other low-fidelity routes may be considered only as transport profiles.
+
+**Rationale:** The train should assist the movement and packaging of protected material without absorbing or weakening the stronger security roles of the participants. This separation makes the transport replaceable and independently assessable: if the train is removed or replaced, the passenger-side security model remains conceptually intact.
+
+**Open work:** Define the passenger-side topology and its exact agreement properties; define the train's narrow service contract; specify the encapsulation boundary and authenticated fields; distinguish transport metadata from message semantics; and evaluate loss, transformation, substitution, replay, route changes and extraction failure. Do not infer anonymity from the phrase "anonymous agreement" without a precise threat model and protocol definition.
+
+Theory only · No implementation · Not audited.
