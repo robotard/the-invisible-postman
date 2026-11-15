@@ -13,7 +13,8 @@ The architecture must support:
 * Endpoint-controlled plaintext and private keys.
 * Confidentiality and authenticated sender identity as distinct properties.
 * An intermediary that can coordinate and transport messages without possessing the sole means of decryption.
-* Image-carried message capsules, with concealment treated as optional and separate.
+* A first-class transport-route layer, including image-carried message capsules as a required route and other routes as comparison profiles.
+* Route-specific carrier adapters, with concealment treated as optional and separate.
 * Reliable identification and validation of multipart message sets.
 * Explicit replay, expiry, revocation and recovery semantics.
 * Testable boundaries between components and their responsibilities.
@@ -40,11 +41,15 @@ The architecture treats the following as separate requirements:
 
 A successful encryption operation does not, by itself, establish the sender’s human identity.
 
-2.3 The carrier is not the security boundary
+2.3 Transport routes and carrier adapters
 
-An image is a transport container. It is not a key, identity credential, source of guaranteed entropy, or substitute for authenticated encryption.
+The transport-route layer carries a protected message between endpoints. It is a first-class architectural concern because routes determine packaging, capacity, transformation exposure, routing metadata, ordering, delivery behaviour and extraction failure modes.
 
-The encrypted and authenticated capsule must remain meaningful independently of any optional steganographic layer.
+Image carriage is a required route profile in this research. Other routes, such as file/attachment carriage and conventional messaging transport, may be modelled as comparison profiles. Their inclusion does not displace the image route or imply that one route is superior.
+
+Each route adapter must preserve the opaque protected message or detect when it cannot. Route-specific handling must not silently change authenticated content or message context. Image-specific encoding and extraction belong to the image adapter. Optional steganographic concealment is a separate sub-layer within that route and is not a substitute for encryption, authentication or integrity.
+
+An image is a transport container. It is not a key, identity credential, source of guaranteed entropy, or substitute for authenticated encryption. The protected capsule must remain meaningful independently of optional concealment.
 
 2.4 Complexity must earn its place
 
@@ -140,9 +145,13 @@ The receiver must reject incomplete, duplicated, reordered, conflicting or cross
 
 Fragmentation is a transport and packaging mechanism. It is not a cryptographic recovery scheme.
 
-3.6 Carrier encoder and decoder
+3.6 Transport-route manager and carrier adapters
 
-Responsible for placing capsules into image or other supported media carriers and extracting them.
+Responsible for selecting, describing and invoking a supported carriage route, then returning extracted protected capsules to the endpoint for validation.
+
+The route manager handles route selection and route-level metadata. Each adapter handles its own carrier encoding, transport constraints and extraction. The image adapter is required in the research scope; other adapters may be defined as comparison profiles.
+
+The image carrier adapter is responsible for placing capsules into image carriers and extracting them. Optional concealment is an image-route sub-layer, not a general transport guarantee.
 
 This boundary must not:
 
