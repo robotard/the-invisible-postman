@@ -85,11 +85,21 @@ Do not create a repository ZIP unless direct GitHub publication proves unavailab
 ## Remaining after this checkpoint
 
 1. Publish or verify the authoritative W1 and W2 source documents in the repository; the review-candidate archive contains them, but their repository paths still need to be checked and populated without duplicating or overwriting newer material.
-2. Reconcile the existing diagram set with the newly explicit password decision and verify that all referenced diagram paths exist in GitHub.
+2. Publish or verify the remaining trust-boundary and message-carrier diagrams; only the updated design-decisions SVG has been published and verified in this pass.
 3. Review the integrated thesis against W1–W4 as a whole, including terminology, decision references, and claim discipline.
 4. Verify repository links and document consistency, then prepare the next review-ready manuscript state.
 
 **Current next task:** Complete the W1/W2 and diagram publication/consistency pass. Keep the thesis's password rationale intact throughout.
+
+
+## Diagram and publication update
+
+- Added `diagrams/03-design-decisions.svg` directly to GitHub. The updated figure now includes the original password-derived approach, why it was chosen, and why the broader architecture later evolved.
+- Added the diagram reference to the integrated thesis and README.
+- Fetched the SVG, thesis and README from GitHub after publication. Read-back checks confirmed all three references and the password-decision content.
+- Diagram commit: `606d7f105e29a04b1b828cf92df1315e8ccfd4ae`
+- Thesis diagram reference: `97b1d7a75448334830341a6ae8dff2ce1a12bee1`
+- README diagram link: `ecd75274fb47d780265d81408d6eaeb556217805`
 
 ## GitHub-first operating rules
 
