@@ -1,7 +1,7 @@
 # W1 · Research Framing
 
 **Project:** The Invisible Postman  
-**Subtitle:** A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging  
+**Subtitle:** A Theory-Based Architecture for Endpoint-Controlled Cryptographic Messaging with Image Carriage  
 **Researcher:** @robotard  
 **Version:** 1.0 working draft  
 **Status:** Theory only · No implementation · Not audited
