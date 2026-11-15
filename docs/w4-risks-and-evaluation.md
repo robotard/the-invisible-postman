@@ -120,6 +120,19 @@ Threats: route-specific metadata exposure, size/capacity limits, resizing, recom
 
 The image-carriage route is required within the research scope. Other routes, including file/attachment carriage and conventional messaging transport, are comparison profiles. Comparing routes does not presume that any route is superior or that they provide equivalent delivery semantics.
 
+### Route comparison matrix
+
+This is an evaluation plan, not a report of measured results. Each profile must be assessed under a stated platform, format, payload size, observer model and delivery configuration. A generic label such as "end-to-end messaging" is not enough to establish the behaviour of a particular service.
+
+| Route profile | What the comparison must establish | Distinct conditions to examine | Claim boundary |
+|---|---|---|---|
+| Image-carried protected capsules, without concealment | Whether image carriage offers a defensible transport property or use-case benefit beyond simply carrying an encrypted object | Carrier format, payload capacity, image transformation, embedded metadata, file-level identifiers, publication/discovery/retrieval, multipart extraction and failure | Encryption and authentication belong to the endpoint protocol; the image itself supplies neither |
+| Image-carried protected capsules, with optional concealment | Whether concealment adds a measurable benefit beyond the image-carriage baseline | Payload rate, cover-image selection, detector/analyst model, false positives and negatives, resizing/recompression/transcoding, moderation and extraction fragility | No generic claim of undetectability or stronger cryptographic protection |
+| Encrypted file or attachment carriage | How a protected object behaves when carried as a conventional file or attachment | File metadata, filenames, attachment identifiers, service scanning/transformation, size limits, access controls, storage/retention, download interruption and locator exposure | A simpler carrier may meet the same confidentiality objective; this baseline must be taken seriously |
+| Conventional end-to-end messaging transport | Which properties are provided by a named, documented messaging system and which remain service-visible | Identity/key verification model, service-side metadata, attachment processing, delivery/read receipts, device synchronisation, backups, message retention and failure semantics | Do not generalise from one application to all end-to-end messaging systems; document the selected comparator and its configuration |
+
+Across all profiles, record: confidentiality boundary; sender and peer authentication assumptions; metadata visible to each actor; capacity and size constraints; transformations; ordering and duplicate delivery; publication, discovery and retrieval; timing and availability; usability/accessibility; operational dependencies; and safe failure behaviour. Where a dimension cannot be compared fairly, state why rather than forcing a score.
+
 The evaluation must distinguish the participant-side cryptographic topology from the standalone train. The train is assessed as a low-fidelity, replaceable carriage element, not as a source of cryptographic protection. Sender-side encapsulation and receiving-side decapsulation are assessed for bounded framing, declared-length handling, format/version checks, parser limits, truncation detection, extraction completeness and safe failure. These structural checks do not prove origin or authenticity. Any security-relevant route or capsule binding must be authenticated by the endpoint protocol and verified by the endpoint.
 
 A separate transport-level unlinkability objective may be evaluated for the train: unique image envelopes per carriage instance and variable carrier placement may make simple correlation through carrier reuse or predictable location less straightforward. Evaluate this narrowly under an explicit observer model; do not equate it with participant anonymity.
