@@ -138,7 +138,7 @@ A route abstraction and comparative evaluation framework in which one protected 
 - Strength: potentially useful to system designers; makes image carriage testable against simpler alternatives.
 - Weakness: a comparison table alone is not a contribution. It needs a defensible taxonomy, reproducible evaluation method or new insight.
 
-**Provisional direction:** B as the main research contribution, supported by A as the architectural foundation and C as the evaluation method. This is the best current hypothesis, not a settled conclusion.
+**Provisional direction:** B as the main research contribution, supported by A as the architectural foundation and C as the evaluation method. This is the leading working direction, expressed as an emergent proposition rather than a settled conclusion.
 
 ## 7. Required evidence before claiming originality
 
