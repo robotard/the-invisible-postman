@@ -1,53 +1,72 @@
- # The Invisible Postman
+# The Invisible Postman
 
 **A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging**  
 Researcher: `@robotard`
 
 > **Status: Theory only · No implementation · Not audited.**
 
-This repository documents a research proposal for endpoint-controlled encrypted messaging that may use images as carriers and optional steganographic concealment. It separates encryption, sender authentication, identity verification, carrier handling, multipart integrity, lifecycle policy, and optional threshold recovery.
+This repository documents a research proposal for endpoint-controlled encrypted messaging that may use images as carriers and optional steganographic concealment. It separates encryption, sender authentication, identity verification, carrier handling, multipart integrity, lifecycle policy and optional threshold recovery.
 
 ## What this repository is
+
 - A theory-led architecture and design rationale.
-- A provisional research framing and threat model.
-- Styled diagrams and a decision register.
+- Research framing, threat model, architecture and risk/evaluation work.
+- A record of design evolution and decisions.
 - Candidate cryptographic directions and open questions.
+- A research-practice framework for author self-examination and constructive peer scrutiny.
 - Proposed evaluation and independent-review criteria.
 
 ## What it is not
+
 - Not a working messaging application.
 - Not a complete protocol specification.
 - Not formally verified or independently audited.
 - Not evidence of measured resistance to steganalysis.
-- Not a guarantee of anonymity, delivery, remote erasure, or metadata protection.
+- Not a guarantee of anonymity, delivery, remote erasure or metadata protection.
 
 ## Start here
-1. `project/WORKPLAN.md` — stable roadmap and waypoint definitions.
-2. `project/PROJECT_STATE.md` — changing progress record.
-3. `thesis.md` — thesis text in Markdown.
-4. `docs/the-invisible-postman-thesis.docx` — thesis copy with styled diagram assets embedded.
-5. `docs/W1-research-framing.md` and `docs/W2-threat-model.md` — supporting research artifacts.
-6. `docs/decision-register.md` — design choices, rationale, changes and rejected approaches.
-6. `review/REVIEW_QUESTIONS.md` — open questions for critical review.
+
+1. [Workplan](project/WORKPLAN.md) — stable roadmap and work-unit definitions.
+2. [Project state](project/PROJECT_STATE.md) — changing, verified checkpoint.
+3. [Integrated thesis](thesis.md) — active thesis manuscript.
+4. [Research practice](docs/research-practice.md) — critical self-examination, peer discussion, dissent and contribution principles.
+5. [W1 · Research framing](docs/w1-research-framing.md) — problem, questions, scope and intended contribution.
+6. [W2 · Threat model](docs/w2-threat-model.md) — assets, actors, trust boundaries and attacker capabilities.
+7. [W3 · Architecture](docs/w3-architecture.md) — logical components and responsibilities.
+8. [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md) — failure modes and proposed evaluation.
+9. [Research traceability](docs/traceability.md) — links between questions, threats, architecture and evaluation.
+10. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
+11. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
 
 ## Ideation and design evolution
 
-- [From idea to architecture](diagrams/01-ideation-and-design-evolution.svg) illustrates the original password-based concept, the reasons for it, and the research evolution towards endpoint-controlled trust.
-- [Design decisions](diagrams/03-design-decisions.svg) summarises major decisions and refinements.
+- [From idea to architecture](diagrams/01-ideation-and-design-evolution.svg) illustrates the initial password-based concept, its rationale and limits, and the research evolution towards endpoint-controlled trust.
+- [Design decisions](diagrams/03-design-decisions.svg) summarises major design choices and refinements.
 
-## Design rationale
+## Preserved historical editions
 
-- [Design decision register](docs/decision-register.md) records why the initial password-derived model was chosen and why the wider architecture evolved.
-- [Design decisions diagram](diagrams/03-design-decisions.svg) provides a visual summary.
+These are historical source editions, not the active thesis manuscript:
+
+- [Archived thesis DOCX](archive/the-invisible-postman-thesis.docx)
+- [Archived short thesis source](archive/thesis-source-short.md)
+
+They are retained unchanged. The active manuscript is thesis.md.
 
 ## Core principles
+
 - Endpoints retain plaintext and private keys.
-- Treat relays, platforms, image hosts, and storage as untrusted for plaintext confidentiality.
+- Relays, platforms, image hosts and storage are treated as untrusted for plaintext confidentiality.
 - Images are carriers, not keys or guaranteed entropy sources.
-- Authenticate keys and verify identity explicitly.
-- Distinguish ciphertext fragmentation from threshold secret sharing.
-- Expiry/revocation cannot recall plaintext or keys already obtained.
-- Publish limitations as well as design rationale.
+- Cryptographic key authentication and identity verification must be explicit.
+- Ciphertext fragmentation is distinct from threshold secret sharing.
+- Expiry and revocation cannot recall plaintext or keys already obtained.
+- Design complexity must justify its place through a research objective or threat response.
+- Claims, limitations, evidence, criticism and unresolved disagreement must remain visible.
 
-See `SECURITY.md` for disclosure boundaries and claim discipline.
+## Research ethos
 
+> **Never confuse agreement with progress.**
+
+The authors are responsible for examining their own reasoning. Peer discussion is invited to challenge, deepen and improve the work, not merely to validate it. Reasoned dissent and unresolved questions are retained as part of the research record.
+
+**Theory only · No implementation · Not audited.**
