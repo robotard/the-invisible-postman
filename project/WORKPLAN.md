@@ -10,6 +10,10 @@ Develop a critically examined thesis for an architecture in which encrypted mess
 
 This repository records the reasoning, design evolution, assumptions, limitations, evidence and review questions. It does not claim a working application, complete protocol or proven security.
 
+## Session handover digest
+
+Start a new work session with [project/SESSION_DIGEST.json](SESSION_DIGEST.json), then verify the live branch and read the authoritative project state, workplan, work log and thesis. The digest is a compact retrieval index only; it must not replace source documents, repository inspection or commit/read-back verification. Refresh it after each meaningful verified batch.
+
 ## Governing research ethos
 
 > **Never confuse agreement with progress.**
