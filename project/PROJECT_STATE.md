@@ -11,6 +11,16 @@
 - It is a deliberately small retrieval index for new chat sessions, not a second source of truth. Re-read the live project state, roadmap, work log and thesis before acting.
 - Refresh it only after material work has been committed and verified. Never let its cached counts or summaries override a fresh repository check.
 
+## 2026-11-15 · Machine-readable session handover
+
+- Added `project/SESSION_DIGEST.json`, a deliberately compact, machine-readable retrieval index for continuity between chat sessions.
+- Linked it from the README, this project checkpoint and the workplan; the workplan now requires a fresh repository check and rereading authoritative documents before continuing.
+- The digest records current priorities, deferrals, open research threads, invariants and the scope of the last repository audit. It explicitly does not supersede live documents or verification.
+- Created and fetched the digest successfully, then updated and fetched all three navigation/checkpoint documents.
+- Updated the digest's repository file counts to account for its addition. The previous content audit remains the last verified link/status audit; the digest addition itself has not yet been included in a new full-tree link audit.
+
+**Theory only · No implementation · Not audited.**
+
 ## Governing ethos
 
 > **Never confuse agreement with progress.**
