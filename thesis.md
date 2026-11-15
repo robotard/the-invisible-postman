@@ -181,3 +181,5 @@ The design-decision diagram is maintained at `diagrams/03-design-decisions.svg`.
 
 
 The ideation and design-evolution workflow is illustrated in `diagrams/01-ideation-and-design-evolution.svg`. It records the rationale for the initial password-derived model and the subsequent expansion of the research scope.
+
+**Project status:** Theory only · No implementation · Not audited.
