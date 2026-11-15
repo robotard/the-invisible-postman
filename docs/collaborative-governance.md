@@ -204,6 +204,12 @@ The Developer Certificate of Origin (DCO) is a useful model for attesting that a
 
 Source: https://developercertificate.org/ and https://www.eclipse.org/legal/dco/dco.html
 
+## 8.6 Idea intake and contributor continuity
+
+A collaborative process must remain useful when there are no external contributors, when previous contributors become absent or dormant, and when a strong idea risks being overlooked. The project therefore maintains a durable idea-intake and continuity process in [Idea Intake and Contributor Continuity](idea-intake-and-continuity.md). It records provenance, triage, resurfacing, dormant participation, attribution confirmation and the no-contributor operating mode.
+
+Silence is never approval, rejection, withdrawal, consent or ratification. Prior contributions do not expire through inactivity. A dormant contributor does not acquire an indefinite veto over unrelated work, but material unresolved objections remain visible and must be considered when relevant. If attribution cannot be confirmed, mark it pending or unconfirmed rather than guessing. Ideas may be captured without requiring the contributor to supply a complete solution.
+
 ## 9. Asynchronous collaboration through GitHub
 
 Proposed channels:
