@@ -451,9 +451,9 @@ The largest academic risk is originality. Existing work already addresses image 
 ### Completed and read-back verified
 
 - Updated the machine-readable session digest first, recording the mandatory three-document rule and the corrected epistemic language.
-- Retracted the premature use of **hypothesis** for the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
+- Withdrawn the premature confirmatory framing of the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
 - Added a canonical distinction in research practice between research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions.
-- Reconciled stale hypothesis wording across the active thesis, research practice, self-review, source register, traceability, contribution assessment, diagram index and project records. Historical archive files remain untouched.
+- Reconciled stale confirmatory terminology across the active thesis, research practice, self-review, source register, traceability, contribution assessment, diagram index and project records. Historical archive files remain untouched.
 - Established the concrete rule: every session must use and reconcile project/PROJECT_STATE.md, project/WORKPLAN.md and project/WORK_LOG.md. Before stopping, all three must agree on completed work or an explicitly parked continuation point. Parked work must include evidence, current state, blockers/dependencies, exact next action, relevant paths and constraints.
 
 ### Verification boundary
