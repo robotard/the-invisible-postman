@@ -56,14 +56,14 @@ This is the changing, evidence-based progress record. project/WORKPLAN.md is the
 ### Verified commits from this session
 
 - Research practice document: 1438b8a4deaaa1bc9c028ba50bd611c644e559cb
-- Initial self-review register: d4572e73bff908b9c3263657e278953bb6040ff5
+- Initial self-review register, including research ethos: 637e12fc81d3d6727f852d26a074a1045ec5995a
 - Workplan with Phase 1 work units: 9184cf00fd349d8b2226b681d6e803ba298fb18f
 - README navigation and review links: 8b15a418cc713b360062ed0bf7d7ffa21c72766b
 - Traceability review links and dissent model: 6350914103d0b92eec2f5330c8cc0cda9fb30fd1
 - W1 exact status statement: 1881c90b0ec917d790ab186360322237b89b29c3
 - W2 exact status statement: 9f8f236c4b7b257772027150a760e437b360ffc7
 - Thesis exact status statement: 2294116cbe7c799044df856657be99db02391be4
-- Work log: 5f242559fad3ca3079a182f345d949f7bc4137e2
+- Work log, including research ethos: f708c095572ed912806bc7715ddfcc3454462caf
 
 ## Current work-unit assessment
 
