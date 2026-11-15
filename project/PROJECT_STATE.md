@@ -2,116 +2,70 @@
 
 **Researcher:** @robotard  
 **Working title:** *The Invisible Postman: A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging*  
-**Checkpoint:** 2026-11-15 · password design rationale integrated  
+**Checkpoint:** 2026-11-15  
 **Status:** Theory only · No implementation · Not audited
 
 ## Purpose
 
-This is the changing progress record. `project/WORKPLAN.md` is the stable roadmap. Update this file after meaningful work. Only report repository changes after checking GitHub's returned commit result and, where material, fetching the changed file again.
+This is the changing progress record. `project/WORKPLAN.md` is the stable roadmap. Only report repository changes after checking GitHub's returned commit result and, where material, fetching the changed file again.
 
-## Verified repository baseline (2026-11-15)
+## Verified repository baseline
 
 - Repository: https://github.com/robotard/the-invisible-postman
-- Default branch: `main`
-- Repository visibility: public.
-- GitHub connector permissions currently report `push: true` and `admin: true`. Direct repository writes are available in this session; earlier HTTP 403 notes are superseded by this verified permission result.
-- `README.md` exists and contains a project overview, scope boundaries, links to the intended starting documents, and the assurance label.
-- `project/WORKPLAN.md` and `project/PROJECT_STATE.md` exist on `main`.
-- `docs/w3-architecture.md`, `docs/w4-risks-and-evaluation.md`, and `docs/traceability.md` exist on `main`.
-- `thesis.md` exists on `main`, but its current content is an older password-based, single-user Flask application concept. It conflicts with the newer endpoint-controlled, authenticated-messaging research direction and must not be treated as the current integrated thesis without reconciliation.
-- The expected paths `docs/W1-research-framing.md` and `docs/W2-threat-model.md` were not found at the paths checked. Their presence elsewhere has not yet been verified.
-- Recent GitHub history shows temporary thesis/PDF/archive operations on 2026-11-14. The current branch state, not those commit messages, is authoritative.
+- Default branch: `main`; public repository.
+- Current GitHub connector permissions: `push: true`, `admin: true`.
+- Core files present: `README.md`, `thesis.md`, `project/WORKPLAN.md`, `project/PROJECT_STATE.md`, `docs/w3-architecture.md`, `docs/w4-risks-and-evaluation.md`, and `docs/traceability.md`.
+- `docs/decision-register.md` and `diagrams/03-design-decisions.svg` were added and verified in this checkpoint.
+- The 14 November review-candidate archive in the Library contains W1, W2, a longer password-focused thesis source, and three PNG diagrams. These are source artifacts, not proof that the corresponding files are already present in GitHub.
+- The integrated root thesis now follows the endpoint-controlled research direction and retains the password-derived model as an intentional starting point and evaluated alternative.
 
-## Completed and verified in this checkpoint
+## Completed and verified
 
-- Located the intended GitHub repository and confirmed current write permission.
-- Read the current `README.md`, `project/WORKPLAN.md`, `project/PROJECT_STATE.md`, `thesis.md`, `docs/w3-architecture.md`, `docs/w4-risks-and-evaluation.md`, and `docs/traceability.md`.
-- Identified the material thesis inconsistency: the current root thesis still describes a password-derived, single-user Flask model, while the newer architecture places plaintext, private keys, identity verification, and cryptographic authority at participant endpoints.
-- Confirmed that W3, W4, and traceability documents are present in the repository.
-- Confirmed that direct GitHub writes are available now. No ZIP is required if the repository can be updated and verified directly.
-
-## Finished / remaining / blocked
-
-### Finished
-- W0 baseline and stable workplan are present.
-- W3 architecture exists in the repository.
-- W4 risks and evaluation exists in the repository.
-- Research/design traceability exists in the repository.
-- README has substantive project content.
-- GitHub write access is currently verified.
-
-### Remaining
-1. Locate and verify the latest source versions of W1, W2, the thesis manuscript, and the corrected stylised diagram assets. Do not assume a local/library artifact is the latest version without checking provenance and contents.
-2. Reconcile the thesis with W1–W4 and the endpoint-controlled architecture. Retire or clearly archive superseded password-based Flask material rather than silently blending incompatible models.
-3. Inspect and correct the stylised diagrams, their labels, captions, numbering, and references in the manuscript.
-4. Publish the approved thesis and supporting documentation directly to GitHub, using the existing repository structure where sensible.
-5. Update README links and this progress record to match the actual published files.
-6. Fetch changed files from GitHub after writes and verify commit SHAs, content, paths, links, and repository state.
-
-### Blocked / unresolved
-- The latest authoritative W1 and W2 source locations have not yet been confirmed.
-- The corrected diagram image files and the exact thesis source intended for integration have not yet been identified and visually checked.
-- The existing root `thesis.md` is demonstrably out of date relative to the newer architecture; it is not safe to publish as the final integrated thesis without substantial revision.
-- No complete manuscript/diagram package has yet been published and verified in this checkpoint.
-
-## Next task
-
-**Reconcile the current thesis against the latest W1–W4 research and architecture, after locating the authoritative thesis and diagram sources.** Then publish changes directly to GitHub and verify them there.
-
-Do not create a repository ZIP unless direct GitHub publication proves unavailable or the user explicitly requests an archive.
-
-
-## Completed and verified after the baseline checkpoint
-
-- Reconciled the thesis's earlier password-derived model with the endpoint-controlled research direction instead of deleting or silently merging the earlier design.
-- Added Thesis Section 2.1, explaining why a shared password was selected for the original exploratory one-to-one image-message concept: familiarity, portability, low setup overhead, and no initial dependency on an identity directory or central key service.
-- Documented the limits of that model: password entropy and offline guessing, no sender attribution from a shared secret, no identity binding or forward secrecy by itself, and unresolved distribution, rotation, multi-device and compromise handling.
-- Explained why the research scope evolved toward endpoint-controlled identity and authenticated session establishment, while retaining password-derived encryption as a legitimate narrow alternative under explicit assumptions.
-- Added W3 section 2.5 to record password-derived keying as an evaluated alternative.
-- Added `docs/decision-register.md`, including the password decision and the other design changes shown in the review-candidate diagram.
-- Added W4 evaluation domain E10 for any future password-derived mode, including offline guessing, KDF parameter bounds, salt/nonce handling, resource exhaustion and the prohibition on inferring sender identity from a shared password.
-- Added password-design traceability and linked the decision register from README.
-- Fetched each changed file from GitHub after writing. Read-back checks confirmed the thesis rationale, W3 alternative, decision register, W4 evaluation, traceability entry and README link.
+- Confirmed direct GitHub write access and adopted GitHub-first publication; no ZIP is needed for routine updates.
+- Reconciled the password-based starting model with the broader endpoint-controlled architecture in Thesis Section 2.1.
+- Recorded why the password model was initially chosen: familiarity, portability, low setup overhead, and no initial need for a central identity directory or key service.
+- Recorded why the scope evolved: explicit peer verification, sender authentication, authenticated session context, and key lifecycle are not supplied by a shared password alone.
+- Retained password-derived encryption as a narrow alternative under explicit assumptions, not as the current identity model.
+- Added W3 section 2.5, W4 evaluation domain E10, and decision traceability.
+- Added `docs/decision-register.md` covering the password decision and the other major design changes.
+- Added `diagrams/03-design-decisions.svg` and linked it from the thesis and README.
+- Fetched changed files from GitHub after writes. Read-back checks confirmed the thesis rationale, W3 alternative, decision register, W4 evaluation, traceability, README links, diagram contents, and this state file.
 
 ## Latest verified commits
 
-- Thesis rationale: `8f91f7d400af1a8f3b53469f5cc9d96a58143620`
-- W3 password alternative: `02eba9fcbe05eeb356d6d4c88d6b60defc8052dc`
+- Thesis password rationale: `8f91f7d400af1a8f3b53469f5cc9d96a58143620`
+- W3 alternative: `02eba9fcbe05eeb356d6d4c88d6b60defc8052dc`
 - Decision register: `1bf7967b64db86e6a0eaee8c0b8b8e97a6246b83`
-- W4 password evaluation: `e00e15e9f2a822553dad8503070cdb197d29816c`
-- Traceability update: `e1458b81178f74fb585b61458fb14e635cb6b978`
+- W4 evaluation: `e00e15e9f2a822553dad8503070cdb197d29816c`
+- Traceability: `e1458b81178f74fb585b61458fb14e635cb6b978`
 - README decision-register link: `d85edbb399394a59849c963a4da0bfccb4cec984`
-
-## Remaining after this checkpoint
-
-1. Publish or verify the authoritative W1 and W2 source documents in the repository; the review-candidate archive contains them, but their repository paths still need to be checked and populated without duplicating or overwriting newer material.
-2. Publish or verify the remaining trust-boundary and message-carrier diagrams; only the updated design-decisions SVG has been published and verified in this pass.
-3. Review the integrated thesis against W1–W4 as a whole, including terminology, decision references, and claim discipline.
-4. Verify repository links and document consistency, then prepare the next review-ready manuscript state.
-
-**Current next task:** Complete the W1/W2 and diagram publication/consistency pass. Keep the thesis's password rationale intact throughout.
-
-
-## Diagram and publication update
-
-- Added `diagrams/03-design-decisions.svg` directly to GitHub. The updated figure now includes the original password-derived approach, why it was chosen, and why the broader architecture later evolved.
-- Added the diagram reference to the integrated thesis and README.
-- Fetched the SVG, thesis and README from GitHub after publication. Read-back checks confirmed all three references and the password-decision content.
-- Diagram commit: `606d7f105e29a04b1b828cf92df1315e8ccfd4ae`
+- Updated design-decisions SVG: `606d7f105e29a04b1b828cf92df1315e8ccfd4ae`
 - Thesis diagram reference: `97b1d7a75448334830341a6ae8dff2ce1a12bee1`
 - README diagram link: `ecd75274fb47d780265d81408d6eaeb556217805`
+- State checkpoint: `18c70a32422a1c5d5dc8f019e8fb55240ff7dc43`
+
+## Remaining
+
+1. Publish the verified W1 and W2 source documents from the 14 November review-candidate archive to the intended repository paths, after comparing their content with the integrated thesis.
+2. Publish or verify the trust-boundary and message-carrier diagrams. The updated design-decisions SVG is the only diagram published and verified in this pass.
+3. Review the integrated thesis against W1–W4 for terminology, traceability, completeness, and claim discipline.
+4. Verify every README and manuscript link and check whether the referenced DOCX export exists before describing it as available.
+5. Prepare the next review-ready manuscript state and update this record after verification.
+
+## Next task
+
+Complete the W1/W2 and diagram publication/consistency pass. Preserve the password rationale and the distinction between the original model and the current endpoint-controlled direction.
 
 ## GitHub-first operating rules
 
-- Interact with the connected GitHub repository directly: inspect, create, update, and verify files using the available GitHub actions.
-- Prefer small, reviewable commits with descriptive messages. Fetch existing files and use their current blob SHAs before updating them.
-- Never overwrite or delete existing material merely because a similarly named local file exists. Compare provenance, content, and repository history first.
-- After every material write, record the returned commit SHA and fetch the changed path again to verify the saved content.
-- Summarise only what changed, what was verified, and what remains. Do not narrate routine tool operations.
-- Do not ask the user to copy, upload, download, or manually edit files when the connected tools can perform the action.
-- Ask the user to intervene only when a genuine human decision, unavailable permission, authentication step, conflict, ambiguous source, or required visual judgement cannot be resolved safely by the assistant.
-- Never claim a file was saved, completed, published, or verified unless the relevant GitHub response or independent read-back confirms it.
-- Keep the scope theoretical. Do not implement the messaging system.
+- Inspect current repository content before changing it.
+- Fetch existing files and use their current blob SHAs before updates.
+- Prefer small, reviewable commits.
+- After material writes, verify the commit response and fetch the saved file again.
+- Summarise only verified changes, verification and remaining work.
+- Ask for user intervention only for a genuine decision, missing permission/authentication, unresolved conflict, ambiguous source of truth, or required visual judgement.
+- Do not create a ZIP unless GitHub publication is unavailable or the user explicitly requests one.
+- Do not implement the messaging system.
 
 ## Assurance statement
 
