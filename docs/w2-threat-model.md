@@ -161,3 +161,5 @@ W2 is a provisional threat model for review. It should be compared against the s
 **Implementation:** None claimed.  
 **Independent security audit:** None claimed.  
 **Security status:** Proposed goals and mitigations only.
+
+**Project status:** Theory only · No implementation · Not audited.
