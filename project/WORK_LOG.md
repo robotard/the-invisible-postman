@@ -121,3 +121,17 @@ The framework does not yet constitute a live peer-review forum, an established c
 - Continue W0.2 and W0.3 research-source reconciliation before thesis illustration and PDF production.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Established framework comparison and adaptation
+
+- Compared official OpenSSF Best Practices Badge criteria and Scorecard, Apache project governance, IETF RFC 7282, CRediT contributor roles and GitHub review controls.
+- Updated docs/collaborative-governance.md with a model-by-model analysis of what to borrow, how to adapt it and what not to import.
+- Added D-09 to docs/decision-register.md and cross-referenced the governance framework.
+- Updated project/WORKPLAN.md to preserve this reuse-first approach.
+- Adopted for the research method: evidence-backed checklists, public asynchronous deliberation, reasoned objection dispositions, contribution-role vocabulary, version-specific reviews and deterministic process checks.
+- Explicitly excluded: treating OpenSSF badges or Scorecard scores as proof of thesis quality or protocol correctness; Apache silence-based lazy consensus; IETF running-code requirements at this theory-only stage; false claims of consortium or standards-body status; automated truth judgements or popularity-based ratification.
+- No badge, scorecard scan, branch-protection rule, automation or auto-adoption workflow was enabled.
+- Verified governance and decision-register commits: c35304dade24a5483e5ac01ae76c76cde4808190 and 97f2e4b1ea53fe10c1488b070d2284c32746b8c0.
+
+**Theory only · No implementation · Not audited.**
