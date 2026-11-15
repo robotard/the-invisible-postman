@@ -31,6 +31,7 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 | RQ3: What security does an image carrier provide? | Confusion between encryption and concealment | Required image-carriage route, route-specific adapter and optional concealment sub-layer, separate from cryptographic protection | W4 E6 |
 | RQ3a: How do carriage routes differ? | Route-specific metadata, capacity, transformations, ordering and delivery semantics | First-class transport-route layer; image route required, other routes compared as profiles | W4 E6, E9 |
 | RQ3b: How can carriage assist without becoming part of the security authority? | Confusion between transport assistance and cryptographic protection | Participant-side cryptographic topology remains primary; standalone train and carrier-facing encapsulation are replaceable and untrusted | W4 E6, E9 |
+| RQ3c: Can the train reduce straightforward transport-level linkability? | Carrier reuse, predictable placement, metadata and behavioural correlation | Unique image envelopes, variable placement, decapsulation and metadata minimisation; residual platform and human side channels remain explicit | W4 E6, E9 |
 | RQ3b: How can carriage assist without becoming part of the security authority? | Confusion between transport assistance and cryptographic protection | Participant-side cryptographic topology remains primary; standalone train and carrier-facing encapsulation are replaceable and untrusted | W4 E6, E9 |
 | RQ4: How can multipart messages be validated? | Missing, duplicated, reordered or mixed capsules | Authenticated message-set context and strict reconstruction | W4 E3, E5 |
 | RQ5: How should lifecycle events be handled? | Replay, expiry, revocation and key compromise | Local lifecycle state and explicit key-management responsibilities | W4 E4, E7 |
@@ -50,6 +51,7 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 | Image transformation | Image route adapter within the transport-route layer | E6 | Supported formats and transformation tolerance |
 | Route-specific exposure or failure | Route manager and route-specific adapters | E6, E9 | Route profiles, metadata, capacity, ordering, fallback and delivery semantics |
 | Metadata correlation | Coordinator minimisation and documented exposure | E9 | Metadata inventory and retention policy |
+| Behavioural correlation and social engineering | Human routine and interaction patterns can link otherwise distinct carriage instances | E9 | Behavioural side-channel analysis, adversarial prompt scenarios and proportionate user-facing mitigations |
 | Intermediary compromise | Endpoint-held private keys and least privilege | E1, E9 | Exact coordinator permissions |
 | Logging and diagnostics leakage | Endpoint and service secret-handling responsibilities | E8 | Logging and crash-report policy |
 | Recovery collusion or share theft | Optional, separate recovery boundary | E1, E8 | Recovery authority, threshold and collusion model |
@@ -67,7 +69,7 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 | Capsule and multipart manager | Package and reconstruct protected messages | Handle fragmented delivery without ambiguous acceptance | E5 |
 | Transport-route manager and carrier adapters | Select, describe and invoke carriage routes; encode/extract route-specific carriers | Image carriage is required; other routes are comparison profiles | E6, E9 |
 | Encapsulation boundary and standalone train | Frame and carry an already protected object over a low-fidelity route | No key, identity, encryption, authentication or decryption authority; endpoint protocol authenticates any security-relevant binding | E6, E9 |
-| Encapsulation boundary and standalone train | Frame and carry an already protected object over a low-fidelity route | No key, identity, encryption, authentication or decryption authority; endpoint protocol authenticates any security-relevant binding | E6, E9 |
+
 | Coordinator and transport | Route and coordinate delivery | Permit intermediary assistance without granting cryptographic authority | E1, E9 |
 | Lifecycle and local state | Manage replay, expiry and key changes | Give lifecycle claims precise operational meaning | E4, E7 |
 | Optional recovery | Support explicitly authorised recovery if justified | Explore recovery without making it a mandatory trust dependency | E1, E8 |
