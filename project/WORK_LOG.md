@@ -160,3 +160,16 @@ The framework does not yet constitute a live peer-review forum, an established c
 - Archived historical Markdown source left unchanged.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · W0.2 author-led review, first pass
+
+Re-read the active thesis and W1–W4 before updating the author challenge register.
+
+- **SELF-01:** Image carriage's distinct value is not yet demonstrated. Recorded the need for comparison against encrypted attachments, encrypted file transfer, ordinary end-to-end messaging, image carriage without concealment, and image carriage with optional concealment. Provisional recommendation: keep the architecture carrier-agnostic unless evidence justifies image-specific requirements.
+- **SELF-02:** Existing disclaimers are strong, but the title and shorthand terminology may imply achieved authentication. Recorded a systematic claim-language audit and the distinction between design objectives and demonstrated properties.
+- **SELF-03:** Separated private-key control, key continuity and real-world identity proof. Recorded the need to define assurance level and compare first-contact, key-change and recovery models.
+- Updated and read-back verified docs/self-review-register.md. All three issues remain open and author-identified, not externally reviewed.
+- No substantive scope decision was forced before evidence gathering.
+
+**Theory only · No implementation · Not audited.**
