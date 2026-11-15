@@ -88,3 +88,36 @@ A notable protocol-design question is the treatment of reordered multipart capsu
 - Stabilise the manuscript before further illustration work.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Collaborative Research Governance Framework
+
+### Completed and verified
+
+- Created docs/collaborative-governance.md, defining a consortium-inspired but project-scoped framework for peer review, decision ratification, contributor attribution and a versioned adopted-practices baseline.
+- Defined proposal lifecycle states: Draft, Open for review, Under revision, Evidence pending, Ratified, Adopted, Contested, Superseded, Rejected and Withdrawn.
+- Defined ordinary and security/privacy/safety-significant review thresholds, including independent review and relevant domain competence. A proposer cannot be the sole reviewer or ratifier of their own proposal.
+- Distinguished proposal, contribution, review, approval, ratification, adoption and endorsement.
+- Defined a project-wide "global commit" as an auditable merge updating the repository's adopted-practices baseline, not a claim of universal adoption by the research community.
+- Specified automation boundaries: automation may validate process metadata, required reviews, links and status gates, but cannot decide scientific validity, infer expertise, turn silence or reactions into consent, or erase dissent.
+- Added consent-based contributor attribution using CRediT roles as a vocabulary where appropriate. Distinguished actual commit authorship/co-authorship from review and approval. Added exact accepted-contribution mapping.
+- Created docs/templates/contribution-review-record.md and docs/templates/decision-record.md.
+- Linked the governance framework and templates from README.md, WORKPLAN.md, research-practice.md, traceability.md and decision-register.md.
+- Added D-08 to the decision register, explicitly recording that the governance framework is proposed and not externally ratified.
+- Added source notes linking the official CRediT resource and GitHub documentation for pull-request review and branch controls.
+- Checked the repository rulesets endpoint: it returned an empty list. Attempted to inspect main branch protection, but the available GitHub connection returned HTTP 403. Branch-protection status is therefore unverified; no automation or protection setting was changed.
+- Verified successful write responses for all new documents and cross-document updates.
+
+### Important governance boundary
+
+The framework does not yet constitute a live peer-review forum, an established consortium or an operating automated ratification pipeline. No external reviewer, contributor, endorsement or adopted best practice is invented. The framework itself remains a proposal pending independent review.
+
+### Deferred
+
+- Invite and receive actual independent review of the governance framework.
+- Decide whether the project should enable GitHub branch protection/rulesets after reviewing repository permissions and the desired reviewer model.
+- Exercise the contribution and decision templates with a real, consented contribution.
+- Define and test any future automation only after the manual governance process has been reviewed and used.
+- Continue W0.2 and W0.3 research-source reconciliation before thesis illustration and PDF production.
+
+**Theory only · No implementation · Not audited.**
