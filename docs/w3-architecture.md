@@ -65,7 +65,7 @@ The train may be low-fidelity and untrusted. It may be inspected, copied, delaye
 
 The train may generate or obtain a distinct image carrier object for each carriage instance and vary that carrier's publication or retrieval placement. Here, "unique" means that a carrier object is not reused for another carriage instance under the proposed policy; it does not mean cryptographic uniqueness, secret entropy, randomness, unpredictability or guaranteed unlinkability. The carrier is not a nonce, key or identity credential. At the receiving side, a transport decapsulation function discovers or obtains the selected carrier, extracts the encapsulated protected object, checks transport framing and extraction completeness, and hands the result to the participant endpoint. The endpoint, not the train, performs cryptographic authentication and acceptance.
 
-This creates a transport-level unlinkability objective: reduce straightforward correlation based on reuse of the same carrier or a stable, predictable publication location. It is a separate contribution of the train and does not replace the participant-side cryptographic topology. It must not be described as guaranteed anonymity. Timing correlation, access logs, network identifiers, hosting metadata, image fingerprints, repeated patterns, and the discovery/rendezvous mechanism may still reveal relationships.
+This creates a transport-level unlinkability objective: reduce straightforward correlation based on reuse of the same carrier or a stable, predictable publication location. It is a separate contribution of the train and does not replace the participant-side cryptographic topology. It must not be described as guaranteed anonymity. Timing correlation, access logs, network identifiers, hosting metadata, image fingerprints, repeated patterns, and the discovery/rendezvous mechanism may still reveal relationships. This is a carrier/object-level variation, not a traffic-analysis defence. Research comparators such as Loopix use explicit mixing and cover traffic under a defined observer model; those mechanisms introduce additional infrastructure, bandwidth, delay and usability assumptions and are not part of the current proposal (see SRC-016 and SRC-018–SRC-019 in the source register).
 
 Variable placement requires a recipient-discovery mechanism. The design must explain how the intended recipient learns where and when to retrieve a carrier without introducing a stable locator or observable side channel that defeats the intended benefit. Random placement alone is not a delivery protocol. The carrier should be treated as disposable and replaceable; decapsulation failure must produce a bounded failure, never silent acceptance of partial or ambiguous content.
 
@@ -387,6 +387,7 @@ W3 intentionally does not settle:
 13. Recipient discovery/rendezvous, locator privacy and access-pattern exposure.
 14. Carrier metadata allowlist, verification of removal and platform-added metadata.
 15. Observer models for transport unlinkability and behavioural correlation.
+16. Whether any traffic-obfuscation, padding, delay, batching, cover-traffic or mix-network mechanism belongs in scope, and what costs it would impose.
 
 These decisions require protocol-level research and evaluation before implementation.
 
