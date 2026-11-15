@@ -163,27 +163,46 @@ Each capsule must be bound to a message set through authenticated context. The d
 * Protocol version.
 * Manifest or equivalent reconstruction information.
 
-The receiver must reject incomplete, duplicated, reordered, conflicting or cross-message capsule combinations unless a specifically defined recovery rule applies.
+Transport arrival order must be distinguished from authenticated logical order. Capsules may arrive out of sequence and still be safely reassembled when the manifest or equivalent authenticated context binds the message-set identity, expected count, unique indices and capsule contents. Reordering alone is therefore not an invalid-message condition.
+
+The receiver must not silently accept incomplete sets, conflicting content for the same index, cross-message or cross-recipient mixtures, altered manifests, invalid indices, unsupported versions or ambiguous reconstructions. Duplicate delivery requires an explicit rule: an identical repeated capsule may be handled idempotently or rejected, but must never be counted as an additional distinct piece; conflicting duplicates must fail closed. Resource limits and timeout behaviour remain part of the parser/reassembly specification.
 
 Fragmentation is a transport and packaging mechanism. It is not a cryptographic recovery scheme.
 
-3.6 Transport-route manager and carrier adapters
+3.6 Encapsulation boundary, standalone train and transport-route adapters
 
-Responsible for selecting, describing and invoking a supported carriage route, then returning extracted protected capsules to the endpoint for validation.
+This logical component group defines three connected but distinct responsibilities. They need not be separate services or processes.
 
-The route manager handles route selection and route-level metadata. Each adapter handles its own carrier encoding, transport constraints and extraction. The image adapter is required in the research scope; other adapters may be defined as comparison profiles.
+**Encapsulation and decapsulation boundary**
 
-The image carrier adapter is responsible for placing capsules into image carriers and extracting them. Optional concealment is an image-route sub-layer, not a general transport guarantee.
+The sender-side encapsulation function packages an already protected capsule or capsule set for carriage. Its service contract is limited to bounded framing, route-format identification, length and extraction context, and any minimal operational fields required by the selected route. It must not reinterpret the protected message or create a new source of cryptographic authority.
 
-This boundary must not:
+At the receiving side, decapsulation obtains the selected carrier, extracts the encapsulated object, checks structural framing, declared lengths, format/version support and extraction completeness, and returns the recovered protected capsule to the participant endpoint. Structural checks can detect malformed or truncated carriage; they do not establish authenticity or prove that the object is the intended message. Any security-relevant binding must be authenticated by the endpoint-controlled protocol and checked there.
+
+The encapsulation format must define bounded lengths, parser limits, unsupported-version behaviour, duplicate handling, truncation behaviour and safe failure. It must not allow route metadata to override authenticated sender, recipient, session or message context.
+
+**Standalone train**
+
+The train is a replaceable, low-fidelity carriage element. It may select a route, coordinate publication and retrieval, associate transport objects with operational delivery references, and report limited delivery state where observable. It carries opaque protected objects and does not hold plaintext, participant private keys, sole decryption capability or authority to accept a message.
+
+Recipient discovery is a separate requirement, not something solved by random placement. The recipient needs an authenticated means to learn where and when to retrieve the relevant carrier. The locator, discovery channel, publication schedule and access pattern may themselves expose relationships. Their design remains open and must be evaluated against the observer model.
+
+**Transport-route manager and carrier adapters**
+
+The route manager selects and describes a supported carriage profile. Each adapter handles route-specific encoding, transport constraints, metadata exposure, extraction and failure reporting. Image carriage is required in this research; file/attachment and conventional messaging routes remain comparison profiles.
+
+The image adapter places capsules into image carriers and extracts them. Optional concealment is a separate image-route sub-layer, not a general transport guarantee. Before publication, the image processing path must apply a documented metadata allowlist and remove unnecessary embedded metadata and identifying file-level properties. The produced carrier must be checked; successful invocation of a stripping operation is not proof that all intended fields were removed.
+
+These boundaries must not:
 
 * Generate or substitute cryptographic identity.
 * Create security from obscurity.
-* Alter authenticated content without detection.
-* Assume that platforms preserve image bytes.
-* Claim resistance to steganalysis without appropriate testing.
+* Alter authenticated content without endpoint detection.
+* Treat framing checks as cryptographic integrity or sender authentication.
+* Assume that platforms preserve image bytes or metadata state.
+* Claim anonymity or resistance to steganalysis without appropriately bounded evidence.
 
-The encoder and decoder must expose failures clearly. If a carrier is transformed or damaged, the system must fail safely rather than silently accept corrupted or ambiguous content.
+If a carrier is transformed, damaged, unavailable or unsupported, the route must report extraction failure rather than silently accept corrupted, incomplete or ambiguous content.
 
 3.7 Coordinator and transport intermediary
 
@@ -236,20 +255,21 @@ No recovery topology should be adopted merely because it is technically possible
 
 4. Message lifecycle
 
-The following is a logical lifecycle, not an implementation sequence.
+The following is a logical lifecycle, not an implementation sequence. It separates endpoint protection, carriage preparation, transport/discovery and receiving-side validation.
 
 1. Identity preparation: participants establish and verify the relevant cryptographic identities.
 2. Session establishment: participants establish authenticated shared cryptographic context.
 3. Message creation: the sender creates plaintext and the message context.
-4. Message protection: the endpoint encrypts and authenticates the message, binding required metadata.
-5. Capsule formation: the protected object is packaged as one capsule or a linked multipart set.
-6. Carrier encoding: capsules are placed into supported image carriers. Optional concealment is applied only as a distinct layer.
-7. Transport coordination: the intermediary routes or coordinates carrier delivery without becoming a plaintext authority.
-8. Carrier extraction: the receiving endpoint extracts the capsule data and validates its structure.
-9. Set validation: the endpoint checks completeness, ordering, uniqueness, version and message-set binding.
-10. Cryptographic validation: the endpoint checks authenticity, integrity, context and freshness before releasing plaintext.
-11. Local acceptance: valid content is decrypted and presented to the recipient.
-12. Lifecycle handling: replay state, expiry, key rotation and relevant local retention rules are applied.
+4. Message protection: the endpoint protects the message and authenticates the required context.
+5. Capsule formation: the protected object is packaged as one capsule or an authenticated multipart set.
+6. Encapsulation: the sender-side boundary adds bounded carriage framing and route-format context without claiming cryptographic protection.
+7. Carrier encoding: the selected route adapter places the encapsulated object into an image carrier; optional concealment is applied only as a distinct image-route sub-layer.
+8. Metadata minimisation and publication: unnecessary carrier-embedded metadata and identifying file-level properties are removed and the output is checked before publication.
+9. Transport coordination and discovery: the train coordinates carriage; the intended recipient obtains the locator or retrieval instruction through a separately evaluated discovery mechanism.
+10. Retrieval and decapsulation: the receiving-side route adapter obtains the carrier and decapsulation extracts the framed protected capsule, checking structural completeness and parser limits.
+11. Capsule-set validation: the endpoint validates the authenticated manifest and message-set context, reassembling valid pieces independently of arrival order while rejecting incomplete, conflicting, substituted or ambiguous sets.
+12. Cryptographic validation and local acceptance: the endpoint verifies authenticity, integrity, peer/session context and freshness before decrypting and presenting plaintext.
+13. Lifecycle handling: replay state, expiry, key rotation and relevant local retention rules are applied.
 
 A failure at any validation stage must not result in silently presenting an incomplete or incorrectly associated message as valid.
 
