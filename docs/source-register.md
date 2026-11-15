@@ -313,7 +313,7 @@ The date in this register records when the source was checked, not the date of t
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
 | Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025 | Compare full-scan, rendezvous, capability, OMR/PerfOMR, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
 | Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
-| Human social engineering and interpersonal behavioural mimicry | SRC-022; SRC-018–SRC-019 for adjacent traffic/behavioural evidence | Separate qualitative perpetrator accounts, measured traffic features and untested project-specific hypotheses; add recipient/usability studies where needed |
+| Human social engineering and interpersonal behavioural mimicry | SRC-022; SRC-018–SRC-019 for adjacent traffic/behavioural evidence | Separate qualitative perpetrator accounts, measured traffic features and unverified project-specific behavioural propositions; add recipient/usability studies where needed |
 | Multipart transport reconstruction and parser safety | SRC-009 as a protocol comparator; SRC-023 as an implementation-level resource-exhaustion example | Specify authenticated manifests and reassembly separately from parser resource budgets; do not equate MIME parsing with capsule parsing |
 
 ## 6. Research gaps and source discipline
