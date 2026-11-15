@@ -12,32 +12,33 @@
   ],
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
   "priority": [
-    "W0.3 source reconciliation and full-text source review",
-    "W6 integrated thesis construction",
-    "W7 traceability and decision reconciliation"
+    "W6 integrated thesis construction, now governed by the hard contribution/bias checkpoint",
+    "Full-text prior-art comparison: OMR, PerfOMR, Oblivious Signaling, dead-drop covert messaging and image-diffusion covert messaging",
+    "Build a contribution-to-prior-art matrix and sharpen the central thesis claim",
+    "Continue claim-level source verification and W1–W4 reconciliation"
   ],
   "defer": [
     "routine author review unless blocking/material",
     "external peer review until workable thesis",
-    "new illustrations until thesis stabilises",
+    "new illustrations until contribution and thesis argument stabilise",
     "implementation"
   ],
   "next": [
-    "Verify current branch/head and reread authoritative project documents",
-    "Review SRC-020 formal definitions, proof assumptions, construction and performance",
-    "Continue discovery/retrieval comparison without selecting a mechanism prematurely",
-    "Develop format-specific metadata classification after carrier encoding assumptions are clearer",
-    "Research parser resource bounds and derive profile-dependent limits",
-    "Continue thesis-to-W1–W4 reconciliation and claim-level source verification",
+    "Review full texts and formal models for OMR, PerfOMR and Oblivious Signaling",
+    "Review the full dead-drop covert messaging and image-based diffusion papers",
+    "Build a prior-art matrix for candidate contributions A/B/C",
+    "Refine central research question, contribution and scope based on adverse as well as supporting evidence",
+    "Only then reassess the diagram set against the stable thesis argument",
     "Deploy only verified changes and read them back",
     "Refresh digest and project checkpoint"
   ],
   "open": [
-    "source full-text verification and literature gaps",
-    "recipient discovery and stable-locator risk",
+    "originality gap and direct comparison with closest existing systems",
+    "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
     "carrier metadata allowlist and platform transformations",
     "traffic/access-pattern and behavioural correlation evaluation",
-    "parser/resource-exhaustion and multipart safety evidence"
+    "parser/resource-exhaustion and multipart safety evidence",
+    "full-text verification of newly added prior-art sources"
   ],
   "invariants": [
     "Image carriage remains a required research route; transport is not the whole thesis",
@@ -65,6 +66,6 @@
     "parser/resource-exhaustion and multipart safety budgets",
     "full-text verification of source claims, including OMR formal guarantees and performance"
   ],
-  "last_verified_batch": "2026-11-15: SRC-020–SRC-023 added; thesis, W1–W4, traceability, workplan, work log and project state updated and read back.",
-  "audit_boundary": "Changed documents were fetched after their writes. No new full-tree link/status audit was run in this batch."
+  "last_verified_batch": "2026-11-15: hard contribution/bias assessment added; source register expanded with SRC-024–SRC-027; project checkpoint pending read-back.",
+  "audit_boundary": "Assessment and source-register writes require read-back verification; no full-tree link/status audit run in this batch."
 }
