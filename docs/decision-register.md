@@ -68,3 +68,31 @@ This register records why significant design choices were made, changed, narrowe
 ## Assurance
 
 **Theory only · No implementation · Not audited.**
+
+
+## D-09 · Adapt established open-source and research-governance frameworks
+
+**Status:** Adopted as a research-method direction for this repository · Framework itself remains proposed and unratified externally.
+
+**Decision:** Do not invent a wholly bespoke governance process where mature models already offer useful components. Adapt, with explicit limits, the OpenSSF Best Practices Badge criteria, OpenSSF Scorecard's use of narrow automated checks, Apache's transparent asynchronous discussion and reasoned objections, IETF rough-consensus objection handling, CRediT contribution roles, and GitHub's versioned issue/pull-request review controls.
+
+**What is adopted for the project method:**
+- Evidence-backed, applicability-aware checklist rather than self-awarded badge.
+- Public, asynchronous discussion and durable decision records.
+- Written disposition of material objections, including unresolved dissent.
+- Contribution roles mapped to accepted work and confirmed by contributors.
+- Version-specific review and auditable merge records.
+- Automation limited to deterministic process checks.
+
+**What is explicitly not adopted:**
+- OpenSSF badge or Scorecard as a thesis-quality, scientific-validity or cryptographic-security score.
+- Apache lazy consensus or silence-as-consent as the project's decision rule.
+- IETF "running code" as a condition for this theory-only research stage.
+- Formal consortium, PMC, committer or standards-body status without the relevant community and governance.
+- Automated truth judgement, popularity voting or automatic ratification.
+
+**Rationale:** These frameworks solve related but distinct problems. Their mechanisms are useful only when adapted to this project's current scope, scale and authority. Borrowing mature practices is preferable to pretending the project has invented governance from scratch; clear boundaries prevent borrowed labels from implying credentials or assurance the project does not possess.
+
+**Source basis:** See [Collaborative Research Governance Framework, section 13](collaborative-governance.md#13-existing-frameworks-borrow-adapt-and-refuse-carefully).
+
+**Review trigger:** Reassess when independent reviewers participate, when the repository becomes a software project, or when a genuine multi-party consortium is formed.
