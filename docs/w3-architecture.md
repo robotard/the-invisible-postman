@@ -61,6 +61,14 @@ The encapsulation boundary sits between the protected message/capsule and the tr
 
 The train may be low-fidelity and untrusted. It may be inspected, copied, delayed, reordered, transformed, substituted, or unavailable. The passenger-side security topology must remain conceptually intact if the train is replaced or removed. Image carriage remains a required route; steganography or another image technique is a route mechanism within the train, not part of the passenger security topology.
 
+2.4.1 Unique image envelopes, variable placement and decapsulation
+
+The train may generate or obtain a fresh, unique image envelope for each carriage instance and vary the envelope's publication or retrieval placement. At the receiving side, a transport decapsulation function discovers or obtains the selected carrier, extracts the encapsulated protected object, checks transport framing and extraction completeness, and hands the result to the participant endpoint. The endpoint, not the train, performs cryptographic authentication and acceptance.
+
+This creates a transport-level unlinkability objective: reduce straightforward correlation based on reuse of the same carrier or a stable, predictable publication location. It is a separate contribution of the train and does not replace the participant-side cryptographic topology. It must not be described as guaranteed anonymity. Timing correlation, access logs, network identifiers, hosting metadata, image fingerprints, repeated patterns, and the discovery/rendezvous mechanism may still reveal relationships.
+
+Variable placement requires a recipient-discovery mechanism. The design must explain how the intended recipient learns where and when to retrieve a carrier without introducing a stable locator or observable side channel that defeats the intended benefit. Random placement alone is not a delivery protocol. The carrier should be treated as disposable and replaceable; decapsulation failure must produce a bounded failure, never silent acceptance of partial or ambiguous content.
+
 2.4 Complexity must earn its place
 
 Every component must have a traceable responsibility and a demonstrable benefit against a research objective or identified threat.
