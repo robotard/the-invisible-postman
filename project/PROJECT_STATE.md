@@ -11,6 +11,33 @@
 - It is a deliberately small retrieval index for new chat sessions, not a second source of truth. Re-read the live project state, roadmap, work log and thesis before acting.
 - Refresh it only after material work has been committed and verified. Never let its cached counts or summaries override a fresh repository check.
 
+
+## 2026-11-15 · Recipient discovery, media forensics and parser-safety integration
+
+### Completed and read-back verified
+
+- Expanded the source register from 19 to 23 entries with four bounded research sources: Oblivious Message Retrieval (Liu and Tromer, CRYPTO 2022); social-media media forensics (Pasquini et al., 2021); qualitative social-engineering practices (Steinmetz et al., 2021); and Go multipart parser resource exhaustion (CVE-2023-24536).
+- Strengthened RQ7 by distinguishing four discovery/retrieval families: recipient-side scanning, stable authenticated locator/rendezvous, short-lived or one-use capability, and private/oblivious retrieval. These are comparison families only; no design is selected.
+- Refined metadata minimisation into separate categories: descriptive EXIF/IPTC/XMP and file identifiers; structural/codec information required for decoding; optional rendering information; and signal-/codec-level traces that may persist after metadata removal.
+- Added explicit resource budgets to multipart parsing and reassembly reasoning: total and per-item bytes, fragment count, manifest/header length, nesting, decompression expansion, memory, disk, CPU/time, concurrency and incomplete-set lifetime. Numerical values remain open and profile-dependent.
+- Added bounded qualitative support for social-engineering threats while distinguishing perpetrator-reported practices from measured recipient susceptibility.
+- Integrated the findings into the thesis, W2 threat model, W3 architecture, W4 evaluation, traceability and workplan.
+
+### Evidence boundaries
+
+- SRC-020's abstract and introduction/problem framing were inspected; formal definitions, proof assumptions and detailed construction/performance analysis remain outstanding. It is a comparator, not a drop-in architecture.
+- SRC-021's full survey overview, platform processing, source-identification and platform-provenance sections were inspected. It does not establish universal platform behaviour.
+- SRC-022's manuscript, sample and reported themes were inspected. Its qualitative sample does not quantify user susceptibility.
+- SRC-023's primary Go issue record was inspected. It is an implementation-level caution and does not demonstrate a defect in this proposed capsule format.
+- No platform tests, parser benchmarks, implementation, audit or independent review were performed.
+
+### Current construction priority
+
+Continue claim-level source verification and integrated thesis reconciliation. Discovery design, the field-level metadata allowlist, numeric parser budgets and platform-specific transformation profiles remain open. Diagram work remains deferred until the substantive thesis stabilises.
+
+**Theory only · No implementation · Not audited.**
+
+
 ## 2026-11-15 · Machine-readable session handover
 
 - Added `project/SESSION_DIGEST.json`, a deliberately compact, machine-readable retrieval index for continuity between chat sessions.
