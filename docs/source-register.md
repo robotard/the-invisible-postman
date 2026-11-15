@@ -226,7 +226,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Thesis §8.4; W2 discovery/rendezvous threat; W3 train/discovery boundary; W4 E9; RQ7.
 - **Supports:** Recipient-side discovery and retrieval can itself reveal message-recipient relationships even when message contents are encrypted. The paper formalises oblivious message detection/retrieval for a bulletin-board model and explains the privacy risks of long-lived detection keys and naive follow-up retrieval queries. It provides a technically demanding comparator for privacy-preserving discovery.
 - **Does not establish:** A ready-made solution for image hosts, social platforms, variable image placement or this architecture. Its bulletin-board model, cryptographic machinery, assumptions and costs must be examined before any adaptation. It does not make ordinary random URLs or changing folders private.
-- **Review state:** Abstract and introduction/problem framing inspected in the full paper; formal definitions, construction, proof assumptions and detailed performance analysis remain to be reviewed.
+- **Review state:** Full paper inspected, including system model, non-DoS and DoS threat models, formal OMR/OMD definitions, constructions, key-unlinkability treatment, performance evaluation, integration discussion and limitations. The paper explicitly excludes application-specific payload encryption, contact discovery, key establishment, privacy-preserving board posting and recipient subscription to detectors.
 
 ### SRC-021 · Media forensics on social media platforms
 
@@ -266,7 +266,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Thesis §8; W1 RQ7; W2 discovery and access-pattern threats; W3 recipient discovery; W4 privacy and cost evaluation.
 - **Supports:** OMR constructions have concrete computation, communication and key-size costs; the paper proposes optimisations and a Ring-LWE-based variant to reduce these costs.
 - **Does not establish:** That OMR is appropriate for this project's image-carriage setting, or that its privacy guarantees transfer to a different discovery protocol.
-- **Review state:** Publisher abstract and presentation summary inspected; full construction, security definitions, assumptions and evaluation remain to be reviewed.
+- **Review state:** Full PerfOMR paper inspected, including its system model, malicious-party receiver-privacy threat model, adapted OMR definition, Ring-LWE constructions, implementation benchmarks and Zcash integration considerations.
 
 ### SRC-025 · Oblivious Signaling
 
@@ -276,7 +276,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Thesis §8; W1 RQ7; W2 recipient privacy; W3 discovery/retrieval alternatives; W4 cost and privacy comparison.
 - **Supports:** A distinct privacy-preserving delivery design that shifts work from recipient retrieval to sender-side uniform updates across encrypted inboxes, changing the cost model and the relationship between global traffic and recipient checking.
 - **Does not establish:** That this construction fits the project's intended deployment, image-carriage route or operational constraints.
-- **Review state:** Official USENIX abstract and publication summary inspected; full paper, formal model, construction, proof assumptions and performance results remain to be reviewed.
+- **Review state:** Full USENIX paper inspected, including system model, formal receiver-privacy definition, malicious-server threat model, uniform encrypted-inbox update, implementation/evaluation, cost comparison and limitations. Receiver privacy is the focus; sender anonymity depends on an external anonymous channel, network-level metadata remains possible, correctness assumes protocol-following updates, and fixed-capacity FIFO inboxes evict older messages.
 
 ### SRC-026 · Dead-drop covert messaging pipeline
 
@@ -286,7 +286,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Thesis §§3 and 8; W1 RQ5–RQ8; W2 platform and observer threats; W3 transport/discovery boundary; W4 route and operational evaluation.
 - **Supports:** Practical covert messaging over public-platform dead drops involves pipeline-level algorithmic challenges and performance/security trade-offs beyond the embedding or cover-generation method alone.
 - **Does not establish:** That its generative text-cover pipeline is equivalent to image-carried capsules, or that its proposed solutions transfer directly to this architecture.
-- **Review state:** Publisher abstract and full-version overview inspected; detailed system model, construction, empirical evaluation and limitations remain to be reviewed.
+- **Review state:** Full version inspected, including MBFTE construction, rendezvous/key-table model, overt/covert hints, platform constraints, fragmentation, retrieval, threat model, naturalness/detectability evaluation and limitations. The adversary cannot control the platform or observe fine-grained user actions/IP addresses; platform cooperation is explicitly left outside the model.
 
 ### SRC-027 · Provably Secure Covert Messaging Using Image-based Diffusion Processes
 
@@ -296,7 +296,29 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Thesis §8; W1 RQ5/RQ6; W2 concealment and observer threats; W4 steganalysis/robustness evaluation.
 - **Supports:** Image-based covert communication has been studied using diffusion-model outputs, including formal indistinguishability claims under the paper's stated model and empirical trade-offs among capacity, recovery and transformations.
 - **Does not establish:** Equivalence to embedding protected capsules in externally hosted or user-selected images; the generated-image model and assumptions differ.
-- **Review state:** Publication record and abstract inspected; full paper, formal definitions, proof assumptions, threat model and empirical methodology remain to be reviewed.
+- **Review state:** Full paper inspected, including generated-image channel, pre-shared-key assumption, adversary model, latent-space indistinguishability argument, proof discussion, transformation assumptions and empirical evaluation. It explicitly does not study how the generated image is delivered; its target is low-volume covert communication, not frequent low-latency high-capacity messaging.
+
+### SRC-028 · SophOMR: Improved Oblivious Message Retrieval from SIMD-Aware Homomorphic Compression
+
+- **Source:** Lee, K. and Yeo, Y. (2026), *SophOMR: Improved Oblivious Message Retrieval from SIMD-Aware Homomorphic Compression*, 35th USENIX Security Symposium, pp. 3219–3238.
+- **Publisher/status:** USENIX Security 2026 conference paper.
+- **Link:** https://www.usenix.org/conference/usenixsecurity26/presentation/lee-keewoo
+- **Full text:** https://www.usenix.org/system/files/conference/usenixsecurity26/sec26_prepub_lee.pdf
+- **Relevant to:** Thesis §8; W1 RQ7; W2 recipient-privacy observer model; W3 discovery/retrieval comparison; W4 E6/E9.
+- **Supports:** A 2026 single-server OMR construction that improves homomorphic compression using SIMD-aware techniques. Its reported evaluation compares against PerfOMR and reports concrete runtime, digest-size and key-size improvements under specified workloads.
+- **Does not establish:** A complete messaging or publication architecture, contact discovery, sender anonymity, platform/carrier concealment, or protection against observations outside its stated public-board and message-recipient-linkage model.
+- **Review state:** Full paper inspected, including OMR model, passive receiver-linkage threat model, construction, evaluation and comparison with PerfOMR. The paper states that its focus is efficiency and does not expand the underlying OMR privacy model.
+
+### SRC-029 · InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability
+
+- **Source:** Liang, H., Liu, Z., Tromer, E., Xie, X. and Yu, Y. (2026), *InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability*, 35th USENIX Security Symposium, pp. 4227–4246.
+- **Publisher/status:** USENIX Security 2026 conference paper.
+- **Link:** https://www.usenix.org/conference/usenixsecurity26/presentation/liang
+- **Full text:** https://www.usenix.org/system/files/conference/usenixsecurity26/sec26_prepub_liang.pdf
+- **Relevant to:** Thesis §8; W1 RQ7; W2 recipient-privacy observer model; W3 discovery/retrieval comparison; W4 latency, throughput and privacy evaluation.
+- **Supports:** A hybrid TFHE/RLWE OMR construction targeting low latency and high parallelisability. The paper compares it with PerfOMR and SophOMR and identifies a latency/throughput trade-off: streaming and small-batch retrieval favour InstantOMR, while large accumulated batches can favour SophOMR.
+- **Does not establish:** A complete messaging lifecycle, contact discovery, platform publication privacy, image-carriage concealment or broader network anonymity. Its stated OMR threat model protects recipient-message linkage; the conference paper defers correctness/integrity against malicious detectors to the full version.
+- **Review state:** Full USENIX paper inspected, including system summary, OMR threat model, construction, benchmark methodology, performance trade-offs and scope statements. Formal details referenced as deferred to the full version are not treated as independently checked here.
 
 ## 5. Claim-to-source map
 
@@ -311,7 +333,7 @@ The date in this register records when the source was checked, not the date of t
 | Key lifecycle | SRC-010–SRC-011 | Recheck current NIST revisions and derive project-specific lifecycle semantics |
 | Image metadata and platform transformations | SRC-012–SRC-014; SRC-021 | Separate semantic metadata from format/codec and forensic fingerprints; test each named route and platform instead of assuming universal stripping |
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
-| Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025 | Compare full-scan, rendezvous, capability, OMR/PerfOMR, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
+| Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025; SRC-028; SRC-029 | Compare full-scan, rendezvous, capability, OMR-family variants, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
 | Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
 | Human social engineering and interpersonal behavioural mimicry | SRC-022; SRC-018–SRC-019 for adjacent traffic/behavioural evidence | Separate qualitative perpetrator accounts, measured traffic features and unverified project-specific behavioural propositions; add recipient/usability studies where needed |
 | Multipart transport reconstruction and parser safety | SRC-009 as a protocol comparator; SRC-023 as an implementation-level resource-exhaustion example | Specify authenticated manifests and reassembly separately from parser resource budgets; do not equate MIME parsing with capsule parsing |
