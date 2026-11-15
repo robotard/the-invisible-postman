@@ -176,3 +176,5 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/w1-research-framing.md` — research problem, questions, scope, and contribution.
 - `docs/w2-threat-model.md` — assets, actors, capabilities, security goals, and threats.
 - `docs/w3-architecture.md` — components, lifecycle, envelope concepts, capsule handling, and open decisions.
+
+The design-decision diagram is maintained at `diagrams/03-design-decisions.svg`. It includes the original password-derived choice, its rationale and the later architectural evolution. The figure is explanatory only and does not imply implementation or validation.
