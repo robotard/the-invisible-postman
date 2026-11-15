@@ -27,6 +27,7 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 3. `thesis.md` — thesis text in Markdown.
 4. `docs/the-invisible-postman-thesis.docx` — thesis copy with styled diagram assets embedded.
 5. `docs/W1-research-framing.md` and `docs/W2-threat-model.md` — supporting research artifacts.
+6. `docs/decision-register.md` — design choices, rationale, changes and rejected approaches.
 6. `review/REVIEW_QUESTIONS.md` — open questions for critical review.
 
 ## Core principles
