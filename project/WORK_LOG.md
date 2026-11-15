@@ -367,7 +367,7 @@ Scope note: this audit covers relative path targets, not external URL availabili
 - Added four source-register entries after inspecting source material: Liu and Tromer (2022) on Oblivious Message Retrieval; Pasquini, Amerini and Boato (2021) on media forensics across social platforms; Steinmetz, Pimentel and Goe (2021) on social-engineering practices; and the Go project's CVE-2023-24536 multipart parser resource-exhaustion record.
 - The OMR paper sharpens RQ7: discovery and retrieval are separate privacy protocol problems. The working comparison now distinguishes recipient-side scanning, stable authenticated locators/rendezvous, short-lived or one-use capabilities, and private/oblivious retrieval. No approach is selected; the paper's bulletin-board construction is not treated as a drop-in image-hosting solution.
 - The media-forensics survey supports a more careful metadata model: descriptive EXIF/IPTC/XMP fields are distinct from required image-container/codec structures, optional rendering information and signal-/codec-level platform fingerprints. Removing descriptive metadata cannot establish that a transformed image is uncorrelatable.
-- The social-engineering study provides qualitative, bounded evidence from 37 interviews with social engineers. It supports attention to timing, routines, rapport, familiarity and adaptation, but does not quantify recipient susceptibility or validate every project-specific behavioural hypothesis.
+- The social-engineering study provides qualitative, bounded evidence from 37 interviews with social engineers. It supports attention to timing, routines, rapport, familiarity and adaptation, but does not quantify recipient susceptibility or validate every project-specific behavioural proposition.
 - The Go multipart-parser incident demonstrates that excessive part counts and allocation patterns can cause CPU/memory exhaustion in a real parser. It is explicitly treated as an implementation-level caution, not as evidence of a vulnerability in the proposed capsule format.
 
 ### Deployed and read-back verified
@@ -414,10 +414,10 @@ Scope note: this audit covers relative path targets, not external URL availabili
 ### Completed and read-back verified
 
 - Added [the thesis contribution and bias assessment](../docs/thesis-contribution-and-bias-assessment.md), with a weighted, explicitly provisional assessment of originality, theoretical coherence, usefulness, security/privacy reasoning, falsifiability and scope feasibility.
-- Identified the strongest current contribution hypothesis as a lifecycle-wide analysis of endpoint-controlled messaging over replaceable untrusted carriage, especially the interaction between image carriage, recipient discovery/retrieval and cross-layer privacy leakage. This remains a hypothesis, not an originality finding.
+- Identified the strongest current contribution direction as an emergent proposition: a lifecycle-wide analysis of endpoint-controlled messaging over replaceable untrusted carriage, especially the interaction between image carriage, recipient discovery/retrieval and cross-layer privacy leakage. Its originality remains unestablished.
 - Recorded bias controls for image-route commitment, architecture-by-accumulation, novelty-by-combination, security-language inflation, threat-model sprawl, source-confirmation bias and metaphor/terminology bias.
 - Expanded the source register with PerfOMR (2024), Oblivious Signaling (2026), dead-drop covert messaging (2024) and image-based diffusion covert messaging (2025). Newly added works are explicitly marked as abstract/overview-level inspections; full-text verification remains outstanding.
-- Added a direct “go” decision: continue thesis construction, but do not claim originality as established. Candidate B (end-to-end delivery privacy analysis) is the leading contribution hypothesis, supported by A (responsibility-separated architecture) and C (route comparison/evaluation).
+- Added a direct “go” decision: continue thesis construction, but do not claim originality as established. Candidate B (end-to-end delivery privacy analysis) is the leading potential contribution direction, supported by A (responsibility-separated architecture) and C (route comparison/evaluation).
 - No diagram work or implementation was started. Diagrams remain downstream of the contribution and argument being stable.
 
 ### Hard judgement
@@ -446,3 +446,26 @@ The largest academic risk is originality. Existing work already addresses image 
 
 **Theory only · No implementation · Not audited.**
 
+## 2026-11-15 · Method correction and session-continuity rule
+
+### Completed and read-back verified
+
+- Updated the machine-readable session digest first, recording the mandatory three-document rule and the corrected epistemic language.
+- Retracted the premature use of **hypothesis** for the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
+- Added a canonical distinction in research practice between research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions.
+- Reconciled stale hypothesis wording across the active thesis, research practice, self-review, source register, traceability, contribution assessment, diagram index and project records. Historical archive files remain untouched.
+- Established the concrete rule: every session must use and reconcile project/PROJECT_STATE.md, project/WORKPLAN.md and project/WORK_LOG.md. Before stopping, all three must agree on completed work or an explicitly parked continuation point. Parked work must include evidence, current state, blockers/dependencies, exact next action, relevant paths and constraints.
+
+### Verification boundary
+
+- Digest update was committed and fetched back successfully before the other edits.
+- The active Markdown tree was searched for remaining occurrences of the retracted term; final verification is pending until the full terminology batch is read back and rescanned.
+- No archive files, diagrams, implementation or security claims were changed.
+
+### Parked continuation
+
+- Resume the existing prior-art workplan: inspect full texts and formal models for OMR, PerfOMR and Oblivious Signaling; then inspect the dead-drop pipeline and image-diffusion papers.
+- Build the candidate A/B/C prior-art matrix from what those sources actually establish, including limitations and counterevidence.
+- Revisit the emergent proposition only after that comparison. Keep new illustrations deferred.
+
+**Theory only · No implementation · Not audited.**
