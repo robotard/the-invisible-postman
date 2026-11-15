@@ -76,6 +76,16 @@ The trust boundary is placed at communicating endpoints. Endpoints hold plaintex
 
 Confidentiality, sender authentication, identity verification, integrity, replay resistance, availability, concealment, and metadata protection are distinct properties. A design may provide one while failing another.
 
+### 3.1 Passenger topology and the standalone train
+
+The participant-side cryptographic topology is the primary security architecture. The participants ("passengers") perform their own concise, necessary roles at their endpoints: the agreement/key-establishment process, message protection, authentication and validation required by the eventual protocol. The exact agreement construction, including what is meant by any anonymous agreement, remains open and must not be inferred from this architectural description.
+
+The "train" is a separate, standalone transport element. Its job is deliberately narrower: carry an already protected object over a low-fidelity route, with route selection and carriage handling kept distinct from participant security. It does not establish trust, negotiate keys, authenticate participants, encrypt messages, or acquire authority over message meaning. It may be inspected, copied, delayed, transformed, substituted or unavailable without becoming the source of the participants' security.
+
+A carrier-facing encapsulation boundary packages the protected object for carriage and preserves framing and route context. It may help detect truncation, substitution or extraction failure, but encapsulation alone does not create confidentiality, authentication, anonymity or integrity. Any security-relevant binding must be covered by the endpoint-controlled cryptographic protocol. The transport wrapper must not silently rewrite authenticated message semantics.
+
+Image carriage remains a required route. Steganography or another image-carriage technique is a low-fidelity transport mechanism within the train, not part of the passenger security topology. Steganography remains optional and does not provide the underlying protection. The train is independently replaceable and assessable; the stronger participant topology must not depend on its trustworthiness.
+
 ## 4. Trust model and adversaries
 
 Participants control their endpoints and are responsible for local secret protection, peer verification, correct protocol execution, and plaintext handling. A bot, platform, image host, or storage provider may inspect, retain, transform, reorder, suppress, or remove media and metadata. Network observers may learn timing, volume, endpoints, and other metadata. Active attackers may read public carriers, modify or replay them, submit malformed capsule sets, mix fragments, attempt key substitution, or compromise an intermediary. A compromised endpoint may expose plaintext and keys before encryption or after decryption.
