@@ -115,3 +115,47 @@ Continue Phase 1 in order:
 ## Assurance statement
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Collaborative governance checkpoint
+
+### Completed and verified
+
+- Added docs/collaborative-governance.md, a proposed consortium-inspired, project-scoped governance framework.
+- Added contribution and review attribution template at docs/templates/contribution-review-record.md.
+- Added practice proposal and decision record template at docs/templates/decision-record.md.
+- Defined the practice lifecycle from Draft through review, ratification, adoption, contestation and supersession.
+- Defined independent review thresholds, with stronger requirements for security-, privacy- and safety-significant practices.
+- Defined the project-wide baseline "global commit" as an auditable merge after ratification, with the originating proposal, exact reviewed version, reviewers, dissent, contributor mapping and merge SHA retained.
+- Distinguished contribution, review, approval, ratification and endorsement. Added consent-based attribution using CRediT roles where appropriate, while separating review credit from Git commit authorship.
+- Defined automation as process enforcement only. It may validate metadata and approval gates but must not infer truth, expertise, independence or consent, and must never erase dissent.
+- Integrated the framework into README.md, project/WORKPLAN.md, docs/research-practice.md, docs/traceability.md and docs/decision-register.md. Added proposed governance decision D-08.
+- Added official CRediT and GitHub documentation as source notes in the governance document.
+- Verified successful GitHub write responses for all new files and cross-document changes.
+- Recorded this work in project/WORK_LOG.md.
+
+### Governance and repository controls: verified limits
+
+- The GitHub repository rulesets endpoint returned an empty list.
+- The available connection returned HTTP 403 when branch protection for main was queried. Branch-protection status is therefore unverified.
+- No GitHub protection setting, automation, auto-merge or ratification workflow was enabled.
+- No external peer reviewers, consortium members, ratified practices or contributor endorsements are claimed.
+- The governance framework is a proposal pending independent review. The "global commit" is a defined future adoption event, not an event that has occurred.
+
+### Work-unit status
+
+- W0.1 remains complete for the previously verified repository tree and internal Markdown-link audit.
+- W0.2 has expanded: research-practice method, author challenge register and collaborative governance/attribution framework now exist. Actual peer review, author claim-by-claim responses and a tested contribution workflow remain outstanding.
+- W0.3 remains outstanding: reconcile the thesis with W1–W4, decision register and historical source material.
+
+### Next work
+
+1. Continue W0.2 by conducting the author claim-by-claim review and verifying source claims.
+2. Complete W0.3 source reconciliation.
+3. Invite independent review of the governance framework before treating it as adopted policy.
+4. Decide whether branch protection/rulesets should be enabled after the actual reviewer permission model is known.
+5. Exercise the templates with real contributions only when contributors consent and their roles are confirmed.
+6. Do not automate adoption until the manual process has been independently examined and successfully exercised.
+7. Stabilise the manuscript before further diagrams and reviewer PDF work.
+
+**Theory only · No implementation · Not audited.**
