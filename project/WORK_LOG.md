@@ -315,3 +315,18 @@ No cryptographic protocol or transport implementation has been created. No secur
 - No new illustrations, reviewer solicitation or messaging-system implementation was created.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Repository consistency audit
+
+- Re-read all 19 active Markdown files from the live default branch.
+- Checked 45 relative Markdown links against the repository tree: zero broken targets.
+- Confirmed the exact project status statement appears in all 19 active Markdown files.
+- Checked for active ZIP/archive-generation instructions: none found. Preserved historical archive references and files were left intact.
+- Confirmed the repository tree contains 24 files, including 20 Markdown files (19 active and one archived source).
+- Marked W0.1 complete in `project/WORKPLAN.md`.
+- Read back the updated workplan and project checkpoint after successful commits.
+
+Scope note: this audit covers relative path targets, not external URL availability or heading-anchor rendering.
+
+**Theory only · No implementation · Not audited.**
