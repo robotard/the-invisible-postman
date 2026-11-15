@@ -109,7 +109,10 @@ These are target properties, not claims that the current proposal satisfies them
 | Fragment mixing, conflicting indices or invalid set construction | Parts from different messages are combined or a capsule is assigned to the wrong logical position | Versioned authenticated manifest, message-set identifier, index/count, content binding and strict reconstruction validation; transport arrival order may differ from logical order |
 | Missing or duplicate fragments | Incomplete or ambiguous message reconstruction | Explicit completeness rules and rejection behavior |
 | Image transformation | Carrier payload is damaged or removed | Test platform transformations; fail safely rather than claim robust concealment |
-| Metadata correlation | Participants or communication patterns are inferred | Document visible metadata and avoid unsupported anonymity claims |
+| Metadata correlation | Participants or communication patterns are inferred | Document visible carrier, platform, host, network and access metadata; avoid unsupported anonymity claims |
+| Traffic analysis and flow correlation | Encrypted contents remain confidential while timing, size, volume, endpoint or access patterns reveal communication relationships or activity | Define observer vantage and retained records; examine timing/size correlation and the cost of any padding, delay, batching or cover-traffic countermeasure |
+| Discovery and rendezvous correlation | A stable locator, publication schedule or retrieval pattern links a recipient to a carrier | Treat discovery as an explicit protocol function; authenticate retrieval instructions and evaluate locator lifetime, publication timing and access patterns |
+| Behavioural probing | Repeated routines or social-engineering prompts elicit linkable responses | Model behavioural side channels and realistic probes; avoid relying on constant user vigilance or deceptive camouflage |
 | Intermediary compromise | Routing, availability, or metadata abuse | Minimize intermediary privileges and retained data; keep plaintext and decryption authority at endpoints |
 | Logging or diagnostics leak | Plaintext, keys, or tokens escape the protocol boundary | Secret-safe logging policy and adversarial inspection of logs and crash paths |
 | Recovery collusion or theft | Unauthorized key reconstruction | Specify threshold, participant authentication, share protection, collusion assumptions, and recovery auditing |
@@ -141,6 +144,9 @@ The following remain open and must be resolved before protocol-level security cl
 - nonce generation and uniqueness enforcement for the selected AEAD;
 - replay state, message expiry semantics, and clock assumptions;
 - permitted metadata exposure and retention;
+- recipient discovery, rendezvous and locator lifetime;
+- the observer model for timing, size, volume, flow correlation and access patterns;
+- whether any traffic obfuscation, padding, delay, batching or cover traffic is in scope, and what costs it introduces;
 - handling of corrupted images and platform transformations;
 - threshold value, share distribution, participant authentication, collusion threshold, and recovery authorization; and
 - test cases, acceptance thresholds, and independent review criteria.
