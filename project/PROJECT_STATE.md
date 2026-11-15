@@ -265,3 +265,37 @@ These decisions require the comparative use-case analysis and threat-led evidenc
 Continue the author-led review with SELF-04 through SELF-12, then complete W0.3 source reconciliation. Do not start illustration work until the manuscript and scope decisions stabilise.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Transport-route scope and contributor-continuity clarification
+
+### Researcher scope clarification
+
+The researcher explicitly confirmed that message carriage must be included as transport routes. Image carriage is a required route in the research and remains central; it must not be demoted to a decorative or optional afterthought. Other routes may be modelled as comparison profiles. This is recorded as D-10 in docs/decision-register.md.
+
+### Completed and verified
+
+- Updated the SELF-01 response: the earlier suggestion to make image carriage merely optional was too broad. The route layer is first-class; image carriage is required; alternatives are comparison profiles. Comparative evaluation remains necessary and does not presume image-route superiority.
+- Updated the active thesis, W1 and W3 to reflect the route-layer decision.
+- Added docs/idea-intake-and-continuity.md to address three explicit governance risks: no active external contributors, absent/dormant contributors, and useful ideation being overlooked.
+- Added continuity rules for durable idea capture, provenance, triage, resurfacing, contributor return, attribution uncertainty and no-contributor operating mode.
+- Updated the governance framework, decision register, README and WORKPLAN.
+- Successful read-back verification:
+  - Idea intake and continuity document: aee8c451618b419c12bcf3525a88fa8054566541
+  - Governance framework: 68dd9a42ee34740d6dfaec5b28a3b15158fa87f0
+  - Decision register D-10: 12c9436f6539c2e0622bb3db9fcac1dea33d26ed
+  - SELF-01 correction: 5627f900da6742cc9c4b29738dc2f51c0f94e063
+  - Thesis: 31cfd09d516ff0bc2a6a65427a0f07281db72c15
+  - W3: 67a19f9ec9d163b145e497d466d0ac61c85b9338
+  - README: 939269f6b23a86cd226beee276a575d24824eba4
+  - WORKPLAN: 575af57b8f544db9c56649972e118d0242951825
+
+### Important boundary
+
+No external contributors or reviewers are currently claimed. The new intake and continuity process is a proposed manual process and has not yet been exercised. No automation or GitHub enforcement was enabled.
+
+### Next
+
+Continue author-led SELF-04 to SELF-12 and W0.3 source reconciliation. Then define the transport-route comparison matrix and reconcile route terminology across thesis, W1–W4 and evaluation. Keep diagrams deferred until the substantive architecture stabilises.
+
+**Theory only · No implementation · Not audited.**
