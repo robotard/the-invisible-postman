@@ -1,207 +1,388 @@
 # The Invisible Postman
-## A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging
+## A Theory-Based Architecture for Endpoint-Controlled Cryptographic Messaging with Image Carriage
 
 **Researcher:** `@robotard`  
-**Document:** Integrated architecture thesis, working draft  
-**Checkpoint:** 2026-11-14  
+**Document:** Integrated thesis, working research draft  
+**Checkpoint:** 2026-11-15  
 **Status:** Theory only · No implementation · Not audited
 
-> This is a proposed architecture and research programme, not a protocol specification, implementation, formal proof, or independent security audit.
+> This is a proposed architecture and research programme. It is not a protocol specification, implementation, formal proof, empirical result, or independent security audit.
 
 ## Abstract
 
-The Invisible Postman investigates whether image-carried messaging can be designed so communicating endpoints retain control of plaintext and cryptographic authority while bots, messaging platforms, image hosts, and storage services act as untrusted intermediaries. Image carriage is a required transport route within the research. Other routes may be compared as distinct carriage profiles. Optional steganographic techniques may attempt to conceal the presence of encrypted material within an image, but do not provide cryptographic protection. Neither the carrier nor concealment provides cryptographic confidentiality, sender authentication, or identity assurance.
+The Invisible Postman examines how communicating endpoints might retain control of plaintext and cryptographic authority while using intermediaries for message coordination and carriage. The research began with a compact idea: protect a message with a shared secret and carry the protected material inside an image. That starting point exposed useful questions about encryption, concealment and portability, but it did not by itself address the wider requirements of authenticated communication between independently verified participants.
 
-The architecture separates endpoint identity and key management, authenticated key establishment, message encryption, sender authentication, message-envelope integrity, multipart capsule handling, a first-class transport-route layer, carrier-specific processing, intermediary coordination, and lifecycle policy. Recovery is treated as a separate capability with explicit governance and collusion assumptions, not as a synonym for ciphertext fragmentation.
+The research therefore develops a broader, endpoint-controlled architecture. It distinguishes identity and key verification, authenticated key establishment, message confidentiality, sender authentication, authenticated message context, multipart handling, transport, carrier processing, intermediary coordination, lifecycle policy and possible recovery. Image carriage remains a required research route and an important part of the project's identity. Other carriage methods provide comparison profiles. Optional steganographic concealment is examined separately from cryptographic protection.
 
-The intended contribution is a transparent architecture whose trust boundaries, assumptions, failure modes, and limitations can be examined. The design remains provisional. Its cryptographic primitives, message format, identity-verification process, recovery model, and carrier strategy require further specification and evaluation.
+A central architectural proposition is that the participant-side cryptographic topology must remain distinct from a replaceable, untrusted transport element. The transport can carry, publish, expose, delay, transform, lose or suppress protected material without becoming an authority for identity, keys, message meaning or decryption. The research also examines how distribution, discovery and collection create their own privacy and reliability questions. Unique image envelopes, variable placement and metadata minimisation may reduce some simple forms of carrier correlation, but cannot establish participant anonymity or erase platform, network and behavioural observations.
 
-## 1. Research purpose and question
+The intended contribution is a reasoned and challengeable architecture, a record of design evolution, an explicit threat model, a comparison of carriage methods, and a falsifiable evaluation programme. The work deliberately distinguishes established mechanisms from proposed design choices and unverified claims. Important protocol, identity, discovery, recovery and evaluation decisions remain open.
 
-Secure messaging often relies on services that route, store, coordinate, or transform content. Those services may be useful without being trusted with plaintext or the sole authority to decrypt it. An image can carry encrypted material, and optional steganography may make that material less apparent. But concealment does not replace encryption, authentication, or identity verification. Encryption does not guarantee anonymity, metadata protection, or delivery.
+## 1. Research purpose and problem
 
-**Central research question:** Can image-carried messaging be designed so that an untrusted intermediary transports or coordinates encrypted messages without being able to decrypt them or impersonate authenticated participants, while accounting explicitly for concealment, multipart delivery, expiry, revocation, and recovery?
+### 1.1 The problem
 
-Supporting questions concern endpoint trust; intermediary visibility and capabilities; the limited value and fragility of concealment; multipart integrity; lifecycle semantics; threshold recovery assumptions; and measurable evaluation criteria.
+Secure communication is not only a matter of encrypting a string and sending it. A usable messaging system must establish who is communicating, determine which keys and sessions are trusted, protect message contents, authenticate relevant context, move data between endpoints, handle incomplete or duplicated delivery, and respond to device loss, key change and compromise. It must also account for what intermediaries can observe and what users reasonably expect the system to do.
 
-## 2. Scope, contribution, and non-goals
+Modern communication commonly depends on services outside the direct control of participants: bots, messaging platforms, file hosts, storage providers, content delivery networks and network operators. These services can be operationally useful without being trusted with plaintext or the sole ability to decrypt. Yet even a service that cannot decrypt may still observe relationships, timing, size, access patterns, media properties and user behaviour. It may also alter, reorder, delay, suppress or remove content.
 
-The research considers user-controlled endpoints, endpoint-held plaintext and private keys, authenticated key establishment, explicit peer verification, authenticated encryption, sender authentication, versioned message context, a transport-route layer with image carriage as a required route, optional concealment, untrusted coordination, expiry/revocation, and optional threshold-controlled recovery. Alternative carriage routes are comparison profiles, not substitutes for examining the image route.
+The research explores whether a clear separation of responsibilities can make those boundaries understandable and testable. It does not assume that moving ciphertext through an image makes the system secure. Nor does it assume that a platform becomes harmless merely because it cannot read the message.
 
-The intended contribution is a theory-led architecture and rationale that separates security properties, makes trust boundaries explicit, records assumptions and failure modes, distinguishes fragmentation from secret sharing, and proposes testable acceptance criteria.
+### 1.2 Central research question
 
-This work does not claim a functioning application, complete protocol, formal verification, independent audit, measured resistance to steganalysis, anonymity, guaranteed delivery, endpoint-compromise protection, remote deletion of obtained plaintext, or a complete recovery design.
+**How can an endpoint-controlled messaging architecture protect message contents and authenticate communicating participants while using untrusted intermediaries and image-based carriage, and what security, privacy, usability and reliability limits remain across the complete communication lifecycle?**
 
-The password-based model is retained as an intentional starting point and evaluated alternative. Its original rationale, limitations, and relationship to the current endpoint-controlled direction are set out in Section 2.1.
+### 1.3 Supporting research questions
 
-### 2.1 Design evolution: password-derived encryption to endpoint-managed keys
+1. **Identity and trust:** What does it mean to verify a participant's cryptographic key, and what does that process not prove about a real-world identity?
+2. **Cryptographic composition:** Which endpoint responsibilities are required for authenticated key establishment, confidentiality, sender authentication, integrity, replay resistance and key lifecycle?
+3. **Intermediary exposure:** What can bots, platforms, hosts, storage providers and network observers learn, alter, correlate or deny?
+4. **Message structure:** How should message context, envelopes, multipart capsules and manifests be bound and validated?
+5. **Carriage methods:** What changes when protected material travels as an image, an encrypted file, an attachment or through a conventional end-to-end messaging route?
+6. **Concealment:** Does optional steganographic concealment address a distinct and measurable threat, and under which transformations does it fail?
+7. **Discovery and collection:** How can a recipient discover and collect a changing carrier without creating a stable rendezvous point or access pattern that defeats the intended privacy benefit?
+8. **Human behaviour:** How can routines, timing, language, platform habits and social-engineering probes create linkability even when carriers and locations vary?
+9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
+10. **Evaluation:** What observations would support, weaken or falsify the architectural propositions, and what evidence would be required before stronger claims could be made?
 
-The password-based model was a deliberate starting point, not a design mistake to be erased from the research record. The original concept was a compact, user-operated exchange: a sender protects a message with a secret they can share with the intended recipient, embeds the encrypted payload in an image, and the recipient supplies the same secret to recover it. A password or passphrase offered a familiar interaction, required no account directory or central key service, and made the protected image portable between endpoints. It also allowed the early research to examine the separation between encryption and steganographic carriage without first designing a full identity and key-distribution system.
+### 1.4 Research approach
 
-That choice was pragmatic for an exploratory, small-group or one-off exchange. It was not a claim that passwords are stronger than public-key cryptography, that a password proves the sender's identity, or that a shared secret is a complete messaging protocol. In the original model, Argon2id was proposed to derive a fixed-length key from a password and a fresh random salt; the salt and KDF parameters travel with the payload, while the password remains with the participants. A vetted authenticated-encryption construction then protects the message. The KDF raises the cost of password guessing, but cannot add entropy that the password does not contain.
+This is theory-led architectural research. It proceeds by making the proposition explicit, separating properties that are often conflated, examining alternatives, modelling adversaries and failure modes, and deriving evaluation questions from the resulting claims.
 
-The subsequent research question became broader. The project now asks how multiple communicating endpoints can retain cryptographic authority while an intermediary coordinates delivery without obtaining plaintext or the sole means of decryption. That brings requirements the simple shared-password model does not solve on its own: explicit peer identity verification, authenticated key establishment, sender authentication, per-session context, key rotation and compromise handling, and a defensible lifecycle across devices and conversations. A shared password can encrypt content, but by itself it does not establish which participant sent a message, bind a public key to a person, provide forward secrecy, or prevent offline guessing if an attacker obtains the encrypted carrier and its KDF metadata.
+The method is iterative rather than confirmatory. A design choice is not treated as correct because it is elegant, familiar or already recorded in the repository. Each choice must state the problem it addresses, the assumptions it needs, the alternatives considered, the costs it introduces and the evidence that could challenge it. Where evidence is absent, the document must say so. Where a decision is unresolved, the thesis must preserve that uncertainty rather than fill it with an attractive guess.
 
-The architectural change is therefore a change in scope and security objectives, not a rejection of the useful properties of password-derived encryption. Password-based protection remains a legitimate option where participants already share a sufficiently strong secret through a separate trusted channel and accept the associated key-sharing, attribution, rotation, and compromise limitations. It may suit a self-contained encrypted object or a deliberately narrow mode. It is not treated as the identity model or the default key-establishment mechanism for the wider endpoint-controlled architecture.
+The work is informed by the active research framing, threat model, architecture and evaluation documents, the decision register and author-led self-review. Those supporting documents are working research artifacts, not independent validation. Source reconciliation and a claim-to-source register remain necessary before the manuscript can be considered academically complete.
 
-The current direction places identity verification, private-key custody, and session establishment at the endpoints. Password-derived encryption is retained in the thesis as an evaluated alternative and as part of the project's design history. Any future hybrid that combines a password with endpoint key agreement would need an explicit protocol, a stated purpose for each input, context binding, key separation, and independent review; it must not be assembled informally.
+## 2. Origin and evolution of the research
 
-| Design question | Password-derived starting model | Current endpoint-controlled direction |
+### 2.1 The initial image-and-password model
+
+The initial concept was deliberately compact: a sender protects a message with a password or passphrase shared with the intended recipient, places the resulting protected data into an image, and sends or publishes that image. The recipient obtains the image and uses the shared secret to recover the message.
+
+This model was useful as an exploratory starting point. It was easy to explain, avoided an initial dependency on an identity directory, and made the distinction between message encryption and image concealment visible. It also raised immediate questions: whether the image was merely a carrier, whether the embedded material could survive ordinary image processing, what metadata remained exposed, and whether a shared secret was sufficient for the communication being proposed.
+
+Argon2id was considered as a password-based key derivation function, with a fresh salt and recorded parameters. The KDF can increase the cost of guessing, but it cannot create entropy absent from the password. The encrypted object would still need a vetted authenticated-encryption construction and correct nonce handling. The password model did not, by itself, prove who sent a message, bind a key to a human identity, provide a robust multi-device lifecycle or solve first-contact impersonation.
+
+The starting model is retained as part of the research history. It is not rewritten as a failed idea: it was a useful narrow model whose limits became clearer as the research question expanded.
+
+### 2.2 Why the research widened
+
+The project moved from a self-contained protected object towards communication between independently verified endpoints. This changed the problem. The question was no longer only how to protect a message before placing it in an image. It became how participants establish and maintain trust, how sender identity is authenticated, how context is bound to ciphertext, how keys change, and how delivery can proceed through services that are not trusted with plaintext.
+
+A shared password may remain appropriate for a narrow, pre-arranged exchange where participants accept its limitations. It is not automatically a participant identity system or a complete protocol for ongoing communication. A hybrid that combines passwords with endpoint key agreement would need a defined role for each input, explicit context binding and key separation, and independent review. Informal combinations of cryptographic primitives are not an acceptable substitute for protocol design.
+
+### 2.3 Design evolution as evidence of changing assumptions
+
+The design history matters because it records why the scope changed. It should not be mistaken for evidence that the later architecture is correct. The evolution from password-derived encryption to endpoint-managed keys reflects an expanded set of requirements, not a simple ranking in which one approach is universally superior.
+
+**Illustration pointer:** [01 · From idea to architecture](diagrams/01-ideation-and-design-evolution.svg) shows the initial concept and the reasoning path that widened the research. It is a historical and conceptual map, not an implementation workflow.
+
+**Illustration pointer:** [03 · Design decisions](diagrams/03-design-decisions.svg) records selected design choices and their rationale. It should be read alongside the decision register, which carries the fuller reasoning, alternatives and unresolved status.
+
+## 3. Research proposition, scope and contribution
+
+### 3.1 Core proposition
+
+The central proposition is that cryptographic authority should remain with the communicating endpoints, while intermediary services are treated as untrusted for plaintext confidentiality and sole decryption authority. Transport and carrier handling should be replaceable and should not silently acquire identity, key, authentication or message-semantic authority.
+
+This is an architectural objective, not a demonstrated guarantee. Its plausibility depends on correct cryptographic composition, endpoint security, identity verification, message binding, safe parsing, and a transport design that does not create unacceptable privacy or availability failures.
+
+### 3.2 Intended contribution
+
+The intended contribution is a transparent research architecture that:
+
+- distinguishes security properties that are often conflated;
+- makes endpoint and intermediary responsibilities explicit;
+- explains the evolution from the initial password-based model;
+- separates cryptographic message construction from transport and carrier processing;
+- examines image carriage as a required route without presuming it is superior;
+- compares route-specific capabilities, exposures and failure modes;
+- includes discovery, collection and human behavioural linkability in the privacy analysis;
+- distinguishes ciphertext fragmentation from threshold secret sharing;
+- states lifecycle and recovery limitations;
+- proposes evaluation criteria capable of challenging the design; and
+- preserves assumptions, alternatives, dissent and unresolved decisions.
+
+### 3.3 Scope
+
+The research includes endpoint-controlled key custody and plaintext handling; explicit peer verification; authenticated key establishment; authenticated encryption; sender authentication; versioned message context; envelope and multipart validation; a first-class carriage layer; image carriage as a required route; comparison carriage profiles; optional steganographic concealment; intermediary coordination; metadata minimisation; discovery and collection; expiry, revocation and key rotation; and the possible inclusion of separately governed recovery.
+
+### 3.4 Non-goals and exclusions
+
+This thesis does not claim a functioning application, complete wire protocol, formal verification, measured steganographic robustness, guaranteed anonymity, elimination of metadata leakage, guaranteed delivery, endpoint-compromise resistance, remote erasure of material already obtained, or a complete recovery design. It does not claim that a unique image is inherently unpredictable, anonymous or unlinkable. It does not claim that removing image metadata removes network or hosting records.
+
+## 4. Security properties and conceptual distinctions
+
+A recurring research risk is treating the word "secure" as if it described one indivisible property. The architecture must instead state which property is intended, which mechanism is expected to support it, which assumptions are required, and what remains outside its protection.
+
+| Property | Research meaning | Important limitation |
 |---|---|---|
-| Initial usability | Familiar shared secret; low setup overhead | Requires identity/key setup and peer verification |
-| Key source | Password-derived key via a password KDF and salt | Authenticated key establishment and endpoint-held key material |
-| Intermediary authority | Can remain outside the password if endpoints handle it correctly | Explicitly excluded from plaintext and sole decryption authority |
-| Sender identity | A shared password does not distinguish which participant sent a message | Requires authenticated peer/key binding and sender-authentication design |
-| Lifecycle | Shared-secret distribution, rotation and compromise are difficult to govern at scale | Designed around endpoint identity and key lifecycle, still to be specified |
-| Best-fit assumption | Small, pre-arranged group or self-contained protected object | Ongoing communication among independently verified endpoints |
+| Confidentiality | Unauthorised parties should not learn message contents | Does not hide that communication occurred or all metadata |
+| Sender authentication | A receiver obtains cryptographic evidence tied to a sender-controlled key or authenticated session | Does not independently prove a human identity |
+| Identity verification | Participants establish that a key belongs to the intended peer under a stated verification process | Platform names and account IDs alone are insufficient |
+| Integrity | Alteration of protected content or authenticated context is detected | Does not guarantee delivery or prevent deletion |
+| Replay resistance | Previously valid material is not accepted as a fresh message outside policy | Requires message identifiers, freshness rules and state |
+| Availability | Participants can obtain the material when needed | An untrusted intermediary can still suppress or delay it |
+| Concealment | The existence of embedded material may be made less apparent | Is not encryption, authentication or anonymity |
+| Metadata minimisation | Unnecessary identifying information is reduced | Cannot erase independent network, platform or observer records |
+| Unlinkability | Observations are made less useful for connecting events or participants | Must be defined against a specific observer and evidence model |
+| Recoverability | A defined process may restore access after specified failures | Adds trust, collusion, authorisation and compromise risks |
 
-This comparison records a design rationale, not a claim that either model has been implemented or validated. The endpoint architecture remains provisional, and the password-based option remains subject to the same threat-led evaluation discipline.
+The properties can interact, but one must not be used as a substitute for another. Encryption does not authenticate a person. A signature does not establish that a public key belongs to the intended person unless a binding process exists. Steganography does not strengthen ciphertext. A random-looking carrier does not conceal retrieval timing. A transport wrapper does not create authenticated integrity unless its relevant fields are bound by the endpoint protocol.
 
-## 3. Conceptual architecture
+**Illustration pointer (planned):** A property-separation figure should show the different claims, their responsible mechanisms and their limits. It belongs beside this section, not as a decorative summary at the end of the thesis.
 
-The trust boundary is placed at communicating endpoints. Endpoints hold plaintext and private keys. Intermediaries may transport or coordinate opaque material but are not trusted with plaintext confidentiality or sole decryption authority. This is a target architecture, not a demonstrated property.
+## 5. System model, trust boundaries and adversaries
 
-| Component | Responsibility | Trust position |
-|---|---|---|
-| Sender endpoint | Compose, protect, authenticate, envelope, prepare carriers | Holds sender plaintext and private keys |
-| Recipient endpoint | Collect, validate, verify, decrypt, release plaintext | Holds recipient plaintext and private keys |
-| Identity/key verification | Bind cryptographic keys to intended participants | Explicit process; platform IDs alone are insufficient |
-| Cryptographic services | Key establishment, derivation, encryption, authentication | Endpoint-controlled |
-| Envelope layer | Bind version, identities, message context and policy | Must be authenticated |
-| Capsule layer | Fragment, identify, order and validate transport pieces | May traverse untrusted services |
-| Carrier adapter | Encode/extract capsule bytes from images | No key or identity authority |
-| Optional concealment | Attempt to obscure embedded data | No cryptographic confidentiality role |
-| Intermediary | Route, store or coordinate delivery | Untrusted; may observe or disrupt |
-| Optional recovery participants | Participate in separately governed recovery | Explicitly trusted only within defined assumptions |
+### 5.1 Participants and endpoints
 
-Confidentiality, sender authentication, identity verification, integrity, replay resistance, availability, concealment, and metadata protection are distinct properties. A design may provide one while failing another.
+The sender endpoint composes plaintext, applies the selected cryptographic protocol, creates authenticated message context and prepares protected material for carriage. The recipient endpoint collects the material, validates its structure and cryptographic bindings, verifies the sender under the protocol and releases plaintext only after required checks succeed.
 
-### 3.1 Passenger topology and the standalone train
+Endpoints hold plaintext and private keys. This does not make endpoints magically safe: malware, device theft, unsafe backups, compromised operating systems, user error and malicious applications may expose information before encryption or after decryption. Endpoint compromise is a residual risk requiring its own treatment.
 
-The participant-side cryptographic topology is the primary security architecture. The participants ("passengers") perform their own concise, necessary roles at their endpoints: the agreement/key-establishment process, message protection, authentication and validation required by the eventual protocol. The exact agreement construction, including what is meant by any anonymous agreement, remains open and must not be inferred from this architectural description.
+### 5.2 Intermediaries
 
-The "train" is a separate, standalone transport element. Its job is deliberately narrower: carry an already protected object over a low-fidelity route, with route selection and carriage handling kept distinct from participant security. It does not establish trust, negotiate keys, authenticate participants, encrypt messages, or acquire authority over message meaning. It may be inspected, copied, delayed, transformed, substituted or unavailable without becoming the source of the participants' security.
+A bot, messaging platform, image host, storage provider or other intermediary may coordinate or carry opaque material. It may inspect, retain, copy, transform, reorder, delay, suppress or remove media and associated metadata. It may generate access logs and expose operational records. It must not be trusted with plaintext confidentiality or the sole ability to decrypt.
 
-A carrier-facing encapsulation boundary packages the protected object for carriage and preserves framing and route context. It may help detect truncation, substitution or extraction failure, but encapsulation alone does not create confidentiality, authentication, anonymity or integrity. Any security-relevant binding must be covered by the endpoint-controlled cryptographic protocol. The transport wrapper must not silently rewrite authenticated message semantics.
+The architecture should minimise intermediary privileges and avoid relying on a single intermediary as the source of cryptographic truth. However, reducing authority does not eliminate the intermediary's ability to deny service or observe metadata.
 
-Image carriage remains a required route. Steganography or another image-carriage technique is a low-fidelity transport mechanism within the train, not part of the passenger security topology. Steganography remains optional and does not provide the underlying protection. The train is independently replaceable and assessable; the stronger participant topology must not depend on its trustworthiness.
+### 5.3 Adversary classes
 
-The train may also provide a separate, bounded transport-anonymity contribution. Each carriage instance may be wrapped in a newly generated, unique image envelope, while the train varies where that envelope is placed for retrieval. A receiving-side decapsulation process discovers or obtains the relevant carrier, extracts the protected object and returns it to the participant endpoint for its own cryptographic validation. This can reduce reliance on repeated carrier objects and predictable publication locations, making simple carrier-to-exchange correlation less straightforward. It is a transport-level unlinkability objective, not proof of participant anonymity.
+The threat model considers:
+- passive observers of public carriers and communication metadata;
+- network observers who may see endpoints, timing, volume and traffic patterns;
+- curious or compromised platforms and hosts;
+- active attackers who substitute, replay, reorder, mix or suppress material;
+- attackers attempting first-contact key substitution or identity deception;
+- social engineers probing user routines and delivery expectations; and
+- attackers who compromise a participant endpoint.
 
-Metadata minimisation is a design requirement for this route. Before publication, the carrier-processing path should remove unnecessary embedded metadata and avoid adding identifying filenames, descriptive fields, thumbnails or stable public locators. The design must state what can actually be removed, what the host or network records independently, and what metadata removal may break. It cannot erase server-side access logs, network-layer identifiers, timing, size observations or records already retained by third parties.
+These actors may collude. The thesis must state when an evaluation assumes independent observers and when combined observations are in scope.
 
-Variable placement is useful only if the intended recipient can discover it without exposing a stable, easily correlated rendezvous point. The discovery mechanism, timing, access patterns, hosting metadata, image fingerprints, carrier-generation uniqueness and decapsulation behaviour therefore form part of the threat model. Randomising placement without a viable recipient-discovery method would merely make delivery unreliable.
+### 5.4 Assets and security objectives
 
-The human interaction is also part of the observable system. Repeated routines, predictable response intervals, habitual platform or device choices, linguistic and formatting patterns, recurring image-generation styles, and reactions to familiar prompts can correlate exchanges even when carriers and locations vary. Social engineering may deliberately probe or manipulate these patterns through urgency, false delivery notices, staged failures or timed prompts. The architecture should minimise unnecessary behavioural disclosure and avoid assuming that technical randomisation makes human activity unpredictable. It must not require unsafe, burdensome or deceptive user behaviour as the price of privacy.
+Assets include plaintext, private keys, session secrets, identity/key bindings, authenticated message context, capsule-set integrity, recovery material if any, and sensitive relationship or behavioural metadata. The research must distinguish direct compromise of message content from inference about who communicates, when, how often and through which services.
 
-The train may also provide a separate, bounded transport-anonymity contribution. Each carriage instance may be wrapped in a newly generated, unique image envelope, while the train varies where that envelope is placed for retrieval. A receiving-side decapsulation process locates or obtains the relevant carrier, extracts the protected object and returns it to the participant endpoint for its own cryptographic validation. This can reduce reliance on repeated carrier objects and predictable publication locations, making simple carrier-to-exchange correlation less straightforward. It is a transport-level unlinkability objective, not proof of participant anonymity.
+**Illustration pointer (planned):** A trust-boundary and observer-model diagram should place endpoints, cryptographic services, the transport element, hosts/platforms and observers on the same page, showing what each can hold, see, alter or deny. It should distinguish trust from mere operational involvement.
 
-Variable placement is useful only if the intended recipient can discover it without exposing a stable, easily correlated rendezvous point. The discovery mechanism, timing, access patterns, hosting metadata, image fingerprints, carrier uniqueness and decapsulation behaviour therefore form part of the threat model. Randomising placement without a viable recipient-discovery method would merely make delivery unreliable. The carrier remains an outer, disposable transport envelope; it does not become the cryptographic message or define the participants' security.
+## 6. Endpoint cryptographic architecture
 
-## 4. Trust model and adversaries
+### 6.1 Identity and key verification
 
-Participants control their endpoints and are responsible for local secret protection, peer verification, correct protocol execution, and plaintext handling. A bot, platform, image host, or storage provider may inspect, retain, transform, reorder, suppress, or remove media and metadata. Network observers may learn timing, volume, endpoints, and other metadata. Active attackers may read public carriers, modify or replay them, submit malformed capsule sets, mix fragments, attempt key substitution, or compromise an intermediary. A compromised endpoint may expose plaintext and keys before encryption or after decryption.
+A cryptographic key demonstrates control of that key under the relevant assumptions. It does not independently prove a person's legal or real-world identity. First-contact verification therefore requires an explicit ceremony and a stated assurance goal. Possible approaches may include out-of-band comparison or other independently authenticated channels, but no specific ceremony is selected here.
 
-The design must not assume media-byte preservation, reliable delivery, hidden metadata, or human identity from a platform account identifier.
+The research must define what "verified peer" means, what users actually compare, how key changes are signalled, what happens when a device is replaced, and how recovery avoids becoming a key-substitution opportunity. Platform identifiers may help route a message but must not be treated as proof of identity.
 
-## 5. Conceptual message lifecycle
+### 6.2 Authenticated key establishment
 
-1. Participants establish cryptographic identities and complete explicit first-contact verification.
-2. Endpoints perform authenticated key establishment. Key confirmation, identity binding, downgrade handling, and key-change behaviour remain to be specified.
-3. Sender creates plaintext and a message context.
-4. Sender encrypts the content and creates sender-authentication evidence as required by the final protocol.
-5. An envelope binds protected content to relevant identities, version, message ID, and policy/context.
-6. The envelope is represented as one or more linked capsules with a manifest.
-7. Carrier processing encodes capsule bytes into supported images. Optional concealment remains a separate step.
-8. An intermediary transports or coordinates carriers and references; it may observe metadata or disrupt delivery.
-9. Recipient collects carriers, extracts capsule material, and validates completeness, uniqueness, ordering, and message binding.
-10. Recipient verifies authentication and decrypts. Plaintext is released only after required checks succeed.
-11. Endpoints apply expiry, revocation, and key-rotation policies within their actual limits.
-12. Optional recovery, if ever enabled, follows a separately authorised and specified process.
+Endpoints require an authenticated key-establishment process with clear identity binding, key confirmation and transcript/context binding. The phrase "anonymous agreement" has appeared as an unresolved idea, but it is not sufficiently defined to assign it a protocol meaning. It must not be silently interpreted as anonymous key exchange, deniable authentication, private mutual authentication, participant unlinkability or an anonymity network.
 
-## 6. Envelopes and linked capsules
+### 6.3 Message protection and sender authentication
 
-A future versioned envelope may need protocol version, sender/recipient key references, session/context reference, message identifier, creation/expiry policy, algorithm identifiers, nonce and other public parameters, ciphertext/authentication data, capsule-set identifier, fragment index/count, integrity binding, and optional recovery-policy reference.
+Authenticated encryption can protect message contents and associated data when correctly composed and used. Sender authentication is a separate design responsibility. The final protocol must explain whether it relies on an authenticated session, signatures or another reviewed construction, and how the evidence binds to the intended sender, recipient, session and message context.
 
-This is a field inventory, not a final wire format. Canonical encoding, field criticality, length limits, version negotiation, and downgrade behaviour remain open.
+Candidate primitives such as X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated. They are not a selected protocol and should not be assembled informally. A complete specification would need key separation, key confirmation, nonce rules, associated-data construction, version negotiation, downgrade handling, transcript binding, safe error behaviour, rotation and compromise response.
 
-**Ciphertext fragmentation** divides transport data into pieces. It does not divide the decryption key and does not create threshold recovery. **Threshold secret sharing** distributes secret material among authorised participants under a threshold policy and introduces separate participant, collusion, storage, authorisation, and audit requirements.
+### 6.4 Endpoint authority and the transport boundary
 
-The future protocol must detect missing, duplicate, reordered, mixed, altered, conflicting, oversized, expired, or replayed capsules. Ambiguous or invalid sets should be rejected or quarantined, not silently reconstructed as a different valid message.
+The participant-side cryptographic topology is primary. The transport element carries already protected material and must not acquire key custody, identity authority, message authentication or decryption capability. Any transport metadata that affects security-relevant interpretation must be authenticated or checked by the endpoint protocol. A transport wrapper can help with framing and extraction checks, but its existence alone does not provide cryptographic integrity or authenticity.
 
-## 7. Cryptographic responsibilities and candidates
+**Illustration pointer (planned):** A layered responsibility diagram should distinguish identity/key verification, key establishment, message protection, authenticated envelope, capsule construction, carrier processing and intermediary transport. Arrows should identify which endpoint creates and verifies each binding.
 
-The endpoints require authenticated key establishment. X25519, HKDF-SHA-256, Ed25519, and XChaCha20-Poly1305 may be evaluated as candidates, not as a selected or complete protocol. A final design must specify key confirmation, identity binding, transcript/context binding, key rotation, compromise response, downgrade handling, key separation, nonce rules, associated data, and safe error behaviour.
+## 7. Message envelopes, capsules and validation
 
-Encryption and sender authentication are distinct. A protocol must state whether sender authentication comes from an authenticated session, signatures, or another reviewed mechanism, and how it binds to identity and message context. A cryptographic key proves control of that key under stated assumptions; it does not independently prove a real-world identity.
+### 7.1 Envelope purpose
 
-Do not hand-build encryption by informally combining primitives. A candidate algorithm list is not evidence that a protocol is secure.
+A future versioned envelope may carry protocol version, sender and recipient key references, session/context reference, message identifier, creation or expiry policy, algorithm identifiers, nonce and public parameters, ciphertext/authentication data, capsule-set identifier, fragment index/count, integrity binding and any separately specified recovery-policy reference.
 
-## 8. Carrier processing and concealment
+This is a field inventory, not a wire format. Canonical encoding, field criticality, length limits, version negotiation, downgrade behaviour and forward compatibility remain open.
 
-An image is a transport carrier, not a key, identity credential, or guaranteed entropy source. Carrier adapters should process capsule bytes without owning cryptographic secrets. Optional steganography may be investigated as a separate concealment layer; it does not strengthen ciphertext or hide transfer metadata.
+### 7.2 Multipart carriage
 
-Platforms may resize, recompress, transcode, strip metadata, moderate, or otherwise transform images. Robustness must be measured against defined transformations. If extraction or integrity validation fails, partial or unauthenticated plaintext must not be released.
+A message may exceed the capacity or constraints of a single carrier. The architecture may therefore divide protected data into linked transport capsules. The manifest or equivalent structure must bind the set to one logical message and identify the expected pieces. It must distinguish transport arrival order from authenticated logical order: pieces may arrive out of sequence without being invalid, provided the final set is complete and its ordering/context are authenticated.
 
-## 9. Expiry, revocation, and recovery
+Missing, duplicate, conflicting, oversized, altered, substituted, mixed, expired or replayed pieces must not be silently accepted. Ambiguous sets should be rejected or quarantined. No partial or unauthenticated plaintext should be released merely because some pieces were successfully extracted.
 
-Expiry and revocation may restrict future sessions, future access, or acceptance of messages under defined policy. They cannot reliably retrieve plaintext, screenshots, copied ciphertext, keys, or other material already obtained.
+### 7.3 Fragmentation is not secret sharing
 
-A future specification must define clock assumptions, authenticated expiry representation, offline-device behaviour, revocation propagation, and local versus service-side enforcement.
+Ciphertext fragmentation divides transport data into pieces. It does not divide the decryption key, create threshold recovery or make each fragment independently secret. Threshold secret sharing distributes secret material under a defined threshold policy and introduces different participant, collusion, storage, authorisation and audit assumptions. The two techniques must not be conflated.
 
-Recovery is not a default property. If pursued, specify what secret is divided, threshold and participant count, participant authentication, share protection, reconstruction authorisation, collusion tolerance, lost/compromised-share handling, logging, and interaction with rotation/revocation. No threshold or trustee arrangement is selected here.
+**Illustration pointer (planned):** A multipart validation figure should show a logical message, its authenticated manifest, transport pieces arriving in arbitrary order, successful set validation, and rejection paths for missing, duplicated, mixed or conflicting pieces.
 
-## 10. Risks and evaluation
+## 8. Transport methods and image carriage
 
-| Risk | Consequence | Required treatment |
-|---|---|---|
-| First-contact key substitution | Peer impersonation | Explicit verification and key-change process |
-| Platform ID treated as identity | False assurance | Treat IDs as routing identifiers, not identity proof |
-| Ciphertext/context tampering | Corruption or substitution | Authenticated encryption and context binding |
-| Replay | Old material accepted | Message IDs, freshness policy, replay state |
-| Capsule mixing/reordering | Invalid reconstruction | Authenticated manifest and strict validation |
-| Image transformation | Payload loss | Platform-specific testing and fail-safe rejection |
-| Metadata correlation | Participant inference | Document visibility; no anonymity claim |
-| Intermediary compromise | Routing/metadata abuse | Minimise privileges and retention |
-| Diagnostic leakage | Secret exposure | Secret-safe logging and crash review |
-| Recovery collusion/theft | Unauthorised reconstruction | Explicit threshold, authentication, and audit |
-| Endpoint compromise | Plaintext/key theft | State as residual risk and define response |
-| Expiry overclaim | False remote-erasure belief | State limits plainly |
+Transport is a substantial part of the research, but it is one subsection of the full thesis rather than the organising principle for every security question. The cryptographic message should remain meaningful independently of the route used to carry it. Route choice changes how the protected object is packaged, distributed, discovered, retrieved and validated; it must not silently change the cryptographic meaning of the message.
 
-Evaluation should cover identity/key binding; cryptographic correctness and nonce rules; envelope parsing and downgrade attempts; missing/duplicate/reordered/mixed/altered/replayed capsules; intermediary visibility and authority; image transformations and capacity; logs, crash reports, temporary storage and backups; expiry, revocation, offline devices and recovery; and independent cryptographic and implementation review.
+### 8.1 The standalone train
 
-Numerical thresholds, test harnesses, platform profiles, and formal methods remain to be selected. Passing tests is evidence only for tested conditions, not universal proof.
+The "passengers" are the participant-side cryptographic topology: endpoints and the processes that establish identity/key trust, protect messages, authenticate context and validate received content. The "train" is a separate, replaceable transport element. It carries an already protected object over a low-fidelity route. It may be inspected, copied, delayed, transformed, substituted, lost or unavailable without becoming the source of participant security.
 
-## 11. Open decisions and conclusion
+A carrier-facing encapsulation boundary packages protected material for carriage and preserves framing and route context. It can support extraction and completeness checks. It cannot, by itself, create confidentiality, sender authentication, identity assurance, anonymity or cryptographic integrity. Any security-relevant binding must be authenticated by the endpoint-controlled protocol.
 
-Unresolved decisions include the exact key-establishment protocol; first-contact verification and key-change recovery; sender-authentication composition; canonical envelope encoding; replay-state model; manifest integrity construction; message/capsule limits; supported image formats and transformation profiles; whether concealment is appropriate; whether recovery belongs in scope; and measurable acceptance criteria.
+### 8.2 Carriage methods as comparison profiles
 
-The project should be evaluated as endpoint-controlled cryptographic messaging that may use images as carriers, not as an image-hiding trick with encryption added afterwards. Its credibility depends on explicit trust boundaries, verified identity binding, correctly composed cryptography, authenticated context, strict multipart validation, and honest lifecycle semantics.
+Image carriage is a required route in this research. It is not presumed superior simply because it is distinctive. The evaluation should compare it with at least:
+- image-carried encrypted capsules without steganographic concealment;
+- image-carried encrypted capsules with optional concealment;
+- encrypted file or attachment carriage; and
+- conventional end-to-end messaging transport, where a meaningful comparison can be defined.
+
+The comparison should examine confidentiality boundaries, sender authentication, identity assurance, intermediary visibility, metadata exposure, capacity, transformations, ordering, delivery semantics, retrieval, failure behaviour, usability, accessibility, deployability, operational complexity and fallback. Comparisons must avoid pretending that different services offer identical delivery guarantees or threat models.
+
+### 8.3 Image carrier and optional concealment
+
+An image is a carrier, not a key, identity credential or guaranteed entropy source. Image processing belongs in a route-specific adapter that does not own cryptographic secrets. Optional steganography attempts to make embedded material less apparent. It is a separate sub-layer and must be evaluated against detection and transformation; it does not encrypt, authenticate or hide all transfer metadata.
+
+Platforms may resize, recompress, transcode, strip metadata, moderate or otherwise transform media. The research must define the tested image formats, payload capacity assumptions, transformation profiles and extraction failure behaviour. A route that only works when a platform preserves exact bytes may be unsuitable for that platform, even if a controlled laboratory demonstration succeeds.
+
+### 8.4 Distribution, discovery and collection
+
+Transport is not complete when a carrier is published. The intended recipient must discover where the relevant carrier is available, retrieve it, determine whether it is the correct carriage instance, extract the protected object and pass that object to endpoint validation.
+
+These stages are coupled. A changing or randomised placement may reduce simple correlation with a predictable publication location, but the recipient needs a way to discover it. A stable locator or rendezvous point may reintroduce linkability. A highly variable discovery process may increase loss, delay, confusion or usability burden. The design must examine both sides rather than treating random placement as an unqualified privacy improvement.
+
+The recipient-discovery problem is therefore a central open question for the transport route: what information must be shared, through which channel, under what authentication and privacy assumptions, and what can an observer infer from publication and retrieval?
+
+### 8.5 Unique envelopes and bounded transport unlinkability
+
+The transport may use a newly generated, unique image envelope for each carriage instance and vary where that envelope is placed for collection. This may reduce reuse of identical carriers and weaken straightforward correlation based on repeated objects or fixed publication locations. It does not follow that uniqueness creates unpredictability, that unpredictability creates anonymity, or that either guarantees unlinkability.
+
+The evaluation must distinguish:
+- **uniqueness:** whether the same carrier object is reused;
+- **randomness:** whether values are sampled from a defined random process;
+- **unpredictability:** whether an observer can feasibly predict the next carrier or placement;
+- **unlinkability:** whether an observer can connect two events under a specified observation model; and
+- **anonymity:** whether an observer can identify a participant within a defined anonymity set.
+
+These are different claims and require different evidence. A unique image may still have a recognisable generation style, similar dimensions, a repeated visual theme or a correlated timestamp. Placement may vary while retrieval timing remains highly predictable.
+
+### 8.6 Metadata minimisation and its limits
+
+Metadata minimisation is a baseline requirement for image carriage. The carrier-processing path should remove unnecessary embedded metadata, including avoidable EXIF, IPTC and XMP fields, and avoid identifying filenames, descriptive properties, thumbnails or other unnecessary file-level identifiers. The design should define an allowlist of fields demonstrably required for safe extraction, compatibility or handling, then verify the actual output rather than assuming removal succeeded.
+
+Removing embedded metadata does not erase network identifiers, hosting-provider logs, access records, externally observed timestamps, traffic volume, file-size observations, platform-generated metadata or copies already retained by third parties. These require separate controls and remain possible observations. Stripping metadata may also affect compatibility or legitimate handling; the allowlist and transformation tests must make that trade-off explicit.
+
+### 8.7 Human behavioural linkability and social engineering
+
+Technical randomisation does not make human behaviour random. Repeated publication and retrieval schedules, predictable response intervals, habitual platform or device choices, language, phrasing, formatting, message length, image-generation style and reactions to familiar prompts may correlate exchanges even when each carrier is unique.
+
+An adversary may probe those patterns through false delivery notices, urgency cues, staged extraction failures, timed contact, impersonation or prompts designed to elicit a predictable response. These are behavioural side channels and social-engineering threats, not failures of encryption itself. The architecture should minimise unnecessary behavioural disclosure and avoid placing the entire mitigation burden on user vigilance. Privacy must not depend on unsafe, deceptive, exhausting or inaccessible behavioural camouflage.
+
+### 8.8 Transport evaluation
+
+A meaningful route comparison should record the observer model, route assumptions, payload capacity, transformations, metadata, publication and retrieval behaviour, timing, ordering, failure modes, user effort and operational dependencies. Tests should include benign and adversarial platform transformations, carrier substitution, locator disclosure, retrieval correlation, delayed or repeated access, and human-pattern probes where ethically and practically appropriate.
+
+**Illustration pointer (planned):** A transport-method comparison figure should show the same already protected object passing through distinct route profiles, with route-specific packaging, publication, discovery, collection and extraction. It should make clear that endpoint cryptographic validation remains common to every route.
+
+**Illustration pointer (planned):** A discovery-and-observation figure should show the coupled publication/discovery/retrieval process and the observations available to a platform, host, network observer and behavioural adversary. It must not imply that variable placement guarantees anonymity.
+
+## 9. Lifecycle, expiry, revocation and recovery
+
+### 9.1 Lifecycle semantics
+
+A communication system needs explicit rules for session creation, key rotation, device replacement, compromise response, expiry, revocation and recovery. These policies must be authenticated and consistently interpreted. The system must define clock assumptions, offline-device behaviour, revocation propagation, local versus service-side enforcement and the consequences of stale state.
+
+Expiry and revocation may restrict future sessions, future access or acceptance of messages under defined policy. They cannot reliably retrieve plaintext, screenshots, copied ciphertext, keys or other material already obtained. Claims of remote deletion or retroactive erasure would be misleading.
+
+### 9.2 Recovery as a separate design choice
+
+Recovery is not a default property of encryption or fragmentation. If threshold-controlled recovery is considered, the design must state what secret is divided, the threshold and participant count, how participants are authenticated, how shares are protected, who authorises reconstruction, what collusion is tolerated, how lost or compromised shares are handled, what is logged, and how recovery interacts with rotation and revocation.
+
+The project has not decided whether threshold recovery belongs in scope. The choice should be justified against actual use cases and compared with simpler alternatives such as endpoint backups, device migration or re-establishing sessions. Recovery may reduce lockout risk while creating additional trusted actors and new attack surfaces.
+
+**Illustration pointer (planned):** A lifecycle figure should distinguish normal session/key progression, expiry, revocation, device loss and optional recovery, with explicit boundaries around what cannot be recalled after plaintext or keys have been obtained.
+
+## 10. Risks, evaluation and falsifiability
+
+### 10.1 Evaluation principle
+
+Evaluation must be capable of showing that a proposed design is ineffective, too costly, fragile or no better than a simpler alternative. It should not merely demonstrate that a chosen mechanism can work under favourable conditions. Each claim should be linked to a threat, a test method, an observable outcome and a stated limitation.
+
+### 10.2 Evaluation domains
+
+| Domain | Questions and candidate tests |
+|---|---|
+| Identity and key binding | Can first-contact substitution, key change and device replacement be detected and handled safely? |
+| Cryptographic composition | Are key confirmation, context binding, nonce rules, key separation and sender authentication specified and reviewed? |
+| Envelope and parsing | Are malformed, oversized, downgraded or ambiguous inputs rejected safely? |
+| Multipart validation | Are missing, duplicate, reordered, mixed, substituted, altered and replayed pieces handled correctly? |
+| Intermediary authority | Can an intermediary obtain plaintext or sole decryption authority? What can it still observe or disrupt? |
+| Image route | What capacity and extraction success remain after defined resizing, recompression, transcoding and moderation? |
+| Concealment | Under which detection methods and transformations is concealment detectable or destroyed? |
+| Metadata | Which fields are removed, retained or recreated, and what records remain outside the file? |
+| Discovery and collection | What stable rendezvous, locator, timing or access-pattern information is exposed? |
+| Behavioural privacy | Which repeated human or platform patterns permit correlation, and what mitigations are realistic? |
+| Lifecycle | What happens across expiry, revocation, offline devices, key changes and compromised endpoints? |
+| Recovery | What are the collusion, authorisation, availability and share-compromise consequences? |
+| Usability and accessibility | Can intended users understand verification, retrieval and failure states without unreasonable effort? |
+| Operational safety | Do logs, crash reports, temporary files, caches and backups expose secrets or sensitive metadata? |
+
+### 10.3 Comparative baselines
+
+Image carriage should be compared against encrypted file/attachment carriage and conventional end-to-end messaging where the use case and assumptions permit a fair comparison. Concealment should be evaluated both enabled and disabled. The comparison must include the cost of extra components and user actions, not only the security property each route hopes to improve.
+
+A route that adds complexity without measurable benefit may not justify its place in a practical system. Conversely, a route may remain a legitimate research contribution even if it is not the most deployable option, provided the thesis explains what it teaches and does not claim unsupported superiority.
+
+### 10.4 Evidence maturity
+
+The current work contains conceptual analysis and proposed evaluation criteria. It does not yet contain a complete protocol, implementation measurements, a formal model, a steganalysis study or an independent audit. Numerical thresholds, platform profiles, reproducible test fixtures and formal methods remain to be selected. Passing a test supports only the conditions actually tested.
+
+**Illustration pointer (planned):** A claim-to-evidence traceability figure should connect research questions, security objectives, threats, architectural responsibilities, proposed tests and evidence maturity. It should visually distinguish proposed requirements from demonstrated results.
+
+## 11. Discussion, limitations and unresolved reasoning
+
+The architecture's strongest proposition is separation of responsibility: endpoints retain cryptographic authority, while the transport carries material without being trusted to interpret or decrypt it. This is conceptually useful, but separation alone does not prove correct protocol composition, trustworthy identity binding, safe endpoint behaviour or robust delivery.
+
+The image route gives the project a distinctive and necessary research subject. Its value must be assessed against realistic alternatives. The research must not defend image carriage simply because it was the original inspiration. Equally, it should not discard the route before examining its properties, limitations and possible use cases. The correct conclusion may be conditional: useful in some environments, fragile in others, or valuable as a comparative study rather than a universal transport.
+
+The transport privacy proposal is similarly conditional. Unique image envelopes, variable placement and metadata minimisation may reduce selected forms of correlation. Recipient discovery may reintroduce a stable signal; hosting and network records may expose independent information; human behaviour may remain recognisable. These are not peripheral caveats. They determine whether the proposed privacy contribution exists under a stated observer model.
+
+The research scope is broad. Identity, cryptographic protocol composition, carrier engineering, steganalysis, distributed retrieval, privacy, usability and recovery could each become a substantial study. The thesis must keep a coherent central question and avoid claiming to solve every adjacent problem. Some matters may be bounded as assumptions, comparison dimensions or future work, provided their impact on the central proposition is made explicit.
+
+The term "anonymous agreement" remains unresolved. It must be defined by the property sought, the adversary, the participants and the information each party or observer may learn. Until then it cannot responsibly be assigned a cryptographic mechanism or used as a security claim.
+
+Other open questions include the identity-assurance level; exact authenticated key-establishment protocol; key-change and device-recovery ceremony; sender-authentication composition; canonical envelope and manifest format; replay-state model; message and capsule limits; image formats and transformations; metadata allowlist; recipient discovery and rendezvous; observer collusion; the meaning and measurable scope of transport unlinkability; whether concealment adds sufficient value; whether threshold recovery belongs in scope; and the evaluation thresholds needed to support any stronger conclusion.
+
+## 12. Conclusion
+
+The Invisible Postman is a research investigation into endpoint-controlled cryptographic messaging whose protected messages may travel through untrusted intermediaries and image-based carriage. Its central concern is not whether an image can hide bytes. It is whether a complete communication architecture can separate cryptographic authority from transport, make its assumptions visible, and withstand critical examination across identity, message protection, carriage, collection, lifecycle and human interaction.
+
+Image carriage remains a required research route, but it does not define every layer of the system. The thesis must explain why the route is being examined, what it changes, how it compares with alternatives and where it fails. The transport element remains replaceable and subordinate to endpoint cryptographic authority. Its discovery and collection processes deserve explicit study because publication alone does not complete delivery and because retrieval can itself expose relationships.
+
+The work advances only when claims become clearer, assumptions are tested, alternatives are fairly considered and weaknesses remain visible. The next stage is to reconcile the full manuscript against W1–W4, the decision register, self-review and source material; then complete the research reasoning and evidence plan before final illustration and publication.
 
 ## Appendix A. Terminology
 
 - **AEAD:** Authenticated Encryption with Associated Data.
-- **Carrier:** Image/media object used to transport capsule data.
-- **Capsule:** Transport unit containing or referencing part of a protected message.
-- **Ciphertext fragmentation:** Splitting ciphertext/envelope into transport pieces; not secret sharing.
-- **Identity verification:** Process binding a cryptographic key to the intended participant.
-- **Message envelope:** Versioned structure binding protected content to identity and message context.
+- **Carrier:** An image or other media object used to transport protected data.
+- **Capsule:** A transport unit containing or referencing part of a protected message.
+- **Ciphertext fragmentation:** Splitting protected transport data into pieces; not secret sharing.
+- **Decapsulation:** Receiving-side extraction of the protected object from its carriage envelope.
+- **Identity verification:** A process binding a cryptographic key to the intended participant under a stated assurance model.
+- **Message envelope:** A versioned structure binding protected content to identity and message context.
+- **Metadata minimisation:** Removing or avoiding unnecessary information while acknowledging records generated elsewhere.
+- **Rendezvous mechanism:** A means by which a recipient discovers where or how to collect a relevant carrier.
 - **Steganalysis:** Analysis intended to detect or characterise hidden data.
 - **Threshold secret sharing:** Distribution of secret material so a defined threshold can reconstruct it.
+- **Transport unlinkability:** A bounded objective of making specified transport events harder to correlate under a defined observer model.
 
 ## Appendix B. Claim discipline
 
-Distinguish **established mechanisms** (properties supported by recognised constructions when correctly used), **proposed designs** (choices requiring specification and evaluation), and **unverified claims** (requiring implementation, evidence, formal analysis, or independent review). Never present the latter two as established security properties.
+Distinguish **established mechanisms** (properties supported by recognised constructions when correctly used), **proposed designs** (choices requiring specification and evaluation), and **unverified claims** (requiring implementation, evidence, formal analysis or independent review). Never present the latter two as established security properties. Every important claim should eventually have a source, a stated assumption or a clearly marked status as an authorial proposal.
 
-## Appendix C. Supporting documents
+## Appendix C. Supporting research documents
 
-- `docs/w1-research-framing.md` — research problem, questions, scope, and contribution.
-- `docs/w2-threat-model.md` — assets, actors, capabilities, security goals, and threats.
-- `docs/w3-architecture.md` — components, lifecycle, envelope concepts, capsule handling, and open decisions.
+- `docs/w1-research-framing.md` — problem, research questions, scope and contribution.
+- `docs/w2-threat-model.md` — assets, actors, capabilities, trust boundaries and threats.
+- `docs/w3-architecture.md` — components, lifecycle, envelope concepts, capsule handling and open decisions.
+- `docs/w4-risks-and-evaluation.md` — failure modes, evaluation dimensions and acceptance criteria.
+- `docs/decision-register.md` — design decisions, rationale and unresolved status.
+- `docs/self-review-register.md` — author-identified challenges and evidence needs.
+- `docs/traceability.md` — links between research questions, threats, components and evaluation.
+- `project/WORKPLAN.md` and `project/PROJECT_STATE.md` — roadmap and verified checkpoint.
 
-The design-decision diagram is maintained at `diagrams/03-design-decisions.svg`. It includes the original password-derived choice, its rationale and the later architectural evolution. The figure is explanatory only and does not imply implementation or validation.
+## Appendix D. Illustration guide
 
-
-The ideation and design-evolution workflow is illustrated in `diagrams/01-ideation-and-design-evolution.svg`. It records the rationale for the initial password-derived model and the subsequent expansion of the research scope.
+The current illustrations explain the research's origin and selected decisions. The wider thesis requires additional figures only after the substantive argument and architecture have stabilised. The planned figure set, contextual placement and status are maintained in [the diagram index](diagrams/README.md). Planned figures are not represented as existing or validated artwork.
 
 **Project status:** Theory only · No implementation · Not audited.
