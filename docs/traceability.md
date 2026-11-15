@@ -108,3 +108,9 @@ It does not yet justify a complete protocol, mandatory threshold recovery, a par
 Further complexity remains conditional on demonstrated value.
 
 Status: Theory only · No implementation · Not audited.
+
+7. Design-decision traceability
+
+Decision D-01 records the initial password-derived model, its usability and portability rationale, its security limits, and the reason the research evolved toward endpoint-controlled identity and authenticated session establishment. The decision is carried into Thesis Section 2.1, W3 section 2.5, and W4 evaluation domain E10. This preserves the original reasoning without treating the password as the current identity model.
+
+The remaining decisions are recorded in `docs/decision-register.md`: image hashes as keys, double encryption as identity, linked-image fragmentation versus threshold sharing, remote revocation limits, platform identifiers as identity, and the ordering of cryptography before optional concealment.
