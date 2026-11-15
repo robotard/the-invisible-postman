@@ -113,20 +113,26 @@ Proposed acceptance conditions:
 * Reconstruction produces the original protected message object or fails.
 * Fragmentation is not represented as a confidentiality, redundancy or recovery guarantee.
 
-E6. Carrier integrity and transformation
+E6. Transport-route, carrier integrity and transformation
 
-Threats: resizing, recompression, transcoding, metadata stripping, extraction failure and concealment detection.
+Threats: route-specific metadata exposure, size/capacity limits, resizing, recompression, transcoding, metadata stripping, route substitution, extraction failure, delivery ambiguity and concealment detection.
+
+The image-carriage route is required within the research scope. Other routes, including file/attachment carriage and conventional messaging transport, are comparison profiles. Comparing routes does not presume that any route is superior or that they provide equivalent delivery semantics.
 
 Evaluation questions:
 
-* Which carrier transformations are expected to preserve capsule data?
-* Which transformations cause extraction failure?
+* What route profiles are in scope, and what assumptions does each make about the transport service?
+* What capacity, size, ordering, metadata, timing and delivery-state information does each route expose or constrain?
+* Which image transformations are expected to preserve capsule data, and which cause extraction failure?
+* How do route substitution, duplicate delivery, delayed delivery, loss and cross-route retries affect message-set validation?
 * Can corruption be distinguished from an incomplete message?
-* Does optional concealment materially improve a stated objective?
+* Does optional concealment materially improve a stated objective within the image route?
 
 Proposed acceptance conditions:
 
-* Supported transformations are explicitly identified and tested.
+* Each route profile has an explicit description of its assumptions, observable metadata, capacity, ordering and delivery semantics.
+* Route substitution or fallback cannot silently change authenticated message context.
+* Supported image transformations are explicitly identified and tested.
 * Unsupported transformations cause safe failure.
 * Extraction errors cannot bypass message authentication.
 * Any concealment claim is limited to the tested carrier formats, transformations, detection methods and threat assumptions.
