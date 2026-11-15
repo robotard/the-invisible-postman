@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Develop a critically examined thesis for an architecture in which encrypted messages may be carried by images while an untrusted intermediary transports or coordinates delivery without gaining plaintext access or sole decryption authority.
+Develop a critically examined thesis for an architecture in which encrypted messages travel through an explicit transport-route layer. Image carriage is a required research route; other routes may be modelled for comparison. An untrusted intermediary transports or coordinates delivery without being trusted with plaintext access or sole decryption authority.
 
 This repository records the reasoning, design evolution, assumptions, limitations, evidence and review questions. It does not claim a working application, complete protocol or proven security.
 
@@ -20,11 +20,13 @@ The authors remain responsible for critically examining their own claims, assump
 
 The project must preserve reasoned dissent, alternative interpretations, rejected proposals, unresolved questions and the rationale for decisions. It must not manufacture consensus or conceal uncertainty.
 
-See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](../docs/research-practice.md) for the standing method.
+See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](../docs/research-practice.md) for the standing method, and [Idea Intake and Contributor Continuity](../docs/idea-intake-and-continuity.md) for preserving suggestions and contributions.
 
 ## Working principles
 
 - Treat participant endpoints as trust anchors; treat bots, transport services, image hosts and storage as untrusted for plaintext confidentiality.
+- Treat message carriage as a first-class transport-route layer. Retain image carriage as a required research route; compare other routes without demoting or deleting it.
+- Preserve ideas and contributor provenance through durable intake, triage and resurfacing, including periods with no active external contributors or dormant contributors.
 - Separate message encryption, sender authentication, identity verification, carrier formatting, optional steganographic concealment and metadata protection.
 - Do not treat an image, its uniqueness or a public carrier source as cryptographic entropy or a key.
 - Make first-contact identity verification explicit. A platform username or chat ID is not proof of a human identity.
