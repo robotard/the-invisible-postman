@@ -26,6 +26,7 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](..
 
 - Treat participant endpoints as trust anchors; treat bots, transport services, image hosts and storage as untrusted for plaintext confidentiality.
 - Treat message carriage as a first-class transport-route layer. Retain image carriage as a required research route; compare other routes without demoting or deleting it.
+- Keep the participant-side cryptographic topology primary and separate from a standalone, replaceable, low-fidelity train. Define the encapsulation boundary; do not assign the train key, identity, encryption, authentication or decryption authority.
 - Preserve ideas and contributor provenance through durable intake, triage and resurfacing, including periods with no active external contributors or dormant contributors.
 - Separate message encryption, sender authentication, identity verification, carrier formatting, optional steganographic concealment and metadata protection.
 - Do not treat an image, its uniqueness or a public carrier source as cryptographic entropy or a key.
