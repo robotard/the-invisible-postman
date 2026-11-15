@@ -1,7 +1,7 @@
 # The Invisible Postman: Workplan
 
 **Researcher:** @robotard  
-**Working title:** *The Invisible Postman: A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging*  
+**Working title:** *The Invisible Postman: A Theory-Based Architecture for Endpoint-Controlled Cryptographic Messaging with Image Carriage*  
 **Status:** Theory only · No implementation · Not audited.
 
 ## Purpose
@@ -59,12 +59,12 @@ Each work unit should produce a complete, independently useful artifact before d
 ### Phase 3 · Review and manuscript development
 
 - [ ] **W5 · Review framework** — reviewer guidance, structured issues, evidence requirements, contribution workflow, response register and explicit handling of dissent. Use repository discussion tools only as available; do not imply a live forum or active reviewer group where none exists.
-- [ ] **W6 · Integrated thesis** — reconcile W1–W4 into a coherent manuscript with consistent terminology, traceable claims, references, author self-critique, open decisions and review prompts.
+- [ ] **W6 · Integrated thesis** — develop the full research argument across problem framing, design evolution, security-property distinctions, trust model, endpoint cryptographic reasoning, message structure, carriage-method comparison, lifecycle, evaluation and limitations. Keep transport substantial but proportionate. Reconcile W1–W4, decisions, traceability, sources and author self-critique; preserve unresolved questions and review prompts. The current structural revision is a working draft, not completion of W6.
 - [ ] **W7 · Research traceability and decision reconciliation** — ensure research questions, threats, claims, architectural choices, evaluation proposals and reviewer contributions remain linked.
 
 ### Phase 4 · Visual communication and publication
 
-- [ ] **W8 · Illustration design** — only after the substantive manuscript has stabilised, create evidence-aligned diagrams and place them beside the concepts they explain. Use editable SVG source and high-quality PNG exports where generation capability permits. Avoid visuals that imply unestablished guarantees.
+- [ ] **W8 · Illustration design** — use [the illustration index](../diagrams/README.md) as the contextual figure plan. Only after the substantive manuscript has stabilised, create evidence-aligned diagrams and place them beside the concepts they explain. Use editable SVG source and high-quality PNG exports where generation capability permits. Avoid visuals that imply unestablished guarantees.
 - [ ] **W9 · Reviewer publication** — prepare a readable PDF with contents, integrated chapters, contextual figures, references, limitations, open decisions and reviewer guidance.
 - [ ] **W10 · Repository verification** — verify internal Markdown links, image references, document consistency, publication rendering, accessibility text, provenance and exact status statements.
 
