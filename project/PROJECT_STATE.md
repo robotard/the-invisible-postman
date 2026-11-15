@@ -1,6 +1,6 @@
 ## 2026-11-15 · Method correction and mandatory session continuity rule
 
-- Withdrawn the premature confirmatory framing of the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
+- Withdrew the premature confirmatory framing of the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
 - Research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions must remain distinct.
 - Concrete operating rule: every work session must use and reconcile all three working documents: this project state, [the workplan](WORKPLAN.md) and [the work log](WORK_LOG.md).
 - Before stopping, all three must agree on what is complete or explicitly parked. A parked item must include its current state, evidence, blockers/dependencies, exact next action and relevant repository paths. The session digest is refreshed after these three documents, not used as their substitute.
@@ -12,6 +12,21 @@
 **Working title:** *The Invisible Postman: A Theory-Based Architecture for Endpoint-Controlled Cryptographic Messaging with Image Carriage*  
 **Checkpoint:** 2026-11-15  
 **Status:** Theory only · No implementation · Not audited.
+
+
+## 2026-11-15 · Active-document terminology reconciliation
+
+### Completed and read-back verified
+
+- Reconciled the developing research direction as an **emergent proposition**, not a confirmatory claim; originality remains unestablished.
+- Added the canonical epistemic distinctions to research practice and aligned the thesis, traceability, source register, self-review register, contribution assessment and diagram index.
+- Removed the obsolete term from active working documents. The historical archive remains unchanged.
+- Added the mandatory three-document session rule to the workplan and this checkpoint.
+
+### Parked next action
+
+Continue W0.3/W6 source reconciliation with full-text prior-art comparison: OMR, PerfOMR and Oblivious Signaling first; then the 2024 dead-drop pipeline and 2025 image-diffusion work. Record each source's construction, threat model, assumptions, guarantees, limitations and what it does not establish. Build the A/B/C comparison matrix before revising the central emergent proposition or releasing diagram work.
+
 
 ## 2026-11-15 · Hard contribution and bias checkpoint
 
