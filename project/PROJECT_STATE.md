@@ -299,3 +299,9 @@ No external contributors or reviewers are currently claimed. The new intake and 
 Continue author-led SELF-04 to SELF-12 and W0.3 source reconciliation. Then define the transport-route comparison matrix and reconcile route terminology across thesis, W1–W4 and evaluation. Keep diagrams deferred until the substantive architecture stabilises.
 
 **Theory only · No implementation · Not audited.**
+
+- Extended W4 E6 to evaluate the transport-route layer, including route-specific metadata, capacity, ordering, delivery semantics, fallback/substitution, image transformations and extraction failure.
+- Updated traceability to map the required image route and comparison profiles into research questions, threats, architecture and evaluation.
+- Verified W4 and traceability read-back after commits c5e3b35d32726c0dd13b1f30f0f9800d7127b3cb and 5629dbd5b488d44cd83c81e067c8422ad6fc1b20.
+
+**Theory only · No implementation · Not audited.**
