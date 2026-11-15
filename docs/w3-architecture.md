@@ -51,6 +51,16 @@ Each route adapter must preserve the opaque protected message or detect when it 
 
 An image is a transport container. It is not a key, identity credential, source of guaranteed entropy, or substitute for authenticated encryption. The protected capsule must remain meaningful independently of optional concealment.
 
+2.4 Passenger topology, encapsulation and the standalone train
+
+The participant-side cryptographic topology is the primary security architecture. Each participant performs the necessary endpoint role in the agreement/key-establishment, message-protection, authentication and validation process. The intended "anonymous agreement" property requires a precise definition and protocol analysis; this architecture does not claim anonymity merely by naming it.
+
+The train is a standalone transport element with a narrow service contract: carry an already protected object over a selected route. It may select a route, apply route-specific carriage handling, and coordinate delivery. It does not establish participant trust, negotiate or own cryptographic keys, encrypt or authenticate messages, decide message validity, or hold decryption authority. It is a transport aid, not a cryptographic participant.
+
+The encapsulation boundary sits between the protected message/capsule and the train. It packages the opaque protected object for carriage, supplies bounded framing and route information, and supports detection of truncation, substitution, malformed extraction or route failure. It must not reinterpret or silently modify authenticated message semantics. Encapsulation alone is not a security primitive: any security-relevant fields or bindings must be authenticated by the endpoint protocol.
+
+The train may be low-fidelity and untrusted. It may be inspected, copied, delayed, reordered, transformed, substituted, or unavailable. The passenger-side security topology must remain conceptually intact if the train is replaced or removed. Image carriage remains a required route; steganography or another image technique is a route mechanism within the train, not part of the passenger security topology.
+
 2.4 Complexity must earn its place
 
 Every component must have a traceable responsibility and a demonstrable benefit against a research objective or identified threat.
