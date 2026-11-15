@@ -52,6 +52,7 @@ The identifiers below follow the ten supporting questions in Thesis §1.3 and W1
 | Image transformation | Image route adapter within the transport-route layer | E6 | Supported formats and transformation tolerance |
 | Route-specific exposure or failure | Route manager and route-specific adapters | E6, E9 | Route profiles, metadata, capacity, ordering, fallback and delivery semantics |
 | Metadata correlation | Carrier metadata minimisation, coordinator minimisation and documented platform/host/network exposure | E6, E9 | Metadata allowlist, output verification, discovery and retention policy |
+| Traffic analysis and flow correlation | Encryption does not hide all timing, size, volume or endpoint metadata; compare carrier rotation with explicit obfuscation approaches | E9 | Observer vantage, event features, correlation method, error rates and overhead; source leads SRC-016, SRC-018 and SRC-019 |
 | Behavioural correlation and social engineering | Human routine and interaction patterns can link otherwise distinct carriage instances | E9 | Behavioural side-channel analysis, adversarial prompt scenarios and proportionate user-facing mitigations |
 | Recipient discovery and rendezvous correlation | Separate authenticated discovery mechanism; no assumption that variable placement is self-discovering | E6, E9 | Discovery channel, locator lifetime, timing and access-pattern observer model |
 | Intermediary compromise | Endpoint-held private keys and least privilege | E1, E9 | Exact coordinator permissions |
