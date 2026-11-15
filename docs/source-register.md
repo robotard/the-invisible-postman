@@ -320,6 +320,8 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** A complete messaging lifecycle, contact discovery, platform publication privacy, image-carriage concealment or broader network anonymity. Its stated OMR threat model protects recipient-message linkage; the conference paper defers correctness/integrity against malicious detectors to the full version.
 - **Review state:** Full USENIX paper inspected, including system summary, OMR threat model, construction, benchmark methodology, performance trade-offs and scope statements. Formal details referenced as deferred to the full version are not treated as independently checked here.
 
+The [prior-art comparison](prior-art-comparison.md) synthesises the full-text reviews of SRC-020 and SRC-024–SRC-029 and pressure-tests candidate contributions A/B/C. It is a working synthesis, not a systematic literature review or originality determination.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
