@@ -185,3 +185,9 @@ Re-read the active thesis and W1–W4 before updating the author challenge regis
 - All changed files were read back after successful commits. No external review, contributor activity or automation is claimed.
 
 **Theory only · No implementation · Not audited.**
+
+- Extended W4 E6 with route-specific metadata, capacity, ordering, delivery semantics, route substitution/fallback, image transformation and safe extraction failure.
+- Updated traceability to connect the transport-route decision with research questions, threats, architecture and evaluation; linked the idea-continuity process.
+- Verified both documents after commit.
+
+**Theory only · No implementation · Not audited.**
