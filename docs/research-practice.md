@@ -35,7 +35,7 @@ Before asking peers to examine the work, the authors should conduct and record a
 For each major claim or design choice, ask:
 
 1. What exactly is being claimed, and at what level of confidence?
-2. Is it an established mechanism, a proposed design, an assumption, a hypothesis or an open question?
+2. Is it an established mechanism, a proposed design, an assumption, an emergent proposition or an open question?
 3. What evidence supports it, and what evidence would count against it?
 4. Which threat, research question or user need justifies the added complexity?
 5. What alternatives were considered, including doing nothing or removing the feature?
@@ -44,6 +44,21 @@ For each major claim or design choice, ask:
 8. What observation would cause the authors to revise or abandon the claim?
 
 The thesis and working documents should distinguish these statement types consistently. Naming a recognised cryptographic primitive does not establish that the surrounding protocol is correct or secure.
+
+### Epistemic distinctions used throughout the project
+
+The research record must keep the following categories distinct:
+
+- **Research progression:** what the inquiry has established, exposed, compared, revised, contradicted or caused us to reconsider. Progress includes useful negative findings and abandoned directions.
+- **Supporting evidence:** material that substantiates, qualifies or contradicts a particular claim or premise. Evidence for one premise does not validate an entire architecture or contribution.
+- **Research question:** the question guiding a line of inquiry. It may be refined or replaced as understanding develops.
+- **Emergent proposition:** a provisional explanation, relationship or account taking shape through the research. It may be strengthened, narrowed, split, revised or abandoned; its presence in the manuscript does not make it established.
+- **Evaluation:** examination of implications, assumptions, alternatives, adverse evidence and boundary conditions. It is not restricted to seeking confirmation.
+- **Demonstrated result:** something actually shown under stated conditions, using a stated method and evidence.
+- **Demonstrated contribution:** a defensible addition to existing knowledge or practice, established through comparison with relevant prior work. A supported result does not by itself establish originality.
+
+No category advances merely because a statement has been written down. Preserve the distinction between what the research did, what evidence supports, what is emerging, what was evaluated, what was demonstrated and what is genuinely contributed.
+
 
 ## 4. The role of peer discussion
 
