@@ -56,6 +56,14 @@ A component that merely adds another layer, service, key or recovery participant
 
 The following components describe responsibilities. They do not require separate services, processes or deployment units.
 
+2.5 Password-derived keying as an evaluated alternative
+
+The earlier password-derived model was selected for the exploratory one-to-one image-message concept because a shared passphrase is familiar, portable with the protected object, and avoids requiring an identity directory or key-distribution service at the outset. With a fresh salt and appropriately configured Argon2id, it can derive a key for authenticated encryption while keeping the password itself out of the carrier. This was a pragmatic usability and research-scope decision, not a claim that a password authenticates the sender or supplies strong entropy.
+
+The model has important limits: password quality governs resistance to offline guessing; the salt and KDF parameters are public metadata rather than protection against weak passwords; a shared secret does not distinguish which participant sent a message; and password distribution, rotation, compromise response, multi-device use, and forward secrecy require additional design. It is therefore suitable only under explicit assumptions, such as a small set of participants who already share a sufficiently strong secret through a separate trusted channel.
+
+The current architecture adopts endpoint-controlled identity and authenticated session establishment because the research scope now includes peer verification, sender authentication, per-session context, and key lifecycle. Password-derived encryption remains a documented alternative or narrow mode, not the identity model or an implicitly combined part of the current design. Any future hybrid must specify the role of each input, context binding, key separation, and failure behaviour before evaluation.
+
 3.1 Participant endpoint
 
 Responsible for:
