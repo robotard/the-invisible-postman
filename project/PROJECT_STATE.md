@@ -92,7 +92,7 @@ Updated and read-back verified: thesis, D-11 decision register, W2, W3, W4 and t
 
 ### W0.1 · Repository housekeeping
 
-Previously complete for the verified tree and internal Markdown-link scope. Recent README navigation corrections have been read back; a fresh whole-repository link/status audit is still required after this batch.
+Complete for the current verified tree and internal relative Markdown-link scope. The latest audit covered all 19 active Markdown files: 45 relative links checked, zero broken targets; every active file contains the exact status statement; no active ZIP/archive-generation instructions were found.
 
 ### W0.2 · Research-practice foundation
 
@@ -394,7 +394,7 @@ No author review or external peer review is being represented as completed or in
 
 ### Verification
 
-Changed research documents were fetched after successful GitHub writes. Targeted checks confirmed the W1 question list, W2 route scope, W3 component/lifecycle structure, W4 comparison profiles, ten-row traceability map, README line breaks and workplan order. A fresh whole-repository link/status audit remains outstanding.
+Changed research documents were fetched after successful GitHub writes. Targeted checks confirmed the W1 question list, W2 route scope, W3 component/lifecycle structure, W4 comparison profiles, ten-row traceability map, README line breaks and workplan order. The whole-repository relative-link/status/package-instruction audit has now passed for the current tree; external URLs and future changes remain outside that check.
 
 ### Key commits
 
@@ -407,5 +407,17 @@ Changed research documents were fetched after successful GitHub writes. Targeted
 - Decision register: `39e6b4afe8896491d1dfe0d40c2a60ffa7682a00`
 - README: `6e1543a93a4b23dbbae3e1213c573e71ecf61d64`
 - Workplan: `3812d5d44a6e2b41a0824e6920a79991e3e4cafc`
+
+**Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Repository consistency audit
+
+- Re-read all 19 active Markdown files on the default branch.
+- Checked 45 relative Markdown link targets against the live repository tree: zero missing targets.
+- Confirmed all 19 active Markdown files contain the exact status string: `Theory only · No implementation · Not audited.`
+- Checked active Markdown for ZIP/archive-generation instructions: none found. Historical archive references and preserved archive files remain intentionally intact.
+- Confirmed the current tree contains 24 files, including 20 Markdown files (19 active and one preserved archived source).
+- Marked W0.1 complete in the workplan for this verified scope. External URLs, heading-anchor resolution and future repository changes are not included in the relative-path audit.
 
 **Theory only · No implementation · Not audited.**
