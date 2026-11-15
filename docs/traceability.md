@@ -20,7 +20,7 @@ The governing research ethos is:
 
 The authors remain responsible for examining their own assumptions and claims. External criticism is invited to deepen, challenge and improve the work. Reasoned dissent and unresolved questions must remain traceable rather than being collapsed into artificial consensus.
 
-See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](research-practice.md) for the method.
+See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](research-practice.md) for the method and [Initial Self-Review and Challenge Register](self-review-register.md) for the current author-identified challenges.
 
 ## 2. Research question traceability
 
