@@ -45,7 +45,7 @@ Each work unit should produce a complete, independently useful artifact before d
 
 ### Phase 1 · Repository foundation and source reconciliation
 
-- [ ] **W0.1 · Repository housekeeping** — verify the live repository and authoritative paths; remove obsolete or conflicting workflow instructions; correct README navigation and stale references; preserve historical files and commit history; establish the current verified baseline.
+- [x] **W0.1 · Repository housekeeping** — verify the live repository and authoritative paths; remove obsolete or conflicting workflow instructions; correct README navigation and stale references; preserve historical files and commit history; establish the current verified baseline.
 - [ ] **W0.2 · Research-practice foundation** — maintain the existing method for author responsibility, evidence, dissent, attribution and future peer discussion. The core documents already exist: docs/research-practice.md, docs/self-review-register.md, docs/collaborative-governance.md, docs/templates/ and docs/adopted-practices.md. Do not expand review administration or continue routine author challenge reviews during thesis construction unless a specific issue blocks progress or risks embedding a material error. The adopted-practices baseline remains maintainer-adopted and awaits external review; no external ratification is claimed.
 - [ ] **W0.3 · Research-source reconciliation** — immediate construction priority. Compare W1–W4, the active thesis, decision register, traceability and preserved historical source material; identify contradictions, missing provenance, stale references and unsupported claims without erasing useful design history. Integrate the reconciled reasoning into the active thesis and supporting documents.
 
