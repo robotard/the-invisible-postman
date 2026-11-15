@@ -344,3 +344,16 @@ Scope note: this audit covers relative path targets, not external URL availabili
 - Full-text source review and a fresh repository-wide link/status audit remain outstanding.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Post-source-integration repository audit
+
+- Re-read all 20 active Markdown files from the live default branch.
+- Checked 51 relative Markdown link targets against the current repository path set: zero broken targets.
+- Confirmed the exact project status string appears in all 20 active Markdown files.
+- Confirmed no active ZIP/archive-generation instructions remain; historical archive references and files are preserved.
+- Current tree count is 25 files, including 21 Markdown files (20 active and one archived source).
+- Confirmed the source register is linked from README, thesis, W1 and traceability, and W4 links to it for traffic-analysis evaluation.
+- External URL availability and heading-anchor rendering are not covered by this path audit.
+
+**Theory only · No implementation · Not audited.**
