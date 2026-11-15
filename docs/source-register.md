@@ -258,6 +258,46 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** A vulnerability in this proposed capsule format, a direct equivalence between MIME form parsing and authenticated capsule reassembly, or the correct numerical limits for this research. It is an implementation-level cautionary example, not a protocol proof.
 - **Review state:** Primary issue description, failure mechanism and recorded remediation limits inspected; broader parser-security guidance and format-specific limits remain to be researched.
 
+### SRC-024 · PerfOMR: Oblivious Message Retrieval with Reduced Communication and Computation
+
+- **Source:** Liu, Z., Tromer, E. and Wang, Y. (2024), *PerfOMR: Oblivious Message Retrieval with Reduced Communication and Computation*, USENIX Security 2024.
+- **Publisher/status:** Peer-reviewed USENIX Security conference paper.
+- **Link:** https://www.usenix.org/conference/usenixsecurity24/presentation/liu-zeyu
+- **Relevant to:** Thesis §8; W1 RQ7; W2 discovery and access-pattern threats; W3 recipient discovery; W4 privacy and cost evaluation.
+- **Supports:** OMR constructions have concrete computation, communication and key-size costs; the paper proposes optimisations and a Ring-LWE-based variant to reduce these costs.
+- **Does not establish:** That OMR is appropriate for this project's image-carriage setting, or that its privacy guarantees transfer to a different discovery protocol.
+- **Review state:** Publisher abstract and presentation summary inspected; full construction, security definitions, assumptions and evaluation remain to be reviewed.
+
+### SRC-025 · Oblivious Signaling
+
+- **Source:** Shuhan, M. K. B., Baldimtsi, F. and Ateniese, G. (2026), *Oblivious Signaling*, USENIX Security 2026, pp. 4207–4226.
+- **Publisher/status:** USENIX Security 2026 conference paper.
+- **Link:** https://www.usenix.org/conference/usenixsecurity26/presentation/shuhan
+- **Relevant to:** Thesis §8; W1 RQ7; W2 recipient privacy; W3 discovery/retrieval alternatives; W4 cost and privacy comparison.
+- **Supports:** A distinct privacy-preserving delivery design that shifts work from recipient retrieval to sender-side uniform updates across encrypted inboxes, changing the cost model and the relationship between global traffic and recipient checking.
+- **Does not establish:** That this construction fits the project's intended deployment, image-carriage route or operational constraints.
+- **Review state:** Official USENIX abstract and publication summary inspected; full paper, formal model, construction, proof assumptions and performance results remain to be reviewed.
+
+### SRC-026 · Dead-drop covert messaging pipeline
+
+- **Source:** Bauer, L. A., Howes IV, J. K., Markelon, S. A., Bindschaedler, V. and Shrimpton, T. (2024), *Leveraging Generative Models for Covert Messaging: Challenges and Tradeoffs for "Dead-Drop" Deployments*, Proceedings of the ACM Conference on Data and Application Security and Privacy (CODASPY 2024), pp. 67–78. DOI: 10.1145/3626232.3653264.
+- **Publisher/status:** Peer-reviewed ACM conference paper.
+- **Link:** https://doi.org/10.1145/3626232.3653264
+- **Relevant to:** Thesis §§3 and 8; W1 RQ5–RQ8; W2 platform and observer threats; W3 transport/discovery boundary; W4 route and operational evaluation.
+- **Supports:** Practical covert messaging over public-platform dead drops involves pipeline-level algorithmic challenges and performance/security trade-offs beyond the embedding or cover-generation method alone.
+- **Does not establish:** That its generative text-cover pipeline is equivalent to image-carried capsules, or that its proposed solutions transfer directly to this architecture.
+- **Review state:** Publisher abstract and full-version overview inspected; detailed system model, construction, empirical evaluation and limitations remain to be reviewed.
+
+### SRC-027 · Provably Secure Covert Messaging Using Image-based Diffusion Processes
+
+- **Source:** Bauer, L. A., Bao, W. and Bindschaedler, V. (2025), *Provably Secure Covert Messaging Using Image-based Diffusion Processes*, IEEE Conference on Secure and Trustworthy Machine Learning (SatML 2025).
+- **Publisher/status:** Conference paper; bibliographic record and abstract located.
+- **Link:** https://www.vbinds.ch/node/155
+- **Relevant to:** Thesis §8; W1 RQ5/RQ6; W2 concealment and observer threats; W4 steganalysis/robustness evaluation.
+- **Supports:** Image-based covert communication has been studied using diffusion-model outputs, including formal indistinguishability claims under the paper's stated model and empirical trade-offs among capacity, recovery and transformations.
+- **Does not establish:** Equivalence to embedding protected capsules in externally hosted or user-selected images; the generated-image model and assumptions differ.
+- **Review state:** Publication record and abstract inspected; full paper, formal definitions, proof assumptions, threat model and empirical methodology remain to be reviewed.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
@@ -271,7 +311,7 @@ The date in this register records when the source was checked, not the date of t
 | Key lifecycle | SRC-010–SRC-011 | Recheck current NIST revisions and derive project-specific lifecycle semantics |
 | Image metadata and platform transformations | SRC-012–SRC-014; SRC-021 | Separate semantic metadata from format/codec and forensic fingerprints; test each named route and platform instead of assuming universal stripping |
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
-| Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020 | Compare explicit rendezvous, oblivious retrieval and mix-network mechanisms; state their distinct models, costs and assumptions |
+| Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025 | Compare full-scan, rendezvous, capability, OMR/PerfOMR, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
 | Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
 | Human social engineering and interpersonal behavioural mimicry | SRC-022; SRC-018–SRC-019 for adjacent traffic/behavioural evidence | Separate qualitative perpetrator accounts, measured traffic features and untested project-specific hypotheses; add recipient/usability studies where needed |
 | Multipart transport reconstruction and parser safety | SRC-009 as a protocol comparator; SRC-023 as an implementation-level resource-exhaustion example | Specify authenticated manifests and reassembly separately from parser resource budgets; do not equate MIME parsing with capsule parsing |
@@ -290,7 +330,8 @@ Priority research gaps:
 6. Multipart manifest design, parser/resource-exhaustion risks and safe reconstruction.
 7. Steganalysis methodology, datasets, detector assumptions and reproducibility.
 8. Comparative research on image-carried protected data versus simpler file and messaging routes.
-9. Privacy-preserving recipient discovery and retrieval, including oblivious retrieval, full-scan, stable locators, capability-style references, and the cost of decoys or query hiding.
+9. Privacy-preserving recipient discovery and retrieval, including full-scan, stable locators, capability-style references, OMR/PerfOMR, oblivious signaling, and the cost of decoys or query hiding.
+12. Whole-pipeline covert/dead-drop messaging research and image-generation-based covert channels; distinguish these from image-carried capsules and endpoint-controlled cryptographic messaging.
 10. Platform-specific image transformations and forensic fingerprints, including the distinction between removable descriptive metadata and technical image-signal traces.
 11. Resource-bounded parsing and reassembly: byte, part, header, nesting, CPU, memory, disk, decompression and lifetime budgets.
 
@@ -306,6 +347,6 @@ Rules:
 
 ## 7. Status
 
-This is an initial, verified bibliography and claim-mapping pass. It is not a systematic literature review, complete bibliography, protocol selection or independent validation. Source-to-thesis integration and full-text examination remain in progress.
+This is an evolving bibliography and claim-mapping pass. It is not a systematic literature review, complete bibliography, protocol selection or independent validation. Source-to-thesis integration and full-text examination remain in progress.
 
 **Theory only · No implementation · Not audited.**
