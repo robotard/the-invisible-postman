@@ -20,6 +20,10 @@ This model does not assume that the transport reliably delivers messages, preser
 
 The model separates the participant-side cryptographic topology ("passengers") from a standalone, low-fidelity transport element ("train"). The train carries an already protected object and is treated as untrusted and replaceable. It must not be relied upon for key agreement, identity, encryption, sender authentication or decryption authority. A carrier-facing encapsulation layer may provide framing and route context, but any security-relevant binding must be authenticated by the endpoint protocol; encapsulation alone is not a security guarantee. Attacker capabilities therefore include inspection, copying, delay, loss, transformation, substitution and unavailability of the train or its carrier.
 
+The train's proposed transport-unlinkability measures introduce further observable surfaces. The threat model includes carrier reuse or recognisable near-duplicates; embedded or file-level metadata; hosting records and access logs; stable retrieval locators; publication and retrieval timing; network identifiers; image fingerprints; and correlation of repeated route choices. Metadata removal is required for unnecessary carrier-embedded fields, but cannot erase metadata generated or retained by platforms, networks or observers.
+
+The adversary may also exploit human behavioural regularities. Repeated online schedules, response latency, platform/device habits, linguistic or formatting style, image-selection patterns and predictable reactions can link otherwise distinct carriage instances. Social-engineering probes may use urgency, false delivery failures, impersonated notifications or timed prompts to elicit recognisable behaviour. Assess these as behavioural side channels, not as cryptographic failures, while recognising that they can undermine practical anonymity.
+
 ## 3. Assets to protect
 
 | Asset | Security concern |
