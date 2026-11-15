@@ -5,6 +5,12 @@
 **Checkpoint:** 2026-11-15  
 **Status:** Theory only · No implementation · Not audited.
 
+## Governing ethos
+
+> **Never confuse agreement with progress.**
+
+This checkpoint records scrutiny and evidence, not just consensus or completed tasks. Reasoned disagreement and unresolved questions remain visible.
+
 ## Purpose
 
 This is the changing, evidence-based progress record. project/WORKPLAN.md is the stable roadmap. Report repository changes only after checking the returned commit result and, where material, fetching the changed file again.
