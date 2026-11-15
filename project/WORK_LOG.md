@@ -4,6 +4,8 @@
 **Purpose:** Dated record of work sessions, decisions, verification and deferred tasks.  
 **Assurance:** Theory only · No implementation · Not audited.
 
+> **Never confuse agreement with progress.**
+
 ## 2026-11-15 · Ideation illustration pass
 
 ### Completed
