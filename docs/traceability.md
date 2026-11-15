@@ -28,7 +28,8 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 |---|---|---|---|
 | RQ1: How can confidentiality and authentication remain independent of an intermediary? | Intermediary access to plaintext or decryption authority | Endpoint-controlled keys and message protection | W4 E1, E2 |
 | RQ2: How can an untrusted intermediary coordinate delivery? | Compromised or over-privileged coordinator | Restricted coordinator responsibilities and least privilege | W4 E1, E9 |
-| RQ3: What security does an image carrier provide? | Confusion between encryption and concealment | Separate cryptographic envelope and optional carrier encoding | W4 E6 |
+| RQ3: What security does an image carrier provide? | Confusion between encryption and concealment | Required image-carriage route, route-specific adapter and optional concealment sub-layer, separate from cryptographic protection | W4 E6 |
+| RQ3a: How do carriage routes differ? | Route-specific metadata, capacity, transformations, ordering and delivery semantics | First-class transport-route layer; image route required, other routes compared as profiles | W4 E6, E9 |
 | RQ4: How can multipart messages be validated? | Missing, duplicated, reordered or mixed capsules | Authenticated message-set context and strict reconstruction | W4 E3, E5 |
 | RQ5: How should lifecycle events be handled? | Replay, expiry, revocation and key compromise | Local lifecycle state and explicit key-management responsibilities | W4 E4, E7 |
 | RQ6: Is recovery justified, and under what assumptions? | Recovery abuse, collusion and additional trust | Recovery deferred from the minimum architecture | W4 E1, E8 |
@@ -44,7 +45,8 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 | Replay of valid messages | Message identifiers and lifecycle state | E4 | Freshness policy and replay-state persistence |
 | Fragment mixing or reordering | Capsule manager and authenticated message-set context | E5 | Manifest and reconstruction format |
 | Missing or duplicated capsules | Completeness and uniqueness validation | E5 | Retry and failure policy |
-| Image transformation | Separate carrier encoder/decoder boundary | E6 | Supported formats and transformation tolerance |
+| Image transformation | Image route adapter within the transport-route layer | E6 | Supported formats and transformation tolerance |
+| Route-specific exposure or failure | Route manager and route-specific adapters | E6, E9 | Route profiles, metadata, capacity, ordering, fallback and delivery semantics |
 | Metadata correlation | Coordinator minimisation and documented exposure | E9 | Metadata inventory and retention policy |
 | Intermediary compromise | Endpoint-held private keys and least privilege | E1, E9 | Exact coordinator permissions |
 | Logging and diagnostics leakage | Endpoint and service secret-handling responsibilities | E8 | Logging and crash-report policy |
@@ -61,7 +63,7 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 | Session establishment | Establish authenticated shared context | Prevent unauthenticated or ambiguous peer association | E2, E3 |
 | Message protection and envelope | Protect content and bind context | Confidentiality, integrity and message association | E1, E3, E4 |
 | Capsule and multipart manager | Package and reconstruct protected messages | Handle fragmented delivery without ambiguous acceptance | E5 |
-| Carrier encoder and decoder | Encode and extract capsule data | Evaluate the practical image-carrier requirement separately | E6 |
+| Transport-route manager and carrier adapters | Select, describe and invoke carriage routes; encode/extract route-specific carriers | Image carriage is required; other routes are comparison profiles | E6, E9 |
 | Coordinator and transport | Route and coordinate delivery | Permit intermediary assistance without granting cryptographic authority | E1, E9 |
 | Lifecycle and local state | Manage replay, expiry and key changes | Give lifecycle claims precise operational meaning | E4, E7 |
 | Optional recovery | Support explicitly authorised recovery if justified | Explore recovery without making it a mandatory trust dependency | E1, E8 |
@@ -94,7 +96,8 @@ The following decisions must remain open until research and specification justif
 8. Metadata exposure, retention and coordinator permissions.
 9. Recovery authority, threshold, collusion and share-protection assumptions.
 10. Test methods, justified acceptance criteria and independent review scope.
-11. The comparative value of image-carried messaging against simpler encrypted transport alternatives.
+11. Route-specific assumptions and comparison of image carriage with file/attachment and conventional messaging routes.
+12. The distinct value, use cases and limitations of image-carried messaging.
 12. The evidence required to make any bounded claim about concealment or steganalysis resistance.
 
 Candidate cryptographic primitives must not be treated as a selected or complete protocol.
@@ -116,7 +119,7 @@ Do not retrofit the narrative to make a later decision appear inevitable.
 
 ## 8. Critical review and contribution traceability
 
-The project uses the method in research-practice.md. This section defines how future criticism is connected to research changes; it does not claim that a reviewer group or live forum currently exists.
+The project uses the method in research-practice.md and the [Idea Intake and Contributor Continuity](idea-intake-and-continuity.md) process. The latter preserves substantive ideas and provenance during periods with no active contributors, absent or dormant contributors, and future contributor return. This section defines how future criticism is connected to research changes; it does not claim that a reviewer group or live forum currently exists.
 
 Each substantive reviewer contribution should be traceable through the following chain:
 
