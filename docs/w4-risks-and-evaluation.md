@@ -119,9 +119,14 @@ Threats: route-specific metadata exposure, size/capacity limits, resizing, recom
 
 The image-carriage route is required within the research scope. Other routes, including file/attachment carriage and conventional messaging transport, are comparison profiles. Comparing routes does not presume that any route is superior or that they provide equivalent delivery semantics.
 
+The evaluation must distinguish the participant-side cryptographic topology from the standalone train. The train is assessed as a low-fidelity, replaceable carriage element, not as a source of cryptographic protection. Encapsulation is assessed for framing, route-context handling, truncation/substitution detection and safe extraction; it must not be credited with confidentiality, authentication, anonymity or integrity unless those properties are supplied and authenticated by the endpoint protocol.
+
 Evaluation questions:
 
 * What route profiles are in scope, and what assumptions does each make about the transport service?
+* Can the train be removed or replaced without changing the participant-side cryptographic trust model?
+* Which encapsulation fields are merely operational route metadata, and which require endpoint-authenticated binding?
+* Does any failure of the train or encapsulation layer cause unsafe reinterpretation, partial release or false acceptance?
 * What capacity, size, ordering, metadata, timing and delivery-state information does each route expose or constrain?
 * Which image transformations are expected to preserve capsule data, and which cause extraction failure?
 * How do route substitution, duplicate delivery, delayed delivery, loss and cross-route retries affect message-set validation?
