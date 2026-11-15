@@ -469,3 +469,46 @@ The largest academic risk is originality. Existing work already addresses image 
 - Revisit the emergent proposition only after that comparison. Keep new illustrations deferred.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · First full-text prior-art comparison
+
+### Completed and read-back verified
+
+- Inspected the full texts of OMR (2022), PerfOMR (2024), Oblivious Signaling (2026), SophOMR (2026), InstantOMR (2026), the 2024 dead-drop covert-messaging pipeline and the 2025 image-based diffusion covert-messaging paper.
+- Updated SRC-020 and SRC-024–SRC-027 with the actual inspection scope, threat models and explicit exclusions; added SRC-028 SophOMR and SRC-029 InstantOMR. The source register now contains 29 entries.
+- Created docs/prior-art-comparison.md with a source-by-source comparison, observer and trust assumptions, protected properties, limitations, pressure tests for candidate contributions A/B/C, and a provisional emergent proposition.
+- Linked the comparison from thesis.md, docs/w1-research-framing.md, docs/traceability.md and docs/source-register.md.
+- Updated the project checkpoint and workplan with the completed batch and the next research task.
+
+### Material research findings
+
+- Recipient-message privacy is an established and actively optimised research area. OMR, PerfOMR, SophOMR and InstantOMR provide distinct cost/performance points; Oblivious Signaling shifts privacy work from retrieval to sender-triggered inbox updates.
+- The 2024 dead-drop paper already studies a public-platform covert-messaging pipeline, including rendezvous, discovery hints, retrieval, fragmentation, platform constraints and user detection. “Whole-pipeline analysis” alone cannot support an originality claim.
+- The 2025 diffusion paper provides formal image-based covert-channel analysis but explicitly leaves delivery to the recipient outside its problem model and assumes a pre-shared key.
+- The most promising remaining distinction is a common cross-layer observer/property analysis joining endpoint cryptographic authority, external image-carrier publication/transformation, recipient discovery/retrieval, endpoint validation and human/metadata correlation. This remains an emergent proposition; originality is not established.
+
+### Verification boundary
+
+- All new and modified files were fetched after successful GitHub writes and matched the submitted content.
+- No full-tree Markdown link audit was run after these additions. External source availability and independent reproduction of paper results were not tested.
+- No implementation, diagram, formal proof or independent review was performed.
+
+### Parked continuation for the next session
+
+1. Broaden the closest-related-work search around group OMR, private signaling, two-server/DORAM systems and integrated dead-drop/image-carriage architectures.
+2. Build a common observer/property matrix across publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction.
+3. Reassess candidate contributions A/B/C and revise or displace the emergent proposition based on adverse as well as supporting evidence.
+4. Keep new diagrams deferred until the central argument stabilises.
+
+### Verified commits in this batch
+
+- Source register: 38a0f0c4357a0d3f9a3b727ed194a295c879c453; follow-up link integration: 82cedce9e46e58f79a85e4e9b236effcf06becb9
+- Prior-art comparison: d6147586f32eac006402388cc634ce3a48577843
+- Thesis link: bf27fe49326d18008d52de293ebe9cbd36db58c4
+- W1 link: d0edba7304036e9849014d74d92ca014317268f0
+- Traceability link: 9ec9171349388a810f34d209e4f959b8702aa5a3
+- Project state: 340fcf9ecb326f5ebc0cfccfd6cbb7b4f5548db7
+- Workplan: 933a165a48de28631a00d69f02c327b75e1ef11f
+
+**Theory only · No implementation · Not audited.**
