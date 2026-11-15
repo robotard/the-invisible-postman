@@ -217,3 +217,34 @@ The researcher clarified that the participant-side cryptographic roles must rema
 No cryptographic protocol or transport implementation has been created. No security property has been demonstrated.
 
 **Theory only · No implementation · Not audited.**
+
+## 2026-11-15 · Transport anonymity, metadata minimisation and behavioural linkability
+
+### Clarification adopted for the working architecture
+
+- The standalone train may use a newly generated, unique image envelope for each carriage instance and vary where that carrier is placed for recipient retrieval.
+- A receiving-side transport decapsulation function discovers or obtains the carrier, extracts the already protected object and returns it to the participant endpoint. Endpoint cryptographic validation remains authoritative.
+- This is a bounded transport-level unlinkability objective, not a claim of participant anonymity or immunity to traffic analysis.
+- Metadata minimisation is a baseline requirement: remove unnecessary embedded image metadata and identifying file-level properties before publication, retaining only fields required for safe extraction and compatibility.
+- Explicitly distinguish removable carrier metadata from network identifiers, hosting logs, access records, externally observed timing and other metadata generated outside the carrier.
+- Add human behavioural linkability to the threat model: repeated schedules, response intervals, platform/device habits, language and formatting, image-generation patterns and predictable reactions.
+- Include social-engineering probes such as false delivery notices, urgency cues, staged failures and timed prompts. Do not assume technical randomisation makes human activity unpredictable, or shift the entire burden onto unsafe user rituals.
+
+### Files updated and read-back verified
+
+- `docs/decision-register.md`: D-11 now records unique image envelopes, variable placement, decapsulation, metadata minimisation and behavioural linkability.
+- `thesis.md`: adds transport unlinkability, metadata-removal limits, recipient discovery and human behavioural side channels.
+- `docs/w3-architecture.md`: defines the unique-envelope/decapsulation flow and metadata/behavioural boundaries.
+- `docs/w2-threat-model.md`: adds platform, network, carrier and human-behaviour correlation threats.
+- `docs/w4-risks-and-evaluation.md`: adds evaluation requirements for metadata removal and social-engineering/behavioural linkability.
+- `docs/traceability.md`: adds RQ3c and traceability for behavioural correlation.
+
+### Remaining analysis
+
+- Define the recipient-discovery/rendezvous mechanism without introducing a stable locator that defeats the unlinkability objective.
+- Specify the carrier metadata allowlist and test actual metadata removal across image formats and platform transformations.
+- Distinguish image-carrier uniqueness from true entropy, unpredictability or cryptographic randomness; do not imply one guarantees another.
+- Develop observer models and evaluation scenarios for timing, access patterns, hosting/network records, image fingerprints and human behavioural correlation.
+- Consider usability and accessibility: privacy controls must not require constant vigilance or unrealistic behavioural camouflage.
+
+**Theory only · No implementation · Not audited.**
