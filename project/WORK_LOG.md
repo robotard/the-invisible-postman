@@ -357,3 +357,22 @@ Scope note: this audit covers relative path targets, not external URL availabili
 - External URL availability and heading-anchor rendering are not covered by this path audit.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Machine-readable session handover
+
+### Completed and verified
+
+- Added `project/SESSION_DIGEST.json` as an intentionally small machine-readable retrieval index for new chat sessions.
+- Linked the digest from `README.md`, `project/PROJECT_STATE.md` and `project/WORKPLAN.md`.
+- Defined the handover rule: verify the live branch, then reread authoritative project state, roadmap, work log and thesis; never treat the digest as a replacement for those sources.
+- Digest captures priorities, deferred work, open research threads, architectural invariants and the scope of the last repository audit.
+- All four changed/created files were fetched after successful writes. Digest counts were refreshed to include the new JSON file.
+
+### Verification boundary
+
+- The last full Markdown path/status audit remains 20 active Markdown files, 51 relative links checked, zero broken targets.
+- The new digest and its links have been read back, but a fresh full-tree link audit has not yet been run after these additions.
+- No CI bot, GitHub Action, messaging implementation or diagram was added.
+
+**Theory only · No implementation · Not audited.**
