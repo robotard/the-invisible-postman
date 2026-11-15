@@ -180,7 +180,7 @@ Continue Phase 1 in order:
 - Verified successful commits:
   - Governance framework: c35304dade24a5483e5ac01ae76c76cde4808190
   - Decision register D-09: 97f2e4b1ea53fe10c1488b070d2284c32746b8c0
-  - Workplan adaptation note: pending verification below.
+  - Workplan adaptation note: 7e67e6fc9a6e62d9fee44422dcf087387899e69b
 
 ### Not completed
 
