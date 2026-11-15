@@ -1,6 +1,6 @@
 # The Invisible Postman
 
-**A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging**  
+**A Theory-Based Architecture for Endpoint-Controlled Cryptographic Messaging with Image Carriage**  
 Researcher: `@robotard`
 
 > **Status: Theory only · No implementation · Not audited.**
