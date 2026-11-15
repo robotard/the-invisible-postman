@@ -88,39 +88,50 @@ Human behavioural linkability and social engineering are now explicit threat/eva
 
 Updated and read-back verified: thesis, D-11 decision register, W2, W3, W4 and traceability. The recipient-discovery mechanism, metadata allowlist, observer model and evaluation scenarios remain open. This is architectural theory only; no implementation or validation is claimed.
 
-## Current work-unit assessment
+## Current work-unit assessment · 2026-11-15
 
 ### W0.1 · Repository housekeeping
 
-Complete for the current verified tree and internal Markdown-link scope. Re-run the checks when files or links change.
+Previously complete for the verified tree and internal Markdown-link scope. Recent README navigation corrections have been read back; a fresh whole-repository link/status audit is still required after this batch.
 
-### W0.2 · Critical self-examination and collaborative research practice
+### W0.2 · Research-practice foundation
 
-In progress. The methodology and initial challenge register exist. Next, examine the active thesis claim by claim, verify technical/source claims and expand the authors' own response/resolution fields before inviting external reviewers.
+The methodology, author challenge register, governance proposal, contribution templates and adopted-practices baseline exist. Routine author-led challenge review is now deliberately deferred until a coherent thesis candidate exists, except where a specific issue blocks progress or risks embedding a material error. External peer review remains lowest priority until the thesis is workable.
 
 ### W0.3 · Research-source reconciliation
 
-Not yet completed. Compare the active thesis against W1–W4, the decision register and historical source material. Record contradictions, missing evidence, stale assumptions and unsupported claims without erasing useful design history.
+In progress. This batch aligned W1's central and supporting questions with the thesis; reconciled multipart arrival-order semantics across W2, W3, W4 and traceability; formalised the encapsulation/train/route-adapter responsibilities and decapsulation lifecycle in W3; added a route-comparison matrix to W4; and repaired traceability duplication and numbering. The archived short thesis source was inspected as historical context and remains unchanged. Full source/citation verification and the complete thesis-to-supporting-document reconciliation remain outstanding.
+
+### W6 · Integrated thesis
+
+Substantive working draft. The thesis now points to the W4 route-comparison matrix. It is not yet a stable review candidate: source grounding, full consistency audit, claim-language refinement and editorial integration remain.
+
+### W7 · Traceability
+
+The ten main research questions now map to the thesis and W1. Threat, component and evaluation mappings have been updated for discovery, metadata, behavioural correlation and safe out-of-order reconstruction. Further verification remains.
+
+### W5 · External review preparation
+
+Deferred until a workable thesis candidate exists. Existing governance material is preserved; no new reviewer solicitation or peer-review activity is claimed.
 
 ## Verified limitations and outstanding work
 
-- W1–W4 exist in the repository, but the integrated thesis has not yet been fully reconciled against all four.
-- The two verified diagrams are SVG files. No complete PNG export set has been verified.
-- The thesis has received a substantive structural and reasoning expansion, but still requires line-by-line reconciliation against W1–W4, decision and traceability registers, source/reference integration, author-led claim review and editorial refinement.
-- The structured external reviewer guide, contribution templates and response workflow have not yet been completed.
-- No embedded Markdown image references have been added; the diagram index now maps existing and planned figures. Contextual figure creation/embedding remains deferred until the manuscript and architecture stabilise.
+- Full W1–W4 and thesis line-by-line reconciliation remains in progress.
+- Primary-source verification and a claim-to-source register remain outstanding.
+- The complete observer model, recipient-discovery/rendezvous design, carrier metadata allowlist and evaluation scenarios remain open.
+- The two existing diagrams remain the only verified illustrations. New artwork and contextual embedding remain deferred until the substantive manuscript stabilises.
 - No reviewer PDF has been generated or verified.
 - The archived DOCX and short thesis source remain unchanged.
 
-## Next task
+## Next construction tasks
 
-Continue Phase 1 in order:
+1. Continue reconciling the complete thesis against W1–W4, D-10/D-11, the decision register and traceability.
+2. Inspect and strengthen the full route comparison, discovery/rendezvous model, metadata inventory and multipart failure semantics.
+3. Verify technical claims against primary specifications and authoritative research; record source provenance and claim limits.
+4. Refine the thesis into a coherent review candidate, then provide one consolidated GitHub deployment digest and any genuinely blocking author decisions.
+5. Only after the manuscript stabilises, resume contextual illustrations and reviewer publication.
 
-1. Complete the W0.2 author-led claim-by-claim self-review, starting with SELF-01 through SELF-12.
-2. Complete W0.3 by reconciling W1–W4, the active thesis, decision register and preserved historical source material.
-3. Identify which issues require author decisions and which can proceed through evidence gathering or peer challenge.
-4. Build the detailed external review framework after source reconciliation.
-5. Stabilise the manuscript before further illustration work.
+Routine author review and external peer review must not displace thesis construction.
 
 ## Operating rules
 
@@ -365,5 +376,36 @@ The researcher has clarified the immediate sequencing:
 6. Only surface researcher decisions where a genuine blocking ambiguity remains.
 
 No author review or external peer review is being represented as completed or invited.
+
+**Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Thesis and architecture reconciliation batch
+
+### Deployed and read-back verified
+
+- Updated W1 to match the thesis central research question and ten supporting questions; clarified required image carriage and route comparison scope.
+- Updated W2 to distinguish valid out-of-order capsule arrival from invalid or ambiguous message-set construction, and clarified the image route/comparison profile boundary.
+- Updated W3 to move password-derived keying into the correct architecture-principles section; distinguish transport arrival order from authenticated logical order; define encapsulation/decapsulation, standalone train and route-adapter responsibilities; add discovery, metadata allowlisting and safe decapsulation to the lifecycle; and update trust boundaries, threat mapping, topology and open decisions.
+- Clarified that per-carriage carrier uniqueness means non-reuse, not cryptographic randomness, entropy or guaranteed unlinkability.
+- Updated W4 with safe out-of-order reconstruction criteria, explicit decapsulation checks and a four-profile route-comparison matrix.
+- Rebuilt traceability around the ten thesis research questions; repaired duplicate RQ3b and duplicate unresolved-decision numbering; added discovery and metadata threat mappings; clarified multipart semantics and component boundaries.
+- Updated D-11, linked the thesis route comparison to the W4 matrix, repaired README line breaks and reordered the workplan so thesis construction precedes review-framework expansion.
+
+### Verification
+
+Changed research documents were fetched after successful GitHub writes. Targeted checks confirmed the W1 question list, W2 route scope, W3 component/lifecycle structure, W4 comparison profiles, ten-row traceability map, README line breaks and workplan order. A fresh whole-repository link/status audit remains outstanding.
+
+### Key commits
+
+- W1: `e4157bb960b7c9f6181919716bb71cf6b36f3138`
+- W2: `38be882a104b80e47f98a276f1d7926dc2ca51b4`
+- W3: `b9b33d65f24025541d015dd326988607e39093f2`
+- W4 route matrix: `494a13980ef9f2f561bf26c6a097a377aaad38c9`
+- Traceability: `f5af660490dea1cb66271049b87e3652773252cf`
+- Thesis: `8d8ae5fa7e8c4ad02fc64a0a93a87f2f53080f25`
+- Decision register: `39e6b4afe8896491d1dfe0d40c2a60ffa7682a00`
+- README: `6e1543a93a4b23dbbae3e1213c573e71ecf61d64`
+- Workplan: `3812d5d44a6e2b41a0824e6920a79991e3e4cafc`
 
 **Theory only · No implementation · Not audited.**
