@@ -2,7 +2,7 @@
 
 **Researcher:** @robotard  
 **Working title:** *The Invisible Postman: A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging*  
-**Checkpoint:** 2026-11-15  
+**Checkpoint:** 2026-11-15 · password design rationale integrated  
 **Status:** Theory only · No implementation · Not audited
 
 ## Purpose
@@ -59,6 +59,37 @@ This is the changing progress record. `project/WORKPLAN.md` is the stable roadma
 **Reconcile the current thesis against the latest W1–W4 research and architecture, after locating the authoritative thesis and diagram sources.** Then publish changes directly to GitHub and verify them there.
 
 Do not create a repository ZIP unless direct GitHub publication proves unavailable or the user explicitly requests an archive.
+
+
+## Completed and verified after the baseline checkpoint
+
+- Reconciled the thesis's earlier password-derived model with the endpoint-controlled research direction instead of deleting or silently merging the earlier design.
+- Added Thesis Section 2.1, explaining why a shared password was selected for the original exploratory one-to-one image-message concept: familiarity, portability, low setup overhead, and no initial dependency on an identity directory or central key service.
+- Documented the limits of that model: password entropy and offline guessing, no sender attribution from a shared secret, no identity binding or forward secrecy by itself, and unresolved distribution, rotation, multi-device and compromise handling.
+- Explained why the research scope evolved toward endpoint-controlled identity and authenticated session establishment, while retaining password-derived encryption as a legitimate narrow alternative under explicit assumptions.
+- Added W3 section 2.5 to record password-derived keying as an evaluated alternative.
+- Added `docs/decision-register.md`, including the password decision and the other design changes shown in the review-candidate diagram.
+- Added W4 evaluation domain E10 for any future password-derived mode, including offline guessing, KDF parameter bounds, salt/nonce handling, resource exhaustion and the prohibition on inferring sender identity from a shared password.
+- Added password-design traceability and linked the decision register from README.
+- Fetched each changed file from GitHub after writing. Read-back checks confirmed the thesis rationale, W3 alternative, decision register, W4 evaluation, traceability entry and README link.
+
+## Latest verified commits
+
+- Thesis rationale: `8f91f7d400af1a8f3b53469f5cc9d96a58143620`
+- W3 password alternative: `02eba9fcbe05eeb356d6d4c88d6b60defc8052dc`
+- Decision register: `1bf7967b64db86e6a0eaee8c0b8b8e97a6246b83`
+- W4 password evaluation: `e00e15e9f2a822553dad8503070cdb197d29816c`
+- Traceability update: `e1458b81178f74fb585b61458fb14e635cb6b978`
+- README decision-register link: `d85edbb399394a59849c963a4da0bfccb4cec984`
+
+## Remaining after this checkpoint
+
+1. Publish or verify the authoritative W1 and W2 source documents in the repository; the review-candidate archive contains them, but their repository paths still need to be checked and populated without duplicating or overwriting newer material.
+2. Reconcile the existing diagram set with the newly explicit password decision and verify that all referenced diagram paths exist in GitHub.
+3. Review the integrated thesis against W1–W4 as a whole, including terminology, decision references, and claim discipline.
+4. Verify repository links and document consistency, then prepare the next review-ready manuscript state.
+
+**Current next task:** Complete the W1/W2 and diagram publication/consistency pass. Keep the thesis's password rationale intact throughout.
 
 ## GitHub-first operating rules
 
