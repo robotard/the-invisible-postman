@@ -24,18 +24,20 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 
 ## 2. Research question traceability
 
+The identifiers below follow the ten supporting questions in Thesis §1.3 and W1 §3. They are kept in the same order so that a reader can move from the thesis question to its threat, architecture and evaluation evidence without translating between competing numbering schemes.
+
 | Research question | Research concern | Architectural response | Evaluation reference |
 |---|---|---|---|
-| RQ1: How can confidentiality and authentication remain independent of an intermediary? | Intermediary access to plaintext or decryption authority | Endpoint-controlled keys and message protection | W4 E1, E2 |
-| RQ2: How can an untrusted intermediary coordinate delivery? | Compromised or over-privileged coordinator | Restricted coordinator responsibilities and least privilege | W4 E1, E9 |
-| RQ3: What security does an image carrier provide? | Confusion between encryption and concealment | Required image-carriage route, route-specific adapter and optional concealment sub-layer, separate from cryptographic protection | W4 E6 |
-| RQ3a: How do carriage routes differ? | Route-specific metadata, capacity, transformations, ordering and delivery semantics | First-class transport-route layer; image route required, other routes compared as profiles | W4 E6, E9 |
-| RQ3b: How can carriage assist without becoming part of the security authority? | Confusion between transport assistance and cryptographic protection | Participant-side cryptographic topology remains primary; standalone train and carrier-facing encapsulation are replaceable and untrusted | W4 E6, E9 |
-| RQ3c: Can the train reduce straightforward transport-level linkability? | Carrier reuse, predictable placement, metadata and behavioural correlation | Unique image envelopes, variable placement, decapsulation and metadata minimisation; residual platform and human side channels remain explicit | W4 E6, E9 |
-| RQ4: How can multipart messages be validated? | Missing, duplicated, conflicting, substituted or mixed capsules; transport arrival order may differ from logical order | Authenticated manifest and indices permit safe out-of-order reconstruction; ambiguous or conflicting sets fail closed | W4 E3, E5 |
-| RQ5: How should lifecycle events be handled? | Replay, expiry, revocation and key compromise | Local lifecycle state and explicit key-management responsibilities | W4 E4, E7 |
-| RQ6: Is recovery justified, and under what assumptions? | Recovery abuse, collusion and additional trust | Recovery deferred from the minimum architecture | W4 E1, E8 |
-| RQ7: How can the proposal be evaluated honestly? | Unsubstantiated security claims | Threat-led evaluation and evidence maturity levels | W4 sections 4–8 |
+| RQ1 · Identity and trust | What does key verification establish, and what does it not prove about a human identity? | Identity and key-management boundary; explicit first-contact verification and key-change handling | W2 §§4, 6–7; W3 §3.2; W4 E2, E7 |
+| RQ2 · Cryptographic composition | How are authenticated key establishment, confidentiality, sender authentication, integrity, replay resistance and key lifecycle composed? | Endpoint-held key authority; session establishment; message protection and authenticated context | W2 §§6–7; W3 §§3.1, 3.3–3.4, 3.8; W4 E1–E4, E7–E8 |
+| RQ3 · Intermediary exposure | What can intermediaries and observers learn, alter, correlate or deny? | Least-privilege coordinator; standalone train; explicit trust and data boundaries | W2 §§2, 4–5; W3 §§2.4, 3.6–3.7; W4 E1, E6, E9 |
+| RQ4 · Message structure | How are message context, envelopes, multipart capsules and manifests bound and validated? | Versioned protected envelope; authenticated manifest; bounded parsing and set reconstruction | W2 §§3, 5–7; W3 §§3.4–3.5, 4; W4 E3–E5 |
+| RQ5 · Carriage methods | What changes across image, file/attachment and conventional end-to-end carriage? | First-class route layer; required image route; comparison profiles; route-specific adapters | W2 §§2, 5; W3 §§2.3, 3.6; W4 E6, E9 |
+| RQ6 · Concealment | Does optional steganography address a distinct measurable threat, and where does it fail? | Optional concealment sub-layer within the image route, separate from cryptographic protection | W2 §§4–5, 7–8; W3 §§2.3, 3.6; W4 E6 |
+| RQ7 · Discovery and collection | How can recipients find and retrieve changing carriers without exposing a stable rendezvous or access pattern? | Train publication/retrieval coordination; separate discovery channel; receiving-side decapsulation | W2 §§2, 4–5; W3 §§2.4.1, 3.6, 4; W4 E6, E9 |
+| RQ8 · Human behaviour | How do routines, timing, language, platform habits and social-engineering probes create linkability? | Treat human interaction as a cross-cutting behavioural side channel; minimise unnecessary exposure without relying on unsafe user rituals | W2 §§2, 5, 7; W3 §§2.4.1, 3.6; W4 E6, E9 |
+| RQ9 · Lifecycle and recovery | What can expiry, revocation, key rotation and recovery achieve, and what assumptions do they introduce? | Local lifecycle state; explicit limits on future acceptance; recovery remains separate and optional | W2 §§3–4, 6–8; W3 §§3.8–3.9; W4 E4, E7–E8 |
+| RQ10 · Evaluation | What evidence would support, weaken or falsify the architectural propositions? | Threat-to-component mapping; explicit claim status; falsifiable evaluation plan and evidence maturity | W4 §§2–8; this traceability register |
 
 ## 3. Threat-to-architecture traceability
 
