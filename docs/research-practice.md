@@ -149,6 +149,12 @@ This research-practice work unit is complete when:
 
 Completion of this work unit does not mean peer review has occurred, that the architecture is validated, or that any security claim has been proven.
 
-## 10. Assurance
+## 10. Collaborative governance and attribution
+
+The project-wide method for practice proposals, independent review, ratification, contributor attribution and adoption is specified in [Collaborative Research Governance Framework](collaborative-governance.md). Use the [contribution and review record](templates/contribution-review-record.md) to capture the work actually performed and the contributor's preferred attribution. Use the [decision record template](templates/decision-record.md) for proposals that may change the shared project baseline.
+
+Review, approval, ratification and endorsement are distinct. Attribution must be consent-based and mapped to the exact accepted contribution. Automation may enforce required records but cannot decide scientific validity. No consortium or external peer-review group is currently claimed.
+
+## 11. Assurance
 
 **Theory only · No implementation · Not audited.**
