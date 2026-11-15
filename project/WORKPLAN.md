@@ -90,6 +90,7 @@ Priority order:
 
 1. **Construct and reconcile the thesis:** integrate W1–W4, decisions, traceability and historical research; improve explanations, argument flow, terminology and source grounding.
 2. **Resolve only blocking questions:** investigate technical or evidential gaps directly. Raise a researcher decision only where the work cannot proceed responsibly without it, or where an assumption would materially change scope or meaning.
+   - Current targeted gaps: recipient discovery/retrieval privacy (full-scan, stable locator, one-use capability and oblivious retrieval); descriptive metadata versus structural/codec and signal-level image traces; platform-specific transformation evidence; bounded parser/reassembly resource budgets; and the limits of qualitative social-engineering evidence.
 3. **Prepare a coherent review candidate:** once the thesis has a stable argument, complete enough references, and aligned supporting documents, provide one consolidated review package and a short list of genuine decisions.
 4. **Author review:** defer routine author-led challenge-register work until the researcher has a coherent thesis to examine. Continue it earlier only when a specific issue blocks construction or risks embedding a material error.
 5. **External peer review:** lowest priority until a workable thesis candidate exists. Do not solicit reviewers, expand peer-review process documentation, or operationalise governance merely to create activity. Preserve existing governance work, but do not let it displace thesis construction.
