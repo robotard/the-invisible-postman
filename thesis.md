@@ -362,18 +362,18 @@ The following sources are cited in the current working text. This list is provis
 - Adobe. (n.d.). *XMP Specifications*. https://developer.adobe.com/xmp/docs/xmp-specifications/
 - Barnes, R., Beurdouche, B., Robert, R., Millican, J., Omara, E., & Cohn-Gordon, K. (2023). *The Messaging Layer Security (MLS) Protocol* (RFC 9420). IETF. https://www.rfc-editor.org/rfc/rfc9420
 - Biryukov, A., Dinu, D., Khovratovich, D., & Josefsson, S. (2021). *Argon2 Memory-Hard Function for Password Hashing and Proof-of-Work Applications* (RFC 9106). IRTF. https://www.rfc-editor.org/rfc/rfc9106
+- Bozorgi, A., Bahramali, A., Rezaei, F., Ghafari, A., Houmansadr, A., Soltani, R., Goeckel, D., & Towsley, D. (2023). I Still Know What You Did Last Summer: Inferring Sensitive User Activities on Messaging Applications Through Traffic Analysis. *IEEE Transactions on Dependable and Secure Computing, 20*(5), 4135–4153. https://doi.org/10.1109/TDSC.2022.3218191
 - Camera & Imaging Products Association. (2026). *CIPA DC-008-Translation-2026: Exif Version 3.1; CIPA DC-010-2026: Exif metadata for XMP*. https://www.cipa.jp/e/std/std-sec.html
 - IPTC Photo Metadata Working Group. (2025). *IPTC Photo Metadata Standard 2025.1*. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html
 - Josefsson, S., & Liusvaara, I. (2017). *Edwards-Curve Digital Signature Algorithm (EdDSA)* (RFC 8032). IRTF. https://www.rfc-editor.org/rfc/rfc8032
 - Krawczyk, H., & Eronen, P. (2010). *HMAC-based Extract-and-Expand Key Derivation Function (HKDF)* (RFC 5869). IETF. https://www.rfc-editor.org/rfc/rfc5869
 - Kret, E., & Schmidt, R. (2023; updated 2024). *The PQXDH Key Agreement Protocol* (Revision 3). Signal. https://signal.org/docs/specifications/pqxdh/
 - Langley, A., Hamburg, M., & Turner, S. (2016). *Elliptic Curves for Security* (RFC 7748). IETF. https://www.rfc-editor.org/rfc/rfc7748
+- Li, C.-Y. (2026). Identity Leakage in Encrypted IM Call Services: An Empirical Study of Metadata Correlation. *Future Internet, 18*(1), Article 12. https://doi.org/10.3390/fi18010012
 - libsodium. (n.d.). *ChaCha20-Poly1305 and XChaCha20-Poly1305 documentation*. https://doc.libsodium.org/secret-key_cryptography/aead/chacha20-poly1305
 - National Institute of Standards and Technology. (2020). *Recommendation for Key Management: Part 1 – General* (SP 800-57 Part 1 Rev. 5). https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final
 - Nir, Y., & Langley, A. (2018). *ChaCha20 and Poly1305 for IETF Protocols* (RFC 8439). IETF. https://www.rfc-editor.org/rfc/rfc8439
 - Perrin, T. (Ed.). (2025). *The Double Ratchet Algorithm* (Revision 4). Signal. https://signal.org/docs/specifications/doubleratchet/
-- Bozorgi, A., Bahramali, A., Rezaei, F., Ghafari, A., Houmansadr, A., Soltani, R., Goeckel, D., & Towsley, D. (2023). I Still Know What You Did Last Summer: Inferring Sensitive User Activities on Messaging Applications Through Traffic Analysis. *IEEE Transactions on Dependable and Secure Computing, 20*(5), 4135–4153. https://doi.org/10.1109/TDSC.2022.3218191
-- Li, C.-Y. (2026). Identity Leakage in Encrypted IM Call Services: An Empirical Study of Metadata Correlation. *Future Internet, 18*(1), Article 12. https://doi.org/10.3390/fi18010012
 - Piotrowska, A. M., Hayes, J., Elahi, T., Meiser, S., & Danezis, G. (2017). The Loopix Anonymity System. In *Proceedings of the 26th USENIX Security Symposium* (pp. 1199–1216). USENIX Association. https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/piotrowska
 - Tor Project. (n.d.). *Tor Rendezvous Specification – Version 3*. https://spec.torproject.org/rend-spec/rendezvous-protocol.html
 
