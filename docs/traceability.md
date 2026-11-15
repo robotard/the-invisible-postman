@@ -32,7 +32,6 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 | RQ3a: How do carriage routes differ? | Route-specific metadata, capacity, transformations, ordering and delivery semantics | First-class transport-route layer; image route required, other routes compared as profiles | W4 E6, E9 |
 | RQ3b: How can carriage assist without becoming part of the security authority? | Confusion between transport assistance and cryptographic protection | Participant-side cryptographic topology remains primary; standalone train and carrier-facing encapsulation are replaceable and untrusted | W4 E6, E9 |
 | RQ3c: Can the train reduce straightforward transport-level linkability? | Carrier reuse, predictable placement, metadata and behavioural correlation | Unique image envelopes, variable placement, decapsulation and metadata minimisation; residual platform and human side channels remain explicit | W4 E6, E9 |
-| RQ3b: How can carriage assist without becoming part of the security authority? | Confusion between transport assistance and cryptographic protection | Participant-side cryptographic topology remains primary; standalone train and carrier-facing encapsulation are replaceable and untrusted | W4 E6, E9 |
 | RQ4: How can multipart messages be validated? | Missing, duplicated, reordered or mixed capsules | Authenticated message-set context and strict reconstruction | W4 E3, E5 |
 | RQ5: How should lifecycle events be handled? | Replay, expiry, revocation and key compromise | Local lifecycle state and explicit key-management responsibilities | W4 E4, E7 |
 | RQ6: Is recovery justified, and under what assumptions? | Recovery abuse, collusion and additional trust | Recovery deferred from the minimum architecture | W4 E1, E8 |
@@ -67,9 +66,9 @@ See [Research Practice: Critical Self-Examination and Collaborative Scrutiny](re
 | Session establishment | Establish authenticated shared context | Prevent unauthenticated or ambiguous peer association | E2, E3 |
 | Message protection and envelope | Protect content and bind context | Confidentiality, integrity and message association | E1, E3, E4 |
 | Capsule and multipart manager | Package and reconstruct protected messages | Handle fragmented delivery without ambiguous acceptance | E5 |
-| Transport-route manager and carrier adapters | Select, describe and invoke carriage routes; encode/extract route-specific carriers | Image carriage is required; other routes are comparison profiles | E6, E9 |
-| Encapsulation boundary and standalone train | Frame and carry an already protected object over a low-fidelity route | No key, identity, encryption, authentication or decryption authority; endpoint protocol authenticates any security-relevant binding | E6, E9 |
-
+| Encapsulation and decapsulation boundary | Add bounded carriage framing; extract the protected object and check structure, lengths, supported format and completeness | Framing is not cryptographic authentication; security-relevant bindings are authenticated by the endpoint protocol | E5, E6 |
+| Standalone train | Carry opaque protected objects; coordinate route publication, retrieval and delivery references | Replaceable low-fidelity transport with no plaintext, key, identity or message-acceptance authority | E6, E9 |
+| Transport-route manager and carrier adapters | Select, describe and invoke carriage routes; encode/extract route-specific carriers and apply image metadata minimisation | Image carriage is required; other routes are comparison profiles | E6, E9 |
 | Coordinator and transport | Route and coordinate delivery | Permit intermediary assistance without granting cryptographic authority | E1, E9 |
 | Lifecycle and local state | Manage replay, expiry and key changes | Give lifecycle claims precise operational meaning | E4, E7 |
 | Optional recovery | Support explicitly authorised recovery if justified | Explore recovery without making it a mandatory trust dependency | E1, E8 |
@@ -104,7 +103,9 @@ The following decisions must remain open until research and specification justif
 10. Test methods, justified acceptance criteria and independent review scope.
 11. Route-specific assumptions and comparison of image carriage with file/attachment and conventional messaging routes.
 12. The distinct value, use cases and limitations of image-carried messaging.
-12. The evidence required to make any bounded claim about concealment or steganalysis resistance.
+13. Recipient discovery, rendezvous privacy and the information exposed by publication and retrieval.
+14. Carrier metadata allowlist, verification of removal, and metadata introduced by platforms or hosts.
+15. The evidence required to make any bounded claim about concealment or steganalysis resistance.
 
 Candidate cryptographic primitives must not be treated as a selected or complete protocol.
 
@@ -182,9 +183,9 @@ The framework is proposed, not yet ratified by external reviewers. No adopted co
 
 ## 11. Current conclusion
 
-The research currently supports a minimal, endpoint-controlled architecture with an untrusted transport coordinator, cryptographic message protection, optional image-carrier encoding and strict multipart validation.
+The research currently supports a minimal, endpoint-controlled architecture with an untrusted coordinator and standalone train, a bounded encapsulation/decapsulation boundary, a required image-carriage route, and endpoint-authoritative message validation. Multipart reconstruction must be independent of transport arrival order where authenticated manifest and index data make the logical set unambiguous; conflicting, incomplete, substituted or ambiguous sets must fail safely.
 
-It does not yet justify a complete protocol, mandatory threshold recovery, a particular deployment topology or claims of concealment robustness.
+It does not yet justify a complete protocol, mandatory threshold recovery, a particular deployment topology or claims of concealment robustness. Recipient discovery, route metadata and the practical value of transport-level unlinkability remain open research questions.
 
 Further complexity remains conditional on demonstrated value. External criticism may strengthen, narrow, redirect or displace the current proposition; the research record should preserve the reasoning whichever outcome follows.
 
