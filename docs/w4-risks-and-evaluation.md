@@ -187,6 +187,31 @@ Proposed acceptance conditions:
 * No anonymity or unlinkability claim is made without separate evidence.
 * Availability limitations are explicit and are not confused with confidentiality.
 
+
+
+E10. Password-derived encryption as a conditional alternative
+
+This evaluation applies only if the password-derived mode is retained as a supported option. It is not part of the current endpoint identity or key-establishment model by implication.
+
+Threats: weak or reused passphrases, offline guessing after carrier capture, unsafe KDF parameter handling, password disclosure, and inability to attribute a message to one holder of a shared secret.
+
+Evaluation questions:
+
+* Is the password-strength assumption explicit and realistic for the intended participants?
+* Are salt generation, KDF identifier and parameters, nonce handling, payload versioning and authenticated metadata specified?
+* Can attacker-controlled KDF parameters cause resource exhaustion?
+* Does the documentation avoid treating a shared password as sender authentication or peer identity?
+* Are distribution, rotation, loss and compromise response addressed?
+
+Proposed acceptance conditions:
+
+* A fresh random salt is used for each independently protected object.
+* KDF parameters are bounded, versioned and validated before expensive derivation.
+* Password-derived keys are used only through a vetted KDF and AEAD construction with documented key/nonce rules.
+* Wrong-password, tampering, malformed-payload and resource-exhaustion cases are included in the evaluation plan.
+* No claim of sender attribution, forward secrecy or identity verification is inferred from possession of the shared password.
+* The mode is presented with explicit assumptions and limitations, not as an interchangeable substitute for authenticated endpoint key establishment.
+
 4. Cross-cutting adversarial evaluation
 
 Evaluation should include scenarios that combine multiple threats rather than testing every component only in isolation.
