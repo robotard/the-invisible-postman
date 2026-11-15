@@ -24,6 +24,8 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 - Not evidence of measured resistance to steganalysis.
 - Not a guarantee of anonymity, delivery, remote erasure or metadata protection.
 
+**New-session handover:** [Compact machine-readable progress digest](project/SESSION_DIGEST.json). Treat it as a retrieval index only; verify the live repository and read the linked authoritative work documents before continuing.
+
 ## Start here
 
 1. [Workplan](project/WORKPLAN.md) — stable roadmap and work-unit definitions.
