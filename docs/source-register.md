@@ -217,6 +217,47 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** Equivalent leakage for ordinary text messages, this project's image route, every platform or all network settings. Its authors explicitly identify broader device, OS and application coverage as future work.
 - **Review state:** Full article sections covering threat model, method, experiments and conclusion inspected; generalisation must remain bounded to the study.
 
+
+### SRC-020 · Oblivious Message Retrieval
+
+- **Source:** Liu, Z. and Tromer, E. (2022), *Oblivious Message Retrieval*. In *Advances in Cryptology – CRYPTO 2022*, Lecture Notes in Computer Science 13507, pp. 751–781. DOI: 10.1007/978-3-031-15802-5_26.
+- **Publisher/status:** Peer-reviewed CRYPTO 2022 conference paper; IACR-hosted full text inspected.
+- **Link:** https://doi.org/10.1007/978-3-031-15802-5_26
+- **Relevant to:** Thesis §8.4; W2 discovery/rendezvous threat; W3 train/discovery boundary; W4 E9; RQ7.
+- **Supports:** Recipient-side discovery and retrieval can itself reveal message-recipient relationships even when message contents are encrypted. The paper formalises oblivious message detection/retrieval for a bulletin-board model and explains the privacy risks of long-lived detection keys and naive follow-up retrieval queries. It provides a technically demanding comparator for privacy-preserving discovery.
+- **Does not establish:** A ready-made solution for image hosts, social platforms, variable image placement or this architecture. Its bulletin-board model, cryptographic machinery, assumptions and costs must be examined before any adaptation. It does not make ordinary random URLs or changing folders private.
+- **Review state:** Abstract and introduction/problem framing inspected in the full paper; formal definitions, construction, proof assumptions and detailed performance analysis remain to be reviewed.
+
+### SRC-021 · Media forensics on social media platforms
+
+- **Source:** Pasquini, C., Amerini, I. and Boato, G. (2021), *Media forensics on social media platforms: a survey*. EURASIP Journal on Information Security, 2021, Article 4. DOI: 10.1186/s13635-021-00117-2.
+- **Publisher/status:** Peer-reviewed open-access survey.
+- **Link:** https://link.springer.com/article/10.1186/s13635-021-00117-2
+- **Relevant to:** Thesis §§8.3, 8.6 and 8.8; W2 image-transformation and metadata threats; W3 image adapter; W4 E6/E9.
+- **Supports:** Social and messaging platforms may resize, recompress and otherwise alter shared media; those transformations can both degrade forensic signals and leave platform-specific traces. The survey reviews source-camera identification, integrity verification and platform-provenance analysis, including metadata and image-signal cues.
+- **Does not establish:** That every platform performs the same transformation, that every metadata field is stripped, or that carrier fingerprints can always be identified. The survey reports heterogeneous methods, platforms and conditions; project-specific route testing remains necessary.
+- **Review state:** Full article overview, platform-processing discussion, source-identification findings and platform-provenance sections inspected; individual underlying studies and current platform behaviour remain to be checked.
+
+### SRC-022 · Social engineering as situated deception
+
+- **Source:** Steinmetz, K. F., Pimentel, A. and Goe, W. R. (2021), *Performing social engineering: A qualitative study of information security deceptions*. Computers in Human Behavior, 124, Article 106930. DOI: 10.1016/j.chb.2021.106930.
+- **Publisher/status:** Peer-reviewed qualitative research article.
+- **Link:** https://doi.org/10.1016/j.chb.2021.106930
+- **Relevant to:** Thesis §8.7; W2 behavioural probing; W3 human-interaction boundary; W4 E9; RQ8.
+- **Supports:** A grounded-theory analysis of 37 interviews with social engineers identifies social context, routines, timing, rapport, familiarity, authenticity and adaptation to a target's reactions as relevant features of deception practices.
+- **Does not establish:** A quantitative probability of compromise, a universal behavioural model, or that every listed pattern is observable through this messaging architecture. The sample reports perpetrators' accounts of their practices, not a controlled experiment measuring recipient susceptibility.
+- **Review state:** Full manuscript inspected for abstract, method, sample and reported themes; findings are used as bounded qualitative support, not as universal or causal claims.
+
+### SRC-023 · Multipart parser resource exhaustion
+
+- **Source:** Go project, issue #59153 (2023), *net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption* (CVE-2023-24536).
+- **Publisher/status:** Primary Go project vulnerability/fix record.
+- **Link:** https://github.com/golang/go/issues/59153
+- **Relevant to:** Thesis §§7.2 and 10.2; W2 parser/resource-exhaustion threat; W3 encapsulation and decapsulation limits; W4 E5.
+- **Supports:** A real multipart parser could consume excessive CPU and memory when handling very large numbers of parts and small allocations; the Go project response added accounting improvements and explicit part/header limits. This is concrete evidence that multipart parsing requires resource bounds, not merely syntactic validation.
+- **Does not establish:** A vulnerability in this proposed capsule format, a direct equivalence between MIME form parsing and authenticated capsule reassembly, or the correct numerical limits for this research. It is an implementation-level cautionary example, not a protocol proof.
+- **Review state:** Primary issue description, failure mechanism and recorded remediation limits inspected; broader parser-security guidance and format-specific limits remain to be researched.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
@@ -228,12 +269,12 @@ The date in this register records when the source was checked, not the date of t
 | Password-derived alternative | SRC-005 | Select parameters only after device/resource and offline-guessing assumptions are stated |
 | Authenticated key establishment | SRC-007–SRC-010 | Compare 1:1 and group protocols, asynchronous requirements, identity models and metadata |
 | Key lifecycle | SRC-010–SRC-011 | Recheck current NIST revisions and derive project-specific lifecycle semantics |
-| Image metadata | SRC-012–SRC-014 | Build an actual allowlist and test embedded fields across formats and platforms |
+| Image metadata and platform transformations | SRC-012–SRC-014; SRC-021 | Separate semantic metadata from format/codec and forensic fingerprints; test each named route and platform instead of assuming universal stripping |
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
-| Recipient discovery and transport unlinkability | SRC-016; SRC-017 | Compare explicit rendezvous and mix-network mechanisms; do not infer anonymity from variable placement or carrier uniqueness |
+| Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020 | Compare explicit rendezvous, oblivious retrieval and mix-network mechanisms; state their distinct models, costs and assumptions |
 | Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
-| Human social engineering and interpersonal behavioural mimicry | No adequate source base recorded yet | Research usable security, social engineering, interaction patterns and privacy-preserving design |
-| Multipart transport reconstruction | SRC-009 is a protocol comparator, not a capsule specification | Research authenticated manifests, parser limits, reassembly, resource exhaustion and replay semantics |
+| Human social engineering and interpersonal behavioural mimicry | SRC-022; SRC-018–SRC-019 for adjacent traffic/behavioural evidence | Separate qualitative perpetrator accounts, measured traffic features and untested project-specific hypotheses; add recipient/usability studies where needed |
+| Multipart transport reconstruction and parser safety | SRC-009 as a protocol comparator; SRC-023 as an implementation-level resource-exhaustion example | Specify authenticated manifests and reassembly separately from parser resource budgets; do not equate MIME parsing with capsule parsing |
 
 ## 6. Research gaps and source discipline
 
@@ -249,6 +290,9 @@ Priority research gaps:
 6. Multipart manifest design, parser/resource-exhaustion risks and safe reconstruction.
 7. Steganalysis methodology, datasets, detector assumptions and reproducibility.
 8. Comparative research on image-carried protected data versus simpler file and messaging routes.
+9. Privacy-preserving recipient discovery and retrieval, including oblivious retrieval, full-scan, stable locators, capability-style references, and the cost of decoys or query hiding.
+10. Platform-specific image transformations and forensic fingerprints, including the distinction between removable descriptive metadata and technical image-signal traces.
+11. Resource-bounded parsing and reassembly: byte, part, header, nesting, CPU, memory, disk, decompression and lifetime budgets.
 
 Rules:
 
