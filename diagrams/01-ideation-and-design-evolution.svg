@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1180" viewBox="0 0 1680 1180" role="img" aria-labelledby="title desc">
+<title id="title">The Invisible Postman: Ideation and design evolution</title>
+<desc id="desc">A rich workflow diagram showing how the initial idea of password-protected messages carried by images evolved through separation of security concerns, threat modelling and endpoint-controlled architecture.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5f8ff"/><stop offset="1" stop-color="#eef4f6"/></linearGradient>
+  <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#18304d"/><stop offset="1" stop-color="#294c68"/></linearGradient>
+  <style>
+    .h{font:700 42px Arial,sans-serif;fill:#17283d}.sub{font:400 21px Arial,sans-serif;fill:#56677b}
+    .k{font:700 15px Arial,sans-serif;letter-spacing:1.4px;fill:#64748b}
+    .t{font:700 23px Arial,sans-serif;fill:#17283d}.body{font:400 18px Arial,sans-serif;fill:#33465b}
+    .light{font:700 22px Arial,sans-serif;fill:#fff}.lightbody{font:400 18px Arial,sans-serif;fill:#e4edf5}
+    .tag{font:700 15px Arial,sans-serif;letter-spacing:.5px;fill:#264d43}
+    .arrow{stroke:#647d95;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dash{stroke:#8ca0b3;stroke-width:2.5;stroke-dasharray:8 8;fill:none}
+  </style>
+  <marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#647d95"/></marker>
+</defs>
+<rect width="1680" height="1180" fill="url(#bg)"/>
+<text x="64" y="78" class="h">01 · From idea to architecture</text>
+<text x="66" y="119" class="sub">The reasoning path behind The Invisible Postman · design evolution, not an implementation sequence</text>
+
+<!-- Top row -->
+<rect x="64" y="174" width="440" height="220" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="94" y="214" class="k">STARTING QUESTION</text>
+<text x="94" y="258" class="t">Can an image carry</text>
+<text x="94" y="289" class="t">a private message?</text>
+<text x="94" y="332" class="body">Explore a familiar object as a carrier,</text>
+<text x="94" y="359" class="body">without confusing concealment with security.</text>
+
+<path d="M514 284 H572" class="arrow" marker-end="url(#arr)"/>
+<rect x="590" y="174" width="480" height="220" rx="22" fill="#fff8e8" stroke="#e8d29e" stroke-width="2"/>
+<text x="620" y="214" class="k">FIRST EXPLORATORY MODEL</text>
+<text x="620" y="258" class="t">Password-derived protection</text>
+<text x="620" y="300" class="body">A shared passphrase → Argon2id + salt</text>
+<text x="620" y="329" class="body">→ authenticated encryption → image carrier</text>
+<rect x="620" y="350" width="196" height="28" rx="14" fill="#f2e4bf"/>
+<text x="718" y="370" text-anchor="middle" class="tag">CHOSEN INITIALLY</text>
+
+<path d="M1080 284 H1138" class="arrow" marker-end="url(#arr)"/>
+<rect x="1156" y="174" width="460" height="220" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="1186" y="214" class="k">WHY IT MADE SENSE THEN</text>
+<text x="1186" y="258" class="t">Low-friction exploration</text>
+<text x="1186" y="300" class="body">Familiar secret · portable object</text>
+<text x="1186" y="329" class="body">No identity directory required at the outset</text>
+<text x="1186" y="358" class="body">Clear focus on encryption vs. carrier</text>
+
+<!-- Down connector -->
+<path d="M1386 398 V454 H1450 V482" class="arrow" marker-end="url(#arr)"/>
+<path d="M840 398 V454 H840 V482" class="arrow" marker-end="url(#arr)"/>
+
+<!-- Middle row -->
+<rect x="64" y="500" width="720" height="248" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="96" y="542" class="k">RESEARCH PRESSURE · WHAT THE MODEL DID NOT SOLVE</text>
+<text x="96" y="586" class="t">A shared password protects content,</text>
+<text x="96" y="616" class="t">but it is not a complete identity protocol.</text>
+<g class="body">
+  <text x="100" y="663">• Weak passwords remain guessable offline.</text>
+  <text x="100" y="694">• Shared possession does not identify the sender.</text>
+  <text x="100" y="725">• Rotation, devices and compromise need lifecycle rules.</text>
+</g>
+
+<path d="M794 624 H870" class="arrow" marker-end="url(#arr)"/>
+<rect x="888" y="500" width="728" height="248" rx="22" fill="url(#navy)"/>
+<text x="922" y="542" class="k" style="fill:#b9cad9">SCOPE EXPANSION</text>
+<text x="922" y="586" class="light">The question becomes architectural</text>
+<text x="922" y="630" class="lightbody">How can independently verified endpoints communicate</text>
+<text x="922" y="660" class="lightbody">through an intermediary that cannot decrypt or impersonate?</text>
+<text x="922" y="710" class="lightbody">Now require peer verification · sender authentication ·</text>
+<text x="922" y="738" class="lightbody">session context · key lifecycle · explicit trust boundaries.</text>
+
+<!-- Bottom evolution -->
+<path d="M1252 752 V800 H840 V824" class="arrow" marker-end="url(#arr)"/>
+<rect x="64" y="846" width="470" height="220" rx="22" fill="#eaf4ef" stroke="#b6d7c6" stroke-width="2"/>
+<text x="96" y="888" class="k">RETAIN</text>
+<text x="96" y="932" class="t">Password-derived encryption</text>
+<text x="96" y="976" class="body">A valid narrow option when participants</text>
+<text x="96" y="1005" class="body">already share a strong secret and accept</text>
+<text x="96" y="1034" class="body">the lifecycle and attribution limits.</text>
+
+<path d="M544 954 H600" class="arrow" marker-end="url(#arr)"/>
+<rect x="618" y="846" width="444" height="220" rx="22" fill="#e8eff8" stroke="#b9cce0" stroke-width="2"/>
+<text x="650" y="888" class="k">ADOPT AS CURRENT DIRECTION</text>
+<text x="650" y="932" class="t">Endpoint-controlled trust</text>
+<text x="650" y="976" class="body">Identity binding and authenticated</text>
+<text x="650" y="1005" class="body">session establishment stay with the</text>
+<text x="650" y="1034" class="body">communicating endpoints.</text>
+
+<path d="M1072 954 H1128" class="arrow" marker-end="url(#arr)"/>
+<rect x="1146" y="846" width="470" height="220" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="1178" y="888" class="k">RESEARCH OUTPUT</text>
+<text x="1178" y="932" class="t">Claims made reviewable</text>
+<text x="1178" y="976" class="body">Threat model · architecture · decision</text>
+<text x="1178" y="1005" class="body">register · acceptance criteria · explicit</text>
+<text x="1178" y="1034" class="body">limitations and open questions.</text>
+
+<text x="66" y="1128" class="sub">Design history is preserved: the initial choice is explained, not erased; the evolved architecture is justified, not assumed.</text>
+<text x="66" y="1158" class="k">THEORY ONLY · NO IMPLEMENTATION · NOT AUDITED</text>
+</svg>
