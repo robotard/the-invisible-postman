@@ -115,3 +115,5 @@ W1 is a research-framing working draft. It is intended to guide the next waypoin
 **Implementation:** None claimed.  
 **Independent security audit:** None claimed.  
 **Security claims:** Proposals and research questions only, unless separately evidenced.
+
+**Project status:** Theory only · No implementation · Not audited.
