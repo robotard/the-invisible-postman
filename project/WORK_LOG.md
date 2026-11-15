@@ -135,3 +135,16 @@ The framework does not yet constitute a live peer-review forum, an established c
 - Verified governance and decision-register commits: c35304dade24a5483e5ac01ae76c76cde4808190 and 97f2e4b1ea53fe10c1488b070d2284c32746b8c0.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Versioned adopted-practices baseline
+
+- Created docs/adopted-practices.md, version 0.1, as the visible project-scoped working baseline.
+- Recorded six maintainer-adopted practices with scope and limits: critical examination, reasoned objection dispositions, contribution attribution, version-specific review, process-only automation and auditable baseline changes.
+- Marked all entries maintainer-adopted and awaiting external review. No external ratification, consortium authority or universal best-practice status is claimed.
+- Linked the index from README.md and the governance framework; updated WORKPLAN.md and PROJECT_STATE.md.
+- Clarified that DCO adoption is deferred because no repository licence or contribution terms are currently declared. A DCO attests contribution rights under a stated licence; it does not prove originality, quality or endorsement.
+- No branch protection, auto-merge, ratification automation or other repository enforcement was enabled.
+- Verified the new index and each changed document by fetching the saved content after successful commits.
+
+**Theory only · No implementation · Not audited.**
