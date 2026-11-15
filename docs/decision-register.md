@@ -57,6 +57,14 @@ This register records why significant design choices were made, changed, narrowe
 
 **Rationale:** Specify and evaluate cryptographic protection before optional concealment. Steganography does not replace encryption, authentication or identity verification.
 
+## D-08 · Collaborative research governance and adopted-practice baseline
+
+**Status:** Proposed framework · Not externally ratified · No automated adoption enabled.
+
+**Rationale:** The project needs a transparent method for reviewing, attributing and adopting reusable practices without mistaking popularity or agreement for evidence. The proposed [Collaborative Research Governance Framework](collaborative-governance.md) defines proposal states, review thresholds, consent-based attribution, dissent handling and a versioned project-wide baseline commit.
+
+**Decision boundary:** A practice may become part of this project's adopted baseline only after its scope, evidence, limitations, independent review, attribution and ratification are recorded. Adoption is project-scoped, reversible and versioned; it is not a claim of universal best practice. Automation may validate process requirements but cannot determine truth or scientific adequacy. The framework itself remains a proposal pending review.
+
 ## Assurance
 
 **Theory only · No implementation · Not audited.**
