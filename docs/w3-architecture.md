@@ -73,7 +73,15 @@ Metadata minimisation is part of the image-carriage processing path. Before publ
 
 The transport's privacy analysis must include the human interaction around publication and retrieval. Stable schedules, response latency, platform/device preferences, language and formatting habits, repeated image styles and predictable reactions can create behavioural linkability. Social-engineering prompts may deliberately exploit those patterns. These are cross-cutting privacy and threat-model concerns; they do not belong solely to the image codec or cryptographic protocol.
 
-2.4 Complexity must earn its place
+2.5 Password-derived keying as an evaluated alternative
+
+The earlier password-derived model was selected for the exploratory one-to-one image-message concept because a shared passphrase is familiar, portable with the protected object, and avoids requiring an identity directory or key-distribution service at the outset. With a fresh salt and appropriately configured Argon2id, it can derive a key for authenticated encryption while keeping the password itself out of the carrier. This was a pragmatic usability and research-scope decision, not a claim that a password authenticates the sender or supplies strong entropy.
+
+The model has important limits: password quality governs resistance to offline guessing; the salt and KDF parameters are public metadata rather than protection against weak passwords; a shared secret does not distinguish which participant sent a message; and password distribution, rotation, compromise response, multi-device use, and forward secrecy require additional design. It is therefore suitable only under explicit assumptions, such as a small set of participants who already share a sufficiently strong secret through a separate trusted channel.
+
+The current architecture adopts endpoint-controlled identity and authenticated session establishment because the research scope now includes peer verification, sender authentication, per-session context, and key lifecycle. Password-derived encryption remains a documented alternative or narrow mode, not the identity model or an implicitly combined part of the current design. Any future hybrid must specify the role of each input, context binding, key separation, and failure behaviour before evaluation.
+
+2.6 Complexity must earn its place
 
 Every component must have a traceable responsibility and a demonstrable benefit against a research objective or identified threat.
 
@@ -83,13 +91,7 @@ A component that merely adds another layer, service, key or recovery participant
 
 The following components describe responsibilities. They do not require separate services, processes or deployment units.
 
-2.5 Password-derived keying as an evaluated alternative
 
-The earlier password-derived model was selected for the exploratory one-to-one image-message concept because a shared passphrase is familiar, portable with the protected object, and avoids requiring an identity directory or key-distribution service at the outset. With a fresh salt and appropriately configured Argon2id, it can derive a key for authenticated encryption while keeping the password itself out of the carrier. This was a pragmatic usability and research-scope decision, not a claim that a password authenticates the sender or supplies strong entropy.
-
-The model has important limits: password quality governs resistance to offline guessing; the salt and KDF parameters are public metadata rather than protection against weak passwords; a shared secret does not distinguish which participant sent a message; and password distribution, rotation, compromise response, multi-device use, and forward secrecy require additional design. It is therefore suitable only under explicit assumptions, such as a small set of participants who already share a sufficiently strong secret through a separate trusted channel.
-
-The current architecture adopts endpoint-controlled identity and authenticated session establishment because the research scope now includes peer verification, sender authentication, per-session context, and key lifecycle. Password-derived encryption remains a documented alternative or narrow mode, not the identity model or an implicitly combined part of the current design. Any future hybrid must specify the role of each input, context binding, key separation, and failure behaviour before evaluation.
 
 3.1 Participant endpoint
 
@@ -275,15 +277,17 @@ A failure at any validation stage must not result in silently presenting an inco
 
 5. Trust and data boundaries
 
-Boundary	Trusted responsibility	Not assumed
-Sender endpoint	Plaintext creation and key custody	Endpoint is invulnerable
-Recipient endpoint	Verification and decryption	Recipient cannot copy plaintext
-Identity boundary	Verified key-to-identity binding	Platform ID proves identity
-Message protection	Confidentiality and integrity under stated assumptions	Encryption hides metadata
-Capsule manager	Correct set formation and validation	Fragmentation provides recovery
-Carrier layer	Encoding and extraction	Images survive transformation
-Coordinator	Delivery coordination	It is confidential, reliable or identity-authoritative
-Recovery boundary	Only explicitly authorised recovery	Threshold design is automatically safe
+| Boundary | Trusted responsibility | Not assumed |
+|---|---|---|
+| Sender endpoint | Plaintext creation and key custody | Endpoint is invulnerable |
+| Recipient endpoint | Verification and decryption | Recipient cannot copy plaintext |
+| Identity boundary | Verified key-to-identity binding | Platform ID proves identity |
+| Message protection | Confidentiality and integrity under stated assumptions | Encryption hides metadata |
+| Capsule manager | Authenticated set formation and validation | Fragmentation provides recovery or arrival order defines logical order |
+| Encapsulation/decapsulation | Bounded framing, extraction and structural completeness checks | Framing proves origin, authenticity or cryptographic integrity |
+| Train and route adapter | Opaque carriage, route handling and carrier extraction | Transport is trusted, reliable, anonymous or metadata-free |
+| Coordinator | Delivery coordination | It is confidential, reliable or identity-authoritative |
+| Recovery boundary | Only explicitly authorised recovery | Threshold design is automatically safe |
 
 6. Security responsibilities and threat mapping
 
@@ -292,10 +296,11 @@ First-contact key substitution	Identity verification boundary	Define verificatio
 Platform ID treated as identity	Cryptographic identity binding	Define identity lifecycle
 Ciphertext or metadata alteration	Authenticated message protection	Specify complete envelope
 Replay	Message IDs and freshness state	Define replay policy and storage
-Fragment mixing or reordering	Authenticated set and capsule context	Define manifest and rejection rules
+Fragment mixing, conflicting indices or invalid set construction	Authenticated manifest and capsule context; allow safe reconstruction independent of arrival order	Define manifest, duplicate and rejection rules
 Missing or duplicate capsules	Strict completeness and uniqueness checks	Define failure and retry behaviour
 Image transformation	Separate carrier boundary and fail-safe extraction	Test realistic platform transformations
-Metadata correlation	Minimise coordinator data and document exposure	Define metadata and retention model
+Metadata correlation	Minimise carrier metadata and coordinator data; document platform, host, network and access observations	Define metadata allowlist, recipient discovery and retention model
+Behavioural correlation	Treat timing, routines and social-engineering probes as cross-cutting side channels	Define observer scenarios and proportionate mitigations
 Intermediary compromise	Endpoint-held keys and least privilege	Review coordinator permissions
 Secret leakage in logs	Endpoint and service secret-handling boundaries	Define and inspect logging policy
 Recovery collusion or theft	Optional isolated recovery boundary	Do not adopt before threat and protocol specification
@@ -308,7 +313,9 @@ These responses are architectural intentions, not demonstrated mitigations.
 
 The minimum logical topology is:
 
-Sender endpoint → optional carrier processing → untrusted coordinator/transport → optional carrier processing → recipient endpoint
+Sender endpoint → protected message/capsules → sender-side encapsulation → route adapter/carrier → standalone train and untrusted intermediary → recipient discovery/retrieval → route adapter/decapsulation → recipient endpoint validation.
+
+The recipient endpoint, not the train or decapsulation function, performs authenticated set validation, cryptographic verification and decryption.
 
 The cryptographic protection boundary remains between the participant endpoints. Carrier processing and transport sit outside that boundary.
 
@@ -334,7 +341,10 @@ Message protection	Authenticated encryption with bound context	Candidate constru
 Sender authentication	Separate, explicit cryptographic responsibility	Required capability; construction open
 Carrier	Image is a transport container	Proposed boundary
 Concealment	Optional and separately evaluated	Deferred
-Multipart	Authenticated manifest/set validation	Required capability; format open
+Multipart	Authenticated manifest/set validation; safe out-of-order reconstruction	Required capability; format open
+Encapsulation/decapsulation	Bounded framing and structural extraction only	Required transport boundary; format open
+Standalone train	Replaceable opaque carriage and discovery coordination	Required conceptual separation; service contract open
+Recipient discovery	Authenticated retrieval instruction without a stable exposed locator	Open research problem
 Expiry and revocation	Honest local/future-access semantics	Required capability; policy open
 Recovery	Separate optional mechanism	Deferred
 Deployment topology	Minimal logical topology first	Proposed
@@ -348,7 +358,9 @@ At minimum, evaluation should address:
 * Whether an intermediary can obtain plaintext or sole decryption capability under the stated assumptions.
 * Whether first-contact identity substitution is detectable.
 * Whether sender, recipient, session and message context are cryptographically bound.
-* Whether altered, replayed, incomplete, duplicate, reordered and mixed capsule sets are rejected.
+* Whether valid out-of-order capsules are reconstructed from authenticated logical indices, while altered, replayed, incomplete, conflicting, substituted and mixed sets fail safely.
+* Whether encapsulation/decapsulation enforces bounded framing and safe extraction without being mistaken for cryptographic authentication.
+* Whether recipient discovery, metadata minimisation and route placement meet the stated observer assumptions.
 * Whether realistic image transformations cause safe failure.
 * Whether logs, diagnostics and operational metadata expose secrets or sensitive content.
 * Whether key rotation, expiry and revocation behave according to their stated limits.
@@ -372,6 +384,9 @@ W3 intentionally does not settle:
 10. Metadata minimisation, retention and operational visibility.
 11. Expiry, revocation, device replacement and compromise response.
 12. Whether recovery is justified, and if so, its threat model.
+13. Recipient discovery/rendezvous, locator privacy and access-pattern exposure.
+14. Carrier metadata allowlist, verification of removal and platform-added metadata.
+15. Observer models for transport unlinkability and behavioural correlation.
 
 These decisions require protocol-level research and evaluation before implementation.
 
@@ -379,7 +394,7 @@ These decisions require protocol-level research and evaluation before implementa
 
 The research supports a modular, endpoint-controlled architecture in which cryptographic authority remains with participants and the intermediary is restricted to transport and coordination.
 
-The image carrier is deliberately subordinate to the cryptographic message format. Multipart handling is treated as an integrity and context-binding problem, not as an implicit recovery mechanism. Lifecycle semantics are constrained by what endpoints can actually enforce.
+The image carrier is deliberately subordinate to the cryptographic message format. The train and its encapsulation/decapsulation boundary are replaceable carriage mechanisms, not cryptographic authorities. Multipart handling is treated as an integrity and context-binding problem: valid out-of-order arrivals may be reconstructed, while ambiguous or conflicting sets fail safely. Lifecycle semantics are constrained by what endpoints can actually enforce.
 
 The architecture therefore establishes responsibilities and trust boundaries before fixing a protocol or deployment topology. Further complexity remains conditional on evidence that it improves a stated research objective.
 
