@@ -359,6 +359,37 @@ Scope note: this audit covers relative path targets, not external URL availabili
 **Theory only · No implementation · Not audited.**
 
 
+
+## 2026-11-15 · Recipient discovery, media forensics and parser-safety source integration
+
+### Research findings and bounded use
+
+- Added four source-register entries after inspecting source material: Liu and Tromer (2022) on Oblivious Message Retrieval; Pasquini, Amerini and Boato (2021) on media forensics across social platforms; Steinmetz, Pimentel and Goe (2021) on social-engineering practices; and the Go project's CVE-2023-24536 multipart parser resource-exhaustion record.
+- The OMR paper sharpens RQ7: discovery and retrieval are separate privacy protocol problems. The working comparison now distinguishes recipient-side scanning, stable authenticated locators/rendezvous, short-lived or one-use capabilities, and private/oblivious retrieval. No approach is selected; the paper's bulletin-board construction is not treated as a drop-in image-hosting solution.
+- The media-forensics survey supports a more careful metadata model: descriptive EXIF/IPTC/XMP fields are distinct from required image-container/codec structures, optional rendering information and signal-/codec-level platform fingerprints. Removing descriptive metadata cannot establish that a transformed image is uncorrelatable.
+- The social-engineering study provides qualitative, bounded evidence from 37 interviews with social engineers. It supports attention to timing, routines, rapport, familiarity and adaptation, but does not quantify recipient susceptibility or validate every project-specific behavioural hypothesis.
+- The Go multipart-parser incident demonstrates that excessive part counts and allocation patterns can cause CPU/memory exhaustion in a real parser. It is explicitly treated as an implementation-level caution, not as evidence of a vulnerability in the proposed capsule format.
+
+### Deployed and read-back verified
+
+- Expanded the source register to SRC-023 and updated its claim map and research gaps.
+- Integrated discovery/retrieval alternatives, metadata-layer distinctions, qualitative social-engineering evidence and explicit parser resource budgets into the thesis.
+- Added parser/resource-exhaustion threats and evaluation requirements to W2.
+- Expanded W3's discovery comparison and bounded parsing/decapsulation contract.
+- Expanded W4 E5/E9 evaluation questions for parser budgets, platform transformations and retrieval privacy.
+- Updated traceability and the workplan's targeted research gaps.
+
+### Remaining work
+
+- Review the formal definitions, constructions, security assumptions and performance sections of SRC-020 before relying on any specific OMR guarantee.
+- Identify and compare further recipient-discovery and capability-based systems; no locator/capability design has been selected.
+- Build a field-level metadata classification only after the image-carriage encoding method and test formats are specified.
+- Research safe parser design beyond one CVE; derive budgets from explicit device, payload and route profiles.
+- Continue claim-level source reconciliation. No implementation, empirical test, audit or independent review is claimed.
+
+**Theory only · No implementation · Not audited.**
+
+
 ## 2026-11-15 · Machine-readable session handover
 
 ### Completed and verified
