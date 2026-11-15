@@ -97,7 +97,7 @@ Proposed acceptance conditions:
 
 E5. Multipart integrity and reconstruction
 
-Threats: missing, duplicated, reordered, mixed or substituted capsules.
+Threats: missing, duplicated, conflicting, mixed or substituted capsules, including adversarial reordering of transport arrivals.
 
 Evaluation questions:
 
