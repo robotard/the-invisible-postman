@@ -3,13 +3,55 @@
   "checkpoint": "2026-11-15",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
-  "read_first": ["project/SESSION_DIGEST.json", "project/PROJECT_STATE.md", "project/WORKPLAN.md", "project/WORK_LOG.md", "thesis.md"],
+  "read_first": [
+    "project/SESSION_DIGEST.json",
+    "project/PROJECT_STATE.md",
+    "project/WORKPLAN.md",
+    "project/WORK_LOG.md",
+    "thesis.md"
+  ],
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
-  "priority": ["W0.3 source reconciliation", "W6 integrated thesis construction", "W7 traceability"],
-  "defer": ["routine author review unless blocking/material", "external peer review until workable thesis", "new illustrations until thesis stabilises", "implementation"],
-  "next": ["Verify current branch/head and reread read_first files", "continue claim-level source review and thesis-to-W1–W4 reconciliation", "resolve recipient discovery/rendezvous, metadata allowlist, observer model, multipart failure semantics", "deploy only verified changes and read them back", "refresh this digest and checkpoint"],
-  "open": ["source full-text verification and literature gaps", "recipient discovery and stable-locator risk", "carrier metadata allowlist and platform transformations", "traffic/access-pattern and behavioural correlation evaluation", "parser/resource-exhaustion and multipart safety evidence"],
-  "invariants": ["Image carriage remains a required research route; transport is not the whole thesis", "Carrier non-reuse is not entropy, randomness, unpredictability or anonymity", "Endpoint cryptographic validation remains authoritative; train is standalone and untrusted", "Preserve archive history and reasoned dissent", "No ZIP/archive workflow", "No unsupported security or review claims"],
-  "last_verified": {"active_markdown": 20, "relative_links_checked": 51, "broken_links": 0, "status_string_present": true, "active_archive_instructions": false, "tree_files": 25, "tree_markdown": 21},
+  "priority": [
+    "W0.3 source reconciliation",
+    "W6 integrated thesis construction",
+    "W7 traceability"
+  ],
+  "defer": [
+    "routine author review unless blocking/material",
+    "external peer review until workable thesis",
+    "new illustrations until thesis stabilises",
+    "implementation"
+  ],
+  "next": [
+    "Verify current branch/head and reread read_first files",
+    "continue claim-level source review and thesis-to-W1–W4 reconciliation",
+    "resolve recipient discovery/rendezvous, metadata allowlist, observer model, multipart failure semantics",
+    "deploy only verified changes and read them back",
+    "refresh this digest and checkpoint"
+  ],
+  "open": [
+    "source full-text verification and literature gaps",
+    "recipient discovery and stable-locator risk",
+    "carrier metadata allowlist and platform transformations",
+    "traffic/access-pattern and behavioural correlation evaluation",
+    "parser/resource-exhaustion and multipart safety evidence"
+  ],
+  "invariants": [
+    "Image carriage remains a required research route; transport is not the whole thesis",
+    "Carrier non-reuse is not entropy, randomness, unpredictability or anonymity",
+    "Endpoint cryptographic validation remains authoritative; train is standalone and untrusted",
+    "Preserve archive history and reasoned dissent",
+    "No ZIP/archive workflow",
+    "No unsupported security or review claims"
+  ],
+  "last_verified": {
+    "active_markdown": 20,
+    "relative_links_checked": 51,
+    "broken_links": 0,
+    "status_string_present": true,
+    "active_archive_instructions": false,
+    "tree_files": 26,
+    "tree_markdown": 21
+  },
   "verification_scope": "Repository path/link and status audit only; excludes external URL availability, heading-anchor rendering, formal correctness and security audit."
 }
