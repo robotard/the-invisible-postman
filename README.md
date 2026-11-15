@@ -31,8 +31,10 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 3. [Integrated thesis](thesis.md) — active thesis manuscript.
 4. [Research practice](docs/research-practice.md) — critical self-examination, peer discussion, dissent and contribution principles.
 5. [Initial self-review register](docs/self-review-register.md) — author-identified challenges and evidence needs, open to independent criticism.
-6. [Adopted research practices](docs/adopted-practices.md) — versioned project-scoped working baseline, with external review status explicit.\n7. [Collaborative Research Governance Framework](docs/collaborative-governance.md) — review, ratification, project-wide practice adoption and contributor attribution.
-8. [Idea intake and contributor continuity](docs/idea-intake-and-continuity.md) — capture, triage and preserve useful ideas and contributor provenance, including dormant and no-contributor periods.\n9. [Contribution and review record template](docs/templates/contribution-review-record.md) — structured, consent-based credit and review scope.
+6. [Adopted research practices](docs/adopted-practices.md) — versioned project-scoped working baseline, with external review status explicit.
+7. [Collaborative Research Governance Framework](docs/collaborative-governance.md) — review, ratification, project-wide practice adoption and contributor attribution.
+8. [Idea intake and contributor continuity](docs/idea-intake-and-continuity.md) — capture, triage and preserve useful ideas and contributor provenance, including dormant and no-contributor periods.
+9. [Contribution and review record template](docs/templates/contribution-review-record.md) — structured, consent-based credit and review scope.
 10. [Decision record template](docs/templates/decision-record.md) — practice proposals, evidence, ratification and adoption history.
 11. [W1 · Research framing](docs/w1-research-framing.md) — problem, questions, scope and intended contribution.
 12. [W2 · Threat model](docs/w2-threat-model.md) — assets, actors, trust boundaries and attacker capabilities.
