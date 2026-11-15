@@ -291,3 +291,27 @@ No cryptographic protocol or transport implementation has been created. No secur
 - Verified both updated files by fetching them after successful commits.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Thesis-first architecture and traceability reconciliation
+
+### Completed and verified
+
+- Reordered the roadmap so integrated thesis construction and traceability precede review-framework expansion. Routine author challenge review is deferred unless needed to prevent a material error or unblock work; external peer review remains lowest priority until a workable thesis exists.
+- Aligned W1 with the thesis central question and ten supporting questions; clarified the required image route and comparison-only alternatives.
+- Reconciled W2, W3 and W4 multipart language so valid out-of-order arrivals may be reassembled from authenticated logical indices, while conflicting, incomplete, substituted or ambiguous sets fail safely.
+- Expanded W3's component and lifecycle reasoning to make encapsulation, the standalone train, route adapters, recipient discovery, metadata minimisation and receiving-side decapsulation explicit.
+- Added a route-comparison matrix in W4 covering image carriage with and without concealment, encrypted file/attachment carriage and conventional end-to-end messaging. The matrix defines evaluation questions, not results.
+- Rebuilt traceability around the ten thesis research questions; removed duplicate RQ3b and duplicate numbering; added explicit recipient-discovery and metadata threat mappings.
+- Clarified in W3 and D-11 that per-carriage image uniqueness means non-reuse, not cryptographic uniqueness, entropy, randomness, unpredictability or guaranteed unlinkability.
+- Linked the thesis route comparison to the W4 matrix and repaired literal escaped newline characters in README navigation.
+- Inspected the archived short thesis source for historical continuity; left archive files unchanged.
+
+### Verification and remaining work
+
+- Changed research documents were fetched after their writes; targeted content checks passed.
+- A fresh full-repository link/status audit has not yet been run.
+- Full source/citation verification and complete thesis reconciliation remain outstanding.
+- No new illustrations, reviewer solicitation or messaging-system implementation was created.
+
+**Theory only · No implementation · Not audited.**
