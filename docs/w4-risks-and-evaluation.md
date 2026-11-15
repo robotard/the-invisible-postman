@@ -121,6 +121,12 @@ The image-carriage route is required within the research scope. Other routes, in
 
 The evaluation must distinguish the participant-side cryptographic topology from the standalone train. The train is assessed as a low-fidelity, replaceable carriage element, not as a source of cryptographic protection. Encapsulation is assessed for framing, route-context handling, truncation/substitution detection and safe extraction; it must not be credited with confidentiality, authentication, anonymity or integrity unless those properties are supplied and authenticated by the endpoint protocol.
 
+A separate transport-level unlinkability objective may be evaluated for the train: unique image envelopes per carriage instance and variable carrier placement may make simple correlation through carrier reuse or predictable location less straightforward. Evaluate this narrowly under an explicit observer model; do not equate it with participant anonymity.
+
+Metadata minimisation is a required route-processing objective. Define an allowlist of fields that must remain and remove unnecessary embedded image metadata and identifying file-level fields before publication. Evaluate the actual output, including metadata added by subsequent hosting or platform processing. Distinguish carrier metadata that can be stripped from server-side logs, network identifiers, access records, timing, size and other observations that the train cannot erase.
+
+The evaluation must include human behavioural linkability and social-engineering resistance as cross-cutting concerns. Examine whether repeated schedules, response intervals, platform/device habits, language and formatting, image-generation patterns or predictable reactions allow exchanges to be correlated. Consider adversarial prompts such as false delivery notices, urgency cues, staged extraction failures and timed contact. Do not frame user vigilance as a complete mitigation or impose unsafe operational rituals; assess what the system can minimise, what users can reasonably understand, and what remains residual risk.
+
 Evaluation questions:
 
 * What route profiles are in scope, and what assumptions does each make about the transport service?
