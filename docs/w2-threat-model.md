@@ -108,6 +108,7 @@ These are target properties, not claims that the current proposal satisfies them
 | Replay of a valid capsule | Old content is accepted again | Message identifiers, freshness policy, and replay state where required |
 | Fragment mixing, conflicting indices or invalid set construction | Parts from different messages are combined or a capsule is assigned to the wrong logical position | Versioned authenticated manifest, message-set identifier, index/count, content binding and strict reconstruction validation; transport arrival order may differ from logical order |
 | Missing or duplicate fragments | Incomplete or ambiguous message reconstruction | Explicit completeness rules and rejection behavior |
+| Resource-exhaustion through hostile capsule sets | Excessive CPU, memory, disk, decompression or parser work can deny service even when inputs are structurally valid | Define aggregate and per-item size/count limits, header/manifest bounds, decompression limits, timeouts, concurrency and incomplete-set expiry; validate bounds before expensive work |
 | Image transformation | Carrier payload is damaged or removed | Test platform transformations; fail safely rather than claim robust concealment |
 | Metadata correlation | Participants or communication patterns are inferred | Document visible carrier, platform, host, network and access metadata; avoid unsupported anonymity claims |
 | Traffic analysis and flow correlation | Encrypted contents remain confidential while timing, size, volume, endpoint or access patterns reveal communication relationships or activity | Define observer vantage and retained records; examine timing/size correlation and the cost of any padding, delay, batching or cover-traffic countermeasure; see source leads SRC-016 and SRC-018–SRC-019 |
@@ -145,6 +146,8 @@ The following remain open and must be resolved before protocol-level security cl
 - replay state, message expiry semantics, and clock assumptions;
 - permitted metadata exposure and retention;
 - recipient discovery, rendezvous and locator lifetime;
+- discovery alternatives and their privacy/cost trade-offs, including recipient-side scanning, stable locators, short-lived capabilities and oblivious retrieval;
+- explicit parser and reassembly resource budgets for bytes, fragments, headers, decompression, CPU, memory, disk, concurrency and incomplete-set retention;
 - the observer model for timing, size, volume, flow correlation and access patterns;
 - whether any traffic obfuscation, padding, delay, batching or cover traffic is in scope, and what costs it introduces;
 - handling of corrupted images and platform transformations;
@@ -158,6 +161,7 @@ Before claiming that the design meets its goals, an implementation and review pl
 - a documented threat model mapped to each protocol component;
 - no intermediary access to plaintext or sole decryption authority under the stated assumptions;
 - rejection of altered, replayed, incomplete, conflicting, substituted, or cross-message capsule sets; safe reassembly of valid out-of-order arrivals where authenticated manifest and index data permit it;
+- bounded parser and reassembly behaviour under oversized declarations, excessive part counts, malformed headers, decompression expansion and resource-exhaustion inputs;
 - authenticated binding of peer identity and message context;
 - inspection of logs and diagnostics for secret leakage;
 - tests against realistic image transformations if concealment or payload survival is claimed;
