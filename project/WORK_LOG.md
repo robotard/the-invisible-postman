@@ -191,3 +191,29 @@ Re-read the active thesis and W1–W4 before updating the author challenge regis
 - Verified both documents after commit.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Passenger topology and standalone train clarification
+
+### Researcher clarification
+
+The researcher clarified that the participant-side cryptographic roles must remain separate from the train-like transport element. The train is a standalone element whose role is to assist carriage of already protected material over a deliberately low-fidelity route. Participants perform their own concise roles within the stronger endpoint-side topology.
+
+### Completed and verified
+
+- Added D-11 to the decision register: passenger-side cryptographic topology is primary; the train is a standalone, replaceable transport element.
+- Defined a carrier-facing encapsulation boundary that packages protected material for carriage and supports framing/failure detection without independently claiming confidentiality, authentication, anonymity or integrity.
+- Clarified that any security-relevant encapsulation binding must be authenticated by the endpoint protocol.
+- Kept image carriage as a required route under D-10; steganography or another image technique remains a low-fidelity route mechanism, not part of the passenger security topology.
+- Updated the integrated thesis, W1, W2, W3, W4, traceability and workplan to reflect the separation.
+- Read back and verified all updated files after each commit.
+
+### Open specification
+
+- Define exactly what "anonymous agreement" means in the intended participant-side topology; do not infer anonymity from the phrase alone.
+- Specify the train's narrow service contract, route metadata, encapsulation format, authenticated fields, and failure semantics.
+- Evaluate replacement/removal of the train without changing the participant-side security model.
+
+No cryptographic protocol or transport implementation has been created. No security property has been demonstrated.
+
+**Theory only · No implementation · Not audited.**
