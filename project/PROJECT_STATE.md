@@ -5,6 +5,12 @@
 **Checkpoint:** 2026-11-15  
 **Status:** Theory only · No implementation · Not audited.
 
+## Session handover digest
+
+- Machine-readable handover: [project/SESSION_DIGEST.json](SESSION_DIGEST.json).
+- It is a deliberately small retrieval index for new chat sessions, not a second source of truth. Re-read the live project state, roadmap, work log and thesis before acting.
+- Refresh it only after material work has been committed and verified. Never let its cached counts or summaries override a fresh repository check.
+
 ## Governing ethos
 
 > **Never confuse agreement with progress.**
