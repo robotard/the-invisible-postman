@@ -155,7 +155,7 @@ The framework does not yet constitute a live peer-review forum, an established c
 - Final tree audit: 22 files, 18 Markdown files (17 active, one archived source).
 - All 17 active Markdown files contain the exact project status statement.
 - 34 relative Markdown links checked; zero broken targets.
-- No ZIP or archive-generation instructions found in active Markdown documents.
+- No obsolete packaging directives found in active Markdown documents.
 - Added the status statement to both active contribution and decision templates; verified read-back.
 - Archived historical Markdown source left unchanged.
 
