@@ -330,3 +330,17 @@ No cryptographic protocol or transport implementation has been created. No secur
 Scope note: this audit covers relative path targets, not external URL availability or heading-anchor rendering.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Source integration and traffic-privacy research
+
+- Created an initial 19-entry source register covering cryptographic specifications, protocol comparators, key-management guidance, image metadata standards, steganalysis, rendezvous and traffic-analysis research.
+- Integrated provisional author-date citations and a working bibliography into the thesis.
+- Added bounded comparisons to Loopix, Tor v3 rendezvous, Bozorgi et al. (2023) and Li (2026). Their findings are explicitly not generalised to this proposed image-carriage architecture.
+- Corrected the thesis distinction between a non-reused image carrier and cryptographic uniqueness, randomness, entropy or anonymity.
+- Expanded W2 for traffic correlation, discovery/rendezvous correlation and behavioural probing; W3 for the distinction between carrier-level variation and network-level traffic-analysis defence; W4 E9 for observer-specific evaluation and obfuscation trade-offs.
+- Added source mappings to traceability and made source-register verification part of W0.3/W6.
+- Verified the source register, thesis, W2, W3, W4, traceability and workplan by fetching them after their writes.
+- Full-text source review and a fresh repository-wide link/status audit remain outstanding.
+
+**Theory only · No implementation · Not audited.**
