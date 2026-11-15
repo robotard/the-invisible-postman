@@ -377,7 +377,7 @@ Scope note: this audit covers relative path targets, not external URL availabili
 - Added parser/resource-exhaustion threats and evaluation requirements to W2.
 - Expanded W3's discovery comparison and bounded parsing/decapsulation contract.
 - Expanded W4 E5/E9 evaluation questions for parser budgets, platform transformations and retrieval privacy.
-- Updated traceability and the workplan's targeted research gaps.
+- Updated W1 research framing, traceability and the workplan's targeted research gaps.
 
 ### Remaining work
 
