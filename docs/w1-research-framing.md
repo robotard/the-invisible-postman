@@ -14,19 +14,22 @@ The research problem is to describe and critically evaluate an architecture in w
 
 ## 2. Central research question
 
-**Can image-carried messaging be designed so that an untrusted intermediary transports or coordinates encrypted messages without being able to decrypt them or impersonate authenticated participants, while accounting explicitly for concealment, multipart delivery, expiry, revocation, and recovery?**
+**How can an endpoint-controlled messaging architecture protect message contents and authenticate communicating participants while using untrusted intermediaries and image-based carriage, and what security, privacy, usability and reliability limits remain across the complete communication lifecycle?**
 
 This is an architectural research question. It does not assume that the proposed design has been implemented, formally proven, empirically evaluated, or independently audited.
 
 ## 3. Supporting research questions
 
-1. **Cryptographic trust:** Which responsibilities must remain at endpoints, and how should confidentiality, sender authentication, identity binding, and key agreement be distinguished?
-2. **Untrusted transport:** What can a bot, messaging platform, image host, or storage service observe, alter, replay, suppress, or correlate if it is not trusted with plaintext?
-3. **Carrier and concealment:** What security properties come from encryption, and what additional, limited goals might optional steganographic concealment address?
-4. **Multipart delivery:** How should a set of linked capsules be bound to one message, ordered, validated, and rejected when fragments are missing, duplicated, reordered, or mixed?
-5. **Lifecycle policy:** What can expiry and revocation prevent, and what can they not undo after a recipient has obtained plaintext or key material?
-6. **Recovery:** What assumptions, participant roles, thresholds, and collusion risks would need to be explicit if threshold-controlled recovery were included?
-7. **Evaluation:** What acceptance criteria and adversarial tests would be needed before making stronger claims about the architecture?
+1. **Identity and trust:** What does it mean to verify a participant's cryptographic key, and what does that process not prove about a real-world identity?
+2. **Cryptographic composition:** Which endpoint responsibilities are required for authenticated key establishment, confidentiality, sender authentication, integrity, replay resistance and key lifecycle?
+3. **Intermediary exposure:** What can bots, platforms, hosts, storage providers and network observers learn, alter, correlate or deny?
+4. **Message structure:** How should message context, envelopes, multipart capsules and manifests be bound and validated?
+5. **Carriage methods:** What changes when protected material travels as an image, an encrypted file, an attachment or through a conventional end-to-end messaging route?
+6. **Concealment:** Does optional steganographic concealment address a distinct and measurable threat, and under which transformations does it fail?
+7. **Discovery and collection:** How can a recipient discover and collect a changing carrier without creating a stable rendezvous point or access pattern that defeats the intended privacy benefit?
+8. **Human behaviour:** How can routines, timing, language, platform habits and social-engineering probes create linkability even when carriers and locations vary?
+9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
+10. **Evaluation:** What observations would support, weaken or falsify the architectural propositions, and what evidence would be required before stronger claims could be made?
 
 ## 4. Intended contribution
 
@@ -43,13 +46,15 @@ The value of the work is not that images are inherently secure or that concealme
 
 ## 5. Scope
 
-The thesis considers a proposed architecture for endpoint-controlled encrypted messaging whose transport may use images as carriers. It considers:
+The thesis considers a proposed endpoint-controlled messaging architecture in which image carriage is a required research route and other carriage methods are comparison profiles. It considers:
 
 - endpoint-held keys and plaintext;
 - authenticated key agreement and sender authentication as distinct requirements;
 - an intermediary that should not possess plaintext or the sole ability to decrypt;
-- optional steganographic concealment as a separate layer;
-- linked image capsules and message-set integrity;
+- optional steganographic concealment as a separate image-route layer;
+- distribution, recipient discovery, collection, decapsulation and route-specific failure behaviour;
+- carrier metadata minimisation, platform/network metadata exposure and human behavioural linkability;
+- linked image capsules, authenticated message-set integrity and safe reconstruction independent of transport arrival order;
 - policy-based expiry and revocation, with realistic limits;
 - optional threshold-controlled recovery as a separate mechanism requiring explicit assumptions; and
 - qualitative threat analysis, proposed acceptance criteria, and an evaluation plan.
