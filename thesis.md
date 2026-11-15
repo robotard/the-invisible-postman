@@ -61,7 +61,7 @@ The initial concept was deliberately compact: a sender protects a message with a
 
 This model was useful as an exploratory starting point. It was easy to explain, avoided an initial dependency on an identity directory, and made the distinction between message encryption and image concealment visible. It also raised immediate questions: whether the image was merely a carrier, whether the embedded material could survive ordinary image processing, what metadata remained exposed, and whether a shared secret was sufficient for the communication being proposed.
 
-Argon2id was considered as a password-based key derivation function, with a fresh salt and recorded parameters. The KDF can increase the cost of guessing, but it cannot create entropy absent from the password. The encrypted object would still need a vetted authenticated-encryption construction and correct nonce handling. The password model did not, by itself, prove who sent a message, bind a key to a human identity, provide a robust multi-device lifecycle or solve first-contact impersonation.
+Argon2id was considered as a password-based key derivation function, with a fresh salt and recorded parameters. Argon2 is specified as a memory-hard password-hashing function, with parameter choices that must be matched to the deployment's resource constraints (Biryukov et al., 2021). The KDF can increase the cost of guessing, but it cannot create entropy absent from the password. The encrypted object would still need a vetted authenticated-encryption construction and correct nonce handling. The password model did not, by itself, prove who sent a message, bind a key to a human identity, provide a robust multi-device lifecycle or solve first-contact impersonation.
 
 The starting model is retained as part of the research history. It is not rewritten as a failed idea: it was a useful narrow model whose limits became clearer as the research question expanded.
 
@@ -175,13 +175,13 @@ The research must define what "verified peer" means, what users actually compare
 
 ### 6.2 Authenticated key establishment
 
-Endpoints require an authenticated key-establishment process with clear identity binding, key confirmation and transcript/context binding. The phrase "anonymous agreement" has appeared as an unresolved idea, but it is not sufficiently defined to assign it a protocol meaning. It must not be silently interpreted as anonymous key exchange, deniable authentication, private mutual authentication, participant unlinkability or an anonymity network.
+Endpoints require an authenticated key-establishment process with clear identity binding, key confirmation and transcript/context binding. Established protocol designs provide useful comparators rather than components to copy without analysis: Signal's PQXDH specifies asynchronous initial key agreement using published prekey material (Kret & Schmidt, 2023/2024); the Double Ratchet specifies ongoing message-key evolution after a shared secret has been established (Perrin, 2025); and MLS specifies asynchronous group key establishment (Barnes et al., 2023). Their different settings and assumptions must be compared explicitly. None is selected for this project. The phrase "anonymous agreement" has appeared as an unresolved idea, but it is not sufficiently defined to assign it a protocol meaning. It must not be silently interpreted as anonymous key exchange, deniable authentication, private mutual authentication, participant unlinkability or an anonymity network.
 
 ### 6.3 Message protection and sender authentication
 
 Authenticated encryption can protect message contents and associated data when correctly composed and used. Sender authentication is a separate design responsibility. The final protocol must explain whether it relies on an authenticated session, signatures or another reviewed construction, and how the evidence binds to the intended sender, recipient, session and message context.
 
-Candidate primitives such as X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated. They are not a selected protocol and should not be assembled informally. A complete specification would need key separation, key confirmation, nonce rules, associated-data construction, version negotiation, downgrade handling, transcript binding, safe error behaviour, rotation and compromise response.
+Candidate primitives such as X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated. X25519 is a Diffie–Hellman function, not an authenticated protocol (Langley et al., 2016); HKDF is an extract-and-expand key derivation function (Krawczyk & Eronen, 2010); and Ed25519 is a signature scheme whose use does not itself verify a human identity (Josefsson & Liusvaara, 2017). RFC 8439 specifies the IETF ChaCha20-Poly1305 construction, not XChaCha20-Poly1305 (Nir & Langley, 2018). The latter is documented by libsodium with a 192-bit nonce, but the library documentation notes its more limited interoperability and lack of a formal IETF specification (libsodium, n.d.). These candidates are not a selected protocol and should not be assembled informally. A complete specification would need key separation, key confirmation, nonce rules, associated-data construction, version negotiation, downgrade handling, transcript binding, safe error behaviour, rotation and compromise response.
 
 ### 6.4 Endpoint authority and the transport boundary
 
@@ -258,7 +258,7 @@ These are different claims and require different evidence. A unique image may st
 
 ### 8.6 Metadata minimisation and its limits
 
-Metadata minimisation is a baseline requirement for image carriage. The carrier-processing path should remove unnecessary embedded metadata, including avoidable EXIF, IPTC and XMP fields, and avoid identifying filenames, descriptive properties, thumbnails or other unnecessary file-level identifiers. The design should define an allowlist of fields demonstrably required for safe extraction, compatibility or handling, then verify the actual output rather than assuming removal succeeded.
+Metadata minimisation is a baseline requirement for image carriage. The carrier-processing path should remove unnecessary embedded metadata, including avoidable EXIF, IPTC and XMP fields, and avoid identifying filenames, descriptive properties, thumbnails or other unnecessary file-level identifiers. Relevant metadata schemas are documented by CIPA's Exif specifications, the IPTC Photo Metadata Standard and Adobe's XMP specifications (CIPA, 2026; IPTC, 2025; Adobe, n.d.). The design should define an allowlist of fields demonstrably required for safe extraction, compatibility or handling, then verify the actual output rather than assuming removal succeeded.
 
 Removing embedded metadata does not erase network identifiers, hosting-provider logs, access records, externally observed timestamps, traffic volume, file-size observations, platform-generated metadata or copies already retained by third parties. These require separate controls and remain possible observations. Stripping metadata may also affect compatibility or legitimate handling; the allowlist and transformation tests must make that trade-off explicit.
 
@@ -280,7 +280,7 @@ A meaningful route comparison should record the observer model, route assumption
 
 ### 9.1 Lifecycle semantics
 
-A communication system needs explicit rules for session creation, key rotation, device replacement, compromise response, expiry, revocation and recovery. These policies must be authenticated and consistently interpreted. The system must define clock assumptions, offline-device behaviour, revocation propagation, local versus service-side enforcement and the consequences of stale state.
+A communication system needs explicit rules for session creation, key rotation, device replacement, compromise response, expiry, revocation and recovery. General key-management guidance treats key lifecycle and key protection as distinct design responsibilities (NIST, 2020). The applicable NIST guidance is itself evolving: Revision 6 was available as an initial public draft in the source check, so the final edition and status must be rechecked before publication. These policies must be authenticated and consistently interpreted. The system must define clock assumptions, offline-device behaviour, revocation propagation, local versus service-side enforcement and the consequences of stale state.
 
 Expiry and revocation may restrict future sessions, future access or acceptance of messages under defined policy. They cannot reliably retrieve plaintext, screenshots, copied ciphertext, keys or other material already obtained. Claims of remote deletion or retroactive erasure would be misleading.
 
@@ -350,6 +350,24 @@ The Invisible Postman is a research investigation into endpoint-controlled crypt
 Image carriage remains a required research route, but it does not define every layer of the system. The thesis must explain why the route is being examined, what it changes, how it compares with alternatives and where it fails. The transport element remains replaceable and subordinate to endpoint cryptographic authority. Its discovery and collection processes deserve explicit study because publication alone does not complete delivery and because retrieval can itself expose relationships.
 
 The work advances only when claims become clearer, assumptions are tested, alternatives are fairly considered and weaknesses remain visible. The next stage is to reconcile the full manuscript against W1–W4, the decision register, self-review and source material; then complete the research reasoning and evidence plan before final illustration and publication.
+
+## References · Working bibliography
+
+The following sources are cited in the current working text. This list is provisional; the [research source register](docs/source-register.md) records source scope, status, limitations and outstanding review.
+
+- Adobe. (n.d.). *XMP Specifications*. https://developer.adobe.com/xmp/docs/xmp-specifications/
+- Barnes, R., Beurdouche, B., Robert, R., Millican, J., Omara, E., & Cohn-Gordon, K. (2023). *The Messaging Layer Security (MLS) Protocol* (RFC 9420). IETF. https://www.rfc-editor.org/rfc/rfc9420
+- Biryukov, A., Dinu, D., Khovratovich, D., & Josefsson, S. (2021). *Argon2 Memory-Hard Function for Password Hashing and Proof-of-Work Applications* (RFC 9106). IRTF. https://www.rfc-editor.org/rfc/rfc9106
+- Camera & Imaging Products Association. (2026). *CIPA DC-008-Translation-2026: Exif Version 3.1; CIPA DC-010-2026: Exif metadata for XMP*. https://www.cipa.jp/e/std/std-sec.html
+- IPTC Photo Metadata Working Group. (2025). *IPTC Photo Metadata Standard 2025.1*. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html
+- Josefsson, S., & Liusvaara, I. (2017). *Edwards-Curve Digital Signature Algorithm (EdDSA)* (RFC 8032). IRTF. https://www.rfc-editor.org/rfc/rfc8032
+- Krawczyk, H., & Eronen, P. (2010). *HMAC-based Extract-and-Expand Key Derivation Function (HKDF)* (RFC 5869). IETF. https://www.rfc-editor.org/rfc/rfc5869
+- Kret, E., & Schmidt, R. (2023; updated 2024). *The PQXDH Key Agreement Protocol* (Revision 3). Signal. https://signal.org/docs/specifications/pqxdh/
+- Langley, A., Hamburg, M., & Turner, S. (2016). *Elliptic Curves for Security* (RFC 7748). IETF. https://www.rfc-editor.org/rfc/rfc7748
+- libsodium. (n.d.). *ChaCha20-Poly1305 and XChaCha20-Poly1305 documentation*. https://doc.libsodium.org/secret-key_cryptography/aead/chacha20-poly1305
+- National Institute of Standards and Technology. (2020). *Recommendation for Key Management: Part 1 – General* (SP 800-57 Part 1 Rev. 5). https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final
+- Nir, Y., & Langley, A. (2018). *ChaCha20 and Poly1305 for IETF Protocols* (RFC 8439). IETF. https://www.rfc-editor.org/rfc/rfc8439
+- Perrin, T. (Ed.). (2025). *The Double Ratchet Algorithm* (Revision 4). Signal. https://signal.org/docs/specifications/doubleratchet/
 
 ## Appendix A. Terminology
 
