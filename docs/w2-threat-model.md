@@ -18,6 +18,8 @@ The intended trust boundary is at the endpoints. Intermediaries may be used for 
 
 This model does not assume that the transport reliably delivers messages, preserves image bytes, conceals metadata, or authenticates a human identity.
 
+The model separates the participant-side cryptographic topology ("passengers") from a standalone, low-fidelity transport element ("train"). The train carries an already protected object and is treated as untrusted and replaceable. It must not be relied upon for key agreement, identity, encryption, sender authentication or decryption authority. A carrier-facing encapsulation layer may provide framing and route context, but any security-relevant binding must be authenticated by the endpoint protocol; encapsulation alone is not a security guarantee. Attacker capabilities therefore include inspection, copying, delay, loss, transformation, substitution and unavailability of the train or its carrier.
+
 ## 3. Assets to protect
 
 | Asset | Security concern |
