@@ -42,7 +42,7 @@ The intended contribution is a transparent, theory-led architecture and design r
 - propose testable acceptance criteria and questions for independent review; and
 - distinguish established cryptographic mechanisms from unvalidated architectural choices.
 
-The value of the work is not that images are inherently secure or that concealment makes encryption stronger. It is that the system's claims, boundaries, and limitations are made explicit enough to examine and challenge.
+The value of the work is not that images are inherently secure or that concealment makes encryption stronger. It is that the system's claims, boundaries, and limitations are made explicit enough to examine and challenge. The [working prior-art comparison](prior-art-comparison.md) is used to test the candidate contribution against the closest identified systems; it does not establish originality by itself.
 
 ## 5. Scope
 
