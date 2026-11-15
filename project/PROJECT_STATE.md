@@ -1,6 +1,6 @@
 ## 2026-11-15 · Method correction and mandatory session continuity rule
 
-- Retracted the premature use of **hypothesis** for the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
+- Withdrawn the premature confirmatory framing of the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
 - Research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions must remain distinct.
 - Concrete operating rule: every work session must use and reconcile all three working documents: this project state, [the workplan](WORKPLAN.md) and [the work log](WORK_LOG.md).
 - Before stopping, all three must agree on what is complete or explicitly parked. A parked item must include its current state, evidence, blockers/dependencies, exact next action and relevant repository paths. The session digest is refreshed after these three documents, not used as their substitute.
