@@ -76,3 +76,5 @@ Role descriptions must be confirmed with the contributor. These labels describe 
 - Rationale:
 - Dissent retained at:
 - Decision record:
+
+**Theory only · No implementation · Not audited.**
