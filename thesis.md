@@ -227,7 +227,7 @@ Image carriage is a required route in this research. It is not presumed superior
 - encrypted file or attachment carriage; and
 - conventional end-to-end messaging transport, where a meaningful comparison can be defined.
 
-The comparison should examine confidentiality boundaries, sender authentication, identity assurance, intermediary visibility, metadata exposure, capacity, transformations, ordering, delivery semantics, retrieval, failure behaviour, usability, accessibility, deployability, operational complexity and fallback. Comparisons must avoid pretending that different services offer identical delivery guarantees or threat models.
+The comparison should examine confidentiality boundaries, sender authentication, identity assurance, intermediary visibility, metadata exposure, capacity, transformations, ordering, delivery semantics, retrieval, failure behaviour, usability, accessibility, deployability, operational complexity and fallback. Comparisons must avoid pretending that different services offer identical delivery guarantees or threat models. The corresponding evaluation protocol is recorded in W4's route-comparison matrix. It defines the dimensions and conditions to investigate; it does not report comparative results or assume that any profile is superior.
 
 ### 8.3 Image carrier and optional concealment
 
