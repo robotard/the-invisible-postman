@@ -95,7 +95,7 @@ The work should distinguish three categories throughout the thesis:
 2. **Proposed design choices:** Architectural decisions that still require complete specification and evaluation.
 3. **Unverified claims:** Statements requiring implementation, empirical evidence, formal analysis, or independent review before they can be asserted.
 
-No claim of security should rely on the obscurity of the design. Public documentation should include the threat model, rationale, limitations, candidate mechanisms, and review questions while excluding genuine secrets and sensitive personal or operational data.
+No claim of security should rely on the obscurity of the design. Public documentation should include the threat model, rationale, limitations, candidate mechanisms, and review questions while excluding genuine secrets and sensitive personal or operational data. An initial [research source register](source-register.md) records technical specifications, protocol comparators, metadata standards and evidence gaps; it is a starting bibliography, not a completed literature review or independent validation.
 
 ## 9. Current limitations and open questions
 
