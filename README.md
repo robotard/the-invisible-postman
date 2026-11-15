@@ -5,7 +5,7 @@ Researcher: `@robotard`
 
 > **Status: Theory only · No implementation · Not audited.**
 
-This repository documents a research proposal for endpoint-controlled encrypted messaging that may use images as carriers and optional steganographic concealment. It separates encryption, sender authentication, identity verification, carrier handling, multipart integrity, lifecycle policy and optional threshold recovery.
+This repository documents a research proposal for endpoint-controlled encrypted messaging with a first-class transport-route layer. Image carriage is a required route in the research; other carriage routes provide comparison profiles. Optional steganographic concealment is separate from cryptographic protection. It separates encryption, sender authentication, identity verification, carrier handling, multipart integrity, lifecycle policy and optional threshold recovery.
 
 ## What this repository is
 
@@ -32,15 +32,15 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 4. [Research practice](docs/research-practice.md) — critical self-examination, peer discussion, dissent and contribution principles.
 5. [Initial self-review register](docs/self-review-register.md) — author-identified challenges and evidence needs, open to independent criticism.
 6. [Adopted research practices](docs/adopted-practices.md) — versioned project-scoped working baseline, with external review status explicit.\n7. [Collaborative Research Governance Framework](docs/collaborative-governance.md) — review, ratification, project-wide practice adoption and contributor attribution.
-7. [Contribution and review record template](docs/templates/contribution-review-record.md) — structured, consent-based credit and review scope.
-8. [Decision record template](docs/templates/decision-record.md) — practice proposals, evidence, ratification and adoption history.
-9. [W1 · Research framing](docs/w1-research-framing.md) — problem, questions, scope and intended contribution.
-10. [W2 · Threat model](docs/w2-threat-model.md) — assets, actors, trust boundaries and attacker capabilities.
-11. [W3 · Architecture](docs/w3-architecture.md) — logical components and responsibilities.
-12. [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md) — failure modes and proposed evaluation.
-13. [Research traceability](docs/traceability.md) — links between questions, threats, architecture and evaluation.
-14. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
-15. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
+8. [Idea intake and contributor continuity](docs/idea-intake-and-continuity.md) — capture, triage and preserve useful ideas and contributor provenance, including dormant and no-contributor periods.\n9. [Contribution and review record template](docs/templates/contribution-review-record.md) — structured, consent-based credit and review scope.
+10. [Decision record template](docs/templates/decision-record.md) — practice proposals, evidence, ratification and adoption history.
+11. [W1 · Research framing](docs/w1-research-framing.md) — problem, questions, scope and intended contribution.
+12. [W2 · Threat model](docs/w2-threat-model.md) — assets, actors, trust boundaries and attacker capabilities.
+13. [W3 · Architecture](docs/w3-architecture.md) — logical components and responsibilities.
+14. [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md) — failure modes and proposed evaluation.
+15. [Research traceability](docs/traceability.md) — links between questions, threats, architecture and evaluation.
+16. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
+17. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
 
 ## Ideation and design evolution
 
