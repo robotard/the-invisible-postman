@@ -65,6 +65,20 @@ This register records why significant design choices were made, changed, narrowe
 
 **Decision boundary:** A practice may become part of this project's adopted baseline only after its scope, evidence, limitations, independent review, attribution and ratification are recorded. Adoption is project-scoped, reversible and versioned; it is not a claim of universal best practice. Automation may validate process requirements but cannot determine truth or scientific adequacy. The framework itself remains a proposal pending review.
 
+## D-10 · Transport routes are an explicit architectural layer
+
+**Status:** Adopted as a scope clarification by the researcher · Detailed route taxonomy and evaluation remain open.
+
+**Decision:** The architecture must explicitly include message carriage as a transport-route layer. Image carriage is a required research route and remains central to the project's identity and evaluation. It is not to be removed or reduced to a decorative example. The architecture should also describe and compare other carriage routes, such as ordinary file or attachment transport, without confusing the route with the cryptographic message itself.
+
+**Rationale:** The message must travel through one or more transport routes. A route determines how protected capsules are packaged, carried, transformed, routed and recovered at the receiving endpoint. Different routes may expose different metadata, impose different size and ordering constraints, and tolerate different transformations. The route is therefore a first-class architectural concern, not an incidental implementation detail.
+
+**Boundary:** Cryptographic protection and authenticated message semantics must remain independent of the carrier. Image-specific processing and optional steganographic concealment belong to image-route adapters. Concealment remains optional and must not be conflated with encryption, authentication or route reliability. Alternative routes are comparative profiles, not grounds for deleting the image-carriage research question.
+
+**Open work:** Define a route abstraction and route-specific profiles; compare image, file/attachment and conventional messaging routes; assess capacity, transformations, metadata, ordering, delivery semantics, usability, interoperability and failure behaviour. No route's security or resilience is assumed.
+
+**Source:** Researcher's explicit scope clarification, 2026-11-15.
+
 ## Assurance
 
 **Theory only · No implementation · Not audited.**
