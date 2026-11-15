@@ -75,5 +75,32 @@
     "work_log": "5d0263a73128cf0c32092ab35b0cf51c43c922bf",
     "readme": "b347d4c8083859d34d4c9a17fdc405bee19659f1",
     "diagram_index": "c27626e11f82c1a75a2434304709ff26e9e72451"
+  },
+  "session_completion_rule": {
+    "required_working_documents": [
+      "project/PROJECT_STATE.md",
+      "project/WORKPLAN.md",
+      "project/WORK_LOG.md"
+    ],
+    "rule": "Every work session must use and reconcile all three working documents. At session close, either record the work as complete with evidence and verification, or park it explicitly for the next session. Never leave work half-described or rely on chat history alone.",
+    "completion_record": [
+      "what was completed and the evidence/read-back that supports completion",
+      "what remains open, uncertain, blocked or deferred",
+      "the exact next action and relevant repository paths",
+      "dependencies, decision points and any constraints that must be preserved",
+      "commit references for changes actually deployed and verified"
+    ],
+    "sequence": [
+      "At session start, refresh this digest from the live repository before relying on cached state.",
+      "Read and reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md before substantive work.",
+      "Perform the authorised work and verify changes by reading them back.",
+      "Before stopping, update all three working documents so they agree on completion or the parked continuation point.",
+      "Refresh this digest last with the verified checkpoint, repository state and next-session instructions."
+    ]
+  },
+  "methodological_language": {
+    "preferred_term": "emergent proposition",
+    "distinction": "Keep research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions distinct.",
+    "constraint": "Do not label the central proposition or developing research direction a hypothesis. Do not promote a proposition to a demonstrated result or contribution without appropriate evidence."
   }
 }
