@@ -46,6 +46,7 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 16. [Research source register](docs/source-register.md) — authoritative specifications, protocol comparators, metadata standards and evidence gaps.
 17. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
 18. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
+19. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
 
 ## Illustrations
 
