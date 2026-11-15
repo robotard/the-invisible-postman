@@ -90,7 +90,7 @@ The proposed design should be evaluated against the following goals:
 2. **Authenticated peer binding:** Messages should be associated with the intended cryptographic identities, with an explicit first-contact verification process.
 3. **Integrity and context binding:** Altered, replayed, cross-message, cross-recipient, or mixed capsules should be detected or rejected according to a specified policy.
 4. **No intermediary-only decryption:** The intermediary must not possess plaintext or the sole capability needed to decrypt messages.
-5. **Safe multipart handling:** Missing, duplicated, reordered, or mixed capsule sets must not be silently accepted as a different valid message.
+5. **Safe multipart handling:** Missing, conflicting, substituted, mixed or ambiguous capsule sets must not be silently accepted as a different valid message. Valid capsules may arrive out of order when authenticated indices and manifest context make their logical order unambiguous.
 6. **Key separation:** Encryption, authentication, and any recovery roles must have explicit key purposes and lifecycle rules.
 7. **Honest lifecycle semantics:** Expiry and revocation may govern future access or sessions but must not be represented as remote deletion of already obtained plaintext.
 8. **Secret hygiene:** Plaintext, private keys, recovery secrets, and authentication material must not be exposed through logs or routine diagnostics.
@@ -106,7 +106,7 @@ These are target properties, not claims that the current proposal satisfies them
 | Platform ID treated as identity | Account or identifier is mistaken for a verified person | Bind cryptographic keys to verified identities; document what verification means |
 | Ciphertext or capsule tampering | Corruption or attacker-controlled changes | Authenticated encryption and authenticated binding of relevant metadata |
 | Replay of a valid capsule | Old content is accepted again | Message identifiers, freshness policy, and replay state where required |
-| Fragment mixing or reordering | Parts from different messages are combined | Versioned manifest, message-set identifier, index/count, digest or equivalent integrity binding, and strict validation |
+| Fragment mixing, conflicting indices or invalid set construction | Parts from different messages are combined or a capsule is assigned to the wrong logical position | Versioned authenticated manifest, message-set identifier, index/count, content binding and strict reconstruction validation; transport arrival order may differ from logical order |
 | Missing or duplicate fragments | Incomplete or ambiguous message reconstruction | Explicit completeness rules and rejection behavior |
 | Image transformation | Carrier payload is damaged or removed | Test platform transformations; fail safely rather than claim robust concealment |
 | Metadata correlation | Participants or communication patterns are inferred | Document visible metadata and avoid unsupported anonymity claims |
@@ -151,7 +151,7 @@ Before claiming that the design meets its goals, an implementation and review pl
 
 - a documented threat model mapped to each protocol component;
 - no intermediary access to plaintext or sole decryption authority under the stated assumptions;
-- rejection of altered, replayed, incomplete, duplicated, reordered, or cross-message capsule sets;
+- rejection of altered, replayed, incomplete, conflicting, substituted, or cross-message capsule sets; safe reassembly of valid out-of-order arrivals where authenticated manifest and index data permit it;
 - authenticated binding of peer identity and message context;
 - inspection of logs and diagnostics for secret leakage;
 - tests against realistic image transformations if concealment or payload survival is claimed;
