@@ -47,12 +47,13 @@ The identifiers below follow the ten supporting questions in Thesis §1.3 and W1
 | Platform identifier mistaken for identity | Explicit cryptographic identity binding | E2 | Identity model and assurance assumptions |
 | Ciphertext or metadata alteration | Message protection and authenticated context | E3 | Canonical encoding and associated-data rules |
 | Replay of valid messages | Message identifiers and lifecycle state | E4 | Freshness policy and replay-state persistence |
-| Fragment mixing or reordering | Capsule manager and authenticated message-set context | E5 | Manifest and reconstruction format |
+| Fragment mixing, conflicting indices or invalid set construction | Capsule manager and authenticated message-set context; valid out-of-order arrivals may be reassembled | E5 | Manifest, duplicate policy, resource limits and reconstruction format |
 | Missing or duplicated capsules | Completeness and uniqueness validation | E5 | Retry and failure policy |
 | Image transformation | Image route adapter within the transport-route layer | E6 | Supported formats and transformation tolerance |
 | Route-specific exposure or failure | Route manager and route-specific adapters | E6, E9 | Route profiles, metadata, capacity, ordering, fallback and delivery semantics |
-| Metadata correlation | Coordinator minimisation and documented exposure | E9 | Metadata inventory and retention policy |
+| Metadata correlation | Carrier metadata minimisation, coordinator minimisation and documented platform/host/network exposure | E6, E9 | Metadata allowlist, output verification, discovery and retention policy |
 | Behavioural correlation and social engineering | Human routine and interaction patterns can link otherwise distinct carriage instances | E9 | Behavioural side-channel analysis, adversarial prompt scenarios and proportionate user-facing mitigations |
+| Recipient discovery and rendezvous correlation | Separate authenticated discovery mechanism; no assumption that variable placement is self-discovering | E6, E9 | Discovery channel, locator lifetime, timing and access-pattern observer model |
 | Intermediary compromise | Endpoint-held private keys and least privilege | E1, E9 | Exact coordinator permissions |
 | Logging and diagnostics leakage | Endpoint and service secret-handling responsibilities | E8 | Logging and crash-report policy |
 | Recovery collusion or share theft | Optional, separate recovery boundary | E1, E8 | Recovery authority, threshold and collusion model |
