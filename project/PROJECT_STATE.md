@@ -21,7 +21,7 @@
 - Refined metadata minimisation into separate categories: descriptive EXIF/IPTC/XMP and file identifiers; structural/codec information required for decoding; optional rendering information; and signal-/codec-level traces that may persist after metadata removal.
 - Added explicit resource budgets to multipart parsing and reassembly reasoning: total and per-item bytes, fragment count, manifest/header length, nesting, decompression expansion, memory, disk, CPU/time, concurrency and incomplete-set lifetime. Numerical values remain open and profile-dependent.
 - Added bounded qualitative support for social-engineering threats while distinguishing perpetrator-reported practices from measured recipient susceptibility.
-- Integrated the findings into the thesis, W2 threat model, W3 architecture, W4 evaluation, traceability and workplan.
+- Integrated the findings into the thesis, W1 research framing, W2 threat model, W3 architecture, W4 evaluation, traceability and workplan.
 
 ### Evidence boundaries
 
