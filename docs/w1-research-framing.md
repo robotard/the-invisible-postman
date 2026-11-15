@@ -8,9 +8,9 @@
 
 ## 1. Research problem
 
-Secure messaging systems must protect message contents while often relying on intermediary services for delivery, storage, coordination, or media handling. An image can act as a carrier for message material, and optional steganographic techniques may conceal the presence of that material. Neither the carrier nor concealment itself provides cryptographic confidentiality, sender authentication, or trustworthy identity.
+Secure messaging systems must protect message contents while often relying on intermediary services for delivery, storage, coordination, or media handling. Image carriage is a required transport route in this research. Other carriage routes may be modelled for comparison. Optional steganographic techniques may conceal the presence of message material within an image. Neither the carrier nor concealment itself provides cryptographic confidentiality, sender authentication, or trustworthy identity.
 
-The research problem is to describe and critically evaluate an architecture in which cryptographic protections remain anchored at the communicating endpoints while an intermediary is treated as untrusted for plaintext confidentiality and participant impersonation. The design must also account for the practical complications introduced by image-carried messages, multipart delivery, lifecycle policy, and optional recovery arrangements.
+The research problem is to describe and critically evaluate an architecture in which cryptographic protections remain anchored at the communicating endpoints while an intermediary is treated as untrusted for plaintext confidentiality and participant impersonation. Message carriage is a first-class transport-route layer; image carriage is a required route profile, and alternative routes provide comparison points. The design must also account for route-specific transformations, multipart delivery, lifecycle policy, and optional recovery arrangements.
 
 ## 2. Central research question
 
@@ -30,7 +30,7 @@ This is an architectural research question. It does not assume that the proposed
 
 ## 4. Intended contribution
 
-The intended contribution is a transparent, theory-led architecture and design rationale for authenticated, image-carried cryptographic messaging. It aims to:
+The intended contribution is a transparent, theory-led architecture and design rationale for authenticated cryptographic messaging with an explicit transport-route layer and a required image-carriage route. It aims to:
 
 - separate cryptographic confidentiality, sender authentication, identity verification, carrier formatting, and optional concealment;
 - make trust boundaries and intermediary capabilities explicit;
