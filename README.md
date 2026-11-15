@@ -5,7 +5,7 @@ Researcher: `@robotard`
 
 > **Status: Theory only · No implementation · Not audited.**
 
-This repository documents a research proposal for endpoint-controlled encrypted messaging with a first-class transport-route layer. Image carriage is a required route in the research; other carriage routes provide comparison profiles. Optional steganographic concealment is separate from cryptographic protection. It separates encryption, sender authentication, identity verification, carrier handling, multipart integrity, lifecycle policy and optional threshold recovery.
+This repository documents a theory-led investigation into endpoint-controlled cryptographic messaging. It develops the reasoning from the initial password-and-image concept through identity and key trust, cryptographic composition, message structure, trust boundaries, carriage methods, lifecycle, recovery, privacy, usability and evaluation. Image carriage is a required research route, while other carriage methods provide comparison profiles. Transport is important, but it is one part of the full thesis rather than the organising principle for every security question.
 
 ## What this repository is
 
@@ -42,10 +42,11 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 16. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
 17. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
 
-## Ideation and design evolution
+## Illustrations
 
+- [Illustration and diagram index](diagrams/README.md) maps existing figures and the proposed contextual figure set across the full thesis.
 - [From idea to architecture](diagrams/01-ideation-and-design-evolution.svg) illustrates the initial password-based concept, its rationale and limits, and the research evolution towards endpoint-controlled trust.
-- [Design decisions](diagrams/03-design-decisions.svg) summarises major design choices and refinements.
+- [Design decisions](diagrams/03-design-decisions.svg) summarises selected design choices and refinements. The index identifies where additional figures will support the full research argument once the manuscript stabilises.
 
 ## Preserved historical editions
 
