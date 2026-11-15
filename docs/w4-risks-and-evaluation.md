@@ -202,21 +202,30 @@ Proposed acceptance conditions:
 * Key compromise has a defined response.
 * The residual risk of a compromised endpoint is explicitly acknowledged.
 
-E9. Metadata and availability
+E9. Metadata, traffic analysis, discovery and availability
 
-Threats: traffic analysis, participant correlation, timing and volume observation, delivery suppression.
+Threats: traffic analysis, participant correlation, timing and volume observation, locator disclosure, access-pattern correlation, behavioural inference and delivery suppression.
 
 Evaluation questions:
 
-* What can the coordinator and platform observe?
-* Which identifiers, timestamps, sizes and routing relationships are exposed?
-* What information is retained and for how long?
+* What can each observer see: endpoint, coordinator, platform, image host, storage provider, network/ISP observer or a more capable colluding observer?
+* Which identifiers, timestamps, sizes, flow durations, packet/byte counts, service endpoints, carrier fingerprints and routing relationships are exposed?
+* What information is retained, by whom, for how long and under which access assumptions?
+* Can a stable locator, publication schedule or retrieval pattern link a recipient to a carrier?
+* Can timing and size observations correlate sender and recipient events even when message contents remain encrypted?
+* How do repeated schedules, response intervals, device/platform habits and staged social-engineering prompts affect correlation?
 * Can a malicious intermediary delay, suppress or refuse delivery?
+* What is the privacy, latency, bandwidth and usability cost of any proposed padding, delay, batching, cover traffic or mixing mechanism?
+
+The evaluation must distinguish a baseline that merely rotates carriers or varies placement from stronger traffic-obfuscation or mix-network approaches. Loopix is a comparator for the latter, not an assumed component. The encrypted-messaging traffic-analysis studies in the source register provide testable observer scenarios, but their results must not be generalised beyond their stated applications and conditions.
 
 Proposed acceptance conditions:
 
-* Observable metadata is inventoried.
-* Retention and access are documented.
+* An actor-by-actor metadata and observer inventory is recorded, including publication, discovery and retrieval.
+* Retention and access assumptions are documented.
+* Correlation experiments state the observer vantage, dataset, event definition, features, thresholds, false-positive/negative rates and limitations.
+* Carrier uniqueness and variable placement are not treated as evidence of anonymity or unlinkability.
+* Any proposed obfuscation mechanism is evaluated against its overhead, latency, accessibility and residual leakage.
 * No anonymity or unlinkability claim is made without separate evidence.
 * Availability limitations are explicit and are not confused with confidentiality.
 
