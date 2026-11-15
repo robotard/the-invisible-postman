@@ -44,6 +44,19 @@ This is the changing progress record. `project/WORKPLAN.md` is the stable roadma
 - README diagram link: `ecd75274fb47d780265d81408d6eaeb556217805`
 - State checkpoint: `18c70a32422a1c5d5dc8f019e8fb55240ff7dc43`
 
+
+## 2026-11-15 · Illustration pass
+
+- Added `diagrams/01-ideation-and-design-evolution.svg`, a rich workflow illustration showing the initial question, password-derived starting model, its rationale and limits, the expanded research question, and the current endpoint-controlled direction.
+- Added `project/WORK_LOG.md` to hold the illustration backlog and work that cannot be completed in one pass.
+- Linked the ideation illustration from README and thesis.
+- Source framing checked against the W1 and W2 documents in the 14 November review source archive. The archive was used only as a source for inspection; no ZIP is being prepared or used as the publication deliverable.
+- Diagram commit: `3e24cb5d2128fbfd483d80c3759bf8e559f7631f`
+- Work log commit: `f8400dde083c1e2c831dddbd0b220d6c79bdd332`
+- README link commit: `25990708610158575d6864687be16e3f1319b191`
+- Thesis reference commit: `c4111f9a2cc9c1cdc3dc48800c1dba0b08457617`
+- Deferred work is listed in `project/WORK_LOG.md`; it includes publishing/reconciling W1 and W2, trust-boundary and carrier-flow illustrations, threat-to-control mapping, lifecycle/limitations, and a full diagram consistency pass.
+
 ## Remaining
 
 1. Publish the verified W1 and W2 source documents from the 14 November review-candidate archive to the intended repository paths, after comparing their content with the integrated thesis.
