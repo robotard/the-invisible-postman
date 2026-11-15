@@ -78,6 +78,34 @@ Password-derived encryption may be discussed as a distinct alternative or histor
 
 Publish the architecture, design rationale, threat model, limitations, candidate primitives, diagrams, traceability and review materials. Never commit real secrets, private keys, passwords, tokens, recovery codes, personal data, private correspondence or sensitive non-public infrastructure details. Do not hide design weaknesses under the label of security through obscurity.
 
+## Research-construction priority and review gates
+
+The immediate priority is to produce a coherent, defensible working thesis that the researcher can review as a whole. Do not spend the current runway expanding review administration or repeatedly asking the researcher to review fragments.
+
+Priority order:
+
+1. **Construct and reconcile the thesis:** integrate W1–W4, decisions, traceability and historical research; improve explanations, argument flow, terminology and source grounding.
+2. **Resolve only blocking questions:** investigate technical or evidential gaps directly. Raise a researcher decision only where the work cannot proceed responsibly without it, or where an assumption would materially change scope or meaning.
+3. **Prepare a coherent review candidate:** once the thesis has a stable argument, complete enough references, and aligned supporting documents, provide one consolidated review package and a short list of genuine decisions.
+4. **Author review:** defer routine author-led challenge-register work until the researcher has a coherent thesis to examine. Continue it earlier only when a specific issue blocks construction or risks embedding a material error.
+5. **External peer review:** lowest priority until a workable thesis candidate exists. Do not solicit reviewers, expand peer-review process documentation, or operationalise governance merely to create activity. Preserve existing governance work, but do not let it displace thesis construction.
+
+This is sequencing, not abandonment. Keep open issues visible and record uncertainty without turning every unresolved question into a request for immediate researcher input.
+
+### GitHub deployment digest
+
+At the end of each meaningful work batch, prepare a concise review digest from the live GitHub repository. The digest must report only items actually committed and verified:
+
+- exact file paths changed and the purpose of each change;
+- commit SHA(s) and direct GitHub links;
+- verification performed, including successful read-back and relevant link/content checks;
+- what remains incomplete, uncertain or explicitly deferred;
+- any researcher decision that is genuinely blocking the next step.
+
+Do not list drafts that were not committed, describe a planned change as deployed, or claim checks that were not run. Fetch the live repository before each batch, use current blob SHAs for edits, verify each successful write by reading it back, and derive the summary from those returned results. Keep the durable checkpoint in `project/PROJECT_STATE.md` and the dated history in `project/WORK_LOG.md`. Give the researcher the concise digest in chat so they can review the deployed work directly from GitHub.
+
+This is an execution and reporting routine, not a new CI bot or an automated judgement of research quality. Do not add untested repository automation or GitHub Actions merely to automate the summary; only introduce such tooling if a repeatable repository-side need is demonstrated.
+
 ## Stable GitHub-first execution protocol
 
 1. Use the connected GitHub repository as the publication target. Inspect the current branch and files before making changes.
