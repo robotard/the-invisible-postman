@@ -30,6 +30,11 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 6. `docs/decision-register.md` — design choices, rationale, changes and rejected approaches.
 6. `review/REVIEW_QUESTIONS.md` — open questions for critical review.
 
+## Ideation and design evolution
+
+- [From idea to architecture](diagrams/01-ideation-and-design-evolution.svg) illustrates the original password-based concept, the reasons for it, and the research evolution towards endpoint-controlled trust.
+- [Design decisions](diagrams/03-design-decisions.svg) summarises major decisions and refinements.
+
 ## Design rationale
 
 - [Design decision register](docs/decision-register.md) records why the initial password-derived model was chosen and why the wider architecture evolved.
