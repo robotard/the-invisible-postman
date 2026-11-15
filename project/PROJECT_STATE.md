@@ -100,7 +100,7 @@ The methodology, author challenge register, governance proposal, contribution te
 
 ### W0.3 · Research-source reconciliation
 
-In progress. This batch aligned W1's central and supporting questions with the thesis; reconciled multipart arrival-order semantics across W2, W3, W4 and traceability; formalised the encapsulation/train/route-adapter responsibilities and decapsulation lifecycle in W3; added a route-comparison matrix to W4; and repaired traceability duplication and numbering. The archived short thesis source was inspected as historical context and remains unchanged. Full source/citation verification and the complete thesis-to-supporting-document reconciliation remain outstanding.
+In progress. This batch aligned W1's central and supporting questions with the thesis; reconciled multipart arrival-order semantics across W2, W3, W4 and traceability; formalised encapsulation/train/route-adapter responsibilities and decapsulation lifecycle in W3; added a route-comparison matrix to W4; and repaired traceability duplication and numbering. An initial 19-entry source register now covers cryptographic specifications, protocol comparators, image metadata, steganalysis, rendezvous and traffic-analysis research. The thesis has a provisional author-date bibliography and claim-level citations for selected claims. The archived short thesis source was inspected as historical context and remains unchanged. Full-text review of all sources, further literature coverage and complete thesis-to-supporting-document reconciliation remain outstanding.
 
 ### W6 · Integrated thesis
 
@@ -117,7 +117,7 @@ Deferred until a workable thesis candidate exists. Existing governance material 
 ## Verified limitations and outstanding work
 
 - Full W1–W4 and thesis line-by-line reconciliation remains in progress.
-- Primary-source verification and a claim-to-source register remain outstanding.
+- An initial 19-entry source register and claim map now exist; full-text review and claim-specific verification remain outstanding, especially for steganalysis, human factors/social engineering, platform transformations and parser/resource-exhaustion research.
 - The complete observer model, recipient-discovery/rendezvous design, carrier metadata allowlist and evaluation scenarios remain open.
 - The two existing diagrams remain the only verified illustrations. New artwork and contextual embedding remain deferred until the substantive manuscript stabilises.
 - No reviewer PDF has been generated or verified.
@@ -419,5 +419,43 @@ Changed research documents were fetched after successful GitHub writes. Targeted
 - Checked active Markdown for ZIP/archive-generation instructions: none found. Historical archive references and preserved archive files remain intentionally intact.
 - Confirmed the current tree contains 24 files, including 20 Markdown files (19 active and one preserved archived source).
 - Marked W0.1 complete in the workplan for this verified scope. External URLs, heading-anchor resolution and future repository changes are not included in the relative-path audit.
+
+**Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Source integration and traffic-privacy research
+
+### Deployed work
+
+- Created `docs/source-register.md` with 19 entries spanning cryptographic primitives, messaging protocol comparators, NIST key-management guidance, Exif/IPTC/XMP metadata standards, steganalysis, rendezvous and traffic-analysis research.
+- Integrated provisional author-date citations and a working bibliography into `thesis.md`.
+- Added traffic-analysis reasoning to the thesis: encrypted content does not remove observable timing, size, flow and endpoint metadata; carrier rotation is not equivalent to mix-network protection.
+- Added bounded research comparisons:
+  - Loopix as an example of explicit mixing and cover traffic, not an assumed project component.
+  - Tor v3 rendezvous as an example of discovery/rendezvous being explicit protocol machinery, not a side effect of variable placement.
+  - Bozorgi et al. (2023) and Li (2026) as traffic-analysis evidence under specific observer models, not direct results for this image-carriage proposal.
+- Clarified that social-engineering and interpersonal behavioural claims still need dedicated usable-security/human-factors sources.
+- Expanded W2 threats for flow correlation, discovery/rendezvous correlation and behavioural probing.
+- Expanded W3 to distinguish carrier-level variation from network-level traffic-analysis defence.
+- Expanded W4 E9 with actor-specific observer models, measurable correlation conditions, error rates and the cost of padding, delay, batching, cover traffic or mixing.
+- Added source mappings to W2, W3, W4 and traceability; updated the workplan to make the source register part of W0.3 and W6.
+
+### Verification and limits
+
+- The source register, thesis, W2, W3, W4, traceability and workplan were fetched after successful writes.
+- Source claims are deliberately bounded. The 2026 IM-call study is limited to its stated services, two-device testbed and controlled trials; the 2023 IM study's traffic features and countermeasures are not assumed to transfer directly to this architecture.
+- The bibliography is provisional. No claim of systematic literature review or full verification of all 19 sources is made.
+- A fresh repository-wide link/status audit is required after adding the source register and its cross-links.
+
+### Key commits
+
+- Source register (19 sources): `659f23052d0c40a6b26df881efc37e4700f9aa1d`
+- Thesis traffic-analysis integration: `09397dba778a826da8d3fc21de84826f9c1eefe3`
+- Thesis bibliography: `ed3155f04ae1b386b4e6cae02257c5cb9a31316b`
+- W2 traffic/discovery threats: `994fddc34c8a1983f0a7e6fba562b04203ee3ca5`
+- W3 carrier-vs-network boundary: `b689010c9c5cdc5a62e1857e154e6e835825e995`
+- W4 E9 traffic-analysis evaluation: `a23fd8f71e29c751d94f5671e6d0d9431b369934`
+- Traceability traffic mapping: `81ea9a1eccf72eefac302d9ed468f25f42792d8f`
+- Workplan source workflow: `1b5d5399ba880c79a80bb607c0d1a0bc60f0aac4`
 
 **Theory only · No implementation · Not audited.**
