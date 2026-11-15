@@ -72,3 +72,5 @@
 - Contributor-to-accepted-content mapping:
 - Supersedes:
 - Review date / reassessment trigger:
+
+**Theory only · No implementation · Not audited.**
