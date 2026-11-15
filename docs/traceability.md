@@ -154,7 +154,24 @@ Decision D-01 records the initial password-derived model, its usability and port
 
 The remaining decisions are recorded in docs/decision-register.md: image hashes as keys, double encryption as identity, linked-image fragmentation versus threshold sharing, remote revocation limits, platform identifiers as identity, and the ordering of cryptography before optional concealment.
 
-## 10. Current conclusion
+## 10. Collaborative governance traceability
+
+The proposed [Collaborative Research Governance Framework](collaborative-governance.md) defines how reviewed practices may be ratified and incorporated into a versioned project-wide baseline. Its templates are [contribution and review record](templates/contribution-review-record.md) and [decision record](templates/decision-record.md).
+
+For every adopted practice or material research decision, trace:
+
+1. originating research question, threat, issue or external contribution;
+2. exact proposal version and evidence considered;
+3. independent reviewers and their review scope, subject to consent;
+4. author response, accepted and rejected portions, and remaining dissent;
+5. contributor attribution mapped to the content actually incorporated;
+6. ratification decision and accountable maintainer;
+7. adopted baseline version and merge commit SHA; and
+8. subsequent challenges, revisions or superseding decisions.
+
+The framework is proposed, not yet ratified by external reviewers. No adopted consortium-wide practice or automated adoption mechanism is currently claimed. The repository rulesets endpoint returned no rulesets; branch-protection status could not be inspected through the available connection.
+
+## 11. Current conclusion
 
 The research currently supports a minimal, endpoint-controlled architecture with an untrusted transport coordinator, cryptographic message protection, optional image-carrier encoding and strict multipart validation.
 
