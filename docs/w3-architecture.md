@@ -69,6 +69,10 @@ This creates a transport-level unlinkability objective: reduce straightforward c
 
 Variable placement requires a recipient-discovery mechanism. The design must explain how the intended recipient learns where and when to retrieve a carrier without introducing a stable locator or observable side channel that defeats the intended benefit. Random placement alone is not a delivery protocol. The carrier should be treated as disposable and replaceable; decapsulation failure must produce a bounded failure, never silent acceptance of partial or ambiguous content.
 
+Metadata minimisation is part of the image-carriage processing path. Before publication, remove unnecessary embedded image metadata and identifying file-level properties, retaining only fields demonstrably needed for carrier decoding, compatibility or safe handling. The route profile must document its metadata allowlist and verify the produced carrier rather than assuming a metadata-stripping operation succeeded. This operation cannot remove hosting-provider logs, network identifiers, externally observed timestamps, access records or other metadata generated outside the carrier; those require distinct controls and remain potential observations.
+
+The transport's privacy analysis must include the human interaction around publication and retrieval. Stable schedules, response latency, platform/device preferences, language and formatting habits, repeated image styles and predictable reactions can create behavioural linkability. Social-engineering prompts may deliberately exploit those patterns. These are cross-cutting privacy and threat-model concerns; they do not belong solely to the image codec or cryptographic protocol.
+
 2.4 Complexity must earn its place
 
 Every component must have a traceable responsibility and a demonstrable benefit against a research objective or identified threat.
