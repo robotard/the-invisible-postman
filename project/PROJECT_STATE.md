@@ -237,3 +237,31 @@ Resume W0.2 author-led claim review and W0.3 source reconciliation. Do not autom
   - Decision template: 2b5153411800efbf26dcd84eacef749a7de7d340
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · W0.2 author-led claim review: SELF-01 to SELF-03
+
+### Completed and verified
+
+- Re-read the active thesis, W1 research framing, W2 threat model, W3 architecture, W4 evaluation framework and the relevant self-review entries before recording author responses.
+- SELF-01: confirmed that the manuscript does not yet demonstrate a distinct advantage for image carriage over encrypted attachments, encrypted file transfer or conventional end-to-end messaging. Recorded a provisional recommendation to test image carriage as a candidate transport profile and retain it as a case study unless comparative evidence establishes a necessary advantage. No final scope decision made.
+- SELF-02: found that the documents consistently label the work provisional, but the title and some shorthand wording may imply achieved authentication. Recorded a claim-language audit requirement and a distinction between architectural requirements and demonstrated properties.
+- SELF-03: separated key control, key continuity and real-world identity proof. Recorded the need to define the minimum identity assurance level and compare verification ceremonies, including key changes and recovery.
+- Updated docs/self-review-register.md with author responses, provisional recommendations, evidence requirements and explicit unresolved status. No item is represented as external peer review.
+- Verified the saved register after each commit:
+  - SELF-01: 335b04cb05a2cc2b087e5c37df2c14bd68fd2169
+  - SELF-02: 8b9a0393a655e9743487815169adadf8d06d3c19
+  - SELF-03: a78c6fa8583e003fa775f7da2d66a182b9339c6e
+
+### Decisions deliberately deferred
+
+- Whether image carriage is a core requirement or an optional transport profile.
+- The intended identity-assurance level and whether the project needs real-world identity proof or only verified cryptographic peer-key continuity.
+
+These decisions require the comparative use-case analysis and threat-led evidence to be presented before asking the researcher to choose.
+
+### Next
+
+Continue the author-led review with SELF-04 through SELF-12, then complete W0.3 source reconciliation. Do not start illustration work until the manuscript and scope decisions stabilise.
+
+**Theory only · No implementation · Not audited.**
