@@ -31,7 +31,7 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 3. [Integrated thesis](thesis.md) — active thesis manuscript.
 4. [Research practice](docs/research-practice.md) — critical self-examination, peer discussion, dissent and contribution principles.
 5. [Initial self-review register](docs/self-review-register.md) — author-identified challenges and evidence needs, open to independent criticism.
-6. [Collaborative Research Governance Framework](docs/collaborative-governance.md) — review, ratification, project-wide practice adoption and contributor attribution.
+6. [Adopted research practices](docs/adopted-practices.md) — versioned project-scoped working baseline, with external review status explicit.\n7. [Collaborative Research Governance Framework](docs/collaborative-governance.md) — review, ratification, project-wide practice adoption and contributor attribution.
 7. [Contribution and review record template](docs/templates/contribution-review-record.md) — structured, consent-based credit and review scope.
 8. [Decision record template](docs/templates/decision-record.md) — practice proposals, evidence, ratification and adoption history.
 9. [W1 · Research framing](docs/w1-research-framing.md) — problem, questions, scope and intended contribution.
