@@ -20,7 +20,7 @@ This is the changing, evidence-based progress record. project/WORKPLAN.md is the
 - Repository: https://github.com/robotard/the-invisible-postman
 - Default branch: main; public repository.
 - Current GitHub connection permissions were checked during this session: push=true, admin=true.
-- The recursive Git tree was checked. It contains 22 paths, including 14 Markdown files.
+- The recursive Git tree was rechecked after the governance additions. It contains 22 files (excluding directory entries), including 18 Markdown files.
 - Active research files verified: README.md, thesis.md, project/WORKPLAN.md, project/PROJECT_STATE.md, project/WORK_LOG.md, docs/w1-research-framing.md, docs/w2-threat-model.md, docs/w3-architecture.md, docs/w4-risks-and-evaluation.md, docs/traceability.md, docs/decision-register.md, docs/research-practice.md and docs/self-review-register.md.
 - Two existing SVG diagrams were verified: diagrams/01-ideation-and-design-evolution.svg and diagrams/03-design-decisions.svg.
 - Historical files verified under archive/: the-invisible-postman-thesis.docx and thesis-source-short.md. Neither was changed.
@@ -192,5 +192,35 @@ Continue Phase 1 in order:
 ### Next
 
 Continue W0.2/W0.3: complete author-led claim review and reconcile the active thesis with W1–W4 and the decision register. Invite external review of the governance framework before operationalising its proposed ratification rules.
+
+**Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Adopted-practices baseline and contribution-rights boundary
+
+### Completed and verified
+
+- Created docs/adopted-practices.md as the versioned project-scoped working baseline, initially version 0.1.
+- Recorded six maintainer-adopted research practices covering critical examination, reasoned objection dispositions, contribution attribution, version-specific independent review, process-only automation and auditable baseline changes.
+- Explicitly labelled the baseline as maintainer-adopted and awaiting external review. No external ratification, consortium approval or universal best-practice status is claimed.
+- Added current attribution for the maintainer's work only; no external contributors or reviewers are invented.
+- Linked the baseline from README.md and the governance framework; updated WORKPLAN.md.
+- Clarified the DCO boundary: no DCO sign-off is required until a repository licence and contribution terms are selected and documented. DCO is a contribution-rights attestation, not peer review or proof of originality.
+- Verified successful commits and read-back:
+  - Adopted practices baseline: b5e01fdb577092d99a537b9ab6b34d0585fe8791
+  - README link: aa88f5485876669a89b750f1a73ae39bca0a484d
+  - Governance/DCO clarification: 18c4de20569859df0ff9b6a0d5c0cb9baa074c20
+  - Workplan link and scope: ccfe2a8586a949006fc5180da3017329de315302
+
+### Remaining governance limitations
+
+- The manual governance model has not yet been exercised with an external contribution.
+- The governance framework and baseline have not been independently reviewed.
+- No branch-protection rule or automation was enabled.
+- The repository has no verified root LICENSE file; contribution licensing and DCO adoption remain open.
+
+### Next
+
+Resume W0.2 author-led claim review and W0.3 source reconciliation. Do not automate ratification or enable branch protection before the manual process, contributor permissions and review model have been independently examined.
 
 **Theory only · No implementation · Not audited.**
