@@ -1,56 +1,77 @@
 # The Invisible Postman: Project State
 
 **Researcher:** @robotard  
-**Working title:** The Invisible Postman: A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging  
-**Checkpoint:** 2026-10-29  
+**Working title:** *The Invisible Postman: A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging*  
+**Checkpoint:** 2026-11-15  
 **Status:** Theory only · No implementation · Not audited
 
 ## Purpose
-Living progress record. `WORKPLAN.md` remains the stable roadmap. Update this file after meaningful work and verify saved/published changes before claiming completion.
 
-## Latest verified starting state
-- W0: workplan exists in the project and on GitHub.
-- W1: research framing draft exists in project files; repository publication was not verified.
-- W2: threat model draft exists in project files; repository publication was not verified.
-- The latest uploaded thesis DOCX and Markdown thesis sources are available in the working environment.
-- Three original thesis diagrams were available; this package includes styled replacements as separate PNGs and embeds them in a copy of the thesis DOCX.
-- The public GitHub repository was readable. `WORKPLAN.md` exists on `main`; `README.md` previously contained placeholder content.
-- `PROJECT_STATE.md` was not found among the conversation files at the start of this run. This copy is included in the package but its publication to GitHub is not claimed.
+This is the changing progress record. `project/WORKPLAN.md` is the stable roadmap. Update this file after meaningful work. Only report repository changes after checking GitHub's returned commit result and, where material, fetching the changed file again.
 
-## Work completed in this run
-- Prepared repository documentation and folder structure.
-- Created three styled diagrams: trust boundaries, message/carrier flow, and design decisions.
-- Created a thesis DOCX copy with the three embedded diagram images replaced, if the source contained three inline images.
-- Included the thesis, W1, W2, workplan, security note, changelog, review questions, and upload instructions.
-- Built a ZIP archive and verified its internal listing and key files.
+## Verified repository baseline (2026-11-15)
 
-## Remaining work
-- Manually inspect the final DOCX layout in Word/LibreOffice, including figure placement, captions, and page breaks.
-- Confirm the source thesis contained exactly three replaceable inline diagrams; if not, inspect and repair manually.
-- Verify final README and archive contents against the desired public disclosure scope.
-- Publish the ZIP contents to GitHub through an authorised workflow and verify the resulting commit and file contents.
-- Resolve prior GitHub write HTTP 403 if publishing through the connector is still desired.
-- Consider reconciling thesis headings/captions and diagram numbering before final publication.
+- Repository: https://github.com/robotard/the-invisible-postman
+- Default branch: `main`
+- Repository visibility: public.
+- GitHub connector permissions currently report `push: true` and `admin: true`. Direct repository writes are available in this session; earlier HTTP 403 notes are superseded by this verified permission result.
+- `README.md` exists and contains a project overview, scope boundaries, links to the intended starting documents, and the assurance label.
+- `project/WORKPLAN.md` and `project/PROJECT_STATE.md` exist on `main`.
+- `docs/w3-architecture.md`, `docs/w4-risks-and-evaluation.md`, and `docs/traceability.md` exist on `main`.
+- `thesis.md` exists on `main`, but its current content is an older password-based, single-user Flask application concept. It conflicts with the newer endpoint-controlled, authenticated-messaging research direction and must not be treated as the current integrated thesis without reconciliation.
+- The expected paths `docs/W1-research-framing.md` and `docs/W2-threat-model.md` were not found at the paths checked. Their presence elsewhere has not yet been verified.
+- Recent GitHub history shows temporary thesis/PDF/archive operations on 2026-11-14. The current branch state, not those commit messages, is authoritative.
 
-## Blockers and limitations
-- GitHub write attempts previously returned HTTP 403 (`Resource not accessible by integration`). Read access does not prove write access.
-- This package is a documentation/research bundle, not an executable messaging system.
-- No implementation, formal proof, steganographic robustness testing, or independent security audit is claimed.
-- `P_S` was not located in the current conversation file listing at the start of this run; this checkpoint is generated from the latest verified records available here.
+## Completed and verified in this checkpoint
 
-## Next action
-1. Inspect the generated ZIP and thesis DOCX visually.
-2. If sound, provide the ZIP for download.
-3. Upload contents manually or through an authorised Git workflow.
-4. Verify repository state and update this checkpoint with the actual publication result.
+- Located the intended GitHub repository and confirmed current write permission.
+- Read the current `README.md`, `project/WORKPLAN.md`, `project/PROJECT_STATE.md`, `thesis.md`, `docs/w3-architecture.md`, `docs/w4-risks-and-evaluation.md`, and `docs/traceability.md`.
+- Identified the material thesis inconsistency: the current root thesis still describes a password-derived, single-user Flask model, while the newer architecture places plaintext, private keys, identity verification, and cryptographic authority at participant endpoints.
+- Confirmed that W3, W4, and traceability documents are present in the repository.
+- Confirmed that direct GitHub writes are available now. No ZIP is required if the repository can be updated and verified directly.
 
-## Package verification record
-- ZIP path: `/mnt/data/invisible-postman-repository-package.zip`
-- ZIP size before final checkpoint update: 792,590 bytes
-- File count before final checkpoint update: 19
-- ZIP integrity test: passed (`testzip()` returned no corrupt member)
-- Required-file check: passed
-- Thesis DOCX reopened with python-docx; inline images detected: 3
-- Replaced diagram image blobs: 3
-- Important remaining verification: visually inspect Word layout and confirm figure captions remain paired with intended diagrams. This was not a full visual QA.
-- GitHub publication: not performed.
+## Finished / remaining / blocked
+
+### Finished
+- W0 baseline and stable workplan are present.
+- W3 architecture exists in the repository.
+- W4 risks and evaluation exists in the repository.
+- Research/design traceability exists in the repository.
+- README has substantive project content.
+- GitHub write access is currently verified.
+
+### Remaining
+1. Locate and verify the latest source versions of W1, W2, the thesis manuscript, and the corrected stylised diagram assets. Do not assume a local/library artifact is the latest version without checking provenance and contents.
+2. Reconcile the thesis with W1–W4 and the endpoint-controlled architecture. Retire or clearly archive superseded password-based Flask material rather than silently blending incompatible models.
+3. Inspect and correct the stylised diagrams, their labels, captions, numbering, and references in the manuscript.
+4. Publish the approved thesis and supporting documentation directly to GitHub, using the existing repository structure where sensible.
+5. Update README links and this progress record to match the actual published files.
+6. Fetch changed files from GitHub after writes and verify commit SHAs, content, paths, links, and repository state.
+
+### Blocked / unresolved
+- The latest authoritative W1 and W2 source locations have not yet been confirmed.
+- The corrected diagram image files and the exact thesis source intended for integration have not yet been identified and visually checked.
+- The existing root `thesis.md` is demonstrably out of date relative to the newer architecture; it is not safe to publish as the final integrated thesis without substantial revision.
+- No complete manuscript/diagram package has yet been published and verified in this checkpoint.
+
+## Next task
+
+**Reconcile the current thesis against the latest W1–W4 research and architecture, after locating the authoritative thesis and diagram sources.** Then publish changes directly to GitHub and verify them there.
+
+Do not create a repository ZIP unless direct GitHub publication proves unavailable or the user explicitly requests an archive.
+
+## GitHub-first operating rules
+
+- Interact with the connected GitHub repository directly: inspect, create, update, and verify files using the available GitHub actions.
+- Prefer small, reviewable commits with descriptive messages. Fetch existing files and use their current blob SHAs before updating them.
+- Never overwrite or delete existing material merely because a similarly named local file exists. Compare provenance, content, and repository history first.
+- After every material write, record the returned commit SHA and fetch the changed path again to verify the saved content.
+- Summarise only what changed, what was verified, and what remains. Do not narrate routine tool operations.
+- Do not ask the user to copy, upload, download, or manually edit files when the connected tools can perform the action.
+- Ask the user to intervene only when a genuine human decision, unavailable permission, authentication step, conflict, ambiguous source, or required visual judgement cannot be resolved safely by the assistant.
+- Never claim a file was saved, completed, published, or verified unless the relevant GitHub response or independent read-back confirms it.
+- Keep the scope theoretical. Do not implement the messaging system.
+
+## Assurance statement
+
+**Theory only · No implementation · Not audited.**
