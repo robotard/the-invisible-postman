@@ -248,3 +248,34 @@ No cryptographic protocol or transport implementation has been created. No secur
 - Consider usability and accessibility: privacy controls must not require constant vigilance or unrealistic behavioural camouflage.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Full-thesis research framing and illustration map
+
+### Completed
+
+- Reframed the active thesis around the complete research investigation: problem and method; design evolution; proposition, scope and contribution; security-property distinctions; system and adversary model; endpoint cryptographic architecture; message envelopes and multipart validation; transport methods; lifecycle and recovery; evaluation; limitations and open reasoning.
+- Kept transport as a substantial, bounded subsection. It now examines image carriage and comparison profiles alongside distribution, recipient discovery, collection, unique image envelopes, variable placement, metadata minimisation, observer models and human behavioural linkability.
+- Removed duplicated material in the earlier passenger/train subsection and clarified the limits of encapsulation and transport-level unlinkability.
+- Added a contextual illustration index. It distinguishes existing figures 01 and 03 from planned figures for the wider thesis, maps each planned figure to its intended section and records guardrails against visual overclaiming.
+- Updated README and the workplan to reflect the full thesis scope and illustration index.
+- Preserved the archived thesis editions and existing SVGs; no new artwork or implementation was created.
+
+### Verification still required
+
+- Read back the revised thesis, illustration index, README, workplan and project checkpoint.
+- Audit Markdown links and the recursive repository tree after the new index was added.
+- Reconcile the revised thesis line by line against W1–W4, the decision register, traceability, self-review and historical source material.
+- Check for remaining duplicated concepts, stale wording, unsupported technical claims and terminology drift.
+- Continue author-led review and source verification before treating the manuscript as stable.
+- Create and embed the planned illustrations only after the substantive reasoning has stabilised.
+
+### Commits
+
+- Thesis: fa1876bf1ba42538c30efc3b49c5784016144257
+- Illustration index: fd0fc64237ab3b36cab364c9292185af5b52c3f7
+- README: 258ba0c88ce35fc3400f25eaff8a394826ae6b10
+- Project state: recorded in the subsequent checkpoint commit.
+- Workplan: recorded in the subsequent roadmap commit.
+
+**Theory only · No implementation · Not audited.**
