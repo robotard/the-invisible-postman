@@ -30,6 +30,11 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 6. `docs/decision-register.md` — design choices, rationale, changes and rejected approaches.
 6. `review/REVIEW_QUESTIONS.md` — open questions for critical review.
 
+## Design rationale
+
+- [Design decision register](docs/decision-register.md) records why the initial password-derived model was chosen and why the wider architecture evolved.
+- [Design decisions diagram](diagrams/03-design-decisions.svg) provides a visual summary.
+
 ## Core principles
 - Endpoints retain plaintext and private keys.
 - Treat relays, platforms, image hosts, and storage as untrusted for plaintext confidentiality.
