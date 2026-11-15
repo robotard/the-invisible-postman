@@ -12,10 +12,10 @@
   ],
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
   "priority": [
-    "W6 integrated thesis construction, now governed by the hard contribution/bias checkpoint",
-    "Full-text prior-art comparison: OMR, PerfOMR, Oblivious Signaling, dead-drop covert messaging and image-diffusion covert messaging",
-    "Build a contribution-to-prior-art matrix and sharpen the central thesis claim",
-    "Continue claim-level source verification and W1–W4 reconciliation"
+    "W0.3/W6 research-source reconciliation and integrated thesis construction",
+    "Broaden closest-related-work search around group OMR, private signaling, two-server/DORAM, and integrated dead-drop/image-carriage systems",
+    "Build a common observer/property matrix spanning publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction",
+    "Reassess candidate contributions A/B/C and refine or displace the emergent proposition using adverse as well as supporting evidence"
   ],
   "defer": [
     "routine author review unless blocking/material",
@@ -24,21 +24,21 @@
     "implementation"
   ],
   "next": [
-    "Review full texts and formal models for OMR, PerfOMR and Oblivious Signaling",
-    "Review the full dead-drop covert messaging and image-based diffusion papers",
-    "Build a prior-art matrix for candidate contributions A/B/C",
-    "Refine central research question, contribution and scope based on adverse as well as supporting evidence",
-    "Only then reassess the diagram set against the stable thesis argument",
-    "Deploy only verified changes and read them back",
-    "Refresh digest and project checkpoint"
+    "Search and inspect the closest additional integrated anonymous-messaging, private-signaling, two-server/DORAM, dead-drop and image-carriage systems",
+    "Build the common observer/property matrix across the complete delivery lifecycle",
+    "Use the matrix to identify cross-layer leakage, incompatible assumptions and evidence gaps",
+    "Reassess the central research question and candidate contribution direction without presuming originality",
+    "Continue W1-W4 and source-register reconciliation; only then reconsider diagram work",
+    "Before ending every session, reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; mark work complete or park exact next actions",
+    "Refresh this digest after those three working documents"
   ],
   "open": [
-    "originality gap and direct comparison with closest existing systems",
+    "whether a common observer/property model yields a distinct analytical result beyond existing OMR and dead-drop pipeline studies",
+    "broader integrated anonymous messaging and two-server/DORAM prior art",
     "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
     "carrier metadata allowlist and platform transformations",
     "traffic/access-pattern and behavioural correlation evaluation",
-    "parser/resource-exhaustion and multipart safety evidence",
-    "full-text verification of newly added prior-art sources"
+    "parser/resource-exhaustion and multipart safety evidence"
   ],
   "invariants": [
     "Image carriage remains a required research route; transport is not the whole thesis",
@@ -54,10 +54,10 @@
     "broken_links": null,
     "status_string_present": true,
     "active_archive_instructions": false,
-    "tree_files": 27,
-    "tree_markdown": 22
+    "tree_files": 28,
+    "tree_markdown": 23
   },
-  "verification_scope": "Targeted read-back of assessment, source register, project state, work log, digest, README and diagram index; recursive tree confirmed 27 files. No new full-tree relative-link audit was run in this batch.",
+  "verification_scope": "Full-text literature comparison completed for OMR, PerfOMR, Oblivious Signaling, SophOMR, InstantOMR, the 2024 dead-drop pipeline and the 2025 image-diffusion paper. Source register, prior-art comparison, thesis, W1, traceability, PROJECT_STATE, WORKPLAN and WORK_LOG were written and fetched back successfully. No full-tree relative-link audit, independent reproduction or formal/security review was run.",
   "open_research_threads": [
     "originality gap and direct comparison with closest existing systems",
     "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
@@ -66,15 +66,18 @@
     "parser/resource-exhaustion and multipart safety evidence",
     "full-text verification of newly added prior-art sources"
   ],
-  "last_verified_batch": "2026-11-15: hard contribution/bias assessment added and read back; SRC-024–SRC-027 added and source register read back; project state, work log, README and diagram index updated and read back; recursive main tree confirmed 27 files.",
-  "audit_boundary": "Assessment and source-register writes require read-back verification; no full-tree link/status audit run in this batch.",
+  "last_verified_batch": "2026-11-15: corrected research terminology across active documents; established mandatory three-document session continuity rule; reviewed seven prior-art full texts; expanded source register to 29; created and linked docs/prior-art-comparison.md; updated PROJECT_STATE, WORKPLAN and WORK_LOG with exact parked continuation.",
+  "audit_boundary": "All modified files in this batch were read back and matched. Recursive tree checked for counts only; no full-tree relative-link audit run.",
   "last_commits": {
-    "assessment": "9271cc79db1716d2d2b8e90affeffed8e6c06ae9",
-    "source_register": "c3286a2208578ae08341fc6f7a7ef13cfe9e1241",
-    "project_state": "e0b6e2704fff337ff32419aa52d2e32608b9ea0b",
-    "work_log": "5d0263a73128cf0c32092ab35b0cf51c43c922bf",
-    "readme": "b347d4c8083859d34d4c9a17fdc405bee19659f1",
-    "diagram_index": "c27626e11f82c1a75a2434304709ff26e9e72451"
+    "digest_initial_update": "updated at session start before substantive edits",
+    "source_register": "82cedce9e46e58f79a85e4e9b236effcf06becb9",
+    "prior_art_comparison": "d6147586f32eac006402388cc634ce3a48577843",
+    "thesis": "bf27fe49326d18008d52de293ebe9cbd36db58c4",
+    "w1": "d0edba7304036e9849014d74d92ca014317268f0",
+    "traceability": "9ec9171349388a810f34d209e4f959b8702aa5a3",
+    "project_state": "340fcf9ecb326f5ebc0cfccfd6cbb7b4f5548db7",
+    "workplan": "933a165a48de28631a00d69f02c327b75e1ef11f",
+    "work_log": "d746b6d1669538776308ad5b76d5ab639896bcbd"
   },
   "session_completion_rule": {
     "required_working_documents": [
@@ -102,5 +105,6 @@
     "preferred_term": "emergent proposition",
     "distinction": "Keep research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions distinct.",
     "constraint": "Do not force the developing research direction into a confirmatory framework. Do not promote a proposition to a demonstrated result or contribution without appropriate evidence."
-  }
+  },
+  "source_register_entries": 29
 }
