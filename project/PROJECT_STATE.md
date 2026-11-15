@@ -92,7 +92,7 @@ Updated and read-back verified: thesis, D-11 decision register, W2, W3, W4 and t
 
 ### W0.1 · Repository housekeeping
 
-Complete for the current verified tree and internal relative Markdown-link scope. The latest audit covered all 19 active Markdown files: 45 relative links checked, zero broken targets; every active file contains the exact status statement; no active ZIP/archive-generation instructions were found.
+Complete for the current verified tree and internal relative Markdown-link scope. The latest audit covered all 20 active Markdown files: 51 relative links checked, zero broken targets; every active file contains the exact status statement; no active ZIP/archive-generation instructions were found.
 
 ### W0.2 · Research-practice foundation
 
@@ -457,5 +457,18 @@ Changed research documents were fetched after successful GitHub writes. Targeted
 - W4 E9 traffic-analysis evaluation: `a23fd8f71e29c751d94f5671e6d0d9431b369934`
 - Traceability traffic mapping: `81ea9a1eccf72eefac302d9ed468f25f42792d8f`
 - Workplan source workflow: `1b5d5399ba880c79a80bb607c0d1a0bc60f0aac4`
+
+**Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Post-source-integration repository audit
+
+- Current working tree: 25 files, including 21 Markdown files (20 active and one preserved archived source).
+- Re-read all 20 active Markdown files from the live default branch.
+- Checked 51 relative Markdown link targets against the current repository path set: zero missing targets.
+- Confirmed all 20 active Markdown files contain the exact status statement: `Theory only · No implementation · Not audited.`
+- Checked active Markdown for ZIP/archive-generation instructions: none found.
+- Confirmed the new source register is linked from README, thesis, W1 and traceability; W4 links to it for traffic-analysis evaluation.
+- Preserved historical archive material unchanged. External URL availability and heading-anchor rendering are not covered by this path audit.
 
 **Theory only · No implementation · Not audited.**
