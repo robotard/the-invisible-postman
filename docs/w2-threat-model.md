@@ -12,7 +12,7 @@ It is a design artifact, not evidence that the architecture currently meets the 
 
 ## 2. System boundary
 
-The system under consideration has two or more user-controlled endpoints that create, send, receive, and decrypt messages. A message may be represented by one or more image-carried capsules. Optional steganographic concealment may be applied to a carrier. A bot or other intermediary may coordinate delivery, while messaging platforms, image hosts, and storage services may transport or retain carrier objects and associated metadata.
+The system under consideration has two or more user-controlled endpoints that create, send, receive and decrypt messages. Image carriage is a required research route; file/attachment carriage and conventional end-to-end messaging are comparison profiles, not assumed deployment dependencies. A message may be represented by one or more image-carried capsules on the required image route. Optional steganographic concealment may be applied to an image carrier. A bot or other intermediary may coordinate delivery, while messaging platforms, image hosts and storage services may transport or retain carrier objects and associated metadata.
 
 The intended trust boundary is at the endpoints. Intermediaries may be used for transport and coordination, but must not be trusted with plaintext confidentiality or sole control of decryption keys.
 
