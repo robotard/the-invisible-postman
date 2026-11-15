@@ -61,3 +61,28 @@ Do not force all illustrations into one oversized poster. Each diagram should an
 5. Update this checkpoint only after each material result is verified.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-15 · Initial author-led critical review
+
+### Completed and verified
+
+- Inspected the complete active thesis and the W1–W4 research documents to identify substantive questions for the authors and future reviewers.
+- Created docs/self-review-register.md with twelve author-identified challenges covering proposition value, security-claim discipline, identity verification, protocol composition, carrier value, steganalysis evidence, metadata exposure, multipart ordering and validation, lifecycle/recovery complexity, evaluation design, scope and source grounding.
+- Each issue records its location, challenged claim or assumption, reviewer question, evidence needed, proposed action, priority, status and response/resolution.
+- Explicitly labelled the items as author-identified, not external peer-review findings or endorsements.
+- Linked the register from the README, Phase 1 W0.2 work unit and research traceability register.
+- Preserved the ability for reviewers to add competing interpretations, challenge the central proposition and retain unresolved dissent.
+
+### Initial critical finding
+
+A notable protocol-design question is the treatment of reordered multipart capsules. Transport arrival order and authenticated logical order are not necessarily the same. The receiver may be able to reassemble safely reordered fragments when their indices and message-set binding are authenticated; the specification should distinguish this from conflicting, duplicated, substituted or incomplete sets. This is recorded as SELF-08 and remains open.
+
+### Deferred
+
+- Complete the authors' claim-by-claim self-review and source verification.
+- Reconcile the active thesis against W1–W4 and the decision register.
+- Develop the full external reviewer guide, contribution templates and response workflow.
+- Stabilise the manuscript before further illustration work.
+
+**Theory only · No implementation · Not audited.**
