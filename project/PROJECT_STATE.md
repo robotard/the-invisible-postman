@@ -1,7 +1,7 @@
 # The Invisible Postman: Project State
 
 **Researcher:** @robotard  
-**Working title:** *The Invisible Postman: A Theory-Based Architecture for Authenticated, Image-Carried Cryptographic Messaging*  
+**Working title:** *The Invisible Postman: A Theory-Based Architecture for Endpoint-Controlled Cryptographic Messaging with Image Carriage*  
 **Checkpoint:** 2026-11-15  
 **Status:** Theory only · No implementation · Not audited.
 
@@ -14,6 +14,19 @@ This checkpoint records scrutiny and evidence, not just consensus or completed t
 ## Purpose
 
 This is the changing, evidence-based progress record. project/WORKPLAN.md is the stable roadmap. Report repository changes only after checking the returned commit result and, where material, fetching the changed file again.
+
+## Latest checkpoint · 2026-11-15 · Full-thesis research framing and illustration map
+
+- Reframed the active thesis around the complete research argument rather than allowing transport to dominate the manuscript. The revised structure now covers the research problem and method, design evolution, scope and contribution, distinct security properties, system/trust model, endpoint cryptographic responsibilities, envelopes and multipart validation, transport methods, lifecycle and recovery, evaluation, limitations and unresolved reasoning.
+- Kept transport as a substantial Section 8, with image carriage required and other routes treated as comparison profiles. Expanded its reasoning to include distribution, discovery, collection, unique carrier envelopes, variable placement, metadata minimisation, observer models and human behavioural linkability.
+- Removed duplicated paragraphs in the former passenger/train subsection and clarified that the train and encapsulation boundary do not create cryptographic integrity, anonymity or participant identity.
+- Added `diagrams/README.md`, an illustration index distinguishing the two existing figures from proposed thesis figures. It maps each planned illustration to the relevant thesis section and records design guardrails. No new artwork was created.
+- Updated README scope/navigation and corrected literal escaped newline artefacts in its numbered links.
+- Thesis, diagram index and README writes returned successful commits. Read-back, link/tree audit and full W1–W4 reconciliation remain the next verification steps.
+
+**Latest thesis commit:** fa1876bf1ba42538c30efc3b49c5784016144257  
+**Illustration index commit:** fd0fc64237ab3b36cab364c9292185af5b52c3f7  
+**README commit:** 258ba0c88ce35fc3400f25eaff8a394826ae6b10
 
 ## Verified repository baseline
 
@@ -93,9 +106,9 @@ Not yet completed. Compare the active thesis against W1–W4, the decision regis
 
 - W1–W4 exist in the repository, but the integrated thesis has not yet been fully reconciled against all four.
 - The two verified diagrams are SVG files. No complete PNG export set has been verified.
-- The thesis still requires substantive integration, claim review, terminology reconciliation, source/reference integration and a stronger research-method narrative.
+- The thesis has received a substantive structural and reasoning expansion, but still requires line-by-line reconciliation against W1–W4, decision and traceability registers, source/reference integration, author-led claim review and editorial refinement.
 - The structured external reviewer guide, contribution templates and response workflow have not yet been completed.
-- No embedded Markdown image references currently exist; contextual thesis illustration is intentionally deferred until the manuscript stabilises.
+- No embedded Markdown image references have been added; the diagram index now maps existing and planned figures. Contextual figure creation/embedding remains deferred until the manuscript and architecture stabilise.
 - No reviewer PDF has been generated or verified.
 - The archived DOCX and short thesis source remain unchanged.
 
