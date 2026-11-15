@@ -111,6 +111,18 @@ Do not list drafts that were not committed, describe a planned change as deploye
 
 This is an execution and reporting routine, not a new CI bot or an automated judgement of research quality. Do not add untested repository automation or GitHub Actions merely to automate the summary; only introduce such tooling if a repeatable repository-side need is demonstrated.
 
+## Mandatory three-document session continuity rule
+
+Every work session must use and reconcile all three working documents:
+
+1. [PROJECT_STATE.md](PROJECT_STATE.md) — current state, completed work, evidence, blockers and next task.
+2. [WORKPLAN.md](WORKPLAN.md) — governing sequence, priorities, dependencies and deferrals.
+3. [WORK_LOG.md](WORK_LOG.md) — dated record of actions, decisions, changes, verification and unresolved work.
+
+This is a concrete completion rule, not an optional handover preference. Before a session ends, update all three so they agree. Work must either be recorded as complete with evidence and read-back verification, or explicitly parked for the next session. A parked item must state its current state, what has and has not been established, blockers or dependencies, exact next action, relevant paths and constraints to preserve. Do not leave a half-finished task described only in chat or in one document.
+
+At session start, refresh the session digest from the live repository, then read all three working documents before substantive work. At session close, update the three working documents first and refresh [SESSION_DIGEST.json](SESSION_DIGEST.json) last. The digest remains a retrieval index, not a replacement for any of the three.
+
 ## Stable GitHub-first execution protocol
 
 1. Use the connected GitHub repository as the publication target. Inspect the current branch and files before making changes.
