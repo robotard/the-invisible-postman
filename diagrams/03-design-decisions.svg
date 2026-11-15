@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" role="img" aria-labelledby="title desc">
+<title id="title">The Invisible Postman: Design decisions</title>
+<desc id="desc">Seven design decisions showing the original password-derived approach and its evolution, rejected image-derived keys and platform identity, reframed authentication, separated fragmentation from secret sharing, narrowed expiry claims, and cryptography before optional concealment.</desc>
+<defs>
+  <style>
+    .heading{font:700 42px Arial,sans-serif;fill:#142033}
+    .sub{font:400 21px Arial,sans-serif;fill:#526176}
+    .col{font:700 16px Arial,sans-serif;letter-spacing:1.5px;fill:#536176}
+    .label{font:700 22px Arial,sans-serif;fill:#18263a}
+    .status{font:700 18px Arial,sans-serif;fill:#174b3b}
+    .statusAlt{font:700 18px Arial,sans-serif;fill:#65420c}
+    .reason{font:400 18px Arial,sans-serif;fill:#243247}
+    .small{font:400 15px Arial,sans-serif;fill:#64748b}
+  </style>
+</defs>
+<rect width="1600" height="1180" fill="#f7f9fc"/>
+<text x="54" y="72" class="heading">03 · Design decisions</text>
+<text x="56" y="113" class="sub">From an accessible first model to explicit, reviewable security properties.</text>
+<text x="70" y="173" class="col">DESIGN CHOICE</text>
+<text x="555" y="173" class="col">DECISION</text>
+<text x="820" y="173" class="col">REASONING</text>
+<g>
+  <rect x="48" y="194" width="1504" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="540" y="194" width="260" height="112" rx="14" fill="#fff2d8" stroke="#e4c98f" stroke-width="1.5"/>
+  <text x="76" y="238" class="label">Password-derived encryption</text>
+  <text x="76" y="268" class="small">Original one-to-one image-message model</text>
+  <text x="670" y="239" class="statusAlt" text-anchor="middle">Chosen initially</text>
+  <text x="670" y="268" class="statusAlt" text-anchor="middle">Retained as alternative</text>
+  <text x="830" y="235" class="reason">Familiar, portable shared secret; no identity directory needed initially.</text>
+  <text x="830" y="264" class="reason">Broader scope later required peer verification, sender authentication</text>
+  <text x="830" y="288" class="reason">and explicit key lifecycle at endpoints.</text>
+</g>
+<g>
+  <rect x="48" y="320" width="1504" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="540" y="320" width="260" height="112" rx="14" fill="#e4f4ec" stroke="#a8d5bf" stroke-width="1.5"/>
+  <text x="76" y="385" class="label">Image hash as a key</text>
+  <text x="670" y="385" class="status" text-anchor="middle">Rejected</text>
+  <text x="830" y="378" class="reason">Public or unstable input is not dependable secret entropy.</text>
+</g>
+<g>
+  <rect x="48" y="446" width="1504" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="540" y="446" width="260" height="112" rx="14" fill="#e4f4ec" stroke="#a8d5bf" stroke-width="1.5"/>
+  <text x="76" y="511" class="label">Double encryption for identity</text>
+  <text x="670" y="511" class="status" text-anchor="middle">Reframed</text>
+  <text x="830" y="504" class="reason">Confidentiality and sender authentication are separate goals.</text>
+</g>
+<g>
+  <rect x="48" y="572" width="1504" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="540" y="572" width="260" height="112" rx="14" fill="#e4f4ec" stroke="#a8d5bf" stroke-width="1.5"/>
+  <text x="76" y="637" class="label">Linked images as a distributed secret</text>
+  <text x="670" y="637" class="status" text-anchor="middle">Separated</text>
+  <text x="830" y="630" class="reason">A manifest binds fragments; threshold sharing is a different mechanism.</text>
+</g>
+<g>
+  <rect x="48" y="698" width="1504" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="540" y="698" width="260" height="112" rx="14" fill="#fff2d8" stroke="#e4c98f" stroke-width="1.5"/>
+  <text x="76" y="763" class="label">Remote kill switch</text>
+  <text x="670" y="763" class="statusAlt" text-anchor="middle">Narrowed</text>
+  <text x="830" y="756" class="reason">Expiry limits future access; it cannot recall copied plaintext.</text>
+</g>
+<g>
+  <rect x="48" y="824" width="1504" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="540" y="824" width="260" height="112" rx="14" fill="#e4f4ec" stroke="#a8d5bf" stroke-width="1.5"/>
+  <text x="76" y="889" class="label">Platform ID as identity</text>
+  <text x="670" y="889" class="status" text-anchor="middle">Rejected</text>
+  <text x="830" y="882" class="reason">First-contact cryptographic key verification must be explicit.</text>
+</g>
+<g>
+  <rect x="48" y="950" width="1504" height="112" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="540" y="950" width="260" height="112" rx="14" fill="#e4f4ec" stroke="#a8d5bf" stroke-width="1.5"/>
+  <text x="76" y="1015" class="label">Steganography first</text>
+  <text x="670" y="1015" class="status" text-anchor="middle">Reordered</text>
+  <text x="830" y="1008" class="reason">Specify and evaluate cryptography before optional concealment.</text>
+</g>
+<text x="56" y="1125" class="small">Design rationale only. No implementation or security validation is implied.</text>
+</svg>
