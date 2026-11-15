@@ -14,6 +14,29 @@
 **Status:** Theory only · No implementation · Not audited.
 
 
+## 2026-11-15 · First full-text prior-art comparison
+
+### Completed and read-back verified
+
+- Inspected the full texts of OMR (2022), PerfOMR (2024), Oblivious Signaling (2026), SophOMR (2026), InstantOMR (2026), the 2024 dead-drop covert-messaging pipeline and the 2025 image-based diffusion covert-messaging paper, with inspection limits recorded.
+- Expanded the source register to 29 entries, including SRC-028 SophOMR and SRC-029 InstantOMR; updated SRC-020 and SRC-024–SRC-027 to reflect full-text inspection and explicit scope boundaries.
+- Created [the prior-art comparison](../docs/prior-art-comparison.md), comparing system models, observer assumptions, protected properties, limitations and candidate contributions A/B/C.
+- Linked the comparison from the active thesis, W1, traceability and source register.
+
+### Material findings
+
+- OMR-family work already formalises recipient-message privacy and has several 2026 performance variants; private recipient retrieval is not an unoccupied contribution.
+- Oblivious Signaling changes the cost placement from retrieval to sender-triggered uniform inbox updates, while retaining explicit sender-channel, timing, retention and network-leakage assumptions.
+- The 2024 dead-drop paper already examines a public-platform covert-messaging pipeline, including rendezvous, discovery hints, retrieval, fragmentation and user detection. A generic claim to novelty from “whole-pipeline” analysis is untenable.
+- The 2025 diffusion paper gives formal image-based covert-channel results but explicitly leaves image delivery outside its problem model and assumes a pre-shared key.
+- Candidate B remains the strongest emergent proposition only if a common cross-layer observer/property analysis yields a distinct analytical result. Originality is not established.
+
+### Parked next action
+
+Broaden the closest-related-work search for integrated anonymous messaging and delivery systems, including group OMR, private signaling, two-server/DORAM approaches and other dead-drop or image-carriage architectures. Then build the common observer/property matrix across publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction. Use adverse findings to revise or displace the emergent proposition. Keep diagrams deferred.
+
+
+
 ## 2026-11-15 · Active-document terminology reconciliation
 
 ### Completed and read-back verified
