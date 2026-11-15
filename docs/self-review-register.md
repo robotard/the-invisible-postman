@@ -5,6 +5,12 @@
 **Status:** Initial author-identified issues · Open to independent challenge  
 **Project assurance:** Theory only · No implementation · Not audited.
 
+## Governing ethos
+
+> **Never confuse agreement with progress.**
+
+The register values reasoned challenge and evidence over agreement. It must preserve dissent and allow the central proposition to be narrowed, redirected or rejected.
+
 ## Purpose and interpretation
 
 This register records questions the authors have identified through an initial critical reading of the current proposition and its supporting documents. These are not external reviewer findings, peer endorsements or completed resolutions.
