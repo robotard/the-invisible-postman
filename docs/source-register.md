@@ -177,6 +177,46 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** The performance of any method selected for this project, resistance to a particular platform transformation, or a universal detectability threshold.
 - **Review state:** Bibliographic record and abstract inspected; full-text examination and claim-level citation remain required.
 
+### SRC-016 · The Loopix Anonymity System
+
+- **Source:** Piotrowska, A. M., Hayes, J., Elahi, T., Meiser, S. and Danezis, G. (2017), *The Loopix Anonymity System*, Proceedings of the 26th USENIX Security Symposium, pp. 1199–1216.
+- **Publisher/status:** Peer-reviewed USENIX Security conference paper.
+- **Link:** https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/piotrowska
+- **Relevant to:** W1 RQ3/RQ7/RQ8; W2 observer model; W3 train and discovery boundary; W4 E6/E9.
+- **Supports:** A concrete low-latency mix-network design using Poisson mixing, cover traffic and deliberate message delays to resist traffic analysis under a stated adversary model.
+- **Does not establish:** That variable image placement or per-carriage carrier uniqueness provides equivalent protection. Loopix is a distinct network architecture with traffic overhead, delay and infrastructure assumptions.
+- **Review state:** Publisher abstract and bibliographic record inspected; full paper is available and detailed comparison remains outstanding.
+
+### SRC-017 · Tor v3 rendezvous specification
+
+- **Source:** Tor Project, *Tor Rendezvous Specification – Version 3*, live technical specification.
+- **Publisher/status:** Maintained protocol specification; versioned v3 document, live source.
+- **Link:** https://spec.torproject.org/rend-spec/rendezvous-protocol.html
+- **Relevant to:** W1 RQ7; W2 discovery/observer model; W3 recipient discovery and train; W4 E6/E9.
+- **Supports:** A concrete example in which discovery, introduction and rendezvous are explicit protocol functions with defined participants, descriptors, circuits and rendezvous values.
+- **Does not establish:** That Tor's anonymity properties or threat model transfer to this architecture, or that a simple locator or changing image placement is an anonymous rendezvous mechanism.
+- **Review state:** Current protocol page and rendezvous flow inspected; detailed comparison and version pinning remain outstanding.
+
+### SRC-018 · Traffic analysis of encrypted instant messaging
+
+- **Source:** Bozorgi, A., Bahramali, A., Rezaei, F., Ghafari, A., Houmansadr, A., Soltani, R., Goeckel, D. and Towsley, D. (2023), *I Still Know What You Did Last Summer: Inferring Sensitive User Activities on Messaging Applications Through Traffic Analysis*, IEEE Transactions on Dependable and Secure Computing, 20(5), pp. 4135–4153. DOI: 10.1109/TDSC.2022.3218191.
+- **Publisher/status:** Peer-reviewed IEEE journal article; author-version PDF inspected.
+- **Link:** https://doi.org/10.1109/TDSC.2022.3218191
+- **Relevant to:** W1 RQ3/RQ8; W2 network-observer capabilities; W3 metadata and behavioural correlation; W4 E9.
+- **Supports:** The paper's evaluated traffic-analysis attacks use timing and size characteristics of encrypted messaging traffic; its IMProxy countermeasure explores added delays and dummy traffic, with measurable performance/privacy trade-offs.
+- **Does not establish:** That the same attack or accuracy applies to this proposed system, every messaging platform, image publication or every observer model.
+- **Review state:** Author-version full text inspected; final publication details checked against IEEE journal index.
+
+### SRC-019 · Metadata correlation in encrypted IM call services
+
+- **Source:** Li, C.-Y. (2026), *Identity Leakage in Encrypted IM Call Services: An Empirical Study of Metadata Correlation*, Future Internet, 18(1), Article 12. Published online 2025-12-26. DOI: 10.3390/fi18010012.
+- **Publisher/status:** Peer-reviewed open-access journal article.
+- **Link:** https://doi.org/10.3390/fi18010012
+- **Relevant to:** W1 RQ3/RQ7/RQ8; W2 network-observer model; W3 discovery and metadata; W4 E9.
+- **Supports:** An empirical study of pairwise traffic correlation in three IM call services using endpoint identifiers, shared server connectivity, timing, traffic volume and signaling artifacts. The reported experiment uses two smartphones, three applications and 180 controlled call trials.
+- **Does not establish:** Equivalent leakage for ordinary text messages, this project's image route, every platform or all network settings. Its authors explicitly identify broader device, OS and application coverage as future work.
+- **Review state:** Full article sections covering threat model, method, experiments and conclusion inspected; generalisation must remain bounded to the study.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
@@ -190,8 +230,9 @@ The date in this register records when the source was checked, not the date of t
 | Key lifecycle | SRC-010–SRC-011 | Recheck current NIST revisions and derive project-specific lifecycle semantics |
 | Image metadata | SRC-012–SRC-014 | Build an actual allowlist and test embedded fields across formats and platforms |
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
-| Recipient discovery and transport unlinkability | No adequate source base recorded yet | Research rendezvous, mix systems, traffic analysis, access-pattern leakage and observer models |
-| Human behavioural linkability and social engineering | No adequate source base recorded yet | Research usable security, behavioural inference, social engineering and privacy-preserving interaction design |
+| Recipient discovery and transport unlinkability | SRC-016; SRC-017 | Compare explicit rendezvous and mix-network mechanisms; do not infer anonymity from variable placement or carrier uniqueness |
+| Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
+| Human social engineering and interpersonal behavioural mimicry | No adequate source base recorded yet | Research usable security, social engineering, interaction patterns and privacy-preserving design |
 | Multipart transport reconstruction | SRC-009 is a protocol comparator, not a capsule specification | Research authenticated manifests, parser limits, reassembly, resource exhaustion and replay semantics |
 
 ## 6. Research gaps and source discipline
@@ -202,7 +243,7 @@ Priority research gaps:
 
 1. Authenticated key-establishment composition, identity assurance, key confirmation and deniability distinctions.
 2. Protocol state, replay, forward secrecy, post-compromise security and device replacement.
-3. Traffic analysis, rendezvous discovery, mix systems and access-pattern correlation.
+3. Traffic analysis, rendezvous discovery, mix systems, cover traffic, access-pattern correlation and the usability/latency cost of obfuscation.
 4. Human behavioural linkability, usable privacy and social-engineering resistance.
 5. Image transformation and platform-specific media processing.
 6. Multipart manifest design, parser/resource-exhaustion risks and safe reconstruction.
