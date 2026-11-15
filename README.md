@@ -31,13 +31,16 @@ This repository documents a research proposal for endpoint-controlled encrypted 
 3. [Integrated thesis](thesis.md) — active thesis manuscript.
 4. [Research practice](docs/research-practice.md) — critical self-examination, peer discussion, dissent and contribution principles.
 5. [Initial self-review register](docs/self-review-register.md) — author-identified challenges and evidence needs, open to independent criticism.
-6. [W1 · Research framing](docs/w1-research-framing.md) — problem, questions, scope and intended contribution.
-7. [W2 · Threat model](docs/w2-threat-model.md) — assets, actors, trust boundaries and attacker capabilities.
-8. [W3 · Architecture](docs/w3-architecture.md) — logical components and responsibilities.
-9. [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md) — failure modes and proposed evaluation.
-10. [Research traceability](docs/traceability.md) — links between questions, threats, architecture and evaluation.
-11. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
-12. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
+6. [Collaborative Research Governance Framework](docs/collaborative-governance.md) — review, ratification, project-wide practice adoption and contributor attribution.
+7. [Contribution and review record template](docs/templates/contribution-review-record.md) — structured, consent-based credit and review scope.
+8. [Decision record template](docs/templates/decision-record.md) — practice proposals, evidence, ratification and adoption history.
+9. [W1 · Research framing](docs/w1-research-framing.md) — problem, questions, scope and intended contribution.
+10. [W2 · Threat model](docs/w2-threat-model.md) — assets, actors, trust boundaries and attacker capabilities.
+11. [W3 · Architecture](docs/w3-architecture.md) — logical components and responsibilities.
+12. [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md) — failure modes and proposed evaluation.
+13. [Research traceability](docs/traceability.md) — links between questions, threats, architecture and evaluation.
+14. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
+15. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
 
 ## Ideation and design evolution
 
