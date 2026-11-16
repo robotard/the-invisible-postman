@@ -464,6 +464,16 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 - **Does not establish:** The same quantitative result for modern adaptive JPEG methods, social-platform processing, robust watermarking, arbitrary cover distributions or this project's proposed carriers. Its theoretical and experimental assumptions must be retained; the numerical result is not transferred as a universal law.
 - **Review state:** Full paper inspected, including problem formulation, shift assumptions, pooling strategies, theoretical results and LSB simulation section. No experiment was independently reproduced.
 
+### SRC-045 · A Capacity Result for Batch Steganography
+
+- **Source:** Ker, A. D. (2007), *A Capacity Result for Batch Steganography*. IEEE Signal Processing Letters, 14(8), 525–528.
+- **DOI:** https://doi.org/10.1109/LSP.2006.891319
+- **Publisher/status:** Peer-reviewed IEEE journal article; full author-hosted paper PDF inspected.
+- **Relevant to:** Thesis §7.3 and §8.3; W1 RQ6/RQ7; W2 collection-level observer assumptions; W4 E6 and collection-level evaluation.
+- **Supports:** A formal asymptotic square-root bound for secure steganographic capacity under a stated mathematical model. The theorem assumes equal cover capacities, a detector whose response follows the shift hypothesis (with stated regularity conditions), independent steganalysis errors across covers and a batch size known to both parties. It defines acceptable risk through explicit false-positive/false-negative bounds and proves upper/lower asymptotic bounds.
+- **Does not establish:** A universal payload law for real-world platforms, dependent or adaptively selected images, robust watermarking, modern adaptive JPEG methods, sequential/longitudinal acquisition or arbitrary detector families. The paper explicitly identifies the known-batch and independence assumptions and notes that practical bounds may be loose.
+- **Review state:** Full paper inspected, including theorem assumptions, proof outline, independence discussion and limitations. No independent proof reproduction or empirical replication performed.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
