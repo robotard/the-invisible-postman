@@ -44,6 +44,8 @@ The intended contribution is a transparent, theory-led architecture and design r
 
 The value of the work is not that images are inherently secure or that concealment makes encryption stronger. It is that the system's claims, boundaries, and limitations are made explicit enough to examine and challenge. The [working prior-art comparison](prior-art-comparison.md) is used to test the candidate contribution against the closest identified systems; it does not establish originality by itself.
 
+The closest integrated comparator now includes Echomix/Katzenpost. Its global/active adversary model, traffic coupling, capability-derived discovery, asynchronous messaging, reliability and collusion analysis materially narrow any broad claim to a newly integrated delivery-privacy architecture. The remaining comparative question is whether ordinary image-platform carriage introduces distinct, measurable transformations or observables when carrying the same endpoint-protected message semantics. This is a route comparison target, not an assumed contribution. See [the Echomix comparator](echomix-katzenpost-comparator.md).
+
 ## 5. Scope
 
 The thesis considers a proposed endpoint-controlled messaging architecture in which image carriage is a required research route and other carriage methods are comparison profiles. It considers:
