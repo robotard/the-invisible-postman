@@ -135,7 +135,7 @@ These are target properties, not claims that the current proposal satisfies them
 > Routine resizing/recompression may be incidental to platform operation. Active sanitization deliberately transforms uploaded media to remove hidden payloads while constraining visible image degradation (SRC-036, SRC-046–SRC-047). A sender's keyed adaptation to a known sanitiser (SRC-048) is a different adversarial game and depends on model/processing knowledge. Do not treat these as one generic "platform transformation".
 >
 > **DEFINITION · Frame, carrier and message collection**  
-> A GIF frame is a component of one carrier object; separate images are separate carrier objects; a conversation is a relation between distinct protected messages. Cross-frame redundancy (SRC-049) does not itself create cross-post fragment-set semantics or conversation linkage.
+> A GIF frame is a component of one carrier object; separate images are separate carrier objects; a conversation is a relation between distinct protected messages. Cross-frame redundancy (SRC-049) does not itself create cross-post fragment-set semantics or conversation linkage. Per-frame keys or decoder seeds are side information: the observer model must include who stores, distributes and can correlate them. The inspected demo stores keys locally and does not specify an authenticated recipient-facing manifest.
 >
 > **Illustrated diagram placeholder · W2-F02 — Sanitizer and adaptive-sender threat boundary**  
 > **Placement:** Beside §5 Attacker capabilities and §7 Threats.  
