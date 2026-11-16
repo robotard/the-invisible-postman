@@ -100,7 +100,14 @@
       "index": "diagrams/README.md",
       "artwork_created": false
     },
-    "peer_review": "Not yet independently reviewed; preparation deferred until a coherent thesis candidate exists."
+    "peer_review": "Not yet independently reviewed; preparation deferred until a coherent thesis candidate exists.",
+    "source_review_update": {
+      "date": "2026-11-16",
+      "SRC_033": "Publisher-indexed pass clarified extraction-error, PSNR/SSIM and classifier-error metrics, named comparators, BOSSbase and LinkedIn evaluation. Complete parameters, result tables and limitations remain unavailable.",
+      "SRC_034": "Publisher-indexed pass clarified RoLoS ablation, PMAS comparison, Q95-to-Q85/Q80/Q75 scenarios and author-reported approximately 87% extraction-error reduction / order-of-magnitude runtime claims. Full tables and platform procedure remain unavailable.",
+      "SRC_036": "Publisher-indexed pass clarified attack/filtering plus optimisation modules, joint loss, BOSSbase 8,000/2,000 split, BOWS2 and QF75 context. Full equations, training details, result tables and generalisation limits remain unavailable.",
+      "review_status": "T-001 remains open. All three reviews remain partial; no complete paper text, experiment reproduction or audit obtained."
+    }
   },
   "completed": [
     "Integrated multi-message relationships, package-encapsulation boundaries, active sanitization and animated-carrier distinctions into W1-W4 and thesis/supporting research.",
@@ -116,16 +123,16 @@
     "Expanded internal work backlog through diagram, peer-review and release-integrity stages."
   ],
   "source_review_boundaries": {
-    "SRC_033": "MRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial.",
-    "SRC_034": "DRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial.",
-    "SRC_036": "Publisher-indexed attack/optimisation, datasets/split and QF75 sections inspected; full methods/results/generalisation remain partial.",
+    "SRC_033": "Publisher-indexed abstract/introduction/method/evaluation snippets plus pinned public MATLAB demo inspection; complete paper methods, tables and limitations remain partial.",
+    "SRC_034": "Publisher-indexed abstract/introduction/overview/evaluation snippets plus pinned public MATLAB demo inspection; complete paper methods, tables, platform procedure and limitations remain partial.",
+    "SRC_036": "Publisher-indexed abstract, introduction, architecture and experimental-setup snippets; full equations, training details, complete results and limitations remain partial.",
     "SRC_046": "Abstract/metadata only; full paper/results not inspected.",
     "SRC_047": "Abstract/metadata only; Scaling-Net/SC-Net described; source repository not yet inspected.",
     "SRC_048": "IEEE abstract/author record only; full method/evaluation not inspected.",
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
-    "Complete full-text/source-level review for SRC-033, SRC-034 and SRC-036; retain partial-review labels until methods/results and limitations are inspected.",
+    "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036. The 2026-11-16 publisher-indexed pass clarified evaluation/method context, but complete methods, tables and limitations remain unavailable; preserve partial-review labels.",
     "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available.",
     "Review SRC-049 full paper/formal security argument and complete experimental results; selected code has been read but not run or audited.",
     "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
@@ -152,14 +159,14 @@
   ],
   "verified": {
     "work/README.md": "87af6d60e02598929a01fc311a25f73f9abccdc6",
-    "work/PROJECT_STATE.md": "127f1b9dbecdd90b7a60d5bafc78e6ec479c117b",
+    "work/PROJECT_STATE.md": "8d2853d87277efbd4d9b1404225dbacc8b42dff2",
     "work/WORKPLAN.md": "683e115c73d5eb874370f75c12aaed48fc89f094",
-    "work/WORK_LOG.md": "e663ae7d7ae75e06b0f20c46619b5a523d4bc727",
+    "work/WORK_LOG.md": "3905deceba8f1befb809eab90d75ed9c47da6b78",
     "work/lookup/TASKS.md": "0dd84320ff59321769276dce873b608065ed5202",
     "work/lookup/TASKS.json": "0e5a1c05f937301b89cb586d65545d869e391ef5",
     "README.md": "ce2d0c914df2506c0611518cdeb4b454384dc588",
-    "docs/source-register.md": "e3a69287e95ab2ca4e2544b70494ab8a45238485",
-    "work/SESSION_DIGEST.md": "a918d6b1fcf4c4404743e0906e8154df8454ce92"
+    "docs/source-register.md": "2215ef95c14356ed543279b2e93e0bf0de532849",
+    "work/SESSION_DIGEST.md": "af16f86fc9a9b8256a303f97513d4c36bf443f31"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
@@ -213,5 +220,6 @@
   },
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
-  "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16"
+  "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
+  "latest_commit_before_json_digest_refresh": "a772ee3331071db6c0d031bddae1d051c213ee2e"
 }
