@@ -584,8 +584,8 @@ Rules:
 2. Platform media processing is path-dependent and may involve more than one JPEG recompression. The Qiao study reports that simulated-channel performance did not reliably predict Facebook, Twitter or WeChat outcomes under its tested configurations.
 3. Active transformation may target payload survival rather than merely detect steganography. SRC-036 and SRC-046–SRC-047 describe learned sanitization approaches; SRC-048 describes a keyed counter-adaptation. These are competing adversarial capabilities, not evidence of deployment by any named platform. A route evaluation must include extraction failure and integrity-safe rejection, not just detectability.
 4. Multi-frame redundancy within one animated GIF (SRC-049) is a different carrier topology from fragmenting one message across separate image objects or posts. Evaluate frame loss/distortion, frame correlation and cross-frame recovery separately from account/time-window collection analysis.
-4. A single universal detector or universal transformation model must not be assumed. The survey identifies generalisation as a major unresolved difficulty.
-5. The strongest defensible next step is to define exact platform/version, upload method, account/post visibility, retrieval method, media type and client path for each image profile. Record unknown transformations as unknown until measured or sourced.
+5. A single universal detector or universal transformation model must not be assumed. The survey identifies generalisation as a major unresolved difficulty.
+6. The strongest defensible next step is to define exact platform/version, upload method, account/post visibility, retrieval method, media type and client path for each image profile. Record unknown transformations as unknown until measured or sourced.
 
 ## 7.2 SRC-046–SRC-049 review outcome (2026-11-16)
 
