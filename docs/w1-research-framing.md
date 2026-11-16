@@ -66,13 +66,14 @@ The thesis considers a proposed endpoint-controlled messaging architecture in wh
 - carrier metadata minimisation, platform/network metadata exposure and human behavioural linkability;
 - evidence limits for social-engineering and behavioural claims, including the distinction between qualitative perpetrator accounts and measured recipient susceptibility;
 - linked image capsules, authenticated message-set integrity and safe reconstruction independent of transport arrival order;
+- distinct models for a single message, fragmented message, redundant fragment carriage, independent messages, conversation/session continuity, retries and cross-route copies;
 - policy-based expiry and revocation, with realistic limits;
 - optional threshold-controlled recovery as a separate mechanism requiring explicit assumptions; and
 - qualitative threat analysis, proposed acceptance criteria, and an evaluation plan.
 
 Candidate primitives may be discussed as design options, but their presence in this document is not a complete protocol specification or evidence of security.
 
-The image-platform route is not an empty research area. Recent work studies robust JPEG steganography under social-network recompression (MRAS and DRAS), practical social-network transmission, active removal of hidden payloads and steganalysis. These sources are recorded as SRC-033–SRC-037. The research must not frame image payload robustness, concealment or platform survival alone as a novel contribution. Its comparison must separate carrier extraction, detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost. The central research question remains comparative and open: whether the complete endpoint-protected delivery route has measurable, decision-relevant properties that differ from established alternatives.
+The image-platform route is not an empty research area. Recent work studies robust JPEG steganography under social-network recompression (MRAS and DRAS), practical social-network transmission, active removal of hidden payloads and steganalysis. These sources are recorded as SRC-033–SRC-037. The research must not frame image payload robustness, concealment or platform survival alone as a novel contribution. SRC-043 directly studies fragmented covert communication across many images with redundant fragment carriage and reconstruction; SRC-044 studies pooled steganalysis across batches. These sources rule out broad novelty claims around multi-image fragmentation and show why per-image detector results are insufficient. See [multi-message linkage and steganographic carriage](multi-message-linkage-and-steganographic-carriage.md). Its comparison must separate carrier extraction, detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost. The central research question remains comparative and open: whether the complete endpoint-protected delivery route has measurable, decision-relevant properties that differ from established alternatives.
 
 ## 6. Non-goals and exclusions
 
@@ -99,6 +100,21 @@ The distinction between ciphertext fragmentation and threshold secret sharing mu
 - **Intermediary:** A bot, platform, host, or storage service that may coordinate or transport content but is not trusted with plaintext confidentiality.
 - **Linked capsules:** Multiple pieces that must be validated as belonging to one message set, with explicit identifiers and integrity checks.
 - **Expiry and revocation:** Policies that may restrict future access or sessions but cannot retrieve data already copied or learned.
+
+> **DEFINITION · Message multiplicity:** A *fragment set* is the pieces needed to reconstruct one logical protected message. A *conversation* links distinct logical messages. A *retry* repeats delivery of the same logical message or protected object. *Redundant carriage* repeats or codes data to tolerate loss. These relationships must not share one ambiguous "multipart" label.
+
+> **COMPARISON · Concealment versus linkage:** Per-image steganographic concealment concerns whether an individual carrier reveals embedded data. Set-level linkage concerns whether several carriers or events can be grouped through identifiers, manifests, timing, provenance, embedding artefacts or retrieval patterns. Hiding one does not establish hiding the other.
+
+> **Illustrated diagram placeholder · W1-F01 — Research scope and evidence map**
+> **Placement:** After §3 Supporting research questions.
+> **Prompt for later illustration:** Create a clean, publication-ready conceptual diagram connecting the research questions to endpoint message protection, message/capsule structure, carrier encapsulation, route profiles, discovery/retrieval, observer exposure and evaluation evidence. Show image carriage as a required comparison profile, not a mandatory runtime route; show steganography as an optional image-route sub-layer. Use labelled relationships and clear responsibility boundaries.
+> **Must not imply:** That any route is selected or superior, that the architecture is implemented, or that any security property has been demonstrated.
+
+> **Illustrated diagram placeholder · W1-F02 — Message, fragment-set and conversation distinctions**
+> **Placement:** Beside §7 Core framing and terminology.
+> **Prompt for later illustration:** Show one logical message represented by one protected object; the same object optionally divided into indexed capsules and carried by multiple image objects; a separate conversation containing several distinct protected messages; and a retry as another delivery event for the same logical message. Use separate visual shapes/labels for message identity, fragment-set membership, conversation continuity, redundancy and carrier identity.
+> **Must not imply:** That a fragment set is a conversation, that carrier identifiers authenticate membership, or that redundancy provides confidentiality or guaranteed recovery.
+
 
 ## 8. Research discipline
 
