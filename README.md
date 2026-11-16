@@ -5,7 +5,9 @@ Researcher: `@robotard`
 
 > **Status: Theory only · No implementation · Not audited.**
 
-This repository documents a theory-led investigation into endpoint-controlled cryptographic messaging. It develops the reasoning from the initial password-and-image concept through identity and key trust, cryptographic composition, message structure, trust boundaries, carriage methods, lifecycle, recovery, privacy, usability and evaluation. Image carriage is a required research route, while other carriage methods provide comparison profiles. Transport is important, but it is one part of the full thesis rather than the organising principle for every security question.
+This repository documents a theory-led investigation into endpoint-controlled cryptographic messaging. The architecture distinguishes endpoint message protection, carrier encapsulation, optional transport adapters and optional orchestration. Orchestration may coordinate delivery and may itself participate in transit, but is not mandatory and does not define transport independence. Image carriage is a required research comparison route, not a mandatory runtime path.
+
+ It develops the reasoning from the initial password-and-image concept through identity and key trust, cryptographic composition, message structure, trust boundaries, carriage methods, lifecycle, recovery, privacy, usability and evaluation. Image carriage is a required research route, while other carriage methods provide comparison profiles. Transport is important, but it is one part of the full thesis rather than the organising principle for every security question.
 
 ## What this repository is
 
@@ -67,7 +69,10 @@ They are retained unchanged. The active manuscript is thesis.md.
 
 ## Core principles
 
-- Endpoints retain plaintext and private keys.
+- Endpoints retain plaintext and private keys.- The protected message is independent of its delivery route; encapsulation adapts only its outer carrier representation.
+- Transport and orchestration are optional functions; services performing both roles are assessed role by role.
+- Multi-hop routes are assessed hop by hop; extra hops do not inherently improve privacy.
+
 - Relays, platforms, image hosts and storage are treated as untrusted for plaintext confidentiality.
 - Images are carriers, not keys or guaranteed entropy sources.
 - Cryptographic key authentication and identity verification must be explicit.
