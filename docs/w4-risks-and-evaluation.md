@@ -143,7 +143,18 @@ Proposed acceptance conditions:
 * Limits are justified against an explicit device and route profile, and rejection occurs before unbounded allocation or expensive decoding where possible.
 * Fragmentation is not represented as a confidentiality, redundancy or recovery guarantee.
 
-Recent image-platform prior art (SRC-033–SRC-037) includes robust JPEG steganography under social-network recompression, real-service comparisons, active payload-removal methods and a broad steganography/steganalysis survey. Do not treat payload survival or concealment alone as a distinctive system-level result. Separate extraction success, detector performance, endpoint authentication/integrity, discovery privacy and observer leakage. Name the platform, application version, upload/download mode, source format and observed transformations. Report false positives, false negatives, payload rate, image quality and extraction-failure classification where relevant. Distinguish simulated-channel results from live platform observations.
+> **EVALUATION UNIT · Four separate outcomes**  
+> (1) Carrier extraction asks whether payload can be recovered from an individual transformed image. (2) Set reconstruction asks whether the endpoint can validate and rebuild the intended protected object from a complete or permitted subset of carriers. (3) Steganalysis asks whether an observer can detect hidden payload in one carrier or a collection. (4) Linkage analysis asks whether an observer can associate carriers, fragments, messages, conversations, retries or routes. Success in one outcome does not establish success in another.
+>
+> **COMPARISON · Per-image versus collection-level detection**  
+> A per-image detector evaluates carriers individually. Pooled steganalysis or collection-level clustering uses evidence across multiple images/events. Report both where relevant; do not assume independent samples or infer lower overall detectability from lower payload per image.
+>
+> **Illustrated diagram placeholder · W4-F01 — Evaluation ladder from carrier to conversation**  
+> **Placement:** Immediately after E5 and before the image-route evaluation discussion.  
+> **Prompt for later illustration:** Show four distinct evaluation layers: per-carrier extraction/transformation; authenticated fragment-set reconstruction; collection-level steganalysis and carrier clustering; and end-to-end message/conversation/route linkage under named observer models. For each layer show its unit of analysis, outcome metrics and what a positive result does not prove.  
+> **Must not imply:** That image extraction proves stealth, that set reconstruction proves sender identity, or that collection detection automatically identifies participants.
+>
+Recent image-platform prior art (SRC-033–SRC-037) includes robust JPEG steganography under social-network recompression, real-service comparisons, active payload-removal methods and a broad steganography/steganalysis survey. SRC-043 directly studies fragmented covert communication across many images, redundant fragment carriage and reconstruction after carrier loss; SRC-044 analyses batch steganography and pooled steganalysis. Do not treat multi-image fragmentation, payload survival or concealment alone as a distinctive system-level result. Evaluate per-image and collection-level detection separately. Separate extraction success, detector performance, endpoint authentication/integrity, discovery privacy and observer leakage. Name the platform, application version, upload/download mode, source format and observed transformations. Report false positives, false negatives, payload rate, image quality and extraction-failure classification where relevant. Distinguish simulated-channel results from live platform observations.
 
 E6. Transport-route, carrier integrity and transformation
 
@@ -151,6 +162,13 @@ Threats: route-specific metadata exposure, size/capacity limits, resizing, recom
 
 The image-carriage route is required within the research scope. Other routes, including file/attachment carriage and conventional messaging transport, are comparison profiles. Comparing routes does not presume that any route is superior or that they provide equivalent delivery semantics.
 
+> **DEFINITION · Linkage test**  
+> A linkage test names the two events or objects an observer attempts to associate (for example, two fragments in one set, a publication and a retrieval, two messages in one conversation, a retry and its original, or the same protected object across routes). It must state the observer's data, time window, collection size, side information and collusion assumptions.
+>
+> **Illustrated diagram placeholder · W4-F02 — Observer collection and linkage experiment**  
+> **Placement:** Beside the route comparison matrix or collection-level evaluation criteria.  
+> **Prompt for later illustration:** Show how an experiment constructs realistic carrier collections across account/platform/time-window scopes, introduces missing/reordered/recompressed/duplicated carriers, and measures detection, clustering and false association under distinct observer capabilities. Separate ground-truth relationships from the observer's inferred links and show the evaluation metrics and limitations.
+>
 ### Route comparison matrix
 
 This is an evaluation plan, not a report of measured results. Each profile must be assessed under a stated platform, format, payload size, observer model and delivery configuration. A generic label such as "end-to-end messaging" is not enough to establish the behaviour of a particular service.
