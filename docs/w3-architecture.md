@@ -97,6 +97,17 @@ A single logical message may use one carrier or several fragment carriers. Redun
 > **Placement:** Beside the architecture's message lifecycle and retry discussion.  
 > **Prompt for later illustration:** Show two or more distinct logical messages linked by an authenticated conversation/session relationship; show one of those messages divided into multiple indexed fragment capsules across separate image carriers; show an identical retry as another delivery event for the same logical message; show optional redundant carriers; and show a cross-route copy of the same protected object. Label every relationship distinctly and indicate which edges are endpoint-authenticated versus merely observable/inferable.
 >
+> **DEFINITION · Animated carrier versus separate carrier set**  
+> An animated GIF is one route carrier object containing an ordered frame sequence. Redundancy across its frames is an internal carrier-level technique (SRC-049); it is not equivalent to distributing fragments across separate image objects or linking distinct protected messages. If evaluated, frame extraction and frame ordering belong to the image adapter; authenticated message-set membership and conversation continuity remain endpoint protocol concerns.
+>
+> **COMPARISON · Sanitizer as route adversary**  
+> A route may apply routine media transformations or an active sanitization process intended to remove hidden data (SRC-036, SRC-046–SRC-047). SRC-048 describes a keyed sender-side adaptation to a known sanitiser. These are external carrier conditions, not new trusted architecture components. A recovered carrier payload still requires endpoint authentication and validation.
+>
+> **Illustrated diagram placeholder · W3-F03 — Animated carrier and sanitizer boundary**  
+> **Placement:** Beside the image-adapter description and after W3-F01/F02.  
+> **Prompt for later illustration:** Show one GIF container with internal frames and optional cross-frame redundancy, beside a separate multi-image fragment-set route. Add a route-adversary branch for passive recompression and active sanitization, and a separate research-only keyed counter-adaptation path. Keep endpoint-protected object, package encapsulation, carrier framing and optional concealment visually distinct.  
+> **Must not imply:** That GIF is a selected route, that frames are separate posts, that sanitizer-aware embedding is part of the proposed architecture, or that carrier extraction authenticates the message.
+>
 2.4.1 Unique image envelopes, variable placement and decapsulation
 
 The train may generate or obtain a distinct image carrier object for each carriage instance and vary that carrier's publication or retrieval placement. Here, "unique" means that a carrier object is not reused for another carriage instance under the proposed policy; it does not mean cryptographic uniqueness, secret entropy, randomness, unpredictability or guaranteed unlinkability. The carrier is not a nonce, key or identity credential. At the receiving side, a transport decapsulation function discovers or obtains the selected carrier, extracts the encapsulated protected object, checks transport framing and extraction completeness, and hands the result to the participant endpoint. The endpoint, not the train, performs cryptographic authentication and acceptance.
