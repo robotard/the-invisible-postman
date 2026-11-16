@@ -52,7 +52,7 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
 - An initial named profile register, documentary comparison and lifecycle/event observer ledger now exist. Product-level version pinning, route-specific service evidence and full observer/collusion detail remain incomplete.
 - SRC-033, SRC-034 and SRC-036 remain partial article reviews because complete paper text/methods/tables/limitations were not accessible. Public author-linked code for SRC-033/034 is now pinned and inspected, but no code was run. SRC-035 and SRC-037 are full-text inspected.
-- The previous full audit checked all 29 Markdown files against the recursive repository tree and found no broken relative links; it predates this latest research batch. Subsequent targeted relative-link audits covered W1–W4, the route framework, multi-message analysis, source register, prior-art comparison, observer matrix, traceability, contribution assessment, thesis and diagram index; no broken relative links were found. The previous repository instruction scan found no ZIP/archive-generation workflow instructions. A fresh full-repository audit and exact-status, terminology, image-reference and diagram-placeholder consistency audit remain open.
+- A fresh post-integration audit checked all 29 Markdown files against the current recursive repository tree: no broken relative links were found. All 29 Markdown files were also scanned for active ZIP/archive-generation instructions; none were found. Exact-status, terminology, image-reference and illustration-placeholder consistency remain to be checked separately.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
 - No researcher decision currently blocks the next research pass.
 
@@ -70,7 +70,7 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 4. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
 5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test obligations against Signal, MLS and HPKE references without prematurely selecting primitives.
 6. Reconcile any new route findings into W1–W4, the contribution assessment and integrated thesis.
-7. Run fresh repository-wide relative-link, ZIP/archive-instruction, exact-status, terminology, illustration-placeholder and image-reference audits. A targeted relative-link audit of W1–W4 and the route-comparison framework currently passes.
+7. Complete the remaining exact-status, terminology, illustration-placeholder and image-reference consistency audit. The fresh 29-file relative-link audit passes and no active ZIP/archive-generation instructions were found.
 
 
 ## Document-boundary rule
