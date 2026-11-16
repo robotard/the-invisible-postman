@@ -148,6 +148,9 @@ Proposed acceptance conditions:
 > **EVALUATION UNIT · Four separate outcomes**  
 > (1) Carrier extraction asks whether payload can be recovered from an individual transformed image. (2) Set reconstruction asks whether the endpoint can validate and rebuild the intended protected object from a complete or permitted subset of carriers. (3) Steganalysis asks whether an observer can detect hidden payload in one carrier or a collection. (4) Linkage analysis asks whether an observer can associate carriers, fragments, messages, conversations, retries or routes. Success in one outcome does not establish success in another.
 >
+> **DEFINITION · Message multiplicity and package boundary**  
+> A *fragment set* contains pieces required to reconstruct one logical protected object. *Redundant carriage* repeats or codes information to tolerate loss. *Independent messages* remain distinct even when sent in one batch. A *conversation* links distinct messages; a *retry* is another delivery event for the same logical message; a *cross-route copy* carries the same protected object through another route. Package encapsulation frames an object or capsule for carriage but does not authenticate it. Evaluate each relationship and event separately.
+>
 > **COMPARISON · Per-image versus collection-level detection**  
 > A per-image detector evaluates carriers individually. Pooled steganalysis or collection-level clustering uses evidence across multiple images/events. Report both where relevant; do not assume independent samples or infer lower overall detectability from lower payload per image.
 >
