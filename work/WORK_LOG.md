@@ -1,3 +1,32 @@
+## 2026-11-16 · Thesis argument and route-comparison synthesis advanced
+
+### Work performed
+
+- Rewrote the thesis abstract to state the research object, architecture, comparison method, evidence-bounded confidence principle and unresolved originality status.
+- Tightened the central research question around preservation of authenticated message semantics across replaceable, untrusted routes and what route-specific evidence can establish under defined observer models.
+- Added a provisional thesis proposition distinguishing genuine transport independence from merely moving ciphertext between services.
+- Consolidated the supporting research questions to ten. Confidence/evidence is now part of RQ10 (evaluation), not an additional eleventh question.
+- Reworked the research approach to state conceptual decomposition, structured prior-art comparison, threat/observer modelling, lifecycle analysis and falsifiable evaluation, while distinguishing publisher-indexed claims, inspected code, full-paper review, reproduction and independent evaluation.
+- Reframed the intended contribution into four strands: responsibility-separated architecture; common route-comparison method; message-relationship/lifecycle analysis; and claim-centred evidence discipline. Explicitly disclaimed novelty in ciphers, embedding methods, anonymity networks and a complete messaging protocol.
+- Added an initial documentary route-comparison table to thesis §8.2 for image-platform carriage, Dropbox shared-link/file hosting, Signal protocol references and Echomix/Pigeonhole. The table preserves each profile's native semantics and states what current sources do not establish.
+- Added the route comparison's asymmetric evidence judgement to §11: image studies inform media transformation, Dropbox informs shared-link/file-host visibility, Signal specifications inform protocol mechanics but not the full service, and Echomix/Pigeonhole provides the strongest integrated comparator. No overall route ranking is claimed.
+- Added the Dropbox activity/shared-link and Katzenpost Pigeonhole specification references to the working bibliography; corrected the Signal source-register reference to SRC-038.
+- Aligned W1's central question, consolidated RQ10 and contribution framing with the thesis. Updated traceability so confidence/evidence is explicitly a component of RQ10, not a separate research question.
+
+### Research judgement
+
+The strongest current thesis proposition is narrower than "a secure messaging system using images": endpoint-protected message semantics should remain under endpoint authority across replaceable routes, and the evidence available to each verifier/observer must bound claims about identity, integrity, linkage, completeness and delivery.
+
+The initial comparison is documentary and evidence-asymmetric. It is not a deployed product comparison, scored ranking or experimental result. Missing source coverage remains unknown rather than being treated as proof of absence. The originality of the four proposed contribution strands remains unresolved against OMR-family work, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion covert communication, multi-image carriage and Echomix/Pigeonhole.
+
+### Verification and remaining work
+
+- `thesis.md`, W1 and traceability were fetched after the changes; saved content, research-question alignment, route-comparison insertion and bibliography corrections were checked.
+- The current manuscript remains a working theory-led draft. No protocol was selected, no route was deployed or tested, no experiment was reproduced and no independent review or audit occurred.
+- Next: pin compatible, named and versioned route profiles and add source-backed lifecycle/observer detail to thesis §8; continue full-text access work for SRC-033/034/036 without upgrading partial-review status.
+
+**Theory only · No implementation · Not audited.**
+
 ## 2026-11-16 · Confidence model challenged against image-steganography source claims
 
 ### Work performed
