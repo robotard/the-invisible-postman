@@ -111,6 +111,20 @@ The proposed design should be evaluated against the following goals:
 
 These are target properties, not claims that the current proposal satisfies them.
 
+> **DEFINITION · Observer-visible linkage**  
+> Linkage is an observer's ability to associate two or more carriers, fragments, publication/retrieval events, logical messages or participants. It may arise from explicit identifiers, timing, size, account/device provenance, image similarity, embedding artefacts, discovery requests or access patterns. Payload encryption does not conceal these relationships by itself.
+>
+> **COMPARISON · Endpoint linkage versus observer linkage**  
+> Endpoints may require authenticated links to reconstruct a fragment set or maintain a conversation. Those links need not be exposed in the same form to a carrier, host, platform or network observer. The threat model must state which party sees each value and event, rather than treating "linked" as a single property.
+>
+> **DEFINITION · Collection-level steganalysis**  
+> Detection or clustering based on a set of carriers or events, rather than one image considered in isolation. Evidence from multiple images may be pooled; independence between images must not be assumed without justification.
+>
+> **Illustrated diagram placeholder · W2-F01 — Observer projections of a linked-message graph**  
+> **Placement:** Beside §7 Threats and required mitigations to evaluate.  
+> **Prompt for later illustration:** Draw one endpoint-side graph containing logical messages, a fragment set, redundant carriers, a separate conversation edge, retries and cross-route copies. Around it show distinct observer projections for recipient endpoint, image platform, host, coordinator, network observer and human observer. For each observer, show only the identifiers, timing, sizes, provenance and events they can actually observe under the stated assumptions. Distinguish endpoint-authenticated relationships from observer-inferred correlations.  
+> **Must not imply:** That an observer sees the complete graph, that encryption hides timing/access patterns, or that multiple hops automatically improve anonymity.
+>
 ## 7. Threats and required mitigations to evaluate
 
 | Threat | Potential consequence | Design requirement to examine |
