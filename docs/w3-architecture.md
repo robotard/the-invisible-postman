@@ -21,6 +21,9 @@ The architecture must support:
 
 The architecture is deliberately divided into responsibilities rather than prematurely committed to a particular deployment topology.
 
+**Transport-independence clarification (working architectural rule):** The protected-message core, carrier encapsulation, transport and orchestration are distinct responsibilities. Endpoint protection creates a logically protected object whose cryptographic meaning is independent of its delivery route. Encapsulation adapts that object to a carrier and reverses the packaging; transport adapters move it; optional orchestration may coordinate selection, sequencing, retrieval or retries and may itself also be a transit participant. Orchestration does not define agnostic delivery and is not mandatory. A single service may perform multiple roles, but each role, authority, input, retained state and observer view must be analysed separately. Image carriage is required as a research comparison route, not as a mandatory runtime route. Telegram, InspiroBot and any onward hop are examples only. Multi-hop routes must declare every hop and its added observations; extra hops do not inherently improve privacy. The protected object should remain invariant across routes unless an explicit, authenticated protocol conversion is specified. AEAD nonce uniqueness, salt purpose, identity/context binding and replay rules remain protocol decisions, not properties to improvise around a carrier.
+
+
 2. Architectural principles
 
 2.1 Endpoints own cryptographic authority
@@ -45,7 +48,7 @@ A successful encryption operation does not, by itself, establish the sender’s 
 
 The transport-route layer carries a protected message between endpoints. It is a first-class architectural concern because routes determine packaging, capacity, transformation exposure, routing metadata, ordering, delivery behaviour and extraction failure modes.
 
-Image carriage is a required route profile in this research. Other routes, such as file/attachment carriage and conventional messaging transport, may be modelled as comparison profiles. Their inclusion does not displace the image route or imply that one route is superior.
+Image carriage is a required research comparison profile, not a mandatory runtime route. File/attachment, conventional messaging and mixnet-backed routes are also candidates. No route is presumed superior.
 
 Each route adapter must preserve the opaque protected message or detect when it cannot. Route-specific handling must not silently change authenticated content or message context. Image-specific encoding and extraction belong to the image adapter. Optional steganographic concealment is a separate sub-layer within that route and is not a substitute for encryption, authentication or integrity.
 
@@ -55,7 +58,7 @@ An image is a transport container. It is not a key, identity credential, source 
 
 The participant-side cryptographic topology is the primary security architecture. Each participant performs the necessary endpoint role in the agreement/key-establishment, message-protection, authentication and validation process. The intended "anonymous agreement" property requires a precise definition and protocol analysis; this architecture does not claim anonymity merely by naming it.
 
-The train is a standalone transport element with a narrow service contract: carry an already protected object over a selected route. It may select a route, apply route-specific carriage handling, and coordinate delivery. It does not establish participant trust, negotiate or own cryptographic keys, encrypt or authenticate messages, decide message validity, or hold decryption authority. It is a transport aid, not a cryptographic participant.
+The train is a standalone transport element with a narrow service contract: carry an already protected object over a selected route. It may apply route-specific carriage handling. Optional orchestration may select or sequence routes and coordinate delivery, but it is a distinct function and may itself also act as a transit participant. It does not establish participant trust, negotiate or own cryptographic keys, encrypt or authenticate messages, decide message validity, or hold decryption authority. It is a transport aid, not a cryptographic participant.
 
 The encapsulation boundary sits between the protected message/capsule and the train. It packages the opaque protected object for carriage, supplies bounded framing and route information, and supports detection of truncation, substitution, malformed extraction or route failure. It must not reinterpret or silently modify authenticated message semantics. Encapsulation alone is not a security primitive: any security-relevant fields or bindings must be authenticated by the endpoint protocol.
 
