@@ -48,7 +48,7 @@
         "SRC_043": "Multi-image fragment carriage and redundant reconstruction using robust DFT/DCT watermarking; not a generic steganographic stealth result.",
         "SRC_044": "Batch steganography and pooled steganalysis under stated assumptions.",
         "SRC_045": "Formal asymptotic square-root capacity theorem under explicit cover-capacity, detector-response, independence and known-batch assumptions.",
-        "SRC_049": "16-frame GIF redundancy and majority-vote extraction documented in author-linked README; paper/formal security argument not reviewed."
+        "SRC_049": "Two redundancy levels: d-fold repetition within each frame and majority voting across 16 frame secrets. Code read at pinned repository revision; no execution/audit."
       }
     },
     "sanitization": {
@@ -59,6 +59,24 @@
         "SRC_048": "2025 secret-seed-conditioned decoder/counter-adaptation abstract; full paper not inspected."
       },
       "claim_boundary": "These sources do not establish that any named platform deploys the cited sanitizer or that the counter-adaptation defeats unknown sanitizers."
+    },
+    "gif_code_review": {
+      "repository": "SRope-2/Provable-GIF-Stego",
+      "commit": "4a5d2503623b06d17517ecf7a8b7527e1edc315d",
+      "inspected_files": {
+        "README": "c6a3fd63324404992f5b84c529b20afb09f4f3b1",
+        "method_core": "a024cf92893c5fb8411f1ded9c9d64488914757c",
+        "run_stego": "e41bb02cd90499c9774b60ef5343415a1630a93b",
+        "pipeline": "557252922bc079e85573e0ea6ffcf4dd241e34a3"
+      },
+      "observations": [
+        "Per-frame independent ChaCha20 key/nonce in PyCryptodome path; key files stored locally.",
+        "Sender path writes frame PNGs; receiver expects frame PNGs, local keys and local ground-truth watermark.",
+        "Receiver asserts complete 16-frame/key set; missing-frame erasure tolerance is not established.",
+        "Raw ChaCha20 path has no authentication tag visible in inspected code; fallback is a 32-bit NumPy PRNG XOR labelled TEST ONLY.",
+        "Group ID is used for local file naming and seed handling, not as an authenticated message-set identifier."
+      ],
+      "limits": "Code read only, not executed or audited; paper/formal security argument and complete experimental results unreviewed."
     },
     "route_profiles": "Six evidence-bounded profiles; documentary comparison and expanded lifecycle/event/observer ledger. Live client/service versions and configurations remain unpinned.",
     "protocol_analysis": "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected.",
@@ -100,12 +118,12 @@
     "SRC_046": "Abstract/metadata only; full paper/results not inspected.",
     "SRC_047": "Abstract/metadata only; Scaling-Net/SC-Net described; source repository not yet inspected.",
     "SRC_048": "IEEE abstract/author record only; full method/evaluation not inspected.",
-    "SRC_049": "IEEE metadata and author-linked implementation README inspected; full paper/formal security argument not reviewed; code not run or audited."
+    "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
     "Complete full-text/source-level review for SRC-033, SRC-034 and SRC-036; retain partial-review labels until methods/results and limitations are inspected.",
     "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available.",
-    "Inspect SRC-049 full paper/formal security argument and implementation beyond its README where available.",
+    "Review SRC-049 full paper/formal security argument and complete experimental results; selected code has been read but not run or audited.",
     "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
     "Continue protocol-boundary reconciliation into W2/W3/W4, decision records and thesis; compare Signal, MLS and HPKE without premature primitive selection.",
     "Reconcile new route findings into W1-W4, contribution assessment and integrated thesis.",
@@ -124,16 +142,17 @@
     "Endpoint-authenticated linkage and observer-inferred linkage are distinct.",
     "Per-image concealment does not establish collection-level concealment.",
     "GIF frames within one carrier are not separate image posts or logical messages.",
+    "Majority voting over bit errors does not establish missing-frame erasure tolerance.",
     "No anonymity/security inference from carrier uniqueness, concealment or extra hops.",
     "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "3c9b1bf01a0ee58ce133a43335ea08184bd9ed69",
-    "project/WORKPLAN.md": "bc5a458269897e2e652f1e4a6f1283378edc7655",
-    "project/WORK_LOG.md": "ac893858faf73ee82f4fc0c6d6cc4de175cc2cb0",
-    "project/SESSION_DIGEST.md": "49ad8603222f1540a92c50870bc8f0334c6012d6",
-    "docs/source-register.md": "4017472ae9eeb925e6f8f124416212bee53684ac",
-    "checkpoint_commit_before_json_refresh": "31734b057e072fda397eb1452116d6ce661b6251"
+    "project/PROJECT_STATE.md": "cbcedf5ab18e8fd3e9a8ce4bfd65afcc11bb9f9b",
+    "project/WORKPLAN.md": "0bf450b974eeadd4d2e7ca02eed40b90e6f550be",
+    "project/WORK_LOG.md": "c1cdeb884b2dc38fbb9c7fc828ca201dab9cd3c1",
+    "docs/source-register.md": "e3a69287e95ab2ca4e2544b70494ab8a45238485",
+    "project/SESSION_DIGEST.md": "010ea11d9d00f26ab69440a35c705b8c5c2e9fcf",
+    "checkpoint_commit_before_json_refresh": "4a01e21bbb61750cd64e3228d24a82b6e60a4eb0"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
