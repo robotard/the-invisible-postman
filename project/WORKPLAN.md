@@ -49,7 +49,7 @@ Work units produce independently useful outputs. Progress belongs in `PROJECT_ST
 
 - [x] **W0.1 Repository foundation:** authoritative paths, repository baseline, navigation and GitHub-first workflow.
 - [~] **W0.2 Research practice:** core self-review, governance, attribution and contribution documents exist. Routine administration is deferred; external review and ratification remain outstanding.
-- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (45 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial article reviews pending complete methods/results. Author-linked MRAS/DRAS MATLAB repositories for SRC-033/034 are now pinned and source-inspected; this is not a full-paper review or independent reproduction. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
+- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (49 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial article reviews pending complete methods/results. Author-linked MRAS/DRAS MATLAB repositories for SRC-033/034 are now pinned and source-inspected; this is not a full-paper review or independent reproduction. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
 
 ### Phase 2 · Research foundations
 
@@ -83,6 +83,7 @@ Legend: `[x]` complete; `[~]` drafted or in progress; `[ ]` not started or defer
 7. Reconcile [protocol boundary analysis](../docs/protocol-boundary-analysis.md) into W2/W3/W4 and the thesis. Stress-test key scope, HKDF salt/info, identity/transcript binding, nonce uniqueness under retries/concurrency/recovery, AAD visibility, replay/order state and safe fallback against established protocol references without prematurely selecting primitives.
 8. Pin live service/client versions and configurations where authoritative evidence is available; do not convert documentation-only profiles into deployed evaluations.
 9. Run a fresh repository-wide link, status, terminology and image-reference consistency audit.
+10. Review the newly registered sanitization and animated-carrier comparators SRC-046–SRC-049 at full-text/source-code level where available; keep abstract-only and README-derived evidence explicitly partial, and distinguish one GIF's internal frames from separate image carriers and message sets.
 
 A comparison may show that image carriage adds no defensible benefit. That is a valid result. Do not preserve a preferred route by weakening baselines or inventing platform behaviour.
 
