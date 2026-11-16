@@ -45,7 +45,6 @@
     "Carrier non-reuse is not entropy, randomness, unpredictability or anonymity",
     "Endpoint cryptographic validation remains authoritative; train is standalone and untrusted",
     "Preserve archive history and reasoned dissent",
-    "No ZIP/archive workflow",
     "No unsupported security or review claims"
   ],
   "last_verified": {
