@@ -320,6 +320,28 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** A complete messaging lifecycle, contact discovery, platform publication privacy, image-carriage concealment or broader network anonymity. Its stated OMR threat model protects recipient-message linkage; the conference paper defers correctness/integrity against malicious detectors to the full version.
 - **Review state:** Full USENIX paper inspected, including system summary, OMR threat model, construction, benchmark methodology, performance trade-offs and scope statements. Formal details referenced as deferred to the full version are not treated as independently checked here.
 
+### SRC-030 · Group Oblivious Message Retrieval (GOMR)
+
+- **Source:** Liu, Z., Tromer, E. and Wang, Y. (2024), *Group Oblivious Message Retrieval*, IEEE Symposium on Security and Privacy 2024, pp. 4367–4385. DOI: 10.1109/SP54263.2024.00115.
+- **Publisher/status:** Peer-reviewed IEEE S&P 2024 paper; IACR-hosted full text inspected.
+- **Link:** https://doi.org/10.1109/SP54263.2024.00115
+- **Full text:** https://eprint.iacr.org/2023/534.pdf
+- **Relevant to:** Thesis §§5 and 8.4; W1 RQ7; W2 recipient/discovery observer model; W3 discovery/retrieval alternatives; W4 E9.
+- **Supports:** Formal oblivious retrieval for ad-hoc and fixed recipient groups, extending single-recipient OMR. It defines group privacy, detection-key unlinkability and DoS-resistance variants, and evaluates FHE/lattice-based constructions. It demonstrates that group delivery and recipient retrieval privacy are established, technically developed areas.
+- **Does not establish:** Application payload encryption, authenticated contact/key discovery, privacy-preserving board posting, image-carrier processing, platform transformation or a complete endpoint messaging protocol. The paper distinguishes its privacy adversary from the assumptions used for some integrity/DoS properties.
+- **Review state:** Full paper inspected, including model, threat definitions, group constructions, lower bound, DoS analysis, benchmarks and discussion of private retrieval, multi-recipient encryption and MLS. No implementation or benchmark was reproduced.
+
+### SRC-031 · Remise: Authorized Anonymous Communication Systems
+
+- **Source:** Ravi, R., Shukla, P. and Vadapalli, A. (2026), *Remise: Authorized Anonymous Communication Systems*, 35th USENIX Security Symposium, pp. 3199–3218.
+- **Publisher/status:** Peer-reviewed USENIX Security 2026 paper; official full text inspected.
+- **Link:** https://www.usenix.org/conference/usenixsecurity26/presentation/ravi-rohan
+- **Full text:** https://www.usenix.org/system/files/usenixsecurity26-ravi-rohan.pdf
+- **Relevant to:** Thesis §§5, 8.4 and 9; W1 RQ7/RQ9; W2 server/network observer assumptions; W3 discovery and authorization boundary; W4 E9.
+- **Supports:** A two-server DORAM-based anonymous communication system with an anonymous bulletin-board mode and an authorized communication-channel mode. It studies hidden access indices, writer-reader relationships, secret-shared authorization tokens, cover traffic and revocable read access. Its model includes a global network adversary observing client-server communications.
+- **Does not establish:** A general image-carriage or social-platform media pipeline, the proposed endpoint identity/message-protection protocol, image metadata minimisation, platform transformation tolerance or human behavioural unlinkability. Privacy requires non-colluding servers; integrity requires both servers to follow the protocol; servers are assumed semi-honest. RemiseCC's read tokens are distributed out of band, and the paper identifies privacy-preserving token distribution as open. A malicious server may drop writes.
+- **Review state:** Full USENIX paper inspected, including system taxonomy, threat model, ideal functionality, DORAM and authorization mechanisms, security claims, evaluation and limitations. No implementation or performance result was reproduced.
+
 The [prior-art comparison](prior-art-comparison.md) synthesises the full-text reviews of SRC-020 and SRC-024–SRC-029 and pressure-tests candidate contributions A/B/C. It is a working synthesis, not a systematic literature review or originality determination.
 
 ## 5. Claim-to-source map
@@ -335,7 +357,7 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 | Key lifecycle | SRC-010–SRC-011 | Recheck current NIST revisions and derive project-specific lifecycle semantics |
 | Image metadata and platform transformations | SRC-012–SRC-014; SRC-021 | Separate semantic metadata from format/codec and forensic fingerprints; test each named route and platform instead of assuming universal stripping |
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
-| Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025; SRC-028; SRC-029 | Compare full-scan, rendezvous, capability, OMR-family variants, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
+| Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025; SRC-028; SRC-029; SRC-030; SRC-031 | Compare full-scan, rendezvous, capability, OMR-family variants, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
 | Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
 | Human social engineering and interpersonal behavioural mimicry | SRC-022; SRC-018–SRC-019 for adjacent traffic/behavioural evidence | Separate qualitative perpetrator accounts, measured traffic features and unverified project-specific behavioural propositions; add recipient/usability studies where needed |
 | Multipart transport reconstruction and parser safety | SRC-009 as a protocol comparator; SRC-023 as an implementation-level resource-exhaustion example | Specify authenticated manifests and reassembly separately from parser resource budgets; do not equate MIME parsing with capsule parsing |
@@ -354,8 +376,8 @@ Priority research gaps:
 6. Multipart manifest design, parser/resource-exhaustion risks and safe reconstruction.
 7. Steganalysis methodology, datasets, detector assumptions and reproducibility.
 8. Comparative research on image-carried protected data versus simpler file and messaging routes.
-9. Privacy-preserving recipient discovery and retrieval, including full-scan, stable locators, capability-style references, OMR/PerfOMR, oblivious signaling, and the cost of decoys or query hiding.
-12. Whole-pipeline covert/dead-drop messaging research and image-generation-based covert channels; distinguish these from image-carried capsules and endpoint-controlled cryptographic messaging.
+9. Privacy-preserving recipient discovery and retrieval, including full-scan, stable locators, capability-style references, OMR/GOMR, oblivious signaling, two-server DORAM, and the cost of decoys or query hiding.
+12. Whole-pipeline covert/dead-drop messaging research, image-generation-based covert channels, group retrieval and authorized anonymous communication; distinguish these from image-carried capsules and endpoint-controlled cryptographic messaging.
 10. Platform-specific image transformations and forensic fingerprints, including the distinction between removable descriptive metadata and technical image-signal traces.
 11. Resource-bounded parsing and reassembly: byte, part, header, nesting, CPU, memory, disk, decompression and lifetime budgets.
 
