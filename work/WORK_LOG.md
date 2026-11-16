@@ -1,4 +1,28 @@
-## 2026-11-17 · Confidence and evidence principle integrated into thesis
+## 2026-11-16 · Confidence model challenged against image-steganography source claims
+
+### Work performed
+
+- Re-ran targeted discovery for complete texts/manuscripts of SRC-033 (MRAS), SRC-034 (DRAS) and SRC-036 (active payload removal), including exact-title/DOI searches, publisher records, ResearchGate full-text listings, author ORCID records and institutional/repository-oriented searches.
+- Publisher-indexed records exposed additional method and evaluation context: MRAS's preprocessing, lattice-based embedding and postprocessing, with extraction-error, PSNR/SSIM and steganalysis metrics; DRAS's RoLoS/CARE design and Q95-to-Q85/Q80/Q75 evaluation claims; SRC-036's attack/filtering plus image-quality optimisation architecture and BOSSbase/BOWS2/QF75 setup.
+- Direct publisher page retrieval continued to return access denied/403. ResearchGate records state that no full text is available and invite author requests. No author manuscript or institutional repository copy was obtained.
+- Added bounded SRC-034 and SRC-036 source-claim examples to `docs/confidence-and-evidence-model.md`, showing how to preserve author attribution, study scope, provenance, missing evidence and non-reproduction status.
+- Connected those examples to thesis §4.1. The examples demonstrate the model's intended use but do not independently validate it.
+
+### Evidence boundaries and findings
+
+- T-001 remains open. SRC-033, SRC-034 and SRC-036 remain partial reviews; no full-text review status was assigned.
+- Author-reported extraction-error improvements remain attributed to the authors and limited to their stated experimental scope. They do not establish authenticity, message-set completeness, endpoint delivery or universal platform robustness.
+- The SRC-036 sanitization model is not evidence that any named platform deploys that model or that all contemporary embedding methods are defeated.
+- No code was executed, no experiment reproduced and no independent audit performed.
+- The confidence model survived this initial documentary challenge as a useful claim-boundary aid, but its originality, usability and privacy cost remain untested.
+
+### Next
+
+Continue seeking full texts for SRC-033/034/036; preserve partial labels if access remains unavailable. Then test the model against protocol delivery semantics, route observer evidence and multi-message reconstruction requirements.
+
+**Theory only · No implementation · Not audited.**
+
+## 2026-11-16 · Confidence and evidence principle integrated into thesis
 
 ### Work performed
 
