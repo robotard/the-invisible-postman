@@ -37,7 +37,7 @@ The identifiers below follow the ten supporting questions in Thesis §1.3 and W1
 | RQ7 · Discovery and collection | How can recipients find and retrieve changing carriers without exposing a stable rendezvous or access pattern? | Train publication/retrieval coordination; compare full-scan, stable locator, short-lived capability and oblivious retrieval families; separate discovery channel; receiving-side decapsulation | W2 §§2, 4–5, 7, 9; W3 §§2.4.1, 3.6, 4; W4 E6, E9; SRC-017, SRC-020, SRC-024–SRC-032; [observer/property matrix](observer-property-matrix.md); [Echomix comparator](echomix-katzenpost-comparator.md) |
 | RQ8 · Human behaviour | How do routines, timing, language, platform habits and social-engineering probes create linkability? | Treat human interaction as a cross-cutting behavioural side channel; use bounded qualitative evidence while keeping unmeasured project-specific patterns as open questions or provisional threat propositions; minimise unnecessary exposure without relying on unsafe user rituals | W2 §§2, 5, 7; W3 §§2.4.1, 3.6; W4 E6, E9; SRC-022 |
 | RQ9 · Lifecycle and recovery | What can expiry, revocation, key rotation and recovery achieve, and what assumptions do they introduce? | Local lifecycle state; explicit limits on future acceptance; recovery remains separate and optional | W2 §§3–4, 6–8; W3 §§3.8–3.9; W4 E4, E7–E8 |
-| RQ10 · Evaluation | What evidence would support, weaken or falsify the architectural propositions? | Threat-to-component mapping; explicit claim status; falsifiable evaluation plan and evidence maturity | W4 §§2–8; this traceability register |
+| RQ10 · Evaluation | What evidence is needed to assess the stated architectural objectives and route requirements? | Threat-to-component mapping; explicit claim status; falsifiable evaluation plan and evidence maturity | W4 §§2–8; this traceability register |
 
 The [Echomix comparator](echomix-katzenpost-comparator.md) adds an integrated messaging baseline covering global/active observers, traffic coupling, capability-derived discovery, asynchronous storage, reliability signalling and colluding roles. The remaining image-platform question is whether carrier transformations and platform/account observations produce distinct, measurable effects under a common endpoint-message comparison.
 
@@ -81,6 +81,8 @@ The current [observer/property matrix](observer-property-matrix.md) compares the
 | Coordinator and transport | Route and coordinate delivery | Permit intermediary assistance without granting cryptographic authority | E1, E9 |
 | Lifecycle and local state | Manage replay, expiry and key changes | Give lifecycle claims precise operational meaning | E4, E7 |
 | Optional recovery | Support explicitly authorised recovery if justified | Explore recovery without making it a mandatory trust dependency | E1, E8 |
+
+The image-carriage research boundary is mapped to SRC-033–SRC-037: MRAS, DRAS, practical social-network robustness comparisons, active payload-removal research and the image-steganography/steganalysis survey. These sources constrain claims about carrier robustness and concealment. Evaluation must separately trace extraction reliability, detectability, endpoint authenticity/integrity, discovery privacy and observer leakage. See the [route comparison framework](route-comparison-framework.md).
 
 ## 5. Evidence and maturity
 
@@ -157,7 +159,7 @@ A response is not automatically a resolution. A contribution may be closed only 
 
 Review should be able to challenge:
 
-- the central proposition, scope and research contribution;
+- the central research question, architectural objectives, scope and intended contribution;
 - threat assumptions, attacker capabilities and trust boundaries;
 - identity verification, key binding and protocol choices;
 - the distinct value of image carriers and optional concealment;
@@ -198,6 +200,6 @@ The research currently supports a minimal, endpoint-controlled architecture with
 
 It does not yet justify a complete protocol, mandatory threshold recovery, a particular deployment topology or claims of concealment robustness. Recipient discovery, route metadata and the practical value of transport-level unlinkability remain open research questions. The initial source base now includes a formal oblivious-retrieval comparator, a media-forensics survey, qualitative social-engineering evidence and a concrete multipart-parser resource-exhaustion case; none selects a mechanism or supplies project-specific validation.
 
-Further complexity remains conditional on demonstrated value. External criticism may strengthen, narrow, redirect or displace the current proposition; the research record should preserve the reasoning whichever outcome follows.
+Further complexity remains conditional on demonstrated value. External criticism may strengthen, narrow, redirect or displace the current research direction; the research record should preserve the reasoning whichever outcome follows.
 
 **Theory only · No implementation · Not audited.**
