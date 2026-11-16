@@ -41,6 +41,14 @@ The exact status string **Theory only · No implementation · Not audited.** is 
 
 The status label must remain accurate wherever project maturity is reported. Its presence must not be interpreted as a restriction on the work that may be researched or planned.
 
+## Temporary work-area boundary
+
+All operational continuity and internal lookup machinery lives under `/work/`. It is deliberately agnostic of the thesis and research architecture and is disposable at full thesis release. Removing it must not alter thesis content, source citations, research conclusions, supporting research or enduring references.
+
+Internal concept keys (`C-###`) and task keys (`T-###`) exist only to shorten our own lookup and continuation. They are not thesis identifiers, must not be inserted into thesis/research prose, and never replace source IDs (`SRC-###`), citations, section references or figure references. The registries point inward to enduring research locations; the thesis and substantive research documents remain authoritative.
+
+The task registry records temporary work items and their lifecycle. A task is extinguished when its substantive result is reconciled into the thesis and supporting research, evidence limits are recorded, and no further action remains. IDs are not recycled. At release, verify no enduring file depends on `/work/`, then remove the directory.
+
 ## Roadmap
 
 Work units produce independently useful outputs. Progress belongs in `PROJECT_STATE.md`; dated actions and verification belong in `WORK_LOG.md`.
