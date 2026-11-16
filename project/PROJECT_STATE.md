@@ -65,12 +65,12 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 ## Next session: exact starting point
 
 1. Apply the Continue/resume contract above and refresh the live digests and working records.
-2. Extend the lifecycle/event/observer ledger using SRC-043–SRC-045: distinguish endpoint fragment-set membership, redundant carrier events, independent messages, conversation/session continuity, retries and cross-route copies; add source-specific collection-level detection assumptions.
-3. Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until methods/results are inspected.
-4. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
-5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test the obligations against Signal, MLS and HPKE references without premature selection.
-6. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis.
-7. Complete exact-status, terminology, image-reference and illustration-placeholder consistency audits. The 29-file relative-link audit passes; no ZIP/archive-generation instructions were found. W4 heading hierarchy and route-framework subsection numbering have been normalised.
+2. Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until full methods/results and limitations are inspected.
+3. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
+4. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test obligations against Signal, MLS and HPKE references without prematurely selecting primitives.
+5. Reconcile any new route findings into W1–W4, the contribution assessment and integrated thesis.
+6. Run fresh repository-wide relative-link, ZIP/archive-instruction, exact-status, terminology, illustration-placeholder and image-reference audits. A targeted relative-link audit of W1–W4 and the route-comparison framework currently passes.
+
 
 ## Document-boundary rule
 
