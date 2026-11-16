@@ -36,6 +36,7 @@ The exact status string **Theory only · No implementation · Not audited.** is 
 - **Thesis and research-supporting documents:** hold the substantive research argument, technical principles, evidence, contribution assessment, uncertainty and limitations.
 - **Operational documents:** hold concise verified status, work priorities, dependencies, blockers, paths and next actions. Link to research documents instead of duplicating thesis exposition.
 - **Session digests:** encode the same operational state as structured handover data, not as additional thesis prose.
+- **ChatGPT Project Instructions:** remain a thin operating layer for resumption, execution and verification. They follow the live GitHub records and must not duplicate or override thesis research rules. The user-facing Project Instructions are external to this repository; this workplan records their intended boundary, not a claim that ChatGPT settings were changed here.
 - **Assistant working notes:** preserve this separation and mention the status only when relevant.
 
 The status label must remain accurate wherever project maturity is reported. Its presence must not be interpreted as a restriction on the work that may be researched or planned.
@@ -54,7 +55,7 @@ Work units produce independently useful outputs. Progress belongs in `PROJECT_ST
 
 - [~] **W1 Research framing:** drafted; final thesis alignment and claim-level source reconciliation remain.
 - [~] **W2 Threat model:** drafted; final alignment of assets, observers, capabilities, assumptions and goals remains.
-- [~] **W3 Architecture:** drafted; check section numbering, terminology, traceability and protocol boundaries.
+- [~] **W3 Architecture:** drafted; protocol boundary obligations are now documented separately and linked; final alignment of terminology, traceability and state semantics remains.
 - [~] **W4 Risks and evaluation:** drafted; align route-specific failure modes, evidence and acceptance criteria as comparisons mature.
 
 ### Phase 3 · Thesis and traceability
@@ -78,14 +79,14 @@ Legend: `[x]` complete; `[~]` drafted or in progress; `[ ]` not started or defer
 3. Seek accessible full text for the remaining methods/results of SRC-033, SRC-034 and SRC-036; SRC-035 and SRC-037 have been inspected in full. Preserve the source-specific review boundaries in [the source register](../docs/source-register.md).
 4. Recheck W3 numbering and cross-references against [traceability](../docs/traceability.md) after the route-ledger reconciliation; the malformed traceability heading and initial W3 sequence check have been corrected.
 5. Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
-6. Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback at protocol-design level without prematurely choosing primitives.
+6. Reconcile [protocol boundary analysis](../docs/protocol-boundary-analysis.md) into W2/W3/W4 and the thesis. Stress-test key scope, HKDF salt/info, identity/transcript binding, nonce uniqueness under retries/concurrency/recovery, AAD visibility, replay/order state and safe fallback against established protocol references without prematurely selecting primitives.
 7. Run a fresh repository-wide link, status and terminology consistency audit.
 
 A comparison may show that image carriage adds no defensible benefit. That is a valid result. Do not preserve a preferred route by weakening baselines or inventing platform behaviour.
 
 ## Candidate cryptographic direction
 
-X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated as candidate primitives, not treated as a selected or complete protocol. Key confirmation, identity binding, nonce rules, key separation, versioning, error handling, replay and recovery semantics require explicit composition and review.
+X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated as candidate primitives, not treated as a selected or complete protocol. RFC 9180 HPKE is a compositional reference and application-responsibility checklist, not an adopted protocol or a complete messaging design. Key confirmation, identity binding, nonce rules, key separation, versioning, error handling, replay and recovery semantics require explicit composition and review.
 
 Password-derived encryption remains a distinct alternative and part of the design history. Do not silently merge it with the endpoint-controlled identity/key-management direction; retain the rationale for the original choice in the thesis.
 
