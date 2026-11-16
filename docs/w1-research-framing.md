@@ -99,6 +99,9 @@ The distinction between ciphertext fragmentation and threshold secret sharing mu
 - **Steganographic concealment:** An optional attempt to obscure the existence of embedded data. It does not replace encryption or authentication.
 - **Intermediary:** A bot, platform, host, or storage service that may coordinate or transport content but is not trusted with plaintext confidentiality.
 - **Linked capsules:** Multiple pieces that must be validated as belonging to one message set, with explicit identifiers and integrity checks.
+- **Package encapsulation:** The bounded, route-facing framing of an already protected object or fragment capsule for carriage. It is distinct from endpoint authentication and does not make outer fields trustworthy.
+- **Message-set context / manifest:** Authenticated context needed to establish fragment membership, count, order-independent reconstruction and completeness for one logical protected object; exact fields and encoding remain open.
+- **Conversation/session linkage:** Authenticated continuity between distinct logical messages; it is not fragment-set membership and need not be exposed as a stable carrier identifier.
 - **Expiry and revocation:** Policies that may restrict future access or sessions but cannot retrieve data already copied or learned.
 
 > **DEFINITION · Message multiplicity:** A *fragment set* is the pieces needed to reconstruct one logical protected message. A *conversation* links distinct logical messages. A *retry* repeats delivery of the same logical message or protected object. *Redundant carriage* repeats or codes data to tolerate loss. These relationships must not share one ambiguous "multipart" label.
@@ -110,6 +113,11 @@ The distinction between ciphertext fragmentation and threshold secret sharing mu
 > **Prompt for later illustration:** Create a clean, publication-ready conceptual diagram connecting the research questions to endpoint message protection, message/capsule structure, carrier encapsulation, route profiles, discovery/retrieval, observer exposure and evaluation evidence. Show image carriage as a required comparison profile, not a mandatory runtime route; show steganography as an optional image-route sub-layer. Use labelled relationships and clear responsibility boundaries.
 > **Must not imply:** That any route is selected or superior, that the architecture is implemented, or that any security property has been demonstrated.
 
+> **Illustrated diagram placeholder · W1-F03 — Protected-object package and image-carriage boundary**  
+> **Placement:** Beside the message multiplicity definitions, after W1-F02.  
+> **Prompt for later illustration:** Show the conceptual progression from logical message to endpoint-protected object, optional authenticated message-set manifest, fragment capsules, route-specific carrier encapsulation, optional steganographic embedding and one or more image carriers. Show the inverse extraction/decapsulation and endpoint validation path. Use clear visual boundaries for endpoint-authenticated material, untrusted outer framing and optional concealment.  
+> **Must not imply:** That a final wire format has been selected, that outer encapsulation authenticates content, or that steganographic concealment is mandatory.
+>
 > **Illustrated diagram placeholder · W1-F02 — Message, fragment-set and conversation distinctions**
 > **Placement:** Beside §7 Core framing and terminology.
 > **Prompt for later illustration:** Show one logical message represented by one protected object; the same object optionally divided into indexed capsules and carried by multiple image objects; a separate conversation containing several distinct protected messages; and a retry as another delivery event for the same logical message. Use separate visual shapes/labels for message identity, fragment-set membership, conversation continuity, redundancy and carrier identity.
