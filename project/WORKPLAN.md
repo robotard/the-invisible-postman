@@ -49,7 +49,7 @@ Work units produce independently useful outputs. Progress belongs in `PROJECT_ST
 
 - [x] **W0.1 Repository foundation:** authoritative paths, repository baseline, navigation and GitHub-first workflow.
 - [~] **W0.2 Research practice:** core self-review, governance, attribution and contribution documents exist. Routine administration is deferred; external review and ratification remain outstanding.
-- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (42 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 have expanded publisher-indexed partial reviews but remain open pending complete methods/results. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
+- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (45 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 have expanded publisher-indexed partial reviews but remain open pending complete methods/results. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
 
 ### Phase 2 · Research foundations
 
@@ -61,12 +61,12 @@ Work units produce independently useful outputs. Progress belongs in `PROJECT_ST
 ### Phase 3 · Thesis and traceability
 
 - [~] **W6 Integrated thesis:** active. Build a coherent argument across research framing, threat model, architecture, endpoint cryptography, carrier comparison, lifecycle, evaluation and limitations. Keep claims proportional to evidence.
-- [ ] **W7 Traceability:** maintain links among questions, threats, claims, decisions, components, sources and evaluation.
+- [~] **W7 Traceability:** the register and core mappings exist; continue maintaining links among questions, threats, claims, decisions, components, sources and evaluation as new evidence is integrated.
 - [ ] **W5 Review preparation:** defer until a coherent thesis candidate exists. Prepare concise reviewer guidance and response records; do not imply an active reviewer group.
 
 ### Phase 4 · Visual communication and publication
 
-- [ ] **W8 Illustrations:** create contextual, evidence-aligned diagrams only after the argument and route comparison stabilise. Prefer editable SVG and accessible exports.
+- [~] **W8 Illustrations:** text-only illustration prompts and placement/guardrails are now embedded in W1–W4 and indexed in `diagrams/README.md`; create actual contextual, evidence-aligned diagrams only after the argument and route comparison stabilise. Prefer editable SVG and accessible exports.
 - [ ] **W9 Review publication:** prepare an integrated, readable PDF with figures, references, limitations, open decisions and reviewer guidance.
 - [ ] **W10 Repository audit:** verify links, image references, consistency, accessibility, provenance, rendering and exact status statements.
 
@@ -77,12 +77,20 @@ Legend: `[x]` complete; `[~]` drafted or in progress; `[ ]` not started or defer
 1. Refine the initial [route-profile register](../docs/route-comparison-framework.md) into pinned service/client versions and configurations where authoritative evidence is available. Keep literature, protocol-reference, service-documentation and deployed-evaluation profiles distinct.
 2. Expand the documentary comparison into a source-backed lifecycle/event/observer ledger covering transformations, discovery/access patterns, reliability, failure behaviour, expiry, collusion and cost. Mark unknowns and non-comparable properties explicitly.
 3. Seek accessible full text for the remaining methods/results of SRC-033, SRC-034 and SRC-036; SRC-035 and SRC-037 have been inspected in full. Preserve the source-specific review boundaries in [the source register](../docs/source-register.md).
-4. Recheck W3 numbering and cross-references against [traceability](../docs/traceability.md) after the route-ledger reconciliation; the malformed traceability heading and initial W3 sequence check have been corrected.
-5. Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
-6. Reconcile [protocol boundary analysis](../docs/protocol-boundary-analysis.md) into W2/W3/W4 and the thesis. Stress-test key scope, HKDF salt/info, identity/transcript binding, nonce uniqueness under retries/concurrency/recovery, AAD visibility, replay/order state and safe fallback against established protocol references without prematurely selecting primitives.
-7. Run a fresh repository-wide link, status and terminology consistency audit.
+4. Integrate multi-message relationships into the lifecycle/event/observer ledger: fragment-set membership, redundant carriers, independent messages, conversation continuity, retries, cross-route copies, discovery and collection-level steganalysis. Name observer vantage, collection size, time window and dependence assumptions.
+5. Recheck W3 numbering, thesis terminology and cross-references against [traceability](../docs/traceability.md); retain the text-only illustration prompts in W1–W4 and the diagram index, but do not create artwork until the argument stabilises.
+6. Reconcile material findings into the thesis, W1–W4, decision register, source register, prior-art comparison, observer/property matrix and traceability.
+7. Reconcile [protocol boundary analysis](../docs/protocol-boundary-analysis.md) into W2/W3/W4 and the thesis. Stress-test key scope, HKDF salt/info, identity/transcript binding, nonce uniqueness under retries/concurrency/recovery, AAD visibility, replay/order state and safe fallback against established protocol references without prematurely selecting primitives.
+8. Pin live service/client versions and configurations where authoritative evidence is available; do not convert documentation-only profiles into deployed evaluations.
+9. Run a fresh repository-wide link, status, terminology and image-reference consistency audit.
 
 A comparison may show that image carriage adds no defensible benefit. That is a valid result. Do not preserve a preferred route by weakening baselines or inventing platform behaviour.
+
+## Message multiplicity and illustration discipline
+
+The research distinguishes one logical message, its protected object, a fragment set, redundant fragment carriage, independent messages in a batch, conversation/session continuity, retries and cross-route copies. Do not use a generic multipart label for all of them. The conceptual package sequence is endpoint-protected object → authenticated message-set context/manifest where needed → fragment capsules → route-specific carrier encapsulation → optional image steganographic embedding → carrier events → endpoint decapsulation and validation. This is not a selected wire format.
+
+W1–W4 contain text-only illustration placeholders with intended placement, prompts and "must not imply" guardrails. `diagrams/README.md` indexes them. These are not artwork and do not override the existing gate: create genuine visual diagrams only when the argument and evidence are stable; never use ASCII art.
 
 ## Candidate cryptographic direction
 
