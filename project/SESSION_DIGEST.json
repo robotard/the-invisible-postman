@@ -14,7 +14,7 @@
     "docs/route-comparison-framework.md"
   ],
   "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
-  "current": "W1-W4 and integrated thesis remain working drafts. W3 lifecycle is now route-neutral and traceability heading repaired. Source register has 40 entries. Six evidence-bounded starting profiles a documentary comparison matrix and an initial lifecycle/event observer ledger are recorded: Qiao 2023, MRAS 2026, DRAS 2026, Dropbox shared link, Signal protocol reference, and Echomix/Pigeonhole. SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 remain partial. SRC-038-SRC-040 official documentation inspected. No deployed profile is yet pinned or tested.",
+  "current": "W1-W4 and integrated thesis remain working drafts. W3 lifecycle is now route-neutral and traceability heading repaired. Source register has 40 entries. Six evidence-bounded starting profiles, a documentary comparison matrix, and an initial lifecycle/event observer ledger are recorded: Qiao 2023, MRAS 2026, DRAS 2026, Dropbox shared link, Signal protocol reference, and Echomix/Pigeonhole. SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 remain partial. SRC-038-SRC-040 official documentation inspected. No deployed profile is yet pinned or tested.",
   "next": [
     "Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review states until methods/results are inspected.",
     "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
