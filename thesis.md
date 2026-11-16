@@ -107,6 +107,12 @@ The intended contribution is a transparent research architecture that:
 
 The research includes endpoint-controlled key custody and plaintext handling; explicit peer verification; authenticated key establishment; authenticated encryption; sender authentication; versioned message context; envelope and multipart validation; a first-class carriage layer; image carriage as a required route; comparison carriage profiles; optional steganographic concealment; intermediary coordination; metadata minimisation; discovery and collection; expiry, revocation and key rotation; and the possible inclusion of separately governed recovery.
 
+### 3.5 Integrated anonymous-messaging comparators
+
+Echomix/Katzenpost is a particularly important integrated comparator. Its published design combines a global and active adversary model, decoy/application traffic coupling, anonymous service access, capability-derived pseudorandom storage locations, asynchronous messaging, courier/replica separation, reliability and backfill semantics, and role-collusion analysis. This means the intended contribution cannot be framed as a new general integration of endpoint messaging, private discovery, anonymous delivery and lifecycle privacy. Those areas already have substantial integrated prior art.
+
+The remaining route-specific question is narrower: how does a common endpoint-protected message object behave when carried through ordinary image platforms, including resizing, recompression, transcoding, metadata rewriting, moderation, file identifiers, hosting records and account/engagement observations? Echomix is not an ordinary social-image-carriage study, but that difference does not establish originality. The project must compare image carriage with file/attachment, conventional messaging and mixnet-backed messaging under explicit observer capabilities and route-native assumptions. See the [Echomix comparator](docs/echomix-katzenpost-comparator.md), [prior-art comparison](docs/prior-art-comparison.md) and [observer/property matrix](docs/observer-property-matrix.md).
+
 ### 3.4 Non-goals and exclusions
 
 This thesis does not claim a functioning application, complete wire protocol, formal verification, measured steganographic robustness, guaranteed anonymity, elimination of metadata leakage, guaranteed delivery, endpoint-compromise resistance, remote erasure of material already obtained, or a complete recovery design. It does not claim that a unique image is inherently unpredictable, anonymous or unlinkable. It does not claim that removing image metadata removes network or hosting records.
@@ -282,7 +288,7 @@ An adversary may probe those patterns through false delivery notices, urgency cu
 
 ### 8.8 Transport evaluation
 
-A meaningful route comparison should record the observer model, route assumptions, payload capacity, transformations, metadata, publication and retrieval behaviour, timing, ordering, failure modes, user effort and operational dependencies. Tests should include benign and adversarial platform transformations, carrier substitution, locator disclosure, retrieval correlation, delayed or repeated access, observable timing and size patterns, and human-pattern probes where ethically and practically appropriate. A carrier-rotation-only baseline should be distinguished from any future design that adds padding, cover traffic or network mixing, since those mechanisms introduce different costs and assumptions.
+A meaningful route comparison should record the observer model, route assumptions, payload capacity, transformations, metadata, publication and retrieval behaviour, timing, ordering, failure modes, user effort and operational dependencies. The comparison must include Echomix/Katzenpost as an integrated messaging baseline, not merely a network transport. Record its global/active observer assumptions, traffic coupling, capability-derived discovery, courier/replica responsibilities, reliability signalling, human-routine leakage and operational costs. Do not compare only the presence or absence of named components. Tests should include benign and adversarial platform transformations, carrier substitution, locator disclosure, retrieval correlation, delayed or repeated access, observable timing and size patterns, and human-pattern probes where ethically and practically appropriate. A carrier-rotation-only baseline should be distinguished from any future design that adds padding, cover traffic or network mixing, since those mechanisms introduce different costs and assumptions.
 
 **Illustration pointer (planned):** A transport-method comparison figure should show the same already protected object passing through distinct route profiles, with route-specific packaging, publication, discovery, collection and extraction. It should make clear that endpoint cryptographic validation remains common to every route.
 
@@ -387,7 +393,8 @@ The following sources are cited in the current working text. This list is provis
 - Steinmetz, K. F., Pimentel, A., & Goe, W. R. (2021). Performing social engineering: A qualitative study of information security deceptions. *Computers in Human Behavior, 124*, Article 106930. https://doi.org/10.1016/j.chb.2021.106930
 - Tor Project. (n.d.). *Tor Rendezvous Specification – Version 3*. https://spec.torproject.org/rend-spec/rendezvous-protocol.html
 - Liu, Z., Tromer, E., & Wang, Y. (2024). Group Oblivious Message Retrieval. In *Proceedings of the 45th IEEE Symposium on Security and Privacy* (pp. 4367–4385). https://doi.org/10.1109/SP54263.2024.00115
-- Ravi, R., Shukla, P., & Vadapalli, A. (2026). Remise: Authorized Anonymous Communication Systems. In *Proceedings of the 35th USENIX Security Symposium* (pp. 3199–3218). https://www.usenix.org/conference/usenixsecurity26/presentation/ravi-rohan
+- Ravi, R., Shukla, P., & Vadapalli, A. (2026). Remise: Authorized Anonymous Communication Systems.
+- Infeld, E. J., Stainton, D., Ryge, L., & Threebit Hacker. (2025). *Echomix: a Strong Anonymity System with Messaging* (arXiv:2501.02933v2; paper dated October 2024). https://arxiv.org/abs/2501.02933 In *Proceedings of the 35th USENIX Security Symposium* (pp. 3199–3218). https://www.usenix.org/conference/usenixsecurity26/presentation/ravi-rohan
 - Liu, Z., & Tromer, E. (2022). Oblivious Message Retrieval. In *Advances in Cryptology – CRYPTO 2022*, Lecture Notes in Computer Science 13507, 751–781. https://doi.org/10.1007/978-3-031-15802-5_26
 - Go project. (2023). *net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption* (CVE-2023-24536), issue #59153. https://github.com/golang/go/issues/59153
 
@@ -420,7 +427,7 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/self-review-register.md` — author-identified challenges and evidence needs.
 - `docs/traceability.md` — links between research questions, threats, components and evaluation.
 - `docs/source-register.md` — authoritative technical sources, protocol comparators, metadata standards and claim-to-source gaps.
-- `docs/prior-art-comparison.md` and `docs/observer-property-matrix.md` — current prior-art synthesis and lifecycle observer/property comparison.
+- `docs/prior-art-comparison.md`, `docs/observer-property-matrix.md` and `docs/echomix-katzenpost-comparator.md` — current prior-art synthesis and integrated messaging comparator.
 - `project/WORKPLAN.md` and `project/PROJECT_STATE.md` — roadmap and verified checkpoint.
 
 ## Appendix D. Illustration guide
