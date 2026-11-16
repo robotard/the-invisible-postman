@@ -187,7 +187,7 @@ This ledger is a documentary baseline, not a claim that every route has been ful
 
 The image profile must distinguish a single protected message in one carrier, a fragmented protected object across carriers, redundant fragment carriage, multiple independent messages, conversation/session continuity, retransmission and cross-route copies. These are not interchangeable meanings of "multipart". See the dedicated [multi-message linkage and steganographic carriage analysis](multi-message-linkage-and-steganographic-carriage.md).
 
-SRC-043 is direct prior art for fragmented covert communication across many images and social platforms: it encodes fragment numbers and content, redundantly embeds fragments across multiple images, and reconstructs after collecting enough carriers. This rules out generic novelty claims for multi-image fragmentation, redundant image-carried fragments or subset reconstruction. SRC-044 shows that steganalysis can pool evidence across a batch; single-image detector scores cannot establish collection-level stealth. The quantitative findings of SRC-044 are bounded to its model and evaluated embedding method.
+SRC-043 is direct prior art for fragmented covert communication across many images: it embeds fragment numbers and content in multiple images, redundantly carries each fragment and reconstructs by majority voting over copies. Its carrier mechanism is robust DFT/DCT watermarking; the authors explicitly distinguish watermarking from steganography. This rules out generic novelty claims for multi-image fragmentation, redundant image-carried fragments or subset reconstruction, but does not establish stealth for ordinary steganographic methods. SRC-044 studies pooled detection across a fixed batch. SRC-045 proves an asymptotic square-root capacity bound under explicit assumptions, including equal cover capacities, shift-hypothesis detector response, independent per-cover errors and known batch size. Neither source supplies a universal quantitative prediction for current platform images, dependent collections or sequential acquisition.
 
 For every image-carriage evaluation, record:
 - Whether one carrier contains a complete protected object, one fragment, multiple fragments or redundant coded data.
@@ -238,7 +238,7 @@ Echomix substantially narrows any broad claim to a newly integrated privacy-awar
 
 This is a narrower and more demanding question. It may show that image carriage is useful for a particular deployment constraint, that it introduces avoidable fragility, or that a simpler route is preferable. All three outcomes are valid research results.
 
-## 8.1 Image-carriage evidence constraints from SRC-033–SRC-037 and SRC-043–SRC-044
+## 8.1 Image-carriage evidence constraints from SRC-033–SRC-037 and SRC-043–SRC-045
 
 The reviewed literature makes the image route comparison more specific, but does not establish that a particular platform currently applies any one transformation to every upload.
 
