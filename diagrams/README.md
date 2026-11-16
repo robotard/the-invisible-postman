@@ -28,6 +28,10 @@ These figures should be designed only after the manuscript, terminology and supp
 | 11 · Lifecycle, revocation and recovery boundaries | Section 9 | Session/key lifecycle, device loss, expiry, revocation and optional recovery | Show what cannot be recalled after plaintext or keys are obtained |
 | 12 · Claim-to-evidence traceability | Section 10 | Research questions, objectives, threats, components, tests and evidence maturity | Separate proposals, tested observations and independently reviewed claims |
 
+## Research dependency
+
+The current [observer/property matrix](../docs/observer-property-matrix.md) and [prior-art comparison](../docs/prior-art-comparison.md) are upstream research dependencies for Figures 05, 08 and 10. They expose unresolved differences between recipient privacy, anonymous access, carrier transformation and human/network observation. Do not draw a single generic “privacy” boundary or imply that OMR, DORAM, cover traffic or unique carriers are interchangeable.
+
 ## Current gating decision · 2026-11-15
 
 The hard contribution and bias checkpoint is recorded in [the thesis contribution assessment](../docs/thesis-contribution-and-bias-assessment.md). The central contribution is not yet established; the leading emergent proposition concerns lifecycle-wide delivery privacy across endpoint authority, replaceable carriage, recipient discovery/retrieval and cross-layer leakage. Existing prior art on dead-drop pipelines, image steganography and oblivious retrieval must be compared in full before new figures are drawn.
