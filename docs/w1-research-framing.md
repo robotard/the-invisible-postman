@@ -29,7 +29,7 @@ This is an architectural research question. It does not assume that the proposed
 7. **Discovery and collection:** How can a recipient discover and collect a changing carrier without creating a stable rendezvous point or access pattern that defeats the intended privacy benefit?
 8. **Human behaviour:** How can routines, timing, language, platform habits and social-engineering probes create linkability even when carriers and locations vary?
 9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
-10. **Evaluation:** What observations would support, weaken or falsify the architectural propositions, and what evidence would be required before stronger claims could be made?
+10. **Evaluation:** What evidence is needed to assess the stated architectural objectives, and what would show that a design choice is unsuitable?
 
 ## 4. Intended contribution
 
