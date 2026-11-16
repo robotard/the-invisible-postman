@@ -83,7 +83,7 @@ Legend: `[x]` complete; `[~]` drafted or in progress; `[ ]` not started or defer
 7. Reconcile [protocol boundary analysis](../docs/protocol-boundary-analysis.md) into W2/W3/W4 and the thesis. Stress-test key scope, HKDF salt/info, identity/transcript binding, nonce uniqueness under retries/concurrency/recovery, AAD visibility, replay/order state and safe fallback against established protocol references without prematurely selecting primitives.
 8. Pin live service/client versions and configurations where authoritative evidence is available; do not convert documentation-only profiles into deployed evaluations.
 9. Run a fresh repository-wide link, status, terminology and image-reference consistency audit.
-10. Review the newly registered sanitization and animated-carrier comparators SRC-046–SRC-049 at full-text/source-code level where available; keep abstract-only and README-derived evidence explicitly partial, and distinguish one GIF's internal frames from separate image carriers and message sets.
+10. Review the newly registered sanitization and animated-carrier comparators SRC-046–SRC-048 at full-text level where available; review SRC-049's paper/formal security argument and complete results. SRC-049 README and selected core/sender/receiver source files have been inspected but not executed or audited. Keep abstract-only and code-derived evidence explicitly partial, and distinguish one GIF's internal frames from separate image carriers and message sets.
 
 A comparison may show that image carriage adds no defensible benefit. That is a valid result. Do not preserve a preferred route by weakening baselines or inventing platform behaviour.
 
