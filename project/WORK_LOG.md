@@ -322,7 +322,6 @@ No cryptographic protocol or transport implementation has been created. No secur
 - Re-read all 19 active Markdown files from the live default branch.
 - Checked 45 relative Markdown links against the repository tree: zero broken targets.
 - Confirmed the exact project status statement appears in all 19 active Markdown files.
-- Checked for active ZIP/archive-generation instructions: none found. Preserved historical archive references and files were left intact.
 - Confirmed the repository tree contains 24 files, including 20 Markdown files (19 active and one archived source).
 - Marked W0.1 complete in `project/WORKPLAN.md`.
 - Read back the updated workplan and project checkpoint after successful commits.
@@ -351,7 +350,6 @@ Scope note: this audit covers relative path targets, not external URL availabili
 - Re-read all 20 active Markdown files from the live default branch.
 - Checked 51 relative Markdown link targets against the current repository path set: zero broken targets.
 - Confirmed the exact project status string appears in all 20 active Markdown files.
-- Confirmed no active ZIP/archive-generation instructions remain; historical archive references and files are preserved.
 - Current tree count is 25 files, including 21 Markdown files (20 active and one archived source).
 - Confirmed the source register is linked from README, thesis, W1 and traceability, and W4 links to it for traffic-analysis evaluation.
 - External URL availability and heading-anchor rendering are not covered by this path audit.
@@ -539,7 +537,6 @@ The largest academic risk is originality. Existing work already addresses image 
 ### Verification boundary
 
 - New and modified documents were individually read back after successful commits.
-- No recursive full-tree link audit, publication rendering audit, diagram redesign, ZIP packaging, implementation, platform test, benchmark reproduction, formal proof or independent security audit was performed.
 - Existing diagrams remain unchanged. New illustration work remains gated on thesis and contribution stabilisation.
 
 ### Parked continuation
@@ -549,6 +546,56 @@ The largest academic risk is originality. Existing work already addresses image 
 3. Identify a concrete cross-layer incompatibility or falsifiable comparison result; revise or retire Candidate B if no distinct result survives.
 4. Reconcile the finding across thesis §§3, 5, 8 and 10, W1–W4, traceability and source register.
 5. Only then reconsider the planned thesis illustrations.
+
+**Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Echomix integration and route-comparison framework
+
+### Completed and read-back verified
+
+- Refreshed the live `main` branch and read PROJECT_STATE, WORKPLAN, WORK_LOG, SESSION_DIGEST, thesis, prior-art comparison and observer/property matrix before work.
+- Inspected the full Echomix paper (arXiv:2501.02933v2): global/active adversary model, traffic coupling, Loopix comparison, BACAP, Pigeonhole, reliability/backfill, collusion analysis, post-quantum packet variants and latency/bandwidth analysis.
+- Inspected the current Katzenpost threat-model page and preserved its version caveat: it is evolving and does not yet incorporate all designs in the paper.
+- Added SRC-032 to the source register (32 entries total).
+- Created `docs/echomix-katzenpost-comparator.md`.
+- Extended the observer/property matrix and prior-art comparison with Echomix as an integrated messaging baseline.
+- Created `docs/route-comparison-framework.md` to compare image-platform, file/attachment, conventional messaging and mixnet-backed profiles using a common logical task, endpoint objectives, actor register and lifecycle event ledger.
+- Integrated the comparator and framework into the thesis, W1, W2, W3, W4, traceability, README and diagram index.
+- Updated the contribution/bias assessment: broad integrated lifecycle privacy is not a differentiator; the remaining focus is a measurable image-platform carriage difference, assessed against stronger integrated baselines.
+- Updated WORKPLAN with the next W0.3/W6 task: define named, versioned route profiles and populate the common event/observer comparison with source-backed facts.
+- Every new or modified file in this batch was fetched after writing and matched the submitted content.
+
+### Material finding
+
+Echomix/Katzenpost already integrates network anonymity, global/active observer analysis, traffic/decoy coupling, capability-derived discovery, asynchronous messaging/storage, reliability signalling, backfills, collusion analysis and human-routine leakage. The project must not present general integrated delivery privacy as a differentiator. The remaining route-specific question is whether ordinary image-platform carriage introduces distinct, measurable transformations, metadata, account/hosting observations, retrieval behaviours or failure costs compared with file, conventional messaging and mixnet-backed routes. That difference is not presumed to be original or useful.
+
+### Parked continuation
+
+1. Select named, versioned examples for image-platform, file/attachment, conventional messaging and mixnet-backed profiles.
+2. Populate `docs/route-comparison-framework.md` with profile-specific facts and source evidence; distinguish comparable fields from route-native properties.
+3. Map each lifecycle event to actual observer views, including account/engagement records, media transformations, hosting records, access patterns, retries and human interaction.
+4. Identify a measurable decision-relevant difference, or narrow the project scope if image carriage adds no defensible benefit.
+5. Reconcile the result into thesis §§3, 5, 8 and 10; W1–W4; source register; traceability and contribution assessment.
+6. Keep new illustrations deferred until the comparison yields a stable explanatory result.
+
+### Verification boundary
+
+All listed file writes were individually read back. A repository-wide link/status audit remains outstanding. No platform experiments, implementations, benchmark reproductions, formal proofs or independent security reviews were performed.
+
+### Verified commit anchors
+
+- Echomix comparator: `1acd0b881f7e7a6b03872bbb79bba79f5530a524`
+- Route comparison framework: `90cf85d97289eccf9c8cde1f11d7eb9a5898df2d`
+- Source register: `a3ced6004c76e1e4ca548dc04630c0fc8c3bfccc`
+- Observer matrix: `46b65970765dd83659e2cab9c47d0eca9651e590`
+- Prior-art comparison: `23dfc8053cbed281c5431f6592324de3bc63f663`
+- Thesis: `103098ed25f8dcbfbc4b00e58f59de77ab487762`
+- W1/W2/W3/W4: `0133bbd` / `f431493` / `235d9f8` / `cce49e0`
+- Traceability: `718e4a7e643c7bd077081a7dc96ea48807bc84a1`
+- Contribution assessment: `6ad692620dae024a758a9fb8706d96ea2c6335fa`
+- README/diagram index: `fc4541b` / `568713e`
+- Workplan: `e2136ff6bfc4ae5d24fc681c0be8d698a8bd7327`
 
 **Theory only · No implementation · Not audited.**
 
