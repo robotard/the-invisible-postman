@@ -1,124 +1,46 @@
 {
-  "schema": "tip.session-digest.v1",
+  "schema": "tip.session-digest.v2",
   "checkpoint": "2026-11-16",
   "branch": "main",
+  "head": "3e00192380c2f34a3be4685eb14bd5add961f69b",
   "status": "Theory only · No implementation · Not audited.",
   "read_first": [
     "project/SESSION_DIGEST.json",
     "project/PROJECT_STATE.md",
     "project/WORKPLAN.md",
     "project/WORK_LOG.md",
-    "thesis.md"
+    "thesis.md",
+    "docs/source-register.md",
+    "docs/route-comparison-framework.md"
   ],
-  "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
-  "priority": [
-    "Select named, versioned route profiles and populate source-backed hop-by-hop observer comparisons",
-    "Review exact W3 section numbering and terminology against traceability",
-    "Complete full-text review of SRC-033–SRC-037 and update source review states",
-    "Evaluate nonce, salt, key-scope, identity/context binding, replay and fallback requirements at protocol-design level"
+  "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
+  "current": "W1–W4 and the integrated thesis are working drafts. Transport independence and optional orchestration are reconciled. Source register: 37 entries. Common route/event/observer framework exists. No named, evidence-populated route profiles yet.",
+  "next": [
+    "Review SRC-033–SRC-037 in full text; update source states and evidence limits.",
+    "Select evidenced, named/versioned profiles: image platform, file/attachment, conventional E2E messaging, Echomix/Katzenpost. Mark unsupported details unknown.",
+    "Populate route events and observer views: transformations, metadata, discovery/access patterns, reliability, failures and costs.",
+    "Check W3 numbering and traceability; reconcile findings into thesis, W1–W4, decisions and source register.",
+    "Analyse nonce, salt, key scope, identity/context binding, replay and safe fallback without premature protocol selection.",
+    "Run fresh relative-link, status-string and cross-document consistency audits."
   ],
   "defer": [
-    "routine author review unless blocking or materially corrective",
-    "external peer review until a workable thesis candidate exists",
-    "new illustrations until the comparative result is stable",
-    "implementation"
-  ],
-  "next": [
-    "Select named, versioned image-platform, file/attachment, conventional E2E messaging and Echomix/Katzenpost route profiles",
-    "Populate route framework with source-backed event-by-observer facts and distinguish non-comparable semantics",
-    "Check W3 numbering and all traceability cross-references",
-    "Complete full-text review of SRC-033–SRC-037",
-    "Run repository-wide relative-link, status-string and terminology audit",
-    "Continue thesis construction; stabilise diagrams only after route comparisons"
-  ],
-  "open": [
-    "full-text review and source-status verification for SRC-033–SRC-037",
-    "named and versioned route-profile selection",
-    "image-platform transformation and metadata behaviour",
-    "account, engagement and hosting observations",
-    "discovery and access-pattern privacy under common observer views",
-    "reliability signalling, retries, backfills and residual leakage",
-    "human routine correlation and usable-security evidence",
-    "multipart parser/resource-exhaustion limits",
-    "whether image carriage provides a measurable, decision-relevant benefit",
-    "role-specific service contracts and optional orchestration",
-    "hop-by-hop observer views and multi-hop correlation",
-    "protected-object invariance and any authenticated route conversion",
-    "safe fallback/retry semantics and route-selection policy",
-    "named/versioned route profiles and source-backed route observations",
-    "W3 section numbering and cross-reference consistency"
+    "New diagrams until comparison findings stabilise",
+    "Peer-review package until a coherent thesis candidate exists",
+    "Implementation and security claims unsupported by evidence"
   ],
   "invariants": [
-    "Image carriage remains a required research route; transport is not the whole thesis",
-    "Carrier non-reuse is not entropy, randomness, unpredictability or anonymity",
-    "Endpoint cryptographic validation remains authoritative; train is standalone and untrusted",
-    "Preserve archive history and reasoned dissent",
-    "No unsupported security or review claims"
+    "Image carriage is a required research comparison, not a mandatory runtime route.",
+    "Orchestration is optional; model service roles separately.",
+    "Protected object remains invariant unless explicit authenticated conversion is defined.",
+    "No anonymity/security inference from carrier uniqueness, concealment or extra hops.",
+    "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
-  "last_verified": {
-    "active_markdown": 25,
-    "relative_links_checked": null,
-    "broken_links": null,
-    "status_string_present": null,
-    "terminology_scan": "GitHub repository code search returned no matches for the retired terminology or disallowed packaging reference.",
-    "tree_files": 31,
-    "tree_markdown": 26,
-    "archived_markdown": 1
+  "verified": {
+    "project/PROJECT_STATE.md": "condensed current checkpoint; exact read-back matched",
+    "project/WORKPLAN.md": "simplified stable roadmap; exact read-back matched",
+    "project/WORK_LOG.md": "dated compression entry appended; exact read-back matched",
+    "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
+    "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f"
   },
-  "verification_scope": "Recursive main-branch tree verified (31 files, 26 Markdown, not truncated). All 25 active Markdown files were fetched. A total of 117 relative Markdown links were checked with zero missing targets. All active Markdown files contain the exact project status string. No forbidden workflow or terminology references were found in active Markdown. Every new or modified file in the 2026-11-16 batch was individually fetched after writing and matched the submitted content. External URL availability and heading-anchor rendering were not audited. No platform experiments, implementation tests, benchmark reproductions, formal proofs or independent security reviews were performed.",
-  "open_research_threads": [
-    "named and versioned route-profile selection",
-    "image-platform transformation and metadata behaviour",
-    "account, engagement and hosting observations",
-    "discovery and access-pattern privacy under common observer views",
-    "reliability signalling, retries, backfills and residual leakage",
-    "human routine correlation and usable-security evidence",
-    "multipart parser/resource-exhaustion limits",
-    "whether image carriage provides a measurable, decision-relevant benefit"
-  ],
-  "last_verified_batch": "2026-11-16: added SRC-033–SRC-037; extended route comparison and observer matrix; replaced prior-art proposition framing with an open comparative research question; integrated source boundaries into thesis, W1, W4, traceability and contribution assessment; corrected Remise/Echomix bibliography and thesis section numbering; updated README; reconciled PROJECT_STATE, WORKPLAN and WORK_LOG. Latest working documents were read back; digest refreshed last.",
-  "audit_boundary": "Recursive tree count refreshed. GitHub code search returned no matches for the retired terminology or disallowed packaging reference. A full relative-link and exact-status audit has not been rerun after this batch's added cross-links. Every modified file in the batch was individually fetched after writing and matched. No platform experiments, extraction tests, steganalysis benchmarks, implementation tests, formal proofs or independent security reviews were performed.",
-  "last_commits": {
-    "echomix_comparator": "1acd0b881f7e7a6b03872bbb79bba79f5530a524",
-    "route_comparison_framework": "90cf85d97289eccf9c8cde1f11d7eb9a5898df2d",
-    "source_register": "eee73405f0b6aeda1e4ff257d29fa83319d5dc6c",
-    "observer_matrix": "10be51a24f43a886ba4cf1c8e23c5210bd3f4e9b",
-    "prior_art_comparison": "c8433e7acb0453ca5a7c60d11d8c3d7b3529218c",
-    "thesis": "876594961b99096324312bd73c95e576a9bdc3ba",
-    "w1": "a324af3d85a80dbb0e55a9449245251385a0f52f",
-    "w2": "fd68fb356d0b66b7259e1e6e95b560d55918282f",
-    "w3": "6e73e6f7464dfebab4532f1bf152985824623f0c",
-    "w4": "54755b60b17736786a0cc405a49b9b722c341475",
-    "traceability": "a725e16644cf44b449a6f0281c1a3388d7ca7944",
-    "contribution_assessment": "7ba7d906eafb65d05bf5d2f98a45fad8554759d2",
-    "readme": "6a8ad812b18d2e07c7dbac618a0fcebbfb574e23",
-    "diagram_index": "568713e83909dc08045216ca0da42f0ad44e70d7",
-    "project_state": "8f1055d41dda89709e6e0a6dd97d72fa3ba82347",
-    "workplan": "fbdadca21c86d323e289f0efd0adb79b5fd1023a",
-    "work_log": "1a2b88634ef05f62cc008d72bc3a44db4f42d81c",
-    "route_framework": "a6d5a7b47f2b0fc4e0b101cad75a48c30ec5cffa"
-  },
-  "session_completion_rule": {
-    "required_working_documents": [
-      "project/PROJECT_STATE.md",
-      "project/WORKPLAN.md",
-      "project/WORK_LOG.md"
-    ],
-    "rule": "Every work session must use and reconcile all three working documents. At session close, either record the work as complete with evidence and verification, or park it explicitly for the next session. Never leave work half-described or rely on chat history alone.",
-    "completion_record": [
-      "what was completed and the evidence/read-back that supports completion",
-      "what remains open, uncertain, blocked or deferred",
-      "the exact next action and relevant repository paths",
-      "dependencies, decision points and any constraints that must be preserved",
-      "commit references for changes actually deployed and verified"
-    ],
-    "sequence": [
-      "At session start, refresh this digest from the live repository before relying on cached state.",
-      "Read and reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md before substantive work.",
-      "Perform the authorised work and verify changes by reading them back.",
-      "Before stopping, update all three working documents so they agree on completion or the parked continuation point.",
-      "Refresh this digest last with the verified checkpoint, repository state and next-session instructions."
-    ]
-  },
-  "source_register_entries": 37
+  "close_rule": "Reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; verify every write by read-back; refresh this digest last."
 }
