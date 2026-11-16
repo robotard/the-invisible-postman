@@ -17,6 +17,12 @@ thesis_product:
 peer_review:
   status: "Not yet independently reviewed."
   rule: "Only claim independent review after actual review; preserve scope, reviewer evidence/comments, author responses, dispositions, dissent and resulting changes."
+confidence_model:
+  status: "Provisional thesis organising principle; usefulness, originality, usability and privacy cost remain unevaluated."
+  principle: "The Invisible Postman does not promise certainty. It makes the basis, boundaries and limitations of confidence explicit."
+  meaning: "Verifier-relative judgement about a specific claim, grounded in evidence provenance, scope, assumptions, threat model, freshness and unresolved alternatives."
+  constraints: "No universal score, no central confidence ledger, no mandatory telemetry; distinguish trust, assurance, security, authenticity, integrity, discoverability and truth."
+  integration: "thesis.md §4.1 and §10.5; W1-W4; docs/confidence-and-evidence-model.md; contribution assessment; D-13; traceability."
 work_area:
   path: work/
   purpose: "Temporary store of actionable work to develop, analyse, explain, scrutinise and release the thesis."
@@ -45,8 +51,8 @@ next_task: T-001
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "One active manuscript at thesis.md in staging; production will be a frozen release of that same thesis. Final contribution and review readiness remain open."
-  research_units: "W1-W4 drafted; aligned definitions/comparisons, message-multiplicity terminology and text-only illustration prompts embedded."
+  thesis: "One active manuscript at thesis.md in staging; confidence/evidence framing integrated as a provisional organising principle. Final contribution and review readiness remain open."
+  research_units: "W1-W4 drafted; aligned message-multiplicity and confidence/evidence definitions, claim boundaries and text-only illustration prompts embedded."
   source_register: "49 entries, SRC-001 through SRC-049."
   multi_message_model: "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies."
   steganography: "Separates per-carrier concealment, robust watermarking, extraction/reconstruction, collection-level steganalysis and observer linkage. SRC-043–SRC-045 cover multi-image redundancy and batch detection; SRC-049 covers within-GIF frame redundancy."
@@ -54,6 +60,7 @@ current_state:
   gif_code_review: "SRC-049 README, core/method_core.py and scripts/run_stego.py inspected at pinned external repo commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d. Two redundancy levels: d-fold repetition within frame and majority voting across 16 frames. Receiver asserts a complete 16-frame/key set; missing-frame erasure tolerance is not established. Raw ChaCha20 path shows no authentication tag; 32-bit NumPy PRNG fallback is labelled TEST ONLY. Local keys/group ID are not an authenticated message-set protocol. Code not executed or audited; paper/formal proof unreviewed."
   route_profiles: "Six evidence-bounded profiles; documentary comparison and expanded lifecycle/event/observer ledger. Live client/service versions and configurations remain unpinned."
   protocol_analysis: "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected."
+  confidence_evidence: "Claim-centred model distinguishes object validity, identity, fragment membership, set completeness, conversation continuity, observer linkage and delivery events; endpoint-local/minimal-disclosure direction; no numeric score."
   implementation: none
   independent_audit: none
   peer_review: "Not yet independently reviewed; preparation deferred until a coherent thesis candidate exists."
@@ -70,6 +77,8 @@ completed:
   - "The operational work area was moved to work/ and its disposable boundary defined."
   - "Thesis lifecycle clarified: one manuscript in staging; production is a frozen release of the same thesis."
   - "The work backlog indexes research, route analysis, thesis synthesis, diagrams, peer review and release integrity."
+  - "Integrated a provisional confidence/evidence model into the thesis, W1-W4, threat model, architecture, evaluation, contribution assessment, decision register and traceability."
+  - "Added explicit boundaries for trust/assurance/security/truth, multi-message linkage and delivery-event semantics; rejected universal confidence scoring and central evidence tracking as defaults."
 source_review_boundaries:
   SRC-033: "MRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial."
   SRC-034: "DRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial."
@@ -79,6 +88,7 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/author record only; full method/evaluation not inspected."
   SRC-049: "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
 next_actions:
+  - "Challenge the new confidence/evidence model against source and route evidence; verify protocol delivery semantics and assess whether it improves claim precision without introducing privacy costs."
   - "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036. A further publisher-indexed pass clarified evaluation dimensions and method context, but complete methods, tables and limitations remain unavailable; all three reviews remain partial."
   - "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available."
   - "Review SRC-049 full paper/formal security argument and complete experimental results; selected code has been read but not run or audited."
@@ -108,6 +118,10 @@ invariants:
   - "Majority voting over bit errors does not establish missing-frame erasure tolerance."
   - "No anonymity/security inference from carrier uniqueness, concealment or extra hops."
   - "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
+  - "Confidence is claim-specific, verifier-relative, evidence-bounded and time-sensitive; it is not a cryptographic property or semantic truth."
+  - "A valid fragment does not establish set completeness; a complete set does not establish conversation continuity."
+  - "Transport acceptance is not endpoint receipt, decryption, display, human reading or comprehension."
+  - "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
 verified_working_documents:
   work/README.md: "87af6d60e02598929a01fc311a25f73f9abccdc6"
   work/PROJECT_STATE.md: "8d2853d87277efbd4d9b1404225dbacc8b42dff2"
