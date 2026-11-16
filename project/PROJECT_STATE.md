@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · Image-steganography prior-art review update  
+**Checkpoint:** 2026-11-16 · Transport-neutral lifecycle and initial route-profile comparison  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -21,15 +21,15 @@ Use GitHub work documents as the project continuity source. Do not make the user
 
 The repository has a coherent working thesis, W1–W4 research documents, a threat model, decision and traceability registers, prior-art comparisons, an observer/property matrix and a common route-comparison framework. These are substantive drafts, not a finished or independently reviewed thesis.
 
-The latest verified architecture reconciliation keeps transport independence and optional orchestration explicit across the architecture, thesis, W4, traceability, README and diagram guidance. The protected message remains logically invariant across routes unless an explicit authenticated conversion is specified. Image carriage remains a required research comparison, not a mandatory runtime route. The latest research pass completed full-text inspection of SRC-035 and SRC-037 and bounded partial inspection of SRC-033, SRC-034 and SRC-036; the remaining access limitations are recorded in the source register.
+The latest verified architecture reconciliation keeps transport independence and optional orchestration explicit across the architecture, thesis, W4, traceability, README and diagram guidance. The protected message remains logically invariant across routes unless an explicit authenticated conversion is specified. Image carriage remains a required research comparison, not a mandatory runtime route. The latest research pass completed full-text inspection of SRC-035 and SRC-037 and bounded partial inspection of SRC-033, SRC-034 and SRC-036. SRC-038–SRC-040 add current Signal protocol, Dropbox file-host and Katzenpost Pigeonhole documentation. Their limitations and profile boundaries are recorded in the source register and route framework.
 
 ## Completed baseline
 
 - **W0.1:** Repository foundation and GitHub-first workflow established.
 - **W0.2:** Research-practice, self-review and contributor-governance documents exist. Routine review administration is deferred; external review has not occurred.
-- **Prior art:** 37 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work and Echomix/Katzenpost.
+- **Prior art:** 40 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work, Echomix/Katzenpost, Signal protocol specifications and Dropbox shared-link documentation.
 - **Architecture:** Endpoint message protection, carrier encapsulation, transport adapters and optional orchestration are distinct functions. One service may perform several roles; analyse each role separately.
-- **Route method:** A common lifecycle/event and observer framework exists for image, file/attachment, conventional E2E messaging and mixnet-backed routes.
+- **Route method:** A common lifecycle/event and observer framework now includes six evidence-bounded starting profiles (three image literature profiles, Dropbox shared-link file hosting, Signal protocol reference, and Echomix/Pigeonhole). An initial documentary comparison matrix has been added; the profiles are not yet all pinned to live product releases or deployed test configurations.
 - **Latest reconciliation:** README, W4, traceability and diagram index reflect transport independence, optional orchestration, hop-by-hop observer exposure and protected-object invariance.
 
 ## Active work, in priority order
@@ -45,9 +45,9 @@ The latest verified architecture reconciliation keeps transport independence and
 
 - W1–W4 are drafted; final alignment against the integrated thesis remains open.
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
-- Named route profiles and source-backed route observations are not yet complete.
+- An initial named profile register and documentary comparison exist. Product-level version pinning, route-specific service evidence and the full lifecycle/observer ledger remain incomplete.
 - SRC-033, SRC-034 and SRC-036 remain partial reviews because full article text was not accessible in this pass; SRC-035 and SRC-037 are full-text inspected.
-- The full link/status audit has not been rerun after the latest cross-links.
+- A relative-link audit covered all 26 Markdown files in the current repository tree and found no broken relative links. The full exact-status/terminology and image-reference audit remains outstanding.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
 - No researcher decision currently blocks the next research pass.
 
@@ -81,4 +81,4 @@ The status label below is project metadata describing the repository's verified 
 
 **Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The subsequent working-document compression and read-back verification are recorded in `WORK_LOG.md` and `SESSION_DIGEST.json`.
 
-**Verification boundary:** Documentation and repository changes only. No implementation, platform experiment, cryptographic test, formal proof or independent audit has been performed.
+**Verification boundary:** Documentation and repository changes only. No implementation, platform experiment, cryptographic test, formal proof or independent audit has been performed. The relative-link audit was static and limited to Markdown links resolved against the current repository tree.
