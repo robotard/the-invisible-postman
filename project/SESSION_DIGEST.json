@@ -54,12 +54,10 @@
   ],
   "last_verified": {
     "active_markdown": 25,
-    "relative_links_checked": 117,
-    "broken_links": 0,
-    "status_string_present": true,
-    "terminology_scan": {
-      "forbidden_terms_found": 0
-    },
+    "relative_links_checked": null,
+    "broken_links": null,
+    "status_string_present": null,
+    "terminology_scan": "GitHub repository code search returned no matches for the retired terminology or disallowed packaging reference.",
     "tree_files": 31,
     "tree_markdown": 26,
     "archived_markdown": 1
@@ -75,12 +73,12 @@
     "multipart parser/resource-exhaustion limits",
     "whether image carriage provides a measurable, decision-relevant benefit"
   ],
-  "last_verified_batch": "2026-11-16: added SRC-033–SRC-037 on MRAS, DRAS, practical social-network steganography, active payload removal and steganalysis survey; extended route comparison and observer matrix; revised prior-art assessment to an open comparative research question; integrated source boundaries into thesis, W1, W4 and traceability; updated PROJECT_STATE, WORKPLAN and WORK_LOG; corrected thesis bibliography and README navigation. All changed files were individually read back.",
-  "audit_boundary": "Files changed in the latest batch were individually fetched after writing and matched. A fresh full-tree link/status/terminology audit is pending. No platform experiments, extraction tests, steganalysis benchmarks, implementation tests, formal proofs or independent security reviews were performed.",
+  "last_verified_batch": "2026-11-16: added SRC-033–SRC-037; extended route comparison and observer matrix; replaced prior-art proposition framing with an open comparative research question; integrated source boundaries into thesis, W1, W4, traceability and contribution assessment; corrected Remise/Echomix bibliography and thesis section numbering; updated README; reconciled PROJECT_STATE, WORKPLAN and WORK_LOG. Latest working documents were read back; digest refreshed last.",
+  "audit_boundary": "Recursive tree count refreshed. GitHub code search returned no matches for the retired terminology or disallowed packaging reference. A full relative-link and exact-status audit has not been rerun after this batch's added cross-links. Every modified file in the batch was individually fetched after writing and matched. No platform experiments, extraction tests, steganalysis benchmarks, implementation tests, formal proofs or independent security reviews were performed.",
   "last_commits": {
     "echomix_comparator": "1acd0b881f7e7a6b03872bbb79bba79f5530a524",
     "route_comparison_framework": "90cf85d97289eccf9c8cde1f11d7eb9a5898df2d",
-    "source_register": "c4779dcb75f60f6a087b7b8b891b6f51d13e3048",
+    "source_register": "eee73405f0b6aeda1e4ff257d29fa83319d5dc6c",
     "observer_matrix": "10be51a24f43a886ba4cf1c8e23c5210bd3f4e9b",
     "prior_art_comparison": "c8433e7acb0453ca5a7c60d11d8c3d7b3529218c",
     "thesis": "876594961b99096324312bd73c95e576a9bdc3ba",
@@ -89,12 +87,12 @@
     "w3": "6e73e6f7464dfebab4532f1bf152985824623f0c",
     "w4": "54755b60b17736786a0cc405a49b9b722c341475",
     "traceability": "a725e16644cf44b449a6f0281c1a3388d7ca7944",
-    "contribution_assessment": "6ad692620dae024a758a9fb8706d96ea2c6335fa",
+    "contribution_assessment": "7ba7d906eafb65d05bf5d2f98a45fad8554759d2",
     "readme": "6a8ad812b18d2e07c7dbac618a0fcebbfb574e23",
     "diagram_index": "568713e83909dc08045216ca0da42f0ad44e70d7",
-    "project_state": "dcb8137c10e2ee11693df79cd8f501b413b1704f",
+    "project_state": "8f1055d41dda89709e6e0a6dd97d72fa3ba82347",
     "workplan": "fbdadca21c86d323e289f0efd0adb79b5fd1023a",
-    "work_log": "b9d6a48a08ccb4e8ecb58821663c5a060203bada",
+    "work_log": "1a2b88634ef05f62cc008d72bc3a44db4f42d81c",
     "route_framework": "a6d5a7b47f2b0fc4e0b101cad75a48c30ec5cffa"
   },
   "session_completion_rule": {
