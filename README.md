@@ -49,8 +49,9 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 17. [Prior-art comparison](docs/prior-art-comparison.md), [observer/property matrix](docs/observer-property-matrix.md) and [route comparison framework](docs/route-comparison-framework.md) — current source-grounded comparisons of retrieval, anonymous access, image-platform carriage and lifecycle observers.
 18. [Echomix/Katzenpost comparator](docs/echomix-katzenpost-comparator.md) — integrated anonymous-messaging baseline.
 19. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
-20. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
-21. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
+20. [Protocol boundary analysis](docs/protocol-boundary-analysis.md) — key scope, HKDF salt/info, identity and transcript binding, nonce uniqueness, replay and fallback obligations.
+21. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
+22. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
 
 ## Illustrations
 
