@@ -212,6 +212,8 @@ These boundaries must not:
 
 If a carrier is transformed, damaged, unavailable or unsupported, the route must report extraction failure rather than silently accept corrupted, incomplete or ambiguous content.
 
+The train's responsibility split must be compared with integrated systems such as Echomix/Katzenpost, which separates gateways, mix nodes, service nodes, couriers and storage replicas while coordinating traffic coupling, anonymous storage access and reliability. The existence of multiple components is not itself a distinction. The comparison must state what each actor can observe, which identifiers cross boundaries, how discovery capabilities are issued, how retries are signalled, and what collusion combinations reveal. BACAP's capability-derived pseudorandom box IDs are a substantive discovery design, not equivalent to a changing public locator. No mixnet component is assumed to be part of the proposed architecture.
+
 3.7 Coordinator and transport intermediary
 
 Responsible for permitted delivery coordination, routing and capsule-set handling.
