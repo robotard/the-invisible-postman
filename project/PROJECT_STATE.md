@@ -49,7 +49,7 @@ The latest verified architecture reconciliation keeps transport independence and
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
 - An initial named profile register, documentary comparison and lifecycle/event observer ledger now exist. Product-level version pinning, route-specific service evidence and full observer/collusion detail remain incomplete.
 - SRC-033, SRC-034 and SRC-036 remain partial reviews because full article text was not accessible in this pass; SRC-035 and SRC-037 are full-text inspected.
-- A relative-link audit covered all 26 Markdown files in the current repository tree and found no broken relative links. The full exact-status/terminology and image-reference audit remains outstanding.
+- A fresh relative-link audit covered all 27 Markdown files in the current repository tree and found no broken relative links. All 27 Markdown files were also scanned for ZIP/archive-packaging instructions; none remain. Exact-status, terminology and image-reference consistency still require a dedicated audit.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
 - No researcher decision currently blocks the next research pass.
 
@@ -67,7 +67,7 @@ The latest verified architecture reconciliation keeps transport independence and
 4. Extend the lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; keep unknowns explicit.
 5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test the obligations against Signal, MLS and HPKE references without premature selection.
 6. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis.
-7. Complete exact-status, terminology, image-reference and cross-document consistency audits. The previous static relative-link audit across all 26 Markdown files found no broken links; rerun it after these additions.
+7. Complete exact-status, terminology, image-reference and cross-document consistency audits. The fresh static relative-link audit across all 27 Markdown files found no broken links. A repository-wide scan found no ZIP/archive-packaging instructions in the Markdown documents.
 
 ## Document-boundary rule
 
