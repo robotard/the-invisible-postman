@@ -14,14 +14,14 @@
     "docs/route-comparison-framework.md"
   ],
   "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
-  "current": "W1-W4 and integrated thesis remain working drafts. Transport independence and optional orchestration are reconciled. Source register has 37 entries. Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial. Route profiles are not yet named and evidence-populated.",
+  "current": "W1-W4 and integrated thesis remain working drafts. W3 lifecycle is now route-neutral and traceability heading repaired. Source register has 40 entries. Six evidence-bounded starting profiles and a documentary comparison matrix are recorded: Qiao 2023, MRAS 2026, DRAS 2026, Dropbox shared link, Signal protocol reference, and Echomix/Pigeonhole. SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 remain partial. SRC-038-SRC-040 official documentation inspected. No deployed profile is yet pinned or tested.",
   "next": [
-    "Seek full-text access for remaining methods/results of SRC-033, SRC-034 and SRC-036; retain partial states until verified.",
-    "Select evidenced, named/versioned profiles: image platform, file/attachment, conventional E2E messaging, Echomix/Katzenpost.",
-    "Populate route lifecycle events and observer views from source-backed evidence; explicitly mark unknowns.",
-    "Check W3 numbering and traceability; reconcile material findings into thesis, W1-W4, decisions and source register.",
-    "Analyse nonce, salt, key scope, identity/context binding, replay and safe fallback without premature protocol selection.",
-    "Run fresh relative-link, status-string and cross-document consistency audits after substantive reconciliation."
+    "Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review states until methods/results are inspected.",
+    "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
+    "Expand the documentary comparison into the full lifecycle/event/observer ledger, including discovery, retrieval, retries, expiry and collusion.",
+    "Reconcile route findings into W1-W4, the contribution assessment and integrated thesis.",
+    "Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without premature protocol selection.",
+    "Complete exact-status, terminology, image-reference and cross-document consistency audits; relative Markdown links currently pass."
   ],
   "defer": [
     "New diagrams until comparison findings stabilise",
@@ -36,18 +36,22 @@
     "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "research review status and next action updated; exact read-back matched",
-    "project/WORKPLAN.md": "source review maturity and remaining work updated; exact read-back matched",
-    "project/WORK_LOG.md": "dated research review entry added; exact read-back matched",
+    "project/PROJECT_STATE.md": "checkpoint reconciled; saved and read-back verified",
+    "project/WORKPLAN.md": "profile register progress and next sequence reconciled; saved and read-back verified",
+    "project/WORK_LOG.md": "dated route-profile research entry recorded; saved and read-back verified",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
     "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
     "project_state_checkpoint_commit": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
     "digest_readback": "exact content match after final write",
     "project/SESSION_DIGEST.md": "refreshed from verified working documents; exact read-back matched",
-    "docs/source-register.md": "SRC-033-SRC-037 review boundaries updated; exact read-back matched",
-    "docs/route-comparison-framework.md": "source-informed image-route evidence constraints added; exact read-back matched",
+    "docs/source-register.md": "SRC-038-SRC-040 added; saved and read-back verified",
+    "docs/route-comparison-framework.md": "six initial profiles and documentary comparison matrix added; saved and read-back verified",
     "docs/observer-property-matrix.md": "source-informed observer/property implications added; exact read-back matched",
-    "latest_research_commit": "e66374e1de49530194a3d5f77cb53932142a395b"
+    "latest_research_commit": "e66374e1de49530194a3d5f77cb53932142a395b",
+    "docs/w3-architecture.md": "route-neutral lifecycle and route-specific adapter responsibilities saved and read-back verified",
+    "docs/traceability.md": "malformed heading repaired and route families aligned; saved and read-back verified",
+    "thesis.md": "MRAS/DRAS/Zhu evidence boundaries clarified; mixnet route baseline included; saved and read-back verified",
+    "relative_markdown_link_audit": "26 Markdown files checked against recursive repository tree; no broken relative links found"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; read back and verify all three; refresh SESSION_DIGEST.md from verified state; refresh SESSION_DIGEST.json last; verify both digests against the three working documents.",
   "checkpoint_commit_before_digest_refresh": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
@@ -99,6 +103,17 @@
     "SRC-034": "Partial: publisher abstract/highlights; full methods, tables and platform configurations unverified.",
     "SRC-035": "Full publisher HTML inspected; bounded 50-image platform tests; no independent reproduction.",
     "SRC-036": "Partial: publisher abstract/indexed sections; full method/results inaccessible.",
-    "SRC-037": "Full 40-page survey inspected; secondary synthesis, not a common controlled benchmark."
+    "SRC-037": "Full 40-page survey inspected; secondary synthesis, not a common controlled benchmark.",
+    "SRC-038": "Official Signal PQXDH revision 3 and Double Ratchet revision 4 specifications inspected; protocol reference only, not full service profile.",
+    "SRC-039": "Current Dropbox official file-activity and shared-link permission help pages inspected; no live account test.",
+    "SRC-040": "Current Katzenpost Pigeonhole specification, project repository and 5 November 2026 article inspected; no pinned deployment or reproduction."
+  },
+  "route_profiles": {
+    "IMG-QIAO-2023": "Published empirical social-image profile; bounded 50-image QF85/payload 0.1 study; not a current service guarantee.",
+    "IMG-MRAS-2026": "Publisher abstract reports LinkedIn testing; full methods/results not inspected.",
+    "IMG-DRAS-2026": "Publisher highlights report WhatsApp, LinkedIn and X; full methods/results not inspected.",
+    "FILE-DROPBOX-LINK": "Official shared-link/activity documentation profile; no live account test; client-side protected-object wrapper is only a comparison condition.",
+    "E2E-SIGNAL-PROTOCOL": "PQXDH revision 3 + Double Ratchet revision 4 protocol reference; not a full Signal Messenger service profile.",
+    "MIX-ECHOMIX-PIGEONHOLE": "Echomix arXiv v2 plus current Pigeonhole documentation; no pinned compatible deployment release."
   }
 }
