@@ -5,6 +5,18 @@
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
 
+## Continue/resume contract
+
+When the user says **continue**, resume from the latest verified repository checkpoint without asking them to repeat project history:
+
+1. Fetch the live default branch and read both session digests, this file, `WORKPLAN.md`, `WORK_LOG.md` and the relevant research/supporting documents.
+2. Reconcile completed work, remaining work, blockers and dependencies against saved files and commit history; do not rely on chat recollection or a digest alone.
+3. Select the next unfinished, unblocked action in `WORKPLAN.md`, using this file for the current state and `WORK_LOG.md` for chronology/evidence.
+4. Continue the work directly in GitHub where permissions allow. If a write is blocked, preserve the work and report the exact limitation; never imply a local or drafted change is in GitHub.
+5. After meaningful progress, update the relevant research/supporting files and checkpoint records. Fetch every changed file back and verify its saved content before claiming completion.
+
+Use GitHub work documents as the project continuity source. Do not make the user reconstruct prior decisions already recorded there.
+
 ## Current position
 
 The repository has a coherent working thesis, W1–W4 research documents, a threat model, decision and traceability registers, prior-art comparisons, an observer/property matrix and a common route-comparison framework. These are substantive drafts, not a finished or independently reviewed thesis.
@@ -46,7 +58,7 @@ The latest verified work reconciles transport independence and optional orchestr
 
 ## Next session: exact starting point
 
-1. Read this file, `WORKPLAN.md`, `WORK_LOG.md`, `SESSION_DIGEST.json`, the thesis, source register and route-comparison framework from live `main`.
+1. Apply the Continue/resume contract above. Read both digests, all three working documents and the relevant thesis, research and supporting documents from live `main`.
 2. Inspect SRC-033–SRC-037 and complete the highest-value full-text reviews.
 3. Select route profiles only where the version/configuration can be evidenced; otherwise record the profile as unresolved and state what evidence is missing.
 4. Populate the event/observer ledger, then reconcile the result into the thesis and supporting documents.
