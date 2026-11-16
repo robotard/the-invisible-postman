@@ -1012,4 +1012,10 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 
 **Next:** Continue full-text retrieval for SRC-033, SRC-034 and SRC-036; inspect SRC-046–SRC-048 full texts and SRC-047 code repository; review SRC-049 paper/formal proof and code where available. Then pin route service versions/configurations and reconcile any source-backed findings into the ledger.
 
+### Repository audit after this batch
+
+- Re-fetched and checked all 29 Markdown files against the current recursive repository tree; zero broken relative links were found.
+- Scanned all 29 Markdown files for active ZIP/archive-generation instructions; none were found.
+- Exact-status, terminology, illustration-placeholder and image-reference consistency remain a separate final audit.
+
 **Theory only · No implementation · Not audited.**
