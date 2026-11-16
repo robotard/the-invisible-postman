@@ -91,3 +91,31 @@ This proposition is deliberately weaker and more conditional than a claim that t
 - Ravi, R., Shukla, P. and Vadapalli, A. (2026), *Remise: Authorized Anonymous Communication Systems*, 35th USENIX Security Symposium, pp. 3199–3218, [paper](https://www.usenix.org/system/files/usenixsecurity26-ravi-rohan.pdf).
 
 **Theory only · No implementation · Not audited.**
+
+## 8. Integrated comparator · Echomix / Katzenpost
+
+Echomix is included as an integrated messaging system, not merely a mix-network transport. The full paper (SRC-032) combines a global and active adversary model, decoy/application traffic coupling, anonymous service access, BACAP capability-derived storage locations, Pigeonhole asynchronous messaging, courier/replica separation, reliability and backfill semantics, tombstones, and role-collusion analysis.
+
+| Lifecycle/property boundary | Echomix / Katzenpost coverage | Remaining comparison question for image carriage |
+|---|---|---|
+| Endpoint message protection | BACAP provides derived per-message encryption and signatures; read/write capabilities distinguish access roles under its model. | Compare exact identity verification, session establishment, sender authentication and message-context semantics without assuming those responsibilities are absent. |
+| Publication and service access | Clients send through gateways and layered mixes to services; service access is traffic-coupled with decoys. | What does an ordinary image platform expose through account identity, public post, file metadata, moderation and hosting records? |
+| Discovery and retrieval | Pseudorandom capability-derived box IDs, blinded addressing, courier/replica separation and authenticated read capability. | Does the image route require a different discovery mechanism, and what new locator, account, timing or access-pattern leakage does it create? |
+| Network observation | Global passive observer and active disruption/compromise are explicit; traffic patterns and collusion are analysed. | Separate network-level guarantees from platform-side media and account observations. |
+| Carrier transformation | Not an ordinary user-selected social-image pipeline. | Test resizing, recompression, transcoding, metadata rewriting, format conversion, moderation and extraction failure on named platforms. |
+| Reliability and lifecycle | Courier acknowledgements, controlled retries, backfills, tombstones, finite storage retention and user-triggered signalling are considered. | Compare message-set completeness, retry visibility, platform deletion, carrier expiry and route-failure semantics under common conditions. |
+| Human behaviour | Correlated online routines and statistical disclosure are explicitly acknowledged. | Determine whether image publication/retrieval adds distinct human interaction observables; avoid claiming human correlation is unstudied generally. |
+| Costs and residual leakage | Latency, bandwidth, continuous traffic, storage, server roles, query patterns and specific collusion combinations are part of the design analysis. | Compare image-route capacity, platform dependency, user effort, discoverability, transformation fragility and observable delivery state. |
+
+### What this changes
+
+1. A broad integrated delivery-privacy account is not a defensible differentiator: Echomix already integrates network anonymity, messaging, discovery/storage, reliability and metadata analysis.
+2. The project's train boundary must be compared with Echomix's gateway, mix, service, courier and replica responsibilities. Responsibility separation alone is not a distinct contribution.
+3. The remaining potentially distinct boundary is ordinary image-platform carriage and its interaction with a common endpoint-protected message object: media transformations, file-level metadata, account/engagement traces, moderation, hosting logs and extraction failure.
+4. That boundary is a research target, not a finding of originality. It must be compared with image steganography, platform forensics, dead-drop pipelines and external-service integration.
+5. A useful evaluation may compare the same endpoint-protected semantics across image, file/attachment, conventional messaging and a mixnet-backed messaging baseline, while retaining each route's native guarantees and assumptions.
+
+### Source limits
+
+The Echomix paper is an arXiv preprint, not treated here as a peer-reviewed publication. Its claims and measurements are attributed to the paper. The current Katzenpost threat-model page is a separate evolving document and explicitly says it does not yet incorporate all designs in Echomix. Neither source was independently reproduced or audited.
+
