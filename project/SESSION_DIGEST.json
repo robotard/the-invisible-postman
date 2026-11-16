@@ -2,7 +2,7 @@
   "schema": "tip.session-digest.v2",
   "checkpoint": "2026-11-16",
   "branch": "main",
-  "head": "3e00192380c2f34a3be4685eb14bd5add961f69b",
+  "head": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
   "status": "Theory only · No implementation · Not audited.",
   "read_first": [
     "project/SESSION_DIGEST.json",
@@ -40,7 +40,9 @@
     "project/WORKPLAN.md": "simplified stable roadmap; exact read-back matched",
     "project/WORK_LOG.md": "dated compression entry appended; exact read-back matched",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
-    "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f"
+    "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
+    "project_state_checkpoint_commit": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
+    "digest_commit": "pending_digest_write"
   },
   "close_rule": "Reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; verify every write by read-back; refresh this digest last."
 }
