@@ -14,9 +14,9 @@ The Invisible Postman examines how communicating endpoints might retain control 
 
 The research therefore develops a broader, endpoint-controlled architecture. It distinguishes identity and key verification, authenticated key establishment, message confidentiality, sender authentication, authenticated message context, multipart handling, transport, carrier processing, intermediary coordination, lifecycle policy and possible recovery. Image carriage remains a required research route and an important part of the project's identity. Other carriage methods provide comparison profiles. Optional steganographic concealment is examined separately from cryptographic protection.
 
-A central architectural proposition is that the participant-side cryptographic topology must remain distinct from a replaceable, untrusted transport element. The transport can carry, publish, expose, delay, transform, lose or suppress protected material without becoming an authority for identity, keys, message meaning or decryption. The research also examines how distribution, discovery and collection create their own privacy and reliability questions. Unique image envelopes, variable placement and metadata minimisation may reduce some simple forms of carrier correlation, but cannot establish participant anonymity or erase platform, network and behavioural observations.
+A central architectural objective is that the participant-side cryptographic topology remains distinct from a replaceable, untrusted transport element. The transport can carry, publish, expose, delay, transform, lose or suppress protected material without becoming an authority for identity, keys, message meaning or decryption. The research also examines how distribution, discovery and collection create their own privacy and reliability questions. Unique image envelopes, variable placement and metadata minimisation may reduce some simple forms of carrier correlation, but cannot establish participant anonymity or erase platform, network and behavioural observations.
 
-The intended contribution is a reasoned and challengeable architecture, a record of design evolution, an explicit threat model, a comparison of carriage methods, and a falsifiable evaluation programme. The work deliberately distinguishes established mechanisms from proposed design choices and unverified claims. Important protocol, identity, discovery, recovery and evaluation decisions remain open.
+The intended contribution is a reasoned and challengeable architecture, a record of design evolution, an explicit threat model, a comparison of carriage methods, and a evidence-led evaluation programme. The work deliberately distinguishes established mechanisms from proposed design choices and unverified claims. Important protocol, identity, discovery, recovery and evaluation decisions remain open.
 
 ## 1. Research purpose and problem
 
@@ -47,7 +47,7 @@ The research explores whether a clear separation of responsibilities can make th
 
 ### 1.4 Research approach
 
-This is theory-led architectural research. It proceeds by making the proposition explicit, separating properties that are often conflated, examining alternatives, modelling adversaries and failure modes, and deriving evaluation questions from the resulting claims.
+This is theory-led architectural research. It proceeds by making the proposition explicit, separating properties that are often conflated, examining alternatives, modelling adversaries and failure modes, and deriving evaluation questions from the stated requirements and design choices.
 
 The method is iterative rather than confirmatory. A design choice is not treated as correct because it is elegant, familiar or already recorded in the repository. Each choice must state the problem it addresses, the assumptions it needs, the alternatives considered, the costs it introduces and the evidence that could challenge it. Where evidence is absent, the document must say so. Where a decision is unresolved, the thesis must preserve that uncertainty rather than fill it with an attractive guess.
 
@@ -79,13 +79,13 @@ The design history matters because it records why the scope changed. It should n
 
 **Illustration pointer:** [03 · Design decisions](diagrams/03-design-decisions.svg) records selected design choices and their rationale. It should be read alongside the decision register, which carries the fuller reasoning, alternatives and unresolved status.
 
-## 3. Research proposition, scope and contribution
+## 3. Research question, scope and contribution
 
-### 3.1 Core proposition
+### 3.1 Architectural objective
 
-The central proposition is that cryptographic authority should remain with the communicating endpoints, while intermediary services are treated as untrusted for plaintext confidentiality and sole decryption authority. Transport and carrier handling should be replaceable and should not silently acquire identity, key, authentication or message-semantic authority.
+The architectural objective is to keep cryptographic authority with the communicating endpoints while treating intermediary services as untrusted for plaintext confidentiality and sole decryption authority. Transport and carrier handling should be replaceable and should not silently acquire identity, key, authentication or message-semantic authority.
 
-This is an architectural objective, not a demonstrated guarantee. Its plausibility depends on correct cryptographic composition, endpoint security, identity verification, message binding, safe parsing, and a transport design that does not create unacceptable privacy or availability failures.
+This is a design objective to be specified and evaluated, not a claim that the objective has been achieved. Its feasibility depends on correct cryptographic composition, endpoint security, identity verification, message binding, safe parsing, and transport choices that do not create unacceptable privacy or availability failures.
 
 ### 3.2 Intended contribution
 
@@ -286,6 +286,8 @@ Technical randomisation does not make human behaviour random. Repeated publicati
 
 An adversary may probe those patterns through false delivery notices, urgency cues, staged extraction failures, timed contact, impersonation or prompts designed to elicit a predictable response. These are behavioural side channels and social-engineering threats, not failures of encryption itself. Research on encrypted messaging traffic shows that observable timing, message sizes and user-action scenarios can carry behavioural signatures (Bozorgi et al., 2023; Li, 2026). Steinmetz, Pimentel and Goe (2021) provide bounded qualitative support for treating deception as situated social activity: interviews with 37 social engineers identified planning, timing, rapport, network familiarity, authenticity and adaptation to a target's reactions as recurring themes. This is evidence about perpetrators' reported practices, not a quantitative measure of recipient susceptibility or a universal model. That evidence does not yet substantiate every interpersonal example listed here: language, phrasing, image-generation style and social-engineering probes remain unverified threat scenarios requiring dedicated usable-security and human-factors sources. The architecture should minimise unnecessary behavioural disclosure and avoid placing the entire mitigation burden on user vigilance. Privacy must not depend on unsafe, deceptive, exhausting or inaccessible behavioural camouflage.
 
+Recent work directly addresses image payload survival on social platforms. MRAS (Kumar et al., 2026) studies JPEG steganography under social-network recompression and reports LinkedIn testing; DRAS (Kumar et al., 2026) addresses downward recompression and reports tests on WhatsApp, LinkedIn and X. Qiao et al. (2023) compare robust methods under simulated and real social-network channels, while Zhu et al. (2021) study active image processing intended to remove robust hidden payloads. A 2024 ACM Computing Surveys review surveys a broad body of image-steganography and steganalysis work. These sources make clear that image payload robustness, concealment and platform survival are established research topics, not a gap this thesis can claim by themselves. The route study must distinguish extraction reliability, steganalysis detectability, endpoint authenticity/integrity, discovery privacy, platform/network observer leakage and operational cost. A successful extraction is not evidence of anonymity or authenticated delivery; a failed extraction does not establish deliberate payload removal.
+
 ### 8.8 Transport evaluation
 
 A meaningful route comparison should record the observer model, route assumptions, payload capacity, transformations, metadata, publication and retrieval behaviour, timing, ordering, failure modes, user effort and operational dependencies. The comparison must include Echomix/Katzenpost as an integrated messaging baseline, not merely a network transport. Record its global/active observer assumptions, traffic coupling, capability-derived discovery, courier/replica responsibilities, reliability signalling, human-routine leakage and operational costs. Do not compare only the presence or absence of named components. Tests should include benign and adversarial platform transformations, carrier substitution, locator disclosure, retrieval correlation, delayed or repeated access, observable timing and size patterns, and human-pattern probes where ethically and practically appropriate. A carrier-rotation-only baseline should be distinguished from any future design that adds padding, cover traffic or network mixing, since those mechanisms introduce different costs and assumptions.
@@ -394,6 +396,11 @@ The following sources are cited in the current working text. This list is provis
 - Tor Project. (n.d.). *Tor Rendezvous Specification – Version 3*. https://spec.torproject.org/rend-spec/rendezvous-protocol.html
 - Liu, Z., Tromer, E., & Wang, Y. (2024). Group Oblivious Message Retrieval. In *Proceedings of the 45th IEEE Symposium on Security and Privacy* (pp. 4367–4385). https://doi.org/10.1109/SP54263.2024.00115
 - Ravi, R., Shukla, P., & Vadapalli, A. (2026). Remise: Authorized Anonymous Communication Systems.
+- Kumar, R., Bansal, S., & Bansal, R. K. (2026). MRAS: a matching robust adaptive steganography scheme for JPEG images over social networking platforms. *Signal Processing*, article 110172. https://doi.org/10.1016/j.sigpro.2025.110172
+- Kumar, R., Bansal, S., & Bansal, R. K. (2026). Dealing with downward recompression for robust steganography in high quality JPEG images. *Journal of Visual Communication and Image Representation*, 118, 104817. https://doi.org/10.1016/j.jvcir.2026.104817
+- Qiao, T., Xu, S., Wang, S., Wu, X., Liu, B., Zheng, N., Xu, M., & Pan, B. (2023). Robust steganography in practical communication: a comparative study. *EURASIP Journal on Image and Video Processing*, 2023, 15. https://doi.org/10.1186/s13640-023-00615-y
+- Zhu, Z., Li, S., Qian, Z., & Zhang, X. (2021). Destroying robust steganography in online social networks. *Information Sciences*, 581, 605–619. https://doi.org/10.1016/j.ins.2021.10.023
+- Kombrink, M. H., Geradts, Z. J. M. H., & Worring, M. (2025). Image steganography approaches and their detection strategies: a survey. *ACM Computing Surveys*, 57(2), Article 33. https://doi.org/10.1145/3694965
 - Infeld, E. J., Stainton, D., Ryge, L., & Threebit Hacker. (2025). *Echomix: a Strong Anonymity System with Messaging* (arXiv:2501.02933v2; paper dated October 2024). https://arxiv.org/abs/2501.02933 In *Proceedings of the 35th USENIX Security Symposium* (pp. 3199–3218). https://www.usenix.org/conference/usenixsecurity26/presentation/ravi-rohan
 - Liu, Z., & Tromer, E. (2022). Oblivious Message Retrieval. In *Advances in Cryptology – CRYPTO 2022*, Lecture Notes in Computer Science 13507, 751–781. https://doi.org/10.1007/978-3-031-15802-5_26
 - Go project. (2023). *net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption* (CVE-2023-24536), issue #59153. https://github.com/golang/go/issues/59153
@@ -428,6 +435,7 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/traceability.md` — links between research questions, threats, components and evaluation.
 - `docs/source-register.md` — authoritative technical sources, protocol comparators, metadata standards and claim-to-source gaps.
 - `docs/prior-art-comparison.md`, `docs/observer-property-matrix.md` and `docs/echomix-katzenpost-comparator.md` — current prior-art synthesis and integrated messaging comparator.
+- `docs/route-comparison-framework.md` — common event and observer ledger for route-specific evidence.
 - `docs/route-comparison-framework.md` — common lifecycle event and observer ledger for image, file, conventional messaging and mixnet-backed profiles.
 - `project/WORKPLAN.md` and `project/PROJECT_STATE.md` — roadmap and verified checkpoint.
 
