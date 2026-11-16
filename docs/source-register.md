@@ -402,6 +402,30 @@ The date in this register records when the source was checked, not the date of t
 
 The [prior-art comparison](prior-art-comparison.md) synthesises the full-text reviews of SRC-020 and SRC-024–SRC-037 and pressure-tests candidate contributions A/B/C. It is a working synthesis, not a systematic literature review or originality determination.
 
+### SRC-038 · Signal PQXDH and Double Ratchet current protocol specifications
+
+- **Sources:** Signal, *The PQXDH Key Agreement Protocol*, revision 3 (2023-05-24; last updated 2024-01-23), https://signal.org/docs/specifications/pqxdh/; Signal, *The Double Ratchet Algorithm*, revision 4 (2025-11-04), https://signal.org/docs/specifications/doubleratchet/.
+- **Relevant to:** A named conventional E2E protocol reference for asynchronous 1:1 session establishment, ratcheting, skipped/out-of-order messages, key evolution and protocol-specific replay limitations.
+- **Supports:** PQXDH describes asynchronous key establishment using published prekey material and explicitly states that its mutual authentication in this revision is not post-quantum secure; its specification discusses replay of initial messages and key-reuse precautions. Double Ratchet revision 4 describes message-key evolution, DH ratcheting, skipped-message handling and bounded MAX_SKIP.
+- **Does not establish:** Signal Messenger's complete service implementation, server-visible metadata, delivery/read receipts, attachment/file handling, current client release configuration or all product-level privacy properties. Protocol specifications are not a full deployed-service profile.
+- **Review state:** Current official specification pages inspected. A Signal application/service profile remains incomplete pending pinned client version and authoritative product/service documentation.
+
+### SRC-039 · Dropbox file activity and shared-link permission documentation
+
+- **Sources:** Dropbox Help, *How to view file activity in Dropbox*, updated 5 November 2026, https://help.dropbox.com/organize/file-activity; Dropbox Help, *How to set shared link permissions*, https://help.dropbox.com/share/set-link-permissions.
+- **Relevant to:** A named file-host/shared-link candidate profile, including owner/editor-visible file activity, optional viewer information and link download controls.
+- **Supports:** Dropbox documents activity entries for additions, edits, moves, renames, version reverts and sharing/access changes. Viewer information can reveal who viewed a file when enabled. Disabling downloads through a shared link does not prevent recipients saving content by other means.
+- **Does not establish:** End-to-end encryption of application-protected message content, anonymity, absence of provider-side access/metadata, or a guarantee that link permissions prevent copying. Any client-side protected-object wrapper is a comparison condition, not a Dropbox feature claimed by these sources.
+- **Review state:** Current official help pages inspected; no Dropbox account, file or live sharing workflow tested.
+
+### SRC-040 · Katzenpost Pigeonhole protocol and deployment documentation
+
+- **Sources:** Katzenpost, *Pigeonhole Protocol Specification*, https://katzenpost.network/docs/specs/pigeonhole/; Katzenpost, *Introduction to Pigeonhole Protocol*, 5 November 2026, https://katzenpost.network/blog/2026/11/05/introduction-to-pigeonhole-protocol/; Katzenpost project repository, https://github.com/katzenpost/katzenpost.
+- **Relevant to:** A current named storage/messaging profile above a mix network, capability-controlled asynchronous streams, courier/replica separation, fixed-size boxes, retention and network-independent composition.
+- **Supports:** The project documentation describes Pigeonhole as a storage layer using BACAP capabilities, couriers and replicas; the November 2026 article describes Pigeonhole as a network-independent abstraction that can run over more than one underlying network. The repository describes implemented BACAP/Pigeonhole components and points to normative specifications.
+- **Does not establish:** That Pigeonhole alone provides the full anonymity properties of Echomix; those depend on the underlying network and deployment. The public documentation is evolving and does not, by itself, pin a mutually compatible deployed release/configuration or independently validate all security claims.
+- **Review state:** Current protocol documentation, project repository overview and 5 November 2026 project article inspected. No code build, deployment or independent reproduction performed.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
