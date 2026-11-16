@@ -1,3 +1,26 @@
+
+
+## 2026-11-16 · Transport independence and optional orchestration clarification
+
+### Completed and read-back verified
+
+- Added the transport-independence principle to W3 architecture and the integrated thesis.
+- Clarified that message protection, carrier encapsulation, transport and orchestration are separate functions, even where one service implements more than one.
+- Recorded orchestration as optional coordination that may itself participate in transit; it does not define agnostic delivery or become a mandatory central authority.
+- Clarified that image carriage is a required research comparison route, not a mandatory runtime route. Telegram, external image generation and onward hops remain examples, not dependencies.
+- Added hop-by-hop observer analysis and protected-object invariance as comparison rules.
+- Added D-12 to the design decision register and aligned W1, W2 and the stable workplan.
+
+### Remaining work
+
+- Reconcile W4, traceability, README and the route comparison ledger with D-12.
+- Review cryptographic nonce, salt, key-scope, identity/context binding and replay requirements without prematurely selecting a protocol.
+- Select named, versioned route profiles and populate source-backed observer/event comparisons.
+- Run a fresh link, status and document-consistency audit after the next reconciliation batch.
+
+### Verification boundary
+
+This is a theory/documentation update only. No implementation, platform experiment, cryptographic test, formal proof or independent audit was performed. GitHub write and read-back results are recorded in the session digest only after successful verification.
 ## 2026-11-16 · Echomix integration and route-comparison framework
 
 ### Completed and read-back verified
