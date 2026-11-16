@@ -36,6 +36,12 @@ This is an architectural research question. It does not assume that the proposed
 9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
 10. **Evaluation:** What evidence is needed to assess the stated architectural objectives, and what would show that a design choice is unsuitable?
 
+> **Illustrated diagram placeholder · W1-F01 — Research scope and evidence map**
+> **Placement:** After §3 Supporting research questions.
+> **Prompt for later illustration:** Create a clean, publication-ready conceptual diagram connecting the research questions to endpoint message protection, message/capsule structure, carrier encapsulation, route profiles, discovery/retrieval, observer exposure and evaluation evidence. Show image carriage as a required comparison profile, not a mandatory runtime route; show steganography as an optional image-route sub-layer. Use labelled relationships and clear responsibility boundaries.
+> **Must not imply:** That any route is selected or superior, that the architecture is implemented, or that any security property has been demonstrated.
+
+
 ## 4. Intended contribution
 
 The intended contribution is a transparent, theory-led architecture and design rationale for authenticated cryptographic messaging with an explicit transport-route layer and a required image-carriage route. It aims to:
@@ -107,11 +113,6 @@ The distinction between ciphertext fragmentation and threshold secret sharing mu
 > **DEFINITION · Message multiplicity:** A *fragment set* is the pieces needed to reconstruct one logical protected message. A *conversation* links distinct logical messages. A *retry* repeats delivery of the same logical message or protected object. *Redundant carriage* repeats or codes data to tolerate loss. These relationships must not share one ambiguous "multipart" label.
 
 > **COMPARISON · Concealment versus linkage:** Per-image steganographic concealment concerns whether an individual carrier reveals embedded data. Set-level linkage concerns whether several carriers or events can be grouped through identifiers, manifests, timing, provenance, embedding artefacts or retrieval patterns. Hiding one does not establish hiding the other.
-
-> **Illustrated diagram placeholder · W1-F01 — Research scope and evidence map**
-> **Placement:** After §3 Supporting research questions.
-> **Prompt for later illustration:** Create a clean, publication-ready conceptual diagram connecting the research questions to endpoint message protection, message/capsule structure, carrier encapsulation, route profiles, discovery/retrieval, observer exposure and evaluation evidence. Show image carriage as a required comparison profile, not a mandatory runtime route; show steganography as an optional image-route sub-layer. Use labelled relationships and clear responsibility boundaries.
-> **Must not imply:** That any route is selected or superior, that the architecture is implemented, or that any security property has been demonstrated.
 
 > **Illustrated diagram placeholder · W1-F03 — Protected-object package and image-carriage boundary**  
 > **Placement:** Beside the message multiplicity definitions, after W1-F02.  
