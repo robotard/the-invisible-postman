@@ -85,7 +85,7 @@ Zhu et al. (2025; SRC-048) then describe a counter-adaptation: a secret-seed-con
 
 ### 3.7 Multi-frame GIF redundancy is not multi-image message fragmentation
 
-Wang et al. (2026; SRC-049) provide a distinct carrier topology: an animated GIF with 16 frames, with watermark bits redundantly represented across frames and recovered by majority voting according to the authors' implementation README. The README documents a diffusion-based sender/receiver pipeline, per-frame latent/key material, OTP and ChaCha20 modes, and simulated JPEG distortion evaluation. The paper's formal security claims and result tables have not been inspected here.
+Wang et al. (2026; SRC-049) provide a distinct carrier topology: one animated GIF with 16 frames, with bit repetition within each frame and majority voting across frames. Inspection of the author-linked README and selected code shows per-frame key/nonce material, a local key/ground-truth sidecar workflow, a sender path that writes frame PNGs, and a receiver that asserts the full 16-frame/key set. Missing-frame erasure tolerance is not established. The inspected StreamCipher uses raw ChaCha20 with no authentication tag visible in that path; a 32-bit NumPy PRNG fallback is labelled TEST ONLY. These code-level observations are not a security audit; the paper's formal security claims and result tables have not been inspected.
 
 This is one animated carrier object with internal frame redundancy. It is not a set of separate image posts, an endpoint-authenticated fragment manifest, or a conversation of distinct logical messages. It therefore sharpens the terminology rather than displacing the multi-image prior-art comparison.
 
