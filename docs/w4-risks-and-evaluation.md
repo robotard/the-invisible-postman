@@ -22,7 +22,28 @@ The evaluation must be capable of rejecting the proposed architecture or requiri
 6. Proportionate: additional mechanisms require evidence of a corresponding improvement.
 7. Honest limitations: successful evaluation of one property does not establish overall system security.
 
-3. Evaluation domains
+3. Evaluation domains### Transport independence, role separation and route composition
+
+**Threats:** a transport or coordinator becomes an implicit security authority; a service's multiple roles are collapsed into one trust assumption; route conversion changes authenticated message semantics; multi-hop delivery creates unrecognised correlation or failure surfaces; fallback silently weakens security.
+
+**Evaluation questions:**
+
+* Can the same endpoint-protected message be carried over more than one declared route without changing its cryptographic meaning?
+* Does encapsulation alter only the outer carrier representation, and are malformed or unsupported conversions rejected?
+* Which functions are endpoint protection, encapsulation, transport, orchestration or external carrier generation, and what does each observe?
+* If one provider performs orchestration and transit, are its coordination and carriage disclosures separately recorded?
+* For every hop, what identifiers, objects, timing, access events and transformations are visible to each observer?
+* Does route fallback preserve the protected object, authentication, replay rules and nonce/key safety?
+
+**Proposed acceptance conditions:**
+
+* The architecture documents role-specific inputs, outputs, authority, retained state and observer views.
+* Orchestration is explicitly optional; no central coordinator is required for the definition of transport independence.
+* Every multi-hop route is enumerated and assessed hop by hop, without assuming additional hops improve privacy.
+* Protected-object invariance is maintained, or any protocol conversion is explicitly specified and separately analysed.
+* Fallback and retry behaviour cannot silently weaken authentication, replay handling or cryptographic parameter safety.
+
+
 
 E1. Confidentiality and intermediary authority
 
