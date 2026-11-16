@@ -3,23 +3,25 @@
 
 **Researcher:** `@robotard`  
 **Document:** Integrated thesis, working research draft  
-**Checkpoint:** 2026-11-15  
+**Checkpoint:** 2026-11-16  
 **Status:** Theory only · No implementation · Not audited
 
 > This is a proposed architecture and research programme. It is not a protocol specification, implementation, formal proof, empirical result, or independent security audit.
 
 ## Abstract
 
-The Invisible Postman examines how communicating endpoints might retain control of plaintext and cryptographic authority while using intermediaries for message coordination and carriage. The research began with a compact idea: protect a message with a shared secret and carry the protected material inside an image. That starting point exposed useful questions about encryption, concealment and portability, but it did not by itself address the wider requirements of authenticated communication between independently verified participants.
+The Invisible Postman investigates how communicating endpoints can retain cryptographic authority over message contents and authenticated message semantics while relying on intermediaries and replaceable carriage routes. It began with a narrow proposal to protect a message with a shared secret and carry the result inside an image. That proposal exposed questions about encryption and concealment, but did not resolve participant authentication, message context, multi-message relationships, discovery, delivery or intermediary observation.
 
-The research therefore develops a broader, endpoint-controlled architecture. It distinguishes identity and key verification, authenticated key establishment, message confidentiality, sender authentication, authenticated message context, multipart handling, transport, carrier processing, intermediary coordination, lifecycle policy and possible recovery. Image carriage remains a required research route and an important part of the project's identity. Other carriage methods provide comparison profiles. Optional steganographic concealment is examined separately from cryptographic protection.
+The thesis develops a theory-led architecture that separates endpoint identity and key verification, authenticated key establishment, message protection, carrier encapsulation, transport, optional orchestration and lifecycle handling. Image carriage is a required research route, not a presumed superior route or mandatory runtime dependency. File/attachment, conventional end-to-end messaging and mixnet-backed messaging provide comparison profiles. Optional steganographic concealment is treated separately from confidentiality and authentication.
 
-A central architectural objective is that the participant-side cryptographic topology remains distinct from a replaceable, untrusted transport element. The transport can carry, publish, expose, delay, transform, lose or suppress protected material without becoming an authority for identity, keys, message meaning or decryption. The research also examines how distribution, discovery and collection create their own privacy and reliability questions. Unique image envelopes, variable placement and metadata minimisation may reduce some simple forms of carrier correlation, but cannot establish participant anonymity or erase platform, network and behavioural observations.
+The central argument is that transport independence is meaningful only when the protected message's authenticated semantics remain under endpoint control and route-specific transformations, observers, discovery events and failure states are made explicit. A common comparison framework is used to examine the same communication task across materially different routes without pretending that their native identity, discovery or delivery semantics are interchangeable. Multi-message handling is treated at several distinct levels: object validity, fragment membership, set completeness, reconstruction, conversation continuity, retries and cross-route copies.
 
-The intended contribution is a reasoned and challengeable architecture, a record of design evolution, an explicit threat model, a comparison of carriage methods, and an evidence-led evaluation programme. The thesis also examines how a system can make the basis and limits of confidence inspectable without presenting confidence as a security property or a universal score. It distinguishes established mechanisms from proposed design choices and unverified claims. Important protocol, identity, discovery, recovery and evaluation decisions remain open.
+The thesis also develops a claim-centred account of confidence. Confidence is not a cryptographic property or a score emitted by the system; it is a verifier's judgement about a specific proposition, based on evidence with stated provenance, scope, assumptions, observer vantage and freshness. This discipline is intended to prevent stronger claims about identity, completeness, linkage or delivery being inferred from weaker evidence. It must itself be assessed for usefulness and privacy cost; it must not become a central tracking ledger.
+
+The work is a conceptual architecture and comparative research programme, not a completed protocol or evaluated system. Existing work on covert messaging, private retrieval, mix networks, multi-image carriage, steganalysis and platform sanitisation places substantial limits on any novelty claim. The thesis therefore treats originality as unresolved and identifies the evidence needed to determine whether its route-specific analysis and claim/evidence method add a defensible contribution. No implementation, experiment, formal proof or independent audit is claimed.
 
 ## 1. Research purpose and problem
-### Transport independence as a governing architectural distinction
+### 1.1 Transport independence as a governing architectural distinction
 
 The protected message must not depend on a particular carrier or delivery service. The architecture therefore separates endpoint message protection, carrier encapsulation, transport and optional orchestration. Endpoints create and validate the protected object. Encapsulation adapts its outer representation to a route and extracts it again; it must not silently alter authenticated message semantics. Transport adapters are optional ways to move the object. Orchestration may coordinate route selection, sequencing, retrieval or retries, but does not define transport independence and is not mandatory. A service may perform both orchestration and transit, but those roles create different authority and observer disclosures and must be assessed separately.
 
@@ -27,7 +29,7 @@ Image carriage remains a required research comparison route, not a mandatory run
 
 
 
-### 1.1 The problem
+### 1.2 The problem
 
 Secure communication is not only a matter of encrypting a string and sending it. A usable messaging system must establish who is communicating, determine which keys and sessions are trusted, protect message contents, authenticate relevant context, move data between endpoints, handle incomplete or duplicated delivery, and respond to device loss, key change and compromise. It must also account for what intermediaries can observe and what users reasonably expect the system to do.
 
@@ -35,11 +37,13 @@ Modern communication commonly depends on services outside the direct control of 
 
 The research explores whether a clear separation of responsibilities can make those boundaries understandable and testable. It does not assume that moving ciphertext through an image makes the system secure. Nor does it assume that a platform becomes harmless merely because it cannot read the message.
 
-### 1.2 Central research question
+### 1.3 Central research question
 
-**How can an endpoint-controlled messaging architecture protect message contents and authenticate communicating participants while using untrusted intermediaries and image-based carriage, and what security, privacy, usability and reliability limits remain across the complete communication lifecycle?**
+**How can an endpoint-controlled messaging architecture preserve authenticated message semantics across replaceable, untrusted carriage routes, including image-based carriage, and what can route-specific evidence establish about security, privacy, reliability and delivery under defined observer models?**
 
-### 1.3 Supporting research questions
+**Provisional thesis proposition:** Transport independence is not established merely by placing ciphertext on different services. It requires a defined endpoint-protected message whose authenticated meaning is preserved across route-specific encapsulation and delivery, together with an explicit account of what each participant and observer can verify, infer or disrupt. The thesis examines this proposition through architecture, prior-art comparison, threat analysis and a claim-centred evidence framework. It does not assert that the proposition is novel or already demonstrated.
+
+### 1.4 Supporting research questions
 
 1. **Identity and trust:** What does it mean to verify a participant's cryptographic key, and what does that process not prove about a real-world identity?
 2. **Cryptographic composition:** Which endpoint responsibilities are required for authenticated key establishment, confidentiality, sender authentication, integrity, replay resistance and key lifecycle?
@@ -50,15 +54,15 @@ The research explores whether a clear separation of responsibilities can make th
 7. **Discovery and collection:** How can a recipient discover and collect a changing carrier without creating a stable rendezvous point or access pattern that defeats the intended privacy benefit?
 8. **Human behaviour:** How can routines, timing, language, platform habits and social-engineering probes create linkability even when carriers and locations vary?
 9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
-10. **Evaluation:** What evidence is needed to assess the stated architectural objectives, and what would show that a design choice is unsuitable?
+10. **Evaluation and confidence:** What evidence is needed to assess the architectural objectives and each route's claims; how should the basis, scope and limits of confidence be made inspectable without conflating distinct properties or creating new privacy risks, and what evidence would show that a design choice is unsuitable?
 
-### 1.4 Research approach
+### 1.5 Research approach
 
-This is theory-led architectural research. It proceeds by stating the research question and design objectives, separating properties that are often conflated, examining alternatives, modelling adversaries and failure modes, and deriving evaluation questions from the stated requirements and design choices.
+This is theory-led architectural research using conceptual decomposition, structured prior-art comparison, threat and observer modelling, lifecycle analysis and derivation of falsifiable evaluation questions. The same communication task is compared across route profiles, while route-native identity, discovery, delivery and observer semantics are preserved rather than forced into a false common protocol.
 
-The method is iterative rather than confirmatory. A design choice is not treated as correct because it is elegant, familiar or already recorded in the repository. Each choice must state the problem it addresses, the assumptions it needs, the alternatives considered, the costs it introduces and the evidence that could challenge it. Where evidence is absent, the document must say so. Where a decision is unresolved, the thesis must preserve that uncertainty rather than fill it with an attractive guess.
+The method is iterative and adversarial rather than confirmatory. For each material design proposition, the thesis asks what problem it addresses, which assumptions it requires, what alternatives exist, what complexity or disclosure it introduces, what evidence supports it, and what observation would require revision or rejection. Claims are bounded by source quality and reviewer vantage. Publisher-indexed text, author-reported results, inspected source code, full-paper review, reproduced experiments and independent evaluation are different evidence classes and must not be treated as interchangeable.
 
-The work is informed by the active research framing, threat model, architecture and evaluation documents, the decision register and author-led self-review. Those supporting documents are working research artifacts, not independent validation. Source reconciliation and a claim-to-source register remain necessary before the manuscript can be considered academically complete. The current [prior-art comparison](docs/prior-art-comparison.md) records the full-text comparisons and the limits of what those sources establish; it is a working research artifact, not a settled originality finding.
+The work is informed by W1–W4, the decision register, traceability and author-led self-review. These are supporting research artefacts, not independent validation. The [prior-art comparison](docs/prior-art-comparison.md) records current comparators and review limitations; it is not a settled originality finding. The [route comparison framework](docs/route-comparison-framework.md) records the common task, named profile requirements, lifecycle events and observer evidence. Product-version pinning and route-specific empirical evidence remain incomplete.
 
 ## 2. Origin and evolution of the research
 
@@ -96,19 +100,14 @@ This is a design objective to be specified and evaluated, not a claim that the o
 
 ### 3.2 Intended contribution
 
-The intended contribution is a transparent research architecture that:
+The intended contribution is not a new cipher, steganographic embedding method, anonymity network or complete messaging protocol. It is a theory-led account of how endpoint-protected message semantics should be separated from replaceable carriage, and how claims about that architecture can be compared and bounded by evidence. The proposed contribution has four connected parts:
 
-- distinguishes security properties that are often conflated;
-- makes endpoint and intermediary responsibilities explicit;
-- explains the evolution from the initial password-based model;
-- separates cryptographic message construction from transport and carrier processing;
-- examines image carriage as a required route without presuming it is superior;
-- compares route-specific capabilities, exposures and failure modes;
-- includes discovery, collection and human behavioural linkability in the privacy analysis;
-- distinguishes ciphertext fragmentation from threshold secret sharing;
-- states lifecycle and recovery limitations;
-- proposes evaluation criteria capable of challenging the design; and
-- preserves assumptions, alternatives, dissent and unresolved decisions.
+1. **Responsibility-separated architecture:** define the boundary between endpoint identity/key handling and message protection, route-facing encapsulation, transport, optional orchestration and lifecycle functions. This is an organising architecture, not a novelty claim by itself.
+2. **Common route-comparison method:** compare the same logical communication task across image-platform, file/attachment, conventional E2E and mixnet-backed profiles while preserving each route's native identity, discovery, delivery and observer semantics. A comparison table alone is insufficient; the analysis must identify decision-relevant differences and costs.
+3. **Message-relationship and lifecycle analysis:** distinguish object validity, fragment membership, set completeness, reconstruction, conversation continuity, retries, cross-route copies and delivery events. The work must show what is authenticated at endpoints and what an external observer can only infer.
+4. **Claim-centred evidence discipline:** connect each material claim to its verifier, scope, provenance, assumptions, observer vantage, freshness and unresolved alternatives. This is intended to prevent evidence for a weaker event or property being used to imply a stronger one. It is a research method to be challenged, not a security mechanism or a calibrated confidence score.
+
+The required image-carriage route is examined without presuming it is superior. Optional steganographic concealment is assessed separately from confidentiality, authenticity and delivery. The thesis must identify where existing work already covers the proposed elements and narrow or withdraw any contribution claim that does not survive comparison.
 
 ### 3.3 Scope
 
@@ -145,7 +144,7 @@ The properties can interact, but one must not be used as a substitute for anothe
 
 ### 4.1 Confidence as an evidence-bounded judgement
 
-The thesis adopts the following candidate organising principle:
+The thesis uses the following provisional organising principle:
 
 > **The Invisible Postman does not promise certainty. It makes the basis, boundaries and limitations of confidence explicit.**
 
@@ -450,7 +449,7 @@ The Invisible Postman is a research investigation into endpoint-controlled crypt
 
 Image carriage remains a required research route, but it does not define every layer of the system. The thesis must explain why the route is being examined, what it changes, how it compares with alternatives and where it fails. The transport element remains replaceable and subordinate to endpoint cryptographic authority. Its discovery and collection processes deserve explicit study because publication alone does not complete delivery and because retrieval can itself expose relationships.
 
-The work advances only when claims become clearer, assumptions are tested, alternatives are fairly considered and weaknesses remain visible. The next stage is to reconcile the full manuscript against W1–W4, the decision register, self-review and source material; then complete the research reasoning and evidence plan before final illustration and publication.
+The work advances only when claims become clearer, assumptions are tested, alternatives are fairly considered and weaknesses remain visible. The provisional contribution is therefore the disciplined separation of endpoint-protected semantics from route-specific carriage, combined with a comparison method that makes observer evidence and lifecycle claims explicit. Whether that combination yields a defensible original contribution remains unresolved, particularly against integrated systems such as Echomix and established work on private retrieval, covert messaging and multi-image carriage. The next substantive work is to complete source and route evidence, challenge the comparison against named and versioned profiles, and revise the argument where the evidence requires it. Only after that synthesis should the thesis settle its final contribution statement and explanatory illustrations.
 
 ## References · Working bibliography
 
