@@ -26,12 +26,12 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 - Not evidence of measured resistance to steganalysis.
 - Not a guarantee of anonymity, delivery, remote erasure or metadata protection.
 
-**New-session handover:** [Machine-readable Markdown digest](project/SESSION_DIGEST.md) and [JSON digest](project/SESSION_DIGEST.json). These are operational retrieval indexes, not thesis exposition or substitutes for the authoritative working documents; verify the live repository and read the three working documents before continuing.
+**New-session handover:** [Machine-readable Markdown digest](work/SESSION_DIGEST.md) and [JSON digest](work/SESSION_DIGEST.json). These are operational retrieval indexes, not thesis exposition or substitutes for the authoritative working documents; verify the live repository and read the three working documents before continuing.
 
 ## Start here
 
-1. [Workplan](project/WORKPLAN.md) — stable roadmap and work-unit definitions.
-2. [Project state](project/PROJECT_STATE.md) — changing, verified checkpoint.
+1. [Workplan](work/WORKPLAN.md) — stable roadmap and work-unit definitions.
+2. [Project state](work/PROJECT_STATE.md) — changing, verified checkpoint.
 3. [Integrated thesis](thesis.md) — active thesis manuscript.
 4. [Research practice](docs/research-practice.md) — critical self-examination, peer discussion, dissent and contribution principles.
 5. [Initial self-review register](docs/self-review-register.md) — author-identified challenges and evidence needs, open to independent criticism.
@@ -51,7 +51,7 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 19. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
 20. [Protocol boundary analysis](docs/protocol-boundary-analysis.md) — key scope, HKDF salt/info, identity and transcript binding, nonce uniqueness, replay and fallback obligations.
 21. [Multi-message linkage and steganographic carriage](docs/multi-message-linkage-and-steganographic-carriage.md) — fragment sets, redundancy, conversation linkage, package encapsulation, collection-level steganalysis and prior-art boundaries.
-22. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
+22. [Work log](work/WORK_LOG.md) — dated work-session record and deferred tasks.
 23. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
 
 ## Illustrations
