@@ -19,6 +19,13 @@ A central architectural objective is that the participant-side cryptographic top
 The intended contribution is a reasoned and challengeable architecture, a record of design evolution, an explicit threat model, a comparison of carriage methods, and a evidence-led evaluation programme. The work deliberately distinguishes established mechanisms from proposed design choices and unverified claims. Important protocol, identity, discovery, recovery and evaluation decisions remain open.
 
 ## 1. Research purpose and problem
+### Transport independence as a governing architectural distinction
+
+The protected message must not depend on a particular carrier or delivery service. The architecture therefore separates endpoint message protection, carrier encapsulation, transport and optional orchestration. Endpoints create and validate the protected object. Encapsulation adapts its outer representation to a route and extracts it again; it must not silently alter authenticated message semantics. Transport adapters are optional ways to move the object. Orchestration may coordinate route selection, sequencing, retrieval or retries, but does not define transport independence and is not mandatory. A service may perform both orchestration and transit, but those roles create different authority and observer disclosures and must be assessed separately.
+
+Image carriage remains a required research comparison route, not a mandatory runtime route. Telegram, an image-generation service such as InspiroBot, and any onward transit are illustrative optional participants, not architectural dependencies. A multi-hop journey must be modelled hop by hop; adding a transit service does not inherently improve anonymity or security. The same endpoint-protected object should remain logically and cryptographically invariant across routes unless an explicit, authenticated protocol conversion is specified and evaluated. Cryptographic details such as AEAD nonce uniqueness, salt purpose, key scope, identity/context binding and replay handling remain protocol-level decisions; they must not be selected merely to fit a carrier.
+
+
 
 ### 1.1 The problem
 
