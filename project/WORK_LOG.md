@@ -957,3 +957,17 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 **Next:** Refresh the project checkpoint and both digests from verified files, then continue source-specific full-text retrieval for SRC-033, SRC-034 and SRC-036 and route-profile version/configuration pinning.
 
 **Theory only · No implementation · Not audited.**
+
+## 2026-11-16 · MRAS/DRAS reference-code inspection and multi-image boundary
+
+- Retrieved and inspected the author-linked public MATLAB repositories for MRAS and DRAS, pinned respectively at commits `a14777047f82715bdbefcfed2cbb85427add23bc` and `ad81f8785b473e03765ec3a859dad7ceb73ff9ea`.
+- Inspected each README, batch demo, core embedding/extraction routines and a method-specific helper. No code was executed and no experimental result was reproduced.
+- Both public demos process ten covers through per-image embed/extract calls; each call loads a sample-message prefix from `SecretMsg.mat`. Both demos simulate JPEG recompression locally using MATLAB `imwrite`, not platform upload/download APIs. The exposed routines do not provide a cross-image fragment manifest, authenticated set reconstruction or conversation/session linkage.
+- Kept the evidence boundary strict: the repositories are author-published reference implementations, not independent verification. Their local demos do not reproduce the papers' separately reported live-platform tests, nor prove that the full papers lack other experiment components.
+- Updated SRC-033/SRC-034 source records with pinned code references and inspection limits; integrated the distinction into W1–W4, the dedicated multi-message analysis, route-comparison framework and thesis.
+- This narrows the comparator: MRAS/DRAS public code is a per-image carrier-method reference, not an end-to-end multi-image messaging package. It does not by itself establish a thesis contribution or novelty.
+- All changed files were fetched back and exact content verified.
+
+**Next:** Reconcile PROJECT_STATE and WORKPLAN; run repository-wide link/status/terminology/illustration audits; refresh SESSION_DIGEST.md and SESSION_DIGEST.json last. Then continue with SRC-036 full-text retrieval and stronger version-pinned route profiles.
+
+**Theory only · No implementation · Not audited.**
