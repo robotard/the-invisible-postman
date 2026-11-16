@@ -4,7 +4,7 @@ Status: Proposed evaluation framework
 Research basis: W1 · Research Framing; W2 · Threat Model; W3 · Architecture
 Assurance status: Theory only · No implementation · Not audited.
 
-1. Purpose
+## 1. Purpose
 
 W4 defines how the proposed architecture should be challenged and evaluated.
 
@@ -12,7 +12,7 @@ It does not report completed tests, measured results or verified security proper
 
 The evaluation must be capable of rejecting the proposed architecture or requiring its revision. It must not simply confirm the assumptions on which it was designed.
 
-2. Evaluation principles
+## 2. Evaluation principles
 
 1. Threat-led: every evaluation activity must map to an identified threat or research question.
 2. Property-specific: confidentiality, authentication, integrity, concealment and availability must not be treated as interchangeable.
@@ -22,7 +22,7 @@ The evaluation must be capable of rejecting the proposed architecture or requiri
 6. Proportionate: additional mechanisms require evidence of a corresponding improvement.
 7. Honest limitations: successful evaluation of one property does not establish overall system security.
 
-3. Evaluation domains
+## 3. Evaluation domains
 
 ### Transport independence, role separation and route composition
 
@@ -47,7 +47,7 @@ The evaluation must be capable of rejecting the proposed architecture or requiri
 
 
 
-E1. Confidentiality and intermediary authority
+### E1 · Confidentiality and intermediary authority
 
 Threats: unauthorised disclosure, intermediary compromise, excessive service privileges.
 
@@ -64,7 +64,7 @@ Proposed acceptance conditions:
 * The key-management model identifies where every relevant private key is held and used.
 * Inspection of service data flows and logs finds no unintended disclosure of protected content or secret material.
 
-E2. Identity and sender authentication
+### E2 · Identity and sender authentication
 
 Threats: first-contact key substitution, impersonation, platform identity confusion.
 
@@ -82,7 +82,7 @@ Proposed acceptance conditions:
 * Substituted or untrusted identity material cannot silently become an accepted peer identity.
 * Identity-key changes trigger a defined verification process.
 
-E3. Message integrity and context binding
+### E3 · Message integrity and context binding
 
 Threats: tampering, cross-recipient substitution, cross-session substitution, malformed messages.
 
@@ -103,7 +103,7 @@ Proposed acceptance conditions:
 * Algorithm selection, nonce construction, key separation and associated-data rules are documented and independently reviewed.
 * Canonical encoding and field authority are explicit; visible AAD is not mistaken for identity verification.
 
-E4. Replay and freshness
+### E4 · Replay and freshness
 
 Threats: replayed messages, stale messages, duplicate acceptance.
 
@@ -124,7 +124,7 @@ Proposed acceptance conditions:
 * Nonce uniqueness is demonstrated by the specified state/key model for concurrency, retries, crash recovery, rollback and multi-device operation; a new carrier identifier is not accepted as a nonce-safety argument.
 * Expiry is not presented as a substitute for replay protection.
 
-E5. Multipart integrity and reconstruction
+### E5 · Multipart integrity and reconstruction
 
 Threats: missing, duplicated, conflicting, mixed or substituted capsules, including adversarial reordering of transport arrivals.
 
@@ -158,7 +158,7 @@ Proposed acceptance conditions:
 >
 Recent image-platform prior art (SRC-033–SRC-037) includes robust JPEG steganography under social-network recompression, real-service comparisons, active payload-removal methods and a broad steganography/steganalysis survey. SRC-043 directly studies fragmented covert communication across many images, redundant fragment carriage and reconstruction after carrier loss using robust watermarking rather than a generic steganographic stealth method; SRC-044 analyses batch steganography and pooled steganalysis; SRC-045 proves a square-root capacity bound only under explicit mathematical assumptions, not as a universal platform law. Do not treat multi-image fragmentation, payload survival or concealment alone as a distinctive system-level result. Evaluate per-image and collection-level detection separately. Separate extraction success, detector performance, endpoint authentication/integrity, discovery privacy and observer leakage. Name the platform, application version, upload/download mode, source format and observed transformations. Report false positives, false negatives, payload rate, image quality and extraction-failure classification where relevant. Distinguish simulated-channel results from live platform observations.
 
-E6. Transport-route, carrier integrity and transformation
+### E6 · Transport-route, carrier integrity and transformation
 
 Threats: route-specific metadata exposure, size/capacity limits, resizing, recompression, transcoding, metadata stripping, route substitution, extraction failure, delivery ambiguity and concealment detection.
 
@@ -217,7 +217,7 @@ Proposed acceptance conditions:
 
 No claim of universal steganographic resistance is acceptable.
 
-E7. Lifecycle, key rotation and revocation
+### E7 · Lifecycle, key rotation and revocation
 
 Threats: compromised keys, stale identities, false expiry or deletion claims.
 
@@ -235,7 +235,7 @@ Proposed acceptance conditions:
 * Expiry and revocation do not claim to erase previously obtained plaintext or copies.
 * Device replacement and key compromise are treated as explicit lifecycle events.
 
-E8. Secret handling and endpoint compromise
+### E8 · Secret handling and endpoint compromise
 
 Threats: logs, crash reports, notifications, backups, local storage and compromised devices.
 
@@ -255,7 +255,9 @@ Proposed acceptance conditions:
 
 The integrated Echomix/Katzenpost design is a required comparative baseline for E9, not simply a mix-network option. The comparison must account for its global and active adversary model, decoy/application traffic coupling, capability-derived discovery, courier/replica split, controlled acknowledgements and retries, all-or-nothing backfills, human-routine leakage, and role-collusion analysis. The project's image route must be tested for additional observations not covered by that system model: platform accounts and engagement, publication metadata, media transformation, moderation, hosting records and carrier extraction outcomes. Do not infer a privacy advantage merely because one route uses images and another uses a mixnet.
 
-E9. Metadata, traffic analysis, discovery and availability Use the [route comparison framework](route-comparison-framework.md) as the common event/observer ledger across image, file/attachment, conventional messaging and mixnet-backed profiles. It is a comparison protocol for research planning, not a report of completed measurements.
+### E9 · Metadata, traffic analysis, discovery and availability
+
+Use the [route comparison framework](route-comparison-framework.md) as the common event/observer ledger across image, file/attachment, conventional messaging and mixnet-backed profiles. It is a comparison protocol for research planning, not a report of completed measurements.
 
 Threats: traffic analysis, participant correlation, timing and volume observation, locator disclosure, access-pattern correlation, behavioural inference and delivery suppression.
 
@@ -287,7 +289,7 @@ Proposed acceptance conditions:
 
 
 
-E10. Password-derived encryption as a conditional alternative
+### E10 · Password-derived encryption as a conditional alternative
 
 This evaluation applies only if the password-derived mode is retained as a supported option. It is not part of the current endpoint identity or key-establishment model by implication.
 
@@ -310,7 +312,7 @@ Proposed acceptance conditions:
 * No claim of sender attribution, forward secrecy or identity verification is inferred from possession of the shared password.
 * The mode is presented with explicit assumptions and limitations, not as an interchangeable substitute for authenticated endpoint key establishment.
 
-4. Cross-cutting adversarial evaluation
+## 4. Cross-cutting adversarial evaluation
 
 Evaluation should include scenarios that combine multiple threats rather than testing every component only in isolation.
 
@@ -334,7 +336,7 @@ Each scenario should record:
 * Residual risk.
 * Any resulting architecture or protocol change.
 
-5. Evaluation evidence and maturity
+## 5. Evaluation evidence and maturity
 
 The project must distinguish the following evidence levels:
 
@@ -349,7 +351,7 @@ These levels are a proposed project evidence model, not an external certificatio
 
 A documented design intention must never be described as a tested security property. Passing a test suite does not automatically establish resistance to untested attacks.
 
-6. Evaluation artefacts
+## 6. Evaluation artefacts
 
 The evaluation process should eventually produce:
 
@@ -364,7 +366,7 @@ The evaluation process should eventually produce:
 
 No numerical thresholds are fixed at this stage. They must be justified by the relevant property and test environment rather than invented to make a design appear measurable.
 
-7. Risks requiring continued scrutiny
+## 7. Risks requiring continued scrutiny
 
 Risk	Why it matters	Current treatment
 Identity verification remains underspecified	Authenticated encryption cannot establish who a person is without a trustworthy identity binding	Open protocol decision
@@ -378,7 +380,7 @@ False lifecycle claims	Expiry cannot erase information already obtained	Explicit
 Protocol composition errors	Individually sound primitives can be combined incorrectly	Requires complete specification and review
 Excessive architecture	Additional services and dependencies expand the attack surface	Complexity must demonstrate value
 
-8. Evaluation gates
+## 8. Evaluation gates
 
 The following gates are proposed before progression to implementation:
 
@@ -410,7 +412,7 @@ Gate 4 · Independent review
 
 Passing a gate requires evidence. Progression must not be inferred merely because the relevant document exists.
 
-9. W4 conclusion
+## 9. W4 conclusion
 
 The architecture is not validated by its elegance, number of components or choice of cryptographic primitives. It must demonstrate that the identified threats are addressed under explicit assumptions, and that its remaining limitations are honestly represented.
 
