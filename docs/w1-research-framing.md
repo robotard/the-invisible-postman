@@ -35,6 +35,7 @@ This is an architectural research question. It does not assume that the proposed
 8. **Human behaviour:** How can routines, timing, language, platform habits and social-engineering probes create linkability even when carriers and locations vary?
 9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
 10. **Evaluation:** What evidence is needed to assess the stated architectural objectives, and what would show that a design choice is unsuitable?
+11. **Confidence and evidence:** How can the architecture expose the basis and limits of confidence in claims about identity, integrity, message-set completeness, conversation continuity and delivery without collapsing distinct properties into a universal score or creating new privacy risks?
 
 > **Illustrated diagram placeholder · W1-F01 — Research scope and evidence map**
 > **Placement:** After §3 Supporting research questions.
@@ -53,7 +54,7 @@ The intended contribution is a transparent, theory-led architecture and design r
 - propose testable acceptance criteria and questions for independent review; and
 - distinguish established cryptographic mechanisms from unvalidated architectural choices.
 
-The value of the work is not that images are inherently secure or that concealment makes encryption stronger. It is that the system's claims, boundaries, and limitations are made explicit enough to examine and challenge. The [working prior-art comparison](prior-art-comparison.md) is used to test the candidate contribution against the closest identified systems; it does not establish originality by itself.
+The value of the work is not that images are inherently secure or that concealment makes encryption stronger. It is that the system's claims, boundaries, and limitations are made explicit enough to examine and challenge. A candidate organising principle is that confidence must be grounded in inspectable evidence, bounded by the verifier's vantage and assumptions, and explicit about what remains unknown. This is not a claim that confidence is a cryptographic property or that the phrase itself establishes originality; see the [confidence and evidence model](confidence-and-evidence-model.md). The [working prior-art comparison](prior-art-comparison.md) is used to test the candidate contribution against the closest identified systems; it does not establish originality by itself.
 
 The closest integrated comparator now includes Echomix/Katzenpost. Its global/active adversary model, traffic coupling, capability-derived discovery, asynchronous messaging, reliability and collusion analysis materially narrow any broad claim to a newly integrated delivery-privacy architecture. The remaining comparative question is whether ordinary image-platform carriage introduces distinct, measurable transformations or observables when carrying the same endpoint-protected message semantics. This is a route comparison target, not an assumed contribution. See [the Echomix comparator](echomix-katzenpost-comparator.md) and [route comparison framework](route-comparison-framework.md).
 
@@ -119,6 +120,9 @@ The distinction between ciphertext fragmentation and threshold secret sharing mu
 - **Package encapsulation:** The bounded, route-facing framing of an already protected object or fragment capsule for carriage. It is distinct from endpoint authentication and does not make outer fields trustworthy.
 - **Message-set context / manifest:** Authenticated context needed to establish fragment membership, count, order-independent reconstruction and completeness for one logical protected object; exact fields and encoding remain open.
 - **Conversation/session linkage:** Authenticated continuity between distinct logical messages; it is not fragment-set membership and need not be exposed as a stable carrier identifier.
+- **Confidence:** A verifier's evidence-bounded judgement about a specific proposition, scope and time; not a universal system score or a property the system can simply assert.
+- **Assurance:** A justified argument that defined requirements are met within a stated scope and evaluation regime; it requires evidence and appropriate scrutiny.
+- **Observer-inferred linkage:** A correlation hypothesis based on visible timing, size, provenance, media artefacts or access patterns; distinct from endpoint-authenticated linkage.
 - **Expiry and revocation:** Policies that may restrict future access or sessions but cannot retrieve data already copied or learned.
 
 > **DEFINITION · Message multiplicity:** A *fragment set* is the pieces needed to reconstruct one logical protected message. A *conversation* links distinct logical messages. A *retry* repeats delivery of the same logical message or protected object. *Redundant carriage* repeats or codes data to tolerate loss. These relationships must not share one ambiguous "multipart" label.
@@ -137,6 +141,8 @@ The distinction between ciphertext fragmentation and threshold secret sharing mu
 >
 
 ## 8. Research discipline
+
+The confidence/evidence framing is governed by [the claim-centred model](confidence-and-evidence-model.md). In particular, distinguish cryptographic validity from identity binding and semantic truth; distinguish individual-object validity from fragment membership, set completeness and conversation continuity; and use delivery verbs only at the event level supported by evidence. Confidence records should remain scoped, provenance-aware and privacy-minimising. They must not become a universal score, central tracking ledger or substitute for independent assurance.
 
 The work should distinguish three categories throughout the thesis:
 
