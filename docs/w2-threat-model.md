@@ -25,6 +25,11 @@ The train's proposed transport-unlinkability measures introduce further observab
 The adversary may also exploit human behavioural regularities. Repeated online schedules, response latency, platform/device habits, linguistic or formatting style, image-selection patterns and predictable reactions can link otherwise distinct carriage instances. Social-engineering probes may use urgency, false delivery failures, impersonated notifications or timed prompts to elicit recognisable behaviour. Assess these as behavioural side channels, not as cryptographic failures, while recognising that they can undermine practical anonymity.
 
 ## 3. Assets to protect
+### Role separation and optional services
+
+The threat model distinguishes endpoint message protection, carrier encapsulation, each transport hop, optional orchestration and external carrier-generation dependencies. One provider may occupy multiple roles. Analyse its permissions and observations for each role rather than treating a label such as “bot” or “coordinator” as a single trust boundary. Orchestration may be absent; if present, it may also act as a transit hop. Every hop can add timing, account, access, storage, transformation and correlation observations. A second hop is not presumed to improve anonymity. External image-generation services are not trusted for keys, salts, nonces, entropy or identity. Telegram is an optional example of a service that could coordinate, carry, or do both; each configuration has a different exposure profile.
+
+
 
 | Asset | Security concern |
 |---|---|
