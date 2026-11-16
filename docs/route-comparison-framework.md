@@ -30,7 +30,7 @@ For each profile, define the same logical task:
 Record where the profile cannot provide an equivalent task. Do not silently substitute a route's account identity for cryptographic identity or its delivery receipt for endpoint-confirmed receipt.
 
 ## 3. Observer and actor register
-### 2.1 Functional roles and route composition
+### 3.1 Functional roles and route composition
 
 Record these functions separately even when one service performs several: **message protection** (endpoint creation and validation of the protected object), **encapsulation** (route-specific packaging/extraction), **transport** (each service that carries, stores, publishes, relays or retrieves the object), and **orchestration** (optional coordination of route selection, sequencing, delivery references, retries and state). Orchestration is not what makes delivery transport-agnostic and need not be deployed. It may also carry or relay data; if so, record its transit role and observer view separately from its coordination role. External carrier-generation services are additional dependencies, not sources of cryptographic entropy or trust.
 
