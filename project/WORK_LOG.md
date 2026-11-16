@@ -1036,6 +1036,7 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 ## 2026-11-16 · SRC-049 implementation inspection addendum
 
 - Used the GitHub connector to inspect the author-linked repository README (blob c6a3fd63324404992f5b84c529b20afb09f4f3b1), core/method_core.py (blob a024cf92893c5fb8411f1ded9c9d64488914757c) and scripts/run_stego.py (blob e41bb02cd90499c9774b60ef5343415a1630a93b).
+- Pinned the external implementation repository to main commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d (2026-05-09); source register records the exact inspected blob IDs.
 - The code implements two redundancy levels: d-fold bit repetition within each frame and majority voting across 16 reconstructed frame secrets.
 - Each frame receives a separately generated ChaCha20 key and 12-byte nonce in the PyCryptodome path; the key material is stored as local per-frame files.
 - The sender path writes 16 PNG frame files; the receiver expects frame PNGs, local key files and a local ground-truth watermark file. The group ID is used in file naming and seed handling, not as an authenticated message-set identifier.
