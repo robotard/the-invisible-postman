@@ -75,6 +75,22 @@ The reviewed systems protect different relationships:
 
 A single phrase such as “transport privacy” or “unlinkability” would conceal these differences. The thesis needs an explicit observer/property matrix: who observes which event, what they can correlate, what they can alter, which parties may collude, and which leakage is deliberately outside the model.
 
+### 3.6 Active sanitization is a distinct adversarial route condition
+
+Zhu et al. (2021; SRC-036) describe a learned attack/optimisation network intended to remove hidden data while preserving image quality. Wei et al. (2022; SRC-046) describe a general secret-data remover for robust steganography and watermarking, including image fusion and latent renewal. Zhu et al. (2023; SRC-047) describe a scaling-aware sanitization framework with Scaling-Net and SC-Net plus a discriminator. These papers establish active payload-removal as a researched countermeasure class; they do not establish that any named platform deploys these models or that the methods defeat every hiding scheme.
+
+Zhu et al. (2025; SRC-048) then describe a counter-adaptation: a secret-seed-conditioned decoder is joined with a sanitizing network, and the sender iteratively optimises the cover so the sanitiser's output yields the intended secret to a receiver with the seed. This is not evidence that an unknown or changing sanitizer can be defeated. It changes the experiment: sanitizer knowledge, version, access, training assumptions and receiver side information become explicit adversary parameters.
+
+**Research consequence:** Separate passive recompression, active sanitization and sender adaptation to a known sanitizer. A successful carrier extraction under one declared model is not a general robustness guarantee; neither extraction nor concealment establishes endpoint authenticity or message privacy.
+
+### 3.7 Multi-frame GIF redundancy is not multi-image message fragmentation
+
+Wang et al. (2026; SRC-049) provide a distinct carrier topology: an animated GIF with 16 frames, with watermark bits redundantly represented across frames and recovered by majority voting according to the authors' implementation README. The README documents a diffusion-based sender/receiver pipeline, per-frame latent/key material, OTP and ChaCha20 modes, and simulated JPEG distortion evaluation. The paper's formal security claims and result tables have not been inspected here.
+
+This is one animated carrier object with internal frame redundancy. It is not a set of separate image posts, an endpoint-authenticated fragment manifest, or a conversation of distinct logical messages. It therefore sharpens the terminology rather than displacing the multi-image prior-art comparison.
+
+**Research consequence:** Compare frame-level loss/distortion and cross-frame recovery separately from separate-object fragmentation, account/time-window collection analysis and conversation linkage. Do not equate frame count with carrier count or message count.
+
 ## 4. Candidate contribution pressure test
 
 | Candidate | What prior art already establishes | What might remain distinct | Current judgement |
@@ -87,7 +103,7 @@ A single phrase such as “transport privacy” or “unlinkability” would con
 
 The remaining research question is whether carrying a common endpoint-protected message through ordinary image platforms produces decision-relevant security, privacy, reliability or usability properties that differ from file/attachment, conventional messaging and mixnet-backed routes.
 
-This question is open. It does not assume that the image route is superior, original or even preferable. The literature already includes robust social-platform image steganography, platform-specific transformation studies, active payload-removal approaches and broad steganalysis surveys (SRC-033–SRC-037 and SRC-043–SRC-045). The comparison must therefore separate carrier extraction, detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost. A result may favour another route or show that the image route has no defensible advantage.
+This question is open. It does not assume that the image route is superior, original or even preferable. The literature already includes robust social-platform image steganography, platform-specific transformation studies, active payload-removal approaches and broad steganalysis surveys (SRC-033–SRC-037 and SRC-043–SRC-049). The comparison must therefore separate carrier extraction, detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost. A result may favour another route or show that the image route has no defensible advantage.
 
 ## 6. What remains before any originality statement
 
