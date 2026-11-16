@@ -1046,3 +1046,35 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 - No code was executed, no GIF experiment was reproduced, and no formal proof or security audit was performed. The full paper and formal security argument remain unreviewed.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Disposable work area and internal lookup registries
+
+### Completed and read-back verified
+
+- Moved the five operational continuity records from `project/` to `work/`: project state, workplan, work log and both session digests. Each destination file was fetched back and verified before the old path was deleted; each old path was then checked to confirm it no longer resolves.
+- Updated repository README navigation to the new `work/` paths and verified the saved README.
+- Added `work/README.md` to define the area as temporary, thesis-agnostic scaffolding that can be removed at full thesis release without changing thesis or research content.
+- Added compact human-readable and JSON lookup registries for recurring concepts (`C-001` onward) and active work items (`T-001` onward). These IDs are internal only, are not thesis references, and do not replace citations, source IDs, section references or figure references.
+- Kept the thesis and all substantive research documents untouched by this organisational change. Existing thesis and research references remain authoritative.
+
+### Boundary and lifecycle
+
+- `/work/` is coordination machinery, not part of the research architecture or thesis deliverable.
+- Internal IDs shorten our lookup and continuation; they must not be inserted into thesis/research prose.
+- A task is extinguished when its substantive outcome is reconciled into the thesis and supporting research, evidence limits are recorded, and no further work remains. IDs are not recycled.
+- Before release, verify that no enduring document depends on `/work/`; then remove the directory.
+
+### Verification boundary
+
+- Destination operational files, lookup registries and README were read back and content-verified after writes.
+- All five superseded `project/` files were deleted only after verified copies existed; each deletion was checked by attempting to fetch the old path.
+- Full repository-wide relative-link validation remains to be run after the remaining continuity-record and digest updates.
+
+### Next
+
+1. Finish updating the moved state, roadmap and log; refresh both digests last.
+2. Run a repository-wide audit for stale `project/` paths, broken Markdown links and accidental internal-ID leakage into thesis/research documents.
+3. Continue `T-001`: seek complete source texts for SRC-033, SRC-034 and SRC-036; preserve partial-review labels until methods, results and limitations are inspected.
+
+**Theory only · No implementation · Not audited.**
