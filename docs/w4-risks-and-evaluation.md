@@ -90,6 +90,8 @@ Evaluation questions:
 * Can authenticated metadata be altered independently of the ciphertext?
 * Are unsupported versions and ambiguous encodings rejected?
 * Is the cryptographic construction specified as a complete protocol?
+* Are key derivation inputs and purpose/direction labels unambiguous and domain-separated?
+* Which header fields are encrypted, visible-but-authenticated AAD, or unauthenticated route metadata?
 
 Proposed acceptance conditions:
 
@@ -97,6 +99,7 @@ Proposed acceptance conditions:
 * Messages cannot be silently reassigned to another recipient or session.
 * Unsupported or ambiguous message formats are rejected.
 * Algorithm selection, nonce construction, key separation and associated-data rules are documented and independently reviewed.
+* Canonical encoding and field authority are explicit; visible AAD is not mistaken for identity verification.
 
 E4. Replay and freshness
 
@@ -107,13 +110,16 @@ Evaluation questions:
 * What makes a message unique?
 * What freshness policy is applied?
 * How is replay state maintained?
-* What happens if local replay state is lost or restored from backup?
+* What happens if local replay state is lost, restored from backup or rolled back?
+* Can concurrent sends, retries or multi-device state cause nonce reuse under the same key?
+* How are sequence overflow, process crashes and uncertain-delivery retries handled?
 
 Proposed acceptance conditions:
 
 * Replayed messages are identified according to a documented policy.
 * Duplicate acceptance is prevented within the stated replay-state assumptions.
-* Clock dependence and state-loss behaviour are documented.
+* Clock dependence, state-loss/rollback behaviour and duplicate policy are documented.
+* Nonce uniqueness is demonstrated by the specified state/key model for concurrency, retries, crash recovery, rollback and multi-device operation; a new carrier identifier is not accepted as a nonce-safety argument.
 * Expiry is not presented as a substitute for replay protection.
 
 E5. Multipart integrity and reconstruction
