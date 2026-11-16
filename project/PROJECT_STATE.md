@@ -86,8 +86,8 @@ Extend the matrix with the closest mix-network and anonymous-messaging systems w
 
 ## 2026-11-15 · Method correction and mandatory session continuity rule
 
-- Withdrew the premature confirmatory framing of the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
-- Research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions must remain distinct.
+- Withdrew the premature confirmatory framing of the developing central research direction. The preferred term is **developing research direction**; originality remains unestablished.
+- Research progression, supporting evidence, research questions, developing research directions, evaluation, demonstrated results and demonstrated contributions must remain distinct.
 - Concrete operating rule: every work session must use and reconcile all three working documents: this project state, [the workplan](WORKPLAN.md) and [the work log](WORK_LOG.md).
 - Before stopping, all three must agree on what is complete or explicitly parked. A parked item must include its current state, evidence, blockers/dependencies, exact next action and relevant repository paths. The session digest is refreshed after these three documents, not used as their substitute.
 - This rule applies to every future session and is now recorded in the machine-readable digest and workplan.
@@ -115,11 +115,11 @@ Extend the matrix with the closest mix-network and anonymous-messaging systems w
 - Oblivious Signaling changes the cost placement from retrieval to sender-triggered uniform inbox updates, while retaining explicit sender-channel, timing, retention and network-leakage assumptions.
 - The 2024 dead-drop paper already examines a public-platform covert-messaging pipeline, including rendezvous, discovery hints, retrieval, fragmentation and user detection. A generic claim to novelty from “whole-pipeline” analysis is untenable.
 - The 2025 diffusion paper gives formal image-based covert-channel results but explicitly leaves image delivery outside its problem model and assumes a pre-shared key.
-- Candidate B remains the strongest emergent proposition only if a common cross-layer observer/property analysis yields a distinct analytical result. Originality is not established.
+- Candidate B remains the strongest developing research direction only if a common cross-layer observer/property analysis yields a distinct analytical result. Originality is not established.
 
 ### Parked next action
 
-Broaden the closest-related-work search for integrated anonymous messaging and delivery systems, including group OMR, private signaling, two-server/DORAM approaches and other dead-drop or image-carriage architectures. Then build the common observer/property matrix across publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction. Use adverse findings to revise or displace the emergent proposition. Keep diagrams deferred.
+Broaden the closest-related-work search for integrated anonymous messaging and delivery systems, including group OMR, private signaling, two-server/DORAM approaches and other dead-drop or image-carriage architectures. Then build the common observer/property matrix across publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction. Use adverse findings to revise or displace the developing research direction. Keep diagrams deferred.
 
 
 
@@ -127,14 +127,14 @@ Broaden the closest-related-work search for integrated anonymous messaging and d
 
 ### Completed and read-back verified
 
-- Reconciled the developing research direction as an **emergent proposition**, not a confirmatory claim; originality remains unestablished.
+- Reconciled the developing research direction as an **developing research direction**, not a confirmatory claim; originality remains unestablished.
 - Added the canonical epistemic distinctions to research practice and aligned the thesis, traceability, source register, self-review register, contribution assessment and diagram index.
 - Removed the obsolete term from active working documents. The historical archive remains unchanged.
 - Added the mandatory three-document session rule to the workplan and this checkpoint.
 
 ### Parked next action
 
-Continue W0.3/W6 source reconciliation with full-text prior-art comparison: OMR, PerfOMR and Oblivious Signaling first; then the 2024 dead-drop pipeline and 2025 image-diffusion work. Record each source's construction, threat model, assumptions, guarantees, limitations and what it does not establish. Build the A/B/C comparison matrix before revising the central emergent proposition or releasing diagram work.
+Continue W0.3/W6 source reconciliation with full-text prior-art comparison: OMR, PerfOMR and Oblivious Signaling first; then the 2024 dead-drop pipeline and 2025 image-diffusion work. Record each source's construction, threat model, assumptions, guarantees, limitations and what it does not establish. Build the A/B/C comparison matrix before revising the central developing research direction or releasing diagram work.
 
 
 ## 2026-11-15 · Hard contribution and bias checkpoint
@@ -142,7 +142,7 @@ Continue W0.3/W6 source reconciliation with full-text prior-art comparison: OMR,
 ### Completed and read-back verified
 
 - Added [the thesis contribution and bias assessment](../docs/thesis-contribution-and-bias-assessment.md), with a weighted, explicitly provisional assessment of originality, theoretical coherence, usefulness, security/privacy reasoning, falsifiability and scope feasibility.
-- Identified the strongest current contribution direction as an emergent proposition: a lifecycle-wide analysis of endpoint-controlled messaging over replaceable untrusted carriage, especially the interaction between image carriage, recipient discovery/retrieval and cross-layer privacy leakage. Its originality remains unestablished.
+- Identified the strongest current contribution direction as an developing research direction: a lifecycle-wide analysis of endpoint-controlled messaging over replaceable untrusted carriage, especially the interaction between image carriage, recipient discovery/retrieval and cross-layer privacy leakage. Its originality remains unestablished.
 - Recorded bias controls for image-route commitment, architecture-by-accumulation, novelty-by-combination, security-language inflation, threat-model sprawl, source-confirmation bias and metaphor/terminology bias.
 - Expanded the source register with PerfOMR (2024), Oblivious Signaling (2026), dead-drop covert messaging (2024) and image-based diffusion covert messaging (2025). Newly added works are explicitly marked as abstract/overview-level inspections; full-text verification remains outstanding.
 - Added a direct “go” decision: continue thesis construction, but do not claim originality as established. Candidate B (end-to-end delivery privacy analysis) is the leading potential contribution direction, supported by A (responsibility-separated architecture) and C (route comparison/evaluation).
@@ -271,7 +271,7 @@ This is the changing, evidence-based progress record. project/WORKPLAN.md is the
 
 - Created docs/research-practice.md as the standing methodology for author responsibility, critical self-review, multidisciplinary peer discussion, evidence-led criticism, attribution, dissent and future asynchronous contribution.
 - Created docs/self-review-register.md with twelve initial author-identified challenges.
-- The twelve challenges cover proposition value, security-claim discipline, identity verification, protocol composition, carrier value, steganalysis evidence, metadata exposure, multipart ordering and validation, lifecycle/recovery complexity, evaluation design, scope and source grounding.
+- The twelve challenges cover research direction value, security-claim discipline, identity verification, protocol composition, carrier value, steganalysis evidence, metadata exposure, multipart ordering and validation, lifecycle/recovery complexity, evaluation design, scope and source grounding.
 - Each register item includes section/location, challenged claim or assumption, reviewer question, evidence needed, proposed action, priority, status and response/resolution.
 - Linked both documents from the README, workplan and traceability register.
 - Explicitly distinguished author-identified challenges from external peer-review findings. No external peer review, reviewer group or endorsement is claimed.
@@ -682,3 +682,40 @@ Changed research documents were fetched after successful GitHub writes. Targeted
 - Preserved historical archive material unchanged. External URL availability and heading-anchor rendering are not covered by this path audit.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Image-platform prior-art pressure test and research framing correction
+
+### Completed and read-back verified
+
+- Added SRC-033–SRC-037 to the source register: MRAS (2026), DRAS (2026), Qiao et al. (2023) on practical social-network steganography, Zhu et al. (2021) on active removal of robust hidden payloads, and the ACM Computing Surveys image-steganography/steganalysis survey.
+- Inspected publisher records and available abstracts/details. Full experimental reproduction was not attempted; SRC-037 full survey remains to be read.
+- Extended the route-comparison framework with separate outcome dimensions for extraction reliability, detectability, endpoint authenticity/integrity, observer privacy and operational cost.
+- Extended the observer/property matrix with the established image-platform steganography and active-transformation literature.
+- Replaced the provisional framing in the prior-art comparison with an open comparative research question. It does not assume the image route is superior, original or preferable.
+- Integrated the new prior art into the thesis, W1, W4 and traceability. The thesis now distinguishes carrier extraction, steganalysis, endpoint authentication/integrity, discovery privacy and platform/network observer leakage.
+- Revised the research language across the thesis and working records to use research questions, architectural objectives and evidence requirements. No assumed outcome is built into the research framing.
+- Every changed file was fetched after writing and matched the submitted content.
+
+### Material research finding
+
+Image-carrier robustness on social platforms is an established and active field. MRAS and DRAS report recent methods and real-platform tests; Qiao et al. provide practical comparisons; Zhu et al. study active payload removal; the ACM survey maps a broad embedding/detection literature. Therefore image payload survival, recompression tolerance or concealment alone cannot carry the project's distinct contribution.
+
+The project remains worth investigating as a complete endpoint-controlled delivery architecture and route-comparison study. Its potential value must be established through measurable differences across route-native guarantees, endpoint semantics, discovery, platform/network observers, reliability, usability and operational cost. It may show that another route is preferable; that is a valid result.
+
+### Parked continuation
+
+1. Read SRC-037 in full and inspect the full methods/results for SRC-033 and SRC-034 if access permits; revise source review states accordingly.
+2. Select named, versioned profiles for one image platform, one encrypted file/attachment route, one conventional E2E messaging route and the Echomix/Katzenpost baseline.
+3. Populate the route-comparison framework with source-backed properties and explicitly mark unverified platform behaviours.
+4. Define a common logical message task and event-by-observer ledger, preserving route-native properties and non-comparable fields.
+5. Decide which platform transformation measurements can be performed within the theory-only scope; do not imply measurements have occurred.
+6. Reconcile any resulting changes into thesis §§3, 8 and 10, W1–W4, traceability and the source register.
+7. Keep diagrams deferred until the comparative argument stabilises.
+
+### Verification boundary
+
+All files changed in this batch were individually read back. No platform experiment, payload extraction test, steganalysis benchmark, implementation, formal proof or independent security audit was performed. Full-tree link/status audit remains to be rerun after this batch.
+
+**Theory only · No implementation · Not audited.**
+
