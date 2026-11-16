@@ -114,16 +114,16 @@ The distinction between ciphertext fragmentation and threshold secret sharing mu
 
 > **COMPARISON · Concealment versus linkage:** Per-image steganographic concealment concerns whether an individual carrier reveals embedded data. Set-level linkage concerns whether several carriers or events can be grouped through identifiers, manifests, timing, provenance, embedding artefacts or retrieval patterns. Hiding one does not establish hiding the other.
 
-> **Illustrated diagram placeholder · W1-F03 — Protected-object package and image-carriage boundary**  
-> **Placement:** Beside the message multiplicity definitions, after W1-F02.  
-> **Prompt for later illustration:** Show the conceptual progression from logical message to endpoint-protected object, optional authenticated message-set manifest, fragment capsules, route-specific carrier encapsulation, optional steganographic embedding and one or more image carriers. Show the inverse extraction/decapsulation and endpoint validation path. Use clear visual boundaries for endpoint-authenticated material, untrusted outer framing and optional concealment.  
-> **Must not imply:** That a final wire format has been selected, that outer encapsulation authenticates content, or that steganographic concealment is mandatory.
->
 > **Illustrated diagram placeholder · W1-F02 — Message, fragment-set and conversation distinctions**
 > **Placement:** Beside §7 Core framing and terminology.
 > **Prompt for later illustration:** Show one logical message represented by one protected object; the same object optionally divided into indexed capsules and carried by multiple image objects; a separate conversation containing several distinct protected messages; and a retry as another delivery event for the same logical message. Use separate visual shapes/labels for message identity, fragment-set membership, conversation continuity, redundancy and carrier identity.
 > **Must not imply:** That a fragment set is a conversation, that carrier identifiers authenticate membership, or that redundancy provides confidentiality or guaranteed recovery.
 
+> **Illustrated diagram placeholder · W1-F03 — Protected-object package and image-carriage boundary**  
+> **Placement:** Beside the message multiplicity definitions, after W1-F02.  
+> **Prompt for later illustration:** Show the conceptual progression from logical message to endpoint-protected object, optional authenticated message-set manifest, fragment capsules, route-specific carrier encapsulation, optional steganographic embedding and one or more image carriers. Show the inverse extraction/decapsulation and endpoint validation path. Use clear visual boundaries for endpoint-authenticated material, untrusted outer framing and optional concealment.  
+> **Must not imply:** That a final wire format has been selected, that outer encapsulation authenticates content, or that steganographic concealment is mandatory.
+>
 
 ## 8. Research discipline
 
