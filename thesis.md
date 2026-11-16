@@ -245,7 +245,7 @@ The [multi-message linkage and steganographic carriage analysis](docs/multi-mess
 > **Prompt for later illustration:** Show the endpoint-authenticated logical message and optional manifest, fragment capsules, route encapsulation, optional image steganographic embedding and multiple image carriers; separately show a conversation containing distinct messages, retries and cross-route copies. Add observer-specific projections to show which relationships are explicit, authenticated, hidden or inferable.  
 > **Must not imply:** That one fragment set equals a conversation, that a carrier identifier authenticates membership, or that concealment guarantees unlinkability.
 >
-### 7.3 Fragmentation is not secret sharing
+### 7.4 Fragmentation is not secret sharing
 
 Ciphertext fragmentation divides transport data into pieces. It does not divide the decryption key, create threshold recovery or make each fragment independently secret. Threshold secret sharing distributes secret material under a defined threshold policy and introduces different participant, collusion, storage, authorisation and audit assumptions. The two techniques must not be conflated.
 
@@ -418,6 +418,8 @@ The following sources are cited in the current working text. This list is provis
 - IPTC Photo Metadata Working Group. (2025). *IPTC Photo Metadata Standard 2025.1*. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html
 - Josefsson, S., & Liusvaara, I. (2017). *Edwards-Curve Digital Signature Algorithm (EdDSA)* (RFC 8032). IRTF. https://www.rfc-editor.org/rfc/rfc8032
 - Krawczyk, H., & Eronen, P. (2010). *HMAC-based Extract-and-Expand Key Derivation Function (HKDF)* (RFC 5869). IETF. https://www.rfc-editor.org/rfc/rfc5869
+- Wang, P., Zhong, H., Feng, Y., Gong, L., Tang, Y., Lu, Z.-M., & Wang, L. (2024). Covert Communication through Robust Fragment Hiding in a Large Number of Images. *Sensors*, 24(2), 627. https://doi.org/10.3390/s24020627
+- Ker, A. D. (2007). Batch Steganography and Pooled Steganalysis. In *Information Hiding* (Lecture Notes in Computer Science, Vol. 4437, pp. 265–281). Springer. https://doi.org/10.1007/978-3-540-74124-inq
 - Barnes, R., Bhargavan, K., Lipp, B., & Wood, C. (2022). *Hybrid Public Key Encryption* (RFC 9180). IETF. https://www.rfc-editor.org/rfc/rfc9180
 - Kret, E., & Schmidt, R. (2023; updated 2024). *The PQXDH Key Agreement Protocol* (Revision 3). Signal. https://signal.org/docs/specifications/pqxdh/
 - Langley, A., Hamburg, M., & Turner, S. (2016). *Elliptic Curves for Security* (RFC 7748). IETF. https://www.rfc-editor.org/rfc/rfc7748
