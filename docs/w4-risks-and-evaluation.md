@@ -206,7 +206,7 @@ Proposed acceptance conditions:
 
 The integrated Echomix/Katzenpost design is a required comparative baseline for E9, not simply a mix-network option. The comparison must account for its global and active adversary model, decoy/application traffic coupling, capability-derived discovery, courier/replica split, controlled acknowledgements and retries, all-or-nothing backfills, human-routine leakage, and role-collusion analysis. The project's image route must be tested for additional observations not covered by that system model: platform accounts and engagement, publication metadata, media transformation, moderation, hosting records and carrier extraction outcomes. Do not infer a privacy advantage merely because one route uses images and another uses a mixnet.
 
-E9. Metadata, traffic analysis, discovery and availability
+E9. Metadata, traffic analysis, discovery and availability Use the [route comparison framework](route-comparison-framework.md) as the common event/observer ledger across image, file/attachment, conventional messaging and mixnet-backed profiles. It is a comparison protocol for research planning, not a report of completed measurements.
 
 Threats: traffic analysis, participant correlation, timing and volume observation, locator disclosure, access-pattern correlation, behavioural inference and delivery suppression.
 
