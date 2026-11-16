@@ -893,3 +893,41 @@ This is a documentation and workflow clarification only. It does not change the 
 Publisher-indexed article text and section snippets are not equivalent to complete full-text inspection. Direct ScienceDirect retrieval for MRAS was blocked; DRAS full methods/tables and Zhu et al. complete methods/results remain unavailable in this review. The reported platform and performance results remain attributed to the authors. No experiment, model or result was reproduced.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Multi-message linkage, image-carriage encapsulation and illustration briefs
+
+### Completed and read-back verified
+
+- Created `docs/multi-message-linkage-and-steganographic-carriage.md` as a dedicated research analysis covering distinct message models, relationship graphs, linkage mechanisms, steganographic collection risks, endpoint set integrity, observer threats, evaluation layers and contribution boundaries.
+- Reviewed the full publisher HTML for Wang et al. (2024; SRC-043), the full proceedings paper for Ker (2007; SRC-044), and the full author-hosted IEEE paper for Ker's formal capacity theorem (2007; SRC-045).
+- Corrected the prior-art distinction: SRC-043 uses robust DFT/DCT watermarking for multi-image covert communication, with fragment numbering and redundant copies combined by majority voting. It is not evidence that ordinary steganographic embedding is stealthy or robust on current platforms.
+- Separated SRC-044's pooled-detection framework from SRC-045's formal asymptotic square-root capacity theorem. SRC-045's assumptions include equal cover capacities, shift-hypothesis detector response with regularity conditions, independent per-cover detection errors and a batch size known to both parties. Sequential acquisition, dependent collections and modern platform pipelines are not covered by a universal quantitative guarantee.
+- Corrected the SRC-044 DOI and added SRC-045 as a separate source. Source register now contains 45 entries. Added the two Ker references and Wang et al. to the thesis bibliography.
+- Updated W1–W4 with aligned definitions/comparisons and text-only illustration placeholders:
+  - W1: research scope, message multiplicity and protected-object package.
+  - W2: endpoint linkage versus observer-visible linkage, collection-level steganalysis and observer projections.
+  - W3: conceptual package sequence from logical message through protected object, manifest, fragment capsules, carrier encapsulation, optional image steganography and endpoint validation; separate fragment-set, conversation, retry and route-copy relationships.
+  - W4: separate carrier extraction, set reconstruction, steganalysis and linkage evaluation; observer collection and experiment prompts.
+- Updated `diagrams/README.md` to index the W1–W4 prompts. The prompts specify placement, content and "must not imply" guardrails. No new diagram artwork was generated.
+- Integrated the work into thesis §§7–8 and Appendix A/C, the source register, route comparison framework, traceability, prior-art comparison, observer/property matrix, contribution/bias assessment and README.
+- Reconciled WORKPLAN and PROJECT_STATE. The ChatGPT Project Instructions boundary remains explicit: thin operating layer external to GitHub; substantive research rules stay in thesis/research documents.
+- Each GitHub write was fetched back and exact saved content matched.
+
+### Research distinctions now explicit
+
+- One logical message is not the same thing as a fragment set; a conversation links distinct messages; a retry is another delivery event for the same logical message; redundancy repeats/codes information for loss tolerance; a batch can contain independent messages; cross-route carriage can repeat the same protected object.
+- Endpoint-authenticated linkage needed for reconstruction is distinct from linkage visible or inferable by platforms, hosts, coordinators, network observers and human observers.
+- Carrier extraction, authenticated set reconstruction, per-image concealment, collection-level steganalysis and event/message linkage are separate evaluation outcomes.
+- A visible set identifier aids reconstruction but can be a correlation handle. Hiding it may move the problem to manifest distribution, capability delivery or retrieval timing.
+- Package encapsulation provides bounded route-facing framing; it is not authentication. Optional steganographic embedding does not encrypt or authenticate.
+- Multi-image redundancy may improve recovery while increasing carrier/event volume and pooled detection opportunities.
+
+### Verification boundary and next work
+
+- No final wire format, manifest schema, steganographic method, detector, or cryptographic protocol has been selected.
+- No implementation, platform experiment, steganalysis benchmark, extraction test, formal proof, independent reproduction or security audit was performed.
+- The previous relative-link and ZIP-instruction audits predate this batch and are stale. Rerun them, along with exact-status, terminology, image-reference and illustration-placeholder audits.
+- Next research action: extend the lifecycle/event/observer ledger with source-specific fragment-set, conversation, retry, cross-route and collection-level observations; retain explicit vantage, collection size, time window and dependence assumptions.
+
+**Theory only · No implementation · Not audited.**
