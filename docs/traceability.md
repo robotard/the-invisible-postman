@@ -43,6 +43,22 @@ The [Echomix comparator](echomix-katzenpost-comparator.md) adds an integrated me
 
 The current [observer/property matrix](observer-property-matrix.md) compares the scope and leakage boundaries of OMR/GOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion work. It is a working analytical aid, not a proof of completeness or originality. The matrix must be revised whenever a new comparator materially changes the observer or property baseline.
 
+### 2.1 Confidence and evidence traceability
+
+The additional research question asks how the architecture can expose the basis and limits of confidence in claims about identity, integrity, message-set completeness, conversation continuity and delivery. It maps to the confidence/evidence model and the following threat/evaluation relationships:
+
+| Claim area | Evidence required | Threat or invalid inference | Research/evaluation location |
+|---|---|---|---|
+| Key attribution and identity | Signature/session verification plus separate peer-key verification process | Treating key validity as human identity | W2 goals; W4 E2 and E11 |
+| Object integrity | AEAD/signature validation over defined content and context | Treating integrity as semantic truth or completeness | W3 validation boundary; W4 E3/E11 |
+| Fragment membership/completeness | Authenticated manifest, membership checks and completeness/coding rule | Treating one valid fragment as a complete message | Multi-message analysis; W4 E5/E11 |
+| Conversation continuity | Authenticated session/context linkage between distinct messages | Treating timing or shared carrier origin as authenticated continuity | Multi-message analysis; W2 linkage threat |
+| Delivery state | Evidence from the actor that generated each lifecycle event | Upgrading service acceptance to endpoint receipt or human reading | Confidence model; W4 E11 |
+| Observer linkage | Explicit vantage and observed metadata/events | Treating correlation as endpoint-authenticated linkage | Observer/property matrix; W2/W4 |
+| Evidence freshness | Key epoch, timestamp, expiry and revocation state | Reusing stale evidence after compromise or context change | W2 evidence threats; W4 E11 |
+
+This traceability does not assert that any evidence mechanism is implemented or validated. It records the claims that a future design and evaluation must distinguish.
+
 ## 3. Threat-to-architecture traceability
 
 ### 3.1 Transport-independence traceability
