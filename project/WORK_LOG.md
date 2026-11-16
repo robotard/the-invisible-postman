@@ -1,3 +1,47 @@
+## 2026-11-16 · Transport-neutral lifecycle, route profiles and documentary comparison
+
+### Completed and read-back verified
+
+- Corrected W3's logical lifecycle: route encoding, metadata/access handling, discovery and retrieval are now route-specific rather than hard-coded to image carriage.
+- Clarified that image metadata minimisation belongs only to the image adapter; file hosts and messaging/mixnet routes have distinct native metadata and service semantics.
+- Repaired the malformed traceability heading and aligned RQ5 with all four route families, including mixnet-backed messaging.
+- Updated the integrated thesis to distinguish publisher-abstract claims for MRAS/DRAS from fully inspected or independently reproduced evidence, and added the mixnet-backed baseline to the route comparison list.
+- Added SRC-038 (Signal PQXDH revision 3 and Double Ratchet revision 4), SRC-039 (Dropbox file activity and shared-link permissions), and SRC-040 (Katzenpost Pigeonhole specification/project documentation).
+- Added six evidence-bounded profile entries to the route framework: Qiao's published social-image experiment, MRAS, DRAS, Dropbox shared-link file hosting, Signal protocol reference, and Echomix/Pigeonhole.
+- Added an initial documentary comparison across endpoint crypto, discovery, observer visibility, transformation, reliability and evidence maturity. It is explicitly not a scored ranking.
+- Linked the profile sources from the route framework and traceability register.
+- Fetched every changed file after writing and verified exact saved content.
+
+### Material analytical distinctions
+
+- Qiao's 2023 platform study is a bounded literature profile, not a current Facebook/Twitter/WeChat service guarantee.
+- MRAS and DRAS remain abstract/highlight-level profiles until full methods, configurations and results are inspected.
+- Dropbox shared-link documentation supports a concrete file-host observation profile but does not establish end-to-end protection for the project's message object. Client-side protection is a comparison condition, not a Dropbox feature claimed here.
+- Signal PQXDH/Double Ratchet specifications support protocol-level comparison, not a complete Signal Messenger service/attachment/metadata profile. PQXDH revision 3 explicitly notes its mutual authentication is not post-quantum secure.
+- Pigeonhole's capability-controlled asynchronous storage abstraction must be distinguished from the anonymity properties of the underlying Echomix/Katzenpost or other network.
+- None of these profiles has been tested as a deployed configuration. No common scalar ranking is justified yet.
+
+### Static audit
+
+- Retrieved the recursive GitHub repository tree and checked relative Markdown links across all 26 Markdown files. No broken relative links were found.
+- W3 section numbering and traceability heading structure were inspected; the malformed heading was corrected.
+- The exact-status/terminology and diagram/image-reference audits remain open.
+
+### Remaining and next
+
+1. Seek full text for SRC-033, SRC-034 and SRC-036; preserve partial review labels until full methods/results are inspected.
+2. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
+3. Expand the documentary matrix into the full lifecycle/event/observer ledger, including discovery, retrieval, retries, expiry and collusion.
+4. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis.
+5. Complete exact-status, terminology, image-reference and cross-document consistency audits.
+6. Continue protocol-level analysis of nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without premature suite selection.
+
+### Verification boundary
+
+All changed files were fetched after writing and matched their submitted content. The link audit was static and covered Markdown links only. No implementation, live service test, platform experiment, cryptographic test, formal proof, independent reproduction or security audit was performed.
+
+**Theory only · No implementation · Not audited.**
+
 ## 2026-11-16 · Image-steganography prior-art review and route-evaluation refinement
 
 ### Completed and read-back verified
