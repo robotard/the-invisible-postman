@@ -32,6 +32,8 @@ These figures should be designed only after the manuscript, terminology and supp
 
 The current [observer/property matrix](../docs/observer-property-matrix.md) and [prior-art comparison](../docs/prior-art-comparison.md) are upstream research dependencies for Figures 05, 08 and 10. They expose unresolved differences between recipient privacy, anonymous access, carrier transformation and human/network observation. Do not draw a single generic “privacy” boundary or imply that OMR, DORAM, cover traffic or unique carriers are interchangeable.
 
+The current integrated baseline now includes [Echomix/Katzenpost](../docs/echomix-katzenpost-comparator.md), and the [route comparison framework](../docs/route-comparison-framework.md) defines the event and observer structure that should inform Figures 05, 08 and 10. Do not illustrate a general lifecycle contribution or generic privacy boundary until the image-platform comparison produces a specific, supportable result.
+
 ## Current gating decision · 2026-11-15
 
 The hard contribution and bias checkpoint is recorded in [the thesis contribution assessment](../docs/thesis-contribution-and-bias-assessment.md). The central contribution is not yet established; the leading emergent proposition concerns lifecycle-wide delivery privacy across endpoint authority, replaceable carriage, recipient discovery/retrieval and cross-layer leakage. Existing prior art on dead-drop pipelines, image steganography and oblivious retrieval must be compared in full before new figures are drawn.
