@@ -107,6 +107,17 @@ The image-carriage column must be read against a mature and active technical lit
 
 The route-comparison study must separate extraction reliability, detectability, endpoint authenticity/integrity and observer privacy. These are not interchangeable outcomes.
 
+The completed full-text inspection of SRC-035 and SRC-037 sharpens this matrix:
+
+- **Transformation is not one variable.** JPEG recompression, resizing, transcoding, image editing, metadata rewriting and active payload removal are different transformations and may compose in an unknown order.
+- **Laboratory channel models are not platform profiles.** Qiao et al. report divergent outcomes between simulated compression and their tested Facebook, Twitter and WeChat paths, including materially different WeChat original-image and default-send behaviour. The sample and client configuration are bounded to that study.
+- **Robustness does not imply concealment.** Extraction error and complete recovery measure payload survival; PSNR/SSIM address image quality; detector error addresses a particular steganalysis setup. None establishes endpoint authenticity or privacy from platform/account observers.
+- **Steganalysis generalisation is limited.** The SRC-037 survey's taxonomy and cross-paper synthesis caution against assuming one detector generalises across embedding schemes, cover sources and processing pipelines.
+- **Active removal is a separate adversarial capability.** SRC-036 describes an image-quality-preserving learned attack against robust hidden payloads. Its full-text details remain only partially inspected, so this matrix records the capability class, not a universal attacker guarantee.
+
+The image-route evidence ledger must therefore name the exact client path and distinguish source-reported facts, direct measurements (if later authorised), and unresolved assumptions. It must also record safe receiver behaviour when extraction is incomplete or authentication fails.
+
+
 ## 8. Integrated comparator · Echomix / Katzenpost
 
 Echomix is included as an integrated messaging system, not merely a mix-network transport. The full paper (SRC-032) combines a global and active adversary model, decoy/application traffic coupling, anonymous service access, BACAP capability-derived storage locations, Pigeonhole asynchronous messaging, courier/replica separation, reliability and backfill semantics, tombstones, and role-collusion analysis.
