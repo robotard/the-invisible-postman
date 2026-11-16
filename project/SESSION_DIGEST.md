@@ -29,9 +29,9 @@ current_state:
   thesis: working_draft
   research_units: "W1-W4 drafted; final alignment remains."
   source_register: "42 entries; SRC-041 RFC 5869 and SRC-042 RFC 9180 added and inspected."
-  route_profiles: "Six evidence-bounded starting profiles; documentary comparison and initial lifecycle/event observer ledger exist. Service versions/configurations and deeper observer/collusion evidence remain open."
+  route_profiles: "Six evidence-bounded starting profiles; MRAS/DRAS profile rows now include expanded indexed method/metric and author-reported platform details. Documentary comparison and initial lifecycle/event observer ledger exist. Service versions/configurations and deeper observer/collusion evidence remain open."
   protocol_analysis: "Initial protocol boundary analysis drafted and linked to W3, W4, thesis, traceability and README. Covers key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback. No protocol selected."
-  source_reviews: "SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 partial; SRC-038-SRC-042 source documents inspected."
+  source_reviews: "SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 expanded publisher-indexed partial inspection; SRC-038-SRC-042 source documents inspected."
   implementation: none
   independent_audit: none
 next_actions:
