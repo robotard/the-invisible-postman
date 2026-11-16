@@ -490,7 +490,6 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/route-comparison-framework.md` — common event and observer ledger for route-specific evidence.
 - `docs/protocol-boundary-analysis.md` — key derivation, identity/context binding, nonce uniqueness, replay, ordering and fallback obligations.
 - `docs/multi-message-linkage-and-steganographic-carriage.md` — fragment-set semantics, redundant multi-image carriage, conversation linkage, package encapsulation, pooled steganalysis and prior-art boundaries.
-- `project/WORKPLAN.md` and `project/PROJECT_STATE.md` — roadmap and verified checkpoint.
 
 ## Appendix D. Illustration guide
 
