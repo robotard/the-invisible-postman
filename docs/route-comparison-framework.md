@@ -115,6 +115,28 @@ Record the paper/software version, topology, gateway/mix/service/courier/replica
 
 The comparison must include the paper's own residual observations: global observers see network participation and traffic patterns; contacts can infer activity within latency windows; replicas and couriers see role-specific request and retry metadata; certain colluding role pairs can combine observations; human online routines remain relevant. Preserve the system's native cryptographic and messaging semantics rather than pretending an image-carriage object can be inserted without adaptation.
 
+## 5.5 Initial named profile register and evidence boundary
+
+The following profiles are the current evidence-backed starting set. They are deliberately labelled as literature, protocol or documentation reference profiles where a live, pinned service configuration is not yet available. They are not a claim that a controlled cross-route experiment has been completed.
+
+| Profile ID | Route/profile | Version or configuration boundary | What can be compared now | Still unresolved |
+|---|---|---|---|---|
+| IMG-QIAO-2023 | Social-image carriage as tested by Qiao et al. (SRC-035) | Published study configuration: 50 BOSSbase images, JPEG QF 85, stated payload 0.1; Facebook/Twitter upload-download and WeChat transfer; exact platform app/server versions are not pinned | Published method outcomes, extraction/recovery metrics, platform-specific differences and contrast with simulated JPEG channels | Not a current live platform profile; not all image formats, accounts, upload modes or platform versions; no independent reproduction |
+| IMG-MRAS-2026 | MRAS JPEG social-platform profile (SRC-033) | Publisher abstract reports LinkedIn testing; article configuration/version not fully inspected | Author-reported approach and stated evaluation targets only | Full text, precise LinkedIn/client configuration, baselines, tables and limitations |
+| IMG-DRAS-2026 | DRAS downward-recompression profile (SRC-034) | Publisher highlights report WhatsApp, LinkedIn and X tests; exact client/server versions and modes not yet inspected | Author-reported downward-recompression objective and headline result only | Full text, exact platform paths, test design, baselines and limitations |
+| FILE-DROPBOX-LINK | Dropbox shared-link file carriage (SRC-039) | Official help documentation inspected 5 November 2026; link permissions and activity features depend on account/configuration | File activity, owner/editor observations, optional viewer information, link permission/download-control behaviour | Pin actual plan, account settings, link type, client version and retention; application-layer protected-object handling is a test condition, not a Dropbox E2E guarantee |
+| E2E-SIGNAL-PROTOCOL | Signal protocol reference, not a Signal app deployment (SRC-038) | PQXDH revision 3 plus Double Ratchet revision 4; 1:1 asynchronous protocol reference | Published key-establishment, ratchet, skipped-message and protocol replay semantics | Pin client/service version and separately source server metadata, delivery receipts, attachments, backups, multi-device and retention before claiming a product-level route |
+| MIX-ECHOMIX-PIGEONHOLE | Echomix paper with current Katzenpost/Pigeonhole documentation (SRC-032, SRC-040) | Echomix arXiv v2 plus current public Pigeonhole specification/project documentation; no mutually compatible release set pinned here | Published architecture, BACAP/Pigeonhole capabilities, courier/replica roles, asynchronous storage and route/network separation | Pin compatible repository release tags, deployment topology, directory config, client version, retention and underlying network before an executable comparison |
+
+### Profile-selection rule
+
+1. A *literature profile* reproduces a paper's stated experimental conditions and findings; it does not claim to represent the current service.
+2. A *protocol reference profile* supports analysis of the protocol specification only; it does not fill in product/service metadata or operational behaviour.
+3. A *service profile* requires a named product, pinned client/release, relevant account and privacy settings, route configuration, and sources for the service-side lifecycle.
+4. A *deployed evaluation profile* additionally requires a declared, permitted test setup and captured observations. None is claimed at this checkpoint.
+
+The first usable comparison can therefore be a structured documentary comparison across the six rows above, while explicitly leaving service-level unknowns blank. Do not collapse these profiles into a single score or imply that the different evidence types are directly comparable.
+
 ## 6. Comparison dimensions and recorded outcomes
 
 For every route, complete the following fields:
