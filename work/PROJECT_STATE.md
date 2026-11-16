@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · Multi-message linkage, active sanitization and animated-carrier prior art integrated  
+**Checkpoint:** 2026-11-16 · Disposable work area and internal lookup registries established  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -18,6 +18,8 @@ When the user says **continue**, resume from the latest verified repository chec
 Use GitHub work documents as the project continuity source. Do not make the user reconstruct prior decisions already recorded there.
 
 ## Current position
+
+The operational continuity layer now lives entirely under `/work/`. This directory is temporary, thesis-agnostic scaffolding: its task and concept IDs are internal lookup handles only, never thesis references or research claims. At full thesis release, `/work/` must be removable without changing the thesis, its citations or substantive research documents. Thesis/source/section/figure references remain authoritative in their existing locations.
 
 The repository has a coherent working thesis, W1–W4 research documents, a threat model, decision and traceability registers, prior-art comparisons, an observer/property matrix and a common route-comparison framework. These are substantive drafts, not a finished or independently reviewed thesis.
 
@@ -64,8 +66,8 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Next session: exact starting point
 
-1. Apply the Continue/resume contract above and refresh the live digests and working records.
-2. Seek full text for SRC-033, SRC-034 and SRC-036; MRAS/DRAS public repositories are pinned and source-inspected, but retain partial article-review labels until full methods/results and limitations are inspected.
+1. Apply the Continue/resume contract above using the five operational records under `/work/`; consult `/work/lookup/TASKS.md` for the short internal task key and `/work/lookup/TERMS.md` only when repeated concept lookup is useful.
+2. Continue **T-001**: seek full text for SRC-033, SRC-034 and SRC-036; MRAS/DRAS public repositories are pinned and source-inspected, but retain partial article-review labels until full methods/results and limitations are inspected.
 3. Review full texts for SRC-046–SRC-048 and the SRC-047 source repository where available; inspect the SRC-049 paper's formal security argument and complete experimental results. Selected implementation files are read; no execution or audit performed. Preserve partial labels until paper claims are inspected.
 4. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
 5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test obligations against Signal, MLS and HPKE references without prematurely selecting primitives.
@@ -86,6 +88,6 @@ The status label below is project metadata describing the repository's verified 
 - Preserve uncertainty, dissent, source provenance and historical work. Distinguish established mechanisms, proposed designs and unverified claims.
 - Never describe drafts as implemented, tested, proven, audited or externally reviewed.
 
-**Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The subsequent working-document compression and read-back verification are recorded in `WORK_LOG.md` and `SESSION_DIGEST.json`.
+**Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The subsequent working-document compression, move to `/work/` and read-back verification are recorded in `WORK_LOG.md` and `SESSION_DIGEST.json`.
 
 **Verification boundary:** Documentation and repository changes only. No implementation, platform experiment, cryptographic test, formal proof or independent audit has been performed. The relative-link audit was static and limited to Markdown links resolved against the current repository tree.
