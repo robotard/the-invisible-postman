@@ -342,6 +342,18 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** A general image-carriage or social-platform media pipeline, the proposed endpoint identity/message-protection protocol, image metadata minimisation, platform transformation tolerance or human behavioural unlinkability. Privacy requires non-colluding servers; integrity requires both servers to follow the protocol; servers are assumed semi-honest. RemiseCC's read tokens are distributed out of band, and the paper identifies privacy-preserving token distribution as open. A malicious server may drop writes.
 - **Review state:** Full USENIX paper inspected, including system taxonomy, threat model, ideal functionality, DORAM and authorization mechanisms, security claims, evaluation and limitations. No implementation or performance result was reproduced.
 
+### SRC-032 · Echomix: a Strong Anonymity System with Messaging
+
+- **Source:** Infeld, E. J., Stainton, D., Ryge, L. and Threebit Hacker (2025), *Echomix: a Strong Anonymity System with Messaging*, arXiv:2501.02933v2 (paper dated October 2024).
+- **Publisher/status:** arXiv preprint; not recorded as peer-reviewed conference publication in the inspected record.
+- **Link:** https://arxiv.org/abs/2501.02933
+- **Full text:** https://arxiv.org/html/2501.02933v2
+- **Related implementation/documentation:** Katzenpost, https://katzenpost.network/; live threat model, https://katzenpost.network/docs/threat_model/
+- **Relevant to:** Thesis §§3, 5, 8 and 10; W1 RQ3/RQ5/RQ7/RQ8/RQ9/RQ10; W2 global and active observers, compromised contacts and role collusion; W3 service, discovery, storage and carriage boundaries; W4 E6/E9.
+- **Supports:** An integrated practical mix-network and messaging design combining global and active adversary analysis, traffic/decoy coupling, anonymous service access, BACAP capability-derived unlinkable storage locations, Pigeonhole asynchronous messaging, couriers and replicas, reliability/backfill and tombstone semantics, and hybrid post-quantum Sphinx packet formats. It explicitly analyses statistical disclosure from human online routines and role-specific collusion.
+- **Does not establish:** That its guarantees transfer to ordinary image-hosting/social-platform routes, image recompression/transcoding/metadata rewriting, external platform account and engagement records, or the proposed carrier extraction pipeline. It is not evidence that image-carriage is novel. The paper's own operational costs and residual leakage must be retained.
+- **Review state:** Full arXiv HTML paper inspected, including threat model, architecture, Loopix comparison, BACAP, Pigeonhole, reliability, collusion analysis, post-quantum packet variants, latency/bandwidth evaluation and conclusion. Katzenpost's current threat-model page was also inspected; its site states that the evolving page does not yet incorporate all designs in the paper. No code, benchmark or proof was independently reproduced.
+
 ### SRC-033 · MRAS: Matching Robust Adaptive Steganography for JPEG Images over Social Networking Platforms
 
 - **Source:** Kumar, R., Bansal, S. and Bansal, R. K. (2026). *MRAS: a matching robust adaptive steganography scheme for JPEG images over social networking platforms*. Signal Processing, article 110172.
@@ -388,19 +400,7 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** The novelty or security of this project's specific architecture, nor platform-specific performance of any proposed route.
 - **Review state:** Publisher record and abstract inspected; full survey not yet examined.
 
-### SRC-032 · Echomix: a Strong Anonymity System with Messaging
-
-- **Source:** Infeld, E. J., Stainton, D., Ryge, L. and Threebit Hacker (2025), *Echomix: a Strong Anonymity System with Messaging*, arXiv:2501.02933v2 (paper dated October 2024).
-- **Publisher/status:** arXiv preprint; not recorded as peer-reviewed conference publication in the inspected record.
-- **Link:** https://arxiv.org/abs/2501.02933
-- **Full text:** https://arxiv.org/html/2501.02933v2
-- **Related implementation/documentation:** Katzenpost, https://katzenpost.network/; live threat model, https://katzenpost.network/docs/threat_model/
-- **Relevant to:** Thesis §§3, 5, 8 and 10; W1 RQ3/RQ5/RQ7/RQ8/RQ9/RQ10; W2 global and active observers, compromised contacts and role collusion; W3 service, discovery, storage and carriage boundaries; W4 E6/E9.
-- **Supports:** An integrated practical mix-network and messaging design combining global and active adversary analysis, traffic/decoy coupling, anonymous service access, BACAP capability-derived unlinkable storage locations, Pigeonhole asynchronous messaging, couriers and replicas, reliability/backfill and tombstone semantics, and hybrid post-quantum Sphinx packet formats. It explicitly analyses statistical disclosure from human online routines and role-specific collusion.
-- **Does not establish:** That its guarantees transfer to ordinary image-hosting/social-platform routes, image recompression/transcoding/metadata rewriting, external platform account and engagement records, or the proposed carrier extraction pipeline. It is not evidence that image-carriage is novel. The paper's own operational costs and residual leakage must be retained.
-- **Review state:** Full arXiv HTML paper inspected, including threat model, architecture, Loopix comparison, BACAP, Pigeonhole, reliability, collusion analysis, post-quantum packet variants, latency/bandwidth evaluation and conclusion. Katzenpost's current threat-model page was also inspected; its site states that the evolving page does not yet incorporate all designs in the paper. No code, benchmark or proof was independently reproduced.
-
-The [prior-art comparison](prior-art-comparison.md) synthesises the full-text reviews of SRC-020 and SRC-024–SRC-032 and pressure-tests candidate contributions A/B/C. It is a working synthesis, not a systematic literature review or originality determination.
+The [prior-art comparison](prior-art-comparison.md) synthesises the full-text reviews of SRC-020 and SRC-024–SRC-037 and pressure-tests candidate contributions A/B/C. It is a working synthesis, not a systematic literature review or originality determination.
 
 ## 5. Claim-to-source map
 
