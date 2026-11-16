@@ -123,7 +123,28 @@ The model is useful only if it can be challenged. Evaluation should ask:
 
 No numeric confidence score is proposed. If later research establishes a need for quantitative estimation, it must define the target proposition, calibration data, error costs, population, independence assumptions and uncertainty interval. A score without those elements would create false precision.
 
-## 10. Research status and falsifiability
+## 10. Illustrative application to a source claim
+
+Consider the author-reported claim in SRC-034 that DRAS reduces message-extraction error by approximately 87% relative to a state-of-the-art comparator.
+
+| Claim-record field | Bounded entry |
+|---|---|
+| Claim | The authors report an approximately 87% reduction in extraction error against their selected comparator. |
+| Scope | The DRAS paper's reported JPEG downward-recompression experiments and named platform tests; not arbitrary image routes or messaging systems. |
+| Evidence available here | Publisher-indexed abstract and method/evaluation snippets; source-register record and author-linked public MATLAB repository inspection. |
+| Provenance | Publisher record and author-linked repository, as recorded in SRC-034. |
+| Mechanism described | RoLoS coefficient selection and CARE predictive channel modelling with syndrome-trellis coding. |
+| Missing evidence | Full methods, complete result tables, sample sizes, payload settings, platform acquisition procedure and full limitations. |
+| Independent verification | None. The public demo was inspected but not executed; the paper's result was not reproduced. |
+| Disposition | Author-reported result, partially reviewed; not independently verified. |
+
+This record supports the statement that the authors report the result under their study conditions. It does not support a claim that the result was reproduced, generalises to all platforms, establishes endpoint authenticity, proves message-set completeness, or demonstrates delivery security. The publisher's indexed content and a code repository are distinct evidence items; neither should be silently upgraded into full-text review or independent reproduction.
+
+SRC-036 provides a complementary example. Its indexed description of an attack/filtering module and image-quality optimisation module, plus the stated BOSSbase/BOWS2 and JPEG QF75 context, supports a bounded description of the proposed sanitization approach. It does not establish that a named platform deploys that model or that the method defeats every current embedding scheme. The missing training configuration, complete results and generalisation limits remain material.
+
+These examples are not independent validation of the confidence model. They are a practical check that its fields can preserve author attribution, study scope, evidence provenance and unresolved limitations without turning a reported result into a stronger claim.
+
+## 11. Research status and falsifiability
 
 The model is a proposed conceptual framework to integrate into W1–W4 and the thesis. Its usefulness, usability, completeness and privacy cost have not been empirically evaluated. It does not establish a novel contribution. It should be revised or removed if it adds terminology without improving claim precision, evidence traceability or evaluation.
 
