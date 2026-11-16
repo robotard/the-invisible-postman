@@ -511,6 +511,13 @@ The following sources are cited in the current working text. This list is provis
 - Infeld, E. J., Stainton, D., Ryge, L., & Threebit Hacker. (2025). *Echomix: a Strong Anonymity System with Messaging* (arXiv:2501.02933v2; paper dated October 2024). https://arxiv.org/abs/2501.02933
 - Katzenpost. (n.d.). *Pigeonhole Protocol Specification*. https://katzenpost.network/docs/specs/pigeonhole/
 - Liu, Z., & Tromer, E. (2022). Oblivious Message Retrieval. In *Advances in Cryptology – CRYPTO 2022*, Lecture Notes in Computer Science 13507, 751–781. https://doi.org/10.1007/978-3-031-15802-5_26
+
+- Bauer, L. A., Howes IV, J. K., Markelon, S. A., Bindschaedler, V., & Shrimpton, T. (2024). Leveraging Generative Models for Covert Messaging: Challenges and Tradeoffs for "Dead-Drop" Deployments. *Proceedings of the ACM Conference on Data and Application Security and Privacy (CODASPY 2024)*, 67–78. https://doi.org/10.1145/3626232.3653264
+- Bauer, L. A., Bao, W., & Bindschaedler, V. (2025). *Provably Secure Covert Messaging Using Image-based Diffusion Processes*. IEEE Conference on Secure and Trustworthy Machine Learning (SatML 2025). https://www.vbinds.ch/node/155
+- Lee, K., & Yeo, Y. (2026). *SophOMR: Improved Oblivious Message Retrieval from SIMD-Aware Homomorphic Compression*. 35th USENIX Security Symposium, 3219–3238. https://www.usenix.org/conference/usenixsecurity26/presentation/lee-keewoo
+- Liang, H., Liu, Z., Tromer, E., Xie, X., & Yu, Y. (2026). *InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability*. 35th USENIX Security Symposium, 4227–4246. https://www.usenix.org/conference/usenixsecurity26/presentation/liang
+- Liu, Z., Tromer, E., & Wang, Y. (2024). *PerfOMR: Oblivious Message Retrieval with Reduced Communication and Computation*. USENIX Security 2024. https://www.usenix.org/conference/usenixsecurity24/presentation/liu-zeyu
+- Shuhan, M. K. B., Baldimtsi, F., & Ateniese, G. (2026). *Oblivious Signaling*. USENIX Security 2026, 4207–4226. https://www.usenix.org/conference/usenixsecurity26/presentation/shuhan
 - Go project. (2023). *net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption* (CVE-2023-24536), issue #59153. https://github.com/golang/go/issues/59153
 
 ## Appendix A. Terminology
