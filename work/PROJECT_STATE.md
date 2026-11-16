@@ -71,16 +71,14 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Next session: exact starting point
 
-1. Apply the Continue/resume contract above using the five operational records under `/work/`; consult `/work/lookup/TASKS.md` for the short internal task key and `/work/lookup/TERMS.md` only when repeated concept lookup is useful.
-2. Continue thesis construction by pinning and comparing named/versioned route profiles, extending §8.2 and §8.8 with source-backed lifecycle/observer evidence, and testing whether image carriage produces a decision-relevant difference against the stronger integrated baseline.
-3. Continue **T-001**: seek full text for SRC-033, SRC-034 and SRC-036; MRAS/DRAS public repositories are pinned and source-inspected, but retain partial article-review labels until full methods/results and limitations are inspected.
-4. Continue challenging the confidence/evidence model against protocol delivery semantics and multi-message reconstruction; the initial SRC-034/SRC-036 documentary challenge is recorded. Test privacy costs and revise the thesis where evidence warrants it.
-4. Review full texts for SRC-046–SRC-048 and the SRC-047 source repository where available; inspect the SRC-049 paper's formal security argument and complete experimental results. Selected implementation files are read; no execution or audit performed. Preserve partial labels until paper claims are inspected.
-5. Continue challenging the confidence/evidence model against protocol delivery semantics and multi-message reconstruction; the initial SRC-034/SRC-036 documentary challenge is recorded. Test privacy costs and revise the thesis where evidence warrants it.
+1. Apply the Continue/resume contract above using the five operational records under /work/; consult /work/lookup/TASKS.md for the short internal task key and /work/lookup/TERMS.md only when repeated concept lookup is useful.
+2. Continue thesis construction by pinning named/versioned route profiles and integrating source-backed lifecycle/observer evidence into §8.2 and §8.8; determine whether image carriage produces a decision-relevant difference against the integrated baseline.
+3. Continue T-001: seek full text for SRC-033, SRC-034 and SRC-036; MRAS/DRAS public repositories are pinned and source-inspected, but retain partial-review labels until full methods, results and limitations are inspected.
+4. Review full texts for SRC-046–SRC-048 and the SRC-047 source repository where available; inspect the SRC-049 paper's formal security argument and complete experimental results. Selected implementation files are read; no execution or audit performed.
+5. Challenge the confidence/evidence model against protocol delivery semantics and multi-message reconstruction; assess privacy costs and revise the thesis where evidence warrants it.
 6. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test obligations against Signal, MLS and HPKE references without prematurely selecting primitives.
-7. Reconcile any new route findings into W1–W4, the contribution assessment and integrated thesis.
-8. [~] Continue broader terminology and cross-document consistency review. Static checks for 29-file relative links, Markdown image references and archive-generation instructions pass; W1–W4 prompt IDs exactly match the diagram index.
-
+7. Reconcile new route findings into W1–W4, the contribution assessment and integrated thesis.
+8. Continue broader terminology and cross-document consistency review. Static checks for 29 Markdown files, relative links, image references and archive-generation instructions were previously recorded; rerun after material edits.
 
 ## Document-boundary rule
 
