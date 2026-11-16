@@ -72,7 +72,11 @@ Each work unit should produce a complete, independently useful artifact before d
 - [ ] **W9 · Reviewer publication** — prepare a readable PDF with contents, integrated chapters, contextual figures, references, limitations, open decisions and reviewer guidance.
 - [ ] **W10 · Repository verification** — verify internal Markdown links, image references, document consistency, publication rendering, accessibility text, provenance and exact status statements.
 
-## Candidate technical direction (not a final protocol)
+## Candidate technical direction (not a final protocol)## Transport-independence clarification (current architecture rule)
+
+The next architecture pass must preserve four distinct functions: endpoint message protection, carrier encapsulation, optional transport adapters and optional orchestration. Orchestration may coordinate route selection/sequencing/retrieval/retries and may itself carry data, but it does not define transport independence or become mandatory. Services performing multiple roles must be modelled role by role. Image carriage remains a required research comparison route, not a mandatory runtime path. Telegram, external image generation and additional hops are examples only. Compare complete hop-by-hop routes and their observer disclosures; do not assume extra hops improve privacy. Keep the protected object invariant across routes unless an explicit authenticated protocol conversion is defined. This clarification is now integrated into W1-W3 and the thesis; continue by reconciling W4, traceability, README and the route ledger before named profile selection.
+
+
 
 The thesis may evaluate authenticated key agreement based on X25519, HKDF-SHA-256, Ed25519 signatures where appropriate, and XChaCha20-Poly1305 AEAD. These are candidates, not a completed or audited protocol. Key confirmation, identity binding, nonce rules, versioning, error handling, metadata leakage and recovery semantics still require explicit specification.
 
