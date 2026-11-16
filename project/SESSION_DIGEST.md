@@ -42,23 +42,30 @@ read_first:
   - thesis.md
   - docs/source-register.md
   - docs/route-comparison-framework.md
+source_review_detail:
+  SRC-033: "Partial: publisher abstract/indexed article details; full text inaccessible; methods/results unverified."
+  SRC-034: "Partial: publisher abstract/highlights; full methods, tables and platform configurations unverified."
+  SRC-035: "Full publisher HTML inspected; bounded 50-image platform tests; no reproduction."
+  SRC-036: "Partial: publisher abstract/indexed sections; full method/results inaccessible."
+  SRC-037: "Full 40-page survey inspected; secondary synthesis, not a common controlled benchmark."
 current_state:
   thesis: working_draft
   research_units: "W1-W4 drafted; alignment remains open"
   route_profiles: "not yet named and evidence-populated"
-  source_reviews: "SRC-033-SRC-037 full-text review remains open"
+  source_reviews: "SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 partial pending access"
   implementation: none
   independent_audit: none
 next_actions:
-  - "Complete high-value full-text reviews for SRC-033-SRC-037."
+  - "Seek full-text access for SRC-033, SRC-034 and SRC-036; keep partial review states until complete evidence is inspected."
+  - "Seek full text for remaining methods/results of SRC-033, SRC-034 and SRC-036; do not overstate abstract/indexed evidence."
   - "Select evidenced named/versioned profiles for image-platform, file/attachment, conventional E2E and Echomix/Katzenpost routes."
   - "Populate route lifecycle events and observer views using source-backed evidence; mark unknowns."
   - "Check W3 numbering and traceability references."
   - "Reconcile material findings into thesis and research-supporting documents."
-  - "Run fresh relative-link, status and cross-document consistency audits."
+  - "Run fresh relative-link, status and cross-document consistency audits after substantive reconciliation."
 deferred:
   - "New diagrams until the comparative argument stabilises."
-  - "External peer-review packaging until a coherent thesis candidate exists."
+  - "External peer-review preparation until a coherent thesis candidate exists."
   - "Implementation and experiments; do not imply they have occurred."
 document_boundaries:
   thesis_and_research: "Substantive argument, technical principles, evidence, contribution assessment, uncertainty and limitations."
