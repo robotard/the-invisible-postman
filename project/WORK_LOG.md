@@ -1030,6 +1030,18 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 - Confirmed W1–W4 each contain definition/comparison blocks and the shared package-encapsulation, message-multiplicity and steganography distinctions. W1–W4 also distinguish animated-GIF frames, separate image carriers, and distinct protected messages; active sanitization and keyed counter-adaptation remain separate threat conditions.
 - The audit is static documentation validation only. It is not a semantic peer review, code execution, platform test, steganalysis benchmark or security audit.
 
-**Next:** Complete full-text/source-level review for SRC-033, SRC-034 and SRC-036; inspect SRC-046–SRC-048 full text and SRC-047 implementation where available; inspect SRC-049's full paper/formal security argument and implementation beyond its README. Then pin route service/client versions and reconcile evidence into the comparison framework and thesis.
+**Next:** Complete full-text/source-level review for SRC-033, SRC-034 and SRC-036; inspect SRC-046–SRC-048 full text and SRC-047 implementation where available; review SRC-049's full paper/formal security argument and complete results. Selected README/core/sender/receiver code has been inspected but not executed or audited. Then pin route service/client versions and reconcile evidence into the comparison framework and thesis.
+
+
+## 2026-11-16 · SRC-049 implementation inspection addendum
+
+- Used the GitHub connector to inspect the author-linked repository README (blob c6a3fd63324404992f5b84c529b20afb09f4f3b1), core/method_core.py (blob a024cf92893c5fb8411f1ded9c9d64488914757c) and scripts/run_stego.py (blob e41bb02cd90499c9774b60ef5343415a1630a93b).
+- The code implements two redundancy levels: d-fold bit repetition within each frame and majority voting across 16 reconstructed frame secrets.
+- Each frame receives a separately generated ChaCha20 key and 12-byte nonce in the PyCryptodome path; the key material is stored as local per-frame files.
+- The sender path writes 16 PNG frame files; the receiver expects frame PNGs, local key files and a local ground-truth watermark file. The group ID is used in file naming and seed handling, not as an authenticated message-set identifier.
+- The receiver asserts that the number of recovered frames and ciphers equals the configured 16. The inspected code therefore does not establish erasure tolerance for missing frames; majority voting is not itself proof of missing-frame recovery.
+- The inspected StreamCipher path uses raw ChaCha20 encrypt/decrypt without an authentication tag visible in that code. The fallback is a 32-bit NumPy PRNG XOR explicitly labelled TEST ONLY. These are code-reading observations, not a cryptographic audit or a judgement on the uninspected paper proof.
+- Updated SRC-049, the multi-message analysis, W2/W3/W4, thesis and prior-art/observer comparisons to distinguish bit errors from frame erasures, local sidecar keys from authenticated recipient manifests, and carrier recovery from endpoint authentication.
+- No code was executed, no GIF experiment was reproduced, and no formal proof or security audit was performed. The full paper and formal security argument remain unreviewed.
 
 **Theory only · No implementation · Not audited.**
