@@ -266,6 +266,20 @@ If later research justifies threshold-controlled recovery, it must be specified 
 
 No recovery topology should be adopted merely because it is technically possible. It must solve a demonstrated problem without introducing disproportionate risk.
 
+3.10 Protocol composition and state obligations
+
+The architecture does not select a cryptographic protocol. Before a protocol can be specified, it must define identity verification and transcript binding, key hierarchy and purpose separation, HKDF salt and context inputs, AEAD nonce uniqueness, authenticated message context, replay and ordering state, and downgrade-resistant failure behaviour. These are endpoint protocol responsibilities, not properties supplied by a carrier, route adapter or coordinator.
+
+The [protocol boundary analysis](protocol-boundary-analysis.md) records the current obligations and the limits of relevant references. RFC 5869 distinguishes non-secret HKDF salt from context-specific `info` (SRC-041). RFC 9180 provides a compositional KEM/KDF/AEAD reference and stateful nonce handling, but leaves ordering, loss detection and broader replay protection to the application and does not provide recipient-compromise forward secrecy (SRC-042). Neither RFC is a selected project protocol.
+
+At minimum:
+* Separate identity, session, directional, message and route-local state; derive cryptographic keys with explicit purpose and direction separation.
+* Bind protocol version, suite, roles, verified identity references and ephemeral key material through an authenticated transcript.
+* Guarantee nonce uniqueness for every encryption under a given key, including retries, concurrency, crash recovery, rollback and multi-device state.
+* Authenticate canonical message context and multipart manifests; distinguish visible AAD from encrypted fields and unauthenticated route hints.
+* Maintain explicit replay, ordering, expiry and duplicate state; route retry and fallback must not bypass it.
+* Fail closed on malformed, truncated, unauthenticated, stale or unsupported data; never silently downgrade or re-encrypt with a reused key/nonce pair.
+
 4. Message lifecycle
 
 The following is a logical lifecycle, not an implementation sequence. It separates endpoint protection, carriage preparation, transport/discovery and receiving-side validation.
