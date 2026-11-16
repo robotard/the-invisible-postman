@@ -48,6 +48,10 @@ The four work documents now contain text-only illustration placeholders at the p
 | W3-F02 | [W3 architecture](../docs/w3-architecture.md) | Message-set, conversation, retry and cross-route relationships | Figures 07, 10 and 11 |
 | W4-F01 | [W4 risks and evaluation](../docs/w4-risks-and-evaluation.md) | Evaluation ladder from carrier extraction to conversation linkage | Figure 12 |
 | W4-F02 | [W4 risks and evaluation](../docs/w4-risks-and-evaluation.md) | Observer collection and linkage experiment | Figures 10 and 12 |
+| W1-F04 | [W1 research framing](../docs/w1-research-framing.md) | Carrier multiplicity levels and adversarial image processing | Figures 08 and 12 |
+| W2-F02 | [W2 threat model](../docs/w2-threat-model.md) | Active sanitizer and keyed counter-adaptation threat boundary | Figures 05 and 12 |
+| W3-F03 | [W3 architecture](../docs/w3-architecture.md) | One animated carrier versus separate image-carrier sets; sanitizer boundary | Figures 07–09 |
+| W4-F03 | [W4 risks and evaluation](../docs/w4-risks-and-evaluation.md) | Frame, object, message and observer-collection evaluation units | Figure 12 |
 | Thesis-F07 | [Integrated thesis](../thesis.md) | Multi-message package and observer linkage | To be reconciled with Figures 07–10 |
 
 Each placeholder contains a prompt and a "must not imply" guardrail. Consolidate duplicate concepts when the thesis figure set is final; do not create one figure per placeholder mechanically. Preserve the principle that a figure should appear beside the narrative it explains.
@@ -58,7 +62,7 @@ The current [observer/property matrix](../docs/observer-property-matrix.md) and 
 
 The current integrated baseline now includes [Echomix/Katzenpost](../docs/echomix-katzenpost-comparator.md), and the [route comparison framework](../docs/route-comparison-framework.md) defines the event and observer structure that should inform Figures 05, 08 and 10. Do not illustrate a general lifecycle contribution or generic privacy boundary until the image-platform comparison produces a specific, supportable result.
 
-## Current gating decision · 2026-11-15
+## Current gating decision · 2026-11-16
 
 The hard contribution and bias checkpoint is recorded in [the thesis contribution assessment](../docs/thesis-contribution-and-bias-assessment.md). The central contribution is not yet established; the leading emergent proposition concerns lifecycle-wide delivery privacy across endpoint authority, replaceable carriage, recipient discovery/retrieval and cross-layer leakage. Existing prior art on dead-drop pipelines, image steganography and oblivious retrieval must be compared in full before new figures are drawn.
 
