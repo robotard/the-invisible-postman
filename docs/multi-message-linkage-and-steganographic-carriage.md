@@ -2,7 +2,7 @@
 
 **Status:** Research analysis and design obligations; no protocol or embedding method selected.  
 **Research alignment:** W1 RQ4–RQ8 · W2 observer/threat model · W3 capsule and route architecture · W4 E5/E6/E9  
-**Related work:** SRC-026, SRC-027, SRC-033–SRC-037, SRC-043–SRC-044, and SRC-024–SRC-032  
+**Related work:** SRC-026, SRC-027, SRC-033–SRC-037, SRC-043–SRC-045, and SRC-024–SRC-032  
 **Assurance:** Theory only · No implementation · Not audited.
 
 ## 1. Why this is a separate research problem
@@ -87,7 +87,7 @@ Distinct per-message identifiers can be mapped to a conversation locally by the 
 
 A detector may inspect one image at a time, but an observer may collect many images from the same account, platform, time window, visual source, embedding method or suspected sender. Shared embedding keys, payload distributions, image-generation patterns, repeated formats, similar dimensions, common compression traces or coordinated timing may make a set easier to identify than any individual image.
 
-Ker (2007) explicitly studies batch steganography and pooled steganalysis. The paper analyses how a warden combines detector evidence across a set and shows, within its stated model and image method, that spreading a fixed payload over more covers is not automatically the safest tactic. Its model assumes a fixed, known batch size, equal cover capacities, random selection of embedded covers and specified component-detector response assumptions; it treats sequential acquisition as a different problem. The reported square-root secure-capacity result is bounded by those assumptions and must not be transferred as a universal law (SRC-044). The methodological point remains: evaluate the collection, not only isolated images.
+Ker (2007) explicitly studies batch steganography and pooled steganalysis. The paper analyses how a warden combines detector evidence across a set and shows, within its stated model and image method, that spreading a fixed payload over more covers is not automatically the safest tactic. Its model assumes a fixed, known batch size, equal cover capacities, random selection of embedded covers and specified component-detector response assumptions; it treats sequential acquisition as a different problem. The formal square-root capacity theorem is established in Ker's follow-up paper (SRC-045), under its own explicit assumptions: equal cover capacities, shift-hypothesis detector response with regularity conditions, independent per-cover detection errors and a batch size known to both parties. Ker notes that practical bounds can be loose and that sequential acquisition is a different setting. Neither paper licenses a universal law for current platform images or dependent collections. The methodological point remains: evaluate the collection, not only isolated images.
 
 ### 5.2 Fragmentation and redundancy change the exposure surface
 
@@ -222,6 +222,6 @@ Any remaining contribution must therefore be narrower and demonstrated. Candidat
 | Cross-route semantics | Is the same protected object retried or carried elsewhere; what equality, replay and nonce implications follow? |
 | Conversation continuity | What is authenticated across distinct messages and what stable identifier, if any, is exposed? |
 
-**Immediate next work:** complete a source-level review of SRC-043 and SRC-044, map their exact mechanisms and assumptions into the prior-art and observer matrices, then update W2/W3/W4 and thesis §7–§8. Do not design a final fragment format or select a steganographic method before this comparison is reconciled.
+**Immediate next work:** complete a source-level review of SRC-043–SRC-045, map their exact mechanisms and assumptions into the prior-art and observer matrices, then update W2/W3/W4 and thesis §7–§8. Do not design a final fragment format or select a steganographic method before this comparison is reconciled.
 
 **Theory only · No implementation · Not audited.**
