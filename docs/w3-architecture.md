@@ -390,7 +390,7 @@ W3 intentionally does not settle:
 10. Metadata minimisation, retention and operational visibility.
 11. Expiry, revocation, device replacement and compromise response.
 12. Whether recovery is justified, and if so, its threat model.
-13. Recipient discovery/rendezvous, locator privacy and access-pattern exposure.
+13. Recipient discovery/rendezvous, locator privacy and access-pattern exposure. The current [observer/property matrix](observer-property-matrix.md) compares OMR/GOMR, oblivious signaling and two-server DORAM as distinct retrieval/access families. None is assumed to be a drop-in component. Their setup, collusion, cover-traffic, bearer-token, integrity and network-observer assumptions must be compared against the intended route before any mechanism is selected.
 14. Carrier metadata allowlist, verification of removal and platform-added metadata.
 15. Observer models for transport unlinkability and behavioural correlation.
 16. Whether any traffic-obfuscation, padding, delay, batching, cover-traffic or mix-network mechanism belongs in scope, and what costs it would impose.
