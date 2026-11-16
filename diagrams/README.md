@@ -11,7 +11,9 @@ This index distinguishes existing historical/conceptual illustrations from figur
 | 01 · From idea to architecture | [01-ideation-and-design-evolution.svg](01-ideation-and-design-evolution.svg) | Section 2.3 | Explains the initial password/image idea and the evolution of the research. It is a design-history map, not a protocol flow. |
 | 03 · Design decisions | [03-design-decisions.svg](03-design-decisions.svg) | Section 2.3; decision discussion | Summarises selected decisions and their rationale. It does not replace the decision register or imply that every decision is final. |
 
-## Planned thesis illustrations### Newly clarified architecture boundary
+## Planned thesis illustrations
+
+### Newly clarified architecture boundary
 
 Any future architecture or route figure must distinguish the protected-message core, carrier encapsulation, optional transport adapters and optional orchestration. Orchestration may also be shown as a transit participant, but not as the source of transport independence or a mandatory central service. Draw multi-hop routes explicitly and annotate observer exposure at each hop. Image carriage is a required research comparison route, not a mandatory runtime path. External carrier-generation services are optional dependencies, not cryptographic components.
 
@@ -31,6 +33,24 @@ These figures should be designed only after the manuscript, terminology and supp
 | 10 · Discovery, collection and observation | Section 8 | Publication, rendezvous/discovery, retrieval, collection, platform/network visibility and behavioural correlation | Variable placement and unique carriers do not guarantee anonymity |
 | 11 · Lifecycle, revocation and recovery boundaries | Section 9 | Session/key lifecycle, device loss, expiry, revocation and optional recovery | Show what cannot be recalled after plaintext or keys are obtained |
 | 12 · Claim-to-evidence traceability | Section 10 | Research questions, objectives, threats, components, tests and evidence maturity | Separate proposals, tested observations and independently reviewed claims |
+
+## Supporting illustration briefs from W1–W4
+
+The four work documents now contain text-only illustration placeholders at the point where each visual will support the argument. These briefs are deliberately not final figure numbers and do not authorise artwork before the research argument stabilises.
+
+| Placeholder | Work document | Intended explanation | Possible thesis figure relationship |
+|---|---|---|---|
+| W1-F01 | [W1 research framing](../docs/w1-research-framing.md) | Research scope and evidence map | Figure 02 |
+| W1-F02 | [W1 research framing](../docs/w1-research-framing.md) | Logical message, fragment set, conversation, retry and redundancy | Figure 07 |
+| W1-F03 | [W1 research framing](../docs/w1-research-framing.md) | Protected-object package and image-carriage boundary | Figures 07 and 09 |
+| W2-F01 | [W2 threat model](../docs/w2-threat-model.md) | Observer-specific projections of linked-message relationships | Figures 05 and 10 |
+| W3-F01 | [W3 architecture](../docs/w3-architecture.md) | Layered multi-message package and encapsulation sequence | Figures 07 and 09 |
+| W3-F02 | [W3 architecture](../docs/w3-architecture.md) | Message-set, conversation, retry and cross-route relationships | Figures 07, 10 and 11 |
+| W4-F01 | [W4 risks and evaluation](../docs/w4-risks-and-evaluation.md) | Evaluation ladder from carrier extraction to conversation linkage | Figure 12 |
+| W4-F02 | [W4 risks and evaluation](../docs/w4-risks-and-evaluation.md) | Observer collection and linkage experiment | Figures 10 and 12 |
+| Thesis-F07 | [Integrated thesis](../thesis.md) | Multi-message package and observer linkage | To be reconciled with Figures 07–10 |
+
+Each placeholder contains a prompt and a "must not imply" guardrail. Consolidate duplicate concepts when the thesis figure set is final; do not create one figure per placeholder mechanically. Preserve the principle that a figure should appear beside the narrative it explains.
 
 ## Research dependency
 
