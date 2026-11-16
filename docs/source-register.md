@@ -342,6 +342,52 @@ The date in this register records when the source was checked, not the date of t
 - **Does not establish:** A general image-carriage or social-platform media pipeline, the proposed endpoint identity/message-protection protocol, image metadata minimisation, platform transformation tolerance or human behavioural unlinkability. Privacy requires non-colluding servers; integrity requires both servers to follow the protocol; servers are assumed semi-honest. RemiseCC's read tokens are distributed out of band, and the paper identifies privacy-preserving token distribution as open. A malicious server may drop writes.
 - **Review state:** Full USENIX paper inspected, including system taxonomy, threat model, ideal functionality, DORAM and authorization mechanisms, security claims, evaluation and limitations. No implementation or performance result was reproduced.
 
+### SRC-033 · MRAS: Matching Robust Adaptive Steganography for JPEG Images over Social Networking Platforms
+
+- **Source:** Kumar, R., Bansal, S. and Bansal, R. K. (2026). *MRAS: a matching robust adaptive steganography scheme for JPEG images over social networking platforms*. Signal Processing, article 110172.
+- **DOI:** https://doi.org/10.1016/j.sigpro.2025.110172
+- **Relevant to:** Image-carrier transformation, JPEG recompression, payload recovery, robustness/undetectability/imperceptibility/capacity trade-offs and platform-specific evaluation.
+- **Supports:** A recent robust JPEG steganography design explicitly targeting social-network processing; reports benchmark evaluation and LinkedIn platform testing.
+- **Does not establish:** General robustness across platforms or processing paths, message-level identity/authentication, private discovery, lifecycle privacy or security of an end-to-end messaging architecture.
+- **Review state:** Publisher abstract and available article details inspected; full paper not independently reproduced.
+
+### SRC-034 · DRAS: Downward Recompression for Robust JPEG Steganography
+
+- **Source:** Kumar, R., Bansal, S. and Bansal, R. K. (2026). *Dealing with downward recompression for robust steganography in high quality JPEG images*. Journal of Visual Communication and Image Representation, 118, article 104817.
+- **DOI:** https://doi.org/10.1016/j.jvcir.2026.104817
+- **Relevant to:** Downward JPEG recompression, stable coefficient selection, extraction error, payload capacity and real-platform validation.
+- **Supports:** A recent method specifically addressing high-quality-to-lower-quality recompression; the paper reports WhatsApp, LinkedIn and X tests.
+- **Does not establish:** General carrier survival under resizing, transcoding, repeated arbitrary transformations, platform metadata/observer privacy, or end-to-end delivery security.
+- **Review state:** Publisher abstract, bibliographic record and available article details inspected; full methods and results not independently reproduced.
+
+### SRC-035 · Robust Steganography in Practical Communication: A Comparative Study
+
+- **Source:** Qiao, T., Xu, S., Wang, S., Wu, X., Liu, B., Zheng, N., Xu, M. and Pan, B. (2023). *Robust steganography in practical communication: a comparative study*. EURASIP Journal on Image and Video Processing, 2023, article 15.
+- **DOI:** https://doi.org/10.1186/s13640-023-00615-y
+- **Relevant to:** Comparative evaluation of capacity, imperceptibility, undetectability and robustness under compression and social-network transmission.
+- **Supports:** Empirical comparison across simulated channels and Facebook, Twitter and WeChat; highlights that simulated compression conditions do not fully represent platform processing.
+- **Does not establish:** A universal platform transformation model or a complete message-delivery security architecture.
+- **Review state:** Full publisher HTML inspected; no experiment independently reproduced.
+
+### SRC-036 · Destroying Robust Steganography in Online Social Networks
+
+- **Source:** Zhu, Z., Li, S., Qian, Z. and Zhang, X. (2021). *Destroying robust steganography in online social networks*. Information Sciences, 581, 605–619.
+- **DOI:** https://doi.org/10.1016/j.ins.2021.10.023
+- **Relevant to:** Active carrier transformation, steganographic payload removal, adversarial media processing and image-quality-preserving attacks.
+- **Supports:** A learned image-processing approach intended to remove hidden payloads while maintaining acceptable image quality, demonstrating that carrier processing may be adversarial rather than merely incidental.
+- **Does not establish:** That every platform performs such processing, that the method defeats every current scheme, or that endpoint message protection and other lifecycle properties are addressed.
+- **Review state:** Publisher abstract and available article details inspected; no model or experiments independently reproduced.
+
+### SRC-037 · Image Steganography Approaches and Their Detection Strategies: A Survey
+
+- **Source:** Kombrink, M. H., Geradts, Z. J. M. H. and Worring, M. (2025). *Image Steganography Approaches and Their Detection Strategies: A Survey*. ACM Computing Surveys, 57(2), article 33.
+- **DOI:** https://doi.org/10.1145/3694965
+- **Publication record:** Published online 10 October 2024; volume 57, issue 2.
+- **Relevant to:** Image embedding methods, steganalysis, evaluation practice and the breadth of established prior art.
+- **Supports:** A broad survey based on 456 references, useful for preventing narrow or outdated claims about the image-steganography field.
+- **Does not establish:** The novelty or security of this project's specific architecture, nor platform-specific performance of any proposed route.
+- **Review state:** Publisher record and abstract inspected; full survey not yet examined.
+
 ### SRC-032 · Echomix: a Strong Anonymity System with Messaging
 
 - **Source:** Infeld, E. J., Stainton, D., Ryge, L. and Threebit Hacker (2025), *Echomix: a Strong Anonymity System with Messaging*, arXiv:2501.02933v2 (paper dated October 2024).
