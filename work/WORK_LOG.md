@@ -1078,3 +1078,27 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 3. Continue `T-001`: seek complete source texts for SRC-033, SRC-034 and SRC-036; preserve partial-review labels until methods, results and limitations are inspected.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Thesis-product lifecycle and work-backlog remit clarified
+
+### Infrastructure checkpoint
+
+- Clarified the product model: the thesis is the sole product; `thesis.md` is the one active manuscript in staging; production is a frozen release of that same thesis, not a separate thesis or parallel product.
+- Defined staging and production as lifecycle states of the same thesis, preserving one continuous identity, provenance, citations, evidential limits, uncertainty and author responsibility.
+- Recast `/work/` as the temporary store of work to be done to develop, analyse, explain, scrutinise and release the thesis. Its remit includes research/source reviews, route/comparator analysis, protocol-boundary reconciliation, thesis synthesis, diagrams, validation, peer-review preparation/response and release checks.
+- Clarified that enduring arguments, definitions, evidence and citations remain in `thesis.md` and substantive research documents; `/work/` contains actionable work and internal navigation only.
+- Strengthened the peer-review boundary: scope, reviewer comments/evidence, author responses, dispositions, unresolved dissent and resulting changes must be traceable. No reviewer group or completed independent review is implied.
+- Expanded the internal task registry through diagram, peer-review and release-integrity stages. Internal IDs remain private lookup handles, not thesis references.
+- Kept thesis content and enduring research documents unchanged by this infrastructure-only clarification.
+
+### Verification
+
+- Individual infrastructure updates were committed on `main`; a consolidated checkpoint commit is still to be created and verified.
+- The thesis manuscript was not edited as part of this infrastructure change.
+
+### Continuation
+
+Next substantive action remains T-001: seek full texts for SRC-033, SRC-034 and SRC-036, preserving partial-review labels until methods, results and limitations are inspected. Later work includes route evidence, protocol analysis, thesis synthesis, stable-argument diagram work, substantive peer review and release integrity.
+
+**Theory only · No implementation · Not audited.**
