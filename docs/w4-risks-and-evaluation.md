@@ -22,7 +22,9 @@ The evaluation must be capable of rejecting the proposed architecture or requiri
 6. Proportionate: additional mechanisms require evidence of a corresponding improvement.
 7. Honest limitations: successful evaluation of one property does not establish overall system security.
 
-3. Evaluation domains### Transport independence, role separation and route composition
+3. Evaluation domains
+
+### Transport independence, role separation and route composition
 
 **Threats:** a transport or coordinator becomes an implicit security authority; a service's multiple roles are collapsed into one trust assumption; route conversion changes authenticated message semantics; multi-hop delivery creates unrecognised correlation or failure surfaces; fallback silently weakens security.
 
