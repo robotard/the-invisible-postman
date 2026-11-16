@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · Disposable work area and internal lookup registries established  
+**Checkpoint:** 2026-11-16 · Thesis-product lifecycle and disposable work backlog defined  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -19,7 +19,9 @@ Use GitHub work documents as the project continuity source. Do not make the user
 
 ## Current position
 
-The operational continuity layer now lives entirely under `/work/`. This directory is temporary, thesis-agnostic scaffolding: its task and concept IDs are internal lookup handles only, never thesis references or research claims. At full thesis release, `/work/` must be removable without changing the thesis, its citations or substantive research documents. Thesis/source/section/figure references remain authoritative in their existing locations.
+The thesis is the sole product. `thesis.md` is the one active manuscript under development (staging); production is a frozen release of that same thesis, not a separate product or parallel thesis. Its intellectual identity, provenance, citations, evidence boundaries and research integrity persist through both states. Peer review is a substantive scrutiny process whose scope, reviewer contributions, author responses, dispositions, dissent and resulting changes must be traceable; do not imply independent review until it has occurred.
+
+`/work/` is the temporary store of work to be done to develop, analyse, explain, scrutinise and release the thesis. It coordinates research/source reviews, route comparisons, protocol-boundary reconciliation, thesis synthesis, diagrams and peer-review/release processes. It does not own the thesis argument or replace enduring research records. Internal `C-###` and `T-###` keys are private lookup aids, never thesis references. At full release, substantive outcomes must already be in the thesis or enduring research records; then `/work/` can be removed without changing the thesis or its meaning.
 
 The repository has a coherent working thesis, W1–W4 research documents, a threat model, decision and traceability registers, prior-art comparisons, an observer/property matrix and a common route-comparison framework. These are substantive drafts, not a finished or independently reviewed thesis.
 
@@ -88,6 +90,6 @@ The status label below is project metadata describing the repository's verified 
 - Preserve uncertainty, dissent, source provenance and historical work. Distinguish established mechanisms, proposed designs and unverified claims.
 - Never describe drafts as implemented, tested, proven, audited or externally reviewed.
 
-**Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The subsequent working-document compression, move to `/work/` and read-back verification are recorded in `WORK_LOG.md` and `SESSION_DIGEST.json`.
+**Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The 2026-11-16 infrastructure checkpoint records the thesis-product lifecycle, `/work/` remit and expanded backlog in `WORK_LOG.md` and both session digests.
 
 **Verification boundary:** Documentation and repository changes only. No implementation, platform experiment, cryptographic test, formal proof or independent audit has been performed. The relative-link audit was static and limited to Markdown links resolved against the current repository tree.
