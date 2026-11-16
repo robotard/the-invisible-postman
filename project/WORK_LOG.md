@@ -944,3 +944,16 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 
 - Normalised the W4 Markdown heading hierarchy for sections 1–9 and E1–E10; corrected the route-comparison framework's functional-role subsection numbering. Fixed a malformed README core-principles list item.
 **Theory only · No implementation · Not audited.**
+
+## 2026-11-16 · Route ledger expanded for message multiplicity and observer linkage
+
+- Extended the route-comparison lifecycle/event ledger with explicit profile-specific rows for authenticated fragment-set membership/reconstruction, redundant carriage/loss tolerance, independent messages and conversation continuity, retry/duplicate and cross-route linkage, and collection-level steganalysis/carrier clustering.
+- Added an observer-ledger discipline section distinguishing endpoint ground truth from observer-inferred links and requiring collection size, acquisition window, detector, cover dependencies, side information and observer vantage.
+- Closed a terminology gap in W2 and W4: W2 now defines the package-encapsulation boundary separately from endpoint authentication; W4 now defines fragment sets, redundancy, independent messages, conversations, retries, cross-route copies and package framing as separate evaluation units.
+- Fetched all five changed research documents (W1–W4 and route comparison) after the writes. Exact content matched. A targeted relative-link audit of those five files found no broken links.
+- Confirmed each W1–W4 document contains definition/comparison information, illustration prompt(s), package/encapsulation terminology, message-multiplicity terminology and steganography analysis. The prompt index remains in `diagrams/README.md`.
+- No diagrams, implementation, platform experiment, steganalysis benchmark, cryptographic test, formal proof or independent audit was performed.
+
+**Next:** Refresh the project checkpoint and both digests from verified files, then continue source-specific full-text retrieval for SRC-033, SRC-034 and SRC-036 and route-profile version/configuration pinning.
+
+**Theory only · No implementation · Not audited.**
