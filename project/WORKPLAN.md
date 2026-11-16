@@ -48,7 +48,7 @@ Work units produce independently useful outputs. Progress belongs in `PROJECT_ST
 
 - [x] **W0.1 Repository foundation:** authoritative paths, repository baseline, navigation and GitHub-first workflow.
 - [~] **W0.2 Research practice:** core self-review, governance, attribution and contribution documents exist. Routine administration is deferred; external review and ratification remain outstanding.
-- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (37 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial pending access to full methods/results. Still open: test the image-platform boundary against strong comparators and establish evidence-backed route comparisons.
+- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (40 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial pending access to full methods/results. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
 
 ### Phase 2 · Research foundations
 
@@ -73,10 +73,10 @@ Legend: `[x]` complete; `[~]` drafted or in progress; `[ ]` not started or defer
 
 ## Immediate execution sequence
 
-1. Select named, versioned route profiles for image-platform carriage, file/attachment transfer, conventional E2E messaging and Echomix/Katzenpost. Use only profiles whose relevant version/configuration can be evidenced.
-2. Populate [the route-comparison framework](../docs/route-comparison-framework.md) with source-backed lifecycle events, observer views, transformations, discovery/access patterns, reliability, failure behaviour and cost. Mark unknowns and non-comparable properties explicitly.
+1. Refine the initial [route-profile register](../docs/route-comparison-framework.md) into pinned service/client versions and configurations where authoritative evidence is available. Keep literature, protocol-reference, service-documentation and deployed-evaluation profiles distinct.
+2. Expand the documentary comparison into a source-backed lifecycle/event/observer ledger covering transformations, discovery/access patterns, reliability, failure behaviour, expiry, collusion and cost. Mark unknowns and non-comparable properties explicitly.
 3. Seek accessible full text for the remaining methods/results of SRC-033, SRC-034 and SRC-036; SRC-035 and SRC-037 have been inspected in full. Preserve the source-specific review boundaries in [the source register](../docs/source-register.md).
-4. Check W3 numbering and cross-references against [traceability](../docs/traceability.md).
+4. Recheck W3 numbering and cross-references against [traceability](../docs/traceability.md) after the route-ledger reconciliation; the malformed traceability heading and initial W3 sequence check have been corrected.
 5. Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
 6. Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback at protocol-design level without prematurely choosing primitives.
 7. Run a fresh repository-wide link, status and terminology consistency audit.
