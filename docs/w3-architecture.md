@@ -64,6 +64,39 @@ The encapsulation boundary sits between the protected message/capsule and the tr
 
 The train may be low-fidelity and untrusted. It may be inspected, copied, delayed, reordered, transformed, substituted, or unavailable. The passenger-side security topology must remain conceptually intact if the train is replaced or removed. Image carriage remains a required route; steganography or another image technique is a route mechanism within the train, not part of the passenger security topology.
 
+### Multi-message package encapsulation boundary
+
+The architecture must not collapse a logical message, a protected object, a fragment set, a carrier capsule, an image object and a conversation into one generic "message" or "multipart" object. The following is a conceptual packaging sequence for analysis, not a selected wire format or cryptographic construction:
+
+1. **Logical message:** endpoint-authored content and its intended recipient/context.
+2. **Endpoint-protected object:** the cryptographically protected representation, with sender/recipient/session context authenticated according to the eventual protocol.
+3. **Message-set context / manifest (when fragmentation is used):** an authenticated description of the set, including the fields ultimately required to bind set identity, version, logical object length, fragment count/index, coding or redundancy policy, and any content commitments. Exact fields, canonical encoding and cryptographic binding remain open.
+4. **Fragment capsule(s):** bounded pieces or coded blocks associated with that protected object and authenticated set context. Each fragment must be rejected if its membership, index, length or content is inconsistent with the authenticated set.
+5. **Carrier encapsulation:** a route-facing wrapper that frames the capsule or fragment for a particular carrier, with bounded route metadata and declared lengths. It is not an authentication layer; fields that affect security decisions must be covered by endpoint-authenticated context.
+6. **Optional image steganographic embedding:** a distinct image-adapter operation that attempts to conceal the presence of the carrier payload. It may be absent. It neither encrypts nor authenticates the capsule.
+7. **Image carrier and route events:** the resulting image is published, discovered, retrieved and extracted. Platform transformations and event metadata are route-specific observations.
+8. **Endpoint decapsulation and validation:** extraction and bounded framing checks precede endpoint cryptographic validation; the endpoint authenticates the manifest and fragments, enforces completeness/replay policy, reconstructs the protected object and only then accepts the logical message.
+
+A single logical message may use one carrier or several fragment carriers. Redundant carriers may encode repeated or coded information for loss tolerance. Several independent logical messages may be sent in one batch without becoming one fragment set. A conversation may link distinct messages through authenticated session continuity, but that link must not be confused with fragment-set membership. A retry is a new delivery event for the same logical object unless the endpoint protocol explicitly creates a new message.
+
+> **DEFINITION · Encapsulation versus authentication**  
+> Encapsulation supplies carrier framing, bounded parsing and route adaptation. Authentication establishes cryptographic authority over content and security-relevant context. A wrapper, filename, image metadata field, fragment index or carrier identifier is not authenticated merely because it is present in the package.
+>
+> **DEFINITION · Message-set identifier versus conversation identifier**  
+> A message-set identifier groups fragments needed to reconstruct one logical protected object. A conversation/session identifier relates distinct logical messages over time. Reusing one value for both can create unnecessary linkability and ambiguous replay/order semantics.
+>
+> **COMPARISON · Fragmentation versus redundancy**  
+> Fragmentation divides an object into distinct pieces; redundancy repeats or codes information so reconstruction may tolerate loss. Redundancy can improve recovery while increasing carrier count, repeated signal and collection-level detection opportunities. Neither technique is threshold secret sharing.
+>
+> **Illustrated diagram placeholder · W3-F01 — Multi-message package and encapsulation layers**  
+> **Placement:** Beside this subsection, before the unique-envelope and decapsulation discussion.  
+> **Prompt for later illustration:** Create a layered, publication-ready architecture diagram from logical message through endpoint-protected object, authenticated manifest/message-set context, fragment capsules, route-specific carrier encapsulation, optional steganographic embedding, image carriers, publication/discovery/retrieval, decapsulation and endpoint validation. Show a single-carrier path and a multi-carrier fragment-set path, plus a separate branch for several independent messages in one conversation. Use different visual treatments for authenticated endpoint objects, unauthenticated outer framing and optional concealment.  
+> **Must not imply:** That the manifest or outer wrapper is already specified, that steganography provides encryption/authentication, or that the conversation identifier is the fragment-set identifier.
+>
+> **Illustrated diagram placeholder · W3-F02 — Message-set, conversation and retry relationships**  
+> **Placement:** Beside the architecture's message lifecycle and retry discussion.  
+> **Prompt for later illustration:** Show two or more distinct logical messages linked by an authenticated conversation/session relationship; show one of those messages divided into multiple indexed fragment capsules across separate image carriers; show an identical retry as another delivery event for the same logical message; show optional redundant carriers; and show a cross-route copy of the same protected object. Label every relationship distinctly and indicate which edges are endpoint-authenticated versus merely observable/inferable.
+>
 2.4.1 Unique image envelopes, variable placement and decapsulation
 
 The train may generate or obtain a distinct image carrier object for each carriage instance and vary that carrier's publication or retrieval placement. Here, "unique" means that a carrier object is not reused for another carriage instance under the proposed policy; it does not mean cryptographic uniqueness, secret entropy, randomness, unpredictability or guaranteed unlinkability. The carrier is not a nonce, key or identity credential. At the receiving side, a transport decapsulation function discovers or obtains the selected carrier, extracts the encapsulated protected object, checks transport framing and extraction completeness, and hands the result to the participant endpoint. The endpoint, not the train, performs cryptographic authentication and acceptance.
