@@ -56,6 +56,14 @@ However, the authors explicitly leave image delivery to the recipient outside th
 
 The project must therefore distinguish at least three different ideas: embedding into an existing image, generating an image whose latent state carries information, and carrying an already protected object through an image-based route. They are not interchangeable.
 
+### 3.5 Multi-image fragmentation and batch steganalysis are established comparators
+
+Wang et al. (2024; SRC-043) directly demonstrate a multi-image fragmented covert-communication framework: a text file is divided into fragments; fragment numbers and content are embedded in images; each fragment is redundantly carried in multiple images; and the receiver reconstructs using sufficient carriers and majority voting over redundant copies. The authors explicitly distinguish steganography from watermarking and use robust DFT/DCT watermarking as the carrier mechanism. This is strong prior art against generic claims to multi-image fragmentation, redundant image carriage or subset-based reconstruction. It is not evidence of endpoint-authenticated message-set semantics, conversation continuity, sender identity or stealth against collection-level analysis.
+
+Ker's batch-steganography work (SRC-044) studies pooling detector evidence across a fixed batch. The separate capacity theorem (SRC-045) establishes an asymptotic square-root bound under explicit assumptions: equal cover capacities, a shift-hypothesis detector response with regularity conditions, independent per-cover errors and batch size known to both parties. The theorem's bounds may be loose; neither work supplies a universal quantitative law for current social-platform images, dependent collections, robust watermarking or sequential acquisition.
+
+**Research consequence:** The project must not claim novelty in multi-image fragmentation or redundant fragment recovery. It must evaluate the whole collection as well as individual carriers, distinguish robust watermarking from steganographic concealment, and ask whether authenticated message-set/context handling, observer-specific linkage analysis or route-neutral package semantics produce a narrower and measurable difference. That remains an open question, not an originality claim.
+
 ### 3.4 Privacy claims must be compared at the observer boundary
 
 The reviewed systems protect different relationships:
@@ -79,7 +87,7 @@ A single phrase such as “transport privacy” or “unlinkability” would con
 
 The remaining research question is whether carrying a common endpoint-protected message through ordinary image platforms produces decision-relevant security, privacy, reliability or usability properties that differ from file/attachment, conventional messaging and mixnet-backed routes.
 
-This question is open. It does not assume that the image route is superior, original or even preferable. The literature already includes robust social-platform image steganography, platform-specific transformation studies, active payload-removal approaches and broad steganalysis surveys (SRC-033–SRC-037). The comparison must therefore separate carrier extraction, detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost. A result may favour another route or show that the image route has no defensible advantage.
+This question is open. It does not assume that the image route is superior, original or even preferable. The literature already includes robust social-platform image steganography, platform-specific transformation studies, active payload-removal approaches and broad steganalysis surveys (SRC-033–SRC-037 and SRC-043–SRC-045). The comparison must therefore separate carrier extraction, detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost. A result may favour another route or show that the image route has no defensible advantage.
 
 ## 6. What remains before any originality statement
 
