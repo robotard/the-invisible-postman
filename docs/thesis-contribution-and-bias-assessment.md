@@ -130,7 +130,7 @@ These sources were identified in the current assessment. SRC-033, SRC-034 and SR
 | Kumar et al. (2026), MRAS and DRAS; Qiao et al. (2023); Zhu et al. (2021); Kombrink et al. (2025), image steganography/steganalysis | Image-platform payload robustness, social-network transformation, active payload removal and steganalysis are established topics with recent real-platform evaluations. | Do not claim image payload survival, recompression tolerance or concealment alone as a differentiator. Separate extraction, detectability, endpoint authentication/integrity and observer privacy. |
 | Infeld et al. (2025), Echomix / Katzenpost | Integrated global-observer messaging already combines traffic coupling, anonymous discovery/storage, reliability, collusion analysis and human-routine leakage. | Do not claim a general integrated delivery-privacy architecture or responsibility separation as new. Compare the image-platform boundary against this stronger integrated baseline. |
 
-## 6. Candidate contribution statements to test
+## 7. Candidate contribution statements to test
 
 These are candidates, not approved claims.
 
@@ -157,7 +157,7 @@ A route abstraction and comparative evaluation framework in which one protected 
 
 **Current direction:** A remains the architectural organising principle, not a novelty claim. Candidate C supplies the comparison method. Candidate B is now narrowed to image-platform carriage and must earn its place through a measurable, decision-relevant difference against the stronger integrated baseline. No contribution ranking is final.
 
-## 7. Required evidence before claiming originality
+## 8. Required evidence before claiming originality
 
 1. A focused related-work matrix covering secure messaging architectures, covert/dead-drop messaging, image steganography, recipient discovery/private retrieval, mix networks/traffic analysis and media-platform transformations.
 2. Full-text review of the newly identified works, including formal definitions, threat models, construction, assumptions, limitations and evaluation.
@@ -166,7 +166,7 @@ A route abstraction and comparative evaluation framework in which one protected 
 5. A contribution statement that remains meaningful even if image carriage proves inferior in the target use case.
 6. A falsifiable evaluation plan with named observers, measurable leakage, route baselines, transformations, resource costs and justified thresholds.
 
-## 8. Hard checkpoint decision
+## 9. Hard checkpoint decision
 
 **Proceed with thesis construction, but do not yet present originality as established.**
 
