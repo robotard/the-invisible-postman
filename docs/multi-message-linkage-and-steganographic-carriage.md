@@ -2,7 +2,7 @@
 
 **Status:** Research analysis and design obligations; no protocol or embedding method selected.  
 **Research alignment:** W1 RQ4–RQ8 · W2 observer/threat model · W3 capsule and route architecture · W4 E5/E6/E9  
-**Related work:** SRC-026, SRC-027, SRC-033–SRC-037, SRC-043–SRC-045, and SRC-024–SRC-032  
+**Related work:** SRC-026, SRC-027, SRC-033–SRC-037, SRC-043–SRC-049, and SRC-024–SRC-032  
 **Assurance:** Theory only · No implementation · Not audited.
 
 ## 1. Why this is a separate research problem
@@ -123,6 +123,24 @@ Do not use *steganography*, *watermarking*, *robustness* and *undetectability* a
 
 A platform may process a batch in a common way. Images may share a source, device, account, application version, export pipeline, embedding implementation or upload session. A set-level detector cannot automatically assume independent observations. Experiments must describe dependencies and avoid multiplying single-image probabilities as though every image were independent.
 
+### 5.5 Multi-frame animated carriers are not multi-object fragment sets
+
+Wang et al. (2026; SRC-049) provide a useful additional comparator: their implementation describes a 16-frame GIF in which watermark bits are redundantly represented across frames and recovered by majority voting after diffusion-based extraction. The same README documents OTP and ChaCha20 modes, per-frame latent/key material, AnimateDiff generation and DDIM-inversion extraction. This is a single animated carrier object with internal frame multiplicity. It is not the same topology as publishing separate image objects, distributing fragments across posts, or linking independent messages into a conversation.
+
+The comparison must therefore distinguish at least three levels:
+
+1. **Within-object multiplicity:** frames or planes inside one animated/container object; loss or distortion may be correlated by shared encoding and platform handling.
+2. **Across-object multiplicity:** separate image/file objects carrying distinct fragments or redundant copies; publication, account, timing and retrieval events become part of the observer's collection.
+3. **Across-message multiplicity:** distinct protected logical messages linked by a conversation/session relationship, independently of how each message is carried.
+
+Cross-frame majority voting may improve recovery under the paper's evaluated conditions, but it does not establish cross-post discovery, endpoint-authenticated fragment-set membership, conversation continuity or collection-level concealment across an account's image history. The paper's formal security claim is not assessed here; its implementation README is not an independent security review.
+
+### 5.6 Active sanitization and counter-adaptation form an adversarial loop
+
+SRC-036, SRC-046 and SRC-047 describe learned approaches intended to remove robust hidden data while maintaining image quality; SRC-047 specifically describes separate Scaling-Net and SC-Net paths. SRC-048 then describes a counter-adaptation in which a secret-seed-conditioned decoder is jointly considered with a sanitizing network and the sender iteratively optimises the cover so the sanitiser's output yields the intended secret.
+
+This literature changes the threat framing: a carrier route may face passive or routine transformations, an active sanitiser deliberately optimised to destroy hidden payloads, and an adaptive sender method designed against a known sanitiser. These are distinct adversarial settings. The sources do not show that a named platform deploys the sanitizers or that the counter-adaptation generalises to unknown sanitizers, model versions or processing chains. Any comparison must state who controls the sanitizer, whether its model is known, what the receiver knows, what transformations are chained, and whether the result is extraction, concealment, or endpoint-authenticated acceptance.
+
 ## 6. Endpoint message-set and conversation integrity
 
 If a logical message is fragmented, the endpoint protocol must define a canonical authenticated set context. Candidate fields include protocol version, message-set identifier, sender/recipient scope, session reference, declared total count, fragment index, coding/redundancy parameters, protected-object length, per-fragment length and digest, expiry policy and any manifest reference. The exact fields and encoding remain open.
@@ -222,6 +240,6 @@ Any remaining contribution must therefore be narrower and demonstrated. Candidat
 | Cross-route semantics | Is the same protected object retried or carried elsewhere; what equality, replay and nonce implications follow? |
 | Conversation continuity | What is authenticated across distinct messages and what stable identifier, if any, is exposed? |
 
-**Immediate next work:** complete a source-level review of SRC-043–SRC-045, map their exact mechanisms and assumptions into the prior-art and observer matrices, then update W2/W3/W4 and thesis §7–§8. Do not design a final fragment format or select a steganographic method before this comparison is reconciled.
+**Immediate next work:** complete a source-level review of SRC-043–SRC-049, map their exact mechanisms and assumptions into the prior-art and observer matrices, then update W2/W3/W4 and thesis §7–§8. Do not design a final fragment format or select a steganographic method before this comparison is reconciled.
 
 **Theory only · No implementation · Not audited.**
