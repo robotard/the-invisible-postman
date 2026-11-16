@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · TIP-WORK-INFRA-2026-11-16 — thesis product lifecycle and disposable work backlog verified  
+**Checkpoint:** 2026-11-17 · confidence/evidence model integrated into the thesis and W1–W4; work-area lifecycle remains verified  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
