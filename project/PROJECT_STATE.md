@@ -2,7 +2,7 @@
 
 **Checkpoint:** 2026-11-16  
 **Branch:** `main`  
-**Verified repository head:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
+**Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
 
 ## Current position
@@ -62,6 +62,6 @@ The latest verified work reconciles transport independence and optional orchestr
 - Preserve uncertainty, dissent, source provenance and historical work. Distinguish established mechanisms, proposed designs and unverified claims.
 - Never describe drafts as implemented, tested, proven, audited or externally reviewed.
 
-**Latest verified commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f)
+**Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The subsequent working-document compression and read-back verification are recorded in `WORK_LOG.md` and `SESSION_DIGEST.json`.
 
 **Verification boundary:** Documentation and repository changes only. No implementation, platform experiment, cryptographic test, formal proof or independent audit has been performed.
