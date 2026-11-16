@@ -151,3 +151,18 @@ Theory only · No implementation · Not audited.
 **Rationale:** This avoids coupling message security to a particular platform or coordinator while allowing services to participate in delivery when useful. It also prevents the word “orchestration” from being mistaken for transport agnosticism or a mandatory central authority.
 
 **Open work:** Define service contracts and role-specific observer views; enumerate route compositions; specify safe fallback and retry behaviour; and resolve cryptographic parameter rules during protocol design.
+
+
+## D-13 · Confidence as an evidence-bounded judgement
+
+**Status:** Adopted as a provisional thesis organising principle; its usefulness and contribution remain subject to research challenge.
+
+**Decision:** The thesis will frame confidence as a verifier's judgement about a specific claim, based on evidence with explicit provenance, scope, assumptions, threat model, freshness and unresolved alternatives. The system may support verification and expose evidence, but must not claim to manufacture certainty or treat confidence as a cryptographic property.
+
+**Required distinctions:** Keep confidence, trust, assurance, security, authenticity, integrity, discoverability and truth separate. Distinguish object validity, fragment membership, set completeness, reconstruction, conversation continuity, retry identity and observer-inferred linkage. Distinguish transport submission/acceptance, relay, endpoint receipt, validation, decryption, display/open, human reading and comprehension.
+
+**Privacy constraint:** Prefer endpoint-local evidence and minimal disclosure. Do not introduce a central confidence ledger, mandatory telemetry, stable tracking identifier or universal numeric score without a separate justification and privacy analysis.
+
+**Rationale:** The framing makes the basis and limits of claims inspectable. It also directly addresses confidence inflation: a valid signature does not establish a human identity or truthful statement; a valid fragment does not prove set completeness; a service acknowledgement does not prove a person read a message.
+
+**Open work:** Test whether the model improves claim precision, traceability and user/reviewer understanding; assess privacy and usability costs; challenge whether it adds genuine analytical value beyond established assurance and evidence practices. No originality claim is adopted.
