@@ -942,4 +942,5 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 - Corrected the SRC-044 DOI and clarified that its square-root relationship was conjectural in the proceedings paper; the formal asymptotic theorem is separately recorded as SRC-045.
 - Exact-status, terminology, image-reference and thesis heading/numbering consistency remain to be audited.
 
+- Normalised the W4 Markdown heading hierarchy for sections 1–9 and E1–E10; corrected the route-comparison framework's functional-role subsection numbering. Fixed a malformed README core-principles list item.
 **Theory only · No implementation · Not audited.**
