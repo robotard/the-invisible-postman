@@ -1,3 +1,30 @@
+## 2026-11-17 · Confidence and evidence principle integrated into thesis
+
+### Work performed
+
+- Added `docs/confidence-and-evidence-model.md` as a proposed claim-centred framework. It distinguishes confidence, trust, assurance, security, authenticity, integrity, discoverability and truth; defines a provenance-aware claim record; separates object validity, fragment membership, set completeness, reconstruction, conversation continuity, retry identity and observer-inferred linkage; and defines delivery-event semantics.
+- Integrated the principle into `thesis.md` (§4.1 and §10.5), including the candidate statement: **"The Invisible Postman does not promise certainty. It makes the basis, boundaries and limitations of confidence explicit."**
+- Reconciled W1 research framing, W2 threat model, W3 architecture, W4 evaluation, contribution/bias assessment, decision register (D-13), and traceability.
+- Added explicit safeguards against universal confidence scores, evidence substitution, stale claims, centralised tracking and privacy-invasive telemetry.
+- Recorded the model as a provisional thesis organising principle, not a demonstrated system property or originality claim. Its usefulness, usability and privacy cost remain unevaluated.
+
+### Critical boundaries
+
+- Cryptographic validity does not establish semantic truth or real-world identity by itself.
+- A valid fragment does not establish set completeness; a complete set does not establish conversation continuity.
+- Observer-inferred correlation is not endpoint-authenticated linkage.
+- Transport acceptance is not endpoint receipt, decryption, display, human reading or comprehension.
+- Confidence is verifier-, scope-, evidence- and time-relative; missing evidence is not success.
+- No numeric confidence score or central evidence ledger is proposed.
+
+### Verification and remaining work
+
+- All nine changed research files were fetched back from `main`; their saved content and intended integration markers were checked.
+- No implementation, user study, formal proof, source review upgrade or independent audit was performed.
+- Next: challenge the model against source and route evidence, verify delivery semantics against the selected protocol comparators, and test whether the framing improves claim precision without introducing a new privacy cost.
+
+**Theory only · No implementation · Not audited.**
+
 ## 2026-11-16 · Initial route lifecycle/event observer ledger
 
 ### Completed and read-back verified
