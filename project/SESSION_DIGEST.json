@@ -14,14 +14,14 @@
     "docs/route-comparison-framework.md"
   ],
   "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
-  "current": "W1–W4 and the integrated thesis are working drafts. Transport independence and optional orchestration are reconciled. Source register: 37 entries. Common route/event/observer framework exists. No named, evidence-populated route profiles yet.",
+  "current": "W1-W4 and integrated thesis remain working drafts. Transport independence and optional orchestration are reconciled. Source register has 37 entries. Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial. Route profiles are not yet named and evidence-populated.",
   "next": [
-    "Review SRC-033–SRC-037 in full text; update source states and evidence limits.",
-    "Select evidenced, named/versioned profiles: image platform, file/attachment, conventional E2E messaging, Echomix/Katzenpost. Mark unsupported details unknown.",
-    "Populate route events and observer views: transformations, metadata, discovery/access patterns, reliability, failures and costs.",
-    "Check W3 numbering and traceability; reconcile findings into thesis, W1–W4, decisions and source register.",
+    "Seek full-text access for remaining methods/results of SRC-033, SRC-034 and SRC-036; retain partial states until verified.",
+    "Select evidenced, named/versioned profiles: image platform, file/attachment, conventional E2E messaging, Echomix/Katzenpost.",
+    "Populate route lifecycle events and observer views from source-backed evidence; explicitly mark unknowns.",
+    "Check W3 numbering and traceability; reconcile material findings into thesis, W1-W4, decisions and source register.",
     "Analyse nonce, salt, key scope, identity/context binding, replay and safe fallback without premature protocol selection.",
-    "Run fresh relative-link, status-string and cross-document consistency audits."
+    "Run fresh relative-link, status-string and cross-document consistency audits after substantive reconciliation."
   ],
   "defer": [
     "New diagrams until comparison findings stabilise",
@@ -36,14 +36,18 @@
     "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "status semantics clarified; exact read-back matched",
-    "project/WORKPLAN.md": "document boundaries and dual-digest checkpoint strategy updated; exact read-back matched",
-    "project/WORK_LOG.md": "correction recorded; exact read-back matched",
+    "project/PROJECT_STATE.md": "research review status and next action updated; exact read-back matched",
+    "project/WORKPLAN.md": "source review maturity and remaining work updated; exact read-back matched",
+    "project/WORK_LOG.md": "dated research review entry added; exact read-back matched",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
     "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
     "project_state_checkpoint_commit": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
     "digest_readback": "exact content match after final write",
-    "project/SESSION_DIGEST.md": "created as structured Markdown operational handover; exact read-back matched"
+    "project/SESSION_DIGEST.md": "refreshed from verified working documents; exact read-back matched",
+    "docs/source-register.md": "SRC-033-SRC-037 review boundaries updated; exact read-back matched",
+    "docs/route-comparison-framework.md": "source-informed image-route evidence constraints added; exact read-back matched",
+    "docs/observer-property-matrix.md": "source-informed observer/property implications added; exact read-back matched",
+    "latest_research_commit": "e66374e1de49530194a3d5f77cb53932142a395b"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; read back and verify all three; refresh SESSION_DIGEST.md from verified state; refresh SESSION_DIGEST.json last; verify both digests against the three working documents.",
   "checkpoint_commit_before_digest_refresh": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
@@ -61,7 +65,7 @@
     "Change WORKPLAN.md only when roadmap, priorities, dependencies or workflow genuinely change.",
     "Read back and verify PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md.",
     "Refresh SESSION_DIGEST.md from verified working documents; refresh SESSION_DIGEST.json last.",
-    "Read back both digests and verify agreement with the working documents.",
+    "Read back both digests and verify agreement with the three working documents.",
     "Record exact next action, relevant paths, blockers/dependencies and constraints."
   ],
   "document_roles": {
@@ -89,5 +93,12 @@
   "claim_discipline": [
     "Never claim saved, completed, published, deployed, tested or audited without evidence.",
     "Distinguish drafted, committed, read-back verified, tested and independently reviewed."
-  ]
+  ],
+  "source_review_detail": {
+    "SRC-033": "Partial: publisher abstract and indexed article details; full text inaccessible; methods/results unverified.",
+    "SRC-034": "Partial: publisher abstract/highlights; full methods, tables and platform configurations unverified.",
+    "SRC-035": "Full publisher HTML inspected; bounded 50-image platform tests; no independent reproduction.",
+    "SRC-036": "Partial: publisher abstract/indexed sections; full method/results inaccessible.",
+    "SRC-037": "Full 40-page survey inspected; secondary synthesis, not a common controlled benchmark."
+  }
 }
