@@ -475,6 +475,46 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 - **Does not establish:** A universal payload law for real-world platforms, dependent or adaptively selected images, robust watermarking, modern adaptive JPEG methods, sequential/longitudinal acquisition or arbitrary detector families. The paper explicitly identifies the known-batch and independence assumptions and notes that practical bounds may be loose.
 - **Review state:** Full paper inspected, including theorem assumptions, proof outline, independence discussion and limitations. No independent proof reproduction or empirical replication performed.
 
+### SRC-046 · Breaking Robust Data Hiding in Online Social Networks
+
+- **Source:** Wei, P., Zhu, Z., Luo, G., Qian, Z. and Zhang, X. (2022). *Breaking Robust Data Hiding in Online Social Networks*. IEEE Signal Processing Letters, 29, 2682–2686.
+- **DOI:** https://doi.org/10.1109/LSP.2022.3233539
+- **Publisher/status:** Peer-reviewed IEEE journal article; publisher/author-indexed abstract and bibliographic records inspected.
+- **Relevant to:** Active image sanitization, robust steganography and watermarking removal, image-quality-preserving transformations, adversarial carrier survival.
+- **Supports:** The authors propose a general end-to-end secret-data-remover (SDR) for OSN image processing. The abstract describes a learned attack plus image-fusion and latent-renewal techniques intended to remove hidden data while maintaining or improving visual quality; it is presented as applicable to both robust steganography and robust watermarking.
+- **Does not establish:** That a named social platform deploys SDR, that it defeats every current hiding method, or that its claims transfer to arbitrary image formats, payloads or platform pipelines. It does not address endpoint-authenticated messaging, message-set semantics or recipient discovery.
+- **Review state:** Abstract and bibliographic metadata inspected through IEEE/author-indexed records. Full paper and complete experimental tables were not inspected; no reproduction performed.
+
+### SRC-047 · Image Sanitization in Online Social Networks: A General Framework for Breaking Robust Information Hiding
+
+- **Source:** Zhu, Z., Wei, P., Qian, Z., Li, S. and Zhang, X. (2023). *Image Sanitization in Online Social Networks: A General Framework for Breaking Robust Information Hiding*. IEEE Transactions on Circuits and Systems for Video Technology, 33(6), 3017–3029.
+- **DOI:** https://doi.org/10.1109/TCSVT.2022.3224243
+- **Publisher/status:** Peer-reviewed IEEE journal article; publisher/author-indexed abstract and bibliographic records inspected.
+- **Relevant to:** Active image sanitization, scaling-aware payload removal, adversarial transformation and image-quality constraints.
+- **Supports:** The abstract describes a sanitization framework with two neural networks: Scaling-Net for oversized images and SC-Net for other images, plus a discriminator for adversarial image-quality optimisation. It targets robust information hiding that survives lossy OSN channels, including methods resistant to scaling. The authors report source code and pretrained models.
+- **Does not establish:** That any particular platform deploys this framework, that all robust hiding methods are defeated, or that image sanitization supplies a complete platform-side privacy/security policy. It does not define endpoint identity, authenticated message-set membership or delivery semantics.
+- **Review state:** Abstract, DOI/bibliographic metadata and author-indexed source-code availability inspected. Full paper, full result tables and code repository have not yet been reviewed; no reproduction performed.
+
+### SRC-048 · Covert Communication in Sanitized Online Social Networks
+
+- **Source:** Zhu, Z., Ba, Z., Li, G., Qian, Z. and Zhang, X. (2025). *Covert Communication in Sanitized Online Social Networks*. 2025 IEEE International Workshop on Information Forensics and Security (WIFS), pp. 144–149.
+- **DOI:** https://doi.org/10.1109/WIFS66636.2025.00033
+- **Publisher/status:** Peer-reviewed IEEE workshop/conference paper; IEEE abstract and author-indexed bibliographic record inspected.
+- **Relevant to:** Adversarial adaptation to active sanitization, keyed receiver recovery, robust covert communication under a declared sanitizer.
+- **Supports:** The abstract describes joining a sanitizing network with a decoder whose weights are generated from a secret seed. The sender iteratively optimises a cover image so the sanitiser's output triggers the decoder to produce the intended secret; an authorised receiver with the seed reconstructs the decoder and recovers the data from the sanitised image.
+- **Does not establish:** General robustness across sanitizers or platforms, anonymity, authenticated human identity, recipient discovery, conversation/message-set semantics or a complete secure messaging protocol. The full method and evaluation conditions remain uninspected.
+- **Review state:** IEEE abstract and author-indexed publication record inspected. Full paper and experimental details unavailable in this pass; no method or result reproduced.
+
+### SRC-049 · Provably Secure and Robust Training-Free GIF Steganography
+
+- **Source:** Wang, H., Sun, L., Zhu, Z., Jiang, Q., Zhang, X. and Qian, Z. (2026). *Provably Secure and Robust Training-Free GIF Steganography*. IEEE Transactions on Multimedia, 28, 12544–12554.
+- **DOI:** https://doi.org/10.1109/TMM.2026.3718262
+- **Publisher/status:** IEEE journal publication metadata and the authors' linked implementation README inspected.
+- **Relevant to:** Animated-image carriage, frame-level redundancy, majority-vote recovery, diffusion-based hiding and the distinction between one multi-frame carrier and multiple separate image carriers.
+- **Supports:** The implementation README describes a 16-frame GIF pipeline with each watermark bit redundantly represented across frames and majority-vote extraction. It documents OTP and ChaCha20 modes, per-frame latent/key material, AnimateDiff generation and DDIM-inversion extraction, plus simulated JPEG-distortion evaluation instructions.
+- **Does not establish:** Multi-post or multi-image fragment-set semantics, conversation linkage, platform-specific GIF transformation behaviour, recipient discovery or a complete endpoint-controlled messaging protocol. The paper's formal security claims and experimental tables have not been independently inspected; repository code has not been audited or reproduced.
+- **Review state:** Author-linked implementation README and publication metadata inspected. Paper full text not inspected; no code execution, independent security review or reproduction performed.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
@@ -489,7 +529,7 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 | Image metadata and platform transformations | SRC-012–SRC-014; SRC-021 | Separate semantic metadata from format/codec and forensic fingerprints; test each named route and platform instead of assuming universal stripping |
 | Mixnet-backed messaging, global observers and integrated discovery/reliability | SRC-016; SRC-032 | Compare route-native guarantees, role collusion, traffic coupling, capability distribution, human routine leakage and image-platform-specific residual observations |
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
-| Multi-image fragment carriage and batch steganalysis | SRC-043–SRC-045 | Separate watermarking-based robust reconstruction, pooled detection and formal capacity theorem; retain each source's assumptions and do not transfer quantitative results to current platforms |
+| Multi-image fragment carriage and batch steganalysis | SRC-043–SRC-045; SRC-049 | Separate robust watermarking, batch detection and bounded capacity theory; distinguish multi-frame GIF redundancy from multi-object fragment sets and retain each source's assumptions |\n| Active sanitization and counter-adaptation | SRC-036; SRC-046–SRC-048 | Compare passive platform transformation, learned sanitization, scaling-aware sanitization and keyed sanitizer-aware covert communication; do not infer any platform deployment or universal success |
 | Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025; SRC-028; SRC-029; SRC-030; SRC-031 | Compare full-scan, rendezvous, capability, OMR-family variants, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
 | Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
 | Human social engineering and interpersonal behavioural mimicry | SRC-022; SRC-018–SRC-019 for adjacent traffic/behavioural evidence | Separate qualitative perpetrator accounts, measured traffic features and unverified project-specific behavioural propositions; add recipient/usability studies where needed |
@@ -536,11 +576,11 @@ Rules:
 
 1. Extraction robustness, visual imperceptibility, steganalysis resistance, endpoint authenticity/integrity and observer privacy are separate properties; success on one does not establish another.
 2. Platform media processing is path-dependent and may involve more than one JPEG recompression. The Qiao study reports that simulated-channel performance did not reliably predict Facebook, Twitter or WeChat outcomes under its tested configurations.
-3. Active transformation may target payload survival rather than merely detect steganography. A route evaluation must include extraction failure and integrity-safe rejection, not just detectability.
+3. Active transformation may target payload survival rather than merely detect steganography. SRC-036 and SRC-046–SRC-047 describe learned sanitization approaches; SRC-048 describes a keyed counter-adaptation. These are competing adversarial capabilities, not evidence of deployment by any named platform. A route evaluation must include extraction failure and integrity-safe rejection, not just detectability.\n4. Multi-frame redundancy within one animated GIF (SRC-049) is a different carrier topology from fragmenting one message across separate image objects or posts. Evaluate frame loss/distortion, frame correlation and cross-frame recovery separately from account/time-window collection analysis.
 4. A single universal detector or universal transformation model must not be assumed. The survey identifies generalisation as a major unresolved difficulty.
 5. The strongest defensible next step is to define exact platform/version, upload method, account/post visibility, retrieval method, media type and client path for each image profile. Record unknown transformations as unknown until measured or sourced.
 
-## 7. Status
+## 7.2 SRC-046–SRC-049 review outcome (2026-11-16)\n\n- **SRC-046 Wei et al.:** IEEE/author-indexed abstract and metadata inspected. SDR is described as a general end-to-end remover for robust steganography and watermarking, using attack, image-fusion and latent-renewal components. Full paper/results remain unavailable.\n- **SRC-047 Zhu et al.:** Abstract and author-indexed source-code availability inspected. Scaling-Net and SC-Net are described as separate sanitization paths, with a discriminator for image-quality optimisation. The repository and complete results remain to be inspected.\n- **SRC-048 Zhu et al.:** IEEE abstract and author publication record inspected. The reported countermeasure is a secret-seed-conditioned decoder jointly optimised with the sanitizing network. Full method/evaluation unavailable; treat as a counter-adaptation concept, not a demonstrated general bypass.\n- **SRC-049 Wang et al.:** Author-linked implementation README and IEEE publication metadata inspected. It documents 16-frame cross-frame redundancy and majority voting in a single GIF carrier, with OTP/ChaCha20 modes and diffusion-based generation/extraction. This is not multi-post or separate-image message fragmentation. Full paper and formal security argument remain unreviewed; code not executed or audited.\n\n## 7. Status
 
 This is an evolving bibliography and claim-mapping pass. It is not a systematic literature review, complete bibliography, protocol selection or independent validation. Source-to-thesis integration and full-text examination remain in progress.
 
