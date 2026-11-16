@@ -13,6 +13,11 @@ Secure messaging systems must protect message contents while often relying on in
 The research problem is to describe and critically evaluate an architecture in which cryptographic protections remain anchored at the communicating endpoints while an intermediary is treated as untrusted for plaintext confidentiality and participant impersonation. Message carriage is a first-class transport-route layer; image carriage is a required route profile, and alternative routes provide comparison points. The design must also account for route-specific transformations, multipart delivery, lifecycle policy, and optional recovery arrangements. The research further separates the primary participant-side cryptographic topology from a standalone, low-fidelity transport element ("train"). The train carries an already protected object; a bounded encapsulation layer prepares it for carriage without taking on the passengers' security roles.
 
 ## 2. Central research question
+### Transport-independence principle
+
+The research does not assume that a particular transport, platform, bot or image source is necessary. Endpoint protection defines the protected message; encapsulation adapts its outer representation; optional transport adapters carry it; optional orchestration may coordinate delivery and may itself participate in transit. These functions can share an implementation but must remain distinct in the threat model. Image carriage is a required research comparison route, not a mandatory runtime route. The comparison must preserve protected-message semantics or explicitly identify and analyse any protocol conversion.
+
+
 
 **How can an endpoint-controlled messaging architecture protect message contents and authenticate communicating participants while using untrusted intermediaries and image-based carriage, and what security, privacy, usability and reliability limits remain across the complete communication lifecycle?**
 
