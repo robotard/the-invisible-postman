@@ -26,7 +26,7 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 - Not evidence of measured resistance to steganalysis.
 - Not a guarantee of anonymity, delivery, remote erasure or metadata protection.
 
-**New-session handover:** [Compact machine-readable progress digest](project/SESSION_DIGEST.json). Treat it as a retrieval index only; verify the live repository and read the linked authoritative work documents before continuing.
+**New-session handover:** [Machine-readable Markdown digest](project/SESSION_DIGEST.md) and [JSON digest](project/SESSION_DIGEST.json). These are operational retrieval indexes, not thesis exposition or substitutes for the authoritative working documents; verify the live repository and read the three working documents before continuing.
 
 ## Start here
 
