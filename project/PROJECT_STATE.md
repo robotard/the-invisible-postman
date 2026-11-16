@@ -52,7 +52,7 @@ The architecture continues to separate endpoint protection, carrier encapsulatio
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
 - An initial named profile register, documentary comparison and lifecycle/event observer ledger now exist. Product-level version pinning, route-specific service evidence and full observer/collusion detail remain incomplete.
 - SRC-033, SRC-034 and SRC-036 remain partial reviews because full article text was not accessible in this pass; SRC-035 and SRC-037 are full-text inspected.
-- The previous relative-link audit covered 27 Markdown files and found no broken relative links; subsequent edits have made that audit stale and it must be rerun. The previous 27-file ZIP/archive-instruction scan found none; rerun after this batch. Exact-status, terminology, image-reference and diagram-placeholder consistency require a fresh audit.
+- A fresh post-integration audit checked all 29 Markdown files against the recursive repository tree: no broken relative links were found. A targeted instruction scan found no ZIP/archive-generation workflow instructions. Exact-status, terminology, image-reference and diagram-placeholder consistency still require a dedicated audit.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
 - No researcher decision currently blocks the next research pass.
 
@@ -70,7 +70,7 @@ The architecture continues to separate endpoint protection, carrier encapsulatio
 4. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
 5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test the obligations against Signal, MLS and HPKE references without premature selection.
 6. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis.
-7. Run fresh repository-wide relative-link, ZIP/archive-instruction, exact-status, terminology, illustration-placeholder and image-reference audits.
+7. Complete exact-status, terminology, image-reference, thesis heading/numbering and illustration-placeholder consistency audits. The 29-file relative-link audit passes; no ZIP/archive-generation instructions were found.
 
 ## Document-boundary rule
 
