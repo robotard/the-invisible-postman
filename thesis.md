@@ -16,7 +16,7 @@ The research therefore develops a broader, endpoint-controlled architecture. It 
 
 A central architectural objective is that the participant-side cryptographic topology remains distinct from a replaceable, untrusted transport element. The transport can carry, publish, expose, delay, transform, lose or suppress protected material without becoming an authority for identity, keys, message meaning or decryption. The research also examines how distribution, discovery and collection create their own privacy and reliability questions. Unique image envelopes, variable placement and metadata minimisation may reduce some simple forms of carrier correlation, but cannot establish participant anonymity or erase platform, network and behavioural observations.
 
-The intended contribution is a reasoned and challengeable architecture, a record of design evolution, an explicit threat model, a comparison of carriage methods, and a evidence-led evaluation programme. The work deliberately distinguishes established mechanisms from proposed design choices and unverified claims. Important protocol, identity, discovery, recovery and evaluation decisions remain open.
+The intended contribution is a reasoned and challengeable architecture, a record of design evolution, an explicit threat model, a comparison of carriage methods, and an evidence-led evaluation programme. The thesis also examines how a system can make the basis and limits of confidence inspectable without presenting confidence as a security property or a universal score. It distinguishes established mechanisms from proposed design choices and unverified claims. Important protocol, identity, discovery, recovery and evaluation decisions remain open.
 
 ## 1. Research purpose and problem
 ### Transport independence as a governing architectural distinction
@@ -142,6 +142,33 @@ A recurring research risk is treating the word "secure" as if it described one i
 | Recoverability | A defined process may restore access after specified failures | Adds trust, collusion, authorisation and compromise risks |
 
 The properties can interact, but one must not be used as a substitute for another. Encryption does not authenticate a person. A signature does not establish that a public key belongs to the intended person unless a binding process exists. Steganography does not strengthen ciphertext. A random-looking carrier does not conceal retrieval timing. A transport wrapper does not create authenticated integrity unless its relevant fields are bound by the endpoint protocol.
+
+### 4.1 Confidence as an evidence-bounded judgement
+
+The thesis adopts the following candidate organising principle:
+
+> **The Invisible Postman does not promise certainty. It makes the basis, boundaries and limitations of confidence explicit.**
+
+This is not a claim that the system can manufacture certainty, that confidence is a cryptographic property, or that the phrase establishes originality. Confidence is a verifier's judgement about a specific proposition, based on evidence available to that verifier, within a stated scope, threat model and time. The system may provide mechanisms and evidence that support a judgement; it cannot make an unsupported inference valid.
+
+Confidence must therefore remain attached to a claim rather than presented as one system-wide score. A useful claim record identifies the proposition, scope, verifier, evidence and provenance, mechanism, assumptions, observer vantage, freshness, plausible alternatives, missing evidence and current disposition. "Not checked", "unavailable", "failed", "unknown", "expired" and "not applicable" are different states. A missing check is not a successful check.
+
+This framing requires strict distinctions:
+
+- **Trust** is a decision to rely on an actor, key, device, service or process; it may include social and institutional judgement beyond cryptographic evidence.
+- **Assurance** is a justified argument that defined requirements are met within a declared scope and evaluation regime. It requires evidence and appropriate scrutiny, not a reassuring interface label.
+- **Authenticity** concerns attribution to a key or authenticated process; it does not independently establish a human identity or the truth of a statement.
+- **Integrity** concerns detectable alteration under a mechanism; it does not prove completeness, delivery, freshness or semantic truth.
+- **Discoverability** concerns locating an object; it does not prove its origin, completeness, authenticity or receipt.
+- **Truth** is not established by cryptographic validity alone.
+
+The distinction is especially important for multi-message communication. Validity of one protected object does not establish fragment-set membership; membership does not establish set completeness; a complete set does not establish conversation continuity; and endpoint-authenticated linkage is not equivalent to an observer's correlation based on timing, size, provenance or media artefacts. Likewise, a transport acknowledgement, service acceptance, endpoint receipt, successful decryption, display, open signal, human reading and comprehension are different events. The thesis must use only the strongest verb supported by the evidence actually available.
+
+Evidence is also observer- and time-relative. An endpoint with keys and authenticated state may verify a relationship that a platform cannot see; a platform may observe publication and access events without knowing their cryptographic meaning. Key revocation, device compromise, stale logs or changed assumptions may alter the validity of an earlier judgement. The verifier and freshness of evidence must be explicit.
+
+Finally, an evidence model can itself create surveillance. Verification records, stable identifiers, receipts and read signals may expose relationships and behaviour. The default research direction is endpoint-local verification and minimal disclosure, not a central confidence ledger or mandatory telemetry. Any shared evidence must justify its recipient, purpose, retention and linkability.
+
+The proposed framework and claim/evidence fields are developed in [the confidence and evidence model](docs/confidence-and-evidence-model.md). It remains a conceptual proposal; usability, completeness and privacy costs have not been experimentally evaluated.
 
 **Illustration pointer (planned):** A property-separation figure should show the different claims, their responsible mechanisms and their limits. It belongs beside this section, not as a decorative summary at the end of the thesis.
 
@@ -386,6 +413,21 @@ A route that adds complexity without measurable benefit may not justify its plac
 
 The current work contains conceptual analysis and proposed evaluation criteria. It does not yet contain a complete protocol, implementation measurements, a formal model, a steganalysis study or an independent audit. Numerical thresholds, platform profiles, reproducible test fixtures and formal methods remain to be selected. Passing a test supports only the conditions actually tested.
 
+### 10.5 Confidence and claim-evidence evaluation
+
+The evaluation must test whether the architecture reports what its evidence actually establishes. For each material claim, an evaluator should be able to identify its scope, verifier, evidence provenance, mechanism, assumptions, threat model, freshness, alternatives and unresolved gaps. Evaluation should include:
+
+- distinguish cryptographic validity from identity binding and semantic truth;
+- distinguish individual-object validity, authenticated fragment membership, set completeness, reconstruction and conversation continuity;
+- distinguish endpoint-authenticated linkage from observer-inferred correlation;
+- distinguish service acceptance, relay, endpoint receipt, validation, decryption, display, open signal and human acknowledgement;
+- represent missing, stale, revoked, contradictory and unavailable evidence without converting absence into success;
+- test whether different observers receive only the evidence appropriate to their role;
+- test whether evidence records create stable identifiers, access patterns or unnecessary behavioural telemetry; and
+- examine whether users and reviewers interpret status labels and evidence limitations correctly.
+
+A single numeric confidence score is not proposed. Any future quantitative model would need a defined proposition, calibration data, error costs, population, dependence assumptions and uncertainty bounds. Without those elements, a score would imply precision that the evidence cannot support. The current model is conceptual and has not been tested with users or independent evaluators.
+
 **Illustration pointer (planned):** A claim-to-evidence traceability figure should connect research questions, security objectives, threats, architectural responsibilities, proposed tests and evidence maturity. It should visually distinguish proposed requirements from demonstrated results.
 
 ## 11. Discussion, limitations and unresolved reasoning
@@ -471,6 +513,10 @@ The following sources are cited in the current working text. This list is provis
 - **Steganalysis:** Analysis intended to detect or characterise hidden data.
 - **Threshold secret sharing:** Distribution of secret material so a defined threshold can reconstruct it.
 - **Transport unlinkability:** A bounded objective of making specified transport events harder to correlate under a defined observer model.
+- **Confidence:** A verifier's evidence-bounded judgement about a specific proposition, scope and time; not a universal system score.
+- **Assurance:** A justified argument that defined requirements are met under a stated scope and evaluation regime.
+- **Evidence provenance:** The origin, acquisition method and independent checkability of evidence supporting a claim.
+- **Observer-inferred linkage:** A correlation hypothesis based on visible events or metadata, distinct from endpoint-authenticated linkage.
 
 ## Appendix B. Claim discipline
 
@@ -490,6 +536,7 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/route-comparison-framework.md` — common event and observer ledger for route-specific evidence.
 - `docs/protocol-boundary-analysis.md` — key derivation, identity/context binding, nonce uniqueness, replay, ordering and fallback obligations.
 - `docs/multi-message-linkage-and-steganographic-carriage.md` — fragment-set semantics, redundant multi-image carriage, conversation linkage, package encapsulation, pooled steganalysis and prior-art boundaries.
+- `docs/confidence-and-evidence-model.md` — claim-centred confidence, evidence provenance, multi-message relationship semantics, delivery-event boundaries and privacy constraints.
 
 ## Appendix D. Illustration guide
 
