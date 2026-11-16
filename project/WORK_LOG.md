@@ -876,3 +876,20 @@ This is a documentation and workflow clarification only. It does not change the 
 - SRC-033, SRC-034 and SRC-036 remain partial reviews; live service/client profiles remain unpinned.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Expanded publisher-indexed review of MRAS, DRAS and active payload-removal work
+
+### Completed and read-back verified
+
+- Revisited SRC-033, SRC-034 and SRC-036 using publisher-indexed article text and targeted section searches.
+- MRAS (SRC-033): expanded the record to include its stated DCT stabilisation, lattice-based adaptive embedding and post-processing; BOSSbase payload/recompression evaluation; extraction-error, PSNR/SSIM and steganalysis-classification metric families; named comparators; and LinkedIn testing. Exact dataset/payload values, full result tables, LinkedIn path/configuration and limitations remain unverified.
+- DRAS (SRC-034): expanded the record to include RoLoS quantisation-table coefficient selection, CARE predictive channel modelling with syndrome-trellis coding, Q95-to-Q85/Q80/Q75 evaluation scenarios, PMAS comparison, and author-reported extraction-error/runtime claims and WhatsApp/LinkedIn/X tests. Full methods, baseline tables and platform configurations remain unverified.
+- Zhu et al. (SRC-036): expanded the record to include attack/optimisation network structure, BOSSbase 1.01 and BOWS2 dataset descriptions (10,000 512×512 images each), an 8,000/2,000 BOSSbase split and JPEG QF75 experiment context. Full model details, tables and generalisation boundaries remain unverified.
+- Updated the source register, route-profile register, thesis §8.7, contribution/bias assessment and project checkpoint. All changed files were fetched after writing and matched exactly.
+
+### Evidence boundary
+
+Publisher-indexed article text and section snippets are not equivalent to complete full-text inspection. Direct ScienceDirect retrieval for MRAS was blocked; DRAS full methods/tables and Zhu et al. complete methods/results remain unavailable in this review. The reported platform and performance results remain attributed to the authors. No experiment, model or result was reproduced.
+
+**Theory only · No implementation · Not audited.**
