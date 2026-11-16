@@ -1,3 +1,24 @@
+## 2026-11-16 · Expanded thesis related-work pressure test
+
+### Work performed
+
+- Extended thesis §3.4 and §8.4 to explicitly discuss OMR/GOMR and the OMR-family performance variants (PerfOMR, SophOMR, InstantOMR), Oblivious Signaling and Remise.
+- Integrated the dead-drop covert-messaging pipeline and image-diffusion covert-messaging construction as distinct prior-art families, preserving their different channel models and delivery assumptions.
+- Added the corresponding complete bibliographic records for PerfOMR, SophOMR, InstantOMR, Oblivious Signaling, dead-drop covert messaging and image-diffusion covert messaging.
+- Reconciled the thesis argument so it no longer relies on generic claims to private discovery, whole-pipeline analysis or image-based covert messaging. The remaining research question is a narrower comparison of route-specific transformations, observer visibility, endpoint-authenticated message relationships and lifecycle semantics.
+
+### Evidence boundary
+
+The referenced papers are recorded as full-text inspected or abstract/metadata-level in the source register according to their actual review status. No new paper review, reproduction or independent validation was claimed by this thesis integration. The contribution remains provisional and must be tested against the full comparator set.
+
+### Verification
+
+- The updated thesis and bibliography were fetched back from GitHub.
+- The project state and work log were reconciled to this additional thesis progress.
+- No implementation, experiment, protocol selection, independent review or audit was performed.
+
+**Theory only · No implementation · Not audited.**
+
 ## 2026-11-16 · Thesis argument and route-comparison synthesis advanced
 
 ### Work performed
