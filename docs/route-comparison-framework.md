@@ -153,6 +153,19 @@ Echomix substantially narrows any broad claim to a newly integrated privacy-awar
 
 This is a narrower and more demanding question. It may show that image carriage is useful for a particular deployment constraint, that it introduces avoidable fragility, or that a simpler route is preferable. All three outcomes are valid research results.
 
+## 8.1 Image-carriage evidence constraints from SRC-033–SRC-037
+
+The reviewed literature makes the image route comparison more specific, but does not establish that a particular platform currently applies any one transformation to every upload.
+
+- Qiao et al. (SRC-035) compare simulated JPEG channels with tested Facebook, Twitter and WeChat paths. Their outcomes vary by platform and by WeChat original-image versus default sending mode; some methods that work in the simulated channel fail in platform tests. Their social-platform sample is 50 images under a defined test configuration, not a universal platform characterisation.
+- MRAS (SRC-033) and DRAS (SRC-034) report methods aimed at JPEG recompression robustness. MRAS full methods/results and DRAS full text remain unreviewed here; their publisher abstracts/highlights are not enough to establish comparative superiority.
+- Zhu et al. (SRC-036) describe active payload-destruction processing designed to preserve image quality. Full method/results remain unreviewed. Treat it as evidence that adversarial media transformation is a researched attack class, not evidence that a named platform deploys that method.
+- Kombrink et al. (SRC-037) provide a broad taxonomy and identify limited generalisation in steganalysis. Their cross-paper performance ordering is not a common controlled benchmark.
+
+For every image route profile, record at least: platform and app/web version; operating system/client; original versus compressed sending option; image format and dimensions; upload/post type and visibility; account state; retrieval/download route; transformations evidenced or measured; payload method and rate if relevant; extraction error and complete-message recovery; detector and false-positive/negative operating point; endpoint authentication/integrity outcome; and observer-visible metadata/events. Separate published evidence from proposed measurements and unknowns.
+
+Do not equate robust extraction with stealth, and do not equate steganalysis resistance with confidentiality or anonymity. A payload that survives transformation but fails endpoint authentication must be rejected; a payload that is undetectable but unrecoverable is not a successful delivery route.
+
 ## 9. Source dependencies
 
 - [SRC-016 · Loopix](source-register.md)
