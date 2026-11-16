@@ -79,7 +79,7 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/author record only; full method/evaluation not inspected."
   SRC-049: "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
 next_actions:
-  - "Complete full-text/source-level review for SRC-033, SRC-034 and SRC-036; retain partial-review labels until methods/results and limitations are inspected."
+  - "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036. A further publisher-indexed pass clarified evaluation dimensions and method context, but complete methods, tables and limitations remain unavailable; all three reviews remain partial."
   - "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available."
   - "Review SRC-049 full paper/formal security argument and complete experimental results; selected code has been read but not run or audited."
   - "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before deployed-route claims."
@@ -87,6 +87,12 @@ next_actions:
   - "Reconcile new route findings into W1-W4, contribution assessment and integrated thesis."
   - "Continue broader terminology and cross-document consistency review."
   - "Use work/lookup/TASKS.md for continuation across research, routes, diagrams, peer review and release work."
+source_review_update:
+  date: "2026-11-16"
+  SRC-033: "Publisher-indexed pass clarified extraction-error, PSNR/SSIM and classifier-error metrics, named comparators, BOSSbase and LinkedIn evaluation; complete parameters, tables and limitations unavailable."
+  SRC-034: "Publisher-indexed pass clarified RoLoS ablation, PMAS comparison, Q95-to-Q85/Q80/Q75 scenarios and author-reported 87% extraction-error / order-of-magnitude runtime claims; full tables and platform procedure unavailable."
+  SRC-036: "Publisher-indexed pass clarified attack/filtering plus optimisation modules, joint loss, BOSSbase 8,000/2,000 split, BOWS2 and QF75; full equations, training details, results and generalisation limits unavailable."
+  review_status: "T-001 remains open; all three reviews remain partial. No full paper text, experiment reproduction or audit obtained."
 deferred:
   - "Create actual diagrams only after comparative argument and evidence stabilise; never use ASCII art."
   - "External peer-review preparation until a coherent thesis candidate exists."
@@ -104,13 +110,13 @@ invariants:
   - "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
 verified_working_documents:
   work/README.md: "87af6d60e02598929a01fc311a25f73f9abccdc6"
-  work/PROJECT_STATE.md: "127f1b9dbecdd90b7a60d5bafc78e6ec479c117b"
+  work/PROJECT_STATE.md: "8d2853d87277efbd4d9b1404225dbacc8b42dff2"
   work/WORKPLAN.md: "683e115c73d5eb874370f75c12aaed48fc89f094"
-  work/WORK_LOG.md: "e663ae7d7ae75e06b0f20c46619b5a523d4bc727"
+  work/WORK_LOG.md: "3905deceba8f1befb809eab90d75ed9c47da6b78"
   work/lookup/TASKS.md: "0dd84320ff59321769276dce873b608065ed5202"
   work/lookup/TASKS.json: "0e5a1c05f937301b89cb586d65545d869e391ef5"
   README.md: "ce2d0c914df2506c0611518cdeb4b454384dc588"
-  docs/source-register.md: "e3a69287e95ab2ca4e2544b70494ab8a45238485"
+  docs/source-register.md: "2215ef95c14356ed543279b2e93e0bf0de532849"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
