@@ -27,7 +27,7 @@ The latest verified architecture reconciliation keeps transport independence and
 
 - **W0.1:** Repository foundation and GitHub-first workflow established.
 - **W0.2:** Research-practice, self-review and contributor-governance documents exist. Routine review administration is deferred; external review has not occurred.
-- **Prior art:** 40 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work, Echomix/Katzenpost, Signal protocol specifications and Dropbox shared-link documentation.
+- **Prior art:** 42 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work, Echomix/Katzenpost, Signal protocol specifications and Dropbox shared-link documentation.
 - **Architecture:** Endpoint message protection, carrier encapsulation, transport adapters and optional orchestration are distinct functions. One service may perform several roles; analyse each role separately.
 - **Protocol boundaries:** `docs/protocol-boundary-analysis.md` now translates open cryptographic composition questions into explicit design obligations. HKDF salt and `info` are distinguished; HPKE is a comparator, not a selected messaging protocol.
 - **Route method:** A common lifecycle/event and observer framework now includes six evidence-bounded starting profiles (three image literature profiles, Dropbox shared-link file hosting, Signal protocol reference, and Echomix/Pigeonhole). An initial documentary comparison matrix and lifecycle/event observer ledger have been added; the profiles are not yet all pinned to live product releases or deployed test configurations.
