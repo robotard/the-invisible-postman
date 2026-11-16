@@ -1,15 +1,14 @@
 ---
-schema: tip.session-digest.v2
+schema: tip.session-digest.v1
 checkpoint: "2026-11-16"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
-authority: "Live GitHub files and commit history; digests are retrieval aids only."
 operating_instruction_boundary:
-  chatgpt_project_instructions: "Thin external operating layer for continuation, execution and verification; follow live GitHub records."
-  thesis_research_rules: "Substantive methodology, terminology, technical constraints, arguments and evidence standards remain in thesis/research documents."
-  repository_records: "Operational documents record verified progress, dependencies, blockers and next actions."
-  external_settings: "ChatGPT Project Instructions are managed outside this repository; GitHub records the boundary but cannot edit settings."
+  chatgpt_project_instructions: "Thin operating layer for continuation, execution and verification; follow live GitHub records."
+  thesis_research_rules: "Substantive methodology, terminology, technical constraints, arguments and evidence standards stay in thesis/research documents."
+  repository_authority: "Live GitHub files and commit history; digests are retrieval aids only."
+  external_settings: "ChatGPT Project Instructions are managed outside GitHub; repository records the boundary but cannot edit ChatGPT settings."
 document_roles:
   project_state: "Changing verified progress, blockers, dependencies and exact next action."
   workplan: "Stable roadmap, priorities, sequencing and dependencies."
@@ -26,102 +25,66 @@ read_first:
   - docs/source-register.md
   - docs/route-comparison-framework.md
   - docs/multi-message-linkage-and-steganographic-carriage.md
-current:
+current_state:
   thesis: "Working draft; final contribution and review readiness remain open."
-  research_units: "W1-W4 drafted with aligned message-multiplicity terminology, definition/comparison blocks and text-only illustration prompts."
+  research_units: "W1-W4 drafted; aligned definitions/comparisons, message-multiplicity terminology and text-only illustration prompts embedded."
   source_register: "49 entries, SRC-001 through SRC-049."
-  multi_message_model:
-    - logical message and endpoint-protected object
-    - authenticated fragment-set membership and reconstruction
-    - redundant fragment carriage and loss tolerance
-    - independent messages in a batch
-    - conversation/session continuity across distinct messages
-    - retry/duplicate as a new delivery event for the same logical object
-    - cross-route copies and their correlation risks
-  steganography:
-    distinctions:
-      - per-carrier concealment
-      - robust watermarking
-      - extraction and reconstruction
-      - collection-level steganalysis
-      - observer-inferred carrier/message linkage
-      - passive transformation
-      - active sanitization
-      - keyed counter-adaptation to a known sanitizer
-    prior_art:
-      SRC_043: "Multi-image fragment carriage and redundant reconstruction using robust DFT/DCT watermarking; not generic steganographic stealth."
-      SRC_044: "Batch steganography and pooled steganalysis under stated assumptions."
-      SRC_045: "Formal asymptotic square-root capacity theorem under explicit cover-capacity, detector-response, independence and known-batch assumptions."
-      SRC_046_SRC_047: "Learned active image sanitization; abstract/metadata-level reviews remain partial."
-      SRC_048: "Keyed sender-side counter-adaptation to a known sanitizer; full method/evaluation remain unreviewed."
-      SRC_049: "Cross-frame redundancy and majority voting within one animated GIF; not separate-image fragment-set or conversation semantics."
-  carrier_multiplicity:
-    - frames within one animated GIF carrier
-    - separate image objects carrying fragments or redundant copies
-    - distinct protected messages linked by a conversation/session
-  MRAS_DRAS_code:
-    MRAS_commit: "a14777047f82715bdbefcfed2cbb85427add23bc"
-    DRAS_commit: "ad81f8785b473e03765ec3a859dad7ceb73ff9ea"
-    finding: "Public demos use per-image embed/extract operations and local imwrite recompression; inspected APIs do not expose cross-image fragment manifests, set reconstruction or conversation linkage."
-    boundary: "Author-published reference code inspected, not executed or independently validated; local demos do not reproduce separately reported live-platform tests."
-  route_profiles: "Six evidence-bounded profiles; documentary comparison and lifecycle/event/observer ledger. Live client/service versions and configurations remain unpinned."
+  multi_message_model: "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies."
+  steganography: "Separates per-carrier concealment, robust watermarking, extraction/reconstruction, collection-level steganalysis and observer linkage. SRC-043–SRC-045 cover multi-image redundancy and batch detection; SRC-049 covers redundancy across frames inside one GIF carrier."
+  sanitization: "SRC-036 and SRC-046–SRC-047 describe active payload sanitization; SRC-048 describes keyed counter-adaptation to a known sanitizer. These are partial reviews and do not establish deployment by any named platform."
+  route_profiles: "Six evidence-bounded profiles; documentary comparison and expanded lifecycle/event/observer ledger. Live client/service versions and configurations remain unpinned."
   protocol_analysis: "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected."
-  implementation: null
-  independent_audit: null
-  illustrations:
-    prompts:
-      - W1-F01
-      - W1-F02
-      - W1-F03
-      - W1-F04
-      - W2-F01
-      - W2-F02
-      - W3-F01
-      - W3-F02
-      - W3-F03
-      - W4-F01
-      - W4-F02
-      - W4-F03
-    index: diagrams/README.md
-    artwork_created: false
+  implementation: none
+  independent_audit: none
+  illustrations: "W1-F01..F04, W2-F01..F02, W3-F01..F03, W4-F01..F03 are text-only prompts indexed in diagrams/README.md; no artwork generated."
 completed:
-  - "Multi-message relationships, steganographic collection risks and package-encapsulation boundaries integrated into W1-W4 and thesis/supporting research."
-  - "Route-comparison ledger extended for fragment sets, redundancy, independent messages/conversations, retries/duplicates, cross-route linkage and collection-level steganalysis."
-  - "SRC-033/SRC-034 author-linked MATLAB repositories pinned and source-inspected; no code run or results reproduced."
-  - "SRC-046–SRC-049 added and integrated as bounded sanitization, counter-adaptation and animated-GIF comparators; reviews remain partial."
-  - "All 12 unique W1-W4 illustration placeholders match the diagram index; 21 definition/comparison/evaluation blocks across W1-W4."
-  - "Static audit of 29 Markdown files: no broken relative links or Markdown image references; no active ZIP/archive-generation instructions."
-  - "Escaped newline formatting and duplicate list numbering repaired in source register; W4 animated-GIF matrix row formatting repaired."
-  - "Every changed GitHub file fetched back and exact content verified."
+  - "Integrated multi-message relationships, package-encapsulation boundaries, active sanitization and animated-carrier distinctions into W1-W4 and thesis/supporting research."
+  - "Extended route-comparison ledger for fragment sets, redundancy, independent messages/conversations, retries/duplicates, cross-route linkage and collection-level steganalysis."
+  - "Added separate evaluation and threat distinctions for passive processing, active sanitization and keyed adaptation to a known sanitizer."
+  - "Added explicit distinction between GIF frames within one carrier, separate carrier objects and distinct protected messages."
+  - "Static audit of all 29 Markdown files: no broken repository-relative links or Markdown image references; no active ZIP/archive-generation instructions."
+  - "All 12 unique W1-W4 illustration prompt IDs match the diagram index exactly."
+  - "Each W1-W4 document contains aligned definition/comparison blocks and package, message-multiplicity, steganography, animated-carrier and sanitizer distinctions."
+  - "All changed GitHub files were fetched back and exact content verified."
+source_review_boundaries:
+  SRC-033: "MRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial."
+  SRC-034: "DRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial."
+  SRC-036: "Publisher-indexed attack/optimisation, datasets/split and QF75 sections inspected; full methods/results/generalisation remain partial."
+  SRC-046: "Abstract/metadata only; full paper/results not inspected."
+  SRC-047: "Abstract/metadata only; Scaling-Net/SC-Net described; source repository not yet inspected."
+  SRC-048: "IEEE abstract/author record only; full method/evaluation not inspected."
+  SRC-049: "IEEE metadata and author-linked implementation README inspected; full paper/formal security argument not reviewed; code not run or audited."
 next_actions:
-  - "Seek full text for SRC-033, SRC-034 and SRC-036; preserve partial-review labels until methods/results and limitations are inspected."
-  - "Inspect full texts for SRC-046–SRC-048 and the SRC-047 implementation repository where available."
-  - "Inspect SRC-049 full paper/formal security argument and implementation beyond its README."
+  - "Complete full-text/source-level review for SRC-033, SRC-034 and SRC-036; retain partial-review labels until methods/results and limitations are inspected."
+  - "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available."
+  - "Inspect SRC-049 full paper/formal security argument and implementation beyond its README where available."
   - "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before deployed-route claims."
   - "Continue protocol-boundary reconciliation into W2/W3/W4, decision records and thesis; compare Signal, MLS and HPKE without premature primitive selection."
-  - "Continue broader terminology/cross-document consistency review and reconcile new findings into thesis, W1-W4, contribution assessment and traceability."
+  - "Reconcile new route findings into W1-W4, contribution assessment and integrated thesis."
+  - "Continue broader terminology and cross-document consistency review."
 deferred:
-  - "Create actual diagrams only after the comparative argument and evidence stabilise; never use ASCII art."
+  - "Create actual diagrams only after comparative argument and evidence stabilise; never use ASCII art."
   - "External peer-review preparation until a coherent thesis candidate exists."
   - "Implementation, platform experiments, extraction tests, steganalysis benchmarks, formal proof and security audit."
 invariants:
   - "Image carriage is a required research comparison, not a mandatory runtime route."
-  - "Orchestration is optional; analyse each service role separately."
+  - "Orchestration is optional; analyse service roles separately."
   - "Protected object remains invariant unless explicit authenticated conversion is defined."
   - "Package encapsulation is not endpoint authentication."
   - "Endpoint-authenticated linkage and observer-inferred linkage are distinct."
   - "Per-image concealment does not establish collection-level concealment."
-  - "GIF frames, separate image objects and distinct conversation messages are different multiplicity levels."
+  - "GIF frames within one carrier are not separate image posts or logical messages."
   - "No anonymity/security inference from carrier uniqueness, concealment or extra hops."
   - "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
 verified_working_documents:
   project/PROJECT_STATE.md: "3c9b1bf01a0ee58ce133a43335ea08184bd9ed69"
   project/WORKPLAN.md: "bc5a458269897e2e652f1e4a6f1283378edc7655"
   project/WORK_LOG.md: "ac893858faf73ee82f4fc0c6d6cc4de175cc2cb0"
-latest_commit_before_digest_refresh: "ffde9d1b807f085f1d55e663532f231e54cec897"
-close_order:
+  docs/source-register.md: "4017472ae9eeb925e6f8f124416212bee53684ac"
+latest_commit_before_digest_refresh: "269693329cf124785f9ba8c3048ac7ca434d4a2d"
+checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
   - "Fetch and verify all three working documents."
   - "Refresh SESSION_DIGEST.md from verified state."
   - "Refresh SESSION_DIGEST.json last."
-  - "Fetch and verify both digests against the working documents."
+  - "Fetch and verify both digests against the three working documents."
