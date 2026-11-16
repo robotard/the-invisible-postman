@@ -12,10 +12,10 @@
   ],
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
   "priority": [
-    "W0.3 research-source reconciliation with the integrated Echomix/Katzenpost baseline",
+    "W0.3 research-source reconciliation: complete full-text review of SRC-033–SRC-037 and map exact limits into claims",
     "W6 integrated thesis construction using the route comparison framework",
     "Populate named, versioned image-platform, file/attachment, conventional messaging and mixnet-backed route profiles",
-    "Map lifecycle events to actual observer views and identify measurable, decision-relevant differences"
+    "Map lifecycle events to actual observer views and determine measurable, decision-relevant differences without presuming an outcome"
   ],
   "defer": [
     "routine author review unless blocking or materially corrective",
@@ -24,21 +24,26 @@
     "implementation"
   ],
   "next": [
-    "Select named, versioned examples for image-platform, file/attachment, conventional messaging and mixnet-backed profiles",
-    "Populate docs/route-comparison-framework.md with profile-specific facts and source evidence; distinguish comparable fields from route-native properties",
-    "Map publication, discovery, retrieval, transformation, validation, retries, expiry and human interaction to actual observer views",
-    "Identify a measurable decision-relevant difference, or narrow project scope if image carriage adds no defensible benefit",
-    "Reconcile findings into thesis §§3, 5, 8 and 10; W1-W4; source register; traceability and contribution assessment",
-    "Keep new illustrations deferred until the comparison yields a stable explanatory result",
+    "Read SRC-037 in full; inspect full methods/results for SRC-033 and SRC-034 where access permits, and update review states",
+    "Select named, versioned profiles for one image platform, one encrypted file/attachment route, one conventional E2E messaging route and the Echomix/Katzenpost baseline",
+    "Populate docs/route-comparison-framework.md with source-backed properties; mark unverified platform behaviours and non-comparable fields explicitly",
+    "Define a common logical message task and event-by-observer ledger, preserving route-native guarantees and assumptions",
+    "Separate extraction reliability, steganalysis detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost",
+    "Determine which platform transformation measurements can be responsibly performed within the theory-only scope; do not imply tests have occurred",
+    "Reconcile material findings into thesis §§3, 8 and 10; W1-W4; source register; traceability and contribution assessment",
+    "Keep new illustrations deferred until the comparative argument stabilises",
     "At session close reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md, then refresh this digest last"
   ],
   "open": [
-    "whether a common observer/property model yields a distinct analytical result beyond OMR/GOMR, Oblivious Signaling, Remise and dead-drop pipeline studies",
-    "additional mix-network and integrated anonymous-messaging/media-carriage prior art",
-    "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
-    "carrier metadata allowlist and platform transformations",
-    "traffic/access-pattern and behavioural correlation evaluation",
-    "parser/resource-exhaustion and multipart safety evidence"
+    "full-text review and source-status verification for SRC-033–SRC-037",
+    "named and versioned route-profile selection",
+    "image-platform transformation and metadata behaviour",
+    "account, engagement and hosting observations",
+    "discovery and access-pattern privacy under common observer views",
+    "reliability signalling, retries, backfills and residual leakage",
+    "human routine correlation and usable-security evidence",
+    "multipart parser/resource-exhaustion limits",
+    "whether image carriage provides a measurable, decision-relevant benefit"
   ],
   "invariants": [
     "Image carriage remains a required research route; transport is not the whole thesis",
@@ -70,26 +75,27 @@
     "multipart parser/resource-exhaustion limits",
     "whether image carriage provides a measurable, decision-relevant benefit"
   ],
-  "last_verified_batch": "2026-11-16: inspected full Echomix paper and current Katzenpost threat-model page; added SRC-032; created Echomix comparator and route-comparison framework; extended observer matrix and prior-art comparison; integrated into thesis, W1-W4, traceability, README, diagram index and contribution assessment; reconciled PROJECT_STATE, WORKPLAN and WORK_LOG; audited all 25 active Markdown files and 117 relative links (zero missing).",
-  "audit_boundary": "All modified files in this batch were read back and matched. Recursive tree checked for counts only; no full-tree relative-link audit run.",
+  "last_verified_batch": "2026-11-16: added SRC-033–SRC-037 on MRAS, DRAS, practical social-network steganography, active payload removal and steganalysis survey; extended route comparison and observer matrix; revised prior-art assessment to an open comparative research question; integrated source boundaries into thesis, W1, W4 and traceability; updated PROJECT_STATE, WORKPLAN and WORK_LOG; corrected thesis bibliography and README navigation. All changed files were individually read back.",
+  "audit_boundary": "Files changed in the latest batch were individually fetched after writing and matched. A fresh full-tree link/status/terminology audit is pending. No platform experiments, extraction tests, steganalysis benchmarks, implementation tests, formal proofs or independent security reviews were performed.",
   "last_commits": {
     "echomix_comparator": "1acd0b881f7e7a6b03872bbb79bba79f5530a524",
     "route_comparison_framework": "90cf85d97289eccf9c8cde1f11d7eb9a5898df2d",
-    "source_register": "a3ced6004c76e1e4ca548dc04630c0fc8c3bfccc",
-    "observer_matrix": "46b65970765dd83659e2cab9c47d0eca9651e590",
-    "prior_art_comparison": "23dfc8053cbed281c5431f6592324de3bc63f663",
-    "thesis": "103098ed25f8dcbfbc4b00e58f59de77ab487762",
-    "w1": "f54443c521079fca2f88623b3e8d159a3faf5003",
+    "source_register": "c4779dcb75f60f6a087b7b8b891b6f51d13e3048",
+    "observer_matrix": "10be51a24f43a886ba4cf1c8e23c5210bd3f4e9b",
+    "prior_art_comparison": "c8433e7acb0453ca5a7c60d11d8c3d7b3529218c",
+    "thesis": "876594961b99096324312bd73c95e576a9bdc3ba",
+    "w1": "a324af3d85a80dbb0e55a9449245251385a0f52f",
     "w2": "fd68fb356d0b66b7259e1e6e95b560d55918282f",
     "w3": "6e73e6f7464dfebab4532f1bf152985824623f0c",
-    "w4": "cce49e0b8f0acc801ee5400ecf555f21e1d12585",
-    "traceability": "718e4a7e643c7bd077081a7dc96ea48807bc84a1",
+    "w4": "54755b60b17736786a0cc405a49b9b722c341475",
+    "traceability": "a725e16644cf44b449a6f0281c1a3388d7ca7944",
     "contribution_assessment": "6ad692620dae024a758a9fb8706d96ea2c6335fa",
-    "readme": "fc4541b46bfc3be2ea04356dea72592a2ff1a107",
+    "readme": "6a8ad812b18d2e07c7dbac618a0fcebbfb574e23",
     "diagram_index": "568713e83909dc08045216ca0da42f0ad44e70d7",
-    "project_state": "118c40c376acf8871bce71f54280167b318ba56a",
-    "workplan": "f4b4f70af0c705486eb19d3b78571fbedf6075d8",
-    "work_log": "de0ea184a0470df75be7cd862720ac1243fc90bb"
+    "project_state": "dcb8137c10e2ee11693df79cd8f501b413b1704f",
+    "workplan": "fbdadca21c86d323e289f0efd0adb79b5fd1023a",
+    "work_log": "b9d6a48a08ccb4e8ecb58821663c5a060203bada",
+    "route_framework": "a6d5a7b47f2b0fc4e0b101cad75a48c30ec5cffa"
   },
   "session_completion_rule": {
     "required_working_documents": [
@@ -113,10 +119,5 @@
       "Refresh this digest last with the verified checkpoint, repository state and next-session instructions."
     ]
   },
-  "methodological_language": {
-    "preferred_term": "emergent proposition",
-    "distinction": "Keep research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions distinct.",
-    "constraint": "Do not force the developing research direction into a confirmatory framework. Do not promote a proposition to a demonstrated result or contribution without appropriate evidence."
-  },
-  "source_register_entries": 32
+  "source_register_entries": 37
 }
