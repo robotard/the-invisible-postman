@@ -635,3 +635,19 @@ All files changed in this batch were individually read back. No platform experim
 
 **Theory only · No implementation · Not audited.**
 
+
+## 2026-11-16 · Final reconciliation of image-carriage prior art
+
+- Reordered source-register entries SRC-032–SRC-037 and updated the prior-art synthesis coverage through SRC-037.
+- Updated `docs/thesis-contribution-and-bias-assessment.md` with MRAS, DRAS, Qiao et al., Zhu et al. and the ACM survey. The assessment continues to treat Candidate B as conditional on a measurable complete-route difference.
+- Corrected the thesis bibliography and section numbering: Remise is the USENIX Security 2026 paper; Echomix remains an arXiv preprint.
+- Updated README navigation to include the route-comparison framework and corrected numbering.
+- GitHub repository code search returned no matches for the retired terminology or disallowed packaging reference.
+- Read back all changed files after their writes.
+
+### Verification boundary
+
+The previous 117-link audit predates this batch's added cross-links; it is not claimed as current. A fresh full relative-link and status audit remains outstanding. No platform measurements, extraction tests, steganalysis benchmarks, implementation, formal proof or independent audit were performed.
+
+**Theory only · No implementation · Not audited.**
+
