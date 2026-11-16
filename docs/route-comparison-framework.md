@@ -183,6 +183,23 @@ This ledger is a documentary baseline, not a claim that every route has been ful
 - Do not treat extraction, decryption, delivery receipt, user-visible acceptance and human receipt as the same event.
 - Extend this ledger only when a new source or declared test supplies the missing evidence; retain unknown cells rather than filling them by analogy.
 
+### Multi-carrier and multi-message evidence boundary
+
+The image profile must distinguish a single protected message in one carrier, a fragmented protected object across carriers, redundant fragment carriage, multiple independent messages, conversation/session continuity, retransmission and cross-route copies. These are not interchangeable meanings of "multipart". See the dedicated [multi-message linkage and steganographic carriage analysis](multi-message-linkage-and-steganographic-carriage.md).
+
+SRC-043 is direct prior art for fragmented covert communication across many images and social platforms: it encodes fragment numbers and content, redundantly embeds fragments across multiple images, and reconstructs after collecting enough carriers. This rules out generic novelty claims for multi-image fragmentation, redundant image-carried fragments or subset reconstruction. SRC-044 shows that steganalysis can pool evidence across a batch; single-image detector scores cannot establish collection-level stealth. The quantitative findings of SRC-044 are bounded to its model and evaluated embedding method.
+
+For every image-carriage evaluation, record:
+- Whether one carrier contains a complete protected object, one fragment, multiple fragments or redundant coded data.
+- Whether the unit being linked is a fragment set, independent message, conversation/session, retry or cross-route copy.
+- Which identifiers, manifests, indices, counts, capabilities or sequence values are visible, encrypted, authenticated-visible or route-local.
+- Whether redundancy improves recovery while increasing carrier count, repeated signal, event volume or pooled detection evidence.
+- Per-image extraction/detection outcomes and collection-level detection/clustering outcomes separately.
+- Whether the observer's collection is account-scoped, platform-scoped, time-windowed, source/device-correlated or longitudinal; state dependence assumptions.
+- Whether image method is steganography, robust watermarking or hybrid, and which claim each experiment tests.
+
+Do not infer that distributing a fixed payload over more images reduces detectability. Do not infer that a hidden fragment index hides the publication/retrieval relationship. An authenticated manifest can prevent fragment mixing without hiding the existence of a set from observers who see its linkage metadata.
+
 ## 6. Comparison dimensions and recorded outcomes
 
 For every route, complete the following fields:
@@ -221,7 +238,7 @@ Echomix substantially narrows any broad claim to a newly integrated privacy-awar
 
 This is a narrower and more demanding question. It may show that image carriage is useful for a particular deployment constraint, that it introduces avoidable fragility, or that a simpler route is preferable. All three outcomes are valid research results.
 
-## 8.1 Image-carriage evidence constraints from SRC-033–SRC-037
+## 8.1 Image-carriage evidence constraints from SRC-033–SRC-037 and SRC-043–SRC-044
 
 The reviewed literature makes the image route comparison more specific, but does not establish that a particular platform currently applies any one transformation to every upload.
 
