@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Develop a critically examined thesis for endpoint-controlled cryptographic messaging over replaceable, potentially untrusted delivery routes. Image carriage is a required research route and comparison subject; it is not assumed to be the mandatory runtime transport. The repository records research reasoning, evidence, design evolution, limitations and unresolved questions. It does not claim a complete protocol or proven security.
+Develop a critically examined thesis for endpoint-controlled cryptographic messaging over replaceable, potentially untrusted delivery routes. Image carriage is a required research route and comparison subject; it is not assumed to be the mandatory runtime transport. The thesis itself is the sole product: `thesis.md` is the one active manuscript in staging, and production is a frozen release of that same thesis after evidence reconciliation and peer scrutiny. There is no second production thesis or alternate product identity. The repository records research reasoning, evidence, design evolution, limitations and unresolved questions. It does not claim a complete protocol or proven security.
 
 ## Research ethos
 
@@ -41,17 +41,23 @@ The exact status string **Theory only · No implementation · Not audited.** is 
 
 The status label must remain accurate wherever project maturity is reported. Its presence must not be interpreted as a restriction on the work that may be researched or planned.
 
-## Temporary work-area boundary
+## Thesis product and lifecycle
 
-All operational continuity and internal lookup machinery lives under `/work/`. It is deliberately agnostic of the thesis and research architecture and is disposable at full thesis release. Removing it must not alter thesis content, source citations, research conclusions, supporting research or enduring references.
+The thesis is the product. `thesis.md` is the single active manuscript being developed in staging. Production is a frozen, versioned release of that same thesis after the relevant research, evidence, coherence, accessibility and peer-review gates have been addressed. Staging and production are not separate thesis documents or competing products. A release must preserve the thesis's provenance, citations, evidential limits, acknowledged uncertainty, author responsibility and review history. Do not describe the thesis as independently reviewed until independent review has actually occurred.
 
-Internal concept keys (`C-###`) and task keys (`T-###`) exist only to shorten our own lookup and continuation. They are not thesis identifiers, must not be inserted into thesis/research prose, and never replace source IDs (`SRC-###`), citations, section references or figure references. The registries point inward to enduring research locations; the thesis and substantive research documents remain authoritative.
+Peer review is substantive: define scope and reviewer competence; provide a coherent thesis candidate and supporting material; preserve reviewer comments and evidence; record author responses and dispositions; retain unresolved dissent; reconcile accepted findings into the thesis and supporting research; and record the resulting version/commit. Existing research-practice, governance and review templates remain the governing process. This workplan does not claim a reviewer group is active or review has occurred.
 
-The task registry records temporary work items and their lifecycle. A task is extinguished when its substantive result is reconciled into the thesis and supporting research, evidence limits are recorded, and no further action remains. IDs are not recycled. At release, verify no enduring file depends on `/work/`, then remove the directory.
+## Temporary work-area remit
+
+`/work/` is the temporary store of work to be done to bring the thesis to its intended standard. It coordinates unfinished research and source reviews, route/comparator analysis, protocol-boundary reconciliation, thesis synthesis, diagram briefs and creation, cross-document validation, peer-review preparation and response, and release checks. The enduring argument, evidence, definitions and citations belong in `thesis.md` and substantive research documents, not in `/work/`.
+
+Internal concept keys (`C-###`) and task keys (`T-###`) exist only to shorten our own lookup and continuation. They are not thesis identifiers, must not be inserted into thesis/research prose, and never replace source IDs (`SRC-###`), citations, section references or figure references. The registries point to enduring research locations; the thesis and substantive research documents remain authoritative.
+
+A task is extinguished only when its outcome is reconciled into the thesis and/or enduring research records, evidence limits and review disposition are recorded, and no further action remains; it may instead be explicitly closed as unnecessary with rationale. IDs are not recycled. At full release, verify no enduring document depends on `/work/`, transfer substantive outcomes to permanent locations, then remove `/work/` in full.
 
 ## Roadmap
 
-Work units produce independently useful outputs. Progress belongs in `PROJECT_STATE.md`; dated actions and verification belong in `WORK_LOG.md`.
+Work units produce independently useful outputs for the thesis. Actionable work and continuation keys are indexed in `lookup/TASKS.md`; progress belongs in `PROJECT_STATE.md`; dated actions and verification belong in `WORK_LOG.md`.
 
 ### Phase 1 · Repository and research foundation
 
@@ -70,12 +76,12 @@ Work units produce independently useful outputs. Progress belongs in `PROJECT_ST
 
 - [~] **W6 Integrated thesis:** active. Build a coherent argument across research framing, threat model, architecture, endpoint cryptography, carrier comparison, lifecycle, evaluation and limitations. Keep claims proportional to evidence.
 - [~] **W7 Traceability:** the register and core mappings exist; continue maintaining links among questions, threats, claims, decisions, components, sources and evaluation as new evidence is integrated.
-- [ ] **W5 Review preparation:** defer until a coherent thesis candidate exists. Prepare concise reviewer guidance and response records; do not imply an active reviewer group.
+- [ ] **W5 Peer-review preparation and process:** defer active external review until a coherent thesis candidate exists. Prepare scope, reviewer guidance and response records; conduct and document substantive independent review only when reviewers actually participate.
 
-### Phase 4 · Visual communication and publication
+### Phase 4 · Visual communication, peer scrutiny and release
 
 - [~] **W8 Illustrations:** text-only illustration prompts and placement/guardrails are now embedded in W1–W4 and indexed in `diagrams/README.md`; create actual contextual, evidence-aligned diagrams only after the argument and route comparison stabilise. Prefer editable SVG and accessible exports.
-- [ ] **W9 Review publication:** prepare an integrated, readable PDF with figures, references, limitations, open decisions and reviewer guidance.
+- [ ] **W9 Thesis release:** prepare a frozen release of the same thesis manuscript, with figures, references, limitations, open decisions, provenance and review state.
 - [ ] **W10 Repository audit:** verify links, image references, consistency, accessibility, provenance, rendering and exact status statements.
 
 Legend: `[x]` complete; `[~]` drafted or in progress; `[ ]` not started or deferred. These labels describe work-unit maturity, not security assurance.
@@ -144,7 +150,7 @@ Both digests must remain compact and machine-oriented: stable keys, concise valu
 
 ## Research-construction and review gates
 
-Prioritise a coherent, defensible thesis over expanding review administration. Resolve only questions that block construction or risk embedding a material error. Defer external peer review until a workable thesis candidate exists. Preserve existing governance work without allowing it to displace the research.
+Prioritise a coherent, defensible thesis over expanding review administration. Resolve questions that block construction or risk embedding a material error. Keep the thesis as the single product through staging and production. Defer external peer review until a workable thesis candidate exists, then run a substantive, traceable review process. Preserve existing governance work without allowing administration to displace the research.
 
 Publish design rationale, threat models, limitations, candidate mechanisms, diagrams, traceability and review materials. Never commit secrets, private keys, passwords, tokens, recovery codes, personal data or private correspondence. Do not imply that repository governance, discussion or endorsement has occurred when it has not.
 
