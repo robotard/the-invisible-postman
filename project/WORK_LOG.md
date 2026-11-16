@@ -971,3 +971,45 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 **Next:** Reconcile PROJECT_STATE and WORKPLAN; run repository-wide link/status/terminology/illustration audits; refresh SESSION_DIGEST.md and SESSION_DIGEST.json last. Then continue with SRC-036 full-text retrieval and stronger version-pinned route profiles.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Active sanitization and animated-carrier prior art integrated
+
+### Source review additions
+
+- Expanded the source register from 45 to 49 entries.
+- **SRC-046:** Wei et al. (2022), *Breaking Robust Data Hiding in Online Social Networks*, IEEE Signal Processing Letters. Abstract/metadata support a general secret-data remover for robust steganography and watermarking, using attack, image-fusion and latent-renewal components. Full paper and tables remain uninspected.
+- **SRC-047:** Zhu et al. (2023), *Image Sanitization in Online Social Networks*. Abstract/metadata describe Scaling-Net for oversized images, SC-Net for other images and a discriminator for image-quality optimisation. Full paper and repository remain uninspected.
+- **SRC-048:** Zhu et al. (2025), *Covert Communication in Sanitized Online Social Networks*. IEEE abstract describes a secret-seed-conditioned decoder combined with a sanitizer and iterative cover optimisation. Full paper and evaluation details remain uninspected.
+- **SRC-049:** Wang et al. (2026), *Provably Secure and Robust Training-Free GIF Steganography*. IEEE metadata and the author-linked implementation README were inspected. The README describes 16-frame redundancy, cross-frame majority voting, OTP/ChaCha20 modes, AnimateDiff generation and DDIM-inversion extraction. The formal security proof and full paper remain unreviewed; code was not executed or audited.
+- Revisited SRC-033–SRC-036 through current publisher-indexed content. MRAS/DRAS remain partial article reviews despite public MATLAB demo inspection already recorded in the checkpoint. Zhu et al. (2021) publisher-indexed sections expose the attack/optimisation network, BOSSbase/BOWS2 setup, 8,000/2,000 split and JPEG QF75, but full methods/results and generalisation limits remain incomplete.
+- Primary sources surfaced in this pass: IEEE records for SRC-046/SRC-048, publisher/author-indexed records for SRC-047, IEEE metadata and author-linked code README for SRC-049. OpenReview full-paper pages were browser-gated; no unavailable full text was treated as inspected.
+
+### Research integration
+
+- Added SRC-046–SRC-049 to the source register, claim map and source-review summary.
+- Updated W1 with carrier-multiplicity levels (GIF frames, separate image objects, distinct messages), passive/active sanitization comparison and W1-F04 illustration prompt.
+- Updated W2 with active sanitizer capabilities, distinction between passive processing and sanitization, frame/carrier/message collection definitions, and W2-F02 prompt.
+- Updated W3 with animated-carrier and sanitizer boundaries plus W3-F03 prompt. GIF remains a comparator, not an adopted route.
+- Updated W4 with separate frame/object/message evaluation units, sanitizer conditions, an animated-GIF matrix row and W4-F03 prompt.
+- Updated the dedicated multi-message analysis, prior-art comparison, observer/property matrix, route-comparison framework, thesis bibliography/analysis, traceability and contribution/bias assessment.
+- Updated diagrams/README.md to index W1-F04, W2-F02, W3-F03 and W4-F03. No diagram artwork was generated.
+- Updated WORKPLAN source count and source-review sequence; updated PROJECT_STATE to 49 sources and the new exact next research action. ChatGPT Project Instructions remain an external thin operating layer; substantive research rules remain in GitHub thesis/research documents.
+
+### Key distinctions now explicit
+
+- **Within-object multiplicity:** GIF frames inside one carrier; cross-frame redundancy is not a multi-post fragment set.
+- **Across-object multiplicity:** separate images/files carrying fragments or redundant copies; publication and retrieval events add observer evidence.
+- **Across-message multiplicity:** distinct protected messages linked by conversation/session semantics.
+- **Transformation conditions:** routine/passive processing, active learned sanitization and sender adaptation to a known sanitizer are different threat models.
+- Sanitizer and counter-adaptation abstracts do not establish deployment by a named platform or universal success. GIF README claims do not substitute for reviewing the paper's formal security argument.
+
+### Verification boundary
+
+- Every changed GitHub file was fetched after writing and exact saved content matched.
+- No platform test, sanitizer model test, steganalysis benchmark, GIF reproduction, code execution, cryptographic test, formal proof or independent audit was performed.
+- Full-text access remains incomplete for SRC-033, SRC-034, SRC-036 and SRC-046–SRC-048; SRC-049's paper/formal proof remains unreviewed.
+
+**Next:** Continue full-text retrieval for SRC-033, SRC-034 and SRC-036; inspect SRC-046–SRC-048 full texts and SRC-047 code repository; review SRC-049 paper/formal proof and code where available. Then pin route service versions/configurations and reconcile any source-backed findings into the ledger.
+
+**Theory only · No implementation · Not audited.**
