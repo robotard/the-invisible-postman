@@ -1102,3 +1102,26 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 Next substantive action remains T-001: seek full texts for SRC-033, SRC-034 and SRC-036, preserving partial-review labels until methods, results and limitations are inspected. Later work includes route evidence, protocol analysis, thesis synthesis, stable-argument diagram work, substantive peer review and release integrity.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · T-001 publisher-indexed source-review pass
+
+### Work performed
+
+- Revisited the publisher-hosted ScienceDirect records for SRC-033 (MRAS), SRC-034 (DRAS) and SRC-036 (active destruction of robust steganography), including the additional indexed section material exposed by search.
+- SRC-033: clarified the paper's stated robustness, imperceptibility and steganalysis metrics (extraction error, PSNR/SSIM and classifier error), named comparators (MINICER, DMMR, GMAS and SS), BOSSbase evaluation and LinkedIn test. Full parameter tables, dataset split, platform procedure and limitations remain unavailable.
+- SRC-034: clarified the RoLoS-ablation and PMAS comparisons, Q95-to-Q85/Q80/Q75 scenarios, payload-dependent evaluation dimensions and author-reported approximately 87% extraction-error reduction / order-of-magnitude speed claim. The indexed record names WhatsApp, X and LinkedIn tests. Complete tables, sample sizes, payload settings, platform procedure and limitations remain unavailable; headline figures are not independently checked.
+- SRC-036: clarified the two-module end-to-end CNN (attack/filtering plus image-quality optimisation with joint loss), BOSSbase 1.01 split (8,000 train / 2,000 test), BOWS2 second-dataset check and JPEG QF75 context. Full equations, training configuration, exact tested methods/payloads, result tables, runtime and generalisation limits remain unavailable.
+
+### Evidence and limitations
+
+- Publisher records were discoverable and exposed indexed abstract/section material; direct page opening returned access-denied/403 and no complete paper text was obtained.
+- These additional snippets improve the precision of the partial reviews but do not satisfy the full-text review requirement. No paper is upgraded to full review; no author-reported result is treated as independently verified.
+- No experiments, code execution, reproduction or audit were performed. No claims are made about current platform processing or universal defeat/survival.
+- The source register was updated with the added evidence and explicit residual gaps; project state was reconciled. T-001 remains open.
+
+### Next action
+
+Seek author manuscripts, institutional repository copies or library-accessible full texts for all three sources. If unavailable, record the access route and retain partial-review status; then proceed to T-002 only as a separately tracked task, without silently treating T-001 as complete.
+
+**Theory only · No implementation · Not audited.**
