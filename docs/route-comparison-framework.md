@@ -285,6 +285,7 @@ Do not equate robust extraction with stealth, and do not equate steganalysis res
 - [SRC-031 · Remise](source-register.md)
 - [SRC-032 · Echomix](source-register.md)
 - [SRC-033–SRC-037 · Social-platform steganography and steganalysis](source-register.md)
+- [SRC-043–SRC-049 · Multi-image fragmentation, batch steganalysis, active sanitization and animated GIF redundancy](source-register.md)
 - [SRC-038 · Signal PQXDH and Double Ratchet specifications](source-register.md)
 - [SRC-039 · Dropbox file activity and shared-link permissions](source-register.md)
 - [SRC-040 · Katzenpost Pigeonhole protocol and deployment documentation](source-register.md)
