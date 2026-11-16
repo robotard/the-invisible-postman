@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · Protocol boundary analysis integrated with architecture, thesis and evaluation  
+**Checkpoint:** 2026-11-16 · Multi-message linkage, steganographic prior art and illustration briefs integrated  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -21,35 +21,38 @@ Use GitHub work documents as the project continuity source. Do not make the user
 
 The repository has a coherent working thesis, W1–W4 research documents, a threat model, decision and traceability registers, prior-art comparisons, an observer/property matrix and a common route-comparison framework. These are substantive drafts, not a finished or independently reviewed thesis.
 
-The latest verified architecture reconciliation keeps transport independence and optional orchestration explicit across the architecture, thesis, W4, traceability, README and diagram guidance. The protected message remains logically invariant across routes unless an explicit authenticated conversion is specified. Image carriage remains a required research comparison, not a mandatory runtime route. The latest research pass completed full-text inspection of SRC-035 and SRC-037 and expanded publisher-indexed partial inspection of SRC-033, SRC-034 and SRC-036. MRAS/DRAS design and metric families, author-reported platform claims, and Zhu et al. dataset/setup details are now recorded; direct full-text access, full tables and important configuration details remain unavailable. SRC-038–SRC-040 add current Signal protocol, Dropbox file-host and Katzenpost Pigeonhole documentation. SRC-041–SRC-042 add RFC 5869 (HKDF) and RFC 9180 (HPKE) as protocol-construction references. Publisher-indexed text for SRC-033, SRC-034 and SRC-036 was expanded without promoting those reviews to full text. A protocol-boundary analysis now records key scope, salt/info separation, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback; it does not select a protocol.
+The architecture continues to separate endpoint protection, carrier encapsulation, route adapters and optional orchestration. The protected object remains invariant across routes unless an explicit authenticated conversion is specified; image carriage is a required research comparison, not a mandatory runtime route. The source register now has 45 entries. SRC-043 (Wang et al., 2024) and SRC-044 (Ker, 2007) have full-text reviews; SRC-045 (Ker, 2007) has a full-paper review of the formal asymptotic capacity theorem. The distinction is explicit: Wang's multi-image covert-communication system uses robust DFT/DCT watermarking, fragment numbers and redundant copies with majority-vote reconstruction; it is not evidence of generic steganographic stealth. Ker's pooled-detection and capacity findings are bounded by their detector, independence, cover-capacity and batch assumptions. A dedicated multi-message linkage/steganographic-carriage analysis now defines fragment sets, redundant carriage, independent messages, conversations, retries, cross-route copies, package encapsulation and collection-level observer analysis. W1–W4 now contain consistent definition/comparison blocks and text-only illustration prompts with placement and guardrails; the diagram index records them. The protocol-boundary analysis remains linked and no cryptographic protocol is selected.
 
 ## Completed baseline
 
 - **W0.1:** Repository foundation and GitHub-first workflow established.
 - **W0.2:** Research-practice, self-review and contributor-governance documents exist. Routine review administration is deferred; external review has not occurred.
-- **Prior art:** 42 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work, Echomix/Katzenpost, Signal protocol specifications and Dropbox shared-link documentation.
+- **Prior art:** 45 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work, Echomix/Katzenpost, Signal protocol specifications, Dropbox shared-link documentation, direct multi-image fragment carriage and batch steganalysis.
 - **Architecture:** Endpoint message protection, carrier encapsulation, transport adapters and optional orchestration are distinct functions. One service may perform several roles; analyse each role separately.
-- **Protocol boundaries:** `docs/protocol-boundary-analysis.md` now translates open cryptographic composition questions into explicit design obligations. HKDF salt and `info` are distinguished; HPKE is a comparator, not a selected messaging protocol.
+- **Protocol boundaries:** `docs/protocol-boundary-analysis.md` translates open cryptographic composition questions into explicit design obligations. HKDF salt and `info` are distinguished; HPKE is a comparator, not a selected messaging protocol.
+- **Multi-message/steganography:** `docs/multi-message-linkage-and-steganographic-carriage.md` records distinct message relationships, package encapsulation, explicit linkage alternatives, collection-level steganalysis and bounded prior-art conclusions. W1–W4 and the thesis now use aligned definitions and evaluation distinctions.
+- **Illustration planning:** Text-only prompts with placement and "must not imply" guardrails are embedded in W1–W4 and indexed in `diagrams/README.md`; no new artwork has been generated.
 - **Route method:** A common lifecycle/event and observer framework now includes six evidence-bounded starting profiles (three image literature profiles, Dropbox shared-link file hosting, Signal protocol reference, and Echomix/Pigeonhole). An initial documentary comparison matrix and lifecycle/event observer ledger have been added; the profiles are not yet all pinned to live product releases or deployed test configurations.
 - **Latest reconciliation:** README, W4, traceability and diagram index reflect transport independence, optional orchestration, hop-by-hop observer exposure and protected-object invariance.
 
 ## Active work, in priority order
 
-1. **Route evidence:** Select defensible, named and versioned profiles for image-platform carriage, file/attachment transfer, conventional E2E messaging and Echomix/Katzenpost. Populate the route framework with source-backed lifecycle events, observer views, transformations, reliability and costs. Mark unknowns; do not invent platform behaviour.
-2. **Source review:** Seek full text for SRC-033, SRC-034 and SRC-036 where access permits. Their publisher-indexed text now gives more method/evaluation and dataset detail, but full methods, tables, platform configurations and limitations remain unverified. SRC-035 and SRC-037 have had full text inspected; no underlying experiment was reproduced.
-3. **Architecture alignment:** Check W3 section numbering and terminology against traceability and the thesis.
-4. **Protocol questions:** Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without prematurely selecting a protocol.
-5. **Protocol alignment:** Integrate the new protocol-boundary analysis into W2/W3/W4, key-lifecycle reasoning and the contribution assessment; keep primitive and protocol selection open.
-6. **Audit:** After substantive edits, run repository-wide relative-link, exact-status and cross-document consistency checks.
-7. **Thesis integration:** Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
+1. **Multi-message observer evidence:** Extend the lifecycle/event/observer ledger with source-specific fragment-set linkage, redundancy, conversation continuity, retries, cross-route copies, discovery and collection-level steganalysis. Keep endpoint-authenticated relationships separate from observer-inferred correlations.
+2. **Route evidence:** Select defensible, named and versioned profiles for image-platform carriage, file/attachment transfer, conventional E2E messaging and Echomix/Katzenpost. Populate the route framework with source-backed lifecycle events, observer views, transformations, reliability and costs. Mark unknowns; do not invent platform behaviour.
+3. **Source review:** Seek full text for SRC-033, SRC-034 and SRC-036 where access permits. Their publisher-indexed text now gives more method/evaluation and dataset detail, but full methods, tables, platform configurations and limitations remain unverified. SRC-035 and SRC-037 have had full text inspected; no underlying experiment was reproduced.
+4. **Architecture alignment:** Check W3 section numbering and terminology against traceability and the thesis.
+5. **Protocol questions:** Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without prematurely selecting a protocol.
+6. **Protocol alignment:** Integrate the new protocol-boundary analysis into W2/W3/W4, key-lifecycle reasoning and the contribution assessment; keep primitive and protocol selection open.
+7. **Audit:** After substantive edits, run repository-wide relative-link, exact-status and cross-document consistency checks.
+8. **Thesis integration:** Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
 
 ## State and blockers
 
-- W1–W4 are drafted; final alignment against the integrated thesis remains open.
+- W1–W4 are drafted and now contain aligned multi-message terminology, definition/comparison blocks and text-only illustration prompts; final alignment against the integrated thesis remains open.
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
 - An initial named profile register, documentary comparison and lifecycle/event observer ledger now exist. Product-level version pinning, route-specific service evidence and full observer/collusion detail remain incomplete.
 - SRC-033, SRC-034 and SRC-036 remain partial reviews because full article text was not accessible in this pass; SRC-035 and SRC-037 are full-text inspected.
-- A fresh relative-link audit covered all 27 Markdown files in the current repository tree and found no broken relative links. All 27 Markdown files were also scanned for ZIP/archive-packaging instructions; none remain. Exact-status, terminology and image-reference consistency still require a dedicated audit.
+- The previous relative-link audit covered 27 Markdown files and found no broken relative links; subsequent edits have made that audit stale and it must be rerun. The previous 27-file ZIP/archive-instruction scan found none; rerun after this batch. Exact-status, terminology, image-reference and diagram-placeholder consistency require a fresh audit.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
 - No researcher decision currently blocks the next research pass.
 
@@ -62,12 +65,12 @@ The latest verified architecture reconciliation keeps transport independence and
 ## Next session: exact starting point
 
 1. Apply the Continue/resume contract above and refresh the live digests and working records.
-2. Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until methods/results are inspected.
-3. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
-4. Extend the lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; keep unknowns explicit.
+2. Extend the lifecycle/event/observer ledger using SRC-043–SRC-045: distinguish endpoint fragment-set membership, redundant carrier events, independent messages, conversation/session continuity, retries and cross-route copies; add source-specific collection-level detection assumptions.
+3. Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until methods/results are inspected.
+4. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
 5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test the obligations against Signal, MLS and HPKE references without premature selection.
 6. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis.
-7. Complete exact-status, terminology, image-reference and cross-document consistency audits. The fresh static relative-link audit across all 27 Markdown files found no broken links. A repository-wide scan found no ZIP/archive-packaging instructions in the Markdown documents.
+7. Run fresh repository-wide relative-link, ZIP/archive-instruction, exact-status, terminology, illustration-placeholder and image-reference audits.
 
 ## Document-boundary rule
 
