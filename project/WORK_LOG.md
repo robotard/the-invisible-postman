@@ -1,3 +1,29 @@
+## 2026-11-16 · Initial route lifecycle/event observer ledger
+
+### Completed and read-back verified
+
+- Added an initial lifecycle/event observer ledger to the route-comparison framework for the image literature profiles, Dropbox shared-link file profile, Signal protocol reference and Echomix/Pigeonhole profile.
+- Covered identity/session preparation, message protection, publication, discovery, retrieval/access observation, transformation, validation, retries/reliability, expiry/retention, and human/network observation.
+- Marked protocol-level, service-level and literature evidence boundaries explicitly. Unknown service behaviours remain unknown rather than being filled by analogy.
+- Re-fetched the route framework and verified the exact saved content.
+
+### Research discipline
+
+- Image extraction metrics are not endpoint authentication or delivery acceptance.
+- Shared-link access is not cryptographic recipient identity; Dropbox activity documentation does not establish secure deletion or universal retention.
+- Signal ratchet skipped-message handling is not a general product delivery/retry guarantee.
+- Pigeonhole read/write capability semantics and asynchronous storage are distinct from the anonymity guarantees of the underlying mix network.
+- The ledger is documentary and source-bounded. It is not a measured comparison or scalar route ranking.
+
+### Next
+
+1. Expand the observer ledger with more exact source citations and role/collusion combinations.
+2. Pin live client/release/configuration profiles before any product-level or deployed-route claims.
+3. Seek full text for SRC-033, SRC-034 and SRC-036.
+4. Reconcile the resulting evidence into W1–W4, contribution assessment and thesis; then complete the exact-status, terminology and image-reference audits.
+
+**Theory only · No implementation · Not audited.**
+
 ## 2026-11-16 · Transport-neutral lifecycle, route profiles and documentary comparison
 
 ### Completed and read-back verified
