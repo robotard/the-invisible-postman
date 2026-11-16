@@ -1019,3 +1019,17 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 - Exact-status, terminology, illustration-placeholder and image-reference consistency remain a separate final audit.
 
 **Theory only · No implementation · Not audited.**
+
+## 2026-11-16 · Cross-document formatting and static consistency audit
+
+- Repaired escaped literal newline sequences in `docs/source-register.md` and the W4 animated-GIF route-matrix row so Markdown table/list structure renders as intended.
+- Corrected duplicate numbering in the source-register cross-source implications.
+- Rechecked all 29 Markdown files in the repository. The static relative-link audit found no broken repository-relative links; the same link pass covers Markdown image references. A scan found no active ZIP/archive-generation instructions.
+- Confirmed the source register contains 49 entries (SRC-001–SRC-049).
+- Confirmed all 12 W1–W4 illustration placeholder IDs are unique and exactly match the 12 entries indexed in `diagrams/README.md`.
+- Confirmed W1–W4 each contain definition/comparison blocks and the shared package-encapsulation, message-multiplicity and steganography distinctions. W1–W4 also distinguish animated-GIF frames, separate image carriers, and distinct protected messages; active sanitization and keyed counter-adaptation remain separate threat conditions.
+- The audit is static documentation validation only. It is not a semantic peer review, code execution, platform test, steganalysis benchmark or security audit.
+
+**Next:** Complete full-text/source-level review for SRC-033, SRC-034 and SRC-036; inspect SRC-046–SRC-048 full text and SRC-047 implementation where available; inspect SRC-049's full paper/formal security argument and implementation beyond its README. Then pin route service/client versions and reconcile evidence into the comparison framework and thesis.
+
+**Theory only · No implementation · Not audited.**
