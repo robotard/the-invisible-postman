@@ -4,6 +4,7 @@
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "read_first": [
+    "project/SESSION_DIGEST.md",
     "project/SESSION_DIGEST.json",
     "project/PROJECT_STATE.md",
     "project/WORKPLAN.md",
@@ -35,14 +36,29 @@
     "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "condensed current checkpoint; exact read-back matched",
-    "project/WORKPLAN.md": "simplified stable roadmap; exact read-back matched",
-    "project/WORK_LOG.md": "dated compression entry appended; exact read-back matched",
+    "project/PROJECT_STATE.md": "status semantics clarified; exact read-back matched",
+    "project/WORKPLAN.md": "document boundaries and dual-digest checkpoint strategy updated; exact read-back matched",
+    "project/WORK_LOG.md": "correction recorded; exact read-back matched",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
     "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
     "project_state_checkpoint_commit": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
-    "digest_readback": "exact content match after final write"
+    "digest_readback": "exact content match after final write",
+    "project/SESSION_DIGEST.md": "created as structured Markdown operational handover; exact read-back matched"
   },
-  "close_rule": "Reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; verify every write by read-back; refresh this digest last.",
-  "checkpoint_commit_before_digest_refresh": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b"
+  "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; read back and verify all three; refresh SESSION_DIGEST.md from verified state; refresh SESSION_DIGEST.json last; verify both digests against the three working documents.",
+  "checkpoint_commit_before_digest_refresh": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
+  "status_semantics": "project_metadata_only",
+  "document_boundaries": {
+    "thesis_and_research": "Substantive argument, technical principles, evidence, contribution assessment, uncertainty and limitations.",
+    "operational_documents": "Verified status, priorities, dependencies, blockers, paths and next actions; link to research files rather than duplicating thesis exposition.",
+    "session_digests": "Structured operational handover only; not thesis exposition.",
+    "assistant_working_notes": "Maintain the same separation; mention project status only when relevant."
+  },
+  "checkpoint_protocol": [
+    "Read both digests, all three working documents and relevant research files at session start.",
+    "Keep substantive thesis reasoning in thesis/research documents; keep operational handovers concise and referential.",
+    "At close, reconcile and verify all three working documents.",
+    "Refresh SESSION_DIGEST.md, then SESSION_DIGEST.json last.",
+    "Verify both digests against the three working documents."
+  ]
 }
