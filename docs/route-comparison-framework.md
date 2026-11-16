@@ -86,6 +86,10 @@ Measure or record:
 
 Do not equate successful metadata stripping with absence of platform-side records. Do not infer anonymity from per-carriage image uniqueness.
 
+Recent prior art makes the image-carriage evaluation a particularly demanding baseline. Robust social-platform steganography already addresses JPEG recompression and reports tests on real services (SRC-033, SRC-034, SRC-035). Active image processing intended to remove hidden payloads has also been studied (SRC-036), while the broader embedding/detection literature is surveyed in SRC-037. Therefore, this project must not treat image payload survival, recompression tolerance or concealment alone as a differentiator.
+
+For each named route, distinguish at least four independent outcomes: (1) payload extraction after the observed transformation chain; (2) detectability under a declared steganalysis model; (3) endpoint authenticity/integrity of the recovered message; and (4) privacy leakage to platform, network and human observers. A successful extraction test does not establish undetectability, sender anonymity, recipient privacy or authenticated delivery. A failed extraction test does not establish that the platform intentionally removed the payload.
+
 ### 5.2 Encrypted file or attachment
 
 Record filename, MIME type, file metadata, storage model, access control, sharing-link lifetime, account identity, scanning/transformation, download events, retention, backups and access logs.
@@ -151,6 +155,7 @@ This is a narrower and more demanding question. It may show that image carriage 
 - [SRC-030 · GOMR](source-register.md)
 - [SRC-031 · Remise](source-register.md)
 - [SRC-032 · Echomix](source-register.md)
+- [SRC-033–SRC-037 · Social-platform steganography and steganalysis](source-register.md)
 - [Echomix / Katzenpost comparator](echomix-katzenpost-comparator.md)
 - [Observer/property matrix](observer-property-matrix.md)
 - [W4 risks and evaluation](w4-risks-and-evaluation.md)
