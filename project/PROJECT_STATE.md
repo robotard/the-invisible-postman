@@ -719,3 +719,17 @@ All files changed in this batch were individually read back. No platform experim
 
 **Theory only · No implementation · Not audited.**
 
+
+## 2026-11-16 · Final reconciliation of image-carriage prior art
+
+- Reordered SRC-032–SRC-037 in the source register and updated its synthesis coverage through SRC-037.
+- Updated the thesis contribution/bias assessment with the new robust-steganography, active payload-removal and steganalysis sources. Candidate B remains conditional on a measurable complete-route difference.
+- Corrected the thesis bibliography: Remise is attributed to USENIX Security 2026; Echomix remains an arXiv preprint. Corrected thesis section numbering.
+- Updated README navigation to include the route-comparison framework and repaired sequential numbering.
+- GitHub repository code search returned no matches for the retired terminology or disallowed packaging reference.
+- Latest writes to the source register, contribution assessment and other documents were fetched and matched.
+
+**Verification boundary:** The earlier 117-link audit predates this batch's additional cross-links and must not be presented as current. A fresh full relative-link and status audit remains outstanding. No platform measurements, extraction tests, steganalysis benchmarks, implementation, formal proof or independent audit were performed.
+
+**Theory only · No implementation · Not audited.**
+
