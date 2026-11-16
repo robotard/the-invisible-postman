@@ -70,7 +70,7 @@ The architecture continues to separate endpoint protection, carrier encapsulatio
 4. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
 5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test the obligations against Signal, MLS and HPKE references without premature selection.
 6. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis.
-7. Complete exact-status, terminology, image-reference, thesis heading/numbering and illustration-placeholder consistency audits. The 29-file relative-link audit passes; no ZIP/archive-generation instructions were found.
+7. Complete exact-status, terminology, image-reference and illustration-placeholder consistency audits. The 29-file relative-link audit passes; no ZIP/archive-generation instructions were found. W4 heading hierarchy and route-framework subsection numbering have been normalised.
 
 ## Document-boundary rule
 
