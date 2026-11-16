@@ -101,7 +101,7 @@ The passenger/train metaphor helps explain separation, but may make the design a
 
 ## 5. Prior-art pressure points identified
 
-These sources were identified in the current assessment. SRC-033, SRC-034 and SRC-036 were inspected at publisher abstract/record level; SRC-035 was inspected as full publisher HTML; SRC-037 was inspected at publisher record/abstract level only. Do not cite abstracts or records as full-paper analysis.
+These sources were identified in the current assessment. SRC-033, SRC-034 and SRC-036 have expanded partial publisher-indexed text inspection, but not complete full-text review; SRC-035 was inspected as full publisher HTML; SRC-037 was inspected in full from a repository copy. Do not cite abstracts or records as full-paper analysis.
 
 | Prior work | Pressure on our claims | Required response |
 |---|---|---|
