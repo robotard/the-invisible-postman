@@ -131,9 +131,9 @@
     "project/PROJECT_STATE.md": "3c9b1bf01a0ee58ce133a43335ea08184bd9ed69",
     "project/WORKPLAN.md": "bc5a458269897e2e652f1e4a6f1283378edc7655",
     "project/WORK_LOG.md": "ac893858faf73ee82f4fc0c6d6cc4de175cc2cb0",
-    "docs/source-register.md": "4017472ae9eeb925e6f8f124416212bee53684ac",
     "project/SESSION_DIGEST.md": "49ad8603222f1540a92c50870bc8f0334c6012d6",
-    "checkpoint_commit_before_json_refresh": "b639e3499d17c22b3861b3496fec191db5950416"
+    "docs/source-register.md": "4017472ae9eeb925e6f8f124416212bee53684ac",
+    "checkpoint_commit_before_json_refresh": "31734b057e072fda397eb1452116d6ce661b6251"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
