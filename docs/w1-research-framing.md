@@ -117,6 +117,8 @@ This framing does not yet settle:
 
 These are open design questions, not details to silently fill with assumptions.
 
+The related-work comparison has been extended to Group Oblivious Message Retrieval (GOMR) and Remise. These systems show that group recipient privacy, anonymous publication, access-pattern hiding and authorised reader access/revocation are already substantial research areas. The intended contribution must not be framed as introducing private retrieval or a whole delivery lifecycle. The [observer/property matrix](observer-property-matrix.md) records the current cross-system comparison; originality remains unestablished.
+
 ## 10. Status
 
 W1 is a research-framing working draft. It is intended to guide the next waypoint, the threat model (W2), and should be reconciled against the complete thesis before being treated as final.
