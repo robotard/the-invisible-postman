@@ -11,7 +11,28 @@ operational_authority:
   - project/PROJECT_STATE.md
   - project/WORKPLAN.md
   - project/WORK_LOG.md
-digest_authority: "Operational handover only; not a replacement for working documents."
+digest_authority: "Operational handover only; live repository files and commit history remain authoritative."
+document_roles:
+  project_state: "Changing verified progress snapshot; next action and blockers."
+  workplan: "Stable roadmap, principles, sequencing and dependencies."
+  work_log: "Chronological evidence and change history."
+  markdown_digest: "Machine-readable shorthand only."
+  json_digest: "Machine-readable shorthand only."
+continue_trigger:
+  phrase: "continue"
+  actions:
+    - "Fetch live default branch and both digests."
+    - "Read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant research/supporting files."
+    - "Identify verified completions, remaining tasks, blockers and dependencies."
+    - "Resume the next unfinished unblocked task without requesting repeated project history."
+    - "Update affected records after meaningful progress; verify every GitHub write by read-back."
+diagram_policy:
+  format: "Genuine visual illustration; never ASCII art."
+  timing: "Create or improve when the argument and evidence are stable; otherwise defer."
+  preferred: "Editable SVG with accessible exports."
+claim_discipline:
+  - "Do not claim saved, completed, published, deployed, tested or audited without matching evidence."
+  - "Distinguish drafted, committed, read-back verified, tested and independently reviewed."
 read_first:
   - project/SESSION_DIGEST.md
   - project/SESSION_DIGEST.json
