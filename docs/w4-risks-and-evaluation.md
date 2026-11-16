@@ -116,6 +116,8 @@ Proposed acceptance conditions:
 * Limits are justified against an explicit device and route profile, and rejection occurs before unbounded allocation or expensive decoding where possible.
 * Fragmentation is not represented as a confidentiality, redundancy or recovery guarantee.
 
+Recent image-platform prior art (SRC-033–SRC-037) includes robust JPEG steganography under social-network recompression, real-service comparisons, active payload-removal methods and a broad steganography/steganalysis survey. Do not treat payload survival or concealment alone as a distinctive system-level result. Separate extraction success, detector performance, endpoint authentication/integrity, discovery privacy and observer leakage. Name the platform, application version, upload/download mode, source format and observed transformations. Report false positives, false negatives, payload rate, image quality and extraction-failure classification where relevant. Distinguish simulated-channel results from live platform observations.
+
 E6. Transport-route, carrier integrity and transformation
 
 Threats: route-specific metadata exposure, size/capacity limits, resizing, recompression, transcoding, metadata stripping, route substitution, extraction failure, delivery ambiguity and concealment detection.
