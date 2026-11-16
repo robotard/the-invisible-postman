@@ -66,7 +66,7 @@ The train may be low-fidelity and untrusted. It may be inspected, copied, delaye
 
 ### Multi-message package encapsulation boundary
 
-The architecture must not collapse a logical message, a protected object, a fragment set, a carrier capsule, an image object and a conversation into one generic "message" or "multipart" object. The following is a conceptual packaging sequence for analysis, not a selected wire format or cryptographic construction:
+**Reference-implementation comparison:** The inspected MRAS/DRAS public code places embedding and extraction inside a per-image carrier operation. It does not provide the thesis's proposed package-level relationships across carriers. In the conceptual architecture, any protected-object/fragment-set manifest and its authenticated membership semantics therefore sit above the carrier-specific embedding routine; the carrier method only transports its assigned payload. This is an analytical separation, not a claim that a manifest format or cryptographic binding has been designed. The architecture must not collapse a logical message, a protected object, a fragment set, a carrier capsule, an image object and a conversation into one generic "message" or "multipart" object. The following is a conceptual packaging sequence for analysis, not a selected wire format or cryptographic construction:
 
 1. **Logical message:** endpoint-authored content and its intended recipient/context.
 2. **Endpoint-protected object:** the cryptographically protected representation, with sender/recipient/session context authenticated according to the eventual protocol.
