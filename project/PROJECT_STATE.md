@@ -53,6 +53,10 @@ The latest verified work reconciles transport independence and optional orchestr
 5. Check W3 numbering and traceability references.
 6. Run the link, status and consistency audit after the edits.
 
+## Document-boundary rule
+
+The status label below is project metadata describing the repository's verified maturity. It is not a universal conversational instruction or a restriction on research activity. Research principles, substantive arguments, contribution assessments and technical reasoning belong in the thesis and research-supporting documents. Operational documents record verified status, priorities, dependencies and next actions, and link to research material rather than reproducing its exposition. The same distinction applies to assistant working notes and session handovers.
+
 ## Governing constraints
 
 - Image carriage is a required research route, not a mandatory runtime transport.
