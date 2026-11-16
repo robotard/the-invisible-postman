@@ -125,7 +125,7 @@ A platform may process a batch in a common way. Images may share a source, devic
 
 ### 5.5 Multi-frame animated carriers are not multi-object fragment sets
 
-Wang et al. (2026; SRC-049) provide a useful additional comparator: their implementation describes a 16-frame GIF in which watermark bits are redundantly represented across frames and recovered by majority voting after diffusion-based extraction. The same README documents OTP and ChaCha20 modes, per-frame latent/key material, AnimateDiff generation and DDIM-inversion extraction. This is a single animated carrier object with internal frame multiplicity. It is not the same topology as publishing separate image objects, distributing fragments across posts, or linking independent messages into a conversation.
+Wang et al. (2026; SRC-049) provide a useful additional comparator: the author-linked README and inspected code describe a 16-frame pipeline in which secret bits are repeated within each frame and each frame's recovered secret is then combined by majority voting across frames. The implementation uses per-frame key/nonce material in its PyCryptodome ChaCha20 path, AnimateDiff generation and DDIM-inversion extraction. The sender code path writes frame PNGs; the receiver reads a fixed 16-frame PNG set plus locally stored keys and ground truth. This is a single animated carrier object with internal frame multiplicity. It is not the same topology as publishing separate image objects, distributing fragments across posts, or linking independent messages into a conversation.
 
 The comparison must therefore distinguish at least three levels:
 
@@ -133,7 +133,7 @@ The comparison must therefore distinguish at least three levels:
 2. **Across-object multiplicity:** separate image/file objects carrying distinct fragments or redundant copies; publication, account, timing and retrieval events become part of the observer's collection.
 3. **Across-message multiplicity:** distinct protected logical messages linked by a conversation/session relationship, independently of how each message is carried.
 
-Cross-frame majority voting may improve recovery under the paper's evaluated conditions, but it does not establish cross-post discovery, endpoint-authenticated fragment-set membership, conversation continuity or collection-level concealment across an account's image history. The paper's formal security claim is not assessed here; its implementation README is not an independent security review.
+Cross-frame majority voting may improve recovery from frame-level bit errors under the paper's evaluated conditions, but the inspected receiver asserts that exactly 16 frames and matching keys are present; missing-frame erasure tolerance is therefore not established by this code path. The inspected ChaCha20 implementation exposes no authentication tag, the fallback is a 32-bit NumPy PRNG explicitly labelled TEST ONLY, and the local group ID/key files do not constitute an authenticated endpoint manifest. These are source-code observations, not a security audit. The paper's formal security claim remains unreviewed. None of this establishes cross-post discovery, endpoint-authenticated fragment-set membership, conversation continuity or collection-level concealment across an account's image history.
 
 ### 5.6 Active sanitization and counter-adaptation form an adversarial loop
 
