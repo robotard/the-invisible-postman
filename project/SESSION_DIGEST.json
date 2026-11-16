@@ -36,7 +36,7 @@
     "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "checkpoint reconciled; saved and read-back verified",
+    "project/PROJECT_STATE.md": "next-session sequence reconciled to current route-profile work; exact read-back matched",
     "project/WORKPLAN.md": "profile register progress and next sequence reconciled; saved and read-back verified",
     "project/WORK_LOG.md": "dated route-profile research entry recorded; saved and read-back verified",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
@@ -49,7 +49,7 @@
     "docs/observer-property-matrix.md": "source-informed observer/property implications added; exact read-back matched",
     "latest_research_commit": "e66374e1de49530194a3d5f77cb53932142a395b",
     "docs/w3-architecture.md": "route-neutral lifecycle and route-specific adapter responsibilities saved and read-back verified",
-    "docs/traceability.md": "malformed heading repaired and route families aligned; saved and read-back verified",
+    "docs/traceability.md": "RQ5 references all six evidence-bounded profile IDs; exact read-back matched",
     "thesis.md": "MRAS/DRAS/Zhu evidence boundaries clarified; mixnet route baseline included; saved and read-back verified",
     "relative_markdown_link_audit": "26 Markdown files checked against recursive repository tree; no broken relative links found"
   },
@@ -115,5 +115,7 @@
     "FILE-DROPBOX-LINK": "Official shared-link/activity documentation profile; no live account test; client-side protected-object wrapper is only a comparison condition.",
     "E2E-SIGNAL-PROTOCOL": "PQXDH revision 3 + Double Ratchet revision 4 protocol reference; not a full Signal Messenger service profile.",
     "MIX-ECHOMIX-PIGEONHOLE": "Echomix arXiv v2 plus current Pigeonhole documentation; no pinned compatible deployment release."
-  }
+  },
+  "latest_checkpoint_commit": "e7ced472cde7533801b5701e39459546d1bb3f46",
+  "latest_checkpoint_blob": "447f1a5345271e8cb21ad04e38f2e063a09a7978"
 }
