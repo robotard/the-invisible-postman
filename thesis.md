@@ -428,6 +428,7 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/traceability.md` — links between research questions, threats, components and evaluation.
 - `docs/source-register.md` — authoritative technical sources, protocol comparators, metadata standards and claim-to-source gaps.
 - `docs/prior-art-comparison.md`, `docs/observer-property-matrix.md` and `docs/echomix-katzenpost-comparator.md` — current prior-art synthesis and integrated messaging comparator.
+- `docs/route-comparison-framework.md` — common lifecycle event and observer ledger for image, file, conventional messaging and mixnet-backed profiles.
 - `project/WORKPLAN.md` and `project/PROJECT_STATE.md` — roadmap and verified checkpoint.
 
 ## Appendix D. Illustration guide
