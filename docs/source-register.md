@@ -2,7 +2,7 @@
 
 **Purpose:** Track authoritative technical specifications, standards, protocol designs and research literature used to ground the thesis.  
 **Research status:** Initial source-reconciliation pass · Not a completed literature review  
-**Last checked:** 2026-11-15  
+**Last checked:** 2026-11-16  
 **Assurance:** Theory only · No implementation · Not audited.
 
 ## 1. How to use this register
@@ -368,6 +368,7 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 | Authenticated key establishment | SRC-007–SRC-010 | Compare 1:1 and group protocols, asynchronous requirements, identity models and metadata |
 | Key lifecycle | SRC-010–SRC-011 | Recheck current NIST revisions and derive project-specific lifecycle semantics |
 | Image metadata and platform transformations | SRC-012–SRC-014; SRC-021 | Separate semantic metadata from format/codec and forensic fingerprints; test each named route and platform instead of assuming universal stripping |
+| Mixnet-backed messaging, global observers and integrated discovery/reliability | SRC-016; SRC-032 | Compare route-native guarantees, role collusion, traffic coupling, capability distribution, human routine leakage and image-platform-specific residual observations |
 | Steganography and steganalysis | SRC-015 | Read full survey; define detector, dataset, payload rate, transformation chain and false-positive/negative metrics |
 | Recipient discovery and transport unlinkability | SRC-016; SRC-017; SRC-020; SRC-024; SRC-025; SRC-028; SRC-029; SRC-030; SRC-031 | Compare full-scan, rendezvous, capability, OMR-family variants, oblivious signaling and mix-network mechanisms; state their distinct models, costs and assumptions |
 | Traffic-level behavioural correlation and social graph inference | SRC-018; SRC-019 | Map their specific observer models and measurable timing/size/flow features to the proposed route; do not generalise beyond their tested settings |
