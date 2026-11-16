@@ -29,9 +29,9 @@ The identifiers below follow the ten supporting questions in Thesis §1.3 and W1
 | Research question | Research concern | Architectural response | Evaluation reference |
 |---|---|---|---|
 | RQ1 · Identity and trust | What does key verification establish, and what does it not prove about a human identity? | Identity and key-management boundary; explicit first-contact verification and key-change handling | W2 §§4, 6–7; W3 §3.2; W4 E2, E7 |
-| RQ2 · Cryptographic composition | How are authenticated key establishment, confidentiality, sender authentication, integrity, replay resistance and key lifecycle composed? | Endpoint-held key authority; session establishment; message protection and authenticated context | W2 §§6–7; W3 §§3.1, 3.3–3.4, 3.8; W4 E1–E4, E7–E8 |
+| RQ2 · Cryptographic composition | How are authenticated key establishment, confidentiality, sender authentication, integrity, replay resistance and key lifecycle composed? | Endpoint-held key authority; authenticated transcript; scoped key schedule; nonce, AAD and replay obligations | W2 §§6–7; W3 §§3.1, 3.3–3.4, 3.8, 3.10; W4 E1–E4, E7–E8; [protocol boundary analysis](protocol-boundary-analysis.md); SRC-041–SRC-042 |
 | RQ3 · Intermediary exposure | What can intermediaries and observers learn, alter, correlate or deny? | Least-privilege coordinator; standalone train; explicit trust and data boundaries | W2 §§2, 4–5; W3 §§2.4, 3.6–3.7; W4 E1, E6, E9 |
-| RQ4 · Message structure | How are message context, envelopes, multipart capsules and manifests bound and validated? | Versioned protected envelope; authenticated manifest; bounded parsing and set reconstruction | W2 §§3, 5–7; W3 §§3.4–3.5, 4; W4 E3–E5 |
+| RQ4 · Message structure | How are message context, envelopes, multipart capsules and manifests bound and validated? | Versioned protected envelope; canonical authenticated context; authenticated manifest; bounded parsing and set reconstruction | W2 §§3, 5–7; W3 §§3.4–3.5, 3.10, 4; W4 E3–E5; [protocol boundary analysis](protocol-boundary-analysis.md) |
 | RQ5 · Carriage methods | What changes across image, file/attachment, conventional end-to-end and mixnet-backed carriage? | First-class route layer; image carriage as a required research comparison; route-specific adapters preserving native semantics | W2 §§2, 5; W3 §§2.3, 3.6, 4; W4 E6, E9; route profiles IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE |
 | RQ6 · Concealment | Does optional steganography address a distinct measurable threat, and where does it fail? | Optional concealment sub-layer within the image route, separate from cryptographic protection | W2 §§4–5, 7–8; W3 §§2.3, 3.6; W4 E6 |
 | RQ7 · Discovery and collection | How can recipients find and retrieve changing carriers without exposing a stable rendezvous or access pattern? | Optional orchestration may coordinate publication/retrieval; compare full-scan, stable locator, short-lived capability and oblivious retrieval families; separate discovery channel; receiving-side decapsulation | W2 §§2, 4–5, 7, 9; W3 §§2.4.1, 3.6, 4; W4 E6, E9; SRC-017, SRC-020, SRC-024–SRC-032; [observer/property matrix](observer-property-matrix.md); [Echomix comparator](echomix-katzenpost-comparator.md) |
@@ -132,8 +132,9 @@ The following decisions must remain open until research and specification justif
 13. Recipient discovery, rendezvous privacy and the information exposed by publication and retrieval.
 14. Carrier metadata allowlist, verification of removal, and metadata introduced by platforms or hosts.
 15. The evidence required to make any bounded claim about concealment or steganalysis resistance.
+16. Key schedule inputs and domain separation; the distinct roles of HKDF salt and info; identity/transcript binding; nonce uniqueness under retries, concurrency, crash recovery and multi-device use; authenticated visible context; replay/order state; and downgrade-resistant route fallback. See [protocol boundary analysis](protocol-boundary-analysis.md) and SRC-041–SRC-042.
 
-Candidate cryptographic primitives must not be treated as a selected or complete protocol.
+Candidate cryptographic primitives must not be treated as a selected or complete protocol. RFC 5869 and RFC 9180 are references for specific construction responsibilities, not evidence that those responsibilities have been solved for this project.
 
 ## 7. Change-control rule
 
