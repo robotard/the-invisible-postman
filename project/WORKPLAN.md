@@ -29,6 +29,17 @@ See [research practice](../docs/research-practice.md), [collaborative governance
 - Label algorithms and mechanisms as candidates until the complete protocol is specified and reviewed.
 - Justify each component against a research objective or threat; preserve source provenance and claim boundaries.
 
+## Document boundaries and status semantics
+
+The exact status string **Theory only · No implementation · Not audited.** is project-status metadata. It describes the current verified state; it is not a standing instruction for every conversation and does not prohibit research, architectural exploration, specification work or future changes in project maturity.
+
+- **Thesis and research-supporting documents:** hold the substantive research argument, technical principles, evidence, contribution assessment, uncertainty and limitations.
+- **Operational documents:** hold concise verified status, work priorities, dependencies, blockers, paths and next actions. Link to research documents instead of duplicating thesis exposition.
+- **Session digests:** encode the same operational state as structured handover data, not as additional thesis prose.
+- **Assistant working notes:** preserve this separation and mention the status only when relevant.
+
+The status label must remain accurate wherever project maturity is reported. Its presence must not be interpreted as a restriction on the work that may be researched or planned.
+
 ## Roadmap
 
 Work units produce independently useful outputs. Progress belongs in `PROJECT_STATE.md`; dated actions and verification belong in `WORK_LOG.md`.
@@ -86,7 +97,7 @@ The three working documents have separate jobs:
 2. `WORKPLAN.md`: stable roadmap, principles, priorities and dependencies.
 3. `WORK_LOG.md`: dated history of changes, decisions, evidence and verification.
 
-At session start, refresh the live repository and read all three documents, the session digest and relevant research files. At session close, reconcile the three documents, then refresh `SESSION_DIGEST.json` last. The digest is a compact machine handover, never a replacement for the authoritative documents.
+At session start, refresh the live repository and read `SESSION_DIGEST.md`, `SESSION_DIGEST.json`, all three working documents and relevant research files. At session close, reconcile `PROJECT_STATE.md`, `WORKPLAN.md` and `WORK_LOG.md`; read back and verify them; refresh the machine-readable `SESSION_DIGEST.md` from that verified state; refresh `SESSION_DIGEST.json` last; then verify both digests against the three working documents. Both digests are compact operational handovers, never replacements for the authoritative documents or containers for thesis exposition.
 
 For every GitHub change: fetch the current file and blob SHA; make logically grouped writes; confirm the returned commit; fetch the saved file and verify its content. Never claim a change is deployed without successful read-back. Keep the user-facing deployment summary concise and limited to verified changes.
 
