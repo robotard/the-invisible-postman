@@ -19,7 +19,7 @@ The research does not assume that a particular transport, platform, bot or image
 
 
 
-**How can an endpoint-controlled messaging architecture protect message contents and authenticate communicating participants while using untrusted intermediaries and image-based carriage, and what security, privacy, usability and reliability limits remain across the complete communication lifecycle?**
+**How can an endpoint-controlled messaging architecture preserve authenticated message semantics across replaceable, untrusted carriage routes, including image-based carriage, and what can route-specific evidence establish about security, privacy, reliability and delivery under defined observer models?**
 
 This is an architectural research question. It does not assume that the proposed design has been implemented, formally proven, empirically evaluated, or independently audited.
 
@@ -34,8 +34,7 @@ This is an architectural research question. It does not assume that the proposed
 7. **Discovery and collection:** How can a recipient discover and collect a changing carrier without creating a stable rendezvous point or access pattern that defeats the intended privacy benefit?
 8. **Human behaviour:** How can routines, timing, language, platform habits and social-engineering probes create linkability even when carriers and locations vary?
 9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
-10. **Evaluation:** What evidence is needed to assess the stated architectural objectives, and what would show that a design choice is unsuitable?
-11. **Confidence and evidence:** How can the architecture expose the basis and limits of confidence in claims about identity, integrity, message-set completeness, conversation continuity and delivery without collapsing distinct properties into a universal score or creating new privacy risks?
+10. **Evaluation and confidence:** What evidence is needed to assess the architectural objectives and each route's claims; how should the basis, scope and limits of confidence be made inspectable without conflating distinct properties or creating new privacy risks, and what evidence would show that a design choice is unsuitable?
 
 > **Illustrated diagram placeholder · W1-F01 — Research scope and evidence map**
 > **Placement:** After §3 Supporting research questions.
@@ -45,14 +44,14 @@ This is an architectural research question. It does not assume that the proposed
 
 ## 4. Intended contribution
 
-The intended contribution is a transparent, theory-led architecture and design rationale for authenticated cryptographic messaging with an explicit transport-route layer and a required image-carriage route. It aims to:
+The intended contribution is not a new cipher, steganographic embedding method, anonymity network or complete messaging protocol. It is a theory-led account of how endpoint-protected message semantics should be separated from replaceable carriage, and how claims about that architecture can be compared and bounded by evidence. The proposed contribution has four connected parts:
 
-- separate cryptographic confidentiality, sender authentication, identity verification, carrier formatting, and optional concealment;
-- make trust boundaries and intermediary capabilities explicit;
-- document design refinements and the reasons for them;
-- identify assumptions, failure modes, lifecycle limits, and unresolved protocol decisions;
-- propose testable acceptance criteria and questions for independent review; and
-- distinguish established cryptographic mechanisms from unvalidated architectural choices.
+1. **Responsibility-separated architecture:** define the boundary between endpoint identity/key handling and message protection, route-facing encapsulation, transport, optional orchestration and lifecycle functions. This is an organising architecture, not a novelty claim by itself.
+2. **Common route-comparison method:** compare the same logical communication task across image-platform, file/attachment, conventional E2E and mixnet-backed profiles while preserving each route's native identity, discovery, delivery and observer semantics. A comparison table alone is insufficient; the analysis must identify decision-relevant differences and costs.
+3. **Message-relationship and lifecycle analysis:** distinguish object validity, fragment membership, set completeness, reconstruction, conversation continuity, retries, cross-route copies and delivery events. The work must show what is authenticated at endpoints and what an external observer can only infer.
+4. **Claim-centred evidence discipline:** connect each material claim to its verifier, scope, provenance, assumptions, observer vantage, freshness and unresolved alternatives. This is a research method to be challenged, not a security mechanism or a calibrated confidence score.
+
+The required image-carriage route is examined without presuming it is superior. Optional steganographic concealment is assessed separately from confidentiality, authenticity and delivery. The thesis must identify where existing work already covers the proposed elements and narrow or withdraw any contribution claim that does not survive comparison.
 
 The value of the work is not that images are inherently secure or that concealment makes encryption stronger. It is that the system's claims, boundaries, and limitations are made explicit enough to examine and challenge. A candidate organising principle is that confidence must be grounded in inspectable evidence, bounded by the verifier's vantage and assumptions, and explicit about what remains unknown. This is not a claim that confidence is a cryptographic property or that the phrase itself establishes originality; see the [confidence and evidence model](confidence-and-evidence-model.md). The [working prior-art comparison](prior-art-comparison.md) is used to test the candidate contribution against the closest identified systems; it does not establish originality by itself.
 
