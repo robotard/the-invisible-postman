@@ -75,13 +75,11 @@ A single phrase such as “transport privacy” or “unlinkability” would con
 | **B — End-to-end delivery-privacy analysis** | OMR and Oblivious Signaling formalise recipient privacy; dead-drop work examines public-platform publication, rendezvous, discovery and retrieval; diffusion work studies image covert-channel detectability. | A common, explicit analysis joining endpoint cryptographic authority, external image-carrier publication/transformation, recipient discovery/retrieval, decapsulation and human/metadata correlation under a unified observer model may expose cross-layer incompatibilities or leakage not captured by the separate models. | **Strongest emergent proposition, originality unestablished.** It must produce a defensible analytical method and new findings, not merely combine named mechanisms. |
 | **C — Route-independent semantics and route comparison** | Existing work compares alternative cryptographic retrieval constructions and covert-channel methods, but not necessarily the same protected message object across this project's image, file/attachment and conventional routes. | A reproducible comparison under common message semantics, observer capabilities, platform transformations, delivery failures and user effort may provide practical insight. | **Potentially useful method, not a contribution by itself.** A table alone is insufficient. |
 
-## 5. Provisional emergent proposition
+## 5. Research question under examination
 
-The most defensible working direction after this comparison is:
+The remaining research question is whether carrying a common endpoint-protected message through ordinary image platforms produces decision-relevant security, privacy, reliability or usability properties that differ from file/attachment, conventional messaging and mixnet-backed routes.
 
-> A useful privacy analysis of endpoint-controlled messaging over replaceable external carriage must treat recipient discovery and retrieval, platform publication and transformation, endpoint validation, and observable human/metadata behaviour as coupled parts of one delivery lifecycle; evaluating these parts under separate threat models can conceal cross-layer leakage and incompatible assumptions.
-
-This is deliberately an emergent proposition, not a settled contribution claim. The reviewed papers make the proposition plausible as a research question, but they do not yet establish that the proposed unified analysis is original, complete or practically superior.
+This question is open. It does not assume that the image route is superior, original or even preferable. The literature already includes robust social-platform image steganography, platform-specific transformation studies, active payload-removal approaches and broad steganalysis surveys (SRC-033–SRC-037). The comparison must therefore separate carrier extraction, detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost. A result may favour another route or show that the image route has no defensible advantage.
 
 ## 6. What remains before any originality statement
 
@@ -125,7 +123,7 @@ The additional papers make three distinctions essential:
 2. **Anonymous access control is not endpoint-authenticated message semantics.** A system may hide which reader accesses a stored item without defining the project's peer identity verification, sender authentication, authenticated message context or capsule validation.
 3. **A combined lifecycle narrative is not itself a contribution.** GOMR and Remise already cover substantial publication, retrieval, relationship and access-control machinery. The only defensible path for Candidate B is to identify a concrete cross-layer leakage or incompatible assumption arising when those privacy mechanisms meet media-carrier transformation, endpoint validation and human/network observation.
 
-The emergent proposition in §5 is therefore retained only as a question to test, not a conclusion. It must be narrowed, displaced or abandoned if the next comparison does not reveal a non-obvious result.
+The research question in §5 remains open and must be answered from route-specific evidence. The comparison must be allowed to favour a simpler route or find no distinct image-carriage benefit.
 
 ## 9. Integrated messaging comparator · Echomix / Katzenpost
 
@@ -145,9 +143,9 @@ Echomix already covers several areas that the project previously treated as pote
 
 ### 9.3 What may remain distinct
 
-The clearest remaining comparison boundary is ordinary image-platform carriage of a common endpoint-protected message object. Echomix does not study user-selected image carriers passing through social-platform resizing, recompression, transcoding, metadata rewriting, moderation, file-identifier generation, hosting logs or account/engagement observations. This is a difference in the studied route, not evidence of originality by itself.
+The remaining comparison boundary includes ordinary image-platform carriage of a common endpoint-protected message object. Echomix does not centre user-selected image carriers passing through social-platform transformations and account/hosting observations. However, dedicated prior art already studies robust image payloads on social platforms and active removal (SRC-033–SRC-036). The potentially distinct question is therefore not whether image payloads can survive or be hidden, but whether a complete endpoint-protected delivery route has measurable properties that differ from simpler and stronger baselines. This is a difference to evaluate, not evidence of originality.
 
 The next work should compare the same endpoint message semantics across image carriage, file/attachment carriage, conventional messaging and a mixnet-backed messaging baseline. Each route must retain its own native guarantees, observer assumptions and costs. The evaluation should establish whether image carriage introduces a distinct, measurable benefit or burden, rather than simply describe a route not present in Echomix.
 
-See the [Echomix comparator](echomix-katzenpost-comparator.md) and [observer/property matrix](observer-property-matrix.md) for the detailed boundary comparison.
+See the [Echomix comparator](echomix-katzenpost-comparator.md), [observer/property matrix](observer-property-matrix.md) and [route-comparison framework](route-comparison-framework.md) for the detailed boundary comparison.
 
