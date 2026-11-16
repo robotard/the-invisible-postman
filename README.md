@@ -44,11 +44,11 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 14. [W4 · Risks and evaluation](docs/w4-risks-and-evaluation.md) — failure modes and proposed evaluation.
 15. [Research traceability](docs/traceability.md) — links between questions, threats, architecture and evaluation.
 16. [Research source register](docs/source-register.md) — authoritative specifications, protocol comparators, metadata standards and evidence gaps.
-17. [Prior-art comparison](docs/prior-art-comparison.md) and [observer/property matrix](docs/observer-property-matrix.md) — current comparison of retrieval, anonymous access, media carriage and lifecycle observer assumptions.
-18. [Echomix/Katzenpost comparator](docs/echomix-katzenpost-comparator.md) and [route comparison framework](docs/route-comparison-framework.md) — integrated anonymous-messaging baseline and like-for-like carriage comparison.
-18. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
-19. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
-20. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
+17. [Prior-art comparison](docs/prior-art-comparison.md), [observer/property matrix](docs/observer-property-matrix.md) and [route comparison framework](docs/route-comparison-framework.md) — current source-grounded comparisons of retrieval, anonymous access, image-platform carriage and lifecycle observers.
+18. [Echomix/Katzenpost comparator](docs/echomix-katzenpost-comparator.md) — integrated anonymous-messaging baseline.
+19. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
+20. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
+21. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
 
 ## Illustrations
 
