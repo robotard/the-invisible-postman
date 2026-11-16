@@ -28,6 +28,7 @@ See [research practice](../docs/research-practice.md), [collaborative governance
 - Expiry and revocation cannot recall plaintext or keys already obtained.
 - Label algorithms and mechanisms as candidates until the complete protocol is specified and reviewed.
 - Justify each component against a research objective or threat; preserve source provenance and claim boundaries.
+- Treat confidence as a verifier's claim-specific, evidence-bounded judgement; expose provenance, scope, assumptions, freshness and unresolved alternatives without a universal score or central tracking ledger.
 
 ## Document boundaries and status semantics
 
@@ -98,6 +99,7 @@ Legend: `[x]` complete; `[~]` drafted or in progress; `[ ]` not started or defer
 8. Pin live service/client versions and configurations where authoritative evidence is available; do not convert documentation-only profiles into deployed evaluations.
 9. Run a fresh repository-wide link, status, terminology and image-reference consistency audit.
 10. Review the newly registered sanitization and animated-carrier comparators SRC-046–SRC-048 at full-text level where available; review SRC-049's paper/formal security argument and complete results. SRC-049 README and selected core/sender/receiver source files have been inspected but not executed or audited. Keep abstract-only and code-derived evidence explicitly partial, and distinguish one GIF's internal frames from separate image carriers and message sets.
+11. Integrate and challenge the [confidence and evidence model](../docs/confidence-and-evidence-model.md): validate its distinctions against the source base, route/event ledger and protocol obligations; test whether it improves claim precision without creating a privacy-invasive evidence ledger or false precision.
 
 A comparison may show that image carriage adds no defensible benefit. That is a valid result. Do not preserve a preferred route by weakening baselines or inventing platform behaviour.
 
