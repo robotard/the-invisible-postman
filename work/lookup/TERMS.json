@@ -1,0 +1,160 @@
+{
+  "schema": "tip.work.terms.v1",
+  "scope": "temporary_internal_lookup_only",
+  "not_for_thesis": true,
+  "entries": [
+    {
+      "id": "C-001",
+      "label": "Logical message",
+      "targets": [
+        "thesis.md",
+        "docs/multi-message-linkage-and-steganographic-carriage.md"
+      ]
+    },
+    {
+      "id": "C-002",
+      "label": "Protected object",
+      "targets": [
+        "thesis.md",
+        "docs/protocol-boundary-analysis.md"
+      ]
+    },
+    {
+      "id": "C-003",
+      "label": "Carrier / carrier encapsulation",
+      "targets": [
+        "thesis.md",
+        "docs/w3-architecture.md"
+      ]
+    },
+    {
+      "id": "C-004",
+      "label": "Fragment set / membership",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/route-comparison-framework.md"
+      ]
+    },
+    {
+      "id": "C-005",
+      "label": "Redundant carriage / reconstruction",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/route-comparison-framework.md"
+      ]
+    },
+    {
+      "id": "C-006",
+      "label": "Independent messages / batch",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md"
+      ]
+    },
+    {
+      "id": "C-007",
+      "label": "Conversation / session continuity",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md"
+      ]
+    },
+    {
+      "id": "C-008",
+      "label": "Retry / duplicate delivery event",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/route-comparison-framework.md"
+      ]
+    },
+    {
+      "id": "C-009",
+      "label": "Cross-route copy / correlation",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/observer-property-matrix.md"
+      ]
+    },
+    {
+      "id": "C-010",
+      "label": "Package encapsulation",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/w3-architecture.md"
+      ]
+    },
+    {
+      "id": "C-011",
+      "label": "Animated carrier / frame",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "SRC-049"
+      ]
+    },
+    {
+      "id": "C-012",
+      "label": "Per-carrier concealment",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/w4-risks-and-evaluation.md"
+      ]
+    },
+    {
+      "id": "C-013",
+      "label": "Robust watermarking",
+      "targets": [
+        "docs/prior-art-comparison.md",
+        "SRC-043",
+        "SRC-049"
+      ]
+    },
+    {
+      "id": "C-014",
+      "label": "Collection-level steganalysis",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/route-comparison-framework.md"
+      ]
+    },
+    {
+      "id": "C-015",
+      "label": "Active sanitization",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "SRC-036",
+        "SRC-046",
+        "SRC-047"
+      ]
+    },
+    {
+      "id": "C-016",
+      "label": "Keyed counter-adaptation",
+      "targets": [
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "SRC-048"
+      ]
+    },
+    {
+      "id": "C-017",
+      "label": "Endpoint-authenticated linkage",
+      "targets": [
+        "docs/protocol-boundary-analysis.md",
+        "docs/multi-message-linkage-and-steganographic-carriage.md"
+      ]
+    },
+    {
+      "id": "C-018",
+      "label": "Observer-inferred linkage",
+      "targets": [
+        "docs/observer-property-matrix.md",
+        "docs/route-comparison-framework.md"
+      ]
+    },
+    {
+      "id": "C-019",
+      "label": "Transport adapter / orchestration",
+      "targets": [
+        "docs/w3-architecture.md",
+        "docs/route-comparison-framework.md"
+      ]
+    }
+  ]
+}
