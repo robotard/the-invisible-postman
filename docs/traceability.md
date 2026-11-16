@@ -34,7 +34,7 @@ The identifiers below follow the ten supporting questions in Thesis §1.3 and W1
 | RQ4 · Message structure | How are message context, envelopes, multipart capsules and manifests bound and validated? | Versioned protected envelope; authenticated manifest; bounded parsing and set reconstruction | W2 §§3, 5–7; W3 §§3.4–3.5, 4; W4 E3–E5 |
 | RQ5 · Carriage methods | What changes across image, file/attachment and conventional end-to-end carriage? | First-class route layer; required image route; comparison profiles; route-specific adapters | W2 §§2, 5; W3 §§2.3, 3.6; W4 E6, E9 |
 | RQ6 · Concealment | Does optional steganography address a distinct measurable threat, and where does it fail? | Optional concealment sub-layer within the image route, separate from cryptographic protection | W2 §§4–5, 7–8; W3 §§2.3, 3.6; W4 E6 |
-| RQ7 · Discovery and collection | How can recipients find and retrieve changing carriers without exposing a stable rendezvous or access pattern? | Train publication/retrieval coordination; compare full-scan, stable locator, short-lived capability and oblivious retrieval families; separate discovery channel; receiving-side decapsulation | W2 §§2, 4–5, 7, 9; W3 §§2.4.1, 3.6, 4; W4 E6, E9; SRC-017, SRC-020, SRC-024–SRC-032; [observer/property matrix](observer-property-matrix.md); [Echomix comparator](echomix-katzenpost-comparator.md) |
+| RQ7 · Discovery and collection | How can recipients find and retrieve changing carriers without exposing a stable rendezvous or access pattern? | Optional orchestration may coordinate publication/retrieval; compare full-scan, stable locator, short-lived capability and oblivious retrieval families; separate discovery channel; receiving-side decapsulation | W2 §§2, 4–5, 7, 9; W3 §§2.4.1, 3.6, 4; W4 E6, E9; SRC-017, SRC-020, SRC-024–SRC-032; [observer/property matrix](observer-property-matrix.md); [Echomix comparator](echomix-katzenpost-comparator.md) |
 | RQ8 · Human behaviour | How do routines, timing, language, platform habits and social-engineering probes create linkability? | Treat human interaction as a cross-cutting behavioural side channel; use bounded qualitative evidence while keeping unmeasured project-specific patterns as open questions or provisional threat propositions; minimise unnecessary exposure without relying on unsafe user rituals | W2 §§2, 5, 7; W3 §§2.4.1, 3.6; W4 E6, E9; SRC-022 |
 | RQ9 · Lifecycle and recovery | What can expiry, revocation, key rotation and recovery achieve, and what assumptions do they introduce? | Local lifecycle state; explicit limits on future acceptance; recovery remains separate and optional | W2 §§3–4, 6–8; W3 §§3.8–3.9; W4 E4, E7–E8 |
 | RQ10 · Evaluation | What evidence is needed to assess the stated architectural objectives and route requirements? | Threat-to-component mapping; explicit claim status; falsifiable evaluation plan and evidence maturity | W4 §§2–8; this traceability register |
@@ -43,7 +43,17 @@ The [Echomix comparator](echomix-katzenpost-comparator.md) adds an integrated me
 
 The current [observer/property matrix](observer-property-matrix.md) compares the scope and leakage boundaries of OMR/GOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion work. It is a working analytical aid, not a proof of completeness or originality. The matrix must be revised whenever a new comparator materially changes the observer or property baseline.
 
-## 3. Threat-to-architecture traceability
+## 3. Threat-to-architecture traceability### Transport-independence traceability
+
+| Research concern | Architectural response | Evaluation requirement |
+|---|---|---|
+| Transport coupling | Endpoint-protected object independent of route; route-specific encapsulation | Carry the same protected-message semantics across declared profiles or document an authenticated conversion |
+| Role conflation | Separate message protection, encapsulation, transport, orchestration and external carrier generation | Record each function's authority, inputs/outputs, retained state and observer view, even when one provider performs several roles |
+| Coordinator dependence | Orchestration is optional and may itself be a transit participant | Demonstrate the architecture's conceptual operation without a mandatory coordinator; assess coordinator and transit disclosures separately |
+| Multi-hop correlation | Explicit route composition and per-hop observer ledger | Enumerate every hop, transition, identifier, timing/access event and transformation; do not presume extra hops improve privacy |
+| Unsafe fallback | Declared route policy preserving protected-object semantics and cryptographic context | Review retry/fallback for authentication, replay, key/nonce safety and added disclosures |
+
+
 
 | W2 threat | W3 architectural response | W4 evaluation | Outstanding specification |
 |---|---|---|---|
@@ -76,7 +86,8 @@ The current [observer/property matrix](observer-property-matrix.md) compares the
 | Message protection and envelope | Protect content and bind context | Confidentiality, integrity and message association | E1, E3, E4 |
 | Capsule and multipart manager | Package and reconstruct protected messages | Handle fragmented delivery without ambiguous acceptance | E5 |
 | Encapsulation and decapsulation boundary | Add bounded carriage framing; extract the protected object and check structure, lengths, supported format and completeness | Framing is not cryptographic authentication; security-relevant bindings are authenticated by the endpoint protocol | E5, E6 |
-| Standalone train | Carry opaque protected objects; coordinate route publication, retrieval and delivery references | Replaceable low-fidelity transport with no plaintext, key, identity or message-acceptance authority | E6, E9 |
+| Transport adapters | Carry opaque protected objects over declared hops; expose route-specific handling and failures | Replaceable carriage without plaintext, key, identity or message-acceptance authority | E6, E9 |
+| Optional orchestration | Coordinate route selection, publication/retrieval, retries and delivery references; may also be a transit participant | Coordination is not mandatory; any transit role has a separate observer view | E6, E9 |
 | Transport-route manager and carrier adapters | Select, describe and invoke carriage routes; encode/extract route-specific carriers and apply image metadata minimisation | Image carriage is required; other routes are comparison profiles | E6, E9 |
 | Coordinator and transport | Route and coordinate delivery | Permit intermediary assistance without granting cryptographic authority | E1, E9 |
 | Lifecycle and local state | Manage replay, expiry and key changes | Give lifecycle claims precise operational meaning | E4, E7 |
