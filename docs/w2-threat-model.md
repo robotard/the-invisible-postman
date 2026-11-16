@@ -38,6 +38,8 @@ The threat model distinguishes endpoint message protection, carrier encapsulatio
 | Key-to-identity bindings | Impersonation caused by an attacker substituting their own key |
 | Ciphertext and capsule integrity | Undetected modification, substitution, or mixing of message parts |
 | Message-set metadata | Forgery of message ID, sender/recipient binding, fragment index/count, version, or expiry |
+| Cross-message linkage | Unintended grouping of independent messages, fragment sets, retries or sessions through shared identifiers, timing, carrier style or retrieval patterns |
+| Collection-level steganalysis | Pooling of weak per-image signals across multiple carriers, accounts or time windows to infer hidden communication |
 | Recovery shares or recovery secrets | Unauthorized reconstruction, collusion, loss, or misuse |
 | Local plaintext and key material | Exposure through logs, crash reports, backups, notifications, or compromised endpoints |
 | Communication metadata | Disclosure of participants, timing, frequency, size, routing, or social relationships |
@@ -121,7 +123,8 @@ These are target properties, not claims that the current proposal satisfies them
 | Missing or duplicate fragments | Incomplete or ambiguous message reconstruction | Explicit completeness rules and rejection behavior |
 | Resource-exhaustion through hostile capsule sets | Excessive CPU, memory, disk, decompression or parser work can deny service even when inputs are structurally valid | Define aggregate and per-item size/count limits, header/manifest bounds, decompression limits, timeouts, concurrency and incomplete-set expiry; validate bounds before expensive work |
 | Image transformation | Carrier payload is damaged or removed | Test platform transformations; fail safely rather than claim robust concealment |
-| Metadata correlation | Participants or communication patterns are inferred | Document visible carrier, platform, host, network and access metadata; avoid unsupported anonymity claims |
+| Metadata and message-linkage correlation | Participants, fragment sets, conversations, retries or communication patterns are inferred | Document visible identifiers, manifests, sequence values, timing, sizes, carrier provenance and access patterns; separate required endpoint linkage from observer-visible linkage |
+| Collection-level steganalysis | Weak per-image signals accumulate across a batch | Evaluate per-image and pooled/set-level detection on realistic collections; do not assume independent images or that lower per-image payload reduces overall detectability |
 | Traffic analysis and flow correlation | Encrypted contents remain confidential while timing, size, volume, endpoint or access patterns reveal communication relationships or activity | Define observer vantage and retained records; examine timing/size correlation and the cost of any padding, delay, batching or cover-traffic countermeasure; see source leads SRC-016 and SRC-018–SRC-019 |
 | Discovery and rendezvous correlation | A stable locator, publication schedule or retrieval pattern links a recipient to a carrier | Treat discovery as an explicit protocol function; authenticate retrieval instructions and evaluate locator lifetime, publication timing and access patterns |
 | Behavioural probing | Repeated routines or social-engineering prompts elicit linkable responses | Model behavioural side channels and realistic probes; avoid relying on constant user vigilance or deceptive camouflage |
@@ -160,6 +163,9 @@ The following remain open and must be resolved before protocol-level security cl
 - discovery alternatives and their privacy/cost trade-offs, including recipient-side scanning, stable locators, short-lived capabilities and oblivious retrieval;
 - explicit parser and reassembly resource budgets for bytes, fragments, headers, decompression, CPU, memory, disk, concurrency and incomplete-set retention;
 - the observer model for timing, size, volume, flow correlation and access patterns;
+- the distinction between one fragmented message, redundant fragments, independent messages, conversation continuity, retries and cross-route copies;
+- which linkage values are endpoint-only, encrypted, visible-but-authenticated or public; and how an observer could reconstruct relationships without decoding payloads;
+- collection sizes, time windows, account/platform scopes and pooled steganalysis assumptions;
 - whether any traffic obfuscation, padding, delay, batching or cover traffic is in scope, and what costs it introduces;
 - handling of corrupted images and platform transformations;
 - threshold value, share distribution, participant authentication, collusion threshold, and recovery authorization; and
