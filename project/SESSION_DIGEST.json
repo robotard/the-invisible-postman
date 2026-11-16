@@ -12,25 +12,25 @@
   ],
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
   "priority": [
-    "W0.3/W6 research-source reconciliation and integrated thesis construction",
-    "Initial lifecycle observer/property matrix completed for OMR/GOMR, OMR variants, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion work",
-    "Extend related work to mix networks and other integrated anonymous-messaging/media-carriage systems; compare explicit observer leakage and assumptions",
-    "Identify a concrete cross-layer incompatibility or falsifiable result; revise or retire Candidate B without presuming originality"
+    "W0.3 research-source reconciliation with the integrated Echomix/Katzenpost baseline",
+    "W6 integrated thesis construction using the route comparison framework",
+    "Populate named, versioned image-platform, file/attachment, conventional messaging and mixnet-backed route profiles",
+    "Map lifecycle events to actual observer views and identify measurable, decision-relevant differences"
   ],
   "defer": [
-    "routine author review unless blocking/material",
-    "external peer review until workable thesis",
-    "new illustrations until contribution and thesis argument stabilise",
+    "routine author review unless blocking or materially corrective",
+    "external peer review until a workable thesis candidate exists",
+    "new illustrations until the comparative result is stable",
     "implementation"
   ],
   "next": [
-    "Extend the observer/property matrix with the closest mix-network and anonymous-messaging/media-carriage comparators where global observers and cover traffic materially affect the route",
-    "Map explicit observer views and leakage across publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction",
-    "Identify at least one concrete cross-layer incompatibility or falsifiable comparison result; revise or retire Candidate B if none survives",
-    "Reconcile material findings into thesis §§3, 5, 8 and 10; W1-W4; traceability; source register and prior-art comparison",
-    "Only after the argument stabilises, reconsider the planned diagrams",
-    "Before ending every session, reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; mark work complete or park exact next actions",
-    "Refresh this digest after those three working documents"
+    "Select named, versioned examples for image-platform, file/attachment, conventional messaging and mixnet-backed profiles",
+    "Populate docs/route-comparison-framework.md with profile-specific facts and source evidence; distinguish comparable fields from route-native properties",
+    "Map publication, discovery, retrieval, transformation, validation, retries, expiry and human interaction to actual observer views",
+    "Identify a measurable decision-relevant difference, or narrow project scope if image carriage adds no defensible benefit",
+    "Reconcile findings into thesis §§3, 5, 8 and 10; W1-W4; source register; traceability and contribution assessment",
+    "Keep new illustrations deferred until the comparison yields a stable explanatory result",
+    "At session close reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md, then refresh this digest last"
   ],
   "open": [
     "whether a common observer/property model yields a distinct analytical result beyond OMR/GOMR, Oblivious Signaling, Remise and dead-drop pipeline studies",
@@ -49,42 +49,48 @@
     "No unsupported security or review claims"
   ],
   "last_verified": {
-    "active_markdown": 22,
-    "relative_links_checked": 0,
-    "broken_links": null,
+    "active_markdown": 25,
+    "relative_links_checked": 113,
+    "broken_links": 0,
     "status_string_present": true,
-    "active_archive_instructions": false,
-    "tree_files": 29,
-    "tree_markdown": 24
+    "terminology_scan": {
+      "forbidden_terms_found": 0
+    },
+    "tree_files": 31,
+    "tree_markdown": 26,
+    "archived_markdown": 1
   },
-  "verification_scope": "The current main-branch recursive Git tree was fetched and verified (29 files, 24 Markdown; not truncated). New and modified documents in the 2026-11-16 batch were individually fetched after writes and matched the submitted content. The GOMR and Remise full papers were inspected. No full-tree relative-link audit, independent reproduction, formal proof, implementation test or security review was run.",
+  "verification_scope": "Recursive main-branch tree verified (31 files, 26 Markdown, not truncated). All 25 active Markdown files were fetched. A total of 113 relative Markdown links were checked with zero missing targets. All active Markdown files contain the exact status string. No forbidden workflow or terminology references were found in active Markdown. Every new or modified file in the 2026-11-16 batch was individually fetched after writing and matched the submitted content. External URL availability and heading-anchor rendering were not audited. No platform experiments, implementation tests, benchmark reproductions, formal proofs or independent security reviews were performed.",
   "open_research_threads": [
-    "originality gap and direct comparison with closest integrated systems",
-    "cross-layer observer leakage and assumption compatibility",
-    "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
-    "carrier metadata allowlist and platform transformations",
-    "traffic/access-pattern and behavioural correlation evaluation",
-    "parser/resource-exhaustion and multipart safety evidence",
-    "mix-network and integrated image-carriage prior art"
+    "named and versioned route-profile selection",
+    "image-platform transformation and metadata behaviour",
+    "account, engagement and hosting observations",
+    "discovery and access-pattern privacy under common observer views",
+    "reliability signalling, retries, backfills and residual leakage",
+    "human routine correlation and usable-security evidence",
+    "multipart parser/resource-exhaustion limits",
+    "whether image carriage provides a measurable, decision-relevant benefit"
   ],
-  "last_verified_batch": "2026-11-16: added full-text prior-art comparison of GOMR and Remise (SRC-030/031); created docs/observer-property-matrix.md; narrowed Candidate B; integrated and read-back verified changes across thesis, W1-W4, source register, prior-art comparison, traceability, README and diagram index; reconciled PROJECT_STATE, WORKPLAN and WORK_LOG.",
+  "last_verified_batch": "2026-11-16: inspected full Echomix paper and current Katzenpost threat-model page; added SRC-032; created docs/echomix-katzenpost-comparator.md and docs/route-comparison-framework.md; extended observer matrix and prior-art comparison; integrated into thesis, W1-W4, traceability, README, diagram index and contribution assessment; reconciled PROJECT_STATE, WORKPLAN and WORK_LOG; audited all 25 active Markdown files and 113 relative links.",
   "audit_boundary": "All modified files in this batch were read back and matched. Recursive tree checked for counts only; no full-tree relative-link audit run.",
   "last_commits": {
-    "observer_matrix": "50253f65d5c69c8d98e2dc4652299c5f6a90545a",
-    "source_register": "d291d508441abdc5660caa855f23fd95b586acaf",
-    "prior_art_comparison": "c7d2c546e0bf07054a902db17cf3d6dd667b7d3f",
-    "thesis_related_work": "ae5cba962e014a2d2cc49e92d198459881010f58",
-    "thesis_bibliography_and_navigation": "73d7a3d90248a0dea7672f023f3524ca532ce22d",
-    "w1": "ac8390819cbc509d62f617be7a1d38d6acff49f3",
-    "traceability": "1778a5e35875b103dad765bdcc6db4a94fa620c6",
-    "w2": "e04d7b0e1e50a26f85ba4778c04291929e48e00d",
-    "w3": "da51924c43a51e700ff7e979f81ad55405de88ea",
-    "w4": "56559e8ed4702ddeda4e4b09e297eb451c10e664",
-    "readme": "a00171ca901a69e76adddc489e94c73ba4881aca",
-    "diagram_index": "478e12b18e4fbeadad2fe45ebb17d8d54cf85f00",
-    "project_state": "00f19f2086f32ac25c9b038a0bf5e1f8262f3bfb",
-    "workplan": "f8461f57112b0371343de71ae729fe9b18946035",
-    "work_log": "b4a4dab709091955a0678da7f8d86ef8ee11e71c"
+    "echomix_comparator": "1acd0b881f7e7a6b03872bbb79bba79f5530a524",
+    "route_comparison_framework": "90cf85d97289eccf9c8cde1f11d7eb9a5898df2d",
+    "source_register": "a3ced6004c76e1e4ca548dc04630c0fc8c3bfccc",
+    "observer_matrix": "46b65970765dd83659e2cab9c47d0eca9651e590",
+    "prior_art_comparison": "23dfc8053cbed281c5431f6592324de3bc63f663",
+    "thesis": "103098ed25f8dcbfbc4b00e58f59de77ab487762",
+    "w1": "f54443c521079fca2f88623b3e8d159a3faf5003",
+    "w2": "fd68fb356d0b66b7259e1e6e95b560d55918282f",
+    "w3": "6e73e6f7464dfebab4532f1bf152985824623f0c",
+    "w4": "cce49e0b8f0acc801ee5400ecf555f21e1d12585",
+    "traceability": "718e4a7e643c7bd077081a7dc96ea48807bc84a1",
+    "contribution_assessment": "6ad692620dae024a758a9fb8706d96ea2c6335fa",
+    "readme": "fc4541b46bfc3be2ea04356dea72592a2ff1a107",
+    "diagram_index": "568713e83909dc08045216ca0da42f0ad44e70d7",
+    "project_state": "d9b101a58efdbd38307a78441267f0f1e61ed588",
+    "workplan": "f4b4f70af0c705486eb19d3b78571fbedf6075d8",
+    "work_log": "2e4de8c2230a849214c22181037cf10790979770"
   },
   "session_completion_rule": {
     "required_working_documents": [
@@ -113,5 +119,5 @@
     "distinction": "Keep research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions distinct.",
     "constraint": "Do not force the developing research direction into a confirmatory framework. Do not promote a proposition to a demonstrated result or contribution without appropriate evidence."
   },
-  "source_register_entries": 31
+  "source_register_entries": 32
 }
