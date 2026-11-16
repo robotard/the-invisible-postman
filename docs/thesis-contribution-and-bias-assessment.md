@@ -85,7 +85,7 @@ Terms such as “anonymous”, “unlinkable”, “private”, “secure” and
 
 Adding every conceivable observer and human factor may make the thesis broad but analytically shallow.
 
-**Countermeasure:** Separate primary adversaries, secondary observers and out-of-scope actors. Rank threats by relevance to the central proposition and explain excluded threats.
+**Countermeasure:** Separate primary adversaries, secondary observers and out-of-scope actors. Rank threats by relevance to the central research direction and explain excluded threats.
 
 ### B6 · Source-confirmation bias
 
@@ -101,7 +101,7 @@ The passenger/train metaphor helps explain separation, but may make the design a
 
 ## 5. Prior-art pressure points identified
 
-These sources were identified in the current assessment. Only the abstracts, publisher summaries or specified overview material were inspected for the newly identified works; they must not be cited as full-paper analysis.
+These sources were identified in the current assessment. SRC-033, SRC-034 and SRC-036 were inspected at publisher abstract/record level; SRC-035 was inspected as full publisher HTML; SRC-037 was inspected at publisher record/abstract level only. Do not cite abstracts or records as full-paper analysis.
 
 | Prior work | Pressure on our claims | Required response |
 |---|---|---|
@@ -112,6 +112,7 @@ These sources were identified in the current assessment. Only the abstracts, pub
 | Bauer et al. (2024), Leveraging Generative Models for Covert Messaging: Challenges and Tradeoffs for Dead-Drop Deployments | Whole-pipeline dead-drop challenges and performance/security trade-offs have already been studied. | Do not claim that considering the full pipeline is itself novel. Identify what this thesis adds beyond that work. |
 | Bauer et al. (2025), Provably Secure Covert Messaging Using Image-based Diffusion Processes | Formal image-based covert messaging exists in a related but different generated-image model. | Distinguish generated-image channels from embedding/reusing externally hosted image carriers; inspect the full paper. |
 | Pasquini et al. (2021), media forensics on social platforms | Platform transformations and forensic traces are established research concerns. | Avoid claiming platform processing or metadata forensics as novel; identify any new cross-layer application or evaluation. |
+| Kumar et al. (2026), MRAS and DRAS; Qiao et al. (2023); Zhu et al. (2021); Kombrink et al. (2025), image steganography/steganalysis | Image-platform payload robustness, social-network transformation, active payload removal and steganalysis are established topics with recent real-platform evaluations. | Do not claim image payload survival, recompression tolerance or concealment alone as a differentiator. Separate extraction, detectability, endpoint authentication/integrity and observer privacy. |
 | Infeld et al. (2025), Echomix / Katzenpost | Integrated global-observer messaging already combines traffic coupling, anonymous discovery/storage, reliability, collusion analysis and human-routine leakage. | Do not claim a general integrated delivery-privacy architecture or responsibility separation as new. Compare the image-platform boundary against this stronger integrated baseline. |
 
 ## 6. Candidate contribution statements to test
@@ -156,13 +157,13 @@ A route abstraction and comparative evaluation framework in which one protected 
 
 The strongest current thesis is not “a new image steganography system” and not “a new cryptographic messaging protocol”. Neither claim is supported.
 
-The strongest current direction is a controlled comparison of ordinary image-platform carriage against file, conventional messaging and mixnet-backed messaging, while holding endpoint security objectives constant and recording route-native guarantees, observer capabilities, transformations, discovery, reliability and human interaction. Echomix means that broad integrated lifecycle framing is not a differentiator.
+The strongest current direction is a controlled comparison of ordinary image-platform carriage against file, conventional messaging and mixnet-backed messaging, while holding endpoint security objectives constant and recording route-native guarantees, observer capabilities, transformations, discovery, reliability and human interaction. The new image-steganography sources further constrain the claim: carrier robustness and concealment are established areas, so the comparison must establish a complete-route difference rather than repeat an embedding result. Echomix means that broad integrated lifecycle framing is not a differentiator.
 
 The next research batch should prioritise:
 
-1. Extend full-text comparison to integrated mixnet-backed messaging, beginning with Echomix/Katzenpost.
-2. Compare image-platform transformations and observables with media-forensics and dead-drop systems.
-3. Apply the route comparison framework to named, versioned profiles and explicit observer/event ledgers.
+1. Complete full-text review of SRC-033–SRC-037, prioritising the methods and evaluation details of MRAS and DRAS.
+2. Apply the route comparison framework to named, versioned profiles and explicit observer/event ledgers.
+3. Compare image-platform transformations and observables with media-forensics and dead-drop systems.
 4. Identify a reproducible, decision-relevant difference; revise or retire Candidate B if none survives.
 5. Only then, decide which planned diagrams are stable enough to communicate the actual contribution.
 
