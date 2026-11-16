@@ -11,7 +11,11 @@ This index distinguishes existing historical/conceptual illustrations from figur
 | 01 · From idea to architecture | [01-ideation-and-design-evolution.svg](01-ideation-and-design-evolution.svg) | Section 2.3 | Explains the initial password/image idea and the evolution of the research. It is a design-history map, not a protocol flow. |
 | 03 · Design decisions | [03-design-decisions.svg](03-design-decisions.svg) | Section 2.3; decision discussion | Summarises selected decisions and their rationale. It does not replace the decision register or imply that every decision is final. |
 
-## Planned thesis illustrations
+## Planned thesis illustrations### Newly clarified architecture boundary
+
+Any future architecture or route figure must distinguish the protected-message core, carrier encapsulation, optional transport adapters and optional orchestration. Orchestration may also be shown as a transit participant, but not as the source of transport independence or a mandatory central service. Draw multi-hop routes explicitly and annotate observer exposure at each hop. Image carriage is a required research comparison route, not a mandatory runtime path. External carrier-generation services are optional dependencies, not cryptographic components.
+
+
 
 These figures should be designed only after the manuscript, terminology and supporting research documents have been reconciled. Their order is a reading sequence, not a development or implementation sequence.
 
