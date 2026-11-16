@@ -68,6 +68,10 @@ An active attacker may attempt to inject, alter, replay, delay, suppress, reorde
 
 A compromised sender or recipient device may expose plaintext and keys before encryption or after decryption. Endpoint compromise is outside the protection offered by message encryption alone and must be stated as a limitation.
 
+The observer model must include the stronger integrated-messaging baseline documented in SRC-032. Distinguish: (a) a global passive observer of network connections and traffic patterns; (b) an active adversary able to disrupt or compromise network elements; (c) compromised contacts/readers; (d) individual gateways, mixes, services, couriers and storage replicas; (e) colluding pairs or combinations of those roles; and (f) image-host/social-platform operators with access to account, publication, transformation, moderation and hosting records. These are different observation and control capabilities, not one interchangeable "platform adversary".
+
+The project must compare its assumptions with Echomix's explicit residual leakage: contacts may infer that a writer was online within a latency window; storage replicas may see box identifiers and read/write times; couriers may observe retry rates; and particular colluding roles may combine observations. The paper also notes that correlated human online routines remain relevant. Do not assume that endpoint encryption, variable image placement or carrier uniqueness removes these observations.
+
 ## 5. Attacker capabilities
 
 Unless a later, narrower deployment model says otherwise, assume an attacker may:
