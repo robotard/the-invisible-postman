@@ -1,5 +1,25 @@
 
 
+## 2026-11-16 · Cross-document transport-independence reconciliation
+
+### Completed and read-back verified
+
+- Reconciled the transport-independence and optional-orchestration rule into README, W4, traceability and the diagram index.
+- Added explicit evaluation questions for role conflation, optional coordination, multi-hop observer exposure, protected-object invariance and safe fallback.
+- Updated traceability so optional orchestration is not conflated with the transport adapter or assumed to be mandatory.
+- Updated future diagram guidance to show role boundaries and hop-by-hop observers without implying a central coordinator or image-route requirement at runtime.
+
+### Remaining
+
+- Review exact W3 section numbering and terminology for consistency with traceability references.
+- Populate named, versioned route profiles and source-backed observer events.
+- Re-run repository-wide relative-link, status-string and cross-document consistency checks after route-profile work.
+
+### Verification boundary
+
+Documentation only. No implementation, tests, formal proof or independent audit. Each change must be read back from GitHub before being described as deployed.
+
+
 ## 2026-11-16 · Transport independence and optional orchestration clarification
 
 ### Completed and read-back verified
