@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-16 · confidence/evidence integration"
+checkpoint: "2026-11-16 · thesis argument and route-comparison synthesis"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -51,8 +51,14 @@ next_task: T-001
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "One active manuscript at thesis.md in staging; confidence/evidence framing integrated as a provisional organising principle and initially challenged against SRC-034/SRC-036 source claims. Final contribution and review readiness remain open."
-  research_units: "W1-W4 drafted; aligned message-multiplicity and confidence/evidence definitions, claim boundaries and text-only illustration prompts embedded."
+  thesis: "One active manuscript at thesis.md in staging; central argument, research question, provisional proposition, four contribution strands, research method and initial documentary route comparison integrated. Originality and review readiness remain open."
+  thesis_argument:
+    central_question: "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?"
+    proposition: "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence."
+    contributions: "Responsibility-separated architecture; common route-comparison method; message-relationship/lifecycle analysis; claim-centred evidence discipline."
+    route_synthesis: "Image studies inform media transformation; Dropbox documents shared-link/file-host visibility; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator. Documentary evidence is asymmetric; no overall ranking."
+    limits: "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
+  research_units: "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question."
   source_register: "49 entries, SRC-001 through SRC-049."
   multi_message_model: "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies."
   steganography: "Separates per-carrier concealment, robust watermarking, extraction/reconstruction, collection-level steganalysis and observer linkage. SRC-043–SRC-045 cover multi-image redundancy and batch detection; SRC-049 covers within-GIF frame redundancy."
@@ -88,13 +94,14 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/author record only; full method/evaluation not inspected."
   SRC-049: "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
 next_actions:
-  - "Continue challenging the confidence/evidence model against route observer evidence, protocol delivery semantics and multi-message reconstruction; initial SRC-034/SRC-036 documentary challenge is recorded."
-  - "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036. A further publisher-indexed pass clarified evaluation dimensions and method context, but complete methods, tables and limitations remain unavailable; all three reviews remain partial."
+  - "Continue thesis construction by pinning named/versioned route profiles and integrating source-backed lifecycle/observer evidence into §8; determine whether image carriage has a decision-relevant difference against the integrated baseline."
+  - "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036; all three reviews remain partial until full methods, results and limitations are inspected."
   - "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available."
   - "Review SRC-049 full paper/formal security argument and complete experimental results; selected code has been read but not run or audited."
   - "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before deployed-route claims."
   - "Continue protocol-boundary reconciliation into W2/W3/W4, decision records and thesis; compare Signal, MLS and HPKE without premature primitive selection."
   - "Reconcile new route findings into W1-W4, contribution assessment and integrated thesis."
+  - "Keep confidence/evidence within RQ10; do not reintroduce an eleventh research question or a universal confidence score."
   - "Continue broader terminology and cross-document consistency review."
   - "Use work/lookup/TASKS.md for continuation across research, routes, diagrams, peer review and release work."
 source_review_update:
