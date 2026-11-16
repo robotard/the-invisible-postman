@@ -14,14 +14,14 @@
     "docs/route-comparison-framework.md"
   ],
   "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
-  "current": "W1-W4 and integrated thesis remain working drafts. W3 transport-neutral lifecycle remains in place. Source register has 42 entries. Six evidence-bounded route profiles, documentary comparison and initial lifecycle/event observer ledger exist. SRC-033, SRC-034 and SRC-036 have expanded publisher-indexed partial inspection but remain incomplete; SRC-035 and SRC-037 full text inspected. SRC-038-SRC-042 protocol/service references inspected. A new protocol-boundary analysis covers key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and fallback. No protocol selected, no deployed profile pinned or tested.",
+  "current": "W1-W4 and integrated thesis remain working drafts. Source register has 42 entries. Six evidence-bounded route profiles, documentary comparison and initial lifecycle/event observer ledger exist. SRC-033, SRC-034 and SRC-036 have expanded publisher-indexed partial inspection but remain incomplete; SRC-035 and SRC-037 full text inspected. SRC-038-SRC-042 protocol/service references inspected. Protocol-boundary analysis covers key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and fallback. No protocol selected, no deployed profile pinned or tested. All 27 Markdown files pass the relative-link audit; no ZIP/archive-packaging instructions remain.",
   "next": [
     "Seek complete full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until full methods/results and limitations are inspected.",
     "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
     "Extend the lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; retain unknowns.",
     "Reconcile protocol-boundary analysis into W2/W3/W4, decision records and the thesis; test obligations against Signal, MLS and HPKE references without premature selection.",
     "Reconcile route findings into W1-W4 and the contribution assessment.",
-    "Run a fresh full-tree relative-link, exact-status, terminology and image-reference audit."
+    "Complete the dedicated exact-status, terminology and image-reference consistency audit."
   ],
   "defer": [
     "New diagrams until comparison findings stabilise",
@@ -36,14 +36,14 @@
     "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "Current checkpoint reflects 42 source entries, expanded partial SRC-033/034/036 review, and protocol-boundary analysis; fetched and read-back verified.",
-    "project/WORKPLAN.md": "Roadmap updated to 42 source entries, protocol-boundary integration and thin ChatGPT Project Instructions boundary; fetched and read-back verified.",
-    "project/WORK_LOG.md": "Dated protocol-boundary and expanded indexed-literature review entries added; fetched and read-back verified.",
+    "project/PROJECT_STATE.md": "Current checkpoint reconciles 42 sources, expanded partial source review, protocol analysis and repository audit; read-back verified.",
+    "project/WORKPLAN.md": "42-source roadmap and thin ChatGPT Project Instructions boundary; read-back verified.",
+    "project/WORK_LOG.md": "Protocol analysis, expanded source review and 27-file repository audit recorded; read-back verified.",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
     "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
     "project_state_checkpoint_commit": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
     "digest_readback": "exact content match after final write",
-    "project/SESSION_DIGEST.md": "Refreshed from current working records; fetched and read-back verified.",
+    "project/SESSION_DIGEST.md": "Refreshed from reconciled state/workplan/log; read-back verified.",
     "docs/source-register.md": "SRC-041/SRC-042 added; SRC-033/SRC-034/SRC-036 expanded partial inspection boundaries; fetched and read-back verified.",
     "docs/route-comparison-framework.md": "MRAS/DRAS profile boundaries expanded from publisher-indexed text; fetched and read-back verified.",
     "docs/observer-property-matrix.md": "source-informed observer/property implications added; exact read-back matched",
@@ -54,8 +54,9 @@
     "relative_markdown_link_audit": "26 Markdown files checked against recursive repository tree; no broken relative links found",
     "docs/protocol-boundary-analysis.md": "New research analysis committed and read-back verified; no protocol selected.",
     "docs/w4-risks-and-evaluation.md": "E3/E4 acceptance criteria strengthened for AAD, key separation, nonce uniqueness, rollback, concurrency and retries; fetched and read-back verified.",
-    "repository_markdown_link_audit": "27 Markdown files checked against recursive repository tree in three batches; no broken relative links. README's initial JSON digest false positive was corrected by including the JSON file in the known tree.",
-    "repository_instruction_scan": "All 27 Markdown files scanned: no ZIP/archive-packaging instruction references. ChatGPT Project Instructions boundary is explicit in PROJECT_STATE, WORKPLAN and Markdown digest."
+    "repository_markdown_link_audit": "27 Markdown files checked against recursive repository tree; zero broken relative links.",
+    "repository_instruction_scan": "All 27 Markdown files scanned; no ZIP/archive-packaging instructions remain.",
+    "dedicated_consistency_audit": "Exact-status, terminology and image-reference consistency audit remains outstanding."
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; read back and verify all three; refresh SESSION_DIGEST.md from verified state; refresh SESSION_DIGEST.json last; verify both digests against the three working documents.",
   "checkpoint_commit_before_digest_refresh": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
@@ -123,8 +124,8 @@
     "E2E-SIGNAL-PROTOCOL": "PQXDH revision 3 + Double Ratchet revision 4 protocol reference; not a full Signal Messenger service profile.",
     "MIX-ECHOMIX-PIGEONHOLE": "Echomix arXiv v2 plus current Pigeonhole documentation; no pinned compatible deployment release."
   },
-  "latest_checkpoint_commit": "7ee0db41eb77abc4e7a1a272fd47b48d8250afd1",
-  "latest_checkpoint_blob": "7ee0db41eb77abc4e7a1a272fd47b48d8250afd1",
+  "latest_checkpoint_commit": "15e44f733c276f410490211d808b27c052737691",
+  "latest_checkpoint_blob": "56e80921d0e74e9875f33285126b6fa8a6d317b0",
   "latest_research_commit": "417525a604f481b47618e6b34a3ddeb43b4bdb4e",
   "protocol_analysis": {
     "path": "docs/protocol-boundary-analysis.md",
