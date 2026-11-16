@@ -71,7 +71,8 @@ They are retained unchanged. The active manuscript is thesis.md.
 
 ## Core principles
 
-- Endpoints retain plaintext and private keys.- The protected message is independent of its delivery route; encapsulation adapts only its outer carrier representation.
+- Endpoints retain plaintext and private keys.
+- The protected message is independent of its delivery route; encapsulation adapts only its outer carrier representation.
 - Transport and orchestration are optional functions; services performing both roles are assessed role by role.
 - Multi-hop routes are assessed hop by hop; extra hops do not inherently improve privacy.
 
