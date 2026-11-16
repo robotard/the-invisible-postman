@@ -147,12 +147,13 @@
     "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
   ],
   "verified": {
-    "work/PROJECT_STATE.md": "cbcedf5ab18e8fd3e9a8ce4bfd65afcc11bb9f9b",
-    "work/WORKPLAN.md": "0bf450b974eeadd4d2e7ca02eed40b90e6f550be",
-    "work/WORK_LOG.md": "c1cdeb884b2dc38fbb9c7fc828ca201dab9cd3c1",
+    "work/PROJECT_STATE.md": "500e1bfd5ea8ab4528315857aa97f2bb2086fa65",
+    "work/WORKPLAN.md": "ef94ab14110f4c2a81b0ddc1eada705e795a10ed",
+    "work/WORK_LOG.md": "87bf617ea83ee3fa1ceb8f6e643b9444b7b6dc30",
     "docs/source-register.md": "e3a69287e95ab2ca4e2544b70494ab8a45238485",
-    "work/SESSION_DIGEST.md": "010ea11d9d00f26ab69440a35c705b8c5c2e9fcf",
-    "checkpoint_commit_before_json_refresh": "4a01e21bbb61750cd64e3228d24a82b6e60a4eb0"
+    "work/SESSION_DIGEST.md": "5f586900828dfbe4b7058644b98ab6e516556343",
+    "checkpoint_commit_before_json_refresh": "4a01e21bbb61750cd64e3228d24a82b6e60a4eb0",
+    "thesis.md": "c99790e225a53e4537ff7dd0ae752791bb22b9ae"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
@@ -172,5 +173,14 @@
   "claim_discipline": [
     "Never claim saved, completed, published, deployed, tested, proven or audited without matching evidence.",
     "Distinguish drafted, committed, read-back verified, tested and independently reviewed."
-  ]
+  ],
+  "work_area": {
+    "path": "work/",
+    "lifecycle": "temporary_disposable",
+    "thesis_dependency": null,
+    "internal_ids": "C-### and T-### are internal lookup handles only; never thesis references.",
+    "release_rule": "Verify no enduring file depends on work/; then remove the directory."
+  },
+  "next_task": "T-001",
+  "latest_commit_before_digest_refresh": "256cb9d88791e4161fe1174fde5bc5bc17ce6728"
 }
