@@ -92,6 +92,21 @@ This proposition is deliberately weaker and more conditional than a claim that t
 
 **Theory only · No implementation · Not audited.**
 
+## 9. Image-platform steganography and active transformation prior art
+
+The image-carriage column must be read against a mature and active technical literature, not treated as an empty space. SRC-033 (MRAS, 2026) and SRC-034 (DRAS, 2026) address JPEG robustness under social-network processing, with reported real-platform tests. SRC-035 compares robust methods under simulated and practical social-network channels. SRC-036 studies image processing designed to destroy robust hidden payloads while preserving image quality. SRC-037 surveys image embedding and detection research.
+
+| Property | Established research coverage | Consequence for this project |
+|---|---|---|
+| JPEG recompression survival | MRAS and DRAS propose methods targeted at social-platform recompression; earlier comparative work measures real service behaviour. | Payload survival alone is not a novel contribution. Evaluate the specific route and transformations independently. |
+| Multiple/unknown channel operations | Comparative work identifies gaps between simplified compression models and real platform channels. | Name and version every platform path; do not extrapolate a single JPEG quality factor to an entire platform. |
+| Active payload removal | Learned image-processing attacks have been proposed to remove hidden data while maintaining image quality. | Treat carrier transformation as potentially adversarial; extraction success must be tested after realistic and adversarial processing. |
+| Steganalysis | A broad survey covers embedding and detection approaches. | Declare detector, dataset, payload, cover source, operating point and false-positive/negative measures. |
+| End-to-end message semantics | These carrier-focused works do not by themselves establish sender authentication, recipient authentication, freshness, context binding or secure reassembly. | Keep endpoint security claims separate from carrier robustness and concealment. |
+| Discovery and observer privacy | The cited carrier works do not establish private recipient discovery, anonymous retrieval or protection from platform account/engagement records. | Evaluate those as distinct lifecycle properties, without assuming the absence of coverage in one paper establishes novelty. |
+
+The route-comparison study must separate extraction reliability, detectability, endpoint authenticity/integrity and observer privacy. These are not interchangeable outcomes.
+
 ## 8. Integrated comparator · Echomix / Katzenpost
 
 Echomix is included as an integrated messaging system, not merely a mix-network transport. The full paper (SRC-032) combines a global and active adversary model, decoy/application traffic coupling, anonymous service access, BACAP capability-derived storage locations, Pigeonhole asynchronous messaging, courier/replica separation, reliability and backfill semantics, tombstones, and role-collusion analysis.
