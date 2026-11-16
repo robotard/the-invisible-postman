@@ -444,6 +444,26 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 - **Does not establish:** A complete asynchronous messaging service, application identity ceremony, general replay protection, loss-tolerant delivery, product metadata privacy or the project's selected protocol. Base mode does not authenticate the remote party.
 - **Review state:** Full RFC text inspected, including Sections 5.1–5.3 and 9.7. No implementation or application protocol built.
 
+### SRC-043 · Covert Communication through Robust Fragment Hiding in a Large Number of Images
+
+- **Source:** Wang, P., Zhong, H., Feng, Y., Gong, L., Tang, Y., Lu, Z.-M. and Wang, L. (2024), *Covert Communication through Robust Fragment Hiding in a Large Number of Images*. Sensors, 24(2), 627.
+- **DOI:** https://doi.org/10.3390/s24020627
+- **Publisher/status:** Peer-reviewed open-access journal article; full publisher HTML inspected.
+- **Relevant to:** Thesis §§7–8; W1 RQ4/RQ6/RQ7; W2 fragment mixing, carrier loss and platform observers; W3 multipart/carrier adapters; W4 E5/E6/E9.
+- **Supports:** A direct multi-image covert-communication comparator. It fragments a secret file, embeds fragment number and content in images, redundantly embeds each fragment across multiple carriers, and reconstructs by collecting enough stego images. Its proposed carrier method combines DFT-based synchronisation and DCT-based embedding, with error-correction/header mechanisms. The authors report recovery under stated rotation/scaling/cropping and carrier-loss experiments, including complete recovery with 30% of received images lost and partial recovery under higher loss.
+- **Does not establish:** Endpoint cryptographic identity, authenticated sender/recipient/session binding, modern end-to-end message protocol semantics, privacy-preserving discovery, collection-level undetectability, or universal performance across current platforms. The paper's own text distinguishes robust watermarking from steganography; its recovery results must not be treated as proof of stealth. Author-reported experiments were not independently reproduced.
+- **Review state:** Full publisher HTML inspected, including abstract, motivation, framework, fragment numbering/redundancy, DFT/DCT embedding approach and reported experiment summary. The paper's scope and terminology distinctions are recorded; no implementation or result was reproduced.
+
+### SRC-044 · Batch Steganography and Pooled Steganalysis
+
+- **Source:** Ker, A. D. (2007), *Batch Steganography and Pooled Steganalysis*. In: Information Hiding, Lecture Notes in Computer Science, vol. 4437, pp. 265–281. Springer.
+- **Publisher/status:** Peer-reviewed conference proceedings paper; full paper PDF inspected.
+- **Link:** https://www.cs.ox.ac.uk/people/andrew.ker/docs/ADK18D.pdf
+- **Relevant to:** Thesis §8; W1 RQ6/RQ7; W2 collection-level observer model; W4 E6 and multi-carrier evaluation.
+- **Supports:** A warden can combine imperfect per-object steganalysis statistics across a batch. The paper formalises batch embedding and pooled detection, analyses alternative pooling strategies, and validates selected results using LSB replacement and large simulation runs. Its abstract reports that, under its model, secure capacity increases only with the square root of the number of objects and that pooled steganalysis can detect small proportionate payloads with high reliability.
+- **Does not establish:** The same quantitative result for modern adaptive JPEG methods, social-platform processing, robust watermarking, arbitrary cover distributions or this project's proposed carriers. Its theoretical and experimental assumptions must be retained; the numerical result is not transferred as a universal law.
+- **Review state:** Full paper inspected, including problem formulation, shift assumptions, pooling strategies, theoretical results and LSB simulation section. No experiment was independently reproduced.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
