@@ -29,7 +29,7 @@ The latest verified architecture reconciliation keeps transport independence and
 - **W0.2:** Research-practice, self-review and contributor-governance documents exist. Routine review administration is deferred; external review has not occurred.
 - **Prior art:** 40 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work, Echomix/Katzenpost, Signal protocol specifications and Dropbox shared-link documentation.
 - **Architecture:** Endpoint message protection, carrier encapsulation, transport adapters and optional orchestration are distinct functions. One service may perform several roles; analyse each role separately.
-- **Route method:** A common lifecycle/event and observer framework now includes six evidence-bounded starting profiles (three image literature profiles, Dropbox shared-link file hosting, Signal protocol reference, and Echomix/Pigeonhole). An initial documentary comparison matrix has been added; the profiles are not yet all pinned to live product releases or deployed test configurations.
+- **Route method:** A common lifecycle/event and observer framework now includes six evidence-bounded starting profiles (three image literature profiles, Dropbox shared-link file hosting, Signal protocol reference, and Echomix/Pigeonhole). An initial documentary comparison matrix and lifecycle/event observer ledger have been added; the profiles are not yet all pinned to live product releases or deployed test configurations.
 - **Latest reconciliation:** README, W4, traceability and diagram index reflect transport independence, optional orchestration, hop-by-hop observer exposure and protected-object invariance.
 
 ## Active work, in priority order
@@ -45,7 +45,7 @@ The latest verified architecture reconciliation keeps transport independence and
 
 - W1–W4 are drafted; final alignment against the integrated thesis remains open.
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
-- An initial named profile register and documentary comparison exist. Product-level version pinning, route-specific service evidence and the full lifecycle/observer ledger remain incomplete.
+- An initial named profile register, documentary comparison and lifecycle/event observer ledger now exist. Product-level version pinning, route-specific service evidence and full observer/collusion detail remain incomplete.
 - SRC-033, SRC-034 and SRC-036 remain partial reviews because full article text was not accessible in this pass; SRC-035 and SRC-037 are full-text inspected.
 - A relative-link audit covered all 26 Markdown files in the current repository tree and found no broken relative links. The full exact-status/terminology and image-reference audit remains outstanding.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
@@ -62,7 +62,7 @@ The latest verified architecture reconciliation keeps transport independence and
 1. Apply the Continue/resume contract above and refresh the live digests and working records.
 2. Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until methods/results are inspected.
 3. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
-4. Expand the documentary comparison into the full lifecycle/event/observer ledger, including discovery, retrieval, retries, expiry and collusion.
+4. Extend the initial lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; keep unknowns explicit.
 5. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis; continue protocol-level analysis of nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback.
 6. Complete exact-status, terminology, image-reference and cross-document consistency audits. The static relative-link audit across all 26 Markdown files found no broken links.
 
