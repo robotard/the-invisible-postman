@@ -112,7 +112,10 @@ The proposed design should be evaluated against the following goals:
 8. **Secret hygiene:** Plaintext, private keys, recovery secrets, and authentication material must not be exposed through logs or routine diagnostics.
 9. **Explicit residual risk:** Metadata exposure, availability failures, endpoint compromise, and possible concealment detection must be documented.
 
-These are target properties, not claims that the current proposal satisfies them.
+10. **Evidence-bounded claims:** The system and its evaluators must distinguish what each verifier can establish from what remains unknown, inferred or outside its vantage. Missing, stale, unavailable, contradictory and failed evidence must not be represented as success.
+11. **No confidence inflation:** Status labels must not collapse authenticity, identity assurance, integrity, completeness, delivery, reading or truth into one generic "verified" state. Any claim must identify its scope, evidence provenance, assumptions and freshness.
+
+These are target properties, not claims that the current proposal satisfies them. The [confidence and evidence model](confidence-and-evidence-model.md) defines the claim-centred approach and the limits of transport acknowledgements, fragment evidence and observer inference.
 
 > **DEFINITION · Observer-visible linkage**  
 > Linkage is an observer's ability to associate two or more carriers, fragments, publication/retrieval events, logical messages or participants. It may arise from explicit identifiers, timing, size, account/device provenance, image similarity, embedding artefacts, discovery requests or access patterns. Payload encryption does not conceal these relationships by itself.
@@ -164,6 +167,9 @@ These are target properties, not claims that the current proposal satisfies them
 | Recovery collusion or theft | Unauthorized key reconstruction | Specify threshold, participant authentication, share protection, collusion assumptions, and recovery auditing |
 | Endpoint compromise | Plaintext or keys are stolen | State as a residual risk; define device security and key revocation/rotation procedures |
 | Expiry/revocation overclaim | Users believe copied plaintext can be recalled | State that already obtained data cannot reliably be revoked remotely |
+| Evidence substitution or confidence inflation | A service acknowledgement, valid signature, search result or partial fragment is presented as proof of a stronger event or proposition | Bind every claim to the precise evidence and verifier; distinguish key attribution, identity, set completeness, endpoint receipt, decryption and human reading |
+| Stale or revoked evidence | A previously valid key or receipt is treated as current after compromise, revocation or context change | Include freshness, key epoch, revocation and scope; expire or qualify prior judgements |
+| Evidence-ledger privacy leakage | Verification records or stable receipts expose participants, message relationships or access patterns | Prefer endpoint-local evidence and minimal disclosure; justify any shared record's recipient, retention and linkability |
 
 The table identifies work to be done. It does not imply that a mitigation has already been implemented or validated.
 
