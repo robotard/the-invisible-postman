@@ -1,3 +1,33 @@
+## 2026-11-16 · Expanded prior-art comparison and first lifecycle observer/property matrix
+
+### Completed and read-back verified
+
+- Re-read the live `main` branch, current session digest, thesis and all three governing working documents before substantive work.
+- Inspected the full IACR-hosted paper *Group Oblivious Message Retrieval* (Liu, Tromer and Wang, 2024), including its formal group models, privacy and DoS definitions, constructions, benchmarks, and scope boundaries.
+- Inspected the full USENIX Security 2026 paper *Remise: Authorized Anonymous Communication Systems*, including its two-server DORAM model, global network observer, non-collusion and semi-honest server assumptions, cover traffic, out-of-band read-token distribution, evaluation and limitations.
+- Added SRC-030 (GOMR) and SRC-031 (Remise) to the source register. The register now contains 31 entries; both new sources are marked full-text inspected, with explicit limits and no claim of reproduced results.
+- Created [docs/observer-property-matrix.md](../docs/observer-property-matrix.md), comparing OMR/GOMR, OMR variants, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert messaging across publication, discovery, retrieval, collection, media transformation, decapsulation, endpoint validation, human behaviour and active attack/availability.
+- Extended [docs/prior-art-comparison.md](../docs/prior-art-comparison.md) with the GOMR and Remise comparison and materially narrowed Candidate B. Generic lifecycle-wide privacy, group retrieval, anonymous publication and private access control cannot be claimed as new.
+- Integrated the comparison and matrix into the active thesis, W1, W2, W3, W4, traceability, README, diagram index and source register.
+- Read back every changed or created file after each successful GitHub write.
+
+### Material research findings
+
+- GOMR establishes that group recipient privacy and group oblivious retrieval are already formally studied; authenticated contact/key distribution, application payload encryption and privacy-preserving board publication remain outside its scope.
+- Remise establishes a two-server DORAM model for anonymous publication and authorised communication channels with hidden access patterns and revocable reader permissions. Its privacy requires server non-collusion; integrity assumes protocol-following servers; it uses out-of-band read-token distribution and semi-honest servers, and acknowledges malicious-server write suppression.
+- The research gap is now narrower: a possible analysis of compatibility and leakage where endpoint-authenticated message semantics meet external media-carrier transformation, platform/network observers, decapsulation and human behaviour. This remains an unproven research direction, not an originality claim.
+- The matrix is a working comparison, not a ranking, systematic review or proof of completeness. No implementations, benchmarks, tests, formal proofs or independent reviews were performed.
+
+### Parked next action
+
+Extend the matrix with the closest mix-network and anonymous-messaging systems where observer assumptions, cover traffic and timing materially affect the proposed route. Then map explicit leakage/observer views across the project's lifecycle, identify at least one concrete cross-layer incompatibility or falsifiable comparison result, and revise or retire Candidate B accordingly. Reconcile any material result into thesis §§3, 5, 8 and 10; W1–W4; traceability; and source register. Keep new diagrams deferred until the argument stabilises.
+
+**Repository state:** `main`; all listed edits were committed and read back. No full-tree link audit was run in this batch.
+
+**Theory only · No implementation · Not audited.**
+
+---
+
 ## 2026-11-15 · Method correction and mandatory session continuity rule
 
 - Withdrew the premature confirmatory framing of the developing central research direction. The preferred term is **emergent proposition**; originality remains unestablished.
