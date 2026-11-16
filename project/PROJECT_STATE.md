@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · Transport-neutral lifecycle and initial route-profile comparison  
+**Checkpoint:** 2026-11-16 · Protocol boundary analysis integrated with architecture, thesis and evaluation  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -21,7 +21,7 @@ Use GitHub work documents as the project continuity source. Do not make the user
 
 The repository has a coherent working thesis, W1–W4 research documents, a threat model, decision and traceability registers, prior-art comparisons, an observer/property matrix and a common route-comparison framework. These are substantive drafts, not a finished or independently reviewed thesis.
 
-The latest verified architecture reconciliation keeps transport independence and optional orchestration explicit across the architecture, thesis, W4, traceability, README and diagram guidance. The protected message remains logically invariant across routes unless an explicit authenticated conversion is specified. Image carriage remains a required research comparison, not a mandatory runtime route. The latest research pass completed full-text inspection of SRC-035 and SRC-037 and bounded partial inspection of SRC-033, SRC-034 and SRC-036. SRC-038–SRC-040 add current Signal protocol, Dropbox file-host and Katzenpost Pigeonhole documentation. Their limitations and profile boundaries are recorded in the source register and route framework.
+The latest verified architecture reconciliation keeps transport independence and optional orchestration explicit across the architecture, thesis, W4, traceability, README and diagram guidance. The protected message remains logically invariant across routes unless an explicit authenticated conversion is specified. Image carriage remains a required research comparison, not a mandatory runtime route. The latest research pass completed full-text inspection of SRC-035 and SRC-037 and bounded partial inspection of SRC-033, SRC-034 and SRC-036. SRC-038–SRC-040 add current Signal protocol, Dropbox file-host and Katzenpost Pigeonhole documentation. SRC-041–SRC-042 add RFC 5869 (HKDF) and RFC 9180 (HPKE) as protocol-construction references. A protocol-boundary analysis now records key scope, salt/info separation, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback; it does not select a protocol.
 
 ## Completed baseline
 
@@ -29,6 +29,7 @@ The latest verified architecture reconciliation keeps transport independence and
 - **W0.2:** Research-practice, self-review and contributor-governance documents exist. Routine review administration is deferred; external review has not occurred.
 - **Prior art:** 40 source-register entries; comparisons include OMR/GOMR, Oblivious Signaling, Remise, dead-drop messaging, image-diffusion work, Echomix/Katzenpost, Signal protocol specifications and Dropbox shared-link documentation.
 - **Architecture:** Endpoint message protection, carrier encapsulation, transport adapters and optional orchestration are distinct functions. One service may perform several roles; analyse each role separately.
+- **Protocol boundaries:** `docs/protocol-boundary-analysis.md` now translates open cryptographic composition questions into explicit design obligations. HKDF salt and `info` are distinguished; HPKE is a comparator, not a selected messaging protocol.
 - **Route method:** A common lifecycle/event and observer framework now includes six evidence-bounded starting profiles (three image literature profiles, Dropbox shared-link file hosting, Signal protocol reference, and Echomix/Pigeonhole). An initial documentary comparison matrix and lifecycle/event observer ledger have been added; the profiles are not yet all pinned to live product releases or deployed test configurations.
 - **Latest reconciliation:** README, W4, traceability and diagram index reflect transport independence, optional orchestration, hop-by-hop observer exposure and protected-object invariance.
 
@@ -38,8 +39,9 @@ The latest verified architecture reconciliation keeps transport independence and
 2. **Source review:** Seek full text for the remaining portions of SRC-033, SRC-034 and SRC-036 where access permits. SRC-035 and SRC-037 have now had full publisher/repository text inspected; no underlying experiment was reproduced.
 3. **Architecture alignment:** Check W3 section numbering and terminology against traceability and the thesis.
 4. **Protocol questions:** Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without prematurely selecting a protocol.
-5. **Audit:** After substantive edits, run repository-wide relative-link, exact-status and cross-document consistency checks.
-6. **Thesis integration:** Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
+5. **Protocol alignment:** Integrate the new protocol-boundary analysis into W2/W3/W4, key-lifecycle reasoning and the contribution assessment; keep primitive and protocol selection open.
+6. **Audit:** After substantive edits, run repository-wide relative-link, exact-status and cross-document consistency checks.
+7. **Thesis integration:** Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
 
 ## State and blockers
 
@@ -62,13 +64,14 @@ The latest verified architecture reconciliation keeps transport independence and
 1. Apply the Continue/resume contract above and refresh the live digests and working records.
 2. Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until methods/results are inspected.
 3. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
-4. Extend the initial lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; keep unknowns explicit.
-5. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis; continue protocol-level analysis of nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback.
-6. Complete exact-status, terminology, image-reference and cross-document consistency audits. The static relative-link audit across all 26 Markdown files found no broken links.
+4. Extend the lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; keep unknowns explicit.
+5. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test the obligations against Signal, MLS and HPKE references without premature selection.
+6. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis.
+7. Complete exact-status, terminology, image-reference and cross-document consistency audits. The previous static relative-link audit across all 26 Markdown files found no broken links; rerun it after these additions.
 
 ## Document-boundary rule
 
-The status label below is project metadata describing the repository's verified maturity. It is not a universal conversational instruction or a restriction on research activity. Research principles, substantive arguments, contribution assessments and technical reasoning belong in the thesis and research-supporting documents. Operational documents record verified status, priorities, dependencies and next actions, and link to research material rather than reproducing its exposition. The same distinction applies to assistant working notes and session handovers.
+The status label below is project metadata describing the repository's verified maturity. It is not a universal conversational instruction or a restriction on research activity. Research principles, substantive arguments, contribution assessments and technical reasoning belong in the thesis and research-supporting documents. Operational documents record verified status, priorities, dependencies and next actions, and link to research material rather than reproducing its exposition. The same distinction applies to assistant working notes and session handovers. ChatGPT Project Instructions are a thin operating layer for continuation, execution and verification; they follow the live GitHub records and do not replace or duplicate the substantive research rules. The actual ChatGPT Project Instructions are managed outside this repository; repository updates document their intended boundary rather than claiming to edit ChatGPT settings.
 
 ## Governing constraints
 
