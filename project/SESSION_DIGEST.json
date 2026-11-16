@@ -12,10 +12,11 @@
   ],
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
   "priority": [
-    "W0.3 research-source reconciliation: complete full-text review of SRC-033–SRC-037 and map exact limits into claims",
-    "W6 integrated thesis construction using the route comparison framework",
-    "Populate named, versioned image-platform, file/attachment, conventional messaging and mixnet-backed route profiles",
-    "Map lifecycle events to actual observer views and determine measurable, decision-relevant differences without presuming an outcome"
+    "Reconcile D-12 transport independence and optional orchestration across W4, traceability, README and diagrams index",
+    "Complete full-text review of SRC-033–SRC-037 and update source review states",
+    "Select named, versioned image-platform, file/attachment, conventional messaging and Echomix/Katzenpost route profiles",
+    "Populate hop-by-hop event/observer comparisons and identify measurable differences without presuming an outcome",
+    "Review nonce, salt, key-scope, identity/context binding, replay and fallback requirements at protocol-design level"
   ],
   "defer": [
     "routine author review unless blocking or materially corrective",
@@ -24,14 +25,12 @@
     "implementation"
   ],
   "next": [
-    "Read SRC-037 in full; inspect full methods/results for SRC-033 and SRC-034 where access permits, and update review states",
-    "Select named, versioned profiles for one image platform, one encrypted file/attachment route, one conventional E2E messaging route and the Echomix/Katzenpost baseline",
-    "Populate docs/route-comparison-framework.md with source-backed properties; mark unverified platform behaviours and non-comparable fields explicitly",
-    "Define a common logical message task and event-by-observer ledger, preserving route-native guarantees and assumptions",
-    "Separate extraction reliability, steganalysis detectability, endpoint authenticity/integrity, discovery privacy, observer leakage and operational cost",
-    "Determine which platform transformation measurements can be responsibly performed within the theory-only scope; do not imply tests have occurred",
-    "Reconcile material findings into thesis §§3, 8 and 10; W1-W4; source register; traceability and contribution assessment",
-    "Keep new illustrations deferred until the comparative argument stabilises",
+    "Fetch and reconcile W4, traceability, README and diagram index with D-12",
+    "Review source methods/results for SRC-033–SRC-037 and update evidence status",
+    "Choose named, versioned route profiles with source-backed configurations",
+    "Populate route framework with role-separated observer views for each hop, including optional orchestration and external carrier generation",
+    "Record protected-object invariance and any route-specific conversion assumptions",
+    "Continue thesis integration and only then stabilise diagrams",
     "At session close reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md, then refresh this digest last"
   ],
   "open": [
@@ -43,7 +42,11 @@
     "reliability signalling, retries, backfills and residual leakage",
     "human routine correlation and usable-security evidence",
     "multipart parser/resource-exhaustion limits",
-    "whether image carriage provides a measurable, decision-relevant benefit"
+    "whether image carriage provides a measurable, decision-relevant benefit",
+    "role-specific service contracts and optional orchestration",
+    "hop-by-hop observer views and multi-hop correlation",
+    "protected-object invariance and any authenticated route conversion",
+    "safe fallback/retry semantics and route-selection policy"
   ],
   "invariants": [
     "Image carriage remains a required research route; transport is not the whole thesis",
