@@ -393,6 +393,7 @@ The following sources are cited in the current working text. This list is provis
 - IPTC Photo Metadata Working Group. (2025). *IPTC Photo Metadata Standard 2025.1*. https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata-2025.1.html
 - Josefsson, S., & Liusvaara, I. (2017). *Edwards-Curve Digital Signature Algorithm (EdDSA)* (RFC 8032). IRTF. https://www.rfc-editor.org/rfc/rfc8032
 - Krawczyk, H., & Eronen, P. (2010). *HMAC-based Extract-and-Expand Key Derivation Function (HKDF)* (RFC 5869). IETF. https://www.rfc-editor.org/rfc/rfc5869
+- Barnes, R., Bhargavan, K., Lipp, B., & Wood, C. (2022). *Hybrid Public Key Encryption* (RFC 9180). IETF. https://www.rfc-editor.org/rfc/rfc9180
 - Kret, E., & Schmidt, R. (2023; updated 2024). *The PQXDH Key Agreement Protocol* (Revision 3). Signal. https://signal.org/docs/specifications/pqxdh/
 - Langley, A., Hamburg, M., & Turner, S. (2016). *Elliptic Curves for Security* (RFC 7748). IETF. https://www.rfc-editor.org/rfc/rfc7748
 - Li, C.-Y. (2026). Identity Leakage in Encrypted IM Call Services: An Empirical Study of Metadata Correlation. *Future Internet, 18*(1), Article 12. https://doi.org/10.3390/fi18010012
