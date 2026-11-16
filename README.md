@@ -5,9 +5,13 @@ Researcher: `@robotard`
 
 > **Status: Theory only · No implementation · Not audited.**
 
-This repository documents a theory-led investigation into endpoint-controlled cryptographic messaging. The architecture distinguishes endpoint message protection, carrier encapsulation, optional transport adapters and optional orchestration. Orchestration may coordinate delivery and may itself participate in transit, but is not mandatory and does not define transport independence. Image carriage is a required research comparison route, not a mandatory runtime path.
+This repository documents a theory-led investigation into endpoint-controlled cryptographic messaging. The thesis is the sole product: `thesis.md` is the one active manuscript in staging, and production is a frozen release of that same thesis after evidence reconciliation and substantive peer scrutiny, not a separate thesis or parallel product. The architecture distinguishes endpoint message protection, carrier encapsulation, optional transport adapters and optional orchestration. Orchestration may coordinate delivery and may itself participate in transit, but is not mandatory and does not define transport independence. Image carriage is a required research comparison route, not a mandatory runtime path.
 
  It develops the reasoning from the initial password-and-image concept through identity and key trust, cryptographic composition, message structure, trust boundaries, carriage methods, lifecycle, recovery, privacy, usability and evaluation. Image carriage is a required research route, while other carriage methods provide comparison profiles. Transport is important, but it is one part of the full thesis rather than the organising principle for every security question.
+
+## Thesis product and development lifecycle
+
+The thesis is the thesis. There is one continuous manuscript and one research identity. Staging is the active development state of `thesis.md`; production is a frozen release of that same thesis after the relevant evidence, coherence, figure, provenance and peer-review requirements have been addressed. Neither state creates a second thesis. The temporary `work/` directory stores actionable work required to develop, scrutinise and release the thesis; it is not part of the thesis product and is intended to be removed after release.
 
 ## What this repository is
 
@@ -30,8 +34,9 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 
 ## Start here
 
-1. [Workplan](work/WORKPLAN.md) — stable roadmap and work-unit definitions.
-2. [Project state](work/PROJECT_STATE.md) — changing, verified checkpoint.
+1. [Workplan](work/WORKPLAN.md) — research-development sequence, dependencies and quality gates.
+2. [Internal work backlog](work/lookup/TASKS.md) — short continuation keys for research, route analysis, thesis synthesis, diagrams, peer review and release integrity.
+3. [Project state](work/PROJECT_STATE.md) — changing, verified checkpoint.
 3. [Integrated thesis](thesis.md) — active thesis manuscript.
 4. [Research practice](docs/research-practice.md) — critical self-examination, peer discussion, dissent and contribution principles.
 5. [Initial self-review register](docs/self-review-register.md) — author-identified challenges and evidence needs, open to independent criticism.
