@@ -386,6 +386,8 @@ The following sources are cited in the current working text. This list is provis
 - Piotrowska, A. M., Hayes, J., Elahi, T., Meiser, S., & Danezis, G. (2017). The Loopix Anonymity System. In *Proceedings of the 26th USENIX Security Symposium* (pp. 1199–1216). USENIX Association. https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/piotrowska
 - Steinmetz, K. F., Pimentel, A., & Goe, W. R. (2021). Performing social engineering: A qualitative study of information security deceptions. *Computers in Human Behavior, 124*, Article 106930. https://doi.org/10.1016/j.chb.2021.106930
 - Tor Project. (n.d.). *Tor Rendezvous Specification – Version 3*. https://spec.torproject.org/rend-spec/rendezvous-protocol.html
+- Liu, Z., Tromer, E., & Wang, Y. (2024). Group Oblivious Message Retrieval. In *Proceedings of the 45th IEEE Symposium on Security and Privacy* (pp. 4367–4385). https://doi.org/10.1109/SP54263.2024.00115
+- Ravi, R., Shukla, P., & Vadapalli, A. (2026). Remise: Authorized Anonymous Communication Systems. In *Proceedings of the 35th USENIX Security Symposium* (pp. 3199–3218). https://www.usenix.org/conference/usenixsecurity26/presentation/ravi-rohan
 - Liu, Z., & Tromer, E. (2022). Oblivious Message Retrieval. In *Advances in Cryptology – CRYPTO 2022*, Lecture Notes in Computer Science 13507, 751–781. https://doi.org/10.1007/978-3-031-15802-5_26
 - Go project. (2023). *net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption* (CVE-2023-24536), issue #59153. https://github.com/golang/go/issues/59153
 
@@ -418,6 +420,7 @@ Distinguish **established mechanisms** (properties supported by recognised const
 - `docs/self-review-register.md` — author-identified challenges and evidence needs.
 - `docs/traceability.md` — links between research questions, threats, components and evaluation.
 - `docs/source-register.md` — authoritative technical sources, protocol comparators, metadata standards and claim-to-source gaps.
+- `docs/prior-art-comparison.md` and `docs/observer-property-matrix.md` — current prior-art synthesis and lifecycle observer/property comparison.
 - `project/WORKPLAN.md` and `project/PROJECT_STATE.md` — roadmap and verified checkpoint.
 
 ## Appendix D. Illustration guide
