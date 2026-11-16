@@ -47,7 +47,7 @@ The research explores whether a clear separation of responsibilities can make th
 
 ### 1.4 Research approach
 
-This is theory-led architectural research. It proceeds by making the proposition explicit, separating properties that are often conflated, examining alternatives, modelling adversaries and failure modes, and deriving evaluation questions from the stated requirements and design choices.
+This is theory-led architectural research. It proceeds by stating the research question and design objectives, separating properties that are often conflated, examining alternatives, modelling adversaries and failure modes, and deriving evaluation questions from the stated requirements and design choices.
 
 The method is iterative rather than confirmatory. A design choice is not treated as correct because it is elegant, familiar or already recorded in the repository. Each choice must state the problem it addresses, the assumptions it needs, the alternatives considered, the costs it introduces and the evidence that could challenge it. Where evidence is absent, the document must say so. Where a decision is unresolved, the thesis must preserve that uncertainty rather than fill it with an attractive guess.
 
@@ -107,13 +107,13 @@ The intended contribution is a transparent research architecture that:
 
 The research includes endpoint-controlled key custody and plaintext handling; explicit peer verification; authenticated key establishment; authenticated encryption; sender authentication; versioned message context; envelope and multipart validation; a first-class carriage layer; image carriage as a required route; comparison carriage profiles; optional steganographic concealment; intermediary coordination; metadata minimisation; discovery and collection; expiry, revocation and key rotation; and the possible inclusion of separately governed recovery.
 
-### 3.5 Integrated anonymous-messaging comparators
+### 3.4 Integrated anonymous-messaging comparators
 
 Echomix/Katzenpost is a particularly important integrated comparator. Its published design combines a global and active adversary model, decoy/application traffic coupling, anonymous service access, capability-derived pseudorandom storage locations, asynchronous messaging, courier/replica separation, reliability and backfill semantics, and role-collusion analysis. This means the intended contribution cannot be framed as a new general integration of endpoint messaging, private discovery, anonymous delivery and lifecycle privacy. Those areas already have substantial integrated prior art.
 
 The remaining route-specific question is narrower: how does a common endpoint-protected message object behave when carried through ordinary image platforms, including resizing, recompression, transcoding, metadata rewriting, moderation, file identifiers, hosting records and account/engagement observations? Echomix is not an ordinary social-image-carriage study, but that difference does not establish originality. The project must compare image carriage with file/attachment, conventional messaging and mixnet-backed messaging under explicit observer capabilities and route-native assumptions. See the [Echomix comparator](docs/echomix-katzenpost-comparator.md), [prior-art comparison](docs/prior-art-comparison.md) and [observer/property matrix](docs/observer-property-matrix.md).
 
-### 3.4 Non-goals and exclusions
+### 3.5 Non-goals and exclusions
 
 This thesis does not claim a functioning application, complete wire protocol, formal verification, measured steganographic robustness, guaranteed anonymity, elimination of metadata leakage, guaranteed delivery, endpoint-compromise resistance, remote erasure of material already obtained, or a complete recovery design. It does not claim that a unique image is inherently unpredictable, anonymous or unlinkable. It does not claim that removing image metadata removes network or hosting records.
 
@@ -395,13 +395,13 @@ The following sources are cited in the current working text. This list is provis
 - Steinmetz, K. F., Pimentel, A., & Goe, W. R. (2021). Performing social engineering: A qualitative study of information security deceptions. *Computers in Human Behavior, 124*, Article 106930. https://doi.org/10.1016/j.chb.2021.106930
 - Tor Project. (n.d.). *Tor Rendezvous Specification – Version 3*. https://spec.torproject.org/rend-spec/rendezvous-protocol.html
 - Liu, Z., Tromer, E., & Wang, Y. (2024). Group Oblivious Message Retrieval. In *Proceedings of the 45th IEEE Symposium on Security and Privacy* (pp. 4367–4385). https://doi.org/10.1109/SP54263.2024.00115
-- Ravi, R., Shukla, P., & Vadapalli, A. (2026). Remise: Authorized Anonymous Communication Systems.
+- Ravi, R., Shukla, P., & Vadapalli, A. (2026). *Remise: Authorized Anonymous Communication Systems*. In *Proceedings of the 35th USENIX Security Symposium* (pp. 3199–3218). USENIX Association. https://www.usenix.org/conference/usenixsecurity26/presentation/ravi-rohan
 - Kumar, R., Bansal, S., & Bansal, R. K. (2026). MRAS: a matching robust adaptive steganography scheme for JPEG images over social networking platforms. *Signal Processing*, article 110172. https://doi.org/10.1016/j.sigpro.2025.110172
 - Kumar, R., Bansal, S., & Bansal, R. K. (2026). Dealing with downward recompression for robust steganography in high quality JPEG images. *Journal of Visual Communication and Image Representation*, 118, 104817. https://doi.org/10.1016/j.jvcir.2026.104817
 - Qiao, T., Xu, S., Wang, S., Wu, X., Liu, B., Zheng, N., Xu, M., & Pan, B. (2023). Robust steganography in practical communication: a comparative study. *EURASIP Journal on Image and Video Processing*, 2023, 15. https://doi.org/10.1186/s13640-023-00615-y
 - Zhu, Z., Li, S., Qian, Z., & Zhang, X. (2021). Destroying robust steganography in online social networks. *Information Sciences*, 581, 605–619. https://doi.org/10.1016/j.ins.2021.10.023
 - Kombrink, M. H., Geradts, Z. J. M. H., & Worring, M. (2025). Image steganography approaches and their detection strategies: a survey. *ACM Computing Surveys*, 57(2), Article 33. https://doi.org/10.1145/3694965
-- Infeld, E. J., Stainton, D., Ryge, L., & Threebit Hacker. (2025). *Echomix: a Strong Anonymity System with Messaging* (arXiv:2501.02933v2; paper dated October 2024). https://arxiv.org/abs/2501.02933 In *Proceedings of the 35th USENIX Security Symposium* (pp. 3199–3218). https://www.usenix.org/conference/usenixsecurity26/presentation/ravi-rohan
+- Infeld, E. J., Stainton, D., Ryge, L., & Threebit Hacker. (2025). *Echomix: a Strong Anonymity System with Messaging* (arXiv:2501.02933v2; paper dated October 2024). https://arxiv.org/abs/2501.02933
 - Liu, Z., & Tromer, E. (2022). Oblivious Message Retrieval. In *Advances in Cryptology – CRYPTO 2022*, Lecture Notes in Computer Science 13507, 751–781. https://doi.org/10.1007/978-3-031-15802-5_26
 - Go project. (2023). *net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption* (CVE-2023-24536), issue #59153. https://github.com/golang/go/issues/59153
 
