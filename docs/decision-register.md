@@ -137,3 +137,17 @@ This register records why significant design choices were made, changed, narrowe
 **Open work:** Define the passenger-side topology and its exact agreement properties; define the train's narrow service contract; specify the encapsulation boundary and authenticated fields; distinguish transport metadata from message semantics; and evaluate loss, transformation, substitution, replay, route changes and extraction failure. Do not infer anonymity from the phrase "anonymous agreement" without a precise threat model and protocol definition.
 
 Theory only · No implementation · Not audited.
+
+## D-12 · Transport-independent protected message and optional orchestration
+
+**Status:** Adopted architectural clarification; protocol and deployment choices remain open.
+
+**Decision:** Separate endpoint message protection, carrier encapsulation, transport and orchestration. The endpoint-protected message is logically and cryptographically independent of its route. Encapsulation adapts only the outer carrier representation and returns the protected object for endpoint validation. Transport adapters are optional. Orchestration is optional coordination; it does not define transport independence and may itself also be a transit participant. If one service performs multiple roles, each role and its authority, retained state and observer disclosures must be assessed separately.
+
+**Scope consequence:** Image carriage remains a required research comparison route, not a mandatory runtime route. Telegram, InspiroBot and onward transit are illustrative optional participants, not dependencies. Every multi-hop route is explicitly enumerated and assessed hop by hop. More hops do not inherently improve privacy or security.
+
+**Invariant:** Keep the protected object unchanged across routes wherever possible. Any protocol conversion that changes it requires an explicit specification, authenticated binding and separate analysis. AEAD nonce rules, salt purpose, key scope, identity/context binding and replay protection remain cryptographic protocol decisions, not carrier-specific improvisations.
+
+**Rationale:** This avoids coupling message security to a particular platform or coordinator while allowing services to participate in delivery when useful. It also prevents the word “orchestration” from being mistaken for transport agnosticism or a mandatory central authority.
+
+**Open work:** Define service contracts and role-specific observer views; enumerate route compositions; specify safe fallback and retry behaviour; and resolve cryptographic parameter rules during protocol design.
