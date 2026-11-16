@@ -168,7 +168,7 @@ Evidence is also observer- and time-relative. An endpoint with keys and authenti
 
 Finally, an evidence model can itself create surveillance. Verification records, stable identifiers, receipts and read signals may expose relationships and behaviour. The default research direction is endpoint-local verification and minimal disclosure, not a central confidence ledger or mandatory telemetry. Any shared evidence must justify its recipient, purpose, retention and linkability.
 
-The proposed framework and claim/evidence fields are developed in [the confidence and evidence model](docs/confidence-and-evidence-model.md). It remains a conceptual proposal; usability, completeness and privacy costs have not been experimentally evaluated.
+The proposed framework and claim/evidence fields are developed in [the confidence and evidence model](docs/confidence-and-evidence-model.md), which includes bounded examples from SRC-034 and SRC-036 to demonstrate how author-reported results, indexed evidence and missing full-text details should be represented. These examples are not independent validation. The model remains a conceptual proposal; usability, completeness and privacy costs have not been experimentally evaluated.
 
 **Illustration pointer (planned):** A property-separation figure should show the different claims, their responsible mechanisms and their limits. It belongs beside this section, not as a decorative summary at the end of the thesis.
 
