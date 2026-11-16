@@ -361,7 +361,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Image-carrier transformation, JPEG recompression, payload recovery, robustness/undetectability/imperceptibility/capacity trade-offs and platform-specific evaluation.
 - **Supports:** A recent robust JPEG steganography design explicitly targeting social-network processing; reports benchmark evaluation and LinkedIn platform testing.
 - **Does not establish:** General robustness across platforms or processing paths, message-level identity/authentication, private discovery, lifecycle privacy or security of an end-to-end messaging architecture.
-- **Review state:** Publisher abstract and available article details inspected; full paper not independently reproduced.
+- **Review state:** Publisher abstract, structured article outline and indexed introductory/method/evaluation details inspected. The publisher page blocked full-text access during this review; complete methods, tables and limitations remain unverified. No experiment was reproduced.
 
 ### SRC-034 · DRAS: Downward Recompression for Robust JPEG Steganography
 
@@ -370,7 +370,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Downward JPEG recompression, stable coefficient selection, extraction error, payload capacity and real-platform validation.
 - **Supports:** A recent method specifically addressing high-quality-to-lower-quality recompression; the paper reports WhatsApp, LinkedIn and X tests.
 - **Does not establish:** General carrier survival under resizing, transcoding, repeated arbitrary transformations, platform metadata/observer privacy, or end-to-end delivery security.
-- **Review state:** Publisher abstract, bibliographic record and available article details inspected; full methods and results not independently reproduced.
+- **Review state:** Publisher abstract and highlights inspected, including the stated RoLoS/CARE approach, reported extraction-error reduction and platform-validation claim. Full methods, experimental tables, platform configurations and limitations were not accessible in this review; full-text examination remains open. No result was reproduced.
 
 ### SRC-035 · Robust Steganography in Practical Communication: A Comparative Study
 
@@ -379,7 +379,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Comparative evaluation of capacity, imperceptibility, undetectability and robustness under compression and social-network transmission.
 - **Supports:** Empirical comparison across simulated channels and Facebook, Twitter and WeChat; highlights that simulated compression conditions do not fully represent platform processing.
 - **Does not establish:** A universal platform transformation model or a complete message-delivery security architecture.
-- **Review state:** Full publisher HTML inspected; no experiment independently reproduced.
+- **Review state:** Full publisher HTML inspected, including the dirty-channel model, three representative robust methods, metric definitions, simulated compression comparisons and Facebook/Twitter/WeChat experiments. The reported platform results are bounded to the paper's 50-image sample, payload and stated upload/download modes; no experiment was independently reproduced.
 
 ### SRC-036 · Destroying Robust Steganography in Online Social Networks
 
@@ -388,7 +388,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Active carrier transformation, steganographic payload removal, adversarial media processing and image-quality-preserving attacks.
 - **Supports:** A learned image-processing approach intended to remove hidden payloads while maintaining acceptable image quality, demonstrating that carrier processing may be adversarial rather than merely incidental.
 - **Does not establish:** That every platform performs such processing, that the method defeats every current scheme, or that endpoint message protection and other lifecycle properties are addressed.
-- **Review state:** Publisher abstract and available article details inspected; no model or experiments independently reproduced.
+- **Review state:** Publisher abstract and indexed article sections inspected, including the attack/optimisation network, BOSSbase/BOWS2 dataset description and reported image-quality/real-time objectives. The publisher's full article could not be retrieved in this review; full method details, tables and limitations remain unverified. No model or experiment was reproduced.
 
 ### SRC-037 · Image Steganography Approaches and Their Detection Strategies: A Survey
 
@@ -398,7 +398,7 @@ The date in this register records when the source was checked, not the date of t
 - **Relevant to:** Image embedding methods, steganalysis, evaluation practice and the breadth of established prior art.
 - **Supports:** A broad survey based on 456 references, useful for preventing narrow or outdated claims about the image-steganography field.
 - **Does not establish:** The novelty or security of this project's specific architecture, nor platform-specific performance of any proposed route.
-- **Review state:** Publisher record and abstract inspected; full survey not yet examined.
+- **Review state:** Full 40-page published survey examined from the University of Amsterdam repository copy, including scope, literature-selection method, embedding taxonomy, steganalysis taxonomy, comparative performance discussion and practical implications. The survey itself is a secondary synthesis of 456 references; its reported cross-paper rankings inherit differences in datasets, methods and experimental settings and are not a controlled common benchmark. No underlying experiment was reproduced.
 
 The [prior-art comparison](prior-art-comparison.md) synthesises the full-text reviews of SRC-020 and SRC-024–SRC-037 and pressure-tests candidate contributions A/B/C. It is a working synthesis, not a systematic literature review or originality determination.
 
@@ -436,9 +436,9 @@ Priority research gaps:
 7. Steganalysis methodology, datasets, detector assumptions and reproducibility.
 8. Comparative research on image-carried protected data versus simpler file and messaging routes.
 9. Privacy-preserving recipient discovery and retrieval, including full-scan, stable locators, capability-style references, OMR/GOMR, oblivious signaling, two-server DORAM, and the cost of decoys or query hiding.
-12. Whole-pipeline covert/dead-drop messaging research, image-generation-based covert channels, group retrieval and authorized anonymous communication; distinguish these from image-carried capsules and endpoint-controlled cryptographic messaging.
 10. Platform-specific image transformations and forensic fingerprints, including the distinction between removable descriptive metadata and technical image-signal traces.
 11. Resource-bounded parsing and reassembly: byte, part, header, nesting, CPU, memory, disk, decompression and lifetime budgets.
+12. Whole-pipeline covert/dead-drop messaging research, image-generation-based covert channels, group retrieval and authorized anonymous communication; distinguish these from image-carried capsules and endpoint-controlled cryptographic messaging.
 
 Rules:
 
@@ -449,6 +449,22 @@ Rules:
 - Do not use a primitive specification to claim a complete secure protocol.
 - Cite sources at the claim they support and preserve limitations alongside the claim.
 - A source's inclusion is not endorsement of the source's design or proof that the project should adopt it.
+
+## 7.1 SRC-033–SRC-037 review outcome (2026-11-16)
+
+- **SRC-033 MRAS:** Partial inspection only. The publisher abstract and indexed article details describe JPEG DCT-coefficient stabilisation, lattice-based adaptive embedding, post-processing, message-extraction error, PSNR/SSIM, steganalysis classification error and a LinkedIn test. The full publisher article was not accessible. Do not describe this as a full-text review or general platform validation.
+- **SRC-034 DRAS:** Abstract/highlights only. The reported design uses RoLoS coefficient selection and CARE predictive channel modelling with syndrome-trellis coding; the publisher reports an 87% extraction-error reduction and tests on WhatsApp, LinkedIn and X. Those are author-reported abstract claims, not independently checked results. Full methods, baselines, tables, platform configurations and limitations remain outstanding.
+- **SRC-035 Qiao et al.:** Full publisher HTML inspected. The paper defines capacity, imperceptibility, undetectability and robustness; compares transmission-channel matching, intermediate-image and DCT-sign approaches; and reports simulated JPEG plus Facebook, Twitter and WeChat tests. Its 50-image social-platform sample and stated payload/configuration are narrow. Results show materially different outcomes by platform and sending mode: some methods that performed well in simulated channels failed on platform paths; WeChat original-image and default/non-original sending behaved differently. The paper itself warns that a simple JPEG-compression channel is an inadequate model of platform processing. No experiment was reproduced.
+- **SRC-036 Zhu et al.:** Partial inspection only. Publisher abstract and indexed sections describe an end-to-end CNN with attack and image-quality optimisation modules, trained/evaluated using BOSSbase 1.01 and BOWS2, and intended to disrupt multiple robust hiding methods. Full methods, complete result tables and boundary conditions were not available. Do not infer that this is deployed by platforms or defeats every current method.
+- **SRC-037 Kombrink et al.:** Full 40-page survey inspected. It classifies embedding approaches across spatial, transform and deep-learning domains, and steganalysis as visual, signature, targeted and universal. It emphasises poor generalisation across hiding methods, non-reversibility in some deep-learning approaches, and the need for comparable evaluations. Its topological comparisons are assembled from results reported by separate papers, not a unified controlled experiment. The survey is useful for taxonomy and claim discipline, not a direct benchmark of this project.
+
+### Cross-source implications
+
+1. Extraction robustness, visual imperceptibility, steganalysis resistance, endpoint authenticity/integrity and observer privacy are separate properties; success on one does not establish another.
+2. Platform media processing is path-dependent and may involve more than one JPEG recompression. The Qiao study reports that simulated-channel performance did not reliably predict Facebook, Twitter or WeChat outcomes under its tested configurations.
+3. Active transformation may target payload survival rather than merely detect steganography. A route evaluation must include extraction failure and integrity-safe rejection, not just detectability.
+4. A single universal detector or universal transformation model must not be assumed. The survey identifies generalisation as a major unresolved difficulty.
+5. The strongest defensible next step is to define exact platform/version, upload method, account/post visibility, retrieval method, media type and client path for each image profile. Record unknown transformations as unknown until measured or sourced.
 
 ## 7. Status
 
