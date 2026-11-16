@@ -931,3 +931,15 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 - Next research action: extend the lifecycle/event/observer ledger with source-specific fragment-set, conversation, retry, cross-route and collection-level observations; retain explicit vantage, collection size, time window and dependence assumptions.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Post-integration repository audit
+
+- Re-read the live recursive repository tree and checked all 29 Markdown files for relative Markdown/image links against all tracked repository paths. **Zero broken relative links** were found.
+- Scanned all 29 Markdown files for active ZIP/archive-generation instruction patterns. **No archive-generation workflow instructions** were found. Historical archive references and navigation links are not instructions.
+- Confirmed the source register contains 45 sequential source entries, SRC-001 through SRC-045.
+- Confirmed all four W1–W4 work documents contain definition/comparison blocks and illustrated-diagram prompt placeholders.
+- Corrected the SRC-044 DOI and clarified that its square-root relationship was conjectural in the proceedings paper; the formal asymptotic theorem is separately recorded as SRC-045.
+- Exact-status, terminology, image-reference and thesis heading/numbering consistency remain to be audited.
+
+**Theory only · No implementation · Not audited.**
