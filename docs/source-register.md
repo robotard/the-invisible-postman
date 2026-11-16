@@ -426,16 +426,34 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 - **Does not establish:** That Pigeonhole alone provides the full anonymity properties of Echomix; those depend on the underlying network and deployment. The public documentation is evolving and does not, by itself, pin a mutually compatible deployed release/configuration or independently validate all security claims.
 - **Review state:** Current protocol documentation, project repository overview and 5 November 2026 project article inspected. No code build, deployment or independent reproduction performed.
 
+### SRC-041 · HKDF extract-and-expand key derivation
+
+- **Source:** Krawczyk, H. and Eronen, P. (2010), *HMAC-based Extract-and-Expand Key Derivation Function (HKDF)*, RFC 5869.
+- **Publisher/status:** IETF Informational RFC.
+- **Relevant to:** Extracting pseudorandom key material from input keying material; separating the extract-stage `salt` from expand-stage `info`; domain/context-specific key derivation.
+- **Supports:** HKDF-Extract accepts an optional non-secret salt (defaulting to a hash-length zero string); salt may be reused and should be independent of input keying material. HKDF-Expand accepts `info` as application/context-specific information, which can include protocol identifiers, algorithm identifiers and identities. Extract concentrates existing entropy; it does not amplify entropy.
+- **Does not establish:** A complete authenticated key-exchange protocol, identity verification, key confirmation, nonce uniqueness, replay protection or a safe application key schedule without a specified composition.
+- **Review state:** Full RFC text inspected. No implementation or protocol composition tested.
+
+### SRC-042 · Hybrid Public Key Encryption (HPKE)
+
+- **Source:** Barnes, R. et al. (2022), *Hybrid Public Key Encryption*, RFC 9180.
+- **Publisher/status:** IETF Standards Track RFC.
+- **Relevant to:** A compositional reference combining KEM, KDF and AEAD; context setup; stateful nonce management; authenticated modes; exporter-based key separation; application-level non-goals.
+- **Supports:** HPKE defines base, PSK, authenticated and authenticated-PSK modes; a key schedule with `info`; AAD for AEAD operations; stateful sequence-based nonce construction; and a secret-export interface. The RFC explicitly leaves transport of public parameters and recipient-key identification to the application. For multi-message contexts, the application must preserve order, detect loss and provide replay protection beyond the limited stream property. HPKE is not forward secret against recipient compromise in any mode.
+- **Does not establish:** A complete asynchronous messaging service, application identity ceremony, general replay protection, loss-tolerant delivery, product metadata privacy or the project's selected protocol. Base mode does not authenticate the remote party.
+- **Review state:** Full RFC text inspected, including Sections 5.1–5.3 and 9.7. No implementation or application protocol built.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
 |---|---|---|
 | X25519 key agreement primitive | SRC-001; SRC-010 | Separate primitive from authenticated protocol; examine key confirmation and identity binding |
-| HKDF and key separation | SRC-002; SRC-010 | Define context inputs, labels, key purposes and transcript binding in any future protocol |
+| HKDF and key separation | SRC-002; SRC-010; SRC-041 | Define context inputs, labels, key purposes and transcript binding in any future protocol; distinguish salt from info |
 | Ed25519 signatures | SRC-003 | Specify what is signed, under which identity key, and how that key is verified |
-| AEAD and nonce handling | SRC-004; SRC-006 | Do not conflate ChaCha20-Poly1305 with XChaCha20-Poly1305; define nonce state and limits |
+| AEAD and nonce handling | SRC-004; SRC-006; SRC-042 | Do not conflate ChaCha20-Poly1305 with XChaCha20-Poly1305; define nonce state, ordering, loss, replay and limits |
 | Password-derived alternative | SRC-005 | Select parameters only after device/resource and offline-guessing assumptions are stated |
-| Authenticated key establishment | SRC-007–SRC-010 | Compare 1:1 and group protocols, asynchronous requirements, identity models and metadata |
+| Authenticated key establishment | SRC-007–SRC-010; SRC-038; SRC-041–SRC-042 | Compare 1:1 and group protocols, asynchronous requirements, identity models, transcript binding and application responsibilities |
 | Key lifecycle | SRC-010–SRC-011 | Recheck current NIST revisions and derive project-specific lifecycle semantics |
 | Image metadata and platform transformations | SRC-012–SRC-014; SRC-021 | Separate semantic metadata from format/codec and forensic fingerprints; test each named route and platform instead of assuming universal stripping |
 | Mixnet-backed messaging, global observers and integrated discovery/reliability | SRC-016; SRC-032 | Compare route-native guarantees, role collusion, traffic coupling, capability distribution, human routine leakage and image-platform-specific residual observations |
