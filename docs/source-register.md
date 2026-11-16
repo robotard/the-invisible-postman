@@ -458,6 +458,7 @@ The [prior-art comparison](prior-art-comparison.md) synthesises the full-text re
 
 - **Source:** Ker, A. D. (2007), *Batch Steganography and Pooled Steganalysis*. In: Information Hiding, Lecture Notes in Computer Science, vol. 4437, pp. 265–281. Springer.
 - **Publisher/status:** Peer-reviewed conference proceedings paper; full paper PDF inspected.
+- **DOI:** https://doi.org/10.1007/978-3-540-74124-4_18
 - **Link:** https://www.cs.ox.ac.uk/people/andrew.ker/docs/ADK18D.pdf
 - **Relevant to:** Thesis §8; W1 RQ6/RQ7; W2 collection-level observer model; W4 E6 and multi-carrier evaluation.
 - **Supports:** A warden can combine imperfect per-object steganalysis statistics across a batch. The paper formalises batch embedding and pooled detection, analyses alternative pooling strategies, and validates selected results using LSB replacement and large simulation runs. Its model fixes and makes known the batch size, assumes equal cover capacities and random selection of embedded covers, and relies on stated component-detector response assumptions; it explicitly leaves sequential acquisition/testing as a different problem. The abstract reports a square-root secure-capacity relationship, but the proceedings paper frames the capacity relation as a conjecture; the formal asymptotic theorem is proved in the separate follow-up SRC-045. Its pooled-detection analysis and LSB experiments remain bounded to the paper's detector and batch assumptions.
