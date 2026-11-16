@@ -1,3 +1,38 @@
+## 2026-11-16 · Image-steganography prior-art review and route-evaluation refinement
+
+### Completed and read-back verified
+
+- Examined the full 40-page SRC-037 survey from the University of Amsterdam repository copy, including scope, source-selection methodology, embedding/steganalysis taxonomies, cross-paper performance synthesis and practical implications.
+- Inspected the full publisher HTML for SRC-035, including its robust-steganography framework, metric definitions, representative methods, simulated-channel comparisons and Facebook/Twitter/WeChat tests.
+- Rechecked SRC-033, SRC-034 and SRC-036 using publisher records and indexed article text. Their review states remain partial because complete article text and full experimental details were not accessible in this pass.
+- Updated all five source-register review states to distinguish full-text inspection, partial publisher/indexed evidence and unperformed reproduction.
+- Recorded the bounded cross-source implications in the source register, route-comparison framework and observer/property matrix.
+- Corrected the priority-gap numbering in the source register.
+- Updated PROJECT_STATE and WORKPLAN to reflect the actual review status and next work.
+- Fetched each changed file after writing and verified exact saved content.
+
+### Material research findings
+
+- SRC-035 reports that results from simulated JPEG channels did not reliably predict its tested social-platform paths. Outcomes varied across Facebook, Twitter and WeChat and between WeChat original-image and default sending modes. Its platform sample and configuration are bounded; this is not a current universal platform profile.
+- SRC-037 finds that steganalysis generalisation across embedding methods remains difficult and that some deep-learning methods are not reversible enough for practical message recovery. Its topological comparisons synthesise results from separate papers, not a single controlled benchmark.
+- SRC-036 describes active image processing intended to remove robust hidden payloads while preserving image quality. It is a researched capability class, not evidence that any named platform deploys that method.
+- SRC-033 and SRC-034 report newer JPEG recompression-robust approaches, but their full methods/results remain unreviewed here. Their abstracts/highlights cannot support a superiority claim.
+- The route evaluation must separately record extraction/recovery, image quality, detector performance, endpoint authentication/integrity and observer privacy.
+
+### Remaining and next
+
+1. Seek full-text access for SRC-033, SRC-034 and SRC-036; preserve their partial status until methods/results can be inspected.
+2. Select named, versioned profiles for image-platform carriage, file/attachment transfer, conventional E2E messaging and Echomix/Katzenpost, using only evidenced configurations.
+3. Populate the common lifecycle/event/observer ledger with source-backed properties and explicitly marked unknowns.
+4. Check W3 numbering and traceability references, then reconcile findings into thesis and supporting documents.
+5. Run a fresh repository-wide relative-link, exact-status and cross-document consistency audit after the next substantive reconciliation.
+
+### Verification boundary
+
+Changed research and operational files were individually fetched after writing and matched the submitted content. No platform experiment, extraction test, steganalysis benchmark, model reproduction, implementation, formal proof or independent security audit was performed. Full-text access limitations for SRC-033, SRC-034 and SRC-036 remain.
+
+**Theory only · No implementation · Not audited.**
+
 
  
 ## 2026-11-16 · Continue instruction and four-document checkpoint contract
