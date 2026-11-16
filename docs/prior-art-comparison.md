@@ -98,3 +98,32 @@ This is deliberately an emergent proposition, not a settled contribution claim. 
 The next useful artifact is not another architecture diagram. It is a common observer/property matrix covering publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction. That matrix should expose where the reviewed papers' assumptions stop and where the proposed system would need evidence of its own.
 
 **Theory only · No implementation · Not audited.**
+
+## 8. Supplementary prior-art comparison · GOMR and Remise
+
+The full-text comparison above has been extended after locating two important systems that materially narrow the candidate contribution.
+
+### 8.1 Group Oblivious Message Retrieval (Liu, Tromer and Wang, 2024)
+
+GOMR generalises OMR from one recipient to ad-hoc and fixed groups. It formalises group recipient privacy, detection-key unlinkability and denial-of-service resistance, and evaluates FHE/lattice-based constructions. Its model distinguishes public bulletin-board publication from the oblivious detector's retrieval task. It assumes the application payload is already suitably encrypted; authenticated clue-key distribution, contact discovery and privacy-preserving board posting remain outside scope. Its privacy adversary may control or collude with parties other than the protected sender and recipient(s), while the paper explicitly treats integrity and DoS under their own adversary-strength conditions.
+
+**Research consequence:** Any broad claim that recipient-private delivery or group retrieval is newly addressed is untenable. Group communication must be included in the related-work baseline even if the proposed project remains focused on one-to-one communication.
+
+### 8.2 Remise (Ravi, Shukla and Vadapalli, 2026)
+
+Remise is a two-server DORAM-based anonymous communication system with two modes: an epoch-published anonymous bulletin board and private communication channels with writer-controlled read authorisation and revocation. It explicitly considers a global network adversary observing client-server communications, uses cover traffic, and hides access indices and writer-reader relationships under its two-server model. Its privacy requires the servers not to collude; integrity assumes both servers follow the protocol, and the paper assumes semi-honest servers. RemiseCC uses bearer authorisation tokens distributed out of band; privacy-preserving token distribution remains open. The authors also note that a malicious server can drop writes.
+
+**Research consequence:** Remise directly overlaps any generic claim to have newly combined anonymous publication, authorised recipient access, relationship privacy and revocation. It does not provide an image-carriage or social-platform media pipeline, carrier metadata/forensic analysis, the proposed endpoint message semantics or human behavioural correlation model. The distinction must be argued at these exact boundaries, not by saying the project considers more of the lifecycle.
+
+### 8.3 Revised cross-system judgement
+
+The [observer/property matrix](observer-property-matrix.md) now compares OMR/GOMR, the OMR performance variants, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert messaging across publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction.
+
+The additional papers make three distinctions essential:
+
+1. **Access-pattern privacy is not media-carrier privacy.** DORAM and OMR-family work hide selected access or recipient relationships under their models; they do not establish that an external image platform cannot correlate media, users or retrieval events.
+2. **Anonymous access control is not endpoint-authenticated message semantics.** A system may hide which reader accesses a stored item without defining the project's peer identity verification, sender authentication, authenticated message context or capsule validation.
+3. **A combined lifecycle narrative is not itself a contribution.** GOMR and Remise already cover substantial publication, retrieval, relationship and access-control machinery. The only defensible path for Candidate B is to identify a concrete cross-layer leakage or incompatible assumption arising when those privacy mechanisms meet media-carrier transformation, endpoint validation and human/network observation.
+
+The emergent proposition in §5 is therefore retained only as a question to test, not a conclusion. It must be narrowed, displaced or abandoned if the next comparison does not reveal a non-obvious result.
+
