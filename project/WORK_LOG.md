@@ -694,3 +694,20 @@ The previous 117-link audit predates this batch's added cross-links; it is not c
 
 **Theory only · No implementation · Not audited.**
 
+## 2026-11-16 · Working-document and machine-handover compression
+
+### Completed and read-back verified
+
+- Replaced the oversized project-state history with a concise live checkpoint. Historical entries remain preserved in this work log.
+- Simplified the stable workplan, corrected the malformed heading boundary, reconciled W0–W7 maturity labels and made the next research sequence explicit.
+- Reduced duplicated process instructions while retaining the three-document continuity rule and GitHub write/read-back requirements.
+- Kept the research scope, transport-independence constraints, uncertainty and assurance boundaries explicit.
+
+### Remaining
+
+- Condense the machine session digest after this entry is verified.
+- Continue with source-backed route profiles, SRC-033–SRC-037 full-text review, W3/traceability alignment and a fresh repository audit.
+
+### Verification boundary
+
+The rewritten state and workplan were each fetched after writing and matched the submitted content exactly. This is documentation housekeeping only; no research claim, protocol, implementation or security property has been validated by this edit.
