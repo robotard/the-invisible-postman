@@ -200,9 +200,9 @@ Recipient discovery is a separate requirement, not something solved by random pl
 
 **Transport-route manager and carrier adapters**
 
-The route manager selects and describes a supported carriage profile. Each adapter handles route-specific encoding, transport constraints, metadata exposure, extraction and failure reporting. Image carriage is required in this research; file/attachment and conventional messaging routes remain comparison profiles.
+The route manager selects and describes a supported carriage profile. Each adapter handles route-specific encoding, transport constraints, metadata exposure, extraction and failure reporting. The research compares image-platform, encrypted file/attachment, conventional end-to-end messaging and mixnet-backed messaging profiles. Image carriage is a required subject of investigation, not a mandatory runtime route or privileged default.
 
-The image adapter places capsules into image carriers and extracts them. Optional concealment is a separate image-route sub-layer, not a general transport guarantee. Before publication, the image processing path must apply a documented metadata allowlist and remove unnecessary embedded metadata and identifying file-level properties. The produced carrier must be checked; successful invocation of a stripping operation is not proof that all intended fields were removed.
+Each route adapter must preserve the protected object's authenticated semantics or explicitly reject the route as incompatible. The image adapter places the encapsulated object into an image carrier and extracts it. Optional concealment is a separate image-route sub-layer, not a general transport guarantee. Only the image route invokes image-specific metadata handling: apply a documented, format-aware allowlist, remove unnecessary embedded metadata and identifying file-level properties, and verify the produced carrier. Successful invocation of a stripping operation is not proof that all intended fields were removed. File/attachment adapters instead record filename, MIME/container structure, sharing identifiers, access controls, host-side activity and retention. Messaging and mixnet profiles retain their native protocol, identity, discovery and delivery semantics; they must not be forced into image-style processing.
 
 These boundaries must not:
 
@@ -276,10 +276,10 @@ The following is a logical lifecycle, not an implementation sequence. It separat
 4. Message protection: the endpoint protects the message and authenticates the required context.
 5. Capsule formation: the protected object is packaged as one capsule or an authenticated multipart set.
 6. Encapsulation: the sender-side boundary adds bounded carriage framing and route-format context without claiming cryptographic protection.
-7. Carrier encoding: the selected route adapter places the encapsulated object into an image carrier; optional concealment is applied only as a distinct image-route sub-layer.
-8. Metadata minimisation and publication: unnecessary carrier-embedded metadata and identifying file-level properties are removed and the output is checked before publication.
-9. Transport coordination and discovery: the train coordinates carriage; the intended recipient obtains the locator or retrieval instruction through a separately evaluated discovery mechanism.
-10. Retrieval and decapsulation: the receiving-side route adapter obtains the carrier and decapsulation extracts the framed protected capsule, checking structural completeness and parser limits.
+7. Route-specific encoding: the selected adapter packages the encapsulated object for the declared profile. For image carriage, this may include image-carrier encoding and optional concealment as a distinct image-route sub-layer; other routes use their own native file, attachment, messaging or mixnet framing.
+8. Route-specific handling and publication: apply only the metadata, access-control and publication operations relevant to the selected profile. Image metadata minimisation is image-specific; file hosts and messaging services require their own identifier, account, activity and retention analysis.
+9. Transport coordination and discovery: the route carries the object; any coordinator may assist but is optional. The intended recipient obtains the locator, capability or retrieval instruction through the profile's separately evaluated discovery mechanism.
+10. Retrieval and route-specific decoding: the receiving-side adapter obtains the route object and recovers the framed protected capsule, checking structural completeness and parser limits.
 11. Capsule-set validation: the endpoint validates the authenticated manifest and message-set context, reassembling valid pieces independently of arrival order while rejecting incomplete, conflicting, substituted or ambiguous sets.
 12. Cryptographic validation and local acceptance: the endpoint verifies authenticity, integrity, peer/session context and freshness before decrypting and presenting plaintext.
 13. Lifecycle handling: replay state, expiry, key rotation and relevant local retention rules are applied.
