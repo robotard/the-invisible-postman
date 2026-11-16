@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-16 · TIP-WORK-INFRA-2026-11-16"
+checkpoint: "2026-11-17 · confidence/evidence integration"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -124,13 +124,24 @@ invariants:
   - "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
 verified_working_documents:
   work/README.md: "87af6d60e02598929a01fc311a25f73f9abccdc6"
-  work/PROJECT_STATE.md: "8d2853d87277efbd4d9b1404225dbacc8b42dff2"
-  work/WORKPLAN.md: "683e115c73d5eb874370f75c12aaed48fc89f094"
-  work/WORK_LOG.md: "3905deceba8f1befb809eab90d75ed9c47da6b78"
+  work/PROJECT_STATE.md: "1c3648f6d698d8daca53656ca32c0feffd2e0ec0"
+  work/WORKPLAN.md: "9d22a5d1b54dff351b60e6cb9348739e66b6a727"
+  work/WORK_LOG.md: "7fa6bef611783250df8fbc7dd4c97d4bf7934774"
   work/lookup/TASKS.md: "0dd84320ff59321769276dce873b608065ed5202"
   work/lookup/TASKS.json: "0e5a1c05f937301b89cb586d65545d869e391ef5"
   README.md: "ce2d0c914df2506c0611518cdeb4b454384dc588"
   docs/source-register.md: "2215ef95c14356ed543279b2e93e0bf0de532849"
+verified_research_documents:
+  docs/confidence-and-evidence-model.md: "c7130a8e736286489fa63a8271a7af5552ca9e31"
+  thesis.md: "e67f5ed4c1599c5eddfe20c6e8e281d933302abb"
+  docs/w1-research-framing.md: "133f463871956538004a86f5daa2337cb1f4283f"
+  docs/w2-threat-model.md: "ef9ca072917cdc0c8405b908c3039f508080f55b"
+  docs/w3-architecture.md: "dd8ecca36e3117d73596e688fda64fd484c140ec"
+  docs/w4-risks-and-evaluation.md: "d3a4137b29238b073ca2b994b40053a0d25a13ce"
+  docs/thesis-contribution-and-bias-assessment.md: "e93f774158ec57adeb98b37daf02c8114d39e232"
+  docs/decision-register.md: "8a011d15d2941ce37909b6fe6da23485170303e5"
+  docs/traceability.md: "8c9baa47af0351a31abe5f3234d87e2378435dbc"
+latest_verified_project_head: "ae02cf3e8bfcb01174a0a112c5257773baad7d33"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
