@@ -43,7 +43,7 @@ The research explores whether a clear separation of responsibilities can make th
 7. **Discovery and collection:** How can a recipient discover and collect a changing carrier without creating a stable rendezvous point or access pattern that defeats the intended privacy benefit?
 8. **Human behaviour:** How can routines, timing, language, platform habits and social-engineering probes create linkability even when carriers and locations vary?
 9. **Lifecycle and recovery:** What can expiry, revocation, key rotation and recovery realistically achieve, and what assumptions do they introduce?
-10. **Evaluation:** What observations would support, weaken or falsify the architectural propositions, and what evidence would be required before stronger claims could be made?
+10. **Evaluation:** What evidence is needed to assess the stated architectural objectives, and what would show that a design choice is unsuitable?
 
 ### 1.4 Research approach
 
@@ -351,7 +351,7 @@ The current work contains conceptual analysis and proposed evaluation criteria. 
 
 ## 11. Discussion, limitations and unresolved reasoning
 
-The architecture's strongest proposition is separation of responsibility: endpoints retain cryptographic authority, while the transport carries material without being trusted to interpret or decrypt it. This is conceptually useful, but separation alone does not prove correct protocol composition, trustworthy identity binding, safe endpoint behaviour or robust delivery.
+The architecture's strongest design objective is separation of responsibility: endpoints retain cryptographic authority, while the transport carries material without being trusted to interpret or decrypt it. This is conceptually useful, but separation alone does not prove correct protocol composition, trustworthy identity binding, safe endpoint behaviour or robust delivery.
 
 The image route gives the project a distinctive and necessary research subject. Its value must be assessed against realistic alternatives. The research must not defend image carriage simply because it was the original inspiration. Equally, it should not discard the route before examining its properties, limitations and possible use cases. The correct conclusion may be conditional: useful in some environments, fragile in others, or valuable as a comparative study rather than a universal transport.
 
