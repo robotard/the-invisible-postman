@@ -847,3 +847,32 @@ The rewritten state and workplan were each fetched after writing and matched the
 ### Verification boundary
 
 This is a documentation and workflow clarification only. It does not change the project's research conclusions, implementation status or assurance status.
+
+
+## 2026-11-16 · Protocol boundary analysis and cryptographic composition checkpoint
+
+### Completed and read-back verified
+
+- Added `docs/protocol-boundary-analysis.md`, converting open protocol questions into explicit obligations for key scope, HKDF salt versus `info`, identity/transcript binding, AEAD nonce uniqueness, AAD visibility, replay/order state, multipart validation and safe route fallback.
+- Added SRC-041 (RFC 5869) and SRC-042 (RFC 9180) to the source register after inspecting the full RFC texts. HPKE is treated as a compositional reference and application-responsibility checklist, not a selected messaging protocol.
+- Integrated the analysis into W3 §3.10, thesis §6.3 and Appendix C, W4 E3/E4 acceptance questions, RQ2/RQ4 traceability and README navigation. Added RFC 9180 to the thesis bibliography.
+- Updated WORKPLAN and PROJECT_STATE to reflect the new research output and the next integration/evidence tasks.
+- Clarified the ChatGPT Project Instructions boundary: a thin operating layer for continuation, execution and verification that follows GitHub's live records; substantive research rules remain in thesis/research documents. The actual ChatGPT Project Instructions are external to this repository and were not edited by these GitHub commits.
+- Each changed GitHub file was fetched after writing and its content matched exactly.
+
+### Material protocol findings
+
+- HKDF `salt` and `info` are not interchangeable. Salt is an optional non-secret extraction input, while `info` binds derived output to application/context information. Neither supplies identity authentication by itself.
+- AEAD nonce uniqueness is per key, not per carrier. A new image, file, URL or route does not make reuse of a key/nonce pair safe.
+- AAD authenticates visible bytes but does not independently prove the identity represented by the key.
+- Replay, ordering, loss, multipart acceptance, crash/rollback recovery and downgrade-resistant fallback remain application protocol responsibilities.
+- RFC 9180 explicitly requires stateful context for nonce management and leaves ordering/loss handling and broader replay protection to the application; it does not provide forward secrecy against recipient compromise.
+
+### Remaining and limitations
+
+- No cryptographic protocol or primitive suite has been selected.
+- No implementation, interoperability test, platform experiment, cryptographic test, formal proof or independent security audit was performed.
+- W2/W3/W4 and the full thesis still require final cross-document alignment. The repository-wide link/status/terminology audit must be rerun after these additions.
+- SRC-033, SRC-034 and SRC-036 remain partial reviews; live service/client profiles remain unpinned.
+
+**Theory only · No implementation · Not audited.**
