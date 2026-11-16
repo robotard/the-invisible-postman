@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-17 · confidence/evidence integration"
+checkpoint: "2026-11-16 · confidence/evidence integration"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -51,7 +51,7 @@ next_task: T-001
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "One active manuscript at thesis.md in staging; confidence/evidence framing integrated as a provisional organising principle. Final contribution and review readiness remain open."
+  thesis: "One active manuscript at thesis.md in staging; confidence/evidence framing integrated as a provisional organising principle and initially challenged against SRC-034/SRC-036 source claims. Final contribution and review readiness remain open."
   research_units: "W1-W4 drafted; aligned message-multiplicity and confidence/evidence definitions, claim boundaries and text-only illustration prompts embedded."
   source_register: "49 entries, SRC-001 through SRC-049."
   multi_message_model: "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies."
@@ -60,7 +60,7 @@ current_state:
   gif_code_review: "SRC-049 README, core/method_core.py and scripts/run_stego.py inspected at pinned external repo commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d. Two redundancy levels: d-fold repetition within frame and majority voting across 16 frames. Receiver asserts a complete 16-frame/key set; missing-frame erasure tolerance is not established. Raw ChaCha20 path shows no authentication tag; 32-bit NumPy PRNG fallback is labelled TEST ONLY. Local keys/group ID are not an authenticated message-set protocol. Code not executed or audited; paper/formal proof unreviewed."
   route_profiles: "Six evidence-bounded profiles; documentary comparison and expanded lifecycle/event/observer ledger. Live client/service versions and configurations remain unpinned."
   protocol_analysis: "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected."
-  confidence_evidence: "Claim-centred model distinguishes object validity, identity, fragment membership, set completeness, conversation continuity, observer linkage and delivery events; endpoint-local/minimal-disclosure direction; no numeric score."
+  confidence_evidence: "Claim-centred model distinguishes object validity, identity, fragment membership, set completeness, conversation continuity, observer linkage and delivery events; SRC-034/SRC-036 documentary examples added; endpoint-local/minimal-disclosure direction; no numeric score. Not independently validated."
   implementation: none
   independent_audit: none
   peer_review: "Not yet independently reviewed; preparation deferred until a coherent thesis candidate exists."
@@ -88,7 +88,7 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/author record only; full method/evaluation not inspected."
   SRC-049: "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
 next_actions:
-  - "Challenge the new confidence/evidence model against source and route evidence; verify protocol delivery semantics and assess whether it improves claim precision without introducing privacy costs."
+  - "Continue challenging the confidence/evidence model against route observer evidence, protocol delivery semantics and multi-message reconstruction; initial SRC-034/SRC-036 documentary challenge is recorded."
   - "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036. A further publisher-indexed pass clarified evaluation dimensions and method context, but complete methods, tables and limitations remain unavailable; all three reviews remain partial."
   - "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available."
   - "Review SRC-049 full paper/formal security argument and complete experimental results; selected code has been read but not run or audited."
@@ -124,16 +124,16 @@ invariants:
   - "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
 verified_working_documents:
   work/README.md: "87af6d60e02598929a01fc311a25f73f9abccdc6"
-  work/PROJECT_STATE.md: "1c3648f6d698d8daca53656ca32c0feffd2e0ec0"
+  work/PROJECT_STATE.md: "52429b8aa5b72e28d896d8679ae3fcc8a901a305"
   work/WORKPLAN.md: "9d22a5d1b54dff351b60e6cb9348739e66b6a727"
-  work/WORK_LOG.md: "7fa6bef611783250df8fbc7dd4c97d4bf7934774"
+  work/WORK_LOG.md: "914c648078fc9ea86f6ba1bf9c6183fe6db86c98"
   work/lookup/TASKS.md: "0dd84320ff59321769276dce873b608065ed5202"
   work/lookup/TASKS.json: "0e5a1c05f937301b89cb586d65545d869e391ef5"
   README.md: "ce2d0c914df2506c0611518cdeb4b454384dc588"
   docs/source-register.md: "2215ef95c14356ed543279b2e93e0bf0de532849"
 verified_research_documents:
-  docs/confidence-and-evidence-model.md: "c7130a8e736286489fa63a8271a7af5552ca9e31"
-  thesis.md: "e67f5ed4c1599c5eddfe20c6e8e281d933302abb"
+  docs/confidence-and-evidence-model.md: "402a83a787977bc4e06ef0e7c0beef241a61c4fa"
+  thesis.md: "4cd70e28d9c0e6c91a8f1d7d2fec9241ff80ed4c"
   docs/w1-research-framing.md: "133f463871956538004a86f5daa2337cb1f4283f"
   docs/w2-threat-model.md: "ef9ca072917cdc0c8405b908c3039f508080f55b"
   docs/w3-architecture.md: "dd8ecca36e3117d73596e688fda64fd484c140ec"
