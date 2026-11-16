@@ -14,11 +14,11 @@
     "docs/route-comparison-framework.md"
   ],
   "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
-  "current": "W1-W4 and integrated thesis remain working drafts. W3 lifecycle is now route-neutral and traceability heading repaired. Source register has 40 entries. Six evidence-bounded starting profiles and a documentary comparison matrix are recorded: Qiao 2023, MRAS 2026, DRAS 2026, Dropbox shared link, Signal protocol reference, and Echomix/Pigeonhole. SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 remain partial. SRC-038-SRC-040 official documentation inspected. No deployed profile is yet pinned or tested.",
+  "current": "W1-W4 and integrated thesis remain working drafts. W3 lifecycle is now route-neutral and traceability heading repaired. Source register has 40 entries. Six evidence-bounded starting profiles a documentary comparison matrix and an initial lifecycle/event observer ledger are recorded: Qiao 2023, MRAS 2026, DRAS 2026, Dropbox shared link, Signal protocol reference, and Echomix/Pigeonhole. SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 remain partial. SRC-038-SRC-040 official documentation inspected. No deployed profile is yet pinned or tested.",
   "next": [
     "Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review states until methods/results are inspected.",
     "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
-    "Expand the documentary comparison into the full lifecycle/event/observer ledger, including discovery, retrieval, retries, expiry and collusion.",
+    "Extend the initial lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; keep unknowns explicit.",
     "Reconcile route findings into W1-W4, the contribution assessment and integrated thesis.",
     "Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without premature protocol selection.",
     "Complete exact-status, terminology, image-reference and cross-document consistency audits; relative Markdown links currently pass."
@@ -36,16 +36,16 @@
     "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "next-session sequence reconciled to current route-profile work; exact read-back matched",
+    "project/PROJECT_STATE.md": "checkpoint reflects initial lifecycle/event observer ledger; saved and read-back verified",
     "project/WORKPLAN.md": "profile register progress and next sequence reconciled; saved and read-back verified",
-    "project/WORK_LOG.md": "dated route-profile research entry recorded; saved and read-back verified",
+    "project/WORK_LOG.md": "dated initial event-ledger entry added; saved and read-back verified",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
     "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
     "project_state_checkpoint_commit": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
     "digest_readback": "exact content match after final write",
     "project/SESSION_DIGEST.md": "refreshed from verified working documents; exact read-back matched",
     "docs/source-register.md": "SRC-038-SRC-040 added; saved and read-back verified",
-    "docs/route-comparison-framework.md": "six initial profiles and documentary comparison matrix added; saved and read-back verified",
+    "docs/route-comparison-framework.md": "six profile register, documentary comparison and initial lifecycle/event observer ledger saved and read-back verified",
     "docs/observer-property-matrix.md": "source-informed observer/property implications added; exact read-back matched",
     "latest_research_commit": "e66374e1de49530194a3d5f77cb53932142a395b",
     "docs/w3-architecture.md": "route-neutral lifecycle and route-specific adapter responsibilities saved and read-back verified",
@@ -117,5 +117,6 @@
     "MIX-ECHOMIX-PIGEONHOLE": "Echomix arXiv v2 plus current Pigeonhole documentation; no pinned compatible deployment release."
   },
   "latest_checkpoint_commit": "e7ced472cde7533801b5701e39459546d1bb3f46",
-  "latest_checkpoint_blob": "447f1a5345271e8cb21ad04e38f2e063a09a7978"
+  "latest_checkpoint_blob": "447f1a5345271e8cb21ad04e38f2e063a09a7978",
+  "latest_research_commit": "0971e39baa2edbd18075a119b2a5f406fc0549c5"
 }
