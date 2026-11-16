@@ -44,7 +44,7 @@ The architecture treats the following as separate requirements:
 
 A successful encryption operation does not, by itself, establish the sender’s human identity.
 
-2.3 Confidence, evidence and verifier boundaries
+2.2a Confidence, evidence and verifier boundaries
 
 The architecture should expose evidence that allows an endpoint or reviewer to make bounded judgements about specific claims. It must not create a new central authority that declares messages or participants "trusted". Evidence is interpreted by a verifier in a stated role and context. Where useful, a local claim record can identify the proposition, scope, evidence/provenance, mechanism, assumptions, threat model, freshness, unresolved alternatives and disposition. The record is a conceptual research artefact, not yet a message field, wire format or mandatory telemetry event.
 
@@ -52,7 +52,7 @@ The design must distinguish endpoint-verifiable facts from service assertions an
 
 Confidence records should default to endpoint-local storage and minimum necessary disclosure. A stable receipt, central evidence ledger or globally visible relationship identifier could undermine the privacy objectives by creating a correlation surface. Any shared evidence mechanism requires an explicit purpose, recipient, retention policy and observer analysis.
 
-2.4 Transport routes and carrier adapters
+2.3 Transport routes and carrier adapters
 
 The transport-route layer carries a protected message between endpoints. It is a first-class architectural concern because routes determine packaging, capacity, transformation exposure, routing metadata, ordering, delivery behaviour and extraction failure modes.
 
