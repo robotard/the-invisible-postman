@@ -48,21 +48,22 @@ source_review_detail:
   SRC-035: "Full publisher HTML inspected; bounded 50-image platform tests; no reproduction."
   SRC-036: "Partial: publisher abstract/indexed sections; full method/results inaccessible."
   SRC-037: "Full 40-page survey inspected; secondary synthesis, not a common controlled benchmark."
+  SRC-038: "Official Signal PQXDH rev.3 and Double Ratchet rev.4 specifications inspected; protocol reference only, not full service profile."
+  SRC-039: "Current Dropbox official file-activity and shared-link permission help pages inspected; no live account test."
+  SRC-040: "Current Katzenpost Pigeonhole specification, project repository and 5 Nov 2026 article inspected; no pinned deployment or reproduction."
 current_state:
   thesis: working_draft
   research_units: "W1-W4 drafted; alignment remains open"
-  route_profiles: "not yet named and evidence-populated"
-  source_reviews: "SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 partial pending access"
+  route_profiles: "six evidence-bounded starting profiles documented; live service versions/configurations and full lifecycle ledger remain open"
+  source_reviews: "SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 partial; SRC-038-SRC-040 official protocol/service documentation inspected"
   implementation: none
   independent_audit: none
 next_actions:
-  - "Seek full-text access for SRC-033, SRC-034 and SRC-036; keep partial review states until complete evidence is inspected."
-  - "Seek full text for remaining methods/results of SRC-033, SRC-034 and SRC-036; do not overstate abstract/indexed evidence."
-  - "Select evidenced named/versioned profiles for image-platform, file/attachment, conventional E2E and Echomix/Katzenpost routes."
-  - "Populate route lifecycle events and observer views using source-backed evidence; mark unknowns."
-  - "Check W3 numbering and traceability references."
-  - "Reconcile material findings into thesis and research-supporting documents."
-  - "Run fresh relative-link, status and cross-document consistency audits after substantive reconciliation."
+  - "Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review states until methods/results are inspected."
+  - "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims."
+  - "Expand the documentary comparison into the full lifecycle/event/observer ledger, including discovery, retrieval, retries, expiry and collusion."
+  - "Reconcile route findings into W1-W4, the contribution assessment and integrated thesis."
+  - "Complete exact-status, terminology, image-reference and cross-document consistency audits; the relative-link audit across 26 Markdown files found no broken links."
 deferred:
   - "New diagrams until the comparative argument stabilises."
   - "External peer-review preparation until a coherent thesis candidate exists."
