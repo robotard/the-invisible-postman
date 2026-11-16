@@ -88,6 +88,7 @@ Unless a later, narrower deployment model says otherwise, assume an attacker may
 - read and retain carrier images and publicly available protocol documentation;
 - observe some routing and timing metadata;
 - modify, replace, replay, duplicate, suppress, delay, reorder, resize, recompress, or transcode carrier images;
+- apply or control active image-sanitization models intended to remove hidden payloads, or adapt a hiding method to a known sanitizer under stated model/seed assumptions;
 - submit malformed or incomplete capsule sets;
 - mix fragments from different messages or participants;
 - attempt to substitute public keys or exploit weak identity verification;
