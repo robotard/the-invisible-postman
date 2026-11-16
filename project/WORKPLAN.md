@@ -91,15 +91,38 @@ Password-derived encryption remains a distinct alternative and part of the desig
 
 ## Session continuity and GitHub workflow
 
-The three working documents have separate jobs:
+The project uses four compact continuity documents with distinct responsibilities:
 
-1. `PROJECT_STATE.md`: concise current snapshot, verified progress, blockers and exact next action.
-2. `WORKPLAN.md`: stable roadmap, principles, priorities and dependencies.
-3. `WORK_LOG.md`: dated history of changes, decisions, evidence and verification.
+1. `PROJECT_STATE.md`: changing, verified progress snapshot; completed work, remaining work, blockers, dependencies and exact next action.
+2. `WORKPLAN.md`: stable roadmap, research principles, priorities, sequencing and dependencies. Change it only when the roadmap or governing workflow genuinely changes.
+3. `SESSION_DIGEST.md`: machine-readable Markdown shorthand for rapid retrieval.
+4. `SESSION_DIGEST.json`: machine-readable JSON shorthand for tools and deterministic parsing.
 
-At session start, refresh the live repository and read `SESSION_DIGEST.md`, `SESSION_DIGEST.json`, all three working documents and relevant research files. At session close, reconcile `PROJECT_STATE.md`, `WORKPLAN.md` and `WORK_LOG.md`; read back and verify them; refresh the machine-readable `SESSION_DIGEST.md` from that verified state; refresh `SESSION_DIGEST.json` last; then verify both digests against the three working documents. Both digests are compact operational handovers, never replacements for the authoritative documents or containers for thesis exposition.
+`WORK_LOG.md` is the chronological evidence/history record. It is maintained alongside the four documents and is not replaced by either digest. The live repository, saved files and commit history are authoritative; chat summaries and digests are navigation aids, not substitutes.
 
-For every GitHub change: fetch the current file and blob SHA; make logically grouped writes; confirm the returned commit; fetch the saved file and verify its content. Never claim a change is deployed without successful read-back. Keep the user-facing deployment summary concise and limited to verified changes.
+### When the user says “continue”
+
+1. Fetch the live default branch; refresh both digests and read `PROJECT_STATE.md`, `WORKPLAN.md`, `WORK_LOG.md`.
+2. Read the relevant thesis, research and supporting documents needed for the next task. Do not reread the entire repository indiscriminately, but never rely on partial snippets where the full file is needed.
+3. Identify verified completions, unfinished tasks, blockers, dependencies and the next unblocked action. Preserve the existing sequence and decisions; do not ask the user to repeat recorded history.
+4. Resume that action directly. Prefer completing useful work over repeatedly proposing plans. If GitHub access or a required source is blocked, state the precise limitation and park the task with an actionable continuation.
+5. Use existing GitHub work documents and supporting material as the working record. Keep thesis reasoning in thesis/research files and operational state in operational files.
+6. Use and improve explanatory diagrams when they materially help communicate a stable research result. Diagrams must be genuine visual illustrations (prefer editable SVG and accessible exports), never ASCII art. Respect research sequencing: do not start or revise thesis diagrams while the underlying argument, evidence or route comparison is still unstable.
+7. Update supporting documentation and traceability when a material research change affects them. Preserve historical and archived work; do not silently overwrite or erase provenance.
+
+### Checkpoint and verification protocol
+
+- After meaningful progress, update the affected research/supporting documents and record the work in `WORK_LOG.md`.
+- Reconcile `PROJECT_STATE.md` with the actual current position. Keep `WORKPLAN.md` stable unless priorities, dependencies or process genuinely change.
+- Fetch each changed GitHub file and its current blob SHA before writing. Group related changes logically; never issue concurrent writes to the same path.
+- After each write, fetch the saved file and verify exact content. A returned commit SHA without read-back is not sufficient verification.
+- At session close, reconcile and read back `PROJECT_STATE.md`, `WORKPLAN.md` and `WORK_LOG.md`.
+- Refresh `SESSION_DIGEST.md` from those verified documents; refresh `SESSION_DIGEST.json` last.
+- Read back both digests and check that they agree with the three working records. Record exact next action, relevant paths, blockers/dependencies and constraints.
+- Never describe work as saved, completed, published, deployed, tested or audited unless the corresponding evidence supports that exact claim. Distinguish drafted, committed, read-back verified, tested and independently reviewed states.
+
+Both digests must remain compact and machine-oriented: stable keys, concise values and lists; no thesis exposition, narrative recap or duplicated research argument. They may point to research files by path.
+
 
 ## Research-construction and review gates
 
