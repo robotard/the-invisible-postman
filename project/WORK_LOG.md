@@ -1,4 +1,22 @@
 
+ 
+## 2026-11-16 · Continue instruction and four-document checkpoint contract
+
+### Completed and read-back verified
+
+- Clarified the user's `continue` trigger: refresh live GitHub state, read the four continuity documents and work log, identify verified progress/blockers, and resume the next unfinished unblocked task without requiring the user to repeat history.
+- Defined distinct responsibilities: `PROJECT_STATE.md` is the changing progress record; `WORKPLAN.md` is the stable roadmap; `SESSION_DIGEST.md` and `SESSION_DIGEST.json` are machine-readable shorthand only.
+- Kept `WORK_LOG.md` as the chronological evidence/history record maintained alongside the four continuity documents.
+- Added explicit GitHub fetch/write/read-back verification and evidence-based claim discipline.
+- Clarified that supporting documents and traceability must follow material research changes.
+- Required genuine illustrated diagrams, never ASCII art, while preserving the existing research gate: improve/create diagrams only when the underlying argument and evidence are stable.
+- Kept project maturity wording as GitHub project metadata, not a universal conversational restriction.
+
+### Verification boundary
+
+All five operational files were fetched after their updates and checked against the submitted content. This is a workflow/documentation change only; it does not alter research findings, implementation status or assurance status.
+
+
 
 ## 2026-11-16 · Cross-document transport-independence reconciliation
 
