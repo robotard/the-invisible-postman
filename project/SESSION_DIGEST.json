@@ -14,14 +14,14 @@
     "docs/route-comparison-framework.md"
   ],
   "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
-  "current": "W1-W4 and integrated thesis remain working drafts. W3 lifecycle is now route-neutral and traceability heading repaired. Source register has 40 entries. Six evidence-bounded starting profiles, a documentary comparison matrix, and an initial lifecycle/event observer ledger are recorded: Qiao 2023, MRAS 2026, DRAS 2026, Dropbox shared link, Signal protocol reference, and Echomix/Pigeonhole. SRC-035 and SRC-037 full text inspected; SRC-033, SRC-034 and SRC-036 remain partial. SRC-038-SRC-040 official documentation inspected. No deployed profile is yet pinned or tested.",
+  "current": "W1-W4 and integrated thesis remain working drafts. W3 transport-neutral lifecycle remains in place. Source register has 42 entries. Six evidence-bounded route profiles, documentary comparison and initial lifecycle/event observer ledger exist. SRC-033, SRC-034 and SRC-036 have expanded publisher-indexed partial inspection but remain incomplete; SRC-035 and SRC-037 full text inspected. SRC-038-SRC-042 protocol/service references inspected. A new protocol-boundary analysis covers key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and fallback. No protocol selected, no deployed profile pinned or tested.",
   "next": [
-    "Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review states until methods/results are inspected.",
+    "Seek complete full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until full methods/results and limitations are inspected.",
     "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
-    "Extend the initial lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; keep unknowns explicit.",
-    "Reconcile route findings into W1-W4, the contribution assessment and integrated thesis.",
-    "Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without premature protocol selection.",
-    "Complete exact-status, terminology, image-reference and cross-document consistency audits; relative Markdown links currently pass."
+    "Extend the lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; retain unknowns.",
+    "Reconcile protocol-boundary analysis into W2/W3/W4, decision records and the thesis; test obligations against Signal, MLS and HPKE references without premature selection.",
+    "Reconcile route findings into W1-W4 and the contribution assessment.",
+    "Run a fresh full-tree relative-link, exact-status, terminology and image-reference audit."
   ],
   "defer": [
     "New diagrams until comparison findings stabilise",
@@ -36,22 +36,26 @@
     "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "checkpoint reflects initial lifecycle/event observer ledger; saved and read-back verified",
-    "project/WORKPLAN.md": "profile register progress and next sequence reconciled; saved and read-back verified",
-    "project/WORK_LOG.md": "dated initial event-ledger entry added; saved and read-back verified",
+    "project/PROJECT_STATE.md": "Current checkpoint reflects 42 source entries, expanded partial SRC-033/034/036 review, and protocol-boundary analysis; fetched and read-back verified.",
+    "project/WORKPLAN.md": "Roadmap updated to 42 source entries, protocol-boundary integration and thin ChatGPT Project Instructions boundary; fetched and read-back verified.",
+    "project/WORK_LOG.md": "Dated protocol-boundary and expanded indexed-literature review entries added; fetched and read-back verified.",
     "commit": "3e00192380c2f34a3be4685eb14bd5add961f69b",
     "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
     "project_state_checkpoint_commit": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
     "digest_readback": "exact content match after final write",
-    "project/SESSION_DIGEST.md": "refreshed from verified working documents; exact read-back matched",
-    "docs/source-register.md": "SRC-038-SRC-040 added; saved and read-back verified",
-    "docs/route-comparison-framework.md": "six profile register, documentary comparison and initial lifecycle/event observer ledger saved and read-back verified",
+    "project/SESSION_DIGEST.md": "Refreshed from current working records; fetched and read-back verified.",
+    "docs/source-register.md": "SRC-041/SRC-042 added; SRC-033/SRC-034/SRC-036 expanded partial inspection boundaries; fetched and read-back verified.",
+    "docs/route-comparison-framework.md": "MRAS/DRAS profile boundaries expanded from publisher-indexed text; fetched and read-back verified.",
     "docs/observer-property-matrix.md": "source-informed observer/property implications added; exact read-back matched",
     "latest_research_commit": "e66374e1de49530194a3d5f77cb53932142a395b",
     "docs/w3-architecture.md": "route-neutral lifecycle and route-specific adapter responsibilities saved and read-back verified",
     "docs/traceability.md": "RQ5 references all six evidence-bounded profile IDs; exact read-back matched",
-    "thesis.md": "MRAS/DRAS/Zhu evidence boundaries clarified; mixnet route baseline included; saved and read-back verified",
-    "relative_markdown_link_audit": "26 Markdown files checked against recursive repository tree; no broken relative links found"
+    "thesis.md": "Protocol-boundary analysis and expanded partial image-literature evidence integrated; fetched and read-back verified.",
+    "relative_markdown_link_audit": "26 Markdown files checked against recursive repository tree; no broken relative links found",
+    "docs/protocol-boundary-analysis.md": "New research analysis committed and read-back verified; no protocol selected.",
+    "docs/w4-risks-and-evaluation.md": "E3/E4 acceptance criteria strengthened for AAD, key separation, nonce uniqueness, rollback, concurrency and retries; fetched and read-back verified.",
+    "repository_markdown_link_audit": "27 Markdown files checked against recursive repository tree in three batches; no broken relative links. README's initial JSON digest false positive was corrected by including the JSON file in the known tree.",
+    "repository_instruction_scan": "All 27 Markdown files scanned: no ZIP/archive-packaging instruction references. ChatGPT Project Instructions boundary is explicit in PROJECT_STATE, WORKPLAN and Markdown digest."
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; read back and verify all three; refresh SESSION_DIGEST.md from verified state; refresh SESSION_DIGEST.json last; verify both digests against the three working documents.",
   "checkpoint_commit_before_digest_refresh": "f6cafbb400b702a71f0acdaf1ac1b2004bf30a6b",
@@ -60,7 +64,8 @@
     "thesis_and_research": "Substantive argument, technical principles, evidence, contribution assessment, uncertainty and limitations.",
     "operational_documents": "Verified status, priorities, dependencies, blockers, paths and next actions; link to research files rather than duplicating thesis exposition.",
     "session_digests": "Structured operational handover only; not thesis exposition.",
-    "assistant_working_notes": "Maintain the same separation; mention project status only when relevant."
+    "assistant_working_notes": "Maintain the same separation; mention project status only when relevant.",
+    "chatgpt_project_instructions": "Thin operating layer for continuation, execution and verification; follows live GitHub records and does not duplicate or override thesis research rules. Actual ChatGPT settings are external to GitHub."
   },
   "checkpoint_protocol": [
     "At session start fetch live default branch and both digests; read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant research/supporting documents.",
@@ -99,24 +104,41 @@
     "Distinguish drafted, committed, read-back verified, tested and independently reviewed."
   ],
   "source_review_detail": {
-    "SRC-033": "Partial: publisher abstract and indexed article details; full text inaccessible; methods/results unverified.",
-    "SRC-034": "Partial: publisher abstract/highlights; full methods, tables and platform configurations unverified.",
+    "SRC-033": "Expanded partial: publisher-indexed text describes DCT stabilisation, lattice embedding, post-processing, BOSSbase payload/recompression evaluation, metric families and LinkedIn testing; exact settings, tables and platform configuration remain unverified.",
+    "SRC-034": "Expanded partial: publisher-indexed text describes RoLoS/CARE, Q95-to-Q85/Q80/Q75 scenarios, PMAS comparison, author-reported 87% extraction-error reduction and order-of-magnitude speed claims, plus WhatsApp/LinkedIn/X tests; full methods/tables/configurations unavailable.",
     "SRC-035": "Full publisher HTML inspected; bounded 50-image platform tests; no independent reproduction.",
-    "SRC-036": "Partial: publisher abstract/indexed sections; full method/results inaccessible.",
+    "SRC-036": "Expanded partial: publisher-indexed text describes attack/optimisation CNN, BOSSbase 1.01 and BOWS2 10k 512x512 datasets, 8k/2k BOSSbase split and JPEG QF75; full method/results/generalisation limits unavailable.",
     "SRC-037": "Full 40-page survey inspected; secondary synthesis, not a common controlled benchmark.",
     "SRC-038": "Official Signal PQXDH revision 3 and Double Ratchet revision 4 specifications inspected; protocol reference only, not full service profile.",
     "SRC-039": "Current Dropbox official file-activity and shared-link permission help pages inspected; no live account test.",
-    "SRC-040": "Current Katzenpost Pigeonhole specification, project repository and 5 November 2026 article inspected; no pinned deployment or reproduction."
+    "SRC-040": "Current Katzenpost Pigeonhole specification, project repository and 5 November 2026 article inspected; no pinned deployment or reproduction.",
+    "SRC-041": "Full RFC 5869 inspected; salt/info distinction and extraction/context roles documented.",
+    "SRC-042": "Full RFC 9180 inspected; HPKE treated as compositional comparator, not selected protocol."
   },
   "route_profiles": {
     "IMG-QIAO-2023": "Published empirical social-image profile; bounded 50-image QF85/payload 0.1 study; not a current service guarantee.",
-    "IMG-MRAS-2026": "Publisher abstract reports LinkedIn testing; full methods/results not inspected.",
-    "IMG-DRAS-2026": "Publisher highlights report WhatsApp, LinkedIn and X; full methods/results not inspected.",
+    "IMG-MRAS-2026": "Expanded publisher-indexed partial profile: DCT stabilisation, lattice embedding, post-processing, BOSSbase/recompression metrics and LinkedIn test; full methods/tables/configuration unavailable.",
+    "IMG-DRAS-2026": "Expanded publisher-indexed partial profile: RoLoS/CARE, Q95→Q85/Q80/Q75, PMAS comparison and author-reported platform/runtime claims; full methods/tables/configuration unavailable.",
     "FILE-DROPBOX-LINK": "Official shared-link/activity documentation profile; no live account test; client-side protected-object wrapper is only a comparison condition.",
     "E2E-SIGNAL-PROTOCOL": "PQXDH revision 3 + Double Ratchet revision 4 protocol reference; not a full Signal Messenger service profile.",
     "MIX-ECHOMIX-PIGEONHOLE": "Echomix arXiv v2 plus current Pigeonhole documentation; no pinned compatible deployment release."
   },
-  "latest_checkpoint_commit": "e7ced472cde7533801b5701e39459546d1bb3f46",
-  "latest_checkpoint_blob": "447f1a5345271e8cb21ad04e38f2e063a09a7978",
-  "latest_research_commit": "0971e39baa2edbd18075a119b2a5f406fc0549c5"
+  "latest_checkpoint_commit": "7ee0db41eb77abc4e7a1a272fd47b48d8250afd1",
+  "latest_checkpoint_blob": "7ee0db41eb77abc4e7a1a272fd47b48d8250afd1",
+  "latest_research_commit": "417525a604f481b47618e6b34a3ddeb43b4bdb4e",
+  "protocol_analysis": {
+    "path": "docs/protocol-boundary-analysis.md",
+    "status": "initial research analysis; not a complete protocol specification",
+    "covers": [
+      "key hierarchy and scope",
+      "HKDF salt versus info",
+      "identity and transcript binding",
+      "AEAD nonce uniqueness",
+      "AAD and authenticated context",
+      "replay, ordering, loss and multipart semantics",
+      "safe route fallback",
+      "HPKE application responsibilities"
+    ],
+    "selection": "No primitive suite or protocol selected."
+  }
 }
