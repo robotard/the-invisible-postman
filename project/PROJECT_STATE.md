@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16  
+**Checkpoint:** 2026-11-16 · Image-steganography prior-art review update  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -21,7 +21,7 @@ Use GitHub work documents as the project continuity source. Do not make the user
 
 The repository has a coherent working thesis, W1–W4 research documents, a threat model, decision and traceability registers, prior-art comparisons, an observer/property matrix and a common route-comparison framework. These are substantive drafts, not a finished or independently reviewed thesis.
 
-The latest verified work reconciles transport independence and optional orchestration across the architecture, thesis, W4, traceability, README and diagram guidance. The protected message is logically invariant across routes unless an explicit authenticated conversion is specified. Image carriage remains a required research comparison, not a mandatory runtime route.
+The latest verified architecture reconciliation keeps transport independence and optional orchestration explicit across the architecture, thesis, W4, traceability, README and diagram guidance. The protected message remains logically invariant across routes unless an explicit authenticated conversion is specified. Image carriage remains a required research comparison, not a mandatory runtime route. The latest research pass completed full-text inspection of SRC-035 and SRC-037 and bounded partial inspection of SRC-033, SRC-034 and SRC-036; the remaining access limitations are recorded in the source register.
 
 ## Completed baseline
 
@@ -35,7 +35,7 @@ The latest verified work reconciles transport independence and optional orchestr
 ## Active work, in priority order
 
 1. **Route evidence:** Select defensible, named and versioned profiles for image-platform carriage, file/attachment transfer, conventional E2E messaging and Echomix/Katzenpost. Populate the route framework with source-backed lifecycle events, observer views, transformations, reliability and costs. Mark unknowns; do not invent platform behaviour.
-2. **Source review:** Complete full-text review of SRC-033–SRC-037 and update their review states and evidence boundaries.
+2. **Source review:** Seek full text for the remaining portions of SRC-033, SRC-034 and SRC-036 where access permits. SRC-035 and SRC-037 have now had full publisher/repository text inspected; no underlying experiment was reproduced.
 3. **Architecture alignment:** Check W3 section numbering and terminology against traceability and the thesis.
 4. **Protocol questions:** Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without prematurely selecting a protocol.
 5. **Audit:** After substantive edits, run repository-wide relative-link, exact-status and cross-document consistency checks.
@@ -46,6 +46,7 @@ The latest verified work reconciles transport independence and optional orchestr
 - W1–W4 are drafted; final alignment against the integrated thesis remains open.
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
 - Named route profiles and source-backed route observations are not yet complete.
+- SRC-033, SRC-034 and SRC-036 remain partial reviews because full article text was not accessible in this pass; SRC-035 and SRC-037 are full-text inspected.
 - The full link/status audit has not been rerun after the latest cross-links.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
 - No researcher decision currently blocks the next research pass.
@@ -59,7 +60,7 @@ The latest verified work reconciles transport independence and optional orchestr
 ## Next session: exact starting point
 
 1. Apply the Continue/resume contract above. Read both digests, all three working documents and the relevant thesis, research and supporting documents from live `main`.
-2. Inspect SRC-033–SRC-037 and complete the highest-value full-text reviews.
+2. Continue seeking accessible full text for SRC-033, SRC-034 and SRC-036; do not overstate their abstract/indexed evidence.
 3. Select route profiles only where the version/configuration can be evidenced; otherwise record the profile as unresolved and state what evidence is missing.
 4. Populate the event/observer ledger, then reconcile the result into the thesis and supporting documents.
 5. Check W3 numbering and traceability references.
