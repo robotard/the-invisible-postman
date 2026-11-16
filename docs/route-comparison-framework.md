@@ -257,7 +257,7 @@ Echomix substantially narrows any broad claim to a newly integrated privacy-awar
 
 This is a narrower and more demanding question. It may show that image carriage is useful for a particular deployment constraint, that it introduces avoidable fragility, or that a simpler route is preferable. All three outcomes are valid research results.
 
-## 8.1 Image-carriage evidence constraints from SRC-033–SRC-037 and SRC-043–SRC-045
+## 8.1 Image-carriage evidence constraints from SRC-033–SRC-049
 
 The reviewed literature makes the image route comparison more specific, but does not establish that a particular platform currently applies any one transformation to every upload.
 
@@ -265,6 +265,11 @@ The reviewed literature makes the image route comparison more specific, but does
 - MRAS (SRC-033) and DRAS (SRC-034) report methods aimed at JPEG recompression robustness. MRAS full methods/results and DRAS full text remain unreviewed here; their publisher abstracts/highlights are not enough to establish comparative superiority.
 - Zhu et al. (SRC-036) describe active payload-destruction processing designed to preserve image quality. Full method/results remain unreviewed. Treat it as evidence that adversarial media transformation is a researched attack class, not evidence that a named platform deploys that method.
 - Kombrink et al. (SRC-037) provide a broad taxonomy and identify limited generalisation in steganalysis. Their cross-paper performance ordering is not a common controlled benchmark.
+
+The source set now also includes active sanitization and counter-adaptation (SRC-036, SRC-046–SRC-048), plus animated-GIF frame redundancy (SRC-049). These add two distinct comparison axes:
+
+- **Sanitizer condition:** passive/routine processing, active learned sanitization, or sender adaptation to a known sanitizer. Record model/version, knowledge and access assumptions; do not assume a platform deploys any cited model.
+- **Carrier multiplicity:** frames within one animated object, separate carrier objects in a fragment/redundancy set, and distinct protected messages in a conversation. These units have different failure, linkage and observer properties.
 
 For every image route profile, record at least: platform and app/web version; operating system/client; original versus compressed sending option; image format and dimensions; upload/post type and visibility; account state; retrieval/download route; transformations evidenced or measured; payload method and rate if relevant; extraction error and complete-message recovery; detector and false-positive/negative operating point; endpoint authentication/integrity outcome; and observer-visible metadata/events. Separate published evidence from proposed measurements and unknowns.
 
