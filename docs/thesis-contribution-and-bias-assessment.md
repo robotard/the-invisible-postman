@@ -112,6 +112,7 @@ These sources were identified in the current assessment. Only the abstracts, pub
 | Bauer et al. (2024), Leveraging Generative Models for Covert Messaging: Challenges and Tradeoffs for Dead-Drop Deployments | Whole-pipeline dead-drop challenges and performance/security trade-offs have already been studied. | Do not claim that considering the full pipeline is itself novel. Identify what this thesis adds beyond that work. |
 | Bauer et al. (2025), Provably Secure Covert Messaging Using Image-based Diffusion Processes | Formal image-based covert messaging exists in a related but different generated-image model. | Distinguish generated-image channels from embedding/reusing externally hosted image carriers; inspect the full paper. |
 | Pasquini et al. (2021), media forensics on social platforms | Platform transformations and forensic traces are established research concerns. | Avoid claiming platform processing or metadata forensics as novel; identify any new cross-layer application or evaluation. |
+| Infeld et al. (2025), Echomix / Katzenpost | Integrated global-observer messaging already combines traffic coupling, anonymous discovery/storage, reliability, collusion analysis and human-routine leakage. | Do not claim a general integrated delivery-privacy architecture or responsibility separation as new. Compare the image-platform boundary against this stronger integrated baseline. |
 
 ## 6. Candidate contribution statements to test
 
@@ -124,12 +125,12 @@ A theory-led architecture that keeps participant cryptographic authority indepen
 - Strength: coherent, understandable and directly supported by the current design reasoning.
 - Weakness: architectural separation is a familiar systems principle; novelty depends on a precise comparison with existing secure messaging and covert-messaging architectures.
 
-**Candidate B — End-to-end delivery privacy analysis**
+**Candidate B — Cross-layer image-platform carriage analysis**
 
-A lifecycle model that treats publication, recipient discovery, retrieval, collection, decapsulation, validation and human/metadata correlation as one connected privacy problem rather than treating carrier concealment as the whole delivery problem.
+A bounded comparison of ordinary image-platform carriage with established file, conventional messaging and mixnet-backed messaging routes, using common endpoint objectives and explicit observer/event models to identify media-transformation, metadata, discovery, retrieval or failure differences.
 
-- Strength: the strongest candidate for a distinctive analytical contribution, especially if the thesis produces a useful observer/property matrix and demonstrates where privacy assumptions fail across layers.
-- Weakness: dead-drop messaging and oblivious retrieval already address substantial parts of this space. The exact gap must be established against those works.
+- Strength: focuses on a route-specific boundary not directly studied by the integrated Echomix messaging design, while retaining the project's required image-carriage scope.
+- Weakness: the difference may be merely descriptive or already covered by image-forensics/dead-drop research. It needs a reproducible, decision-relevant result and must be narrowed or abandoned if no such result survives.
 
 **Candidate C — Route-independent message semantics with image-carriage comparison**
 
@@ -138,7 +139,7 @@ A route abstraction and comparative evaluation framework in which one protected 
 - Strength: potentially useful to system designers; makes image carriage testable against simpler alternatives.
 - Weakness: a comparison table alone is not a contribution. It needs a defensible taxonomy, reproducible evaluation method or new insight.
 
-**Provisional direction:** B as the main research contribution, supported by A as the architectural foundation and C as the evaluation method. This is the leading working direction, expressed as an emergent proposition rather than a settled conclusion.
+**Current direction:** A remains the architectural organising principle, not a novelty claim. Candidate C supplies the comparison method. Candidate B is now narrowed to image-platform carriage and must earn its place through a measurable, decision-relevant difference against the stronger integrated baseline. No contribution ranking is final.
 
 ## 7. Required evidence before claiming originality
 
@@ -155,14 +156,14 @@ A route abstraction and comparative evaluation framework in which one protected 
 
 The strongest current thesis is not “a new image steganography system” and not “a new cryptographic messaging protocol”. Neither claim is supported.
 
-The strongest defensible direction is a critical, lifecycle-wide architectural study of endpoint-controlled messaging over replaceable untrusted carriage, with particular attention to the interaction between image carriage, recipient discovery and cross-layer privacy leakage.
+The strongest current direction is a controlled comparison of ordinary image-platform carriage against file, conventional messaging and mixnet-backed messaging, while holding endpoint security objectives constant and recording route-native guarantees, observer capabilities, transformations, discovery, reliability and human interaction. Echomix means that broad integrated lifecycle framing is not a differentiator.
 
 The next research batch should prioritise:
 
-1. Full-text comparison of OMR, PerfOMR and Oblivious Signaling.
-2. Full-text comparison of the 2024 dead-drop pipeline and 2025 image-diffusion work.
-3. A prior-art matrix mapping each candidate contribution to what existing work already does and what remains distinct.
-4. A sharpened central research question and contribution statement based on that matrix.
+1. Extend full-text comparison to integrated mixnet-backed messaging, beginning with Echomix/Katzenpost.
+2. Compare image-platform transformations and observables with media-forensics and dead-drop systems.
+3. Apply the route comparison framework to named, versioned profiles and explicit observer/event ledgers.
+4. Identify a reproducible, decision-relevant difference; revise or retire Candidate B if none survives.
 5. Only then, decide which planned diagrams are stable enough to communicate the actual contribution.
 
 **Go decision:** Continue. The architectural reasoning is strong enough to justify further work, and the privacy/lifecycle question has real research value. The originality claim remains conditional. Do not pause the thesis for routine review or illustration work; do not let the required image route dictate the conclusion.
