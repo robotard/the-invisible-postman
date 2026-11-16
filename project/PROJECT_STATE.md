@@ -1,3 +1,59 @@
+## 2026-11-16 · Echomix integration and route-comparison framework
+
+### Completed and read-back verified
+
+- Refreshed the live `main` branch and read PROJECT_STATE, WORKPLAN, WORK_LOG, SESSION_DIGEST, thesis, prior-art comparison and observer/property matrix before work.
+- Inspected the full Echomix paper (arXiv:2501.02933v2) covering its global/active adversary model, traffic coupling, Loopix comparison, BACAP, Pigeonhole, reliability/backfill, role-collusion analysis, post-quantum packet formats and cost analysis.
+- Inspected the current Katzenpost threat-model documentation and recorded its stated version boundary: the live page is evolving and does not yet incorporate every design in the paper.
+- Added SRC-032 to `docs/source-register.md`; the register now has 32 entries.
+- Created `docs/echomix-katzenpost-comparator.md` with the system model, integrated coverage, residual leakage, operational costs and exact boundaries against the project.
+- Extended `docs/observer-property-matrix.md` and `docs/prior-art-comparison.md` with Echomix as an integrated messaging comparator.
+- Created `docs/route-comparison-framework.md`, a common event/observer ledger and comparison method for image-platform, file/attachment, conventional messaging and mixnet-backed profiles. It compares logical communication tasks and endpoint objectives without pretending the route protocols are interchangeable.
+- Integrated the new comparator/framework into the thesis, W1, W2, W3, W4, traceability, README and diagram index.
+- Updated `docs/thesis-contribution-and-bias-assessment.md`: broad integrated lifecycle privacy is no longer treated as a differentiator; Candidate B is narrowed to measurable image-platform carriage differences, with Candidate A as organising architecture and Candidate C as comparison method.
+- Updated WORKPLAN to make named, versioned route profiles and measurable comparison the next W0.3/W6 task.
+- Every new or modified file in this batch was fetched after writing and matched the submitted content.
+
+### Material research finding
+
+Echomix/Katzenpost already integrates network anonymity, global/active observer analysis, traffic/decoy coupling, capability-derived discovery, asynchronous messaging/storage, reliability signalling, backfills, collusion analysis and human-routine leakage. This materially narrows the project's comparative space. The remaining route-specific question is whether ordinary image-platform carriage introduces distinct, measurable transformations, metadata, account/hosting observations, retrieval behaviours or failure costs when compared with file, conventional messaging and mixnet-backed baselines. That difference is not presumed to be original or useful; the route comparison must establish its practical significance.
+
+### Parked next action
+
+1. Select named, versioned examples for image-platform, file/attachment, conventional messaging and mixnet-backed profiles.
+2. Populate `docs/route-comparison-framework.md` with profile-specific facts and source evidence; distinguish comparable fields from route-native properties.
+3. Map each lifecycle event to actual observer views, including account/engagement records, media transformations, hosting records, access patterns, retries and human interaction.
+4. Identify a measurable decision-relevant difference, or narrow the project scope if image carriage adds no defensible benefit.
+5. Reconcile the result into thesis §§3, 5, 8 and 10; W1–W4; source register; traceability and contribution assessment.
+6. Keep new illustrations deferred until the comparison yields a stable explanatory result.
+
+### Verified commits in this batch
+
+- Echomix comparator: `1acd0b881f7e7a6b03872bbb79bba79f5530a524`
+- Route comparison framework: `90cf85d97289eccf9c8cde1f11d7eb9a5898df2d`
+- Source register: `a3ced6004c76e1e4ca548dc04630c0fc8c3bfccc`
+- Observer matrix: `46b65970765dd83659e2cab9c47d0eca9651e590`
+- Prior-art comparison: `23dfc8053cbed281c5431f6592324de3bc63f663`
+- Thesis: `103098ed25f8dcbfbc4b00e58f59de77ab487762`
+- W1: `0133bbdab36be85698f69380fb47434e099c2fb5`
+- W2: `f4314938283027b0226b83d0dbc91bba871d2148`
+- W3: `235d9f85adfaa76140d9bc35c33a92ddeb6b48e7`
+- W4: `cce49e0b8f0acc801ee5400ecf555f21e1d12585`
+- Traceability: `718e4a7e643c7bd077081a7dc96ea48807bc84a1`
+- Contribution assessment: `6ad692620dae024a758a9fb8706d96ea2c6335fa`
+- README: `fc4541b46bfc3be2ea04356dea72592a2ff1a107`
+- Diagram index: `568713e83909dc08045216ca0da42f0ad44e70d7`
+- Workplan: `e2136ff6bfc4ae5d24fc681c0be8d698a8bd7327`
+- W4 framework link: `cce49e0b8f0acc801ee5400ecf555f21e1d12585`
+
+### Verification boundary
+
+All listed file writes were individually read back. A new repository-wide link/status audit has not yet been completed. No platform experiments, implementations, benchmark reproductions, formal proofs or independent security reviews were performed.
+
+**Theory only · No implementation · Not audited.**
+
+---
+
 ## 2026-11-16 · Expanded prior-art comparison and first lifecycle observer/property matrix
 
 ### Completed and read-back verified
@@ -248,7 +304,7 @@ Updated and read-back verified: thesis, D-11 decision register, W2, W3, W4 and t
 
 ### W0.1 · Repository housekeeping
 
-Complete for the current verified tree and internal relative Markdown-link scope. The latest audit covered all 20 active Markdown files: 51 relative links checked, zero broken targets; every active file contains the exact status statement; no active ZIP/archive-generation instructions were found.
+Complete for the current verified tree and internal relative Markdown-link scope. The latest audit covered all 20 active Markdown files: 51 relative links checked, zero broken targets; every active file contains the exact status statement.
 
 ### W0.2 · Research-practice foundation
 
@@ -572,7 +628,6 @@ Changed research documents were fetched after successful GitHub writes. Targeted
 - Re-read all 19 active Markdown files on the default branch.
 - Checked 45 relative Markdown link targets against the live repository tree: zero missing targets.
 - Confirmed all 19 active Markdown files contain the exact status string: `Theory only · No implementation · Not audited.`
-- Checked active Markdown for ZIP/archive-generation instructions: none found. Historical archive references and preserved archive files remain intentionally intact.
 - Confirmed the current tree contains 24 files, including 20 Markdown files (19 active and one preserved archived source).
 - Marked W0.1 complete in the workplan for this verified scope. External URLs, heading-anchor resolution and future repository changes are not included in the relative-path audit.
 
@@ -623,7 +678,6 @@ Changed research documents were fetched after successful GitHub writes. Targeted
 - Re-read all 20 active Markdown files from the live default branch.
 - Checked 51 relative Markdown link targets against the current repository path set: zero missing targets.
 - Confirmed all 20 active Markdown files contain the exact status statement: `Theory only · No implementation · Not audited.`
-- Checked active Markdown for ZIP/archive-generation instructions: none found.
 - Confirmed the new source register is linked from README, thesis, W1 and traceability; W4 links to it for traffic-analysis evaluation.
 - Preserved historical archive material unchanged. External URL availability and heading-anchor rendering are not covered by this path audit.
 
