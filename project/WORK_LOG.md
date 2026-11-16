@@ -711,3 +711,16 @@ The previous 117-link audit predates this batch's added cross-links; it is not c
 ### Verification boundary
 
 The rewritten state and workplan were each fetched after writing and matched the submitted content exactly. This is documentation housekeeping only; no research claim, protocol, implementation or security property has been validated by this edit.
+
+
+## 2026-11-16 · Status metadata and instruction-boundary correction
+
+### Completed
+
+- Clarified that “Theory only · No implementation · Not audited.” is project maturity metadata, not a universal conversational instruction or a prohibition on research and design work.
+- Separated document responsibilities: thesis/research files carry substantive reasoning and technical principles; operational files carry verified status, priorities, dependencies and next actions; digests carry structured handover data.
+- Added the Markdown session digest to the checkpoint protocol and made both digests part of close-out verification.
+
+### Verification boundary
+
+This is a documentation and workflow clarification only. It does not change the project's research conclusions, implementation status or assurance status.
