@@ -221,7 +221,7 @@ Evaluation questions:
 * Can a malicious intermediary delay, suppress or refuse delivery?
 * What is the privacy, latency, bandwidth and usability cost of any proposed padding, delay, batching, cover traffic or mixing mechanism?
 
-The evaluation must distinguish a baseline that merely rotates carriers or varies placement from stronger traffic-obfuscation or mix-network approaches. Loopix is a comparator for the latter, not an assumed component. The encrypted-messaging traffic-analysis studies in [the source register](source-register.md) (SRC-016, SRC-018 and SRC-019) provide testable observer scenarios, but their results must not be generalised beyond their stated applications and conditions.
+The evaluation must distinguish a baseline that merely rotates carriers or varies placement from stronger traffic-obfuscation or mix-network approaches. The [observer/property matrix](observer-property-matrix.md) records current comparator boundaries for OMR/GOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion work. It should be used to construct like-for-like observer scenarios, not to rank unlike guarantees. In particular, evaluate server collusion, out-of-band token distribution, cover-traffic assumptions, global network visibility, platform/media transformations and endpoint validation separately. Loopix is a comparator for the latter, not an assumed component. The encrypted-messaging traffic-analysis studies in [the source register](source-register.md) (SRC-016, SRC-018 and SRC-019) provide testable observer scenarios, but their results must not be generalised beyond their stated applications and conditions.
 
 Proposed acceptance conditions:
 
