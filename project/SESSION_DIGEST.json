@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v1",
-  "checkpoint": "2026-11-15",
+  "checkpoint": "2026-11-16",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "read_first": [
@@ -13,9 +13,9 @@
   "authority": "Digest is a retrieval index only; live repository documents and commit history are authoritative.",
   "priority": [
     "W0.3/W6 research-source reconciliation and integrated thesis construction",
-    "Broaden closest-related-work search around group OMR, private signaling, two-server/DORAM, and integrated dead-drop/image-carriage systems",
-    "Build a common observer/property matrix spanning publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction",
-    "Reassess candidate contributions A/B/C and refine or displace the emergent proposition using adverse as well as supporting evidence"
+    "Initial lifecycle observer/property matrix completed for OMR/GOMR, OMR variants, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion work",
+    "Extend related work to mix networks and other integrated anonymous-messaging/media-carriage systems; compare explicit observer leakage and assumptions",
+    "Identify a concrete cross-layer incompatibility or falsifiable result; revise or retire Candidate B without presuming originality"
   ],
   "defer": [
     "routine author review unless blocking/material",
@@ -24,17 +24,17 @@
     "implementation"
   ],
   "next": [
-    "Search and inspect the closest additional integrated anonymous-messaging, private-signaling, two-server/DORAM, dead-drop and image-carriage systems",
-    "Build the common observer/property matrix across the complete delivery lifecycle",
-    "Use the matrix to identify cross-layer leakage, incompatible assumptions and evidence gaps",
-    "Reassess the central research question and candidate contribution direction without presuming originality",
-    "Continue W1-W4 and source-register reconciliation; only then reconsider diagram work",
+    "Extend the observer/property matrix with the closest mix-network and anonymous-messaging/media-carriage comparators where global observers and cover traffic materially affect the route",
+    "Map explicit observer views and leakage across publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction",
+    "Identify at least one concrete cross-layer incompatibility or falsifiable comparison result; revise or retire Candidate B if none survives",
+    "Reconcile material findings into thesis §§3, 5, 8 and 10; W1-W4; traceability; source register and prior-art comparison",
+    "Only after the argument stabilises, reconsider the planned diagrams",
     "Before ending every session, reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; mark work complete or park exact next actions",
     "Refresh this digest after those three working documents"
   ],
   "open": [
-    "whether a common observer/property model yields a distinct analytical result beyond existing OMR and dead-drop pipeline studies",
-    "broader integrated anonymous messaging and two-server/DORAM prior art",
+    "whether a common observer/property model yields a distinct analytical result beyond OMR/GOMR, Oblivious Signaling, Remise and dead-drop pipeline studies",
+    "additional mix-network and integrated anonymous-messaging/media-carriage prior art",
     "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
     "carrier metadata allowlist and platform transformations",
     "traffic/access-pattern and behavioural correlation evaluation",
@@ -54,30 +54,37 @@
     "broken_links": null,
     "status_string_present": true,
     "active_archive_instructions": false,
-    "tree_files": 28,
-    "tree_markdown": 23
+    "tree_files": 29,
+    "tree_markdown": 24
   },
-  "verification_scope": "Full-text literature comparison completed for OMR, PerfOMR, Oblivious Signaling, SophOMR, InstantOMR, the 2024 dead-drop pipeline and the 2025 image-diffusion paper. Source register, prior-art comparison, thesis, W1, traceability, PROJECT_STATE, WORKPLAN and WORK_LOG were written and fetched back successfully. No full-tree relative-link audit, independent reproduction or formal/security review was run.",
+  "verification_scope": "The current main-branch recursive Git tree was fetched and verified (29 files, 24 Markdown; not truncated). New and modified documents in the 2026-11-16 batch were individually fetched after writes and matched the submitted content. The GOMR and Remise full papers were inspected. No full-tree relative-link audit, independent reproduction, formal proof, implementation test or security review was run.",
   "open_research_threads": [
-    "originality gap and direct comparison with closest existing systems",
+    "originality gap and direct comparison with closest integrated systems",
+    "cross-layer observer leakage and assumption compatibility",
     "recipient discovery/retrieval privacy and sender/recipient/server cost trade-offs",
     "carrier metadata allowlist and platform transformations",
     "traffic/access-pattern and behavioural correlation evaluation",
     "parser/resource-exhaustion and multipart safety evidence",
-    "full-text verification of newly added prior-art sources"
+    "mix-network and integrated image-carriage prior art"
   ],
-  "last_verified_batch": "2026-11-15: corrected research terminology across active documents; established mandatory three-document session continuity rule; reviewed seven prior-art full texts; expanded source register to 29; created and linked docs/prior-art-comparison.md; updated PROJECT_STATE, WORKPLAN and WORK_LOG with exact parked continuation.",
+  "last_verified_batch": "2026-11-16: added full-text prior-art comparison of GOMR and Remise (SRC-030/031); created docs/observer-property-matrix.md; narrowed Candidate B; integrated and read-back verified changes across thesis, W1-W4, source register, prior-art comparison, traceability, README and diagram index; reconciled PROJECT_STATE, WORKPLAN and WORK_LOG.",
   "audit_boundary": "All modified files in this batch were read back and matched. Recursive tree checked for counts only; no full-tree relative-link audit run.",
   "last_commits": {
-    "digest_initial_update": "updated at session start before substantive edits",
-    "source_register": "82cedce9e46e58f79a85e4e9b236effcf06becb9",
-    "prior_art_comparison": "d6147586f32eac006402388cc634ce3a48577843",
-    "thesis": "bf27fe49326d18008d52de293ebe9cbd36db58c4",
-    "w1": "d0edba7304036e9849014d74d92ca014317268f0",
-    "traceability": "9ec9171349388a810f34d209e4f959b8702aa5a3",
-    "project_state": "340fcf9ecb326f5ebc0cfccfd6cbb7b4f5548db7",
-    "workplan": "933a165a48de28631a00d69f02c327b75e1ef11f",
-    "work_log": "d746b6d1669538776308ad5b76d5ab639896bcbd"
+    "observer_matrix": "50253f65d5c69c8d98e2dc4652299c5f6a90545a",
+    "source_register": "d291d508441abdc5660caa855f23fd95b586acaf",
+    "prior_art_comparison": "c7d2c546e0bf07054a902db17cf3d6dd667b7d3f",
+    "thesis_related_work": "ae5cba962e014a2d2cc49e92d198459881010f58",
+    "thesis_bibliography_and_navigation": "73d7a3d90248a0dea7672f023f3524ca532ce22d",
+    "w1": "ac8390819cbc509d62f617be7a1d38d6acff49f3",
+    "traceability": "1778a5e35875b103dad765bdcc6db4a94fa620c6",
+    "w2": "e04d7b0e1e50a26f85ba4778c04291929e48e00d",
+    "w3": "da51924c43a51e700ff7e979f81ad55405de88ea",
+    "w4": "56559e8ed4702ddeda4e4b09e297eb451c10e664",
+    "readme": "a00171ca901a69e76adddc489e94c73ba4881aca",
+    "diagram_index": "478e12b18e4fbeadad2fe45ebb17d8d54cf85f00",
+    "project_state": "00f19f2086f32ac25c9b038a0bf5e1f8262f3bfb",
+    "workplan": "f8461f57112b0371343de71ae729fe9b18946035",
+    "work_log": "b4a4dab709091955a0678da7f8d86ef8ee11e71c"
   },
   "session_completion_rule": {
     "required_working_documents": [
@@ -106,5 +113,5 @@
     "distinction": "Keep research progression, supporting evidence, research questions, emergent propositions, evaluation, demonstrated results and demonstrated contributions distinct.",
     "constraint": "Do not force the developing research direction into a confirmatory framework. Do not promote a proposition to a demonstrated result or contribution without appropriate evidence."
   },
-  "source_register_entries": 29
+  "source_register_entries": 31
 }
