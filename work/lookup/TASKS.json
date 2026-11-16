@@ -1,13 +1,17 @@
 {
-  "schema": "tip.work.tasks.v1",
-  "scope": "temporary_internal_task_lookup_only",
+  "schema": "tip.work.tasks.v2",
+  "scope": "temporary_internal_work_backlog_and_lookup_only",
   "not_for_thesis": true,
+  "thesis_product": "thesis.md",
+  "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
   "next": "T-001",
   "tasks": [
     {
       "id": "T-001",
+      "type": "source_review",
       "title": "Complete full-text/source review of SRC-033, SRC-034 and SRC-036",
       "status": "open",
+      "priority": 1,
       "targets": [
         "docs/source-register.md",
         "docs/prior-art-comparison.md",
@@ -17,8 +21,10 @@
     },
     {
       "id": "T-002",
+      "type": "source_review",
       "title": "Review SRC-046–SRC-048 full texts and SRC-047 implementation where available",
       "status": "open",
+      "priority": 2,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
@@ -26,8 +32,10 @@
     },
     {
       "id": "T-003",
+      "type": "source_review",
       "title": "Review SRC-049 paper, formal security argument and complete results",
       "status": "open",
+      "priority": 3,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
@@ -35,8 +43,10 @@
     },
     {
       "id": "T-004",
+      "type": "route_analysis",
       "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
       "status": "open",
+      "priority": 4,
       "targets": [
         "docs/route-comparison-framework.md",
         "docs/echomix-katzenpost-comparator.md"
@@ -44,8 +54,10 @@
     },
     {
       "id": "T-005",
+      "type": "protocol_analysis",
       "title": "Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis",
       "status": "open",
+      "priority": 5,
       "targets": [
         "docs/protocol-boundary-analysis.md",
         "docs/w2-threat-model.md",
@@ -57,8 +69,10 @@
     },
     {
       "id": "T-006",
+      "type": "research_synthesis",
       "title": "Reconcile new route/source findings into W1–W4 and thesis",
       "status": "open",
+      "priority": 6,
       "targets": [
         "docs/w1-research-framing.md",
         "docs/w2-threat-model.md",
@@ -69,13 +83,90 @@
     },
     {
       "id": "T-007",
+      "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
       "status": "open",
+      "priority": 7,
       "targets": [
         "thesis.md",
         "docs/traceability.md",
         "docs/source-register.md"
       ]
+    },
+    {
+      "id": "T-008",
+      "type": "diagram_work",
+      "title": "Stabilise diagram arguments and reconcile figure briefs with thesis",
+      "status": "blocked_until_research_stable",
+      "priority": 8,
+      "targets": [
+        "thesis.md",
+        "docs/w1-research-framing.md",
+        "docs/w2-threat-model.md",
+        "docs/w3-architecture.md",
+        "docs/w4-risks-and-evaluation.md",
+        "diagrams/README.md"
+      ],
+      "next": "Do not create or revise thesis illustrations until the relevant argument, evidence and route comparisons are stable."
+    },
+    {
+      "id": "T-009",
+      "type": "diagram_work",
+      "title": "Create and verify contextual editable thesis diagrams",
+      "status": "deferred",
+      "priority": 9,
+      "targets": [
+        "thesis.md",
+        "diagrams/README.md",
+        "diagrams/"
+      ],
+      "next": "After T-008; use editable SVG and accessible descriptions; never ASCII art; verify every figure against the manuscript."
+    },
+    {
+      "id": "T-010",
+      "type": "peer_review_preparation",
+      "title": "Prepare a coherent thesis candidate and scoped peer-review materials",
+      "status": "deferred",
+      "priority": 10,
+      "targets": [
+        "thesis.md",
+        "docs/research-practice.md",
+        "docs/collaborative-governance.md",
+        "docs/templates/contribution-review-record.md",
+        "docs/templates/decision-record.md"
+      ],
+      "next": "Only after a coherent thesis candidate exists; define scope, expertise needs, reviewer guidance, confidentiality and response workflow. Do not imply reviewers are engaged."
+    },
+    {
+      "id": "T-011",
+      "type": "peer_review",
+      "title": "Conduct and reconcile substantive independent peer review",
+      "status": "not_started",
+      "priority": 11,
+      "targets": [
+        "thesis.md",
+        "docs/self-review-register.md",
+        "docs/templates/contribution-review-record.md",
+        "docs/collaborative-governance.md",
+        "docs/traceability.md"
+      ],
+      "next": "Only after actual reviewers participate. Record scope, evidence, comments, author responses, dispositions, dissent and thesis changes; never claim review before evidence exists."
+    },
+    {
+      "id": "T-012",
+      "type": "release_integrity",
+      "title": "Verify thesis release integrity and remove disposable work area",
+      "status": "deferred",
+      "priority": 12,
+      "targets": [
+        "thesis.md",
+        "README.md",
+        "docs/",
+        "diagrams/",
+        "archive/",
+        "work/"
+      ],
+      "next": "Freeze and identify the exact reviewed thesis release; verify citations, provenance, review state, figures, accessibility and repository integrity; prove no enduring document depends on work/; then remove work/."
     }
   ]
 }
