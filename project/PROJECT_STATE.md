@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · Multi-message linkage, steganographic prior art and illustration briefs integrated  
+**Checkpoint:** 2026-11-16 · Multi-message linkage, active sanitization and animated-carrier prior art integrated  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -52,7 +52,7 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 - W6 thesis construction is active; the current manuscript is not a review-ready final.
 - An initial named profile register, documentary comparison and lifecycle/event observer ledger now exist. Product-level version pinning, route-specific service evidence and full observer/collusion detail remain incomplete.
 - SRC-033, SRC-034 and SRC-036 remain partial article reviews because complete paper text/methods/tables/limitations were not accessible. Public author-linked code for SRC-033/034 is now pinned and inspected, but no code was run. SRC-035 and SRC-037 are full-text inspected.
-- A fresh post-integration audit checked all 29 Markdown files against the recursive repository tree: no broken relative links were found. A targeted instruction scan found no ZIP/archive-generation workflow instructions. Exact-status, terminology, image-reference and diagram-placeholder consistency still require a dedicated audit.
+- The previous full audit checked all 29 Markdown files against the recursive repository tree and found no broken relative links; it predates this latest research batch. Subsequent targeted relative-link audits covered W1–W4, the route framework, multi-message analysis, source register, prior-art comparison, observer matrix, traceability, contribution assessment, thesis and diagram index; no broken relative links were found. The previous repository instruction scan found no ZIP/archive-generation workflow instructions. A fresh full-repository audit and exact-status, terminology, image-reference and diagram-placeholder consistency audit remain open.
 - No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
 - No researcher decision currently blocks the next research pass.
 
