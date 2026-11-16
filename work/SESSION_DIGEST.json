@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-17",
+  "checkpoint": "2026-11-16",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_metadata_only",
@@ -23,7 +23,7 @@
     "docs/multi-message-linkage-and-steganographic-carriage.md"
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md in staging; confidence/evidence framing integrated as a provisional organising principle. Final contribution and review readiness remain open.",
+    "thesis": "One active manuscript at thesis.md in staging; confidence/evidence framing integrated as a provisional organising principle and initially challenged against SRC-034/SRC-036 source claims. Final contribution and review readiness remain open.",
     "research_units": "W1-W4 drafted with aligned message-multiplicity and confidence/evidence definitions, claim boundaries and text-only illustration prompts.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
     "multi_message_model": [
@@ -126,7 +126,8 @@
         "contribution assessment",
         "decision D-13",
         "traceability"
-      ]
+      ],
+      "challenge": "SRC-034 and SRC-036 source-claim examples demonstrate bounded attribution and evidence-gap handling. This is a documentary consistency check, not independent validation."
     }
   },
   "completed": [
@@ -154,6 +155,7 @@
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
+    "Continue challenging the confidence/evidence model against route observer evidence, protocol delivery semantics and multi-message reconstruction; initial SRC-034/SRC-036 documentary challenge is recorded.",
     "Challenge the new confidence/evidence model against source and route evidence; verify protocol delivery semantics and assess whether it improves claim precision without introducing privacy costs.",
     "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036. The 2026-11-16 publisher-indexed pass clarified evaluation/method context, but complete methods, tables and limitations remain unavailable; preserve partial-review labels.",
     "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available.",
@@ -186,16 +188,16 @@
   ],
   "verified": {
     "work/README.md": "87af6d60e02598929a01fc311a25f73f9abccdc6",
-    "work/PROJECT_STATE.md": "1c3648f6d698d8daca53656ca32c0feffd2e0ec0",
+    "work/PROJECT_STATE.md": "52429b8aa5b72e28d896d8679ae3fcc8a901a305",
     "work/WORKPLAN.md": "9d22a5d1b54dff351b60e6cb9348739e66b6a727",
-    "work/WORK_LOG.md": "7fa6bef611783250df8fbc7dd4c97d4bf7934774",
+    "work/WORK_LOG.md": "914c648078fc9ea86f6ba1bf9c6183fe6db86c98",
     "work/lookup/TASKS.md": "0dd84320ff59321769276dce873b608065ed5202",
     "work/lookup/TASKS.json": "0e5a1c05f937301b89cb586d65545d869e391ef5",
     "README.md": "ce2d0c914df2506c0611518cdeb4b454384dc588",
     "docs/source-register.md": "2215ef95c14356ed543279b2e93e0bf0de532849",
-    "work/SESSION_DIGEST.md": "dcb7ab96dc1dc73ce9b298d15a16f57e0dea8fdc",
-    "docs/confidence-and-evidence-model.md": "c7130a8e736286489fa63a8271a7af5552ca9e31",
-    "thesis.md": "e67f5ed4c1599c5eddfe20c6e8e281d933302abb",
+    "work/SESSION_DIGEST.md": "77db56902a56471fdfdba7c059aca41bdade424d",
+    "docs/confidence-and-evidence-model.md": "402a83a787977bc4e06ef0e7c0beef241a61c4fa",
+    "thesis.md": "4cd70e28d9c0e6c91a8f1d7d2fec9241ff80ed4c",
     "docs/w1-research-framing.md": "133f463871956538004a86f5daa2337cb1f4283f",
     "docs/w2-threat-model.md": "ef9ca072917cdc0c8405b908c3039f508080f55b",
     "docs/w3-architecture.md": "dd8ecca36e3117d73596e688fda64fd484c140ec",
@@ -258,6 +260,6 @@
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
   "latest_commit_before_json_digest_refresh": "f30886c76e6699e68bcc9a3472d0e99bdb1f343b",
-  "immediate_next_action": "Challenge and refine the integrated confidence/evidence model against source, route and protocol evidence; then continue T-001 full-text access work without upgrading partial reviews.",
+  "immediate_next_action": "Continue challenging the confidence/evidence model against route observer evidence, protocol delivery semantics and multi-message reconstruction; then continue T-001 full-text access work without upgrading partial reviews.",
   "latest_verified_project_head": "f30886c76e6699e68bcc9a3472d0e99bdb1f343b"
 }
