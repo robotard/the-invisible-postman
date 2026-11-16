@@ -512,3 +512,43 @@ The largest academic risk is originality. Existing work already addresses image 
 - Workplan: 933a165a48de28631a00d69f02c327b75e1ef11f
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-16 · Expanded prior-art comparison and lifecycle observer matrix
+
+### Completed and read-back verified
+
+- Verified the current repository as `robotard/the-invisible-postman`, default branch `main`; inspected the live session digest, PROJECT_STATE, WORKPLAN and WORK_LOG before substantive work.
+- Read the full Group Oblivious Message Retrieval (GOMR) paper by Liu, Tromer and Wang (2024), including group models, threat definitions, constructions, DoS treatment, evaluation and discussion of related private retrieval/MLS work.
+- Read the full Remise paper by Ravi, Shukla and Vadapalli (USENIX Security 2026), including its DORAM model, ideal functionality, threat assumptions, cover traffic, access-control construction, evaluation and stated limitations.
+- Added SRC-030 and SRC-031 to `docs/source-register.md`.
+- Created `docs/observer-property-matrix.md`, comparing seven related system families across the delivery lifecycle and distinguishing recipient privacy, sender anonymity, access-pattern privacy, payload protection, covert-channel detection and behavioural correlation.
+- Extended `docs/prior-art-comparison.md` with GOMR and Remise and revised the pressure test for candidates A/B/C.
+- Updated `thesis.md`, W1, W2, W3, W4 and `docs/traceability.md` to carry the new source boundaries and link the matrix.
+- Updated `README.md` and `diagrams/README.md` so the new analytical artefact is discoverable and explicitly upstream of relevant figure work.
+- Updated PROJECT_STATE and WORKPLAN after completing the research batch.
+- Every file write in this batch returned a commit SHA and was fetched back; the saved content matched the submitted content.
+
+### Material findings
+
+- GOMR is established prior art for ad-hoc and fixed-group oblivious recipient retrieval. It assumes application payload protection and excludes authenticated contact/key distribution and privacy-preserving board publication.
+- Remise is established prior art for two-server DORAM-based anonymous publication and authorised channels, hidden access patterns, reader permissions and revocation. Its privacy depends on server non-collusion; its integrity assumes protocol-following servers; servers are semi-honest; RemiseCC distributes bearer read tokens out of band; malicious-server write suppression is acknowledged.
+- Candidate B's broad lifecycle novelty framing is materially narrowed. A possible remaining direction must identify a concrete cross-layer incompatibility or leakage involving media-carrier transformation, endpoint message semantics/validation and external human/network observers. No originality is established.
+- The matrix is a working synthesis, not a systematic review, security ranking, formal analysis or reproduction of the papers' results.
+
+### Verification boundary
+
+- New and modified documents were individually read back after successful commits.
+- No recursive full-tree link audit, publication rendering audit, diagram redesign, ZIP packaging, implementation, platform test, benchmark reproduction, formal proof or independent security audit was performed.
+- Existing diagrams remain unchanged. New illustration work remains gated on thesis and contribution stabilisation.
+
+### Parked continuation
+
+1. Extend related work to the closest mix-network and anonymous-messaging/media-carriage systems, especially where global observers and cover traffic matter.
+2. Build explicit leakage functions/observer views for publication, discovery, retrieval, collection, carrier transformation, decapsulation, endpoint validation and human interaction.
+3. Identify a concrete cross-layer incompatibility or falsifiable comparison result; revise or retire Candidate B if no distinct result survives.
+4. Reconcile the finding across thesis §§3, 5, 8 and 10, W1–W4, traceability and source register.
+5. Only then reconsider the planned thesis illustrations.
+
+**Theory only · No implementation · Not audited.**
+
