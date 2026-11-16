@@ -119,6 +119,9 @@ These are target properties, not claims that the current proposal satisfies them
 > **COMPARISON · Endpoint linkage versus observer linkage**  
 > Endpoints may require authenticated links to reconstruct a fragment set or maintain a conversation. Those links need not be exposed in the same form to a carrier, host, platform or network observer. The threat model must state which party sees each value and event, rather than treating "linked" as a single property.
 >
+> **DEFINITION · Package encapsulation boundary**  
+> Package encapsulation is bounded route-facing framing of an already endpoint-protected object or fragment capsule. It may add lengths, versioning and route-local fields for safe carriage and parsing. It does not authenticate those fields, prove sender identity or replace endpoint validation; security-relevant values require explicit cryptographic binding.
+>
 > **DEFINITION · Collection-level steganalysis**  
 > Detection or clustering based on a set of carriers or events, rather than one image considered in isolation. Evidence from multiple images may be pooled; independence between images must not be assumed without justification.
 >
