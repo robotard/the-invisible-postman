@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-16"
+checkpoint: "2026-11-16 · TIP-WORK-INFRA-2026-11-16"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -104,14 +104,14 @@ invariants:
   - "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
 verified_working_documents:
   work/README.md: "87af6d60e02598929a01fc311a25f73f9abccdc6"
-  work/PROJECT_STATE.md: "f3d5cab8787e15969a5f02c5f9c866618e1df0ee"
+  work/PROJECT_STATE.md: "127f1b9dbecdd90b7a60d5bafc78e6ec479c117b"
   work/WORKPLAN.md: "683e115c73d5eb874370f75c12aaed48fc89f094"
-  work/WORK_LOG.md: "de3cf721c704b04be9a59185e130c88e04ad0cd2"
+  work/WORK_LOG.md: "e663ae7d7ae75e06b0f20c46619b5a523d4bc727"
   work/lookup/TASKS.md: "0dd84320ff59321769276dce873b608065ed5202"
   work/lookup/TASKS.json: "0e5a1c05f937301b89cb586d65545d869e391ef5"
   README.md: "ce2d0c914df2506c0611518cdeb4b454384dc588"
   docs/source-register.md: "e3a69287e95ab2ca4e2544b70494ab8a45238485"
-latest_commit_before_infrastructure_checkpoint: "0f99106b2003d22350b8b517aec0f02bc5ea79dc"
+latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
   - "Fetch and verify all three working documents."

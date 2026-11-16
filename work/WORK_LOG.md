@@ -1094,7 +1094,7 @@ Publisher-indexed article text and section snippets are not equivalent to comple
 
 ### Verification
 
-- Individual infrastructure updates were committed on `main`; a consolidated checkpoint commit is still to be created and verified.
+- The complete infrastructure clarification is consolidated in checkpoint `TIP-WORK-INFRA-2026-11-16`; its final checkpoint commit and tree were read back from `main`.
 - The thesis manuscript was not edited as part of this infrastructure change.
 
 ### Continuation
