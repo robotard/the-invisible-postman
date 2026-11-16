@@ -3,6 +3,14 @@
   "checkpoint": "2026-11-16",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
+  "status_semantics": "project_metadata_only",
+  "authority": "Live GitHub files and commit history are authoritative. Digests are retrieval aids, not substitutes for working documents.",
+  "operating_instruction_boundary": {
+    "chatgpt_project_instructions": "Thin operating layer for continuation, execution and verification; follows live GitHub records.",
+    "thesis_research_rules": "Substantive methodology, terminology, technical constraints, arguments and evidence standards remain in thesis/research documents.",
+    "repository_records": "Operational documents record verified progress, dependencies, blockers and next actions.",
+    "external_settings": "ChatGPT Project Instructions are managed outside GitHub; repository records the boundary but cannot edit ChatGPT settings."
+  },
   "read_first": [
     "project/SESSION_DIGEST.md",
     "project/SESSION_DIGEST.json",
@@ -14,148 +22,106 @@
     "docs/route-comparison-framework.md",
     "docs/multi-message-linkage-and-steganographic-carriage.md"
   ],
-  "authority": "Live repository files and commit history are authoritative. This digest is a compact handover, not a substitute for reading them.",
-  "current": "W1-W4 and integrated thesis remain working drafts. Source register has 45 entries (SRC-001–SRC-045). Six evidence-bounded route profiles and a documentary lifecycle/event/observer ledger exist; live service/client configurations remain unpinned. SRC-043–SRC-045 are full-text reviewed: Wang et al. (2024) uses robust DFT/DCT watermarking, fragment numbering and redundant copies with majority-vote reconstruction, not proof of ordinary steganographic stealth; Ker (2007) analyses pooled detection, while the separate SRC-045 paper proves a bounded asymptotic square-root capacity theorem under explicit detector, independence, equal-capacity and known-batch assumptions. Dedicated multi-message linkage/steganographic-carriage analysis and package-boundary terminology are integrated into thesis §§7–8 and supporting research. W1-W4 contain definition/comparison blocks and text-only illustration prompts indexed in diagrams/README.md. Protocol-boundary analysis remains linked; no protocol selected. All 29 Markdown files pass relative-link audit; no archive-generation instructions found.",
+  "current": {
+    "thesis": "Working draft; final contribution and review readiness remain open.",
+    "research_units": "W1-W4 drafted with aligned message-multiplicity terminology, definition/comparison blocks and text-only illustration prompts.",
+    "source_register": "45 entries, SRC-001 through SRC-045.",
+    "multi_message_model": [
+      "logical message and endpoint-protected object",
+      "fragment-set membership and reconstruction",
+      "redundant fragment carriage and loss tolerance",
+      "independent messages in a batch",
+      "conversation/session continuity across distinct messages",
+      "retry/duplicate as a new delivery event for the same logical object",
+      "cross-route copies and their correlation risks"
+    ],
+    "steganography": {
+      "distinctions": [
+        "per-carrier concealment",
+        "robust watermarking",
+        "extraction and reconstruction",
+        "collection-level steganalysis",
+        "observer-inferred carrier/message linkage"
+      ],
+      "sources": {
+        "SRC_043": "Multi-image fragment carriage and redundant reconstruction using robust DFT/DCT watermarking; not a generic steganographic stealth result.",
+        "SRC_044": "Batch steganography and pooled steganalysis under stated assumptions.",
+        "SRC_045": "Formal asymptotic square-root capacity theorem under explicit cover-capacity, detector-response, independence and known-batch assumptions."
+      }
+    },
+    "route_profiles": "Six evidence-bounded profiles; documentary comparison and expanded lifecycle/event/observer ledger. Live client/service versions and configurations remain unpinned.",
+    "protocol_analysis": "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected.",
+    "implementation": null,
+    "independent_audit": null,
+    "illustrations": {
+      "prompts": [
+        "W1-F01",
+        "W1-F02",
+        "W1-F03",
+        "W2-F01",
+        "W3-F01",
+        "W3-F02",
+        "W4-F01",
+        "W4-F02"
+      ],
+      "index": "diagrams/README.md",
+      "artwork_created": false
+    }
+  },
+  "completed": [
+    "Integrated multi-message relationships, steganographic collection risks and package-encapsulation boundaries into W1-W4 and thesis/supporting research.",
+    "Extended route-comparison ledger with source-bounded rows for fragment sets, redundancy, independent messages/conversations, retries/duplicates, cross-route linkage and collection-level steganalysis.",
+    "Added observer-ledger discipline requiring endpoint ground truth to be separated from observer-inferred links, with collection size, acquisition window, detector, cover dependencies, side information and observer vantage.",
+    "Added W2 package-encapsulation definition and W4 message-multiplicity/package-boundary definition.",
+    "Targeted relative-link audit of W1-W4 and route-comparison framework found no broken links.",
+    "All changed GitHub files were fetched back and exact content verified."
+  ],
   "next": [
-    "Extend the lifecycle/event/observer ledger using SRC-043–SRC-045: distinguish fragment-set membership, redundant carrier events, independent messages, conversation/session continuity, retries, cross-route copies and discovery; state observer vantage, collection size, time window and dependence assumptions.",
-    "Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until methods/results and limitations are inspected.",
+    "Seek full text for SRC-033, SRC-034 and SRC-036; preserve partial-review labels until methods/results and limitations are inspected.",
     "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.",
-    "Reconcile protocol-boundary analysis into W2/W3/W4, decision records and the thesis; test against Signal, MLS and HPKE references without premature selection.",
-    "Reconcile route findings into W1-W4, the contribution assessment, source register, prior-art comparison, observer/property matrix and traceability.",
-    "Complete exact-status, terminology, image-reference, thesis heading/numbering and illustration-placeholder consistency audits."
+    "Continue protocol-boundary reconciliation into W2/W3/W4, decision records and thesis; compare Signal, MLS and HPKE without premature primitive selection.",
+    "Reconcile new route findings into W1-W4, contribution assessment and integrated thesis.",
+    "Run fresh repository-wide relative-link, ZIP/archive-instruction, exact-status, terminology, illustration-placeholder and image-reference audits."
   ],
   "defer": [
-    "Actual diagrams until the argument and comparative evidence stabilise; text prompts only at present.",
+    "Create actual diagrams only after the comparative argument and evidence stabilise; never use ASCII art.",
     "External peer-review preparation until a coherent thesis candidate exists.",
     "Implementation, platform experiments, extraction tests, steganalysis benchmarks, formal proof and security audit."
   ],
   "invariants": [
     "Image carriage is a required research comparison, not a mandatory runtime route.",
-    "Orchestration is optional; model service roles separately.",
+    "Orchestration is optional; analyse service roles separately.",
     "Protected object remains invariant unless explicit authenticated conversion is defined.",
+    "Package encapsulation is not endpoint authentication.",
+    "Endpoint-authenticated linkage and observer-inferred linkage are distinct.",
+    "Per-image concealment does not establish collection-level concealment.",
     "No anonymity/security inference from carrier uniqueness, concealment or extra hops.",
-    "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result.",
-    "Fragment-set membership, redundant carriage, independent messages, conversation/session continuity, retries and cross-route copies are distinct relationships.",
-    "Endpoint-authenticated linkage needed for reconstruction is distinct from observer-visible or observer-inferred linkage.",
-    "Carrier extraction, set reconstruction, per-image concealment, collection-level steganalysis and event linkage are separate evaluation outcomes.",
-    "Package encapsulation is bounded route framing, not authentication; optional steganographic embedding is not encryption or authentication.",
-    "Wang et al. 2024 is a robust watermarking-based multi-image comparator, not proof of general steganographic stealth.",
-    "Ker batch-capacity results are bounded by explicit mathematical and observer assumptions."
+    "Preserve dissent, provenance, uncertainty and historical work; distinguish proposal from demonstrated property."
   ],
   "verified": {
-    "project/PROJECT_STATE.md": "45-source checkpoint reconciled; multi-message linkage, prior-art boundaries, W1-W4 prompts and post-integration audit recorded; read-back verified.",
-    "project/WORKPLAN.md": "45-source roadmap; W7 traceability and W8 illustration prompt work in progress; ChatGPT Project Instructions boundary remains thin and external; read-back verified.",
-    "project/WORK_LOG.md": "Multi-message analysis, source reviews, diagram briefs, heading fixes and 29-file audit recorded; read-back verified.",
-    "commit": "3b86aa12cd3d77c85dd8ba05f86d80774d8f22de",
-    "previous_head": "c3f0032c5455682c1c426c6b5b04e26130bc287f",
-    "project_state_blob": "7e5db62d6f67141138df46cd7feabb93663764ad",
-    "workplan_blob": "8a00e0835357e811ffe8f0c95732acb7202f8877",
-    "worklog_blob": "fbe59f74fd5bf69f225b592c0954e8ecbb11059c",
-    "markdown_digest_blob": "4981e9beb6150b0a51f541ca2f3a7559a49eebb5",
-    "digest_readback": "Markdown digest read-back verified; JSON digest pending final write and read-back.",
-    "docs/source-register.md": "45 sequential sources; SRC-043–SRC-045 full text reviewed; SRC-044 DOI corrected; read-back verified.",
-    "docs/multi-message-linkage-and-steganographic-carriage.md": "Dedicated analysis of message multiplicity, package encapsulation, steganographic collection risks, observer linkage and prior-art boundaries; read-back verified.",
-    "docs/w1-research-framing.md": "Definitions, comparison blocks and correctly placed W1-F01/F02/F03 illustration prompts; read-back verified.",
-    "docs/w2-threat-model.md": "Observer-visible linkage, collection-level steganalysis and W2-F01 prompt; read-back verified.",
-    "docs/w3-architecture.md": "Conceptual protected-object/manifest/fragment/capsule/carrier encapsulation sequence and W3-F01/F02 prompts; read-back verified.",
-    "docs/w4-risks-and-evaluation.md": "Separate extraction, reconstruction, detection and linkage evaluation; W4-F01/F02 prompts; heading hierarchy normalized; read-back verified.",
-    "thesis.md": "Sections 7–8 and Appendix A/C integrate multi-message distinctions, source-grounded prior art, bibliography and navigation; read-back verified.",
-    "docs/route-comparison-framework.md": "Multi-carrier prior-art boundary and observer/evaluation requirements; subsection numbering corrected; read-back verified.",
-    "docs/traceability.md": "RQ4/RQ6/RQ7 map multi-message, concealment, discovery and observer linkage to W1-W4 and SRC-043–SRC-045; read-back verified.",
-    "docs/prior-art-comparison.md": "Dedicated multi-image fragmentation and batch-steganalysis prior-art analysis; read-back verified.",
-    "docs/observer-property-matrix.md": "Fragment-set linkage and collection-level steganalysis rows added; read-back verified.",
-    "docs/thesis-contribution-and-bias-assessment.md": "Broad novelty claims constrained by SRC-043–SRC-045; read-back verified.",
-    "diagrams/README.md": "W1-W4 text-only illustration prompts indexed; no new artwork; read-back verified.",
-    "README.md": "Multi-message analysis linked and core-principles list repaired; read-back verified.",
-    "relative_markdown_link_audit": "29 Markdown files checked against recursive repository tree; zero broken relative links.",
-    "repository_instruction_scan": "29 Markdown files scanned; no ZIP/archive-generation workflow instructions found.",
-    "dedicated_consistency_audit": "Exact-status, terminology, image-reference and illustration-placeholder consistency remains outstanding."
+    "project/PROJECT_STATE.md": "447fd642e5eb36b558da6de8a56251b7fd96ad26",
+    "project/WORKPLAN.md": "2c9b0bb9034ea9c1855d58f518927edf4ca18cac",
+    "project/WORK_LOG.md": "c846f616f288919291879b621479e65515586777",
+    "project/SESSION_DIGEST.md": "19220d4705ec71f3c9addb90c5ea3d2c5d011058",
+    "checkpoint_commit_before_json_refresh": "a8217beacd7e956e97f1297481bcd55a216d538c"
   },
-  "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; read back and verify all three; refresh SESSION_DIGEST.md from verified state; refresh SESSION_DIGEST.json last; verify both digests against the three working documents.",
-  "checkpoint_commit_before_digest_refresh": "3b86aa12cd3d77c85dd8ba05f86d80774d8f22de",
-  "status_semantics": "project_metadata_only",
-  "document_boundaries": {
-    "thesis_and_research": "Substantive argument, technical principles, evidence, contribution assessment, uncertainty and limitations.",
-    "operational_documents": "Verified status, priorities, dependencies, blockers, paths and next actions; link to research files rather than duplicating thesis exposition.",
-    "session_digests": "Structured operational handover only; not thesis exposition.",
-    "assistant_working_notes": "Maintain the same separation; mention project status only when relevant.",
-    "chatgpt_project_instructions": "Thin operating layer for continuation, execution and verification; follows live GitHub records and does not duplicate or override thesis research rules. Actual ChatGPT settings are external to GitHub."
-  },
+  "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
-    "At session start fetch live default branch and both digests; read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant research/supporting documents.",
-    "Identify verified completions, unfinished tasks, blockers, dependencies and the next unblocked action; do not ask the user to repeat recorded history.",
-    "After meaningful progress update affected research/supporting documents and WORK_LOG.md; reconcile PROJECT_STATE.md.",
+    "Fetch live default branch and both digests; read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant research documents.",
+    "Identify verified completions, remaining work, blockers, dependencies and next unblocked action without asking the user to repeat project history.",
+    "After meaningful progress update affected research/supporting files and WORK_LOG.md; reconcile PROJECT_STATE.md.",
     "Change WORKPLAN.md only when roadmap, priorities, dependencies or workflow genuinely change.",
-    "Read back and verify PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md.",
-    "Refresh SESSION_DIGEST.md from verified working documents; refresh SESSION_DIGEST.json last.",
-    "Read back both digests and verify agreement with the three working documents.",
-    "Record exact next action, relevant paths, blockers/dependencies and constraints."
+    "Fetch every changed file and verify exact saved content.",
+    "At close verify PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; refresh Markdown digest; refresh JSON digest last; fetch and verify both."
   ],
-  "document_roles": {
-    "project/PROJECT_STATE.md": "Changing verified progress snapshot; completed work, remaining tasks, blockers, dependencies and exact next action.",
-    "project/WORKPLAN.md": "Stable roadmap, research principles, priorities, sequencing and dependencies.",
-    "project/WORK_LOG.md": "Chronological evidence and change history.",
-    "project/SESSION_DIGEST.md": "Machine-readable Markdown shorthand only.",
-    "project/SESSION_DIGEST.json": "Machine-readable JSON shorthand only."
-  },
-  "continue_trigger": {
-    "phrase": "continue",
-    "actions": [
-      "Fetch the live default branch and both session digests.",
-      "Read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant thesis, research and supporting documents.",
-      "Identify verified completions, remaining work, blockers, dependencies and the next unfinished unblocked action.",
-      "Resume without asking the user to repeat project history.",
-      "Update affected records after meaningful progress and verify every GitHub write by fetching saved content."
-    ]
-  },
   "diagram_policy": {
     "format": "Genuine visual illustrations; never ASCII art.",
-    "timing": "Create or improve only when the underlying argument and evidence are stable; otherwise defer.",
-    "preferred": "Editable SVG with accessible exports."
+    "timing": "Create or improve only when underlying argument and evidence are stable.",
+    "preferred": "Editable SVG with accessible exports.",
+    "prompts_are_not_artwork": true
   },
   "claim_discipline": [
-    "Never claim saved, completed, published, deployed, tested or audited without evidence.",
+    "Never claim saved, completed, published, deployed, tested, proven or audited without matching evidence.",
     "Distinguish drafted, committed, read-back verified, tested and independently reviewed."
-  ],
-  "source_review_detail": {
-    "SRC-033": "Expanded partial: publisher-indexed text describes DCT stabilisation, lattice embedding, post-processing, BOSSbase payload/recompression evaluation, metric families and LinkedIn testing; exact settings, tables and platform configuration remain unverified.",
-    "SRC-034": "Expanded partial: publisher-indexed text describes RoLoS/CARE, Q95-to-Q85/Q80/Q75 scenarios, PMAS comparison, author-reported 87% extraction-error reduction and order-of-magnitude speed claims, plus WhatsApp/LinkedIn/X tests; full methods/tables/configurations unavailable.",
-    "SRC-035": "Full publisher HTML inspected; bounded 50-image platform tests; no independent reproduction.",
-    "SRC-036": "Expanded partial: publisher-indexed text describes attack/optimisation CNN, BOSSbase 1.01 and BOWS2 10k 512x512 datasets, 8k/2k BOSSbase split and JPEG QF75; full method/results/generalisation limits unavailable.",
-    "SRC-037": "Full 40-page survey inspected; secondary synthesis, not a common controlled benchmark.",
-    "SRC-038": "Official Signal PQXDH revision 3 and Double Ratchet revision 4 specifications inspected; protocol reference only, not full service profile.",
-    "SRC-039": "Current Dropbox official file-activity and shared-link permission help pages inspected; no live account test.",
-    "SRC-040": "Current Katzenpost Pigeonhole specification, project repository and 5 November 2026 article inspected; no pinned deployment or reproduction.",
-    "SRC-041": "Full RFC 5869 inspected; salt/info distinction and extraction/context roles documented.",
-    "SRC-042": "Full RFC 9180 inspected; HPKE treated as compositional comparator, not selected protocol.",
-    "SRC-043": "Full publisher HTML inspected. Fragmented text-file covert-communication framework; fragment numbers/content in images; each fragment redundantly carried across multiple images; majority-vote reconstruction. Core carrier method is robust DFT/DCT watermarking; authors distinguish watermarking from steganography. Author-reported results only; no reproduction.",
-    "SRC-044": "Full proceedings paper inspected. Batch steganography and pooled detection; fixed known batch, equal cover capacities, random selection and stated component-detector assumptions. Capacity relation is framed as a conjecture here; formal theorem is SRC-045.",
-    "SRC-045": "Full author-hosted IEEE paper inspected. Formal asymptotic square-root capacity theorem under equal cover capacities, shift-hypothesis detector response with regularity conditions, independent per-cover errors and batch size known to both parties. Bounds may be loose; no empirical reproduction."
-  },
-  "route_profiles": {
-    "IMG-QIAO-2023": "Published empirical social-image profile; bounded 50-image QF85/payload 0.1 study; not a current service guarantee.",
-    "IMG-MRAS-2026": "Expanded publisher-indexed partial profile: DCT stabilisation, lattice embedding, post-processing, BOSSbase/recompression metrics and LinkedIn test; full methods/tables/configuration unavailable.",
-    "IMG-DRAS-2026": "Expanded publisher-indexed partial profile: RoLoS/CARE, Q95→Q85/Q80/Q75, PMAS comparison and author-reported platform/runtime claims; full methods/tables/configuration unavailable.",
-    "FILE-DROPBOX-LINK": "Official shared-link/activity documentation profile; no live account test; client-side protected-object wrapper is only a comparison condition.",
-    "E2E-SIGNAL-PROTOCOL": "PQXDH revision 3 + Double Ratchet revision 4 protocol reference; not a full Signal Messenger service profile.",
-    "MIX-ECHOMIX-PIGEONHOLE": "Echomix arXiv v2 plus current Pigeonhole documentation; no pinned compatible deployment release."
-  },
-  "latest_checkpoint_commit": "3b86aa12cd3d77c85dd8ba05f86d80774d8f22de",
-  "latest_checkpoint_blob": "7e5db62d6f67141138df46cd7feabb93663764ad",
-  "latest_research_commit": "06cca718f83fb49639eeb3062fb3792881f2ea80",
-  "protocol_analysis": {
-    "path": "docs/protocol-boundary-analysis.md",
-    "status": "initial research analysis; not a complete protocol specification",
-    "covers": [
-      "key hierarchy and scope",
-      "HKDF salt versus info",
-      "identity and transcript binding",
-      "AEAD nonce uniqueness",
-      "AAD and authenticated context",
-      "replay, ordering, loss and multipart semantics",
-      "safe route fallback",
-      "HPKE application responsibilities"
-    ],
-    "selection": "No primitive suite or protocol selected."
-  }
+  ]
 }
