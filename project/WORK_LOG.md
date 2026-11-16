@@ -872,7 +872,7 @@ This is a documentation and workflow clarification only. It does not change the 
 
 - No cryptographic protocol or primitive suite has been selected.
 - No implementation, interoperability test, platform experiment, cryptographic test, formal proof or independent security audit was performed.
-- W2/W3/W4 and the full thesis still require final cross-document alignment. The repository-wide link/status/terminology audit must be rerun after these additions.
+- W2/W3/W4 and the full thesis still require final cross-document alignment. A fresh repository-wide relative-link audit subsequently checked all 27 Markdown files against the recursive repository tree and found no broken links. All 27 Markdown files were scanned for ZIP/archive-packaging instructions; none were found. Exact-status, terminology and image-reference consistency remain a separate audit task.
 - SRC-033, SRC-034 and SRC-036 remain partial reviews; live service/client profiles remain unpinned.
 
 **Theory only · No implementation · Not audited.**
