@@ -130,6 +130,17 @@ These are target properties, not claims that the current proposal satisfies them
 > **Prompt for later illustration:** Draw one endpoint-side graph containing logical messages, a fragment set, redundant carriers, a separate conversation edge, retries and cross-route copies. Around it show distinct observer projections for recipient endpoint, image platform, host, coordinator, network observer and human observer. For each observer, show only the identifiers, timing, sizes, provenance and events they can actually observe under the stated assumptions. Distinguish endpoint-authenticated relationships from observer-inferred correlations.  
 > **Must not imply:** That an observer sees the complete graph, that encryption hides timing/access patterns, or that multiple hops automatically improve anonymity.
 >
+> **COMPARISON · Passive media processing versus active sanitization**  
+> Routine resizing/recompression may be incidental to platform operation. Active sanitization deliberately transforms uploaded media to remove hidden payloads while constraining visible image degradation (SRC-036, SRC-046–SRC-047). A sender's keyed adaptation to a known sanitiser (SRC-048) is a different adversarial game and depends on model/processing knowledge. Do not treat these as one generic "platform transformation".
+>
+> **DEFINITION · Frame, carrier and message collection**  
+> A GIF frame is a component of one carrier object; separate images are separate carrier objects; a conversation is a relation between distinct protected messages. Cross-frame redundancy (SRC-049) does not itself create cross-post fragment-set semantics or conversation linkage.
+>
+> **Illustrated diagram placeholder · W2-F02 — Sanitizer and adaptive-sender threat boundary**  
+> **Placement:** Beside §5 Attacker capabilities and §7 Threats.  
+> **Prompt for later illustration:** Show an uploader, image platform with routine processing, an optional active sanitization network, an adaptive sender who knows or models that sanitizer, and an authorised receiver with a secret-seed-derived decoder. Mark which model/parameters each actor knows and where payload extraction can fail. Keep endpoint cryptographic validation separate from carrier recovery.  
+> **Must not imply:** That the platform uses a cited sanitizer, that the sender can know an unknown model, or that recovered hidden data is authenticated without endpoint verification.
+>
 ## 7. Threats and required mitigations to evaluate
 
 | Threat | Potential consequence | Design requirement to examine |
@@ -141,7 +152,7 @@ These are target properties, not claims that the current proposal satisfies them
 | Fragment mixing, conflicting indices or invalid set construction | Parts from different messages are combined or a capsule is assigned to the wrong logical position | Versioned authenticated manifest, message-set identifier, index/count, content binding and strict reconstruction validation; transport arrival order may differ from logical order |
 | Missing or duplicate fragments | Incomplete or ambiguous message reconstruction | Explicit completeness rules and rejection behavior |
 | Resource-exhaustion through hostile capsule sets | Excessive CPU, memory, disk, decompression or parser work can deny service even when inputs are structurally valid | Define aggregate and per-item size/count limits, header/manifest bounds, decompression limits, timeouts, concurrency and incomplete-set expiry; validate bounds before expensive work |
-| Image transformation | Carrier payload is damaged or removed | Test platform transformations; fail safely rather than claim robust concealment |
+| Image transformation or active sanitization | Carrier payload is damaged or deliberately removed while the visible image remains usable | Distinguish routine recompression from learned sanitization (SRC-036, SRC-046–SRC-047) and sanitizer-aware counter-adaptation (SRC-048); test only under a declared model and never infer platform deployment |
 | Metadata and message-linkage correlation | Participants, fragment sets, conversations, retries or communication patterns are inferred | Document visible identifiers, manifests, sequence values, timing, sizes, carrier provenance and access patterns; separate required endpoint linkage from observer-visible linkage |
 | Collection-level steganalysis | Weak per-image signals accumulate across a batch | Evaluate per-image and pooled/set-level detection on realistic collections; do not assume independent images or that lower per-image payload reduces overall detectability |
 | Traffic analysis and flow correlation | Encrypted contents remain confidential while timing, size, volume, endpoint or access patterns reveal communication relationships or activity | Define observer vantage and retained records; examine timing/size correlation and the cost of any padding, delay, batching or cover-traffic countermeasure; see source leads SRC-016 and SRC-018–SRC-019 |
@@ -184,7 +195,7 @@ The following remain open and must be resolved before protocol-level security cl
 - the observer model for timing, size, volume, flow correlation and access patterns;
 - the distinction between one fragmented message, redundant fragments, independent messages, conversation continuity, retries and cross-route copies;
 - which linkage values are endpoint-only, encrypted, visible-but-authenticated or public; and how an observer could reconstruct relationships without decoding payloads;
-- collection sizes, time windows, account/platform scopes and pooled steganalysis assumptions;
+- collection sizes, time windows, account/platform scopes and pooled steganalysis assumptions; distinguish one animated carrier's frames from separate image objects and message collections (SRC-049);
 - whether any traffic obfuscation, padding, delay, batching or cover traffic is in scope, and what costs it introduces;
 - handling of corrupted images and platform transformations;
 - threshold value, share distribution, participant authentication, collusion threshold, and recovery authorization; and
