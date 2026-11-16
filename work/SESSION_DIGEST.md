@@ -9,6 +9,12 @@ operating_instruction_boundary:
   thesis_research_rules: "Substantive methodology, terminology, technical constraints, arguments and evidence standards stay in thesis/research documents."
   repository_authority: "Live GitHub files and commit history; digests are retrieval aids only."
   external_settings: "ChatGPT Project Instructions are managed outside GitHub; repository records the boundary but cannot edit ChatGPT settings."
+work_area:
+  path: work/
+  lifecycle: temporary_disposable
+  thesis_dependency: none
+  internal_ids: "C-### concept keys and T-### task keys are private working lookup handles only; never thesis references."
+  release_rule: "Verify no enduring file depends on work/; then remove the directory."
 document_roles:
   project_state: "Changing verified progress, blockers, dependencies and exact next action."
   workplan: "Stable roadmap, priorities, sequencing and dependencies."
@@ -25,6 +31,7 @@ read_first:
   - docs/source-register.md
   - docs/route-comparison-framework.md
   - docs/multi-message-linkage-and-steganographic-carriage.md
+next_task: T-001
 current_state:
   thesis: "Working draft; final contribution and review readiness remain open."
   research_units: "W1-W4 drafted; aligned definitions/comparisons, message-multiplicity terminology and text-only illustration prompts embedded."
@@ -79,9 +86,9 @@ invariants:
   - "No anonymity/security inference from carrier uniqueness, concealment or extra hops."
   - "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
 verified_working_documents:
-  work/PROJECT_STATE.md: "cbcedf5ab18e8fd3e9a8ce4bfd65afcc11bb9f9b"
-  work/WORKPLAN.md: "0bf450b974eeadd4d2e7ca02eed40b90e6f550be"
-  work/WORK_LOG.md: "c1cdeb884b2dc38fbb9c7fc828ca201dab9cd3c1"
+  work/PROJECT_STATE.md: "500e1bfd5ea8ab4528315857aa97f2bb2086fa65"
+  work/WORKPLAN.md: "ef94ab14110f4c2a81b0ddc1eada705e795a10ed"
+  work/WORK_LOG.md: "87bf617ea83ee3fa1ceb8f6e643b9444b7b6dc30"
   docs/source-register.md: "e3a69287e95ab2ca4e2544b70494ab8a45238485"
 latest_commit_before_digest_refresh: "1995b6e718736a4f8b97b7f32432bd3f32eea741"
 checkpoint_close_order:
