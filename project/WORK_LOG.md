@@ -581,7 +581,7 @@ Echomix/Katzenpost already integrates network anonymity, global/active observer 
 
 ### Verification boundary
 
-All listed file writes were individually read back. A repository-wide link/status audit remains outstanding. No platform experiments, implementations, benchmark reproductions, formal proofs or independent security reviews were performed.
+All listed file writes were individually read back. The recursive main-branch tree contains 31 files (26 Markdown, including one archived source); all 25 active Markdown files were fetched. A total of 113 relative Markdown links were checked with zero missing targets; all active Markdown files contain the exact project status string; no forbidden workflow or terminology references were found in active Markdown. External URL availability and heading-anchor rendering are outside this audit. No platform experiments, implementations, benchmark reproductions, formal proofs or independent security reviews were performed.
 
 ### Verified commit anchors
 
