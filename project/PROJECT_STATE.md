@@ -59,12 +59,12 @@ The latest verified architecture reconciliation keeps transport independence and
 
 ## Next session: exact starting point
 
-1. Apply the Continue/resume contract above. Read both digests, all three working documents and the relevant thesis, research and supporting documents from live `main`.
-2. Continue seeking accessible full text for SRC-033, SRC-034 and SRC-036; do not overstate their abstract/indexed evidence.
-3. Select route profiles only where the version/configuration can be evidenced; otherwise record the profile as unresolved and state what evidence is missing.
-4. Populate the event/observer ledger, then reconcile the result into the thesis and supporting documents.
-5. Check W3 numbering and traceability references.
-6. Run the link, status and consistency audit after the edits.
+1. Apply the Continue/resume contract above and refresh the live digests and working records.
+2. Seek full text for SRC-033, SRC-034 and SRC-036; retain partial review labels until methods/results are inspected.
+3. Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/configuration profiles before making deployed-route claims.
+4. Expand the documentary comparison into the full lifecycle/event/observer ledger, including discovery, retrieval, retries, expiry and collusion.
+5. Reconcile route findings into W1–W4, the contribution assessment and integrated thesis; continue protocol-level analysis of nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback.
+6. Complete exact-status, terminology, image-reference and cross-document consistency audits. The static relative-link audit across all 26 Markdown files found no broken links.
 
 ## Document-boundary rule
 
