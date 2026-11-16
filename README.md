@@ -50,8 +50,9 @@ This repository documents a theory-led investigation into endpoint-controlled cr
 18. [Echomix/Katzenpost comparator](docs/echomix-katzenpost-comparator.md) — integrated anonymous-messaging baseline.
 19. [Design decision register](docs/decision-register.md) — rationale, refinements and rejected approaches.
 20. [Protocol boundary analysis](docs/protocol-boundary-analysis.md) — key scope, HKDF salt/info, identity and transcript binding, nonce uniqueness, replay and fallback obligations.
-21. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
-22. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
+21. [Multi-message linkage and steganographic carriage](docs/multi-message-linkage-and-steganographic-carriage.md) — fragment sets, redundancy, conversation linkage, package encapsulation, collection-level steganalysis and prior-art boundaries.
+22. [Work log](project/WORK_LOG.md) — dated work-session record and deferred tasks.
+23. [Thesis contribution and bias assessment](docs/thesis-contribution-and-bias-assessment.md) — hard checkpoint on originality, usefulness, theoretical strength, evaluation and confirmation-bias controls.
 
 ## Illustrations
 
@@ -78,6 +79,8 @@ They are retained unchanged. The active manuscript is thesis.md.
 - Images are carriers, not keys or guaranteed entropy sources.
 - Cryptographic key authentication and identity verification must be explicit.
 - Ciphertext fragmentation is distinct from threshold secret sharing.
+- Fragment-set membership, redundant carriage, conversation continuity, retries and cross-route copies are distinct relationships.
+- Steganographic concealment, robust watermarking, extraction reliability and collection-level steganalysis are separate claims.
 - Expiry and revocation cannot recall plaintext or keys already obtained.
 - Design complexity must justify its place through a research objective or threat response.
 - Claims, limitations, evidence, criticism and unresolved disagreement must remain visible.
