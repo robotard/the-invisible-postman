@@ -127,3 +127,27 @@ The additional papers make three distinctions essential:
 
 The emergent proposition in §5 is therefore retained only as a question to test, not a conclusion. It must be narrowed, displaced or abandoned if the next comparison does not reveal a non-obvious result.
 
+## 9. Integrated messaging comparator · Echomix / Katzenpost
+
+The full Echomix paper (SRC-032) materially changes the comparison. It is an integrated messaging architecture, not a narrow transport primitive. It combines a global and active adversary model; gateways, layered mixes and services; traffic/decoy coupling; anonymous service access; BACAP capability-derived pseudorandom storage locations; Pigeonhole asynchronous messaging; couriers and replicas; reliability and all-or-nothing backfills; tombstones; role-collusion analysis; and post-quantum packet variants.
+
+### 9.1 Direct overlap
+
+Echomix already covers several areas that the project previously treated as potentially differentiating when joined together: network-level anonymity, messaging semantics, recipient discovery through capability-derived addresses, asynchronous storage, access permissions, retry/reliability signalling and human online-routine correlation. It also analyses the cost and residual leakage of these mechanisms. The project must not claim a broad lifecycle privacy integration or a general responsibility-separated delivery architecture as new.
+
+### 9.2 Important technical lessons
+
+- **Traffic coupling is stronger than merely adding cover traffic.** Echomix identifies a final-hop asymmetry in Loopix where application traffic reaches a designated provider while decoys are distributed differently. The lesson is to inspect the complete path, including service edges, rather than infer protection from the presence of decoys.
+- **Discovery is a cryptographic protocol responsibility.** BACAP derives pseudorandom box IDs and per-message capabilities; Pigeonhole uses those for storage and asynchronous retrieval. A generic changing locator is not an equivalent privacy construction.
+- **Reliability signalling leaks information.** Acknowledgements, retries, polling and read/write timing can reveal online state or relationships. Echomix uses courier separation, controlled retries and opportunistic user-triggered acknowledgement/backfill, while acknowledging residual leakage.
+- **Human behaviour remains relevant.** The paper explicitly discusses statistical disclosure from correlated online habits. The project must not present human correlation as an unexplored category.
+- **Guarantees have costs and boundaries.** Continuous traffic, latency, bandwidth, finite retention, query patterns and particular colluding role combinations remain part of the security and usability account.
+
+### 9.3 What may remain distinct
+
+The clearest remaining comparison boundary is ordinary image-platform carriage of a common endpoint-protected message object. Echomix does not study user-selected image carriers passing through social-platform resizing, recompression, transcoding, metadata rewriting, moderation, file-identifier generation, hosting logs or account/engagement observations. This is a difference in the studied route, not evidence of originality by itself.
+
+The next work should compare the same endpoint message semantics across image carriage, file/attachment carriage, conventional messaging and a mixnet-backed messaging baseline. Each route must retain its own native guarantees, observer assumptions and costs. The evaluation should establish whether image carriage introduces a distinct, measurable benefit or burden, rather than simply describe a route not present in Echomix.
+
+See the [Echomix comparator](echomix-katzenpost-comparator.md) and [observer/property matrix](observer-property-matrix.md) for the detailed boundary comparison.
+
