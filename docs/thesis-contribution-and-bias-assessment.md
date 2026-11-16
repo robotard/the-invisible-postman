@@ -99,7 +99,21 @@ The passenger/train metaphor helps explain separation, but may make the design a
 
 **Countermeasure:** Use the metaphor as explanatory shorthand only. Every diagram and section must also name the actual component, interface, trust boundary, data and authority.
 
-## 5. Prior-art pressure points identified
+### B8 · Confidence-language inflation
+
+"Confidence" is attractive as an organising idea but can become an untestable marketing term, a universal score or a substitute for security, trust and assurance. A polished interface can make weak evidence appear conclusive. Cryptographic validity can be mistaken for identity, truth or delivery; observer inference can be mistaken for authenticated linkage.
+
+**Countermeasure:** Treat confidence as a verifier's judgement about a specific claim, grounded in provenance-aware evidence, scope, assumptions, threat model and freshness. Keep trust, assurance, security, authenticity, integrity, discoverability and truth distinct. Do not introduce a numeric score without calibration and explicit error costs. Evaluate whether the evidence model itself creates tracking metadata. See [the confidence and evidence model](confidence-and-evidence-model.md).
+
+## 5. Candidate confidence/evidence framing
+
+The thesis now uses the candidate principle: "The Invisible Postman does not promise certainty. It makes the basis, boundaries and limitations of confidence explicit." This is an organising proposition for the research, not a novelty claim and not a demonstrated system property.
+
+Its potential value is methodological: it forces claims to be tied to a verifier, scope, evidence provenance, assumptions, freshness and unresolved alternatives. It also exposes important negative boundaries, particularly the difference between a valid cryptographic object and a true statement, between endpoint-authenticated linkage and observer correlation, and between transport acceptance and human reading.
+
+The framing should be retained only if it improves claim precision, traceability and evaluation. It must not create a centralised evidence ledger, mandatory telemetry or a universal confidence score. Its usability and privacy costs remain unevaluated. The supporting [confidence and evidence model](confidence-and-evidence-model.md) is a proposed research artefact, not independent validation.
+
+## 6. Prior-art pressure points identified
 
 These sources were identified in the current assessment. SRC-033, SRC-034 and SRC-036 have expanded partial publisher-indexed text inspection, but not complete full-text review; SRC-035 was inspected as full publisher HTML; SRC-037 was inspected in full from a repository copy. Do not cite abstracts or records as full-paper analysis.
 
