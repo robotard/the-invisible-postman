@@ -1,25 +1,35 @@
-# Temporary research work area
+# Temporary thesis-development work area
 
-**Purpose:** disposable coordination and lookup machinery for developing the thesis.
+**Role:** the temporary store of work to be done to bring the thesis to its intended research standard.
 
-This directory is deliberately agnostic of the thesis architecture and research content. It may be deleted in full at thesis release without changing the thesis, its citations, its substantive research documents, or their meaning.
+The thesis is the product. `thesis.md` is the single active manuscript in development (staging) and the source of the released thesis. Staging and production are lifecycle states of the same thesis, not separate products or parallel thesis identities. A production release is a frozen, versioned release of the thesis after evidence reconciliation, quality checks and substantive peer scrutiny; it must not silently diverge from the staged manuscript.
 
-## Contents
+`/work/` contains the temporary machinery and actionable work required to develop, scrutinise, explain and release that thesis. It is disposable after release, but its work must first be completed, transferred into enduring research records where substantive, or explicitly closed as unnecessary.
+
+## What belongs here
 
 - `PROJECT_STATE.md`: verified current position and exact continuation point.
-- `WORKPLAN.md`: stable research sequence and dependencies.
-- `WORK_LOG.md`: chronological activity and verification evidence.
+- `WORKPLAN.md`: research-development sequence, dependencies and gates.
+- `WORK_LOG.md`: chronological work and verification evidence.
 - `SESSION_DIGEST.md` / `SESSION_DIGEST.json`: compact continuation indexes.
-- `lookup/TERMS.md` / `lookup/TERMS.json`: internal concept lookup keys.
-- `lookup/TASKS.md` / `lookup/TASKS.json`: internal task and subtask lookup keys.
+- `lookup/TERMS.*`: internal concept lookup keys.
+- `lookup/TASKS.*`: actionable work register covering research, source review, route analysis, thesis synthesis, diagrams, peer review and release checks.
+- Concise task-specific working notes or review-process records only when they directly support a registered task and do not duplicate enduring research.
 
-## Boundary rules
+## What does not belong here
 
-1. Nothing in `/work/` is a thesis requirement, protocol component, runtime feature or research claim.
-2. Internal IDs exist only to shorten our own lookup, navigation and continuation. Do not insert them into the thesis or research documents.
-3. Thesis citations, source identifiers (for example `SRC-049`), section references, figure references and substantive cross-references remain in their existing research locations and formats.
-4. An internal key points to an enduring thesis/research location; it never replaces that location's proper citation or reference.
-5. Keep definitions and task records concise. The thesis remains the sole destination for the finished argument.
-6. At full thesis release, verify that no enduring document depends on `/work/`, then remove this directory as disposable scaffolding.
+- Thesis argument, formal definitions, evidence, citations or research conclusions that belong in `thesis.md` or enduring `docs/` research records.
+- A second or alternative thesis, a separate production thesis, or competing source of truth.
+- Thesis-facing reference IDs. Internal `C-###` concept and `T-###` task keys are private navigation aids only.
 
-The registries are navigation aids, not competing sources of truth. Where an entry conflicts with a thesis or research document, the latter governs.
+## Boundaries
+
+1. The thesis is the sole research product. It remains itself through staging, review, revision and release.
+2. Staging means active development of the thesis manuscript, not a lesser or disposable thesis.
+3. Production means a specific, frozen release of that same thesis, with provenance and review state recorded.
+4. Peer review must be substantive, scoped and traceable. Preserve reviewer comments/evidence, author responses, dispositions, unresolved dissent and resulting changes. Do not imply independent review until it has occurred.
+5. Thesis citations, source identifiers (for example `SRC-049`), section references, figure references and substantive cross-references retain their authoritative forms.
+6. Internal keys shorten our own lookup and continuation. They never replace thesis terminology, citations or evidence.
+7. At release, transfer substantive outcomes to permanent locations, verify no enduring document depends on `/work/`, then remove `/work/` in full.
+
+The registries and work records are coordination aids, not competing sources of truth. The thesis and substantive research documents govern.
