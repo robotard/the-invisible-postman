@@ -55,10 +55,39 @@
     "assistant_working_notes": "Maintain the same separation; mention project status only when relevant."
   },
   "checkpoint_protocol": [
-    "Read both digests, all three working documents and relevant research files at session start.",
-    "Keep substantive thesis reasoning in thesis/research documents; keep operational handovers concise and referential.",
-    "At close, reconcile and verify all three working documents.",
-    "Refresh SESSION_DIGEST.md, then SESSION_DIGEST.json last.",
-    "Verify both digests against the three working documents."
+    "At session start fetch live default branch and both digests; read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant research/supporting documents.",
+    "Identify verified completions, unfinished tasks, blockers, dependencies and the next unblocked action; do not ask the user to repeat recorded history.",
+    "After meaningful progress update affected research/supporting documents and WORK_LOG.md; reconcile PROJECT_STATE.md.",
+    "Change WORKPLAN.md only when roadmap, priorities, dependencies or workflow genuinely change.",
+    "Read back and verify PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md.",
+    "Refresh SESSION_DIGEST.md from verified working documents; refresh SESSION_DIGEST.json last.",
+    "Read back both digests and verify agreement with the working documents.",
+    "Record exact next action, relevant paths, blockers/dependencies and constraints."
+  ],
+  "document_roles": {
+    "project/PROJECT_STATE.md": "Changing verified progress snapshot; completed work, remaining tasks, blockers, dependencies and exact next action.",
+    "project/WORKPLAN.md": "Stable roadmap, research principles, priorities, sequencing and dependencies.",
+    "project/WORK_LOG.md": "Chronological evidence and change history.",
+    "project/SESSION_DIGEST.md": "Machine-readable Markdown shorthand only.",
+    "project/SESSION_DIGEST.json": "Machine-readable JSON shorthand only."
+  },
+  "continue_trigger": {
+    "phrase": "continue",
+    "actions": [
+      "Fetch the live default branch and both session digests.",
+      "Read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant thesis, research and supporting documents.",
+      "Identify verified completions, remaining work, blockers, dependencies and the next unfinished unblocked action.",
+      "Resume without asking the user to repeat project history.",
+      "Update affected records after meaningful progress and verify every GitHub write by fetching saved content."
+    ]
+  },
+  "diagram_policy": {
+    "format": "Genuine visual illustrations; never ASCII art.",
+    "timing": "Create or improve only when the underlying argument and evidence are stable; otherwise defer.",
+    "preferred": "Editable SVG with accessible exports."
+  },
+  "claim_discipline": [
+    "Never claim saved, completed, published, deployed, tested or audited without evidence.",
+    "Distinguish drafted, committed, read-back verified, tested and independently reviewed."
   ]
 }
