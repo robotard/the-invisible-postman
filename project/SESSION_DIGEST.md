@@ -40,7 +40,7 @@ next_actions:
   - "Extend the lifecycle/event/observer ledger with source-specific discovery, retrieval, retries, expiry, collusion and human-observer evidence; retain unknowns."
   - "Reconcile protocol-boundary analysis into W2/W3/W4, decision records and the thesis; test obligations against Signal, MLS and HPKE references without premature selection."
   - "Reconcile route findings into W1-W4 and the contribution assessment."
-  - "Run a fresh full-tree relative-link, exact-status, terminology and image-reference audit."
+  - "Run a dedicated exact-status, terminology and image-reference consistency audit; the 27-file relative-link audit passes and no ZIP/archive-packaging instructions remain."
 deferred:
   - "New diagrams until the comparative argument and evidence stabilise."
   - "External peer-review preparation until a coherent thesis candidate exists."
@@ -50,6 +50,7 @@ invariants:
   - "Orchestration is optional; analyse service roles separately."
   - "Protected object remains invariant unless explicit authenticated conversion is defined."
   - "No anonymity/security inference from carrier uniqueness, concealment or extra hops."
+  - "No ZIP/archive-generation workflow is active unless explicitly requested by the user."
   - "Salt is not a nonce or identity proof; HKDF salt and info have distinct roles."
   - "Nonce uniqueness is per AEAD key, not per carrier."
   - "Preserve dissent, provenance and historical work; distinguish proposal from demonstrated result."
