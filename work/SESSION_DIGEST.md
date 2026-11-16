@@ -1,5 +1,5 @@
 ---
-schema: tip.session-digest.v1
+schema: tip.session-digest.v2
 checkpoint: "2026-11-16"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
@@ -9,12 +9,22 @@ operating_instruction_boundary:
   thesis_research_rules: "Substantive methodology, terminology, technical constraints, arguments and evidence standards stay in thesis/research documents."
   repository_authority: "Live GitHub files and commit history; digests are retrieval aids only."
   external_settings: "ChatGPT Project Instructions are managed outside GitHub; repository records the boundary but cannot edit ChatGPT settings."
+thesis_product:
+  canonical_manuscript: thesis.md
+  staging: "The one active thesis manuscript under development."
+  production: "A frozen, versioned release of the same thesis; not a separate product or thesis."
+  continuity: "Preserve one thesis identity, provenance, citations, evidence limits, uncertainty and review history."
+peer_review:
+  status: "Not yet independently reviewed."
+  rule: "Only claim independent review after actual review; preserve scope, reviewer evidence/comments, author responses, dispositions, dissent and resulting changes."
 work_area:
   path: work/
-  lifecycle: temporary_disposable
+  purpose: "Temporary store of actionable work to develop, analyse, explain, scrutinise and release the thesis."
+  includes: [research, source_review, route_analysis, protocol_analysis, thesis_synthesis, diagrams, validation, peer_review, release_integrity]
+  lifecycle: temporary_disposable_after_release
   thesis_dependency: none
-  internal_ids: "C-### concept keys and T-### task keys are private working lookup handles only; never thesis references."
-  release_rule: "Verify no enduring file depends on work/; then remove the directory."
+  internal_ids: "C-### concept keys and T-### task keys are private lookup handles only; never thesis references."
+  release_rule: "Transfer substantive outcomes to thesis/research records; verify no enduring document depends on work/; then remove it in full."
 document_roles:
   project_state: "Changing verified progress, blockers, dependencies and exact next action."
   workplan: "Stable roadmap, priorities, sequencing and dependencies."
@@ -32,8 +42,10 @@ read_first:
   - docs/route-comparison-framework.md
   - docs/multi-message-linkage-and-steganographic-carriage.md
 next_task: T-001
+work_backlog: work/lookup/TASKS.md
+work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "Working draft; final contribution and review readiness remain open."
+  thesis: "One active manuscript at thesis.md in staging; production will be a frozen release of that same thesis. Final contribution and review readiness remain open."
   research_units: "W1-W4 drafted; aligned definitions/comparisons, message-multiplicity terminology and text-only illustration prompts embedded."
   source_register: "49 entries, SRC-001 through SRC-049."
   multi_message_model: "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies."
@@ -44,6 +56,7 @@ current_state:
   protocol_analysis: "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected."
   implementation: none
   independent_audit: none
+  peer_review: "Not yet independently reviewed; preparation deferred until a coherent thesis candidate exists."
   illustrations: "W1-F01..F04, W2-F01..F02, W3-F01..F03, W4-F01..F03 are text-only prompts indexed in diagrams/README.md; no artwork generated."
 completed:
   - "Integrated multi-message relationships, package-encapsulation boundaries, active sanitization and animated-carrier distinctions into W1-W4 and thesis/supporting research."
@@ -54,6 +67,9 @@ completed:
   - "All 12 unique W1-W4 illustration prompt IDs match the diagram index exactly."
   - "Each W1-W4 document contains aligned definition/comparison blocks and package, message-multiplicity, steganography, animated-carrier and sanitizer distinctions."
   - "All changed GitHub files were fetched back and exact content verified."
+  - "The operational work area was moved to work/ and its disposable boundary defined."
+  - "Thesis lifecycle clarified: one manuscript in staging; production is a frozen release of the same thesis."
+  - "The work backlog indexes research, route analysis, thesis synthesis, diagrams, peer review and release integrity."
 source_review_boundaries:
   SRC-033: "MRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial."
   SRC-034: "DRAS publisher-indexed text and public MATLAB demo inspected; full methods/tables/limitations remain partial."
@@ -70,6 +86,7 @@ next_actions:
   - "Continue protocol-boundary reconciliation into W2/W3/W4, decision records and thesis; compare Signal, MLS and HPKE without premature primitive selection."
   - "Reconcile new route findings into W1-W4, contribution assessment and integrated thesis."
   - "Continue broader terminology and cross-document consistency review."
+  - "Use work/lookup/TASKS.md for continuation across research, routes, diagrams, peer review and release work."
 deferred:
   - "Create actual diagrams only after comparative argument and evidence stabilise; never use ASCII art."
   - "External peer-review preparation until a coherent thesis candidate exists."
@@ -86,11 +103,15 @@ invariants:
   - "No anonymity/security inference from carrier uniqueness, concealment or extra hops."
   - "Preserve dissent, provenance, uncertainty and historical work; distinguish proposals from demonstrated properties."
 verified_working_documents:
-  work/PROJECT_STATE.md: "500e1bfd5ea8ab4528315857aa97f2bb2086fa65"
-  work/WORKPLAN.md: "ef94ab14110f4c2a81b0ddc1eada705e795a10ed"
-  work/WORK_LOG.md: "87bf617ea83ee3fa1ceb8f6e643b9444b7b6dc30"
+  work/README.md: "87af6d60e02598929a01fc311a25f73f9abccdc6"
+  work/PROJECT_STATE.md: "f3d5cab8787e15969a5f02c5f9c866618e1df0ee"
+  work/WORKPLAN.md: "683e115c73d5eb874370f75c12aaed48fc89f094"
+  work/WORK_LOG.md: "de3cf721c704b04be9a59185e130c88e04ad0cd2"
+  work/lookup/TASKS.md: "0dd84320ff59321769276dce873b608065ed5202"
+  work/lookup/TASKS.json: "0e5a1c05f937301b89cb586d65545d869e391ef5"
+  README.md: "ce2d0c914df2506c0611518cdeb4b454384dc588"
   docs/source-register.md: "e3a69287e95ab2ca4e2544b70494ab8a45238485"
-latest_commit_before_digest_refresh: "1995b6e718736a4f8b97b7f32432bd3f32eea741"
+latest_commit_before_infrastructure_checkpoint: "0f99106b2003d22350b8b517aec0f02bc5ea79dc"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
   - "Fetch and verify all three working documents."
