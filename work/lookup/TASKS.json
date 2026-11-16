@@ -1,0 +1,81 @@
+{
+  "schema": "tip.work.tasks.v1",
+  "scope": "temporary_internal_task_lookup_only",
+  "not_for_thesis": true,
+  "next": "T-001",
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Complete full-text/source review of SRC-033, SRC-034 and SRC-036",
+      "status": "open",
+      "targets": [
+        "docs/source-register.md",
+        "docs/prior-art-comparison.md",
+        "docs/multi-message-linkage-and-steganographic-carriage.md"
+      ],
+      "next": "Seek full texts; preserve partial labels until methods, results and limitations are inspected."
+    },
+    {
+      "id": "T-002",
+      "title": "Review SRC-046–SRC-048 full texts and SRC-047 implementation where available",
+      "status": "open",
+      "targets": [
+        "docs/source-register.md",
+        "docs/multi-message-linkage-and-steganographic-carriage.md"
+      ]
+    },
+    {
+      "id": "T-003",
+      "title": "Review SRC-049 paper, formal security argument and complete results",
+      "status": "open",
+      "targets": [
+        "docs/source-register.md",
+        "docs/multi-message-linkage-and-steganographic-carriage.md"
+      ]
+    },
+    {
+      "id": "T-004",
+      "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
+      "status": "open",
+      "targets": [
+        "docs/route-comparison-framework.md",
+        "docs/echomix-katzenpost-comparator.md"
+      ]
+    },
+    {
+      "id": "T-005",
+      "title": "Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis",
+      "status": "open",
+      "targets": [
+        "docs/protocol-boundary-analysis.md",
+        "docs/w2-threat-model.md",
+        "docs/w3-architecture.md",
+        "docs/w4-risks-and-evaluation.md",
+        "docs/decision-register.md",
+        "thesis.md"
+      ]
+    },
+    {
+      "id": "T-006",
+      "title": "Reconcile new route/source findings into W1–W4 and thesis",
+      "status": "open",
+      "targets": [
+        "docs/w1-research-framing.md",
+        "docs/w2-threat-model.md",
+        "docs/w3-architecture.md",
+        "docs/w4-risks-and-evaluation.md",
+        "thesis.md"
+      ]
+    },
+    {
+      "id": "T-007",
+      "title": "Final thesis alignment and cross-document consistency review",
+      "status": "open",
+      "targets": [
+        "thesis.md",
+        "docs/traceability.md",
+        "docs/source-register.md"
+      ]
+    }
+  ]
+}
