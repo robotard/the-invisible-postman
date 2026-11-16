@@ -49,7 +49,7 @@ Work units produce independently useful outputs. Progress belongs in `PROJECT_ST
 
 - [x] **W0.1 Repository foundation:** authoritative paths, repository baseline, navigation and GitHub-first workflow.
 - [~] **W0.2 Research practice:** core self-review, governance, attribution and contribution documents exist. Routine administration is deferred; external review and ratification remain outstanding.
-- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (40 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial pending access to full methods/results. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
+- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (42 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 have expanded publisher-indexed partial reviews but remain open pending complete methods/results. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
 
 ### Phase 2 · Research foundations
 
