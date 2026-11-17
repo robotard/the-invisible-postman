@@ -11,7 +11,7 @@ The thesis is the product. `thesis.md` is the single active manuscript in develo
 - `PROJECT_STATE.md`: verified current position and exact continuation point.
 - `WORKPLAN.md`: research-development sequence, dependencies and gates.
 - `WORK_LOG.md`: chronological work and verification evidence.
-- `SESSION_DIGEST.md` / `SESSION_DIGEST.json`: compact continuation indexes.
+- `SESSION_DIGEST.md` / `SESSION_DIGEST.json`: compact continuation indexes.\n- `CHATGPT_PROJECT_INSTRUCTIONS.md`: concise, copy-ready operating instructions for the external ChatGPT Project settings; repository copy is authoritative for intended text, but does not itself change those settings.
 - `lookup/TERMS.*`: internal concept lookup keys.
 - `lookup/TASKS.*`: actionable work register covering research, source review, route analysis, thesis synthesis, diagrams, peer review and release checks.
 - Concise task-specific working notes or review-process records only when they directly support a registered task and do not duplicate enduring research.
