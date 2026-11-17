@@ -1415,3 +1415,19 @@ Final consistency review caught an over-broad conversion: the initial v3 migrati
 - `work/WORK_LOG.md` verification entry will be verified after this write.
 - `work/README.md`: `80bba3a0824e627ff6afb881105114e0dba0dd69`.
 - Root `README.md`: `9f3d4d36a930d0a6ad14fe828e719f841b42a294`.
+
+
+### Post-commit read-back verification · TIP-THESIS-FIRST-2026-11-17
+
+The eight sequential GitHub Contents API commits were fetched from the live main branch and the resulting file blobs read back. The Git Data ref-update action was failing with a GitHub GraphQL error, so the supported Contents API was used sequentially; each update used the fetched current blob SHA. This produced a linear commit chain rather than one atomic multi-file commit. No concurrent changes were overwritten.
+
+- thesis.md — commit fa798ab041dc6ba18f27a8b31573c00cae0d8544; read-back blob cdf2a278b9669032e1df9743a509e90bb1e53d9d.
+- docs/w3-architecture.md — commit 615d3d634a108b1fc39984f82464575d9c864474; read-back blob 1e0fc3c7dab11cfd2333388ce39575320c6cea75.
+- docs/multi-message-linkage-and-steganographic-carriage.md — commit cdfce464078cec5e87bd6d070cf6eeba7b630336; read-back blob 5137e55e25140ed1d05d8267b3f86f7349fd7ff8.
+- work/README.md — commit 0282018fca4c25ae495a5bb390587fbdc1e4947b; read-back blob 80bba3a0824e627ff6afb881105114e0dba0dd69.
+- work/WORKPLAN.md — commit a6716f1a7387b0d61724bc5ddd07b70a951b77d8; read-back blob 033a4ef2a2535bbc976bec388aa0914044eb1b0a.
+- work/PROJECT_STATE.md — commit 3814f7c3c7a67e83219096d9a2fbad1084960303; read-back blob 5d289bf5dd866db75a46f4027b411d3d36e03f51.
+- work/lookup/TASKS.json — commit a80144bb14a8b31850873c8264abb491e1362514; read-back blob 3bf31ec458c1210bb6b0a4396bc8a35504a345ce.
+- work/WORK_LOG.md — commit 6280c4cf077cbd0f12561111441c9e43331fb5c9; read-back blob 9f3431af883896fa80f5062a7c802fb13facad1d.
+
+The task registry confirms T-006 is in_progress and next; T-001–T-003 remain in_progress for parallel source access; T-004 remains ready; T-007 remains blocked pending stable synthesis. Read-back confirmed the thesis sections, W3 and multi-message integration, thesis-first plan, cache discipline and state record. No new sources or experimental evidence were obtained.
