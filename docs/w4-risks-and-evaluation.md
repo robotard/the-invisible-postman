@@ -93,6 +93,7 @@ Evaluation questions:
 * Are unsupported versions and ambiguous encodings rejected?
 * Is the cryptographic construction specified as a complete protocol?
 * Are key derivation inputs and purpose/direction labels unambiguous and domain-separated?
+* If HKDF is used, are non-secret salt and context-specific `info` treated as distinct inputs, with identity/session context authenticated independently rather than inferred from a public string?
 * Which header fields are encrypted, visible-but-authenticated AAD, or unauthenticated route metadata?
 
 Proposed acceptance conditions:
@@ -123,6 +124,8 @@ Proposed acceptance conditions:
 * Clock dependence, state-loss/rollback behaviour and duplicate policy are documented.
 * Nonce uniqueness is demonstrated by the specified state/key model for concurrency, retries, crash recovery, rollback and multi-device operation; a new carrier identifier is not accepted as a nonce-safety argument.
 * Expiry is not presented as a substitute for replay protection.
+
+The [protocol boundary analysis](protocol-boundary-analysis.md) is the detailed design-obligation reference for key hierarchy, HKDF inputs, transcript/context binding, nonce state, AAD, replay/order and route fallback. E3–E5 translate those obligations into proposed evaluation questions and acceptance conditions; neither document selects a protocol or reports executed tests.
 
 ### E5 · Multipart integrity and reconstruction
 
