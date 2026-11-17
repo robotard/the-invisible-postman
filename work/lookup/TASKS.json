@@ -1,60 +1,83 @@
 {
-  "schema": "tip.work.tasks.v2",
+  "schema": "tip.work.registry.v3",
   "scope": "temporary_internal_work_backlog_and_lookup_only",
   "not_for_thesis": true,
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
   "next": "T-001",
-  "tasks": [
-    {
+  "tasks": {
+    "T-001": {
       "id": "T-001",
       "type": "source_review",
       "title": "Complete full-text/source review of SRC-033, SRC-034 and SRC-036",
-      "status": "open",
+      "status": "in_progress",
       "priority": 1,
       "targets": [
         "docs/source-register.md",
         "docs/prior-art-comparison.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
-      "next": "Seek full texts through author or institutional access. Publisher-preview retrieval expanded on 2026-11-17, but full articles, tables and limitations remain unavailable; keep partial-review status."
+      "depends_on": [],
+      "next_action": "Seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional access; retain partial-review status.",
+      "blockers": [
+        "Complete papers/methods/results/limitations not yet accessible; current publisher previews are partial."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-002": {
       "id": "T-002",
       "type": "source_review",
       "title": "Review SRC-046–SRC-048 full texts and SRC-047 implementation where available",
-      "status": "open",
+      "status": "in_progress",
       "priority": 2,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
-      "next": "SRC-047 author repository README inspected; implementation paths unavailable through current GitHub file access and model files are externally hosted. SRC-046 OpenReview full-text access blocked; SRC-048 abstract/metadata only. Seek complete copies and retrievable code/model snapshot."
+      "depends_on": [],
+      "next_action": "Seek complete SRC-046 and SRC-048 papers and a retrievable SRC-047 code/model snapshot; README-only inspection is not code review.",
+      "blockers": [
+        "SRC-046/SRC-048 full texts and SRC-047 code/model snapshot unavailable."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-003": {
       "id": "T-003",
       "type": "source_review",
       "title": "Review SRC-049 paper, formal security argument and complete results",
-      "status": "open",
+      "status": "in_progress",
       "priority": 3,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
-      "next": "Indexed abstract/summary located; full paper, formal security argument and complete results remain unavailable. Seek author/institutional copy; no execution or audit."
+      "depends_on": [],
+      "next_action": "Seek SRC-049 full paper, formal security argument and complete results; selected code review remains read-only and unaudited.",
+      "blockers": [
+        "SRC-049 full paper, formal argument and complete results unavailable."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-004": {
       "id": "T-004",
       "type": "route_analysis",
       "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
-      "status": "open",
+      "status": "in_progress",
       "priority": 4,
       "targets": [
         "docs/route-comparison-framework.md",
         "docs/echomix-katzenpost-comparator.md"
-      ]
+      ],
+      "depends_on": [],
+      "next_action": "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence.",
+      "blockers": [],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-005": {
       "id": "T-005",
       "type": "protocol_analysis",
       "title": "Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis",
@@ -68,13 +91,17 @@
         "docs/decision-register.md",
         "thesis.md"
       ],
-      "next": "Closed 2026-11-17: protocol-boundary analysis integrated into thesis, W2/W4, and contribution assessment; W3 and traceability alignment checked. Signal, MLS and HPKE compared at their distinct scopes. No protocol selected."
+      "depends_on": [],
+      "next_action": "Complete; protocol comparison and obligations are integrated. No protocol or primitive suite selected.",
+      "blockers": [],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-006": {
       "id": "T-006",
       "type": "research_synthesis",
       "title": "Reconcile new route/source findings into W1–W4 and thesis",
-      "status": "open",
+      "status": "in_progress",
       "priority": 6,
       "targets": [
         "docs/w1-research-framing.md",
@@ -82,21 +109,31 @@
         "docs/w3-architecture.md",
         "docs/w4-risks-and-evaluation.md",
         "thesis.md"
-      ]
+      ],
+      "depends_on": [],
+      "next_action": "Challenge the confidence/evidence model against delivery semantics, multi-message reconstruction and privacy cost; reconcile source/route findings into W1-W4 and thesis.",
+      "blockers": [],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-007": {
       "id": "T-007",
       "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
-      "status": "open",
+      "status": "in_progress",
       "priority": 7,
       "targets": [
         "thesis.md",
         "docs/traceability.md",
         "docs/source-register.md"
-      ]
+      ],
+      "depends_on": [],
+      "next_action": "Run final thesis, traceability, source-status and cross-document consistency review after substantive synthesis stabilises.",
+      "blockers": [],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-008": {
       "id": "T-008",
       "type": "diagram_work",
       "title": "Stabilise diagram arguments and reconcile figure briefs with thesis",
@@ -110,9 +147,15 @@
         "docs/w4-risks-and-evaluation.md",
         "diagrams/README.md"
       ],
-      "next": "Do not create or revise thesis illustrations until the relevant argument, evidence and route comparisons are stable."
+      "depends_on": [],
+      "next_action": "Remain gated until the relevant argument, evidence and route comparisons are stable.",
+      "blockers": [
+        "Research argument and evidence have not stabilised."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-009": {
       "id": "T-009",
       "type": "diagram_work",
       "title": "Create and verify contextual editable thesis diagrams",
@@ -123,9 +166,17 @@
         "diagrams/README.md",
         "diagrams/"
       ],
-      "next": "After T-008; use editable SVG and accessible descriptions; never ASCII art; verify every figure against the manuscript."
+      "depends_on": [
+        "T-008"
+      ],
+      "next_action": "Create and verify contextual editable diagrams only after T-008.",
+      "blockers": [
+        "Depends on T-008."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-010": {
       "id": "T-010",
       "type": "peer_review_preparation",
       "title": "Prepare a coherent thesis candidate and scoped peer-review materials",
@@ -138,9 +189,17 @@
         "docs/templates/contribution-review-record.md",
         "docs/templates/decision-record.md"
       ],
-      "next": "Only after a coherent thesis candidate exists; define scope, expertise needs, reviewer guidance, confidentiality and response workflow. Do not imply reviewers are engaged."
+      "depends_on": [
+        "T-007"
+      ],
+      "next_action": "Prepare scoped peer-review materials only after a coherent thesis candidate exists.",
+      "blockers": [
+        "Depends on coherent thesis candidate."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-011": {
       "id": "T-011",
       "type": "peer_review",
       "title": "Conduct and reconcile substantive independent peer review",
@@ -153,9 +212,17 @@
         "docs/collaborative-governance.md",
         "docs/traceability.md"
       ],
-      "next": "Only after actual reviewers participate. Record scope, evidence, comments, author responses, dispositions, dissent and thesis changes; never claim review before evidence exists."
+      "depends_on": [
+        "T-010"
+      ],
+      "next_action": "Conduct and reconcile independent peer review only when actual reviewers participate.",
+      "blockers": [
+        "Requires actual independent reviewers and completed review activity."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     },
-    {
+    "T-012": {
       "id": "T-012",
       "type": "release_integrity",
       "title": "Verify thesis release integrity and remove disposable work area",
@@ -169,14 +236,40 @@
         "archive/",
         "work/"
       ],
-      "next": "Freeze and identify the exact reviewed thesis release; verify citations, provenance, review state, figures, accessibility and repository integrity; prove no enduring document depends on work/; then remove work/."
+      "depends_on": [
+        "T-009",
+        "T-011"
+      ],
+      "next_action": "Verify the frozen thesis release and remove /work/ only after proving no enduring document depends on it.",
+      "blockers": [
+        "Requires reviewed/frozen release and proof that enduring documents no longer depend on /work/."
+      ],
+      "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
+      "last_updated": "2026-11-17"
     }
-  ],
+  },
   "evidence_access_notes": {
     "date": "2026-11-17",
     "T001": "Publisher previews expanded; full papers remain inaccessible; reviews partial.",
     "T002": "SRC-047 README inspected; code/model material not retrieved. SRC-046/048 full texts not obtained.",
     "T003": "SRC-049 indexed abstract/summary only; full paper/proof/results not obtained.",
     "T005": "Protocol analysis integrated and comparator scope clarified; no protocol selection or tests."
+  },
+  "description": "Canonical keyed work registry. The tasks object is keyed by immutable internal task IDs; Markdown is a human-readable index only.",
+  "status_vocabulary": [
+    "ready",
+    "in_progress",
+    "blocked",
+    "deferred",
+    "complete",
+    "not_started",
+    "blocked_until_research_stable"
+  ],
+  "key_value_contract": {
+    "key": "Immutable internal task ID (T-###); never a thesis citation or research identifier.",
+    "value": "One task record containing type, title, status, priority, targets, dependencies, next_action, blockers and completion_rule.",
+    "canonical": "work/lookup/TASKS.json",
+    "human_index": "work/lookup/TASKS.md",
+    "authority": "The thesis and enduring research documents remain authoritative for substantive arguments/evidence; PROJECT_STATE is authoritative for current project position; WORKPLAN for roadmap; WORK_LOG for chronology."
   }
 }
