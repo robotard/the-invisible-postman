@@ -117,38 +117,50 @@ Password-derived encryption remains a distinct alternative and part of the desig
 
 ## Session continuity and GitHub workflow
 
-The project uses four compact continuity documents with distinct responsibilities:
+The project uses four operational handover documents with distinct jobs:
 
-1. `PROJECT_STATE.md`: changing, verified progress snapshot; completed work, remaining work, blockers, dependencies and exact next action.
-2. `WORKPLAN.md`: stable roadmap, research principles, priorities, sequencing and dependencies. Change it only when the roadmap or governing workflow genuinely changes.
-3. `SESSION_DIGEST.md`: machine-readable Markdown shorthand for rapid retrieval.
-4. `SESSION_DIGEST.json`: machine-readable JSON shorthand for tools and deterministic parsing.
+1. `PROJECT_STATE.md`: current verified position, completed work, remaining work, blockers, dependencies and exact next action.
+2. `WORKPLAN.md`: stable roadmap, priorities, sequence and dependencies. Change only when the roadmap or operating workflow genuinely changes.
+3. `WORK_LOG.md`: chronological record of actual actions, changes, evidence, limitations and verification.
+4. `SESSION_DIGEST.md` and `SESSION_DIGEST.json`: paired compact handover formats, refreshed from the other three records. They are retrieval aids, not competing sources of truth.
 
-`WORK_LOG.md` is the chronological evidence/history record. It is maintained alongside the four documents and is not replaced by either digest. The live repository, saved files and commit history are authoritative; chat summaries and digests are navigation aids, not substitutes.
+The live GitHub repository, saved files and commit history are authoritative. Chat history, recollection and digests must never displace a newer verified repository state. The thesis and research documents remain the authoritative location for substantive research; operational records should link to them rather than duplicate their arguments.
 
-### When the user says “continue”
+### Operating loop: read → decide → do → record → verify → repeat
 
-1. Fetch the live default branch; refresh both digests and read `PROJECT_STATE.md`, `WORKPLAN.md`, `WORK_LOG.md`.
-2. Read the relevant thesis, research and supporting documents needed for the next task. Do not reread the entire repository indiscriminately, but never rely on partial snippets where the full file is needed.
-3. Identify verified completions, unfinished tasks, blockers, dependencies and the next unblocked action. Preserve the existing sequence and decisions; do not ask the user to repeat recorded history.
-4. Resume that action directly. Prefer completing useful work over repeatedly proposing plans. If GitHub access or a required source is blocked, state the precise limitation and park the task with an actionable continuation.
-5. Use existing GitHub work documents and supporting material as the working record. Keep thesis reasoning in thesis/research files and operational state in operational files.
-6. Use and improve explanatory diagrams when they materially help communicate a stable research result. Diagrams must be genuine visual illustrations (prefer editable SVG and accessible exports), never ASCII art. Respect research sequencing: do not start or revise thesis diagrams while the underlying argument, evidence or route comparison is still unstable.
-7. Update supporting documentation and traceability when a material research change affects them. Preserve historical and archived work; do not silently overwrite or erase provenance.
+For every continuation, including a short “continue” prompt:
+
+1. **Read the checkpoint:** fetch the live default branch and current digests; read `PROJECT_STATE.md`, this workplan and `WORK_LOG.md`. Inspect the relevant thesis/research/supporting files needed for the next action.
+2. **Reconcile:** establish what is actually complete, what remains, blockers, dependencies and the next unblocked action. Use file content, commit history and recorded evidence, not a chat recap alone.
+3. **Decide without ceremony:** select the next useful action in the agreed sequence. Ask the user only if a missing decision, material ambiguity, permission or safety issue prevents correct progress. Never ask them to repeat information already recorded or seek approval for routine, reversible work already authorised by the project.
+4. **Execute:** work in the correct GitHub thesis/research/supporting file or available connected resource. Do not substitute another plan, an extended progress narrative or a list of intentions for work that can be performed.
+5. **Use the available runway:** within the current turn/session, complete a coherent unit and continue into the next unblocked unit while useful token/time capacity remains. Do not stop after a trivial edit merely to report progress. If the runway is ending, leave a precise, verified continuation point rather than rushing unsupported claims.
+6. **Record reality:** update affected substantive files and `WORK_LOG.md`; reconcile `PROJECT_STATE.md`. Record only work actually attempted or completed, including negative results, failed access, uncertainty and unresolved issues. Distinguish drafted, committed, fetched/read-back verified, tested, reproduced and independently reviewed.
+7. **Verify:** fetch each changed file after writing and check the saved content. A successful write response or commit SHA alone is not proof that the intended content is present.
+8. **Repeat:** after recording and verifying a coherent unit, return to the next unblocked action while meaningful runway remains. The process is iterative, not a single plan-then-stop cycle.
+9. **Hand over:** provide a concise summary of actual work, evidence/verification, limitations and exact next action. The summary reports the work; it does not replace it.
+
+If a task is blocked, state the precise reason, record it, and continue with another useful unblocked dependency where possible. Do not invent progress, silently downgrade evidence standards or imply that a blocked task is complete.
+
+### Scope and interaction discipline
+
+- Prefer action over repeated planning. Planning is only useful when it resolves a real sequencing or dependency question.
+- Keep questions exceptional and specific. Do not ask broad preference questions when the next step is already determined by the recorded plan.
+- Keep progress messages short and factual. Avoid repeatedly describing the whole project or praising routine edits.
+- Do not overstate the significance of incremental changes. Report the concrete file, section, finding, commit/read-back status and what remains.
+- Do not make the user manage the assistant's continuity. The records exist so neither party has to repeat completed work or reconstruct prior decisions.
+- Preserve the user's intended sequence and challenge it only where evidence, contradiction, risk or a genuine dependency warrants doing so.
 
 ### Checkpoint and verification protocol
 
-- After meaningful progress, update the affected research/supporting documents and record the work in `WORK_LOG.md`.
-- Reconcile `PROJECT_STATE.md` with the actual current position. Keep `WORKPLAN.md` stable unless priorities, dependencies or process genuinely change.
-- Fetch each changed GitHub file and its current blob SHA before writing. Group related changes logically; never issue concurrent writes to the same path.
-- After each write, fetch the saved file and verify exact content. A returned commit SHA without read-back is not sufficient verification.
-- At session close, reconcile and read back `PROJECT_STATE.md`, `WORKPLAN.md` and `WORK_LOG.md`.
-- Refresh `SESSION_DIGEST.md` from those verified documents; refresh `SESSION_DIGEST.json` last.
-- Read back both digests and check that they agree with the three working records. Record exact next action, relevant paths, blockers/dependencies and constraints.
-- Never describe work as saved, completed, published, deployed, tested or audited unless the corresponding evidence supports that exact claim. Distinguish drafted, committed, read-back verified, tested and independently reviewed states.
-
-Both digests must remain compact and machine-oriented: stable keys, concise values and lists; no thesis exposition, narrative recap or duplicated research argument. They may point to research files by path.
-
+- After meaningful thesis/research changes, update the relevant supporting and traceability records and record the actual work in `WORK_LOG.md`.
+- Reconcile `PROJECT_STATE.md` with the real current position and next unblocked action.
+- Change this roadmap only when priorities, dependencies or workflow genuinely change.
+- Fetch every changed GitHub file before editing; use its current blob SHA and do not run concurrent writes to the same path.
+- Fetch every changed file after writing and verify its exact saved content.
+- At handover, reconcile and verify `PROJECT_STATE.md`, `WORKPLAN.md` and `WORK_LOG.md`; refresh `SESSION_DIGEST.md`; refresh `SESSION_DIGEST.json` last; then fetch and verify both digests against the three records.
+- Keep both digests compact and machine-oriented: stable keys, concise values, paths, dependencies and next action. Do not put thesis exposition or narrative session transcripts in them.
+- Never claim saved, committed, published, deployed, tested, reproduced, proven, audited or independently reviewed without evidence appropriate to that exact claim.
 
 ## Research-construction and review gates
 
