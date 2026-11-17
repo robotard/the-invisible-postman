@@ -47,15 +47,14 @@ operating_loop:
   - "Fetch changed files and verify exact saved content; distinguish draft, commit, read-back, test and independent review."
   - "Refresh Markdown and JSON digests at handover; summarise actual work and exact next action concisely."
 read_first:
+  - work/START_HERE.md
+  - work/CHATGPT_PROJECT_INSTRUCTIONS.md
   - work/SESSION_DIGEST.md
   - work/SESSION_DIGEST.json
   - work/PROJECT_STATE.md
   - work/WORKPLAN.md
   - work/WORK_LOG.md
-  - thesis.md
-  - docs/source-register.md
-  - docs/route-comparison-framework.md
-  - docs/multi-message-linkage-and-steganographic-carriage.md
+  - "Then inspect only the task registry and research documents required for the next unblocked action."
 next_task: T-001
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
@@ -199,3 +198,22 @@ project_instructions:
   priorities: "Substantive thesis drafting/integration, research gaps, evidence/citations, coherent terminology and multi-message linkage; minimise planning/admin narration."
   context_limit: "Preserve old chat; start a new chat inside the same Project; resume from live GitHub checkpoint and automatic summary."
   status_label: "Project metadata only; mention only when relevant, never as a conversational refrain."
+
+automatic_reentry:
+  entrypoint: "work/START_HERE.md"
+  instruction_source: "work/CHATGPT_PROJECT_INSTRUCTIONS.md"
+  behaviour: "Every new or resumed chat in this Project reads START_HERE first, reconciles the live checkpoint, then resumes substantive work without reconstructing the project."
+  context_limit: "Preserve old chat; open a new chat inside this same Project; use automatic summary only as a clue and GitHub as authority."
+  external_installation: "One-time manual installation of CHATGPT_PROJECT_INSTRUCTIONS.md into Project settings is required; GitHub cannot modify ChatGPT Project settings or attach its files automatically."
+  status_label: "Project metadata only; mention only when relevant."
+verified_current:
+  work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
+  work/CHATGPT_PROJECT_INSTRUCTIONS.md: "46673d1c0a349a2de0db933475d59a4f60b34ed8"
+  work/PROJECT_STATE.md: "5d289bf5dd866db75a46f4027b411d3d36e03f51"
+  work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
+  work/WORK_LOG.md: "9f3431af883896fa80f5062a7c802fb13facad1d"
+  work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
+  README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
+  work/lookup/TASKS.md: "54bc564cea6cb978d752eafb1318bfb9bd4d4d36"
+  work/lookup/TASKS.json: "3bf31ec458c1210bb6b0a4396bc8a35504a345ce"
+  thesis.md: "cdf2a278b9669032e1df9743a509e90bb1e53d9d"
