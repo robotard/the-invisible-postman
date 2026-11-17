@@ -1531,3 +1531,25 @@ Checks confirmed the thesis evaluation rows, W4 E5 acceptance criteria, RQ4/RQ10
 
 ### Exact next action
 - Continue T-006 by pressure-testing the new discovery decomposition against the lifecycle/event observer ledger in `docs/route-comparison-framework.md`, especially whether each named profile records bootstrap, publication, enumeration, pertinence/authorisation, retrieval and endpoint association without inventing service behaviour. Then revise any missing route-specific row and align thesis §8.8 / §10.2 as warranted.
+
+
+### Post-commit read-back verification · discovery decomposition and route ledger
+
+The discovery-synthesis unit was committed through sequential GitHub Contents API updates. The following commits and fetched blob SHAs were identified from the repository history and live file read-backs:
+
+| File | Commit | Read-back blob | Result |
+|---|---|---|---|
+| `thesis.md` §8.4 | [fa9356f](https://github.com/robotard/the-invisible-postman/commit/fa9356f5c0fdd93f7d34d999bcd18eb9aa5c2826) | `d0fd2e5ec08f843dfb2906bedc162a6717345d22` | Required section and content markers fetched |
+| `docs/multi-message-linkage-and-steganographic-carriage.md` §4.7 | [166f360](https://github.com/robotard/the-invisible-postman/commit/166f360dcbd74311ce94d02ef0c31ec4cbca85d5) | `49a31755a13dd47f7b0ff80833b1711250c68b4f` | Required section fetched |
+| `docs/w3-architecture.md` | [cd163d4](https://github.com/robotard/the-invisible-postman/commit/cd163d4f55f0c7605262386b4ea0b3b3568b78f7) | `9ad8f905ce2a015dfeda5ebf3ba51556dc4bf46b` | Discovery-boundary addition fetched |
+| `docs/w4-risks-and-evaluation.md` E9 | [6a0dfda](https://github.com/robotard/the-invisible-postman/commit/6a0dfda179b04d0e8814c529e2b249d8613a2cb4) | `2393502288434425e4cbaae1000e0a95a0aba3a2` | New questions and acceptance conditions fetched |
+| `docs/traceability.md` RQ7 | [a632bce](https://github.com/robotard/the-invisible-postman/commit/a632bcee8ffc3afa80d47927a992655fd433fbab) | `838b3b3133ea496335e7a2b32d284c2e031b5fae` | RQ7 mapping fetched |
+| `work/PROJECT_STATE.md` | [e5397ae](https://github.com/robotard/the-invisible-postman/commit/e5397aed0277904dd24c9fb5155812862dc9cbdd) | `ae138696502d92207e06a07067a47e7a0863c3d0` | Continuation point fetched |
+| `work/lookup/TASKS.json` | [f7afd38](https://github.com/robotard/the-invisible-postman/commit/f7afd385bb4e687c181d504345a813e6d6596f5a) | `e7d72dcb5bcf6e6533e8f49cd233540a47fb3ceb` | T-006 next action fetched |
+| `work/lookup/TASKS.md` | [f149eca](https://github.com/robotard/the-invisible-postman/commit/f149ecaf1e211969fc50ab06f7942e71534905ea) | `f1845b2581df79ea3a8dd4fff8445102274cf635` | Human index fetched |
+| `work/WORK_LOG.md` | [efc2367](https://github.com/robotard/the-invisible-postman/commit/efc2367d470117f77c7831139da7fdf7b024ee79) | `0d2a5e00c4a5a76fbff2e54dcfda5c6824da9af8` | Work record fetched |
+| `thesis.md` §§8.8, 10.2 | [b621d96](https://github.com/robotard/the-invisible-postman/commit/b621d962f219247267a4936f06c882b487b12ce7) | `deaee671bff4f15c805f89d836c18dd3dd4f1a5b` | Exact content equality verified after fetch |
+| `docs/route-comparison-framework.md` §5.7 | [7cb906e](https://github.com/robotard/the-invisible-postman/commit/7cb906e39f74232f4d9b1d63648cee8606c0dd7d) | `adab2115324da2d5dbd664de7c3759d26ab9ea24` | Exact content equality verified after fetch |
+| `docs/route-comparison-framework.md` §5.6 | [bee0b61](https://github.com/robotard/the-invisible-postman/commit/bee0b617bf9f1230d69507667652220ef0d7f993) | `e701005693341d35565b7c18a17db81537cebc18` | Exact content equality verified after fetch |
+
+The first nine-file write batch was interrupted only after the commits had been created, when the tool-call limit was reached during the combined verification loop. All nine resulting files were subsequently fetched individually and the expected new section/continuation markers were confirmed. The two later thesis/route-ledger updates were compared byte-for-byte against the submitted content after fetch. This distinction is retained rather than overstating the first batch as byte-for-byte verified.
