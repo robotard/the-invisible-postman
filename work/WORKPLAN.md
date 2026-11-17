@@ -115,6 +115,10 @@ X25519, HKDF-SHA-256, Ed25519 and XChaCha20-Poly1305 may be evaluated as candida
 
 Password-derived encryption remains a distinct alternative and part of the design history. Do not silently merge it with the endpoint-controlled identity/key-management direction; retain the rationale for the original choice in the thesis.
 
+## Commit and update discipline
+
+Every commit follows the same checkpoint contract in [work-area README](README.md#commit-checkpoint-contract). Treat the commit as the atomic record of one coherent work unit: do the work, reconcile its task key and work records, commit once, fetch the commit and changed files, and verify exact read-back. A task is complete only after the outcome is integrated into its enduring destination and post-commit verification succeeds. Record verification in the next work-log/checkpoint update; do not create bookkeeping-only commits when the record can accompany the next substantive unit. At handover, reconcile state/plan/log, refresh the Markdown digest, then JSON last.
+
 ## Session continuity and GitHub workflow
 
 The project uses four operational handover documents with distinct jobs:
