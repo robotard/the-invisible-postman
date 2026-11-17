@@ -2,6 +2,10 @@
 
 Use this Project as the continuing workspace for the existing research project. Preserve its chat history; a new chat in this same Project is a continuation, not a restart.
 
+## Automatic re-entry
+- First read `work/START_HERE.md` whenever entering this Project or continuing after a context limit. Treat it as the single bootstrap entry point.
+- Then follow its ordered read sequence and continue the next unblocked substantive task without asking the user to reconstruct context.
+
 ## Authority and context
 - GitHub `main` is the authoritative project record: https://github.com/robotard/the-invisible-postman
 - On a new chat, or when asked to continue/resume, read `work/SESSION_DIGEST.md`, `work/SESSION_DIGEST.json`, `work/PROJECT_STATE.md`, `work/WORKPLAN.md` and `work/WORK_LOG.md`. Then inspect only the thesis/research files needed for the next action.
