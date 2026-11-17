@@ -6,7 +6,7 @@
   "status_semantics": "project_metadata_only",
   "authority": "Live GitHub files and commit history are authoritative. Digests are retrieval aids, not substitutes for working documents.",
   "operating_instruction_boundary": {
-    "chatgpt_project_instructions": "Thin operating layer for continuation, execution and verification; follows live GitHub records.",
+    "chatgpt_project_instructions": "Use work/CHATGPT_PROJECT_INSTRUCTIONS.md as the copy-ready external Project instruction text. Thin operating layer only; no thesis exposition. External installation is manual and is not changed by GitHub.",
     "thesis_research_rules": "Substantive methodology, terminology, technical constraints, arguments and evidence standards remain in thesis/research documents.",
     "repository_records": "Operational documents record verified progress, dependencies, blockers and next actions.",
     "external_settings": "ChatGPT Project Instructions are managed outside GitHub; repository records the boundary but cannot edit ChatGPT settings.",
@@ -237,12 +237,13 @@
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
-    "Read live main, both digests, PROJECT_STATE, WORKPLAN, WORK_LOG and only the research files needed for the next task.",
-    "Resolve the next unblocked task from the keyed registry work/lookup/TASKS.json; do not ask the user to restate recorded context.",
-    "Do the substantive work in thesis/research/supporting documents; update task status/next_action and WORK_LOG before committing; reconcile PROJECT_STATE. Change WORKPLAN only when sequence, priority, dependency or workflow changes.",
-    "Make one coherent commit per work unit, with stable checkpoint ID and task key(s); do not create micro-commits.",
-    "After every commit fetch the commit and every changed file; verify exact saved content and applicable checks. Record read-back evidence; only then report completion.",
-    "At handover reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests."
+    "For a new chat or explicit continue/resume, read both digests and PROJECT_STATE, WORKPLAN, WORK_LOG; inspect only research files needed for the next action.",
+    "Resolve the next unblocked task from work/lookup/TASKS.json; do not ask the user to restate recorded context.",
+    "Prioritise substantive thesis/research work. Do not substitute planning, status narration or repeated document administration for progress.",
+    "Update task status only when actual work changes it; update state/log for material outcomes; change workplan only for genuine workflow/priority/dependency changes.",
+    "Verify every GitHub write by fetching saved files. Distinguish drafted, committed, read-back verified, tested, reproduced and independently reviewed.",
+    "At handover reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; refresh SESSION_DIGEST.md then SESSION_DIGEST.json last and verify both.",
+    "If a chat reaches its context limit, preserve it; start a new chat inside the same Project and resume from live GitHub plus the automatic summary. Do not treat this as a project reset."
   ],
   "diagram_policy": {
     "format": "Genuine visual illustrations; never ASCII art.",
@@ -415,5 +416,13 @@
     "final_digest": "work/SESSION_DIGEST.json",
     "final_digest_rule": "JSON digest is written last, then fetched and parsed; its own commit SHA is reported in the handover rather than self-referenced."
   },
-  "task_status_correction": "Legacy open statuses were not all mapped to in_progress. T-004 and T-006 are ready; T-007 is blocked pending T-006; T-001–T-003 remain in_progress; T-005 complete."
+  "task_status_correction": "Legacy open statuses were not all mapped to in_progress. T-004 and T-006 are ready; T-007 is blocked pending T-006; T-001–T-003 remain in_progress; T-005 complete.",
+  "project_instructions": {
+    "source": "work/CHATGPT_PROJECT_INSTRUCTIONS.md",
+    "purpose": "Concise operating instructions for external ChatGPT Project settings.",
+    "installation": "Manual copy into The Invisible Postman > Project settings > Project instructions; repository connector cannot edit external ChatGPT settings.",
+    "priorities": "Substantive thesis drafting/integration, research gaps, evidence/citations, coherent terminology and multi-message linkage; minimise planning/admin narration.",
+    "context_limit": "Preserve old chat; start a new chat inside the same Project; resume from live GitHub checkpoint and automatic summary.",
+    "status_label": "Project metadata only; mention only when relevant, never as a conversational refrain."
+  }
 }
