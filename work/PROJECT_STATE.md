@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-16 · thesis argument and initial route-comparison synthesis integrated; confidence/evidence model remains provisional  
+**Checkpoint:** 2026-11-17 · operational handover cycle clarified; thesis route-profile and lifecycle/observer synthesis integrated; confidence/evidence model remains provisional  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -16,6 +16,28 @@ When the user says **continue**, resume from the latest verified repository chec
 5. After meaningful progress, update the relevant research/supporting files and checkpoint records. Fetch every changed file back and verify its saved content before claiming completion.
 
 Use GitHub work documents as the project continuity source. Do not make the user reconstruct prior decisions already recorded there.
+
+## Working cycle: manage, execute, record, repeat
+
+The four operational documents are a handover mechanism, not a parallel project or an output to be endlessly rewritten:
+
+- `PROJECT_STATE.md` says where the work actually stands now.
+- `WORKPLAN.md` says what should be done and the intended sequence.
+- `WORK_LOG.md` records actions actually performed, changes, evidence and verification.
+- `SESSION_DIGEST.md` and `SESSION_DIGEST.json` are two compact formats of the same handover, not two additional plans.
+
+For each continuation, including a simple “continue”:
+
+1. Read the current records and only the research sources needed for the next action. Check the live branch and relevant commit/file state.
+2. Reconcile what is already done, what remains, what is blocked and what depends on something else. Do not repeat completed work merely because it appeared in chat.
+3. Choose the next useful, unblocked action. Ask the user only when a missing decision or ambiguity materially prevents safe or correct progress. Do not ask for confirmation of recorded decisions or narrate a plan when execution can proceed.
+4. Do the work directly in the appropriate thesis/research/supporting file or connected repository. Use the available turn/token runway productively: finish a coherent unit, then continue to the next unblocked unit while meaningful work remains. Do not stop after planning or after one small edit merely to produce a progress report.
+5. Record only what actually happened. Distinguish attempted, drafted, committed, read-back verified, tested and independently reviewed work. Preserve failures, access limits, uncertainty and dissent.
+6. Fetch changed files back and verify the saved content. Reconcile the log and current state, then refresh the digests at handover.
+7. Summarise actual completed work, verification, limitations and the exact next action. Keep the report concise; it is an outcome report, not a substitute for doing the work.
+
+If a source or action is blocked, make the useful progress still available, record the precise blocker and move to another unblocked dependency where sensible. Do not fabricate progress or hide the blocker. At session close, leave a continuation point that can be resumed from GitHub without reconstructing this conversation.
+
 
 ## Current position
 
