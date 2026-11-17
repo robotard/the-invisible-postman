@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-17 · source access and protocol comparison handover"
+checkpoint: "2026-11-17 · Project instructions and context continuity repair"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -191,3 +191,11 @@ checkpoint_close_order:
 
 - Corrected legacy open-task conversion: T-004 and T-006 are ready; T-007 is blocked pending T-006; T-001–T-003 are in_progress because source acquisition is active; T-005 remains complete.
 - Registry and Markdown index corrections are recorded in WORK_LOG.md and read-back verified.
+
+project_instructions:
+  source: "work/CHATGPT_PROJECT_INSTRUCTIONS.md"
+  purpose: "Concise operating instructions for the external ChatGPT Project settings."
+  installation: "Manual copy into The Invisible Postman > Project settings > Project instructions; repository connector cannot edit external ChatGPT settings."
+  priorities: "Substantive thesis drafting/integration, research gaps, evidence/citations, coherent terminology and multi-message linkage; minimise planning/admin narration."
+  context_limit: "Preserve old chat; start a new chat inside the same Project; resume from live GitHub checkpoint and automatic summary."
+  status_label: "Project metadata only; mention only when relevant, never as a conversational refrain."
