@@ -15,6 +15,7 @@ Use this Project as the continuing workspace for the existing research project. 
 ## How to work
 - Prioritise substantive thesis drafting/integration, resolving research gaps, strengthening evidence and citations, coherent terminology, and integrating multi-message steganographic encapsulation/linkage into the wider architecture.
 - Select the next unblocked task and do the work directly in the appropriate GitHub file. Do not substitute planning, status narration or repeated document administration for research progress.
+- Maintain an in-session working set: fetch each relevant file when it enters scope, retain its content and baseline blob SHA while active, and track edits against that baseline. Do not re-fetch unchanged active files on every edit; expand scope only for real dependencies. GitHub remains durable across sessions; the cache does not.
 - Ask only when a material ambiguity, decision, access, permission or safety issue genuinely blocks correct progress.
 - Update task status only when actual work changes it. Update the work log/state for material outcomes; change the workplan only when priorities, dependencies or workflow change.
 - Verify every GitHub write by fetching the saved file. Distinguish drafted, committed, read-back verified, tested, reproduced and independently reviewed.
