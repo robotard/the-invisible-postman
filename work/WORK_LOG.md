@@ -1252,3 +1252,31 @@ Seek author manuscripts, institutional repository copies or library-accessible f
 Continue T-001 by seeking complete texts for SRC-033, SRC-034 and SRC-036. Preserve partial-review labels until full methods, results and limitations are inspected. T-004 remains open for actual service/client/release/configuration pinning after the source-review sequence.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-17 · Operational handover clarified as an execution loop
+
+### User direction
+
+The four operational documents exist to prevent repeated work and reduce the user's need to supervise continuity. They are practical progress/handover controls, not an additional project, thesis product or reason to produce repeated plans and lengthy status narratives. The working rhythm is: manage the work, ask only when necessary, execute within the available turn/token runway, update the records, summarise actual work, and repeat.
+
+### Changes made
+
+- Clarified `PROJECT_STATE.md` with an explicit working cycle: read and reconcile the live checkpoint; select the next useful unblocked action; ask only where a missing decision or material ambiguity prevents progress; execute; record actual outcomes; fetch and verify writes; continue while useful runway remains; then hand over concisely.
+- Reworked the session-continuity section of `WORKPLAN.md` into an operational loop: read → decide → do → record → verify → repeat. It distinguishes the four documents' roles, makes `WORK_LOG.md` the factual chronology, and treats Markdown/JSON digests as paired retrieval formats.
+- Explicitly discouraged repeated planning instead of execution, unnecessary confirmation requests, broad preference questions when the next step is known, inflated claims about incremental changes and progress reports that substitute for work.
+- Preserved the existing research sequence, thesis/research boundaries, verification requirements and maturity statement. This is a workflow clarification, not a change to research priorities or technical conclusions.
+- Prepared matching ChatGPT Project Instructions for the user to place in the external Project settings. The GitHub repository cannot itself change those ChatGPT settings.
+
+### Verification
+
+- `PROJECT_STATE.md` fetched after update; exact saved content matched. Blob SHA: `230ba7dd3064c1001509275433bb77b927a837a8`.
+- `WORKPLAN.md` fetched after update; exact saved content matched. Blob SHA: `2ddb360e796fa51be2a7e3c4f9d04c6cd58d10b4`.
+- `WORK_LOG.md` is being updated for this entry; its final blob SHA will be recorded in the refreshed digests after read-back.
+- No thesis argument, research finding, implementation, experiment, review or audit status was changed by this operational update.
+
+### Exact next action
+
+Refresh `SESSION_DIGEST.md` from the verified state, then refresh `SESSION_DIGEST.json` last. Fetch and verify both digests and confirm their hashes match the current state, workplan and log.
+
+**Theory only · No implementation · Not audited.**
