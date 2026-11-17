@@ -140,12 +140,18 @@ Evaluation questions:
 * Can a partial set be presented as a complete message?
 * Are index, count, set identity and version authenticated?
 * What happens when a fragment is corrupted or permanently unavailable?
+* Which relationships are endpoint-authenticated, endpoint-local or merely inferred by a route observer?
+* Can an untrusted carrier assertion, public set token or timestamp cause the endpoint to accept a relationship without authenticated context?
+* Are publication, service acknowledgement, retrieval, extraction, endpoint receipt, set completeness, decryption and human acknowledgement reported as distinct events?
 * Does the authenticated key/session context support the sender-attribution claim being made, especially where symmetric keys are shared by multiple participants?
 * Is manifest authority explicit, and are protocol-key attribution and real-world identity assurance kept separate?
 
 Proposed acceptance conditions:
 
 * Incomplete sets are not silently accepted as complete.
+* Each relationship needed for recipient reconstruction has an explicit authority, scope, visibility, lifetime and failure policy; observer-inferred associations and unauthenticated carrier assertions never authorise endpoint acceptance.
+* Receiver state distinguishes observation, retrieval, bounded extraction, endpoint authentication, membership validation, completeness, reconstruction, replay/freshness and logical-message acceptance.
+* Route-event evidence remains separate from endpoint-authenticated state. Any receipt names the event, observer and evidence source it actually proves.
 * Acceptance reports distinguish object integrity under a key, attribution to a protocol key/session, and any separate claim about a real-world participant; shared-key possession is not reported as unique sender proof.
 * Authenticated logical indices and manifest context permit valid capsules to be reassembled when transport delivery order differs from logical order; arrival order alone is not treated as proof of tampering.
 * A duplicate capsule is never counted as an additional distinct piece. The policy for identical duplicates is explicit; conflicting content for the same index, cross-message substitution, invalid indices and ambiguous manifests fail closed.
