@@ -1398,3 +1398,11 @@ Final consistency review caught an over-broad conversion: the initial v3 migrati
   - `work/SESSION_DIGEST.md` — blob `fc3c7ea5c20c09d00c5a65f15701793c71d5b549`
   - `work/SESSION_DIGEST.json` — blob `621b36b6afa679ff431c62268d917d815450b92a`; parsed successfully as JSON.
 - The `WORK_LOG.md` update itself is now being read back; the external ChatGPT Project setting remains the sole manual installation step.
+
+
+## 2026-11-17 · Added single-entry automatic re-entry bootstrap
+
+- Created `work/START_HERE.md` as the one canonical entry point for new chats and context-limit recovery.
+- Updated the copy-ready Project Instructions to require reading START_HERE first.
+- Documented the boundary honestly: repository files cannot automatically attach themselves to ChatGPT Project sources or change external Project settings. One-time manual installation of the updated Project Instructions is still required; thereafter the assistant is instructed to fetch the bootstrap at every new/resumed chat.
+- No thesis task or research status was changed.
