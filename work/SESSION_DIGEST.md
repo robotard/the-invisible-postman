@@ -229,3 +229,11 @@ verified_current:
 - Working-set rule: hydrate relevant GitHub files once when they enter scope; retain content and baseline blob SHAs while active; diff across the cached set; expand only for dependencies; reconcile remote changes; verify changed files after writing. Cache is in-session, not persistent local storage.
 - T-001–T-003 remain in_progress, T-004 ready, T-006 in_progress, T-007 blocked. Update task status only when actual work changes.
 - Next action: continue thesis-first drafting from the relationship/acceptance model and select the next consequential argument gap.
+
+
+## 2026-11-17 · Evaluation and traceability integration
+
+- Thesis §10.2 and W4 E5 now explicitly evaluate relationship authority, observer-inferred linkage, receiver acceptance states and event-specific acknowledgements.
+- RQ4/RQ10 traceability connects these requirements across thesis, W3, W4 and the multi-message analysis.
+- Copy-ready Project Instructions now preserve the active in-session cached working set with baseline blob SHAs; no user-side clone is required.
+- Next action remains thesis-first T-006; choose the next consequential argument/evidence weakness and write it into the manuscript.
