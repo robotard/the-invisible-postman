@@ -482,6 +482,8 @@ Evaluation must be capable of showing that a proposed design is ineffective, too
 | Cryptographic composition | Are key confirmation, context binding, nonce rules, key separation and sender authentication specified and reviewed? |
 | Envelope and parsing | Are malformed, oversized, downgraded or ambiguous inputs rejected safely, within explicit byte, count, memory, disk, CPU, decompression and lifetime budgets? |
 | Multipart validation | Are missing, duplicate, reordered, mixed, substituted, altered and replayed pieces handled correctly? |
+| Relationship authority and linkage | Can authenticated fragment membership, conversation continuity, retries, redundancy and cross-route equivalence be distinguished from observer-inferred association and untrusted carrier assertions? |
+| Receiver acceptance semantics | Are carrier events, endpoint authentication, set completeness, reconstruction, replay/freshness and logical-message acceptance kept distinct? Are incomplete sets bounded and unaccepted? |
 | Intermediary authority | Can an intermediary obtain plaintext or sole decryption authority? What can it still observe or disrupt? |
 | Image route | What capacity and extraction success remain after defined resizing, recompression, transcoding and moderation? |
 | Concealment | Under which detection methods and transformations is concealment detectable or destroyed? |
