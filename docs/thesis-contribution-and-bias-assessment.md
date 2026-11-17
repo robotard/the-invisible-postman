@@ -1,6 +1,6 @@
 # Thesis Contribution and Bias Assessment
 
-**Checkpoint:** 2026-11-15  
+**Checkpoint:** 2026-11-17  
 **Scope:** Critical assessment of the active thesis and current literature position  
 **Project status:** Theory only · No implementation · Not audited.
 
@@ -156,6 +156,12 @@ A route abstraction and comparative evaluation framework in which one protected 
 - Weakness: a comparison table alone is not a contribution. It needs a defensible taxonomy, reproducible evaluation method or new insight.
 
 **Current direction:** A remains the architectural organising principle, not a novelty claim. Candidate C supplies the comparison method. Candidate B is now narrowed to image-platform carriage and must earn its place through a measurable, decision-relevant difference against the stronger integrated baseline. No contribution ranking is final.
+
+### Protocol-composition boundary
+
+The protocol-boundary analysis now makes key hierarchy, authenticated identity/transcript binding, HKDF salt versus `info`, AEAD nonce uniqueness, associated-data visibility, replay/order state, multipart validation and downgrade-resistant fallback explicit. These are necessary correctness obligations for any credible route-independent messaging architecture; their enumeration is not, by itself, a novel contribution. The underlying primitives and many of the relevant protocol mechanisms are established in standards and prior systems. Any eventual contribution must be demonstrated at the system boundary: for example, a defensible model of how endpoint-authenticated message and set semantics remain invariant across replaceable routes while route-specific observers, discovery, transformation and delivery events differ. That proposition remains theoretical and unvalidated. See [protocol boundary analysis](protocol-boundary-analysis.md), W2–W4 and RQ2/RQ4 traceability.
+
+The 17 November retrieval pass expanded publisher-preview evidence for MRAS, DRAS and active sanitisation, located and inspected the SRC-047 author repository README, and added abstract-level detail for SRC-049. It did not obtain complete papers for SRC-033, SRC-034, SRC-036, SRC-046 or SRC-048, inspect SRC-047 implementation/model files, or review SRC-049's formal proof and complete results. The relevant source-register entries retain partial-review status. These additions strengthen the prior-art pressure but do not establish any new novelty claim.
 
 ## 8. Required evidence before claiming originality
 
