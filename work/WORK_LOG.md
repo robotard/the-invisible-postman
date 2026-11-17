@@ -1493,3 +1493,12 @@ Checks confirmed the thesis evaluation rows, W4 E5 acceptance criteria, RQ4/RQ10
 - For each family, separated recipient requirements, route/observer exposure and claims the mechanism cannot establish.
 - Connected discovery to §§7.3.1–7.3.2: discovery returns candidate carriers; endpoint-authenticated membership, completeness, conversation continuity and logical-message acceptance remain endpoint decisions.
 - Preserved the source boundary: this is a synthesis of alternatives already analysed in §8.4 and the dedicated multi-message research, not a selected mechanism, new source finding or measured comparison.
+
+
+### Post-write verification · thesis §8.4 discovery synthesis
+
+- thesis.md §8.4 read-back blob: ec579e0c24cdee06f2b2efe2c3130f60c0f3844c.
+- work/PROJECT_STATE.md read-back blob: 65a8bae72c8f47f66c1cf1141c9c138b73769403.
+- work/lookup/TASKS.json read-back blob: 294c85a3acd56931d19e6993754c652bcfdeb809.
+- work/lookup/TASKS.md was updated to identify §8.4 discovery/linkage synthesis as the current T-006 focus.
+- Checks confirmed the discovery comparison table, candidate-carrier rule, updated state and active task. No new sources, implementation or empirical evaluation were added.
