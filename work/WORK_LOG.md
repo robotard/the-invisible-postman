@@ -1456,3 +1456,10 @@ The task registry confirms T-006 is in_progress and next; T-001–T-003 remain i
 ### Evidence and limits
 - This is conceptual analysis and documentary integration only. No protocol, wire format, signature scheme, key hierarchy or identity ceremony has been selected or tested.
 - No task is marked complete. T-006 remains in progress.
+
+
+### Checkpoint reconciliation after sender-attribution synthesis
+- Corrected the exact continuation block in `PROJECT_STATE.md`: T-006 is the primary thesis-first task; T-001–T-003 remain parallel evidence-access work; T-004 is ready; T-005 complete; T-007 remains gated.
+- Removed the stale statement that T-001 was the next unblocked action and corrected duplicate numbering in the continuation list.
+- Updated the T-006 registry next action to record the completed sender-attribution integration and direct the next session to the next consequential thesis gap.
+- No task status was changed. T-006 remains in_progress.
