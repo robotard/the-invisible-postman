@@ -185,3 +185,10 @@ The concise text intended for the ChatGPT Project's external **Project Instructi
 The repository cannot directly modify ChatGPT's external Project settings. After editing this file, installation requires copying its complete contents into **The Invisible Postman → Project settings → Project instructions**. Do not claim the external setting has changed until that has actually been done.
 
 For context-limit recovery, preserve the full prior conversation and start a new chat inside the same Project. Resume from the live GitHub digests and working records plus the new chat's automatic summary; never treat a new chat as a project reset. Do not fill every response with the maturity label. Use it only when a maturity/evidence qualification is relevant.
+
+
+## Single-entry Project bootstrap
+
+Use [START_HERE.md](START_HERE.md) as the first and canonical entry point for every new or resumed ChatGPT Project conversation. Keep the external Project Instructions concise and direct the assistant to read this file first. The bootstrap then specifies the minimal ordered checkpoint reads and directs the assistant to proceed to substantive work. Do not create competing startup checklists in multiple files.
+
+External limitation: GitHub cannot programmatically attach this file to ChatGPT Project sources or modify the Project's settings. The user must install the updated copy-ready instructions once. After that, the assistant can retrieve this bootstrap from GitHub at each new chat.
