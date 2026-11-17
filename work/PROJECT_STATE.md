@@ -90,8 +90,7 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Next session: exact starting point
 
-1. Resume T-006 first: continue thesis drafting from §§7.3.1–7.3.2 and integrate the relationship-authority/acceptance distinctions into affected research records.
-2. The 17 November synthesis now distinguishes object integrity/authenticity under a key, attribution to a protocol key/session, and real-world identity assurance; this boundary is integrated in thesis §7.3.2, W3, multi-message analysis and W4 E5. Continue T-006 with the next consequential thesis argument and reconcile its dependencies.
+1. Resume T-006 first: continue thesis-first drafting from the relationship-authority and receiver-acceptance model in §§7.3.1–7.3.2. The sender-attribution boundary is now integrated across thesis §7.3.2, W3, multi-message analysis and W4 E5; select the next consequential argument gap rather than repeating this completed integration.
 2. Keep the active thesis and architecture working set cached; fetch additional files only when dependencies require them, then review the coherent diff and commit together.
 3. Continue T-001–T-003 source access in parallel only where it resolves a material evidential weakness; preserve partial-review boundaries and do not let inaccessible papers stall thesis progress.
 4. Advance T-004 route configuration evidence when authoritative product/client details are available.
@@ -123,7 +122,7 @@ The temporary work area now uses one keyed task registry and one commit contract
 - Human index: work/lookup/TASKS.md; it mirrors the keys/statuses but is not another plan.
 - Every commit follows the uniform contract in work/README.md: reconcile task and work records before committing; commit one coherent work unit; fetch the commit and changed files; verify exact saved content and applicable checks; record commit/read-back evidence; only then report completion.
 - Work may span multiple commits; do not create bookkeeping-only commits when verification can be recorded with the next substantive checkpoint. Digests refresh at handover only, Markdown first and JSON last.
-- The current research sequence and priorities are unchanged. T-001 remains the next unblocked action; T-002/T-003 acquisition can continue in parallel where useful. T-005 remains complete. Diagram, peer-review and release gates remain deferred.
+- Current execution priority is T-006 thesis-first synthesis (in_progress); T-001–T-003 source access remains active in parallel where material; T-004 is ready; T-005 is complete. T-007 remains gated on stable synthesis. Diagram, peer-review and release gates remain deferred.
 
 Workflow implementation commits, each exact-read-back verified: c3767d9, 51821d7, 009f59a, 64224e4. Detailed paths and evidence are in WORK_LOG.md.
 
