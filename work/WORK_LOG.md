@@ -1472,3 +1472,16 @@ The task registry confirms T-006 is in_progress and next; T-001–T-003 remain i
 - Updated traceability RQ4 and the RQ10 claim/evidence mapping to connect relationship authority and receiver acceptance to the thesis, W3, W4 E5 and the multi-message analysis.
 - Added the in-session cached working-set rule to the copy-ready ChatGPT Project Instructions: hydrate on scope entry, retain baseline blob SHAs while active, expand only for dependencies, and re-fetch after conflict/commit rather than every edit.
 - No new source was obtained. These are conceptual requirements and proposed evaluation criteria, not implemented or tested behaviour.
+
+
+### Post-write verification · evaluation and traceability integration
+
+Read-back checks passed for the second integration unit. Exact saved blob SHAs:
+
+- thesis.md — 11f3566e78dd56a7c1178f30f2a27a8cdbe5ef2a
+- docs/w4-risks-and-evaluation.md — 1f47173eb2c187f774805d824128c7b6e778f271
+- docs/traceability.md — 0cc48d92ecc5d8a8c409bd4b17be1b04a7fa3bbb
+- work/CHATGPT_PROJECT_INSTRUCTIONS.md — 62e36bf75dd0519e7f1983c847013af2134d9f9d
+- work/PROJECT_STATE.md — a1aa3dd8818ac148465538e122ce0dc017d243a1
+
+Checks confirmed the thesis evaluation rows, W4 E5 acceptance criteria, RQ4/RQ10 traceability, and cached working-set instruction. No new source, implementation, experiment or audit was added.
