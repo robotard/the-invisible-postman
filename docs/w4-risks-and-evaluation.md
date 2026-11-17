@@ -74,6 +74,8 @@ Evaluation questions:
 * Can an attacker substitute a public key without detection?
 * Is the sender identity bound to the protected message?
 * What happens when an identity key changes or is compromised?
+* For 1:1 asynchronous use, how do the identity/prekey and ratchet assumptions compare with Signal PQXDH/Double Ratchet (SRC-008/009/038)?
+* If group messaging enters scope, what MLS membership/epoch and lifecycle requirements apply (SRC-007), and why are they or are they not relevant to the current use case?
 
 Proposed acceptance conditions:
 
@@ -124,6 +126,7 @@ Proposed acceptance conditions:
 * Clock dependence, state-loss/rollback behaviour and duplicate policy are documented.
 * Nonce uniqueness is demonstrated by the specified state/key model for concurrency, retries, crash recovery, rollback and multi-device operation; a new carrier identifier is not accepted as a nonce-safety argument.
 * Expiry is not presented as a substitute for replay protection.
+* If HPKE is considered, are its stateful context, ordering, loss detection, limited replay property and lack of recipient-compromise forward secrecy explicitly accounted for rather than attributed to the application automatically?
 
 The [protocol boundary analysis](protocol-boundary-analysis.md) is the detailed design-obligation reference for key hierarchy, HKDF inputs, transcript/context binding, nonce state, AAD, replay/order and route fallback. E3–E5 translate those obligations into proposed evaluation questions and acceptance conditions; neither document selects a protocol or reports executed tests.
 
