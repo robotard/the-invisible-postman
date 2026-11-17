@@ -1370,3 +1370,19 @@ Final consistency review caught an over-broad conversion: the initial v3 migrati
 - Registry correction commit: 10e4a357c596de3589ca92e4f740b0614d59348f (work/lookup/TASKS.json), exact read-back verified.
 - Human index correction commit: 3a546c229398d0f67a6f216ddba5136333c3e772 (work/lookup/TASKS.md), exact read-back verified.
 - This correction changes workflow metadata only; research priorities, evidence claims and thesis content are unchanged.
+
+
+## 2026-11-17 · Rebuilt ChatGPT Project operating instructions and context recovery
+
+### Work performed
+- Added `work/CHATGPT_PROJECT_INSTRUCTIONS.md` as the concise, copy-ready source for the Project's external instructions.
+- Defined GitHub `main` as project authority and a minimal new-chat/continue read sequence: both digests, project state, workplan and work log, followed only by research files needed for the next action.
+- Reasserted substantive work priorities: thesis drafting/integration, research gaps, evidence/citations, terminology and multi-message steganographic encapsulation/linkage.
+- Reduced operational overhead: no repetitive planning/status narration, no unnecessary questions, no bookkeeping-only edits, task statuses change only with actual work, digests refresh at handover.
+- Explicitly separated external ChatGPT Project settings from repository files. The GitHub connector exposes no action for editing ChatGPT Project Instructions, so the repository now contains the exact text to install; the external setting itself is not claimed as changed.
+- Added context-limit recovery instructions: preserve the old chat, create a new chat inside the same Project and resume from GitHub plus the automatic summary.
+
+### Verification boundary
+- This is an operational instruction/documentation update only. No thesis research task status changed; the task registry remains unchanged.
+- All changed GitHub files are to be fetched back and checked before reporting completion.
+- The external ChatGPT Project Instructions still require installation through the Project settings UI; repository writes cannot perform that external action.
