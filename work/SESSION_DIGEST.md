@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-17 · Project instructions and context continuity repair"
+checkpoint: "2026-11-17 · thesis-first sprint: relationship authority and receiver acceptance"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -211,9 +211,21 @@ verified_current:
   work/CHATGPT_PROJECT_INSTRUCTIONS.md: "46673d1c0a349a2de0db933475d59a4f60b34ed8"
   work/PROJECT_STATE.md: "5d289bf5dd866db75a46f4027b411d3d36e03f51"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
-  work/WORK_LOG.md: "9f3431af883896fa80f5062a7c802fb13facad1d"
+  work/WORK_LOG.md: "44b7781e9c0ce02c2f0a7258623f36f9d7b93b1e"
   work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
   README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
-  work/lookup/TASKS.md: "54bc564cea6cb978d752eafb1318bfb9bd4d4d36"
+  work/lookup/TASKS.md: "74dd6ff684a6cf69ba96f4f6cf74591cb9e760bc"
   work/lookup/TASKS.json: "3bf31ec458c1210bb6b0a4396bc8a35504a345ce"
   thesis.md: "cdf2a278b9669032e1df9743a509e90bb1e53d9d"
+  docs/w3-architecture.md: "1e0fc3c7dab11cfd2333388ce39575320c6cea75"
+  docs/multi-message-linkage-and-steganographic-carriage.md: "5137e55e25140ed1d05d8267b3f86f7349fd7ff8"
+
+
+## 2026-11-17 · Thesis-first sprint
+
+- T-006 is the active task. Thesis drafting/integration takes priority; source access T-001–T-003 continues in parallel only where it materially resolves claims.
+- Thesis §§7.3.1–7.3.2 define relationship authority and receiver acceptance across fragment membership, conversation continuity, retries, redundancy, cross-route equivalence, observer inference and untrusted carrier assertions.
+- W3 and the dedicated multi-message linkage analysis now share the same endpoint-authority and receiver-acceptance boundary.
+- Working-set rule: hydrate relevant GitHub files once when they enter scope; retain content and baseline blob SHAs while active; diff across the cached set; expand only for dependencies; reconcile remote changes; verify changed files after writing. Cache is in-session, not persistent local storage.
+- T-001–T-003 remain in_progress, T-004 ready, T-006 in_progress, T-007 blocked. Update task status only when actual work changes.
+- Next action: continue thesis-first drafting from the relationship/acceptance model and select the next consequential argument gap.
