@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-17 · operational handover cycle clarified; thesis route-profile and lifecycle/observer synthesis integrated; confidence/evidence model remains provisional  
+**Checkpoint:** 2026-11-17 · source-review access pass and Signal/MLS/HPKE protocol comparison integrated; operational handover cycle clarified; confidence/evidence model remains provisional  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -65,25 +65,22 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Active work, in priority order
 
-1. **Source review:** Seek full text for SRC-033, SRC-034 and SRC-036 where access permits. MRAS/DRAS public MATLAB repositories are pinned and inspected, but article methods/tables/limitations remain partial. Review SRC-046–SRC-048 full texts and the SRC-047 sanitization repository; inspect SRC-049 paper/formal security argument; selected README/core method/sender/receiver code is now read but not executed or audited.
-2. **Route evidence:** Six named evidence-bounded profiles are now integrated into thesis §8.2, and a compact lifecycle/event/observer comparison plus a conditional image-carriage decision analysis is integrated into §8.8. T-004 remains open only for pinning actual product/client/release/account configurations and service-side lifecycle evidence; do not promote literature or protocol references into deployed profiles.
-3. **Multi-message observer evidence:** Initial integration into the lifecycle/event/observer ledger is complete. Extend it only when source-specific evidence or a declared evaluation design justifies further detail; keep endpoint-authenticated relationships separate from observer-inferred correlations.
-4. **Architecture alignment:** Check W3 section numbering and terminology against traceability and the thesis.
-5. **Protocol questions:** Analyse nonce uniqueness, salt purpose, key scope, identity/context binding, replay and safe fallback without prematurely selecting a protocol.
-6. **Protocol alignment:** Integrate the new protocol-boundary analysis into W2/W3/W4, key-lifecycle reasoning and the contribution assessment; keep primitive and protocol selection open.
-7. **Confidence/evidence validation:** Challenge the new claim-centred model against route evidence, protocol semantics and multi-message requirements; identify unsupported fields, false inferences and privacy costs before treating it as stable.
-7. **Audit:** After substantive edits, run repository-wide relative-link, exact-status and cross-document consistency checks.
-8. **Thesis integration:** Reconcile material findings into the thesis, W1–W4, decision register, source register and traceability.
+1. **Source reviews (T-001–T-003):** Continue seeking full texts and complete evidence for SRC-033, SRC-034, SRC-036, SRC-046, SRC-048 and SRC-049. On 2026-11-17, publisher-preview evidence for MRAS/DRAS/SRC-036 was expanded; SRC-047's author repository README was inspected; SRC-046/048 remained abstract-level; and an indexed SRC-049 abstract summary was found. No full paper, complete tables, formal proof or new experiment was obtained. All relevant reviews remain partial. SRC-047 code/model files were not retrieved; see docs/source-register.md §7.1.1 and §§7.2.1–7.2.2.
+2. **Route evidence (T-004):** Six named evidence-bounded profiles are integrated into thesis §8.2, with lifecycle/observer comparison and conditional image-carriage decision analysis in §8.8. T-004 remains open only for actual product/client/release/account configurations and service-side lifecycle evidence; do not promote literature or protocol references into deployed profiles.
+3. **Protocol analysis (T-005):** Completed 2026-11-17. The protocol-boundary analysis now compares Signal PQXDH/Double Ratchet (1:1), MLS (group) and HPKE (lower-level composition) at their distinct scopes. Bounded comparison is integrated into thesis §6.2 and the protocol analysis; W2 and W4 now link the obligations to threat/evaluation criteria; W3 and traceability alignment were checked; the contribution assessment explicitly treats protocol obligations as correctness requirements, not novelty claims. No protocol or primitive suite is selected.
+4. **Research/thesis synthesis (T-006–T-007):** Continue reconciling source and route findings into W1–W4, thesis, contribution assessment and traceability. Challenge the confidence/evidence model against protocol delivery semantics, multi-message reconstruction and privacy costs. Run static cross-document/link/status checks after material changes.
+5. **Architecture alignment:** Recheck W3 numbering and terminology against traceability and thesis where the next substantive edit requires it.
 
 ## State and blockers
 
-- W1–W4 are drafted and now contain aligned multi-message terminology, definition/comparison blocks and text-only illustration prompts; W1 and traceability have now been reconciled with the revised thesis research question and contribution.
-- W6 thesis construction remains active. The manuscript has improved argument structure and initial route synthesis, but source reconciliation, version-pinned route evidence, critical challenge and independent scrutiny remain incomplete; it is not review-ready.
-- An initial named profile register, documentary comparison and lifecycle/event observer ledger now exist. Product-level version pinning, route-specific service evidence and full observer/collusion detail remain incomplete.
-- SRC-033, SRC-034 and SRC-036 remain partial article reviews. A further publisher-indexed pass clarified MRAS metrics/comparators, DRAS Q95→Q85/Q80/Q75 evaluation and author-reported platform claims, and the SRC-036 two-module attack/optimisation design with BOSSbase/BOWS2 and QF75 context. Complete papers, methods, result tables and limitations remain inaccessible; the added indexed sections do not justify full-review status. Public author-linked code for SRC-033/034 remains pinned and inspected, but no code was run. SRC-035 and SRC-037 are full-text inspected.
-- A fresh static audit checked all 29 Markdown files: no broken repository-relative links or Markdown image references were found, and no active ZIP/archive-generation instructions remain. The source register has 49 entries. All 12 unique W1–W4 illustration placeholder IDs match the diagram index exactly; all four work documents contain aligned definition/comparison blocks and package, message-multiplicity, steganography, animated-carrier and sanitizer distinctions. This is documentation validation, not semantic peer review or security audit.
-- No current GitHub write blocker is known. The latest main-branch commit and prior edits were fetched successfully.
-- No researcher decision currently blocks the next research pass.
+- W1–W4 are drafted and contain aligned multi-message terminology, definition/comparison blocks and text-only illustration prompts. W1 and traceability remain aligned to the ten thesis research questions.
+- W6 thesis construction remains active. The manuscript has improved argument structure, route synthesis and now a bounded protocol comparison, but source reconciliation, version-pinned route evidence, critical challenge and independent scrutiny remain incomplete; it is not review-ready.
+- **T-001 access result:** The 17 November publisher-preview pass exposed additional MRAS matching-recompression and DRAS downward-recompression method/evaluation context, and further SRC-036 CNN/sanitisation details. Direct ScienceDirect page retrieval returned 403; full articles, complete methods/tables and limitations remain unavailable. MRAS/DRAS code remains pinned and inspected but not executed.
+- **T-002 access result:** SRC-047 author repository zyzhu19/Image-Sanitization was located and its README inspected. The README describes Scaling-Net/SC-Net and links model material externally; attempted GitHub retrieval of testmy.py, test.py, model/README.md and requirements.txt returned 404. SRC-046 OpenReview access redirected to a browser-verification challenge; SRC-048 IEEE abstract/metadata was inspected. Full papers and SRC-047 code/model snapshot remain outstanding.
+- **T-003 access result:** An indexed abstract/summary for SRC-049 was located and compared with the already inspected pinned code. Full paper, formal security argument, complete experimental tables and limitations remain unreviewed. The selected code was read, not run or audited.
+- **Protocol boundary:** Signal, MLS and HPKE were compared at their distinct native scopes. This is documentary analysis, not suitability proof, implementation or protocol selection. Ratchet out-of-order handling is not fragment-set reconstruction; HPKE is not a full messaging protocol; MLS group state is not assumed to fit the current 1:1 scope.
+- The existing static audit of 29 Markdown files and illustration prompt IDs predates the latest substantive edits; rerun relevant link, section, status and cross-document checks after the next material synthesis pass.
+- No researcher decision currently blocks the next research pass. The immediate source blocker is access to complete papers/code, not a missing design decision.
 
 ## Deferred
 
@@ -93,14 +90,13 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Next session: exact starting point
 
-1. Apply the Continue/resume contract above using the five operational records under /work/; consult /work/lookup/TASKS.md for the short internal task key and /work/lookup/TERMS.md only when repeated concept lookup is useful.
-2. Continue T-001: seek complete texts for SRC-033, SRC-034 and SRC-036; keep all partial-review labels until full methods, results and limitations are inspected. The current route-profile and lifecycle/observer synthesis has been integrated into thesis §8.2 and §8.8.
-3. Continue T-001: seek full text for SRC-033, SRC-034 and SRC-036; MRAS/DRAS public repositories are pinned and source-inspected, but retain partial-review labels until full methods, results and limitations are inspected.
-4. Review full texts for SRC-046–SRC-048 and the SRC-047 source repository where available; inspect the SRC-049 paper's formal security argument and complete experimental results. Selected implementation files are read; no execution or audit performed.
-5. Challenge the confidence/evidence model against protocol delivery semantics and multi-message reconstruction; assess privacy costs and revise the thesis where evidence warrants it.
-6. Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test obligations against Signal, MLS and HPKE references without prematurely selecting primitives.
-7. Reconcile new route findings into W1–W4, the contribution assessment and integrated thesis.
-8. Continue broader terminology and cross-document consistency review. Static checks for 29 Markdown files, relative links, image references and archive-generation instructions were previously recorded; rerun after material edits.
+1. Apply the Continue/resume contract above; use the live GitHub records and task registry rather than reconstructing this conversation.
+2. Continue T-001: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access; retain partial-review labels until methods, results and limitations are fully inspected.
+3. Continue T-002: seek complete SRC-046 and SRC-048 papers and a retrievable SRC-047 code/model snapshot; README-only inspection is not code review.
+4. Continue T-003: seek SRC-049 full paper, formal security argument and complete experimental results; selected code review remains read-only and unaudited.
+5. T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence.
+6. Continue T-006/T-007: challenge confidence/evidence against delivery semantics and multi-message reconstruction, reconcile source/route findings into thesis and W1–W4, and run targeted cross-document consistency checks.
+7. Keep diagrams deferred until the arguments and evidence stabilise.
 
 ## Document-boundary rule
 
