@@ -132,3 +132,8 @@ Workflow implementation commits, each exact-read-back verified: c3767d9, 51821d7
 A concise, project-specific instruction set has been prepared at [CHATGPT_PROJECT_INSTRUCTIONS.md](CHATGPT_PROJECT_INSTRUCTIONS.md). It defines the Project as a continuing workspace, makes live GitHub the authority, limits startup reading to the five operational records plus only the research files needed, and prioritises substantive thesis work over planning/admin narration.
 
 The instruction file is a repository-held source for the text to install in ChatGPT Project settings. GitHub access cannot itself change those external settings; installation must be completed in the ChatGPT Project UI. The maturity label is metadata and must not be repeated as a conversational prefix. Context-limit recovery means starting a new chat inside the same Project, preserving the old chat and resuming from the verified GitHub checkpoint.
+
+
+## Automatic re-entry entry point
+
+[START_HERE.md](START_HERE.md) is the single bootstrap entry point for any assistant resuming this Project. It defines the ordered repository read sequence, work priorities and context-limit recovery. The ChatGPT Project Instructions should direct every new/resumed chat to read it first. This repository file cannot itself attach to ChatGPT Project sources or edit external Project settings.
