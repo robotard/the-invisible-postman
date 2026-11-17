@@ -30,7 +30,7 @@
     "docs/multi-message-linkage-and-steganographic-carriage.md"
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md in staging; six named evidence-bounded route profiles integrated into §8.2, with lifecycle/observer comparison and conditional image-carriage decision analysis in §8.8. No deployed route advantage is established; originality and review readiness remain open.",
+    "thesis": "One active manuscript at thesis.md in staging; §6.2 now contains a bounded Signal/MLS/HPKE comparison; §8.2 contains six named evidence-bounded route profiles and §8.8 contains lifecycle/observer comparison plus conditional image-carriage decision analysis. No deployed route advantage is established; originality and review readiness remain open.",
     "research_units": "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
     "multi_message_model": [
@@ -58,15 +58,7 @@
         "SRC_049": "Two redundancy levels: d-fold repetition within each frame and majority voting across 16 frame secrets. Code read at pinned repository revision; no execution/audit."
       }
     },
-    "sanitization": {
-      "sources": {
-        "SRC_036": "2021 learned attack/optimisation network; publisher-indexed sections partially reviewed.",
-        "SRC_046": "2022 secret-data-remover abstract/metadata; full paper not inspected.",
-        "SRC_047": "2023 Scaling-Net/SC-Net sanitization abstract/metadata; source repository not inspected.",
-        "SRC_048": "2025 secret-seed-conditioned decoder/counter-adaptation abstract; full paper not inspected."
-      },
-      "claim_boundary": "These sources do not establish that any named platform deploys the cited sanitizer or that the counter-adaptation defeats unknown sanitizers."
-    },
+    "sanitization": "SRC-036 and SRC-046–SRC-047 describe active payload sanitization; SRC-048 describes keyed counter-adaptation to a known sanitizer. SRC-047 author repository located and README inspected, but code/model files not retrieved. None establishes named-platform deployment.",
     "gif_code_review": {
       "repository": "SRope-2/Provable-GIF-Stego",
       "commit": "4a5d2503623b06d17517ecf7a8b7527e1edc315d",
@@ -86,7 +78,7 @@
       "limits": "Code read only, not executed or audited; paper/formal security argument and complete experimental results unreviewed."
     },
     "route_profiles": "Six named evidence-bounded profiles integrated into thesis §8.2: Qiao, MRAS, DRAS, Dropbox shared link, Signal protocol reference and Echomix/Pigeonhole. Thesis §8.8 integrates lifecycle/event/observer evidence; actual deployed client/service versions and configurations remain unpinned.",
-    "protocol_analysis": "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected.",
+    "protocol_analysis": "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed. Signal PQXDH/Double Ratchet (1:1), MLS (group) and HPKE (lower-level composition) compared at distinct scopes. No protocol or primitive suite selected.",
     "implementation": null,
     "independent_audit": null,
     "illustrations": {
@@ -148,6 +140,11 @@
       "route_synthesis": "Image studies inform media transformation; Dropbox documents shared-link/file-host visibility; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator. Documentary evidence is asymmetric; no overall ranking.",
       "prior_art_pressure": "Thesis explicitly confronts OMR/GOMR and PerfOMR/SophOMR/InstantOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert communication. Generic private-discovery, whole-pipeline and image-covert-channel novelty claims are not supportable.",
       "limits": "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
+    },
+    "source_review_status": {
+      "T001": "Publisher previews expanded for SRC-033/034/036, but direct publisher retrieval returned 403; full papers/tables/limitations unavailable. All remain partial.",
+      "T002": "SRC-047 README inspected; implementation/model assets not retrieved. SRC-046 OpenReview access blocked by browser verification; SRC-048 IEEE abstract/metadata only.",
+      "T003": "SRC-049 indexed abstract summary located; full paper/formal proof/complete results remain unreviewed. Selected code read only, not run/audited."
     }
   },
   "completed": [
@@ -170,7 +167,13 @@
     "Defined /work/ as the temporary store of actionable research, route analysis, thesis synthesis, diagram, peer-review and release work.",
     "Expanded internal work backlog through diagram, peer-review and release-integrity stages.",
     "Integrated six evidence-bounded route profiles into thesis §8.2 and source-bounded lifecycle/observer comparison plus conditional image-carriage decision analysis into §8.8; exact GitHub read-back verified 2026-11-17.",
-    "Clarified the four operational records as an execute-record-repeat handover system; PROJECT_STATE, WORKPLAN, WORK_LOG and both digest formats now explicitly prioritise useful execution, minimal necessary questions, token-runway use, factual recording, read-back verification and concise handover."
+    "Clarified the four operational records as an execute-record-repeat handover system; PROJECT_STATE, WORKPLAN, WORK_LOG and both digest formats now explicitly prioritise useful execution, minimal necessary questions, token-runway use, factual recording, read-back verification and concise handover.",
+    "Expanded publisher-preview evidence for SRC-033 MRAS, SRC-034 DRAS and SRC-036 sanitisation while preserving partial-review status and recording the 403 access barrier.",
+    "Located SRC-047 author repository and inspected README; recorded exact 404 failures for implementation paths and external model-download boundary.",
+    "Inspected SRC-046 OpenReview access outcome and SRC-048 IEEE abstract/metadata; neither full paper obtained.",
+    "Added bounded indexed abstract evidence for SRC-049 without upgrading full-paper/formal-proof review status.",
+    "Compared Signal PQXDH/Double Ratchet, MLS and HPKE at their distinct 1:1, group and lower-level composition scopes; integrated into thesis §6.2 and protocol-boundary analysis.",
+    "Reconciled protocol obligations into W2/W4, checked W3/traceability alignment, and clarified in contribution assessment that protocol requirements are not novelty claims."
   ],
   "source_review_boundaries": {
     "SRC_033": "Publisher-indexed abstract/introduction/method/evaluation snippets plus pinned public MATLAB demo inspection; complete paper methods, tables and limitations remain partial.",
@@ -182,13 +185,13 @@
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
-    "Continue T-001: seek complete texts for SRC-033, SRC-034 and SRC-036; retain partial-review labels until full methods, results and limitations are inspected.",
-    "Continue T-001: seek full text for SRC-033, SRC-034 and SRC-036; all three remain partial until full methods, results and limitations are inspected.",
-    "Review full texts for SRC-046–SRC-048 and the SRC-047 source repository where available; inspect the SRC-049 paper's formal security argument and complete experimental results. Selected implementation files are read; no execution or audit performed.",
-    "Challenge the confidence/evidence model against protocol delivery semantics and multi-message reconstruction; assess privacy costs and revise the thesis where evidence warrants it.",
-    "Reconcile protocol-boundary analysis into W2/W3/W4, decision records and thesis; test obligations against Signal, MLS and HPKE references without prematurely selecting primitives.",
-    "Reconcile new route findings into W1-W4, the contribution assessment and integrated thesis.",
-    "Continue broader terminology and cross-document consistency review; rerun static link/reference checks after material edits."
+    "T-001: seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional access; retain partial-review status.",
+    "T-002: seek full SRC-046/SRC-048 papers and a retrievable SRC-047 code/model snapshot; README-only inspection is not code review.",
+    "T-003: seek SRC-049 full paper, formal security argument and complete results; selected code review remains read-only and unaudited.",
+    "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence.",
+    "T-006/T-007: challenge confidence/evidence against protocol delivery semantics and multi-message reconstruction; reconcile route/source findings into W1-W4, thesis and traceability.",
+    "Keep confidence/evidence within RQ10; do not reintroduce an eleventh research question or a universal confidence score.",
+    "Keep diagrams deferred until arguments and evidence stabilise."
   ],
   "defer": [
     "Create actual diagrams only after comparative argument and evidence stabilise; never use ASCII art.",
@@ -213,23 +216,24 @@
   ],
   "verified": {
     "work/README.md": "87af6d60e02598929a01fc311a25f73f9abccdc6",
-    "work/PROJECT_STATE.md": "230ba7dd3064c1001509275433bb77b927a837a8",
+    "work/PROJECT_STATE.md": "494486517e1fd86852c5eef83fe42755d3bad79f",
     "work/WORKPLAN.md": "2ddb360e796fa51be2a7e3c4f9d04c6cd58d10b4",
-    "work/WORK_LOG.md": "1d5347e27c491628594004d02bb3f6a865eceabf",
-    "work/lookup/TASKS.md": "0dd84320ff59321769276dce873b608065ed5202",
-    "work/lookup/TASKS.json": "0e5a1c05f937301b89cb586d65545d869e391ef5",
+    "work/WORK_LOG.md": "6da4820d6eaae98dc7178ac2e1715123fc4f5fc3",
+    "work/lookup/TASKS.md": "1561731adf5b2608a45f57209c555bd44eb3dfa3",
+    "work/lookup/TASKS.json": "7c49fca455074620bfe05cab5ed32544c03dc6f5",
     "README.md": "ce2d0c914df2506c0611518cdeb4b454384dc588",
-    "docs/source-register.md": "2215ef95c14356ed543279b2e93e0bf0de532849",
-    "work/SESSION_DIGEST.md": "b59d19124bbcdc627f0f28c13fcf98272ea07464",
+    "docs/source-register.md": "87b4866d9a4cc2f5d4f9efb8b1714e26887dd673",
+    "work/SESSION_DIGEST.md": "d766b68a49761e0100e79dbfc13f889c0e64b3bc",
     "docs/confidence-and-evidence-model.md": "402a83a787977bc4e06ef0e7c0beef241a61c4fa",
-    "thesis.md": "81c8dcaf8ce7083cc898d37e2f0930ef68cd6086",
+    "thesis.md": "cbc06935901d007542cec32a44332ac8b975baa6",
     "docs/w1-research-framing.md": "8a772f0c1f63a033d31d77e4ceb3f83ddd94b897",
-    "docs/w2-threat-model.md": "ef9ca072917cdc0c8405b908c3039f508080f55b",
+    "docs/w2-threat-model.md": "d6996524d4c847ce5bb67b3e41be41d8c4b385ca",
     "docs/w3-architecture.md": "dd8ecca36e3117d73596e688fda64fd484c140ec",
-    "docs/w4-risks-and-evaluation.md": "d3a4137b29238b073ca2b994b40053a0d25a13ce",
-    "docs/thesis-contribution-and-bias-assessment.md": "e93f774158ec57adeb98b37daf02c8114d39e232",
+    "docs/w4-risks-and-evaluation.md": "f53da96c10753b16ddfab2ccce77cceb4ed14682",
+    "docs/thesis-contribution-and-bias-assessment.md": "d8d3879f41251fcdbf9cf40c1e42cc04a849520d",
     "docs/decision-register.md": "8a011d15d2941ce37909b6fe6da23485170303e5",
-    "docs/traceability.md": "6baf3c2e466a7ac94004d041472ad0beb1c701cd"
+    "docs/traceability.md": "6baf3c2e466a7ac94004d041472ad0beb1c701cd",
+    "docs/protocol-boundary-analysis.md": "14a56004e515ebf1caae2a656f1402aef9d28609"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
@@ -270,7 +274,7 @@
     "release_rule": "Transfer substantive outcomes to thesis/research records; verify no enduring document depends on work/; then remove it in full."
   },
   "next_task": "T-001",
-  "latest_commit_before_digest_refresh": "839ce905b19c28af3b3eeda23185f0b81399c419",
+  "latest_commit_before_digest_refresh": "e838e4de8d4b85556c7a00368f561a616287c4e1",
   "thesis_product": {
     "canonical_manuscript": "thesis.md",
     "staging": "The one active thesis manuscript under development.",
@@ -284,7 +288,7 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "95b4129e7463f44e97910d4917ef6e8d7306cd60",
-  "immediate_next_action": "Continue T-001: seek complete texts for SRC-033, SRC-034 and SRC-036; retain partial-review labels until full methods, results and limitations are inspected.",
-  "latest_verified_project_head": "839ce905b19c28af3b3eeda23185f0b81399c419"
+  "latest_commit_before_json_digest_refresh": "37076ccccbbf11d58d83653b1f22a4bbc3d0d4a2",
+  "immediate_next_action": "T-001: seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional access; retain partial-review status.",
+  "latest_verified_project_head": "e838e4de8d4b85556c7a00368f561a616287c4e1"
 }
