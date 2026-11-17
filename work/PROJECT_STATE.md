@@ -126,3 +126,10 @@ The temporary work area now uses one keyed task registry and one commit contract
 - The current research sequence and priorities are unchanged. T-001 remains the next unblocked action; T-002/T-003 acquisition can continue in parallel where useful. T-005 remains complete. Diagram, peer-review and release gates remain deferred.
 
 Workflow implementation commits, each exact-read-back verified: c3767d9, 51821d7, 009f59a, 64224e4. Detailed paths and evidence are in WORK_LOG.md.
+
+
+## ChatGPT Project instruction repair · 2026-11-17
+
+A concise, project-specific instruction set has been prepared at [CHATGPT_PROJECT_INSTRUCTIONS.md](CHATGPT_PROJECT_INSTRUCTIONS.md). It defines the Project as a continuing workspace, makes live GitHub the authority, limits startup reading to the five operational records plus only the research files needed, and prioritises substantive thesis work over planning/admin narration.
+
+The instruction file is a repository-held source for the text to install in ChatGPT Project settings. GitHub access cannot itself change those external settings; installation must be completed in the ChatGPT Project UI. The maturity label is metadata and must not be repeated as a conversational prefix. Context-limit recovery means starting a new chat inside the same Project, preserving the old chat and resuming from the verified GitHub checkpoint.
