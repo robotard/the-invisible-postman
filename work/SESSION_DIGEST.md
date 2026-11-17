@@ -180,3 +180,9 @@ checkpoint_close_order:
 - Every commit must reconcile task/work records before commit, contain one coherent work unit, then be fetched and exact-read-back verified. Completion is reported only after verification. Do not create bookkeeping-only commits when verification can be recorded in the next substantive checkpoint.
 - Workflow commits verified: c3767d9 (README), 51821d7 (WORKPLAN), 009f59a (keyed TASKS.json), 64224e4 (TASKS.md).
 - Research priorities unchanged; T-001 remains next unblocked task. T-005 remains complete; diagrams, peer review and release remain gated.
+
+### Final close verification
+
+- README anchor correction: 68e9fed; exact read-back verified.
+- WORK_LOG close record: 4888f68; exact read-back verified.
+- The JSON digest is refreshed after this Markdown digest and remains the final write in the handover cycle.
