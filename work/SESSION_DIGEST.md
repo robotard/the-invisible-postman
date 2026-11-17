@@ -172,3 +172,11 @@ checkpoint_close_order:
   - "Refresh SESSION_DIGEST.md from verified state."
   - "Refresh SESSION_DIGEST.json last."
   - "Fetch and verify both digests against the three working documents."
+
+## 2026-11-17 · Work registry and commit discipline
+
+- Canonical task lookup is keyed JSON: work/lookup/TASKS.json, schema tip.work.registry.v3, tasks[T-###].
+- TASKS.md is a compact human index only.
+- Every commit must reconcile task/work records before commit, contain one coherent work unit, then be fetched and exact-read-back verified. Completion is reported only after verification. Do not create bookkeeping-only commits when verification can be recorded in the next substantive checkpoint.
+- Workflow commits verified: c3767d9 (README), 51821d7 (WORKPLAN), 009f59a (keyed TASKS.json), 64224e4 (TASKS.md).
+- Research priorities unchanged; T-001 remains next unblocked task. T-005 remains complete; diagrams, peer review and release remain gated.
