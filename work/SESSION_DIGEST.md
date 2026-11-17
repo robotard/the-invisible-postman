@@ -186,3 +186,8 @@ checkpoint_close_order:
 - README anchor correction: 68e9fed; exact read-back verified.
 - WORK_LOG close record: 4888f68; exact read-back verified.
 - The JSON digest is refreshed after this Markdown digest and remains the final write in the handover cycle.
+
+### Registry status correction
+
+- Corrected legacy open-task conversion: T-004 and T-006 are ready; T-007 is blocked pending T-006; T-001–T-003 are in_progress because source acquisition is active; T-005 remains complete.
+- Registry and Markdown index corrections are recorded in WORK_LOG.md and read-back verified.
