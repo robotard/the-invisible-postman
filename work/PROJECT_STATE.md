@@ -91,6 +91,7 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 ## Next session: exact starting point
 
 1. Resume T-006 first: continue thesis drafting from §§7.3.1–7.3.2 and integrate the relationship-authority/acceptance distinctions into affected research records.
+2. The 17 November synthesis now distinguishes object integrity/authenticity under a key, attribution to a protocol key/session, and real-world identity assurance; this boundary is integrated in thesis §7.3.2, W3, multi-message analysis and W4 E5. Continue T-006 with the next consequential thesis argument and reconcile its dependencies.
 2. Keep the active thesis and architecture working set cached; fetch additional files only when dependencies require them, then review the coherent diff and commit together.
 3. Continue T-001–T-003 source access in parallel only where it resolves a material evidential weakness; preserve partial-review boundaries and do not let inaccessible papers stall thesis progress.
 4. Advance T-004 route configuration evidence when authoritative product/client details are available.
