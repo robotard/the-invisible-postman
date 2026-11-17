@@ -1406,3 +1406,12 @@ Final consistency review caught an over-broad conversion: the initial v3 migrati
 - Updated the copy-ready Project Instructions to require reading START_HERE first.
 - Documented the boundary honestly: repository files cannot automatically attach themselves to ChatGPT Project sources or change external Project settings. One-time manual installation of the updated Project Instructions is still required; thereafter the assistant is instructed to fetch the bootstrap at every new/resumed chat.
 - No thesis task or research status was changed.
+
+### Bootstrap read-back verification
+- `work/START_HERE.md` fetched and verified: `36749a44b6596fcc6b3592425e682554e44a5fc7`.
+- `work/CHATGPT_PROJECT_INSTRUCTIONS.md` fetched and verified with the START_HERE-first rule: `46673d1c0a349a2de0db933475d59a4f60b34ed8`.
+- `work/PROJECT_STATE.md`: `5d289bf5dd866db75a46f4027b411d3d36e03f51`.
+- `work/WORKPLAN.md`: `033a4ef2a2535bbc976bec388aa0914044eb1b0a`.
+- `work/WORK_LOG.md` verification entry will be verified after this write.
+- `work/README.md`: `80bba3a0824e627ff6afb881105114e0dba0dd69`.
+- Root `README.md`: `9f3d4d36a930d0a6ad14fe828e719f841b42a294`.
