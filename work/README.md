@@ -33,3 +33,37 @@ The thesis is the product. `thesis.md` is the single active manuscript in develo
 7. At release, transfer substantive outcomes to permanent locations, verify no enduring document depends on `/work/`, then remove `/work/` in full.
 
 The registries and work records are coordination aids, not competing sources of truth. The thesis and substantive research documents govern.
+
+
+## Commit checkpoint contract (applies to every commit)
+
+A commit is a completed work checkpoint, not a loose save. Use one commit for one coherent work unit; group related file edits instead of creating micro-commits. Do not split a task merely to make activity look busy.
+
+**Before each commit**
+1. Fetch the current `main` head and the files that will be changed. Reconcile the task key in `lookup/TASKS.json` (canonical) and its Markdown index.
+2. Do the actual research/thesis/supporting-document work first. Update the affected enduring research files, not just the work register.
+3. Update the task's next action/status and record the actual changes, evidence, limits and intended commit scope in `WORK_LOG.md`. Reconcile `PROJECT_STATE.md` to the real position. Change `WORKPLAN.md` only if sequence, priority, dependency or workflow changes.
+4. Run the checks relevant to the change. Do not label a result verified before it has been read back.
+5. Use a structured commit message/body with stable key/value fields: `checkpoint`, `task_keys`, `intent`, `changed_paths`, `evidence`, `precommit_checks`, `postcommit_checks`. Keep the commit subject concise and task-centred.
+
+**After each commit**
+1. Fetch the commit and every changed file from the new branch head.
+2. Verify the exact saved content and changed-path set; run any post-write checks that apply.
+3. Record the commit SHA, read-back result, checks and any limitations in the next work-log/checkpoint update. A commit is not reported as complete until this post-commit verification succeeds.
+4. If verification fails, keep the task open, correct the saved content and make a corrective checkpoint. Never silently mark the failed attempt complete.
+
+**Status discipline**
+- `ready`: unblocked and not yet started.
+- `in_progress`: work is actively being done.
+- `blocked`: a specific dependency/access/decision prevents progress; record it.
+- `deferred`: intentionally postponed by a recorded dependency or gate.
+- `complete`: the defined outcome is achieved, reconciled into its enduring destination, and post-commit read-back verified.
+- A task may remain `in_progress` across multiple coherent commits. Do not create a commit solely to flip a status if that update can accompany the next substantive checkpoint.
+
+**Checkpoint identity**
+Use the task key(s) as the stable lookup identity, plus a dated checkpoint label when one unit spans multiple commits. Internal IDs remain private work handles. Commit metadata and the work log provide provenance; do not create a second parallel task taxonomy.
+
+**Digest timing**
+The two session digests are refreshed only at a handover/close checkpoint, after state, plan and log are reconciled. Refresh Markdown first and JSON last. Verify both against the source records. Do not refresh both digests after every tiny edit.
+
+This is the single commit discipline for research, thesis, supporting documents and operational changes. No commit is exempt.
