@@ -181,6 +181,8 @@ Incomplete sets remain unaccepted and consume bounded resources under explicit e
 
 This acceptance model is a research/design obligation. It does not select the manifest format, identifier construction, cryptographic primitive, durable state store or acknowledgement protocol.
 
+It also does not collapse cryptographic validity into unique sender attribution. An AEAD tag under a shared symmetric key authenticates against that key and context, but any holder of the key may be capable of producing a valid tag. A signature or authenticated session can bind an object to a protocol key/session; the claim that this key belongs to a particular person depends on a separate peer-key verification and identity-assurance process. The manifest's issuer/authorisation scope must therefore be explicit: a valid manifest authenticates only the relationships and claims covered by its cryptographic context, not an unverified human identity or the truth of outer-carrier metadata.
+
 ## 7. Threats specific to linked carriers and multi-message flows
 
 | Threat | Example | Required analysis/control |
