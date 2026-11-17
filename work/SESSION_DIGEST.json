@@ -215,15 +215,15 @@
     "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
   ],
   "verified": {
-    "work/README.md": "012d32415660e384f6c8c31ce5b544d52af341b8",
+    "work/README.md": "99dc85abd8c8a30ab5feb62a67d26367f86e3f71",
     "work/PROJECT_STATE.md": "ab3532c3b90b0c29530383ac584e7038be95d666",
     "work/WORKPLAN.md": "e9f0676ec7fe7793ab4ab15a6400f2ca1d7279fd",
-    "work/WORK_LOG.md": "6024c540d525ef90530c0c77a42fcb6f930052b9",
+    "work/WORK_LOG.md": "3b987836cf98b029b42889f54361a0ba172c9c67",
     "work/lookup/TASKS.md": "0db503ae645546b05cbb83ed15a9e6ae235a0307",
     "work/lookup/TASKS.json": "a1df616a9d826518b654ee583087b8427aadbcf7",
     "README.md": "ce2d0c914df2506c0611518cdeb4b454384dc588",
     "docs/source-register.md": "87b4866d9a4cc2f5d4f9efb8b1714e26887dd673",
-    "work/SESSION_DIGEST.md": "27dcc94d8a486955bb25e1fa892ea692088c6983",
+    "work/SESSION_DIGEST.md": "ead2a799be5d5e93089f8bfb8973427ee536ad23",
     "docs/confidence-and-evidence-model.md": "402a83a787977bc4e06ef0e7c0beef241a61c4fa",
     "thesis.md": "cbc06935901d007542cec32a44332ac8b975baa6",
     "docs/w1-research-framing.md": "8a772f0c1f63a033d31d77e4ceb3f83ddd94b897",
@@ -288,9 +288,9 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "f1be36261017aa5d01a1ad5bcd1de445fa958f75",
+  "latest_commit_before_json_digest_refresh": "21798596a04c1dc690e77039d4515152182800ef",
   "immediate_next_action": "T-001: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access; retain partial-review status. Continue T-002/T-003 access work where useful.",
-  "latest_verified_project_head": "f1be36261017aa5d01a1ad5bcd1de445fa958f75",
+  "latest_verified_project_head": "21798596a04c1dc690e77039d4515152182800ef",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -325,8 +325,28 @@
         "sha": "64224e48a70e903303066539daa1e0e2a676bf72",
         "path": "work/lookup/TASKS.md",
         "readback": "exact_match"
+      },
+      {
+        "id": "TIP-WORKFLOW-2026-11-17-E",
+        "sha": "68e9fed09efd7f42e270a261e30f04eaf8d059e0",
+        "path": "work/README.md",
+        "readback": "exact_match"
+      },
+      {
+        "id": "TIP-WORKFLOW-2026-11-17-F",
+        "sha": "4888f682978982311fa8d74ed6b0e120a48c59b8",
+        "path": "work/WORK_LOG.md",
+        "readback": "exact_match"
+      },
+      {
+        "id": "TIP-WORKFLOW-2026-11-17-G",
+        "sha": "21798596a04c1dc690e77039d4515152182800ef",
+        "path": "work/SESSION_DIGEST.md",
+        "readback": "exact_match"
       }
     ],
-    "no_research_status_change": true
+    "no_research_status_change": true,
+    "final_digest": "work/SESSION_DIGEST.json",
+    "final_digest_rule": "JSON digest is written last, then fetched and parsed; its own commit SHA is reported in the handover rather than self-referenced."
   }
 }
