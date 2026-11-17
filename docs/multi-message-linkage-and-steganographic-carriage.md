@@ -161,6 +161,26 @@ A content digest can detect mismatch only if the expected digest is itself authe
 
 For multiple independent messages in one conversation, define continuity separately. Candidate controls include authenticated per-message sequence/context, ratchet state, message identifiers and endpoint-local conversation mapping. A stable session identifier may be operationally useful but can create a durable correlation handle if exposed in carrier metadata or discovery requests.
 
+### 6.1 Relationship authority and acceptance-state separation
+
+The relationship graph in §3 is not a single public index. It contains edges with different authorities: endpoint-authenticated membership and conversation continuity; endpoint-local retry and cross-route equivalence; coding/redundancy relationships required for reconstruction; and observer-inferred associations. A public set ID, image metadata field, filename, platform thread or timestamp cannot authenticate an edge. A keyed or encrypted token may reduce direct disclosure but still creates linkability wherever it is reused or observed.
+
+For every edge, record which endpoint needs it, whether it is cryptographically authenticated, where it is stored, which route participants can observe it, its lifetime/rotation scope, and what happens when evidence is missing or contradictory. Correct reconstruction requires recipient-side linkage; privacy requires minimising what each intermediary can observe.
+
+The receiver's acceptance path should keep distinct states: candidate carrier observed; carrier retrieved; bounded payload extraction; endpoint authentication; fragment membership validation; set completeness; reconstruction and protected-object validation; replay/freshness decision; logical-message acceptance. Their evidential meanings must not be collapsed:
+
+- Publication is not retrieval.
+- Retrieval is not successful extraction.
+- Extraction is not cryptographic validity.
+- A valid fragment is not proof of set membership unless membership is authenticated.
+- Valid membership is not completeness.
+- Completeness is not conversation continuity.
+- A service acknowledgement is not endpoint receipt, decryption, display or human reading.
+
+Incomplete sets remain unaccepted and consume bounded resources under explicit expiry. Identical duplicates may be idempotent under authenticated replay policy; conflicting values for one authenticated fragment position must be rejected or quarantined. No partial plaintext should be exposed before the complete protected object passes required endpoint checks. Keep route-event evidence separate from endpoint-authenticated state and default to endpoint-local linkage records; shared receipts or stable correlation tokens need a stated purpose, recipient, retention period and observer analysis.
+
+This acceptance model is a research/design obligation. It does not select the manifest format, identifier construction, cryptographic primitive, durable state store or acknowledgement protocol.
+
 ## 7. Threats specific to linked carriers and multi-message flows
 
 | Threat | Example | Required analysis/control |
