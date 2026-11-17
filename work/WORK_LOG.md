@@ -1553,3 +1553,9 @@ The discovery-synthesis unit was committed through sequential GitHub Contents AP
 | `docs/route-comparison-framework.md` §5.6 | [bee0b61](https://github.com/robotard/the-invisible-postman/commit/bee0b617bf9f1230d69507667652220ef0d7f993) | `e701005693341d35565b7c18a17db81537cebc18` | Exact content equality verified after fetch |
 
 The first nine-file write batch was interrupted only after the commits had been created, when the tool-call limit was reached during the combined verification loop. All nine resulting files were subsequently fetched individually and the expected new section/continuation markers were confirmed. The two later thesis/route-ledger updates were compared byte-for-byte against the submitted content after fetch. This distinction is retained rather than overstating the first batch as byte-for-byte verified.
+
+
+### Project checkpoint heading alignment · 2026-11-17
+
+- Updated the PROJECT_STATE checkpoint heading to reflect the completed discovery decomposition and route-observer integration rather than the preceding relationship-authority-only sprint.
+- Commit: [a25d371](https://github.com/robotard/the-invisible-postman/commit/a25d371d7ecec887d164fe0b1d4afc0b4f0a35c5); fetched blob `e9e17d1f6c318565be9477aa25b735654ce75fce`; exact content equality verified.
