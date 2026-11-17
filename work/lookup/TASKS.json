@@ -110,7 +110,7 @@
         "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Continue thesis-first synthesis from §8.4: critically compare recipient discovery/linkage families against endpoint-authenticated fragment membership, conversation continuity, retries and observer exposure; then integrate any material findings into the architecture and evaluation records.",
+      "next_action": "Pressure-test the §8.4 discovery decomposition against the route/observer evidence for OMR/GOMR, Oblivious Signaling, Remise and Echomix/Pigeonhole; verify that bootstrap, publication, enumeration, pertinence, authorisation, retrieval and endpoint association remain distinct, then integrate any corrections into route comparison and thesis evaluation.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-17"
