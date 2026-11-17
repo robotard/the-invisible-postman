@@ -214,20 +214,20 @@
   ],
   "verified": {
     "work/START_HERE.md": "36749a44b6596fcc6b3592425e682554e44a5fc7",
-    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "pending",
-    "work/PROJECT_STATE.md": "pending",
+    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "62e36bf75dd0519e7f1983c847013af2134d9f9d",
+    "work/PROJECT_STATE.md": "a1aa3dd8818ac148465538e122ce0dc017d243a1",
     "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a",
-    "work/WORK_LOG.md": "pending",
+    "work/WORK_LOG.md": "04cc2c3804d02e54d9b1e66b59c774f7b9d85c3d",
     "work/README.md": "80bba3a0824e627ff6afb881105114e0dba0dd69",
     "README.md": "9f3d4d36a930d0a6ad14fe828e719f841b42a294",
     "work/lookup/TASKS.md": "74dd6ff684a6cf69ba96f4f6cf74591cb9e760bc",
     "work/lookup/TASKS.json": "3bf31ec458c1210bb6b0a4396bc8a35504a345ce",
-    "thesis.md": "pending",
-    "work/SESSION_DIGEST.md": "8953e2ec0f81b85e38642c7dfd073c5c2048f748",
+    "thesis.md": "11f3566e78dd56a7c1178f30f2a27a8cdbe5ef2a",
+    "work/SESSION_DIGEST.md": "49fccf9cda0004a8c1e3350a9a759e8196ce40c6",
     "docs/w3-architecture.md": "dfe97fbcfdde96d940e414a3dc976c7dcc3ec28f",
     "docs/multi-message-linkage-and-steganographic-carriage.md": "5137e55e25140ed1d05d8267b3f86f7349fd7ff8",
-    "docs/w4-risks-and-evaluation.md": "pending",
-    "docs/traceability.md": "pending"
+    "docs/w4-risks-and-evaluation.md": "1f47173eb2c187f774805d824128c7b6e778f271",
+    "docs/traceability.md": "0cc48d92ecc5d8a8c409bd4b17be1b04a7fa3bbb"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
@@ -285,7 +285,7 @@
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
   "latest_commit_before_json_digest_refresh": "0b27e50b60210c19beade4d85389e1aafc462920",
   "immediate_next_action": "Continue thesis-first drafting from thesis.md §§7.3.1–7.3.2; select the next consequential thesis gap and integrate it before expanding operational work.",
-  "latest_verified_project_head": "300c07fc37be7d2f10cf3161fdebd29f187e243e",
+  "latest_verified_project_head": "a07658dbcc0e364b4df8bc980cf3d562f5d589f4",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
