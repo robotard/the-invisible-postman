@@ -1280,3 +1280,42 @@ The four operational documents exist to prevent repeated work and reduce the use
 Refresh `SESSION_DIGEST.md` from the verified state, then refresh `SESSION_DIGEST.json` last. Fetch and verify both digests and confirm their hashes match the current state, workplan and log.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-17 · Source-review access expansion and protocol comparison integrated
+
+### Work performed
+
+- **T-001:** Re-searched exact titles/DOIs and current publisher previews for SRC-033 MRAS, SRC-034 DRAS and SRC-036 active sanitisation. The previews now expose additional scope and method details: MRAS is specifically framed around matching JPEG recompression; DRAS around high-to-lower-quality downward recompression with RoLoS/CARE and Q95→Q85/Q80/Q75 scenarios; SRC-036 describes an attack/filtering plus image-quality optimisation CNN and BOSSbase/BOWS2/QF75 setup. These additions are recorded in docs/source-register.md §7.1.1. Direct ScienceDirect page opening returned 403; no complete papers, full tables or full limitations were obtained. All three remain partial reviews.
+- **T-002:** Located the author-linked SRC-047 repository, zyzhu19/Image-Sanitization, and fetched its README. It identifies Scaling-Net/SC-Net, colour/grayscale model variants, MATLAB R2020b PSNR/SSIM/NIQE measurement and an external Baidu model download. Attempts to fetch testmy.py, test.py, model/README.md and requirements.txt returned 404 through the available GitHub interface. SRC-046 OpenReview retrieval redirected to browser verification; SRC-048's IEEE Xplore abstract/metadata was inspected. Findings and exact access limits are in docs/source-register.md §7.2.1.
+- **T-003:** Located an indexed abstract/summary for SRC-049 describing encrypted/repeated secret mapping into diffusion latent variables, per-frame extraction and inter-frame validation, with author-reported near-100% accuracy under stated attacks. This is not a full-paper or proof review and does not resolve the already recorded selected-code limitations. Added a bounded note to docs/source-register.md §7.2.2.
+- **T-005:** Compared Signal PQXDH/Double Ratchet, MLS and HPKE at their distinct native scopes. Signal is retained as a 1:1 asynchronous establishment/ratchet reference; MLS as a group key-establishment/lifecycle reference; HPKE as a lower-level KEM/KDF/AEAD composition reference. Explicitly distinguished ratchet skipped-message handling from fragment-set reconstruction, MLS group epochs from the current 1:1 scope, and HPKE stateful ordering/loss/replay duties from a complete messaging protocol.
+- Integrated the comparison into thesis §6.2 and docs/protocol-boundary-analysis.md §9.1. Added explicit protocol-boundary links and test questions to W2 and W4; checked existing W3 and traceability integration; updated the contribution/bias assessment to state that protocol-composition obligations are correctness requirements, not a novelty claim.
+- Updated the internal task registry: T-005 is complete; T-001–T-003 remain open with precise acquisition blockers and no upgrade of partial-review status. WORKPLAN.md was not changed because priorities and dependencies did not change.
+
+### Research judgement
+
+The new source material strengthens the evidence that image-carrier robustness, downward/matching recompression, active sanitisation and sanitizer-aware counter-adaptation are established topics. It does not establish current platform deployment, universal payload survival/removal, endpoint-authenticated message semantics or a privacy advantage. No new thesis novelty claim is adopted.
+
+The protocol comparison narrows the design space without selecting a protocol. Primitive names are not a protocol composition; message ordering, fragment-set reconstruction, service delivery and route observers remain distinct responsibilities.
+
+### Verification
+
+- Every substantive file changed in this batch was fetched after writing and exact saved content matched:
+  - docs/source-register.md — `87b4866d9a4cc2f5d4f9efb8b1714e26887dd673`
+  - docs/protocol-boundary-analysis.md — `14a56004e515ebf1caae2a656f1402aef9d28609`
+  - thesis.md — `cbc06935901d007542cec32a44332ac8b975baa6`
+  - docs/w2-threat-model.md — `d6996524d4c847ce5bb67b3e41be41d8c4b385ca`
+  - docs/w4-risks-and-evaluation.md — `f53da96c10753b16ddfab2ccce77cceb4ed14682`
+  - docs/thesis-contribution-and-bias-assessment.md — `d8d3879f41251fcdbf9cf40c1e42cc04a849520d`
+  - work/lookup/TASKS.md — `1561731adf5b2608a45f57209c555bd44eb3dfa3`
+  - work/lookup/TASKS.json — `7c49fca455074620bfe05cab5ed32544c03dc6f5`
+  - work/PROJECT_STATE.md — `494486517e1fd86852c5eef83fe42755d3bad79f`
+- WORKPLAN.md was read and left unchanged.
+- No full-paper review, code execution, experiment, reproduction, formal proof, protocol selection, implementation, independent review or audit is claimed.
+
+### Exact next action
+
+Continue T-001 by seeking complete texts for SRC-033, SRC-034 and SRC-036 through author/institutional access. Continue T-002/T-003 acquisition work where useful. Preserve partial-review status until full methods, results, formal arguments and limitations are inspected.
+
+**Theory only · No implementation · Not audited.**
