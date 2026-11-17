@@ -260,6 +260,42 @@ For fragmented carriage, the endpoint protocol must authenticate the message-set
 
 Conversation continuity is separate. Distinct messages may be linked through authenticated session state or endpoint-local mapping. A stable conversation identifier exposed in carrier metadata or retrieval requests can create durable linkability. A fragment-set identifier must not be reused as a conversation identifier by convenience.
 
+#### 7.3.1 Relationship authority: what the endpoint knows and what the route reveals
+
+The architecture is best understood as a graph of typed objects and relationships, not as one undifferentiated multipart message. Its nodes may include a logical message, its endpoint-protected object, a fragment set, individual fragments, carrier objects, route events and a conversation/session. These relationships have different authorities and visibility boundaries.
+
+| Relationship | Meaning | Basis for endpoint acceptance | Principal observer risk |
+|---|---|---|---|
+| Fragment membership | A fragment belongs to one protected-object set | Authenticated set context binds recipient/session scope, index, count and fragment content/length commitments | A visible set token, index or count groups carriers directly |
+| Conversation continuity | Distinct logical messages belong to one authenticated session | Authenticated session state or verified endpoint-local mapping | Stable thread/session identifiers, timing and repeated access expose a durable relationship |
+| Retry equivalence | A later route event carries the same logical object again | Endpoint duplicate/replay state and authenticated object context | Repeated carrier content, size, timing or publication patterns reveal retransmission |
+| Redundant-carriage relation | Multiple carriers contribute repeated/coded information to one recovery outcome | Authenticated coding/set policy and validation of the reconstructed object | Repeated signal and extra events enlarge the collection available for correlation or pooled detection |
+| Cross-route equivalence | The same protected object is carried through another route | Endpoint-local equivalence or explicitly authenticated route conversion; no public equality token is assumed | Ciphertext equality, stable fingerprints, timing or shared discovery may correlate routes |
+| Observer-inferred association | An observer groups events using timing, size, account, provenance, media features or behaviour | No endpoint acceptance authority; it is an observer hypothesis, not authenticated protocol state | False positives/negatives and real relationship exposure |
+| Outer-carrier assertion | A filename, image field, platform label, index or wrapper claims a relationship | None unless the endpoint protocol independently authenticates it | An attacker or intermediary can alter, replay or fabricate the assertion |
+
+This is a responsibility and evidence model, not a selected identifier scheme. A relationship required by the recipient need not be exposed to the carrier. Encrypting a relationship value does not hide publication, retrieval or timing patterns that allow an observer to infer a similar edge. The endpoint's full relationship graph and an observer's partial projection must remain separate analytical objects.
+
+#### 7.3.2 Acceptance is a state transition, not a transport event
+
+A route event must not advance a message directly to "delivered" or "accepted". The conceptual receiver path is:
+
+1. **Candidate observed:** a platform, host, courier or user exposes a possible carrier. This establishes only an observation.
+2. **Carrier retrieved:** bytes or media are obtained. This establishes access to a carrier object, not valid payload extraction.
+3. **Payload extracted and framed:** the route adapter performs bounded decoding and framing checks. Extraction success is not sender authentication.
+4. **Fragment/object authenticated:** endpoint cryptographic checks validate the protected fragment/object and its security-relevant context. Unauthenticated outer fields remain untrusted.
+5. **Set membership validated:** authenticated context binds the piece to the intended recipient/session and set. Conflicting, substituted or cross-set pieces are rejected or quarantined.
+6. **Set completeness established:** required pieces or the permitted recovery threshold are present under the declared coding policy. Receipt of some valid fragments is not completeness.
+7. **Protected object reconstructed and validated:** reconstruction is bounded and the resulting object passes endpoint authentication and replay/freshness policy.
+8. **Logical message accepted:** only now may the application expose authenticated plaintext under its user and lifecycle policy.
+
+The ordering is conceptual and does not prescribe a wire format. An implementation may authenticate each fragment before storing it and authenticate the reconstructed object again; it must not release partial plaintext or silently promote an incomplete set. Incomplete sets require bounded storage, explicit expiry and resource limits. A duplicate valid fragment may be idempotent under policy; a conflicting fragment for the same authenticated index is an error, not an invitation to choose whichever arrived last.
+
+Publication, service acceptance, relay acknowledgement, carrier retrieval, successful extraction, endpoint receipt, set completeness, cryptographic validation, display, open signal and human acknowledgement are distinct events. Any receipt must name the event it proves, its observer and its evidence source. No transport service can establish endpoint acceptance merely by reporting that it stored or forwarded a carrier.
+
+**Design consequence:** preserve two parallel records: endpoint-authenticated message/set/session state, and route-specific delivery observations. The endpoints may correlate them where justified, but the route must not authoritatively create or overwrite endpoint relationships. Keep records endpoint-local by default; shared receipts or stable identifiers require separate privacy justification.
+
+
 The direct prior art is substantial. Wang et al. (2024) describe a fragmented covert-communication framework in which a text file is divided into fragments, fragment number and content are embedded in image carriers, each fragment is redundantly embedded across multiple images, and the receiver reconstructs the file after collecting sufficient carriers. Importantly, the paper explicitly distinguishes steganography from watermarking and uses a robust DFT/DCT watermarking method as its carrier mechanism. Its reported recovery results are author-reported experiments, not independent validation; they do not establish endpoint-authenticated message sets, sender identity, conversation semantics, or collection-level undetectability (SRC-043). This prior art rules out broad novelty claims for multi-image fragmentation, redundant fragment carriage and subset-based reconstruction.
 
 Ker (2007) formalises batch steganography and pooled steganalysis: an observer may combine imperfect per-carrier detector evidence across a set, so evaluating each image in isolation is insufficient. That paper analyses fixed-batch pooling strategies and includes LSB-replacement simulations under stated detector assumptions (SRC-044). Ker's follow-up proves an asymptotic square-root capacity bound under explicit assumptions: equal cover capacities, a shift-hypothesis detector response with regularity conditions, independent per-cover detection errors and a batch size known to both parties (SRC-045). The theorem is mathematically important but its bounds can be loose; it does not establish a universal law for current platform images, dependent collections, robust watermarking or sequential/longitudinal acquisition. The source itself identifies these limitations.
