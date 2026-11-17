@@ -114,3 +114,15 @@ The status label below is project metadata describing the repository's verified 
 **Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The 2026-11-16 infrastructure checkpoint records the thesis-product lifecycle, `/work/` remit and expanded backlog in `WORK_LOG.md` and both session digests.
 
 **Verification boundary:** Documentation and repository changes only. No implementation, platform experiment, cryptographic test, formal proof or independent audit has been performed. The relative-link audit was static and limited to Markdown links resolved against the current repository tree.
+
+## Operational checkpoint model · 2026-11-17
+
+The temporary work area now uses one keyed task registry and one commit contract:
+
+- Canonical task lookup: work/lookup/TASKS.json, schema tip.work.registry.v3; tasks is an object keyed by immutable T-### IDs. Each value carries status, priority, targets, dependencies, next action, blockers and completion rule.
+- Human index: work/lookup/TASKS.md; it mirrors the keys/statuses but is not another plan.
+- Every commit follows the uniform contract in work/README.md: reconcile task and work records before committing; commit one coherent work unit; fetch the commit and changed files; verify exact saved content and applicable checks; record commit/read-back evidence; only then report completion.
+- Work may span multiple commits; do not create bookkeeping-only commits when verification can be recorded with the next substantive checkpoint. Digests refresh at handover only, Markdown first and JSON last.
+- The current research sequence and priorities are unchanged. T-001 remains the next unblocked action; T-002/T-003 acquisition can continue in parallel where useful. T-005 remains complete. Diagram, peer-review and release gates remain deferred.
+
+Workflow implementation commits, each exact-read-back verified: c3767d9, 51821d7, 009f59a, 64224e4. Detailed paths and evidence are in WORK_LOG.md.
