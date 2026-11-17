@@ -4,14 +4,14 @@
   "not_for_thesis": true,
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
-  "next": "T-001",
+  "next": "T-006",
   "tasks": {
     "T-001": {
       "id": "T-001",
       "type": "source_review",
       "title": "Complete full-text/source review of SRC-033, SRC-034 and SRC-036",
       "status": "in_progress",
-      "priority": 1,
+      "priority": 2,
       "targets": [
         "docs/source-register.md",
         "docs/prior-art-comparison.md",
@@ -30,7 +30,7 @@
       "type": "source_review",
       "title": "Review SRC-046–SRC-048 full texts and SRC-047 implementation where available",
       "status": "in_progress",
-      "priority": 2,
+      "priority": 3,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
@@ -48,7 +48,7 @@
       "type": "source_review",
       "title": "Review SRC-049 paper, formal security argument and complete results",
       "status": "in_progress",
-      "priority": 3,
+      "priority": 4,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
@@ -66,7 +66,7 @@
       "type": "route_analysis",
       "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
       "status": "ready",
-      "priority": 4,
+      "priority": 5,
       "targets": [
         "docs/route-comparison-framework.md",
         "docs/echomix-katzenpost-comparator.md"
@@ -101,17 +101,16 @@
       "id": "T-006",
       "type": "research_synthesis",
       "title": "Reconcile new route/source findings into W1–W4 and thesis",
-      "status": "ready",
-      "priority": 6,
+      "status": "in_progress",
+      "priority": 1,
       "targets": [
-        "docs/w1-research-framing.md",
-        "docs/w2-threat-model.md",
+        "thesis.md",
         "docs/w3-architecture.md",
-        "docs/w4-risks-and-evaluation.md",
-        "thesis.md"
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Challenge the confidence/evidence model against delivery semantics, multi-message reconstruction and privacy cost; reconcile source/route findings into W1-W4 and thesis.",
+      "next_action": "Continue thesis-first synthesis: develop the next consequential argument in thesis.md, then reconcile terminology, evidence limits and architecture links across affected research documents. Current sprint added relationship-authority and receiver-acceptance analysis in §§7.3.1–7.3.2 and aligned W3/multi-message research.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-17"
