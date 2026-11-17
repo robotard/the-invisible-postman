@@ -30,7 +30,7 @@ The thesis is the thesis. There is one continuous manuscript and one research id
 - Not evidence of measured resistance to steganalysis.
 - Not a guarantee of anonymity, delivery, remote erasure or metadata protection.
 
-**New-session handover:** [Machine-readable Markdown digest](work/SESSION_DIGEST.md) and [JSON digest](work/SESSION_DIGEST.json). [ChatGPT Project operating instructions](work/CHATGPT_PROJECT_INSTRUCTIONS.md) provides the concise text to install in the Project's external settings; GitHub does not change those settings automatically. These are operational retrieval indexes, not thesis exposition or substitutes for the authoritative working documents; verify the live repository and read the three working documents before continuing.
+**New-session handover:** [Machine-readable Markdown digest](work/SESSION_DIGEST.md) and [JSON digest](work/SESSION_DIGEST.json). [Project bootstrap](work/START_HERE.md) is the single entry point for new/resumed chats. [ChatGPT Project operating instructions](work/CHATGPT_PROJECT_INSTRUCTIONS.md) provides the concise text to install in the Project's external settings; GitHub does not change those settings automatically. These are operational retrieval indexes, not thesis exposition or substitutes for the authoritative working documents; verify the live repository and read the three working documents before continuing.
 
 ## Start here
 
