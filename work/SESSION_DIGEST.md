@@ -209,18 +209,19 @@ automatic_reentry:
 verified_current:
   work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
   work/CHATGPT_PROJECT_INSTRUCTIONS.md: "62e36bf75dd0519e7f1983c847013af2134d9f9d"
-  work/PROJECT_STATE.md: "a1aa3dd8818ac148465538e122ce0dc017d243a1"
+  work/PROJECT_STATE.md: "65a8bae72c8f47f66c1cf1141c9c138b73769403"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
-  work/WORK_LOG.md: "04cc2c3804d02e54d9b1e66b59c774f7b9d85c3d"
+  work/WORK_LOG.md: "5394d29458e0f7baff34e47df531980666480f12"
   work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
   README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
-  work/lookup/TASKS.md: "74dd6ff684a6cf69ba96f4f6cf74591cb9e760bc"
+  work/lookup/TASKS.md: "b989db07a0216d3b70e4935a99efbc71ac147909"
   work/lookup/TASKS.json: "3bf31ec458c1210bb6b0a4396bc8a35504a345ce"
-  thesis.md: "11f3566e78dd56a7c1178f30f2a27a8cdbe5ef2a"
+  thesis.md: "ec579e0c24cdee06f2b2efe2c3130f60c0f3844c"
   docs/w3-architecture.md: "e95eb8a193b038c77e3d6a924f3bfd1e09b61d76"
   docs/multi-message-linkage-and-steganographic-carriage.md: "8d50007d1e22c311016842e0cc788ca4b2c4e327"
   docs/w4-risks-and-evaluation.md: "1f47173eb2c187f774805d824128c7b6e778f271"
   docs/traceability.md: "0cc48d92ecc5d8a8c409bd4b17be1b04a7fa3bbb"
+  docs/w4-risks-and-evaluation.md: "1f47173eb2c187f774805d824128c7b6e778f271"
 
 
 ## 2026-11-17 · Thesis-first sprint
@@ -239,3 +240,11 @@ verified_current:
 - RQ4/RQ10 traceability connects these requirements across thesis, W3, W4 and the multi-message analysis.
 - Copy-ready Project Instructions now preserve the active in-session cached working set with baseline blob SHAs; no user-side clone is required.
 - Next action remains thesis-first T-006; choose the next consequential argument/evidence weakness and write it into the manuscript.
+
+
+## 2026-11-17 · §8.4 discovery/linkage synthesis
+
+- Thesis §8.4 now compares shared-feed scanning, stable locators/rendezvous, public/random set tokens, keyed or encrypted manifests, one-use capabilities, private/oblivious retrieval and endpoint-local conversation mapping.
+- Each approach is assessed by recipient requirements, observer exposure and what it cannot establish.
+- Discovery returns candidate carriers; endpoint-authenticated membership, completeness, conversation continuity and message acceptance remain endpoint decisions.
+- T-006 remains in_progress. Next: continue thesis-first analysis of route lifecycle, observer evidence and delivery semantics.
