@@ -1386,3 +1386,15 @@ Final consistency review caught an over-broad conversion: the initial v3 migrati
 - This is an operational instruction/documentation update only. No thesis research task status changed; the task registry remains unchanged.
 - All changed GitHub files are to be fetched back and checked before reporting completion.
 - The external ChatGPT Project Instructions still require installation through the Project settings UI; repository writes cannot perform that external action.
+
+
+### Post-write verification
+- Exact read-back matched the intended content for:
+  - `work/CHATGPT_PROJECT_INSTRUCTIONS.md` — blob `874f8131dec085696db6f7dc45903f922084ae0e`
+  - `work/PROJECT_STATE.md` — blob `fe904e93eb6ddb8fbcb32eef93e1d2e28cc3aa41`
+  - `work/WORKPLAN.md` — blob `f3715002ed298a15842fd76078e6f98bc4dcfa0d`
+  - `work/README.md` — blob `a44d20de217e2b02b2ec801bd2a02d538bdcf800`
+  - `README.md` — blob `537acfe40679a6525769188b3daf6c7167c4b7d5`
+  - `work/SESSION_DIGEST.md` — blob `fc3c7ea5c20c09d00c5a65f15701793c71d5b549`
+  - `work/SESSION_DIGEST.json` — blob `621b36b6afa679ff431c62268d917d815450b92a`; parsed successfully as JSON.
+- The `WORK_LOG.md` update itself is now being read back; the external ChatGPT Project setting remains the sole manual installation step.
