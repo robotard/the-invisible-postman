@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-17",
+  "checkpoint": "2026-11-17 · Single-entry automatic re-entry bootstrap",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_metadata_only",
@@ -19,15 +19,14 @@
     }
   },
   "read_first": [
+    "work/START_HERE.md",
+    "work/CHATGPT_PROJECT_INSTRUCTIONS.md",
     "work/SESSION_DIGEST.md",
     "work/SESSION_DIGEST.json",
     "work/PROJECT_STATE.md",
     "work/WORKPLAN.md",
     "work/WORK_LOG.md",
-    "thesis.md",
-    "docs/source-register.md",
-    "docs/route-comparison-framework.md",
-    "docs/multi-message-linkage-and-steganographic-carriage.md"
+    "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
     "thesis": "One active manuscript at thesis.md in staging; §6.2 now contains a bounded Signal/MLS/HPKE comparison; §8.2 contains six named evidence-bounded route profiles and §8.8 contains lifecycle/observer comparison plus conditional image-carriage decision analysis. No deployed route advantage is established; originality and review readiness remain open.",
@@ -215,25 +214,17 @@
     "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
   ],
   "verified": {
-    "work/README.md": "99dc85abd8c8a30ab5feb62a67d26367f86e3f71",
-    "work/PROJECT_STATE.md": "ab3532c3b90b0c29530383ac584e7038be95d666",
-    "work/WORKPLAN.md": "e9f0676ec7fe7793ab4ab15a6400f2ca1d7279fd",
-    "work/WORK_LOG.md": "61af5e907fe704bce0d7f5ed9ee21d8a98a67ac9",
+    "work/START_HERE.md": "36749a44b6596fcc6b3592425e682554e44a5fc7",
+    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "46673d1c0a349a2de0db933475d59a4f60b34ed8",
+    "work/PROJECT_STATE.md": "5d289bf5dd866db75a46f4027b411d3d36e03f51",
+    "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a",
+    "work/WORK_LOG.md": "9f3431af883896fa80f5062a7c802fb13facad1d",
+    "work/README.md": "80bba3a0824e627ff6afb881105114e0dba0dd69",
+    "README.md": "9f3d4d36a930d0a6ad14fe828e719f841b42a294",
     "work/lookup/TASKS.md": "54bc564cea6cb978d752eafb1318bfb9bd4d4d36",
-    "work/lookup/TASKS.json": "3a16c6f911abc86ca4ad77b3a96ff11bcdb08d18",
-    "README.md": "ce2d0c914df2506c0611518cdeb4b454384dc588",
-    "docs/source-register.md": "87b4866d9a4cc2f5d4f9efb8b1714e26887dd673",
-    "work/SESSION_DIGEST.md": "fd97fddce455ef071af35547d4b8897d478647e0",
-    "docs/confidence-and-evidence-model.md": "402a83a787977bc4e06ef0e7c0beef241a61c4fa",
-    "thesis.md": "cbc06935901d007542cec32a44332ac8b975baa6",
-    "docs/w1-research-framing.md": "8a772f0c1f63a033d31d77e4ceb3f83ddd94b897",
-    "docs/w2-threat-model.md": "d6996524d4c847ce5bb67b3e41be41d8c4b385ca",
-    "docs/w3-architecture.md": "dd8ecca36e3117d73596e688fda64fd484c140ec",
-    "docs/w4-risks-and-evaluation.md": "f53da96c10753b16ddfab2ccce77cceb4ed14682",
-    "docs/thesis-contribution-and-bias-assessment.md": "d8d3879f41251fcdbf9cf40c1e42cc04a849520d",
-    "docs/decision-register.md": "8a011d15d2941ce37909b6fe6da23485170303e5",
-    "docs/traceability.md": "6baf3c2e466a7ac94004d041472ad0beb1c701cd",
-    "docs/protocol-boundary-analysis.md": "14a56004e515ebf1caae2a656f1402aef9d28609"
+    "work/lookup/TASKS.json": "3bf31ec458c1210bb6b0a4396bc8a35504a345ce",
+    "thesis.md": "cdf2a278b9669032e1df9743a509e90bb1e53d9d",
+    "work/SESSION_DIGEST.md": "44da9508e2291cfe28a9e8d428f600d678dd4ed2"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
@@ -289,9 +280,9 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "7ad64eff2cad420669f740171619bd3b44dbd5ed",
+  "latest_commit_before_json_digest_refresh": "0b27e50b60210c19beade4d85389e1aafc462920",
   "immediate_next_action": "T-001: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access; retain partial-review status. Continue T-002/T-003 access work where useful.",
-  "latest_verified_project_head": "7ad64eff2cad420669f740171619bd3b44dbd5ed",
+  "latest_verified_project_head": "0b27e50b60210c19beade4d85389e1aafc462920",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -424,5 +415,13 @@
     "priorities": "Substantive thesis drafting/integration, research gaps, evidence/citations, coherent terminology and multi-message linkage; minimise planning/admin narration.",
     "context_limit": "Preserve old chat; start a new chat inside the same Project; resume from live GitHub checkpoint and automatic summary.",
     "status_label": "Project metadata only; mention only when relevant, never as a conversational refrain."
+  },
+  "automatic_reentry": {
+    "entrypoint": "work/START_HERE.md",
+    "instruction_source": "work/CHATGPT_PROJECT_INSTRUCTIONS.md",
+    "behaviour": "Every new or resumed chat in this Project reads START_HERE first, reconciles the live checkpoint, then resumes substantive work without reconstructing the project.",
+    "context_limit": "Preserve old chat; open a new chat inside this same Project; use automatic summary only as a clue and GitHub as authority.",
+    "external_installation": "One-time manual installation of CHATGPT_PROJECT_INSTRUCTIONS.md into Project settings is required; GitHub cannot modify ChatGPT Project settings or attach its files automatically.",
+    "status_label": "Project metadata only; mention only when relevant."
   }
 }
