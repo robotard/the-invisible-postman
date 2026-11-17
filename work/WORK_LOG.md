@@ -1437,3 +1437,22 @@ The task registry confirms T-006 is in_progress and next; T-001–T-003 remain i
 
 - Corrected the W3 relative link to the canonical file name, docs/multi-message-linkage-and-steganographic-carriage.md.
 - W3 corrective commit: dc972d88a9700c860bb76c406a2239dc79147434; resulting blob: dfe97fbcfdde96d940e414a3dc976c7dcc3ec28f. Exact read-back and relative-path existence checked in the close verification.
+
+
+## 2026-11-17 · Thesis synthesis: sender attribution boundary in multipart acceptance
+
+### Substantive result
+- Continued T-006 thesis-first synthesis from §§7.3.1–7.3.2.
+- Identified and addressed an ambiguity: “endpoint authentication” can be misread as unique sender attribution. The thesis now distinguishes (1) object integrity/authenticity relative to a cryptographic key and context, (2) attribution to a protocol key/session, and (3) identity assurance about a real-world person.
+- Explicitly records that an AEAD check under a symmetric key shared by multiple participants does not, by itself, identify which participant created the object. Signature/session attribution remains dependent on a separate peer-key verification process for any person-level claim.
+- Applied the distinction to manifest issuer/authority and authenticated fragment-set relationships without selecting a cryptographic construction.
+
+### Files changed
+- `thesis.md`: added the distinction to §7.3.2.
+- `docs/w3-architecture.md`: aligned receiver-acceptance responsibility and sender-attribution boundary.
+- `docs/multi-message-linkage-and-steganographic-carriage.md`: aligned manifest authority and relationship acceptance.
+- `docs/w4-risks-and-evaluation.md`: added sender-attribution and manifest-authority questions/acceptance criteria to E5.
+
+### Evidence and limits
+- This is conceptual analysis and documentary integration only. No protocol, wire format, signature scheme, key hierarchy or identity ceremony has been selected or tested.
+- No task is marked complete. T-006 remains in progress.
