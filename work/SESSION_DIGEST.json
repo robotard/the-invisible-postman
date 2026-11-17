@@ -29,7 +29,7 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "Thesis §§7.3.1–7.3.2 now define relationship authority and receiver acceptance across fragment membership, conversation continuity, retries, redundancy, cross-route equivalence, observer-inferred association and untrusted carrier assertions. The receiver path distinguishes carrier observation/retrieval/extraction from endpoint authentication, set membership, completeness, reconstruction, replay/freshness and logical-message acceptance. W3 and the dedicated multi-message analysis are aligned. This is conceptual design, not a selected wire format or implementation.",
+    "thesis": "Thesis §§7.3.1–7.3.2 now define relationship authority and receiver acceptance across fragment membership, conversation continuity, retries, redundancy, cross-route equivalence, observer-inferred association and untrusted carrier assertions. The receiver path distinguishes carrier observation/retrieval/extraction from endpoint authentication, set membership, completeness, reconstruction, replay/freshness and logical-message acceptance. W3 and the dedicated multi-message analysis are aligned. This is conceptual design, not a selected wire format or implementation. Thesis §10.2 and W4 E5 now include explicit relationship-authority and receiver-acceptance evaluation criteria; RQ4/RQ10 traceability is aligned.",
     "research_units": "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
     "multi_message_model": [
@@ -185,7 +185,7 @@
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
-    "T-006: continue thesis-first drafting/integration; choose the next consequential argument gap in thesis.md and update affected research documents.",
+    "T-006: continue thesis-first drafting; next examine the weakest consequential architectural/evidential claim and integrate the result into thesis.md before expanding supporting documents.",
     "T-001–T-003: continue full-text/code access where it materially resolves a thesis claim; retain partial-review status and do not block unrelated drafting.",
     "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits.",
     "T-007: remain gated until the thesis candidate stabilises; then run terminology, citation, traceability and cross-document checks.",
@@ -214,18 +214,20 @@
   ],
   "verified": {
     "work/START_HERE.md": "36749a44b6596fcc6b3592425e682554e44a5fc7",
-    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "46673d1c0a349a2de0db933475d59a4f60b34ed8",
-    "work/PROJECT_STATE.md": "5d289bf5dd866db75a46f4027b411d3d36e03f51",
+    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "pending",
+    "work/PROJECT_STATE.md": "pending",
     "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a",
-    "work/WORK_LOG.md": "3a1c9eaffb66568a30d4baa1401c65158e8b983e",
+    "work/WORK_LOG.md": "pending",
     "work/README.md": "80bba3a0824e627ff6afb881105114e0dba0dd69",
     "README.md": "9f3d4d36a930d0a6ad14fe828e719f841b42a294",
     "work/lookup/TASKS.md": "74dd6ff684a6cf69ba96f4f6cf74591cb9e760bc",
     "work/lookup/TASKS.json": "3bf31ec458c1210bb6b0a4396bc8a35504a345ce",
-    "thesis.md": "cdf2a278b9669032e1df9743a509e90bb1e53d9d",
+    "thesis.md": "pending",
     "work/SESSION_DIGEST.md": "8953e2ec0f81b85e38642c7dfd073c5c2048f748",
     "docs/w3-architecture.md": "dfe97fbcfdde96d940e414a3dc976c7dcc3ec28f",
-    "docs/multi-message-linkage-and-steganographic-carriage.md": "5137e55e25140ed1d05d8267b3f86f7349fd7ff8"
+    "docs/multi-message-linkage-and-steganographic-carriage.md": "5137e55e25140ed1d05d8267b3f86f7349fd7ff8",
+    "docs/w4-risks-and-evaluation.md": "pending",
+    "docs/traceability.md": "pending"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
@@ -440,6 +442,7 @@
     "conflict": "If main moves, inspect changed paths and reconcile before writing; never silently overwrite concurrent work.",
     "commit": "One coherent multi-file commit is preferred. If Git Data ref-update is unavailable, use sequential Contents API updates with fetched blob SHAs and record the non-atomic limitation.",
     "verification": "Fetch resulting commit and every changed file; verify exact saved content and applicable checks.",
-    "release": "Release cached files when workstream closes; rehydrate from GitHub next session."
+    "release": "Release cached files when workstream closes; rehydrate from GitHub next session.",
+    "project_instructions": "Copy-ready Project Instructions now explicitly require in-session scope caching with baseline blob SHAs; no user local clone is required."
   }
 }
