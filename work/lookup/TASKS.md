@@ -23,7 +23,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. Draft and integrate the thesis first, beginning with the relationship-authority and receiver-acceptance model in §§7.3.1–7.3.2.
+**Current active task:** T-006. Draft and integrate the thesis first. Current focus: §8.4 discovery/linkage alternatives reconciled with endpoint-authenticated fragment membership, conversation continuity and observer exposure.
 
 **Parallel evidence work:** T-001–T-003 remain in_progress for source access, but these tasks do not block unrelated manuscript drafting. T-004 remains ready. Task status changes only when the underlying work changes.
 
