@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-17 · source-review access pass and Signal/MLS/HPKE protocol comparison integrated; operational handover cycle clarified; confidence/evidence model remains provisional  
+**Checkpoint:** 2026-11-17 · thesis-first sprint; relationship authority and receiver-acceptance model integrated across thesis and architecture; cache/diff working-set discipline clarified  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
@@ -65,11 +65,11 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Active work, in priority order
 
-1. **Source reviews (T-001–T-003):** Continue seeking full texts and complete evidence for SRC-033, SRC-034, SRC-036, SRC-046, SRC-048 and SRC-049. On 2026-11-17, publisher-preview evidence for MRAS/DRAS/SRC-036 was expanded; SRC-047's author repository README was inspected; SRC-046/048 remained abstract-level; and an indexed SRC-049 abstract summary was found. No full paper, complete tables, formal proof or new experiment was obtained. All relevant reviews remain partial. SRC-047 code/model files were not retrieved; see docs/source-register.md §7.1.1 and §§7.2.1–7.2.2.
-2. **Route evidence (T-004):** Six named evidence-bounded profiles are integrated into thesis §8.2, with lifecycle/observer comparison and conditional image-carriage decision analysis in §8.8. T-004 remains open only for actual product/client/release/account configurations and service-side lifecycle evidence; do not promote literature or protocol references into deployed profiles.
-3. **Protocol analysis (T-005):** Completed 2026-11-17. The protocol-boundary analysis now compares Signal PQXDH/Double Ratchet (1:1), MLS (group) and HPKE (lower-level composition) at their distinct scopes. Bounded comparison is integrated into thesis §6.2 and the protocol analysis; W2 and W4 now link the obligations to threat/evaluation criteria; W3 and traceability alignment were checked; the contribution assessment explicitly treats protocol obligations as correctness requirements, not novelty claims. No protocol or primitive suite is selected.
-4. **Research/thesis synthesis (T-006–T-007):** Continue reconciling source and route findings into W1–W4, thesis, contribution assessment and traceability. Challenge the confidence/evidence model against protocol delivery semantics, multi-message reconstruction and privacy costs. Run static cross-document/link/status checks after material changes.
-5. **Architecture alignment:** Recheck W3 numbering and terminology against traceability and thesis where the next substantive edit requires it.
+1. **Thesis construction and integration (T-006, active):** continue writing and integrating the strongest next argument into `thesis.md`. This sprint formalises relationship authority and receiver acceptance across fragment sets, conversation continuity, retries, redundancy and cross-route carriage, aligned with W3 and the dedicated multi-message analysis.
+2. **Evidence gaps (T-001–T-003, active in parallel):** continue full-text/code access work for SRC-033/034/036, SRC-046–048 and SRC-049 when it materially changes a claim. Access barriers do not block unrelated thesis drafting. Keep partial-review labels and narrow claims to inspected evidence.
+3. **Route evidence (T-004, ready):** pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence; do not present protocol or documentation profiles as deployed tests.
+4. **Coherence and challenge (T-006/T-007):** align terms, citations, observer assumptions, message relationship semantics, delivery events and confidence/evidence claims. T-007 remains gated until synthesis stabilises.
+5. **Diagrams, peer review and release:** remain gated until the thesis argument and evidence are sufficiently stable.
 
 ## State and blockers
 
@@ -90,13 +90,12 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Next session: exact starting point
 
-1. Apply the Continue/resume contract above; use the live GitHub records and task registry rather than reconstructing this conversation.
-2. Continue T-001: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access; retain partial-review labels until methods, results and limitations are fully inspected.
-3. Continue T-002: seek complete SRC-046 and SRC-048 papers and a retrievable SRC-047 code/model snapshot; README-only inspection is not code review.
-4. Continue T-003: seek SRC-049 full paper, formal security argument and complete experimental results; selected code review remains read-only and unaudited.
-5. T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence.
-6. Continue T-006/T-007: challenge confidence/evidence against delivery semantics and multi-message reconstruction, reconcile source/route findings into thesis and W1–W4, and run targeted cross-document consistency checks.
-7. Keep diagrams deferred until the arguments and evidence stabilise.
+1. Resume T-006 first: continue thesis drafting from §§7.3.1–7.3.2 and integrate the relationship-authority/acceptance distinctions into affected research records.
+2. Keep the active thesis and architecture working set cached; fetch additional files only when dependencies require them, then review the coherent diff and commit together.
+3. Continue T-001–T-003 source access in parallel only where it resolves a material evidential weakness; preserve partial-review boundaries and do not let inaccessible papers stall thesis progress.
+4. Advance T-004 route configuration evidence when authoritative product/client details are available.
+5. Run targeted terminology, citation, section-reference and delivery-semantics checks after the next substantive integration. T-007 remains gated.
+6. Keep diagrams, external peer review and release work deferred until their research gates are met.
 
 ## Document-boundary rule
 
