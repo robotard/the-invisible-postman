@@ -110,7 +110,7 @@
         "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Continue thesis-first synthesis: select the next consequential argument gap in thesis.md, then reconcile terminology, evidence limits and architecture links across affected research documents. The relationship-authority/receiver-acceptance model and the distinction between object integrity under a key, protocol-key/session attribution and real-world identity assurance are now integrated across thesis §7.3.2, W3, multi-message analysis and W4 E5.",
+      "next_action": "Continue thesis-first synthesis from §8.4: critically compare recipient discovery/linkage families against endpoint-authenticated fragment membership, conversation continuity, retries and observer exposure; then integrate any material findings into the architecture and evaluation records.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-17"
