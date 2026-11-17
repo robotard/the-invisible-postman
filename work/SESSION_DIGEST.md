@@ -208,7 +208,7 @@ automatic_reentry:
   status_label: "Project metadata only; mention only when relevant."
 verified_current:
   work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
-  work/CHATGPT_PROJECT_INSTRUCTIONS.md: "46673d1c0a349a2de0db933475d59a4f60b34ed8"
+  work/CHATGPT_PROJECT_INSTRUCTIONS.md: "62e36bf75dd0519e7f1983c847013af2134d9f9d"
   work/PROJECT_STATE.md: "5d289bf5dd866db75a46f4027b411d3d36e03f51"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
   work/WORK_LOG.md: "3a1c9eaffb66568a30d4baa1401c65158e8b983e"
@@ -219,6 +219,8 @@ verified_current:
   thesis.md: "cdf2a278b9669032e1df9743a509e90bb1e53d9d"
   docs/w3-architecture.md: "dfe97fbcfdde96d940e414a3dc976c7dcc3ec28f"
   docs/multi-message-linkage-and-steganographic-carriage.md: "5137e55e25140ed1d05d8267b3f86f7349fd7ff8"
+  docs/w4-risks-and-evaluation.md: "1f47173eb2c187f774805d824128c7b6e778f271"
+  docs/traceability.md: "0cc48d92ecc5d8a8c409bd4b17be1b04a7fa3bbb"
 
 
 ## 2026-11-17 · Thesis-first sprint
