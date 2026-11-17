@@ -305,13 +305,19 @@ Evaluation questions:
 * Can timing and size observations correlate sender and recipient events even when message contents remain encrypted?
 * How do repeated schedules, response intervals, device/platform habits and staged social-engineering prompts affect correlation?
 * Can a malicious intermediary delay, suppress or refuse delivery?
+* Are bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence, retrieval authorisation and endpoint conversation association evaluated as separate events?
+* Does a private-retrieval result get incorrectly generalised to publication privacy, sender anonymity, platform unlinkability or endpoint-authenticated continuity?
+* Which party observes out-of-band capability or locator distribution, and does that channel introduce a new identity, timing or collusion dependency?
+* Does the evaluation distinguish the OMR/GOMR detector model, Oblivious Signaling's sender-side update model, Remise's two-server non-collusion model and Echomix/Pigeonhole's capability-derived asynchronous storage model?
 * What is the privacy, latency, bandwidth and usability cost of any proposed padding, delay, batching, cover traffic or mixing mechanism?
 
 The evaluation must distinguish a baseline that merely rotates carriers or varies placement from stronger traffic-obfuscation or mix-network approaches. The [observer/property matrix](observer-property-matrix.md) records current comparator boundaries for OMR/GOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion work. It should be used to construct like-for-like observer scenarios, not to rank unlike guarantees. In particular, evaluate server collusion, out-of-band token distribution, cover-traffic assumptions, global network visibility, platform/media transformations and endpoint validation separately. Loopix is a comparator for the latter, not an assumed component. The encrypted-messaging traffic-analysis studies in [the source register](source-register.md) (SRC-016, SRC-018 and SRC-019) provide testable observer scenarios, but their results must not be generalised beyond their stated applications and conditions.
 
 Proposed acceptance conditions:
 
-* An actor-by-actor metadata and observer inventory is recorded, including publication, discovery and retrieval.
+* An actor-by-actor metadata and observer inventory is recorded, including bootstrap, publication/indexing, candidate enumeration, pertinence/authorisation, retrieval and endpoint association.
+* Privacy claims are scoped to a named event/property and observer; publication privacy, retrieval pertinence privacy, access authorisation, sender anonymity, endpoint authenticity, availability and conversation continuity are not treated as interchangeable.
+* Out-of-band bootstrap/capability channels and collusion assumptions are included in the observer inventory rather than treated as invisible setup.
 * Carrier metadata tests distinguish descriptive EXIF/IPTC/XMP fields, filenames and embedded previews from structural/codec information and image-signal fingerprints. Each named platform/route is tested separately for resizing, recompression, transcoding, field retention and extraction success.
 * Retention and access assumptions are documented.
 * Correlation experiments state the observer vantage, dataset, event definition, features, thresholds, false-positive/negative rates and limitations.
