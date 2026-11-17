@@ -17,7 +17,7 @@
         "docs/prior-art-comparison.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
-      "next": "Seek full texts; preserve partial labels until methods, results and limitations are inspected."
+      "next": "Seek full texts through author or institutional access. Publisher-preview retrieval expanded on 2026-11-17, but full articles, tables and limitations remain unavailable; keep partial-review status."
     },
     {
       "id": "T-002",
@@ -28,7 +28,8 @@
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
-      ]
+      ],
+      "next": "SRC-047 author repository README inspected; implementation paths unavailable through current GitHub file access and model files are externally hosted. SRC-046 OpenReview full-text access blocked; SRC-048 abstract/metadata only. Seek complete copies and retrievable code/model snapshot."
     },
     {
       "id": "T-003",
@@ -39,7 +40,8 @@
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
-      ]
+      ],
+      "next": "Indexed abstract/summary located; full paper, formal security argument and complete results remain unavailable. Seek author/institutional copy; no execution or audit."
     },
     {
       "id": "T-004",
@@ -56,7 +58,7 @@
       "id": "T-005",
       "type": "protocol_analysis",
       "title": "Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis",
-      "status": "open",
+      "status": "complete",
       "priority": 5,
       "targets": [
         "docs/protocol-boundary-analysis.md",
@@ -65,7 +67,8 @@
         "docs/w4-risks-and-evaluation.md",
         "docs/decision-register.md",
         "thesis.md"
-      ]
+      ],
+      "next": "Closed 2026-11-17: protocol-boundary analysis integrated into thesis, W2/W4, and contribution assessment; W3 and traceability alignment checked. Signal, MLS and HPKE compared at their distinct scopes. No protocol selected."
     },
     {
       "id": "T-006",
@@ -168,5 +171,12 @@
       ],
       "next": "Freeze and identify the exact reviewed thesis release; verify citations, provenance, review state, figures, accessibility and repository integrity; prove no enduring document depends on work/; then remove work/."
     }
-  ]
+  ],
+  "evidence_access_notes": {
+    "date": "2026-11-17",
+    "T001": "Publisher previews expanded; full papers remain inaccessible; reviews partial.",
+    "T002": "SRC-047 README inspected; code/model material not retrieved. SRC-046/048 full texts not obtained.",
+    "T003": "SRC-049 indexed abstract/summary only; full paper/proof/results not obtained.",
+    "T005": "Protocol analysis integrated and comparator scope clarified; no protocol selection or tests."
+  }
 }
