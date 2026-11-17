@@ -1502,3 +1502,32 @@ Checks confirmed the thesis evaluation rows, W4 E5 acceptance criteria, RQ4/RQ10
 - work/lookup/TASKS.json read-back blob: 294c85a3acd56931d19e6993754c652bcfdeb809.
 - work/lookup/TASKS.md was updated to identify §8.4 discovery/linkage synthesis as the current T-006 focus.
 - Checks confirmed the discovery comparison table, candidate-carrier rule, updated state and active task. No new sources, implementation or empirical evaluation were added.
+
+
+## 2026-11-17 · Thesis synthesis: decompose discovery into distinct privacy and authority functions
+
+### Substantive result
+- Continued T-006 from thesis §8.4 rather than reopening already integrated sender-attribution or acceptance-state work.
+- Added an explicit decomposition of discovery into bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation, and endpoint conversation association.
+- Added a compositional observer analysis: private retrieval does not itself conceal publication; anonymous publication does not itself conceal retrieval; capability use remains observable to the receiving service; out-of-band bootstrap moves rather than removes the trust/metadata boundary; endpoint-local conversation mapping is not candidate enumeration.
+- Pressure-tested the distinctions against the existing documentary comparators: OMR/GOMR, Oblivious Signaling, Remise and Echomix/Pigeonhole. Preserved each system's native model and limits rather than treating “private discovery” as one interchangeable property.
+- Integrated the same distinctions into W3's discovery responsibility, W4 E9 evaluation questions/acceptance conditions, the multi-message linkage analysis and RQ7 traceability.
+
+### Files changed
+- `thesis.md` §8.4.
+- `docs/multi-message-linkage-and-steganographic-carriage.md` §4.7.
+- `docs/w3-architecture.md` discovery boundary.
+- `docs/w4-risks-and-evaluation.md` E9.
+- `docs/traceability.md` RQ7.
+- `work/PROJECT_STATE.md`, `work/lookup/TASKS.json` and `work/lookup/TASKS.md` updated to record the actual next synthesis action.
+
+### Evidence and limits
+- This is a synthesis of already reviewed or explicitly bounded documentary material in SRC-020, SRC-024–SRC-032 and the existing Echomix comparator; no new source was acquired in this work unit.
+- OMR/GOMR, Oblivious Signaling, Remise and Echomix/Pigeonhole are not treated as equivalent protocols. Their threat models, trust/collusion assumptions, cost placement and out-of-band dependencies remain distinct.
+- No discovery mechanism, wire format, protocol or privacy guarantee is selected. No implementation, measurement, experiment, reproduction, formal proof, independent review or audit is claimed.
+
+### Verification
+- Each changed file is committed below and fetched from `main`; exact saved content is checked before reporting completion.
+
+### Exact next action
+- Continue T-006 by pressure-testing the new discovery decomposition against the lifecycle/event observer ledger in `docs/route-comparison-framework.md`, especially whether each named profile records bootstrap, publication, enumeration, pertinence/authorisation, retrieval and endpoint association without inventing service behaviour. Then revise any missing route-specific row and align thesis §8.8 / §10.2 as warranted.
