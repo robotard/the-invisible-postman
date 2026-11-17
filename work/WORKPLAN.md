@@ -177,3 +177,12 @@ Publish design rationale, threat models, limitations, candidate mechanisms, diag
 This is a theory-led research project. No implementation, platform experiment, extraction test, steganalysis benchmark, formal proof or independent security audit is implied by the roadmap or by documentation progress.
 
 **Theory only · No implementation · Not audited.**
+
+
+## ChatGPT Project operating instructions and context recovery
+
+The concise text intended for the ChatGPT Project's external **Project Instructions** is maintained in [CHATGPT_PROJECT_INSTRUCTIONS.md](CHATGPT_PROJECT_INSTRUCTIONS.md). Keep the actual Project Instructions thin: continuity, source authority, execution priorities, verification and context-limit recovery only. Do not paste thesis methodology, technical principles or contribution arguments into this field; those remain in `thesis.md` and enduring `docs/` research records.
+
+The repository cannot directly modify ChatGPT's external Project settings. After editing this file, installation requires copying its complete contents into **The Invisible Postman → Project settings → Project instructions**. Do not claim the external setting has changed until that has actually been done.
+
+For context-limit recovery, preserve the full prior conversation and start a new chat inside the same Project. Resume from the live GitHub digests and working records plus the new chat's automatic summary; never treat a new chat as a project reset. Do not fill every response with the maturity label. Use it only when a maturity/evidence qualification is relevant.
