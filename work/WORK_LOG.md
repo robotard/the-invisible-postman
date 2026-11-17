@@ -1319,3 +1319,39 @@ The protocol comparison narrows the design space without selecting a protocol. P
 Continue T-001 by seeking complete texts for SRC-033, SRC-034 and SRC-036 through author/institutional access. Continue T-002/T-003 acquisition work where useful. Preserve partial-review status until full methods, results, formal arguments and limitations are inspected.
 
 **Theory only · No implementation · Not audited.**
+
+## 2026-11-17 · Keyed work registry and uniform commit checkpoints
+
+### User requirement
+
+Reduce /work/ coordination overhead while making every commit obey the same discipline: do the work, update the work records, commit, read the saved result back, and only then report completion. Avoid making the user supervise routine continuity.
+
+### Changes made
+
+- Added a single commit checkpoint contract to work/README.md, applying equally to thesis, research, supporting and operational changes.
+- Added the same workflow gate to WORKPLAN.md without changing the research sequence or priorities.
+- Replaced the positional tasks[] array in work/lookup/TASKS.json with a keyed tasks object under schema tip.work.registry.v3. Each immutable T-### key maps to one value record with type, title, status, priority, targets, dependencies, next action, blockers and completion rule.
+- Reduced work/lookup/TASKS.md to a human-readable index of that registry. The JSON is canonical for task lookup; the Markdown file is not a second task plan.
+- Preserved the distinction between internal task keys and thesis/source/evidence identifiers. No thesis content or research finding was changed by this infrastructure update.
+
+### Commit checkpoints and read-back
+
+Each of the following commits was followed by fetching its changed file from main; exact content matched:
+
+| Checkpoint | Commit | Changed file | Result |
+|---|---|---|---|
+| TIP-WORKFLOW-2026-11-17-A | [c3767d9](https://github.com/robotard/the-invisible-postman/commit/c3767d9b7c547f811e76a56c817ef70fcb73672a) | work/README.md | Exact read-back verified |
+| TIP-WORKFLOW-2026-11-17-B | [51821d7](https://github.com/robotard/the-invisible-postman/commit/51821d76a0138c386b9aec31befe983ca418bd5d) | work/WORKPLAN.md | Exact read-back verified |
+| TIP-WORKFLOW-2026-11-17-C | [009f59a](https://github.com/robotard/the-invisible-postman/commit/009f59af236130fce25ed630dea8c49dadb5970b) | work/lookup/TASKS.json | Exact read-back verified; JSON parsed during transformation |
+| TIP-WORKFLOW-2026-11-17-D | [64224e4](https://github.com/robotard/the-invisible-postman/commit/64224e48a70e903303066539daa1e0e2a676bf72) | work/lookup/TASKS.md | Exact read-back verified |
+
+### Verification and limits
+
+- All four changed files were fetched from the live main branch after their commits; saved text matched the submitted content.
+- The keyed registry contains all existing T-001 through T-012 records; T-005 remains complete; source-access tasks remain open/in progress; diagram, peer-review and release gates remain deferred/blocked as before.
+- This is an operational workflow/schema change only. It does not claim research progress, implementation, experiment, independent review or audit.
+- The task registry is now simpler to address by key, while the four operational records retain their distinct responsibilities.
+
+### Exact next action
+
+Continue T-001 as recorded in the keyed registry: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access, retaining partial-review status. Continue T-002/T-003 access work where useful. For every resulting work unit, apply the same pre-commit update, one coherent commit, exact post-commit read-back and factual recording.
