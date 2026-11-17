@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-17 · thesis-first sprint: relationship authority and receiver acceptance",
+  "checkpoint": "2026-11-17 · discovery decomposition and route observer integration",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_metadata_only",
@@ -29,19 +29,10 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "Thesis §§7.3.1–7.3.2 now define relationship authority and receiver acceptance across fragment membership, conversation continuity, retries, redundancy, cross-route equivalence, observer-inferred association and untrusted carrier assertions. The receiver path distinguishes carrier observation/retrieval/extraction from endpoint authentication, set membership, completeness, reconstruction, replay/freshness and logical-message acceptance. W3 and the dedicated multi-message analysis are aligned. This is conceptual design, not a selected wire format or implementation. Thesis §10.2 and W4 E5 now include explicit relationship-authority and receiver-acceptance evaluation criteria; RQ4/RQ10 traceability is aligned. Thesis §8.4 now compares shared-feed scanning, stable locators/rendezvous, public/random tokens, keyed or encrypted manifests, one-use capabilities, private/oblivious retrieval and endpoint-local conversation mapping; discovery returns candidates, not authenticated acceptance.",
+    "thesis": "One active manuscript at thesis.md in staging. §8.2 retains six evidence-bounded route profiles; §8.4 now decomposes discovery into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/authorisation and endpoint association, with a compositional observer analysis. §8.8 and §10.2 separate candidate enumeration, retrieval/authorisation, endpoint validation and conversation association across route profiles. No deployed route advantage is established; originality and review readiness remain open.",
     "research_units": "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
-    "multi_message_model": [
-      "logical message and endpoint-protected object",
-      "fragment-set membership and reconstruction",
-      "redundant fragment carriage and loss tolerance",
-      "independent messages in a batch",
-      "conversation/session continuity across distinct messages",
-      "retry/duplicate as a new delivery event for the same logical object",
-      "cross-route copies and their correlation risks",
-      "GIF frames within one animated carrier, distinct from separate image objects and messages"
-    ],
+    "multi_message_model": "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies. Discovery is decomposed into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; these do not authenticate one another.",
     "steganography": {
       "distinctions": [
         "per-carrier concealment",
@@ -144,7 +135,8 @@
       "T001": "Publisher previews expanded for SRC-033/034/036, but direct publisher retrieval returned 403; full papers/tables/limitations unavailable. All remain partial.",
       "T002": "SRC-047 README inspected; implementation/model assets not retrieved. SRC-046 OpenReview access blocked by browser verification; SRC-048 IEEE abstract/metadata only.",
       "T003": "SRC-049 indexed abstract summary located; full paper/formal proof/complete results remain unreviewed. Selected code read only, not run/audited."
-    }
+    },
+    "discovery_model": "The thesis and supporting documents distinguish bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint conversation association. Publication privacy, retrieval pertinence privacy, access authorisation, sender anonymity, endpoint authenticity, availability and conversation continuity are separate properties. OMR/GOMR, Oblivious Signaling, Remise and Echomix/Pigeonhole retain distinct threat, trust, collusion and cost assumptions."
   },
   "completed": [
     "Rewrote thesis abstract and tightened central research question/proposition around endpoint-authenticated message semantics, replaceable carriage and observer-bounded evidence.",
@@ -173,7 +165,8 @@
     "Added bounded indexed abstract evidence for SRC-049 without upgrading full-paper/formal-proof review status.",
     "Compared Signal PQXDH/Double Ratchet, MLS and HPKE at their distinct 1:1, group and lower-level composition scopes; integrated into thesis §6.2 and protocol-boundary analysis.",
     "Reconciled protocol obligations into W2/W4, checked W3/traceability alignment, and clarified in contribution assessment that protocol requirements are not novelty claims.",
-    "Thesis-first sprint: added §§7.3.1–7.3.2 and aligned W3/multi-message research; updated sprint priorities and in-session working-set discipline."
+    "Thesis-first sprint: added §§7.3.1–7.3.2 and aligned W3/multi-message research; updated sprint priorities and in-session working-set discipline.",
+    "Decomposed discovery into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; integrated the distinction into thesis §8.4, §§8.8/10.2, W3, W4 E9, multi-message analysis, route-comparison §§5.6–5.7 and RQ7 traceability."
   ],
   "source_review_boundaries": {
     "SRC_033": "Publisher-indexed abstract/introduction/method/evaluation snippets plus pinned public MATLAB demo inspection; complete paper methods, tables and limitations remain partial.",
@@ -185,11 +178,11 @@
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
-    "T-006: continue thesis-first drafting from §8.4; critically compare discovery/linkage families against endpoint-authenticated fragment membership, conversation continuity, retries and observer exposure, then integrate material findings.",
-    "T-001–T-003: continue full-text/code access where it materially resolves a thesis claim; retain partial-review status and do not block unrelated drafting.",
+    "T-006: pressure-test the discovery event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression.",
+    "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits.",
     "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits.",
-    "T-007: remain gated until the thesis candidate stabilises; then run terminology, citation, traceability and cross-document checks.",
-    "Keep diagrams, external peer review and release work gated until argument and evidence stabilise."
+    "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks.",
+    "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
   ],
   "defer": [
     "Create actual diagrams only after comparative argument and evidence stabilise; never use ASCII art.",
@@ -283,9 +276,9 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "0b27e50b60210c19beade4d85389e1aafc462920",
-  "immediate_next_action": "Continue T-006 thesis-first analysis from §8.4: compare discovery/linkage approaches against endpoint-authenticated relationships and observer exposure; next examine route lifecycle, observer evidence and delivery semantics.",
-  "latest_verified_project_head": "3c5da1235f0e2b9fe336cd2e5dd3575bfea45189",
+  "latest_commit_before_json_digest_refresh": "5a31a32263856ec30e560376117adcc597fe912f",
+  "immediate_next_action": "Pressure-test the discovery event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression; preserve the distinction between protocol properties, assumptions and observer inference.",
+  "latest_verified_project_head": "6e6a2f5667bfe492ae32f94ee39104cbb80e5f6e",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -444,5 +437,17 @@
     "verification": "Fetch resulting commit and every changed file; verify exact saved content and applicable checks.",
     "release": "Release cached files when workstream closes; rehydrate from GitHub next session.",
     "project_instructions": "Copy-ready Project Instructions now explicitly require in-session scope caching with baseline blob SHAs; no user local clone is required."
+  },
+  "verified_current": {
+    "work/PROJECT_STATE.md": "04c96e6a2d7315e790341b2e9a32baaef9b1ef5a",
+    "work/WORK_LOG.md": "00441b2fc28182f5cf052804cbfca9ab517b65c5",
+    "work/lookup/TASKS.md": "0ae365bceac7971d543c72159bb5a930cba7dfe5",
+    "work/lookup/TASKS.json": "91803f2fc91ac876362674ac3246ae40cf56a21d",
+    "thesis.md": "deaee671bff4f15c805f89d836c18dd3dd4f1a5b",
+    "docs/w3-architecture.md": "9ad8f905ce2a015dfeda5ebf3ba51556dc4bf46b",
+    "docs/multi-message-linkage-and-steganographic-carriage.md": "49a31755a13dd47f7b0ff80833b1711250c68b4f",
+    "docs/w4-risks-and-evaluation.md": "2393502288434425e4cbaae1000e0a95a0aba3a2",
+    "docs/traceability.md": "838b3b3133ea496335e7a2b32d284c2e031b5fae",
+    "docs/route-comparison-framework.md": "e701005693341d35565b7c18a17db81537cebc18"
   }
 }
