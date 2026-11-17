@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-17 · Single-entry automatic re-entry bootstrap",
+  "checkpoint": "2026-11-17 · thesis-first sprint: relationship authority and receiver acceptance",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_metadata_only",
@@ -29,7 +29,7 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md in staging; §6.2 now contains a bounded Signal/MLS/HPKE comparison; §8.2 contains six named evidence-bounded route profiles and §8.8 contains lifecycle/observer comparison plus conditional image-carriage decision analysis. No deployed route advantage is established; originality and review readiness remain open.",
+    "thesis": "Thesis §§7.3.1–7.3.2 now define relationship authority and receiver acceptance across fragment membership, conversation continuity, retries, redundancy, cross-route equivalence, observer-inferred association and untrusted carrier assertions. The receiver path distinguishes carrier observation/retrieval/extraction from endpoint authentication, set membership, completeness, reconstruction, replay/freshness and logical-message acceptance. W3 and the dedicated multi-message analysis are aligned. This is conceptual design, not a selected wire format or implementation.",
     "research_units": "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
     "multi_message_model": [
@@ -172,7 +172,8 @@
     "Inspected SRC-046 OpenReview access outcome and SRC-048 IEEE abstract/metadata; neither full paper obtained.",
     "Added bounded indexed abstract evidence for SRC-049 without upgrading full-paper/formal-proof review status.",
     "Compared Signal PQXDH/Double Ratchet, MLS and HPKE at their distinct 1:1, group and lower-level composition scopes; integrated into thesis §6.2 and protocol-boundary analysis.",
-    "Reconciled protocol obligations into W2/W4, checked W3/traceability alignment, and clarified in contribution assessment that protocol requirements are not novelty claims."
+    "Reconciled protocol obligations into W2/W4, checked W3/traceability alignment, and clarified in contribution assessment that protocol requirements are not novelty claims.",
+    "Thesis-first sprint: added §§7.3.1–7.3.2 and aligned W3/multi-message research; updated sprint priorities and in-session working-set discipline."
   ],
   "source_review_boundaries": {
     "SRC_033": "Publisher-indexed abstract/introduction/method/evaluation snippets plus pinned public MATLAB demo inspection; complete paper methods, tables and limitations remain partial.",
@@ -184,13 +185,11 @@
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
-    "T-001: seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional access; retain partial-review status.",
-    "T-002: seek full SRC-046/SRC-048 papers and a retrievable SRC-047 code/model snapshot; README-only inspection is not code review.",
-    "T-003: seek SRC-049 full paper, formal security argument and complete results; selected code review remains read-only and unaudited.",
-    "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence.",
-    "T-006/T-007: challenge confidence/evidence against protocol delivery semantics and multi-message reconstruction; reconcile route/source findings into W1-W4, thesis and traceability.",
-    "Keep confidence/evidence within RQ10; do not reintroduce an eleventh research question or a universal confidence score.",
-    "Keep diagrams deferred until arguments and evidence stabilise."
+    "T-006: continue thesis-first drafting/integration; choose the next consequential argument gap in thesis.md and update affected research documents.",
+    "T-001–T-003: continue full-text/code access where it materially resolves a thesis claim; retain partial-review status and do not block unrelated drafting.",
+    "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits.",
+    "T-007: remain gated until the thesis candidate stabilises; then run terminology, citation, traceability and cross-document checks.",
+    "Keep diagrams, external peer review and release work gated until argument and evidence stabilise."
   ],
   "defer": [
     "Create actual diagrams only after comparative argument and evidence stabilise; never use ASCII art.",
@@ -218,23 +217,25 @@
     "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "46673d1c0a349a2de0db933475d59a4f60b34ed8",
     "work/PROJECT_STATE.md": "5d289bf5dd866db75a46f4027b411d3d36e03f51",
     "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a",
-    "work/WORK_LOG.md": "9f3431af883896fa80f5062a7c802fb13facad1d",
+    "work/WORK_LOG.md": "44b7781e9c0ce02c2f0a7258623f36f9d7b93b1e",
     "work/README.md": "80bba3a0824e627ff6afb881105114e0dba0dd69",
     "README.md": "9f3d4d36a930d0a6ad14fe828e719f841b42a294",
-    "work/lookup/TASKS.md": "54bc564cea6cb978d752eafb1318bfb9bd4d4d36",
+    "work/lookup/TASKS.md": "74dd6ff684a6cf69ba96f4f6cf74591cb9e760bc",
     "work/lookup/TASKS.json": "3bf31ec458c1210bb6b0a4396bc8a35504a345ce",
     "thesis.md": "cdf2a278b9669032e1df9743a509e90bb1e53d9d",
-    "work/SESSION_DIGEST.md": "44da9508e2291cfe28a9e8d428f600d678dd4ed2"
+    "work/SESSION_DIGEST.md": "f878b5d24b7fcfd12c7617a6b37c34be803e13ce",
+    "docs/w3-architecture.md": "1e0fc3c7dab11cfd2333388ce39575320c6cea75",
+    "docs/multi-message-linkage-and-steganographic-carriage.md": "5137e55e25140ed1d05d8267b3f86f7349fd7ff8"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
-    "For a new chat or explicit continue/resume, read both digests and PROJECT_STATE, WORKPLAN, WORK_LOG; inspect only research files needed for the next action.",
-    "Resolve the next unblocked task from work/lookup/TASKS.json; do not ask the user to restate recorded context.",
-    "Prioritise substantive thesis/research work. Do not substitute planning, status narration or repeated document administration for progress.",
-    "Update task status only when actual work changes it; update state/log for material outcomes; change workplan only for genuine workflow/priority/dependency changes.",
-    "Verify every GitHub write by fetching saved files. Distinguish drafted, committed, read-back verified, tested, reproduced and independently reviewed.",
-    "At handover reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; refresh SESSION_DIGEST.md then SESSION_DIGEST.json last and verify both.",
-    "If a chat reaches its context limit, preserve it; start a new chat inside the same Project and resume from live GitHub plus the automatic summary. Do not treat this as a project reset."
+    "Read live main and work records; hydrate only files required for the selected thesis/research sprint.",
+    "Prioritise substantive thesis drafting/integration; resolve material evidence gaps and maintain terminology/citation coherence across affected records.",
+    "Keep active files cached with baseline blob SHAs; do not re-fetch on every edit; expand scope only for real dependencies.",
+    "Update task status only when actual work starts, changes status, completes or becomes blocked.",
+    "Commit one coherent multi-file work unit with expected-head lease where supported; otherwise use sequential content updates with fetched SHAs and record the limitation.",
+    "Fetch commit and changed files after writing; verify exact saved content and applicable checks.",
+    "At handover reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; refresh SESSION_DIGEST.md then SESSION_DIGEST.json last; verify both."
   ],
   "diagram_policy": {
     "format": "Genuine visual illustrations; never ASCII art.",
@@ -265,7 +266,7 @@
     "internal_ids": "C-### and T-### are private lookup handles only; never thesis references.",
     "release_rule": "Transfer substantive outcomes to thesis/research records; verify no enduring document depends on work/; then remove it in full."
   },
-  "next_task": "T-001",
+  "next_task": "T-006",
   "latest_commit_before_digest_refresh": "e838e4de8d4b85556c7a00368f561a616287c4e1",
   "thesis_product": {
     "canonical_manuscript": "thesis.md",
@@ -281,8 +282,8 @@
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
   "latest_commit_before_json_digest_refresh": "0b27e50b60210c19beade4d85389e1aafc462920",
-  "immediate_next_action": "T-001: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access; retain partial-review status. Continue T-002/T-003 access work where useful.",
-  "latest_verified_project_head": "0b27e50b60210c19beade4d85389e1aafc462920",
+  "immediate_next_action": "Continue thesis-first drafting from thesis.md §§7.3.1–7.3.2; select the next consequential thesis gap and integrate it before expanding operational work.",
+  "latest_verified_project_head": "300c07fc37be7d2f10cf3161fdebd29f187e243e",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -423,5 +424,22 @@
     "context_limit": "Preserve old chat; open a new chat inside this same Project; use automatic summary only as a clue and GitHub as authority.",
     "external_installation": "One-time manual installation of CHATGPT_PROJECT_INSTRUCTIONS.md into Project settings is required; GitHub cannot modify ChatGPT Project settings or attach its files automatically.",
     "status_label": "Project metadata only; mention only when relevant."
+  },
+  "sprint_priority": [
+    "Actual thesis drafting and integration.",
+    "Resolve material research gaps and evidential weaknesses; blocked sources do not stall unrelated manuscript progress.",
+    "Maintain coherent terminology, arguments, citations and claim maturity.",
+    "Connect multi-message steganographic encapsulation and linkage to the wider architecture.",
+    "Update task records only when actual work changes their status.",
+    "Preserve active working scope with an in-session cache and baseline blob SHAs."
+  ],
+  "working_set": {
+    "model": "Assistant in-session cache of active GitHub files; not persistent local filesystem storage.",
+    "entry": "Fetch live main and hydrate each relevant file once when it enters sprint scope; retain content, path and baseline blob SHA.",
+    "editing": "Keep active files cached; track diffs against baseline; expand scope only for real dependencies.",
+    "conflict": "If main moves, inspect changed paths and reconcile before writing; never silently overwrite concurrent work.",
+    "commit": "One coherent multi-file commit is preferred. If Git Data ref-update is unavailable, use sequential Contents API updates with fetched blob SHAs and record the non-atomic limitation.",
+    "verification": "Fetch resulting commit and every changed file; verify exact saved content and applicable checks.",
+    "release": "Release cached files when workstream closes; rehydrate from GitHub next session."
   }
 }
