@@ -140,10 +140,13 @@ Evaluation questions:
 * Can a partial set be presented as a complete message?
 * Are index, count, set identity and version authenticated?
 * What happens when a fragment is corrupted or permanently unavailable?
+* Does the authenticated key/session context support the sender-attribution claim being made, especially where symmetric keys are shared by multiple participants?
+* Is manifest authority explicit, and are protocol-key attribution and real-world identity assurance kept separate?
 
 Proposed acceptance conditions:
 
 * Incomplete sets are not silently accepted as complete.
+* Acceptance reports distinguish object integrity under a key, attribution to a protocol key/session, and any separate claim about a real-world participant; shared-key possession is not reported as unique sender proof.
 * Authenticated logical indices and manifest context permit valid capsules to be reassembled when transport delivery order differs from logical order; arrival order alone is not treated as proof of tampering.
 * A duplicate capsule is never counted as an additional distinct piece. The policy for identical duplicates is explicit; conflicting content for the same index, cross-message substitution, invalid indices and ambiguous manifests fail closed.
 * Reconstruction produces the original protected message object or fails, with explicit size, count, timeout and resource limits.
