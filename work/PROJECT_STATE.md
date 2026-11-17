@@ -90,7 +90,7 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Next session: exact starting point
 
-1. Resume T-006 first: continue thesis-first drafting from §8.4, integrating discovery/linkage alternatives with the relationship-authority and receiver-acceptance model in §§7.3.1–7.3.2. The sender-attribution boundary is already integrated across thesis, W3, multi-message analysis and W4 E5; do not repeat that work.
+1. Resume T-006 first: critically review the new §8.4 discovery decomposition against the route and observer evidence; test whether the five functions and event chain cover the relevant OMR/GOMR, Oblivious Signaling, Remise and Echomix/Pigeonhole assumptions without conflating privacy properties. Then integrate any resulting correction into the route-comparison ledger and thesis evaluation.
 2. Keep the active thesis and architecture working set cached; fetch additional files only when dependencies require them, then review the coherent diff and commit together.
 3. Continue T-001–T-003 source access in parallel only where it resolves a material evidential weakness; preserve partial-review boundaries and do not let inaccessible papers stall thesis progress.
 4. Advance T-004 route configuration evidence when authoritative product/client details are available.
