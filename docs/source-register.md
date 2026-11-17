@@ -540,6 +540,15 @@ A further public-source retrieval pass was performed for the three sanitisation/
 - No code was executed, no model was run, and no result was reproduced or independently checked.
 - The next useful action is to seek complete copies of SRC-046 and SRC-048 and a retrievable snapshot of SRC-047 source/model files; meanwhile preserve these precise access boundaries and continue with the next unblocked research task.
 
+## 7.2.2 SRC-049: publisher-preview and author-page cross-check (2026-11-17)
+
+A further search located an indexed abstract/summary for the IEEE TMM article and the corresponding author's publication page. No full paper, proof appendix or complete experimental tables were obtained; the existing review boundary remains unchanged.
+
+- The indexed abstract-level summary describes a training-free GIF steganography pipeline in which the sender duplicates and encrypts a secret, maps it into latent variables, integrates those variables with text/motion conditioning during iterative diffusion denoising, and generates a GIF. The receiver splits the GIF into frames and extracts from individual frames; a validation stage calibrates inter-frame comparisons. The summary describes distribution alignment to a standard Gaussian as the basis for a theoretical undetectability claim and reports near-100% accuracy under various attacks. These are author/publisher-indexed claims, not independently checked results or a reviewed formal proof.
+- This abstract-level description is consistent with the already inspected repository's broad architecture (diffusion-generated GIF, frame-wise extraction and inter-frame majority voting), but it does not resolve the code-level limits recorded above: the inspected receiver expects the configured 16-frame set, local key/watermark material is required, the inspected ChaCha20 path shows no authentication tag, and the fallback PRNG is explicitly TEST ONLY. The paper may define additional security mechanisms not visible in the selected code; do not infer that it does not.
+- The author publication page links to the public implementation, confirming provenance of the repository pointer. The paper is a comparator for redundancy and recovery *within one animated carrier*. It is not evidence of a multi-post fragment manifest, authenticated cross-carrier membership or conversation/session continuity.
+- Full text, formal security definitions/proof assumptions, attack set, evaluation protocol, complete accuracy tables and limitations remain unreviewed. No code was run and no result reproduced.
+
 ## 5. Claim-to-source map
 
 | Thesis/research claim area | Primary or high-value sources | Remaining work |
