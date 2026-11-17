@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-17 · thesis-first sprint: relationship authority and receiver acceptance"
+checkpoint: "2026-11-17 · discovery decomposition and route observer integration"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -55,11 +55,11 @@ read_first:
   - work/WORKPLAN.md
   - work/WORK_LOG.md
   - "Then inspect only the task registry and research documents required for the next unblocked action."
-next_task: T-001
+next_task: T-006
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "One active manuscript at thesis.md in staging; §8.2 now includes six named evidence-bounded route profiles and §8.8 integrates lifecycle/observer comparison plus conditional image-carriage decision analysis. No deployed route advantage is established; originality and review readiness remain open."
+  thesis: "One active manuscript at thesis.md in staging. §8.2 retains six evidence-bounded route profiles; §8.4 now decomposes discovery into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/authorisation and endpoint association, with a compositional observer analysis. §8.8 and §10.2 now separate candidate enumeration, retrieval/authorisation, endpoint validation and conversation association across route profiles. The route framework §5.6–§5.7 has matching event rows. No deployed route advantage is established; originality and review readiness remain open."
   thesis_argument:
     central_question: "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?"
     proposition: "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence."
@@ -69,7 +69,7 @@ current_state:
     limits: "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
   research_units: "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question."
   source_register: "49 entries, SRC-001 through SRC-049."
-  multi_message_model: "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies."
+  multi_message_model: "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies. Discovery is decomposed into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; these do not authenticate one another."
   steganography: "Separates per-carrier concealment, robust watermarking, extraction/reconstruction, collection-level steganalysis and observer linkage. SRC-043–SRC-045 cover multi-image redundancy and batch detection; SRC-049 covers within-GIF frame redundancy."
   sanitization: "SRC-036 and SRC-046–SRC-047 describe active payload sanitization; SRC-048 describes keyed counter-adaptation to a known sanitizer. These are partial reviews and do not establish deployment by any named platform."
   gif_code_review: "SRC-049 README, core/method_core.py and scripts/run_stego.py inspected at pinned external repo commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d. Two redundancy levels: d-fold repetition within frame and majority voting across 16 frames. Receiver asserts a complete 16-frame/key set; missing-frame erasure tolerance is not established. Raw ChaCha20 path shows no authentication tag; 32-bit NumPy PRNG fallback is labelled TEST ONLY. Local keys/group ID are not an authenticated message-set protocol. Code not executed or audited; paper/formal proof unreviewed."
@@ -106,13 +106,11 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/metadata inspected; full method/evaluation not inspected."
   SRC-049: "Pinned README/selected implementation inspected, not executed; indexed abstract summary added; full paper/formal security argument/results unreviewed."
 next_actions:
-  - "T-001: seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional access; retain partial-review status."
-  - "T-002: seek full SRC-046/SRC-048 papers and a retrievable SRC-047 code/model snapshot; README-only inspection is not code review."
-  - "T-003: seek SRC-049 full paper, formal security argument and complete results; selected code review remains read-only and unaudited."
-  - "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence."
-  - "T-006/T-007: challenge confidence/evidence against protocol delivery semantics and multi-message reconstruction; reconcile route/source findings into W1-W4, thesis and traceability."
-  - "Keep confidence/evidence within RQ10; do not reintroduce an eleventh research question or a universal confidence score."
-  - "Keep diagrams deferred until arguments and evidence stabilise."
+  - "T-006: pressure-test the discovery event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression."
+  - "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits."
+  - "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits."
+  - "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks."
+  - "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
 source_review_update:
   date: "2026-11-16"
   SRC-033: "Publisher-indexed pass clarified extraction-error, PSNR/SSIM and classifier-error metrics, named comparators, BOSSbase and LinkedIn evaluation; complete parameters, tables and limitations unavailable."
@@ -163,7 +161,7 @@ verified_research_documents:
   docs/w2-threat-model.md: "d6996524d4c847ce5bb67b3e41be41d8c4b385ca"
   docs/w4-risks-and-evaluation.md: "f53da96c10753b16ddfab2ccce77cceb4ed14682"
   docs/thesis-contribution-and-bias-assessment.md: "d8d3879f41251fcdbf9cf40c1e42cc04a849520d"
-latest_verified_project_head: "e838e4de8d4b85556c7a00368f561a616287c4e1"
+latest_verified_project_head: "6e6a2f5667bfe492ae32f94ee39104cbb80e5f6e"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
@@ -209,19 +207,19 @@ automatic_reentry:
 verified_current:
   work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
   work/CHATGPT_PROJECT_INSTRUCTIONS.md: "62e36bf75dd0519e7f1983c847013af2134d9f9d"
-  work/PROJECT_STATE.md: "65a8bae72c8f47f66c1cf1141c9c138b73769403"
+  work/PROJECT_STATE.md: "04c96e6a2d7315e790341b2e9a32baaef9b1ef5a"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
-  work/WORK_LOG.md: "5394d29458e0f7baff34e47df531980666480f12"
+  work/WORK_LOG.md: "00441b2fc28182f5cf052804cbfca9ab517b65c5"
   work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
   README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
-  work/lookup/TASKS.md: "b989db07a0216d3b70e4935a99efbc71ac147909"
-  work/lookup/TASKS.json: "3bf31ec458c1210bb6b0a4396bc8a35504a345ce"
-  thesis.md: "ec579e0c24cdee06f2b2efe2c3130f60c0f3844c"
-  docs/w3-architecture.md: "e95eb8a193b038c77e3d6a924f3bfd1e09b61d76"
-  docs/multi-message-linkage-and-steganographic-carriage.md: "8d50007d1e22c311016842e0cc788ca4b2c4e327"
-  docs/w4-risks-and-evaluation.md: "1f47173eb2c187f774805d824128c7b6e778f271"
-  docs/traceability.md: "0cc48d92ecc5d8a8c409bd4b17be1b04a7fa3bbb"
-  docs/w4-risks-and-evaluation.md: "1f47173eb2c187f774805d824128c7b6e778f271"
+  work/lookup/TASKS.md: "0ae365bceac7971d543c72159bb5a930cba7dfe5"
+  work/lookup/TASKS.json: "91803f2fc91ac876362674ac3246ae40cf56a21d"
+  thesis.md: "deaee671bff4f15c805f89d836c18dd3dd4f1a5b"
+  docs/w3-architecture.md: "9ad8f905ce2a015dfeda5ebf3ba51556dc4bf46b"
+  docs/multi-message-linkage-and-steganographic-carriage.md: "49a31755a13dd47f7b0ff80833b1711250c68b4f"
+  docs/w4-risks-and-evaluation.md: "2393502288434425e4cbaae1000e0a95a0aba3a2"
+  docs/traceability.md: "838b3b3133ea496335e7a2b32d284c2e031b5fae"
+  docs/route-comparison-framework.md: "e701005693341d35565b7c18a17db81537cebc18"
 
 
 ## 2026-11-17 · Thesis-first sprint
@@ -248,3 +246,14 @@ verified_current:
 - Each approach is assessed by recipient requirements, observer exposure and what it cannot establish.
 - Discovery returns candidate carriers; endpoint-authenticated membership, completeness, conversation continuity and message acceptance remain endpoint decisions.
 - T-006 remains in_progress. Next: continue thesis-first analysis of route lifecycle, observer evidence and delivery semantics.
+
+
+## 2026-11-17 · Discovery decomposition and route observer integration
+
+- Thesis §8.4 now decomposes discovery into bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint conversation association.
+- The synthesis distinguishes publication privacy, retrieval pertinence privacy, access authorisation, sender anonymity, endpoint authenticity, availability and conversation continuity. It pressure-tests OMR/GOMR, Oblivious Signaling, Remise and Echomix/Pigeonhole under their distinct assumptions.
+- Integrated the decomposition into multi-message analysis §4.7, W3, W4 E9 and RQ7 traceability.
+- Thesis §§8.8 and 10.2 now separate bootstrap, candidate enumeration/pertinence, retrieval observation and endpoint conversation association in the route comparison/evaluation.
+- Route-comparison framework §§5.6–5.7 now separate publication/candidate enumeration, recipient pertinence/retrieval authorisation and retrieval/access observation; unknown service behaviour remains unknown.
+- T-006 remains active. Next: pressure-test the event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression.
+- No new sources, implementation, measurements, experiments, formal proof, independent review or audit were added.
