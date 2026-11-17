@@ -35,7 +35,7 @@ The thesis is the product. `thesis.md` is the single active manuscript in develo
 The registries and work records are coordination aids, not competing sources of truth. The thesis and substantive research documents govern.
 
 
-## Commit checkpoint contract (applies to every commit)
+## Commit checkpoint contract
 
 A commit is a completed work checkpoint, not a loose save. Use one commit for one coherent work unit; group related file edits instead of creating micro-commits. Do not split a task merely to make activity look busy.
 
