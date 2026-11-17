@@ -29,7 +29,7 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "Thesis §§7.3.1–7.3.2 now define relationship authority and receiver acceptance across fragment membership, conversation continuity, retries, redundancy, cross-route equivalence, observer-inferred association and untrusted carrier assertions. The receiver path distinguishes carrier observation/retrieval/extraction from endpoint authentication, set membership, completeness, reconstruction, replay/freshness and logical-message acceptance. W3 and the dedicated multi-message analysis are aligned. This is conceptual design, not a selected wire format or implementation. Thesis §10.2 and W4 E5 now include explicit relationship-authority and receiver-acceptance evaluation criteria; RQ4/RQ10 traceability is aligned.",
+    "thesis": "Thesis §§7.3.1–7.3.2 now define relationship authority and receiver acceptance across fragment membership, conversation continuity, retries, redundancy, cross-route equivalence, observer-inferred association and untrusted carrier assertions. The receiver path distinguishes carrier observation/retrieval/extraction from endpoint authentication, set membership, completeness, reconstruction, replay/freshness and logical-message acceptance. W3 and the dedicated multi-message analysis are aligned. This is conceptual design, not a selected wire format or implementation. Thesis §10.2 and W4 E5 now include explicit relationship-authority and receiver-acceptance evaluation criteria; RQ4/RQ10 traceability is aligned. Thesis §8.4 now compares shared-feed scanning, stable locators/rendezvous, public/random tokens, keyed or encrypted manifests, one-use capabilities, private/oblivious retrieval and endpoint-local conversation mapping; discovery returns candidates, not authenticated acceptance.",
     "research_units": "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
     "multi_message_model": [
@@ -185,7 +185,7 @@
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
-    "T-006: continue thesis-first drafting; next examine the weakest consequential architectural/evidential claim and integrate the result into thesis.md before expanding supporting documents.",
+    "T-006: continue thesis-first drafting from §8.4; critically compare discovery/linkage families against endpoint-authenticated fragment membership, conversation continuity, retries and observer exposure, then integrate material findings.",
     "T-001–T-003: continue full-text/code access where it materially resolves a thesis claim; retain partial-review status and do not block unrelated drafting.",
     "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits.",
     "T-007: remain gated until the thesis candidate stabilises; then run terminology, citation, traceability and cross-document checks.",
@@ -215,15 +215,15 @@
   "verified": {
     "work/START_HERE.md": "36749a44b6596fcc6b3592425e682554e44a5fc7",
     "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "62e36bf75dd0519e7f1983c847013af2134d9f9d",
-    "work/PROJECT_STATE.md": "a1aa3dd8818ac148465538e122ce0dc017d243a1",
+    "work/PROJECT_STATE.md": "65a8bae72c8f47f66c1cf1141c9c138b73769403",
     "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a",
-    "work/WORK_LOG.md": "04cc2c3804d02e54d9b1e66b59c774f7b9d85c3d",
+    "work/WORK_LOG.md": "5394d29458e0f7baff34e47df531980666480f12",
     "work/README.md": "80bba3a0824e627ff6afb881105114e0dba0dd69",
     "README.md": "9f3d4d36a930d0a6ad14fe828e719f841b42a294",
-    "work/lookup/TASKS.md": "74dd6ff684a6cf69ba96f4f6cf74591cb9e760bc",
-    "work/lookup/TASKS.json": "3bf31ec458c1210bb6b0a4396bc8a35504a345ce",
-    "thesis.md": "11f3566e78dd56a7c1178f30f2a27a8cdbe5ef2a",
-    "work/SESSION_DIGEST.md": "ba3d8254e2c1a11611d144a34386b774ed2d8919",
+    "work/lookup/TASKS.md": "b989db07a0216d3b70e4935a99efbc71ac147909",
+    "work/lookup/TASKS.json": "294c85a3acd56931d19e6993754c652bcfdeb809",
+    "thesis.md": "ec579e0c24cdee06f2b2efe2c3130f60c0f3844c",
+    "work/SESSION_DIGEST.md": "846a2a7755cc1ea91e8f61998087d43d099a8a7b",
     "docs/w3-architecture.md": "e95eb8a193b038c77e3d6a924f3bfd1e09b61d76",
     "docs/multi-message-linkage-and-steganographic-carriage.md": "8d50007d1e22c311016842e0cc788ca4b2c4e327",
     "docs/w4-risks-and-evaluation.md": "1f47173eb2c187f774805d824128c7b6e778f271",
@@ -284,8 +284,8 @@
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
   "latest_commit_before_json_digest_refresh": "0b27e50b60210c19beade4d85389e1aafc462920",
-  "immediate_next_action": "Continue thesis-first drafting from thesis.md §§7.3.1–7.3.2; select the next consequential thesis gap and integrate it before expanding operational work.",
-  "latest_verified_project_head": "fdb77e41462bfce5b853b6e0851f16945a33e72a",
+  "immediate_next_action": "Continue T-006 thesis-first analysis from §8.4: compare discovery/linkage approaches against endpoint-authenticated relationships and observer exposure; next examine route lifecycle, observer evidence and delivery semantics.",
+  "latest_verified_project_head": "3c5da1235f0e2b9fe336cd2e5dd3575bfea45189",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
