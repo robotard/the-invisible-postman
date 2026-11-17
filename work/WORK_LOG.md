@@ -1485,3 +1485,11 @@ Read-back checks passed for the second integration unit. Exact saved blob SHAs:
 - work/PROJECT_STATE.md — a1aa3dd8818ac148465538e122ce0dc017d243a1
 
 Checks confirmed the thesis evaluation rows, W4 E5 acceptance criteria, RQ4/RQ10 traceability, and cached working-set instruction. No new source, implementation, experiment or audit was added.
+
+
+## 2026-11-17 · Thesis §8.4 discovery and linkage synthesis
+
+- Expanded thesis §8.4 with a comparative table of shared-feed scanning, stable locator/rendezvous, public or random set tokens, keyed/recipient-specific tokens and encrypted manifests, short-lived capabilities, cryptographic private/oblivious retrieval, and endpoint-local conversation mapping.
+- For each family, separated recipient requirements, route/observer exposure and claims the mechanism cannot establish.
+- Connected discovery to §§7.3.1–7.3.2: discovery returns candidate carriers; endpoint-authenticated membership, completeness, conversation continuity and logical-message acceptance remain endpoint decisions.
+- Preserved the source boundary: this is a synthesis of alternatives already analysed in §8.4 and the dedicated multi-message research, not a selected mechanism, new source finding or measured comparison.
