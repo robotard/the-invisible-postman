@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-17 · thesis-first sprint; relationship authority and receiver-acceptance model integrated across thesis and architecture; cache/diff working-set discipline clarified  
+**Checkpoint:** 2026-11-17 · discovery decomposition and route observer integration; relationship authority and receiver-acceptance model aligned across thesis and architecture  
 **Branch:** `main`  
 **Research baseline before checkpoint compression:** `c3f0032c5455682c1c426c6b5b04e26130bc287f`  
 **Status:** Theory only · No implementation · Not audited.
