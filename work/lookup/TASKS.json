@@ -65,7 +65,7 @@
       "id": "T-004",
       "type": "route_analysis",
       "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
-      "status": "in_progress",
+      "status": "ready",
       "priority": 4,
       "targets": [
         "docs/route-comparison-framework.md",
@@ -101,7 +101,7 @@
       "id": "T-006",
       "type": "research_synthesis",
       "title": "Reconcile new route/source findings into W1–W4 and thesis",
-      "status": "in_progress",
+      "status": "ready",
       "priority": 6,
       "targets": [
         "docs/w1-research-framing.md",
@@ -120,7 +120,7 @@
       "id": "T-007",
       "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
-      "status": "in_progress",
+      "status": "blocked",
       "priority": 7,
       "targets": [
         "thesis.md",
@@ -129,7 +129,9 @@
       ],
       "depends_on": [],
       "next_action": "Run final thesis, traceability, source-status and cross-document consistency review after substantive synthesis stabilises.",
-      "blockers": [],
+      "blockers": [
+        "Depends on T-006 synthesis and a stable thesis candidate; do not mark active before that work begins."
+      ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-17"
     },
