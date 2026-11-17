@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-16 · thesis argument and route-comparison synthesis"
+checkpoint: "2026-11-17 · practical execute-record-repeat handover"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -32,11 +32,20 @@ work_area:
   internal_ids: "C-### concept keys and T-### task keys are private lookup handles only; never thesis references."
   release_rule: "Transfer substantive outcomes to thesis/research records; verify no enduring document depends on work/; then remove it in full."
 document_roles:
-  project_state: "Changing verified progress, blockers, dependencies and exact next action."
-  workplan: "Stable roadmap, priorities, sequencing and dependencies."
-  work_log: "Chronological evidence and change history."
-  markdown_digest: "Compact machine-readable handover only."
-  json_digest: "Compact machine-readable handover only."
+  project_state: "Current verified position, remaining work, blockers, dependencies and exact next action."
+  workplan: "Stable roadmap, priorities, sequence and dependencies; change only for genuine workflow or priority changes."
+  work_log: "Chronological record of actions actually performed, evidence, limitations and verification."
+  markdown_digest: "Compact retrieval/handover format; mirrors JSON digest."
+  json_digest: "Compact retrieval/handover format; mirrors Markdown digest."
+operating_loop:
+  - "Read live GitHub state, four operational records and only relevant research sources."
+  - "Reconcile completed, remaining, blocked and dependent work; do not repeat recorded work."
+  - "Ask only when a material decision or ambiguity blocks safe/correct progress."
+  - "Execute the next useful unblocked action; do not substitute plans or progress narration for work."
+  - "Use available turn/token runway; complete coherent work units and continue while useful work remains."
+  - "Record actual outcomes and limitations in WORK_LOG.md; reconcile PROJECT_STATE.md."
+  - "Fetch changed files and verify exact saved content; distinguish draft, commit, read-back, test and independent review."
+  - "Refresh Markdown and JSON digests at handover; summarise actual work and exact next action concisely."
 read_first:
   - work/SESSION_DIGEST.md
   - work/SESSION_DIGEST.json
@@ -131,15 +140,15 @@ invariants:
   - "Transport acceptance is not endpoint receipt, decryption, display, human reading or comprehension."
   - "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
 verified_working_documents:
-  work/PROJECT_STATE.md: "4aae9b8b7ee8c22a09dc29c241794415009824ad"
-  work/WORKPLAN.md: "9d22a5d1b54dff351b60e6cb9348739e66b6a727"
-  work/WORK_LOG.md: "2c2aeaef52ee6fcfec8fd0b8c62a9b2eca7255c2"
+  work/PROJECT_STATE.md: "230ba7dd3064c1001509275433bb77b927a837a8"
+  work/WORKPLAN.md: "2ddb360e796fa51be2a7e3c4f9d04c6cd58d10b4"
+  work/WORK_LOG.md: "1d5347e27c491628594004d02bb3f6a865eceabf"
 verified_research_documents:
   thesis.md: "81c8dcaf8ce7083cc898d37e2f0930ef68cd6086"
   docs/w1-research-framing.md: "8a772f0c1f63a033d31d77e4ceb3f83ddd94b897"
   docs/traceability.md: "6baf3c2e466a7ac94004d041472ad0beb1c701cd"
   docs/confidence-and-evidence-model.md: "402a83a787977bc4e06ef0e7c0beef241a61c4fa"
-latest_verified_project_head: "ae02cf3e8bfcb01174a0a112c5257773baad7d33"
+latest_verified_project_head: "839ce905b19c28af3b3eeda23185f0b81399c419"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
