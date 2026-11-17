@@ -161,7 +161,7 @@ verified_research_documents:
   docs/w2-threat-model.md: "d6996524d4c847ce5bb67b3e41be41d8c4b385ca"
   docs/w4-risks-and-evaluation.md: "f53da96c10753b16ddfab2ccce77cceb4ed14682"
   docs/thesis-contribution-and-bias-assessment.md: "d8d3879f41251fcdbf9cf40c1e42cc04a849520d"
-latest_verified_project_head: "6e6a2f5667bfe492ae32f94ee39104cbb80e5f6e"
+latest_verified_project_head: "b83a691cdba8a1fdb88195036cd9b5a2a6a84b0e"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
@@ -207,9 +207,9 @@ automatic_reentry:
 verified_current:
   work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
   work/CHATGPT_PROJECT_INSTRUCTIONS.md: "62e36bf75dd0519e7f1983c847013af2134d9f9d"
-  work/PROJECT_STATE.md: "04c96e6a2d7315e790341b2e9a32baaef9b1ef5a"
+  work/PROJECT_STATE.md: "e9e17d1f6c318565be9477aa25b735654ce75fce"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
-  work/WORK_LOG.md: "00441b2fc28182f5cf052804cbfca9ab517b65c5"
+  work/WORK_LOG.md: "6228c8316733432af093795b3bacab28f1373494"
   work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
   README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
   work/lookup/TASKS.md: "0ae365bceac7971d543c72159bb5a930cba7dfe5"
@@ -257,3 +257,6 @@ verified_current:
 - Route-comparison framework §§5.6–5.7 now separate publication/candidate enumeration, recipient pertinence/retrieval authorisation and retrieval/access observation; unknown service behaviour remains unknown.
 - T-006 remains active. Next: pressure-test the event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression.
 - No new sources, implementation, measurements, experiments, formal proof, independent review or audit were added.
+
+
+- Project checkpoint heading aligned with the discovery decomposition handover; PROJECT_STATE and WORK_LOG were fetched back with exact content equality.
