@@ -194,6 +194,7 @@ The following remain open and must be resolved before protocol-level security cl
 - message envelope format, canonical encoding, and version negotiation;
 - sender, recipient, session, message-set, fragment, and expiry binding;
 - nonce generation and uniqueness enforcement for the selected AEAD;
+- key-schedule input semantics, including the distinction between KDF salt and context-specific information, and the authenticated provenance of identity/session context;
 - replay state, message expiry semantics, and clock assumptions;
 - permitted metadata exposure and retention;
 - recipient discovery, rendezvous and locator lifetime;
@@ -207,6 +208,8 @@ The following remain open and must be resolved before protocol-level security cl
 - handling of corrupted images and platform transformations;
 - threshold value, share distribution, participant authentication, collusion threshold, and recovery authorization; and
 - test cases, acceptance thresholds, and independent review criteria.
+
+The [protocol boundary analysis](protocol-boundary-analysis.md) expands these cryptographic questions into key hierarchy, KDF salt versus context input, identity/transcript binding, AEAD nonce uniqueness, authenticated associated data, replay/order state and downgrade-resistant route fallback. It is a design-obligation record, not a selected protocol or implementation. W2 retains the threats and acceptance boundary; W3 carries the responsibility decomposition; W4 carries the proposed evaluation conditions.
 
 ## 10. Evaluation and acceptance criteria
 
