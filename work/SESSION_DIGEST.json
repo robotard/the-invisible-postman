@@ -215,15 +215,15 @@
     "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
   ],
   "verified": {
-    "work/README.md": "87af6d60e02598929a01fc311a25f73f9abccdc6",
-    "work/PROJECT_STATE.md": "494486517e1fd86852c5eef83fe42755d3bad79f",
-    "work/WORKPLAN.md": "2ddb360e796fa51be2a7e3c4f9d04c6cd58d10b4",
-    "work/WORK_LOG.md": "6da4820d6eaae98dc7178ac2e1715123fc4f5fc3",
-    "work/lookup/TASKS.md": "1561731adf5b2608a45f57209c555bd44eb3dfa3",
-    "work/lookup/TASKS.json": "7c49fca455074620bfe05cab5ed32544c03dc6f5",
+    "work/README.md": "012d32415660e384f6c8c31ce5b544d52af341b8",
+    "work/PROJECT_STATE.md": "ab3532c3b90b0c29530383ac584e7038be95d666",
+    "work/WORKPLAN.md": "e9f0676ec7fe7793ab4ab15a6400f2ca1d7279fd",
+    "work/WORK_LOG.md": "6024c540d525ef90530c0c77a42fcb6f930052b9",
+    "work/lookup/TASKS.md": "0db503ae645546b05cbb83ed15a9e6ae235a0307",
+    "work/lookup/TASKS.json": "a1df616a9d826518b654ee583087b8427aadbcf7",
     "README.md": "ce2d0c914df2506c0611518cdeb4b454384dc588",
     "docs/source-register.md": "87b4866d9a4cc2f5d4f9efb8b1714e26887dd673",
-    "work/SESSION_DIGEST.md": "d766b68a49761e0100e79dbfc13f889c0e64b3bc",
+    "work/SESSION_DIGEST.md": "27dcc94d8a486955bb25e1fa892ea692088c6983",
     "docs/confidence-and-evidence-model.md": "402a83a787977bc4e06ef0e7c0beef241a61c4fa",
     "thesis.md": "cbc06935901d007542cec32a44332ac8b975baa6",
     "docs/w1-research-framing.md": "8a772f0c1f63a033d31d77e4ceb3f83ddd94b897",
@@ -237,12 +237,12 @@
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
-    "Fetch live default branch and both digests; read PROJECT_STATE.md, WORKPLAN.md, WORK_LOG.md and relevant research documents.",
-    "Identify verified completions, remaining work, blockers, dependencies and next unblocked action without asking the user to repeat project history.",
-    "After meaningful progress update affected research/supporting files and WORK_LOG.md; reconcile PROJECT_STATE.md.",
-    "Change WORKPLAN.md only when roadmap, priorities, dependencies or workflow genuinely change.",
-    "Fetch every changed file and verify exact saved content.",
-    "At close verify PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; refresh Markdown digest; refresh JSON digest last; fetch and verify both."
+    "Read live main, both digests, PROJECT_STATE, WORKPLAN, WORK_LOG and only the research files needed for the next task.",
+    "Resolve the next unblocked task from the keyed registry work/lookup/TASKS.json; do not ask the user to restate recorded context.",
+    "Do the substantive work in thesis/research/supporting documents; update task status/next_action and WORK_LOG before committing; reconcile PROJECT_STATE. Change WORKPLAN only when sequence, priority, dependency or workflow changes.",
+    "Make one coherent commit per work unit, with stable checkpoint ID and task key(s); do not create micro-commits.",
+    "After every commit fetch the commit and every changed file; verify exact saved content and applicable checks. Record read-back evidence; only then report completion.",
+    "At handover reconcile PROJECT_STATE, WORKPLAN and WORK_LOG; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests."
   ],
   "diagram_policy": {
     "format": "Genuine visual illustrations; never ASCII art.",
@@ -288,7 +288,45 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "37076ccccbbf11d58d83653b1f22a4bbc3d0d4a2",
-  "immediate_next_action": "T-001: seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional access; retain partial-review status.",
-  "latest_verified_project_head": "e838e4de8d4b85556c7a00368f561a616287c4e1"
+  "latest_commit_before_json_digest_refresh": "f1be36261017aa5d01a1ad5bcd1de445fa958f75",
+  "immediate_next_action": "T-001: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access; retain partial-review status. Continue T-002/T-003 access work where useful.",
+  "latest_verified_project_head": "f1be36261017aa5d01a1ad5bcd1de445fa958f75",
+  "work_registry": {
+    "schema": "tip.work.registry.v3",
+    "canonical": "work/lookup/TASKS.json",
+    "key_format": "T-###",
+    "structure": "tasks is an object keyed by immutable task ID; each value stores status, priority, targets, dependencies, next_action, blockers and completion_rule.",
+    "markdown_role": "Human-readable index only: work/lookup/TASKS.md"
+  },
+  "commit_checkpoint": {
+    "checkpoint_id": "TIP-WORKFLOW-2026-11-17",
+    "rule": "Every commit is one coherent work checkpoint; update task/work records before commit; fetch commit and changed files after commit; verify exact saved content and applicable checks; only then report completion.",
+    "commits": [
+      {
+        "id": "TIP-WORKFLOW-2026-11-17-A",
+        "sha": "c3767d9b7c547f811e76a56c817ef70fcb73672a",
+        "path": "work/README.md",
+        "readback": "exact_match"
+      },
+      {
+        "id": "TIP-WORKFLOW-2026-11-17-B",
+        "sha": "51821d76a0138c386b9aec31befe983ca418bd5d",
+        "path": "work/WORKPLAN.md",
+        "readback": "exact_match"
+      },
+      {
+        "id": "TIP-WORKFLOW-2026-11-17-C",
+        "sha": "009f59af236130fce25ed630dea8c49dadb5970b",
+        "path": "work/lookup/TASKS.json",
+        "readback": "exact_match"
+      },
+      {
+        "id": "TIP-WORKFLOW-2026-11-17-D",
+        "sha": "64224e48a70e903303066539daa1e0e2a676bf72",
+        "path": "work/lookup/TASKS.md",
+        "readback": "exact_match"
+      }
+    ],
+    "no_research_status_change": true
+  }
 }
