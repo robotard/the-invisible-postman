@@ -81,6 +81,16 @@ Distinct per-message identifiers can be mapped to a conversation locally by the 
 
 **Design rule:** distinguish *linkability required for correct recipient reconstruction* from *linkability exposed to observers*. A design cannot simply delete all links; it must decide which party needs which relationship, at what stage, and under which trust assumption.
 
+### 4.7 Discovery is not a single lookup
+
+For comparison and threat analysis, decompose discovery into bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence and retrieval authorisation, and endpoint conversation association. These stages answer different questions and may be controlled by different actors. A recipient may already possess an authenticated capability but still need to locate the relevant carrier; a service may authorise a retrieval without knowing the human identity behind the capability; and an endpoint may authenticate a fragment after retrieval without proving that the publication or retrieval path was private.
+
+The distinction matters when comparing established systems. OMR/GOMR target recipient-message pertinence under their board/detector models; they do not make publication events disappear or replace endpoint message authentication. Oblivious Signaling shifts work towards uniform sender-side updates and relies on an external anonymous channel for sender anonymity. Remise's two-server privacy depends on non-collusion, while bearer-token distribution remains out of band. Echomix/Pigeonhole integrates capability-derived addressing with asynchronous storage and role separation, but capability distribution and the service/network views remain explicit parts of its model. None should be reduced to the generic label “private discovery”.
+
+A privacy claim must name the event and observer. Hiding which item a recipient queries is not the same as hiding who published it, hiding the query's network source, hiding capability use, preventing a platform from correlating carrier objects, or concealing the later endpoint association. Out-of-band distribution changes the observer boundary; it does not eliminate the boundary. A capability can grant access while leaving use visible to the receiving service. Endpoint-local conversation mapping minimises public continuity identifiers but is not a candidate-enumeration mechanism.
+
+For each deployment, map the full chain—bootstrap, publication, enumeration, pertinence/authorisation, retrieval, extraction, endpoint validation and conversation association—to its responsible actor, observers, retained metadata, collusion assumptions and failure modes. Keep availability and suppression separate from confidentiality and pertinence privacy. This decomposition is an analytical requirement, not a claim that any one mechanism is selected.
+
 ## 5. Steganographic embedding across multiple carriers
 
 ### 5.1 Per-carrier and set-level concealment are different
