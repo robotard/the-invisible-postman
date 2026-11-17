@@ -67,3 +67,19 @@ Use the task key(s) as the stable lookup identity, plus a dated checkpoint label
 The two session digests are refreshed only at a handover/close checkpoint, after state, plan and log are reconciled. Refresh Markdown first and JSON last. Verify both against the source records. Do not refresh both digests after every tiny edit.
 
 This is the single commit discipline for research, thesis, supporting documents and operational changes. No commit is exempt.
+
+## Sprint working-set and thesis-first execution
+
+The working copy for a sprint is the assistant's active in-session cache, not a requirement for the user to maintain a local clone. GitHub `main` remains the durable authority.
+
+1. Read the live branch head and relevant work records at sprint entry.
+2. Hydrate only files needed for the selected work unit. Retain each file's content, path and baseline blob SHA in the active working set.
+3. Keep files cached while in scope. Do not fetch the same unchanged file again for every edit. Expand scope only when a dependency or substantive integration requires it.
+4. Track edits against cached baselines, inspect the coherent multi-file diff, and check cross-document terminology, citations, links and claims before committing.
+5. If the remote head changes, inspect changed paths and reconcile against the new baseline. Never overwrite concurrent changes silently.
+6. Commit one coherent research/thesis unit using the current-head lease. Fetch the resulting commit and changed files once for exact read-back verification.
+7. Release the working set when the workstream is complete. A later session rehydrates from GitHub; the in-session cache is not durable filesystem storage.
+
+**Priority rule:** thesis drafting and integration come first. Research acquisition is pursued where it resolves a material claim, method, comparison or evidential weakness; inaccessible sources do not freeze unrelated manuscript construction. Keep claims qualified where evidence is missing and continue with other useful thesis work. Update task records only when work genuinely starts, changes status, completes or becomes blocked. Operational record maintenance must not displace the thesis work it exists to support.
+
+**Sprint sequence:** READ → SELECT → DRAFT → RESEARCH → INTEGRATE → CHECK → COMMIT → VERIFY → CONTINUE.
