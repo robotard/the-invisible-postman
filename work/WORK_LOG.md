@@ -1431,3 +1431,9 @@ The eight sequential GitHub Contents API commits were fetched from the live main
 - work/WORK_LOG.md — commit 6280c4cf077cbd0f12561111441c9e43331fb5c9; read-back blob 9f3431af883896fa80f5062a7c802fb13facad1d.
 
 The task registry confirms T-006 is in_progress and next; T-001–T-003 remain in_progress for parallel source access; T-004 remains ready; T-007 remains blocked pending stable synthesis. Read-back confirmed the thesis sections, W3 and multi-message integration, thesis-first plan, cache discipline and state record. No new sources or experimental evidence were obtained.
+
+
+### Cross-reference correction · thesis-first sprint
+
+- Corrected the W3 relative link to the canonical file name, docs/multi-message-linkage-and-steganographic-carriage.md.
+- W3 corrective commit: dc972d88a9700c860bb76c406a2239dc79147434; resulting blob: dfe97fbcfdde96d940e414a3dc976c7dcc3ec28f. Exact read-back and relative-path existence checked in the close verification.
