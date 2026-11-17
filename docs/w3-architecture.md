@@ -117,6 +117,8 @@ A single logical message may use one carrier or several fragment carriers. Redun
 > **Must not imply:** That GIF is a selected route, that frames are separate posts, that sanitizer-aware embedding is part of the proposed architecture, or that carrier extraction authenticates the message.
 >
 #### Relationship authority and receiver acceptance
+Endpoint authentication must not be used as shorthand for every identity claim. Integrity/authenticity under a symmetric key proves only that an entity with the relevant key could have produced the authenticated object; it does not distinguish among multiple key holders. A signature or authenticated session can support attribution to a protocol key/session, while attribution to a person remains dependent on the separate peer-key verification and identity-assurance process. Manifest and fragment-membership checks must identify which key/session authorises the relationship. This is a protocol obligation; no sender-authentication construction is selected here.
+
 
 The package manager and route adapters must preserve a strict distinction between endpoint-authenticated relationships and transport observations. The endpoint owns the authoritative graph linking logical messages, protected objects, fragment sets, fragments, conversations, retries and cross-route copies. A carrier's filename, metadata, public set token or claimed index is only an untrusted assertion until checked against authenticated endpoint context. A route observer may infer relationships from timing, size, account, provenance or retrieval patterns; those inferences are not protocol state and must not drive endpoint acceptance.
 
