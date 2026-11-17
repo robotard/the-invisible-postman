@@ -65,7 +65,7 @@ The route-comparison lifecycle/event ledger has now been extended with profile-s
 
 ## Active work, in priority order
 
-1. **Thesis construction and integration (T-006, active):** continue writing and integrating the strongest next argument into `thesis.md`. This sprint formalises relationship authority and receiver acceptance across fragment sets, conversation continuity, retries, redundancy and cross-route carriage, aligned with W3 and the dedicated multi-message analysis.
+1. **Thesis construction and integration (T-006, active):** continue writing and integrating the strongest next argument into `thesis.md`. This sprint formalises relationship authority and receiver acceptance across fragment sets, conversation continuity, retries, redundancy and cross-route carriage, aligned with W3 and the dedicated multi-message analysis; thesis §10.2, W4 E5 and RQ4/RQ10 traceability now carry the corresponding evaluation and evidence obligations.
 2. **Evidence gaps (T-001–T-003, active in parallel):** continue full-text/code access work for SRC-033/034/036, SRC-046–048 and SRC-049 when it materially changes a claim. Access barriers do not block unrelated thesis drafting. Keep partial-review labels and narrow claims to inspected evidence.
 3. **Route evidence (T-004, ready):** pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence; do not present protocol or documentation profiles as deployed tests.
 4. **Coherence and challenge (T-006/T-007):** align terms, citations, observer assumptions, message relationship semantics, delivery events and confidence/evidence claims. T-007 remains gated until synthesis stabilises.
