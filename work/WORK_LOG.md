@@ -1226,3 +1226,29 @@ Next substantive action remains T-001: seek full texts for SRC-033, SRC-034 and 
 Seek author manuscripts, institutional repository copies or library-accessible full texts for all three sources. If unavailable, record the access route and retain partial-review status; then proceed to T-002 only as a separately tracked task, without silently treating T-001 as complete.
 
 **Theory only · No implementation · Not audited.**
+
+
+## 2026-11-17 · Thesis route profiles and lifecycle/observer synthesis integrated
+
+### Work performed
+
+- Merged the six evidence-bounded route profiles from `docs/route-comparison-framework.md` into thesis §8.2: IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE.
+- Preserved the distinct evidence classes and configuration limits: published literature conditions, partial publisher-indexed/code-inspection evidence, service documentation, protocol specification and integrated paper/specification reference. No profile is represented as a pinned deployed evaluation.
+- Expanded thesis §8.8 with a lifecycle/observer comparison covering identity/session preparation, publication, discovery/retrieval, transformation, validation and reconstruction, retry/ordering/continuity, expiry/retention and observer visibility.
+- Integrated the prior-art pressure into the thesis decision analysis: SRC-043 already demonstrates multi-image fragmentation, numbered fragments, redundant image carriage and reconstruction using robust watermarking; SRC-044–SRC-045 establish the need to consider pooled detection under their stated assumptions.
+- Added a bounded conclusion: current evidence establishes a platform-transformation research burden for image carriage, not a demonstrated privacy, reliability or delivery advantage. Its decision relevance remains conditional on a measurable use-case benefit exceeding transformation, collection-detection, discovery, metadata and usability costs.
+- Reconciled the verified thesis result into PROJECT_STATE.md. WORKPLAN.md remains unchanged because the stable sequence and dependencies have not changed.
+
+### Verification and limits
+
+- Both thesis edits were committed to `main` and fetched back; exact saved content matched.
+- Thesis structure checks found one §8.2 heading, one §8.8 heading and one following §9 heading. All six profile identifiers and the decision-analysis section are present.
+- The route profiles remain documentary. No actual Dropbox, Signal or Katzenpost/Pigeonhole deployment/client configuration was pinned; no platform, route, cryptographic or usability experiment was run.
+- SRC-033, SRC-034 and SRC-036 remain partial reviews. No full-text review, independent reproduction, implementation, formal proof, peer review or audit is claimed.
+- No diagrams were created; existing text-only illustration prompts remain deferred until the argument and evidence stabilise.
+
+### Exact next action
+
+Continue T-001 by seeking complete texts for SRC-033, SRC-034 and SRC-036. Preserve partial-review labels until full methods, results and limitations are inspected. T-004 remains open for actual service/client/release/configuration pinning after the source-review sequence.
+
+**Theory only · No implementation · Not audited.**
