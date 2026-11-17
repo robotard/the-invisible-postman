@@ -51,7 +51,7 @@ next_task: T-001
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "One active manuscript at thesis.md in staging; central argument, research question, provisional proposition, four contribution strands, research method and initial documentary route comparison integrated. Originality and review readiness remain open."
+  thesis: "One active manuscript at thesis.md in staging; §8.2 now includes six named evidence-bounded route profiles and §8.8 integrates lifecycle/observer comparison plus conditional image-carriage decision analysis. No deployed route advantage is established; originality and review readiness remain open."
   thesis_argument:
     central_question: "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?"
     proposition: "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence."
@@ -65,7 +65,7 @@ current_state:
   steganography: "Separates per-carrier concealment, robust watermarking, extraction/reconstruction, collection-level steganalysis and observer linkage. SRC-043–SRC-045 cover multi-image redundancy and batch detection; SRC-049 covers within-GIF frame redundancy."
   sanitization: "SRC-036 and SRC-046–SRC-047 describe active payload sanitization; SRC-048 describes keyed counter-adaptation to a known sanitizer. These are partial reviews and do not establish deployment by any named platform."
   gif_code_review: "SRC-049 README, core/method_core.py and scripts/run_stego.py inspected at pinned external repo commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d. Two redundancy levels: d-fold repetition within frame and majority voting across 16 frames. Receiver asserts a complete 16-frame/key set; missing-frame erasure tolerance is not established. Raw ChaCha20 path shows no authentication tag; 32-bit NumPy PRNG fallback is labelled TEST ONLY. Local keys/group ID are not an authenticated message-set protocol. Code not executed or audited; paper/formal proof unreviewed."
-  route_profiles: "Six evidence-bounded profiles; documentary comparison and expanded lifecycle/event/observer ledger. Live client/service versions and configurations remain unpinned."
+  route_profiles: "Six named profiles integrated into thesis §8.2: Qiao, MRAS, DRAS, Dropbox shared link, Signal protocol reference and Echomix/Pigeonhole. Thesis §8.8 integrates lifecycle/observer comparison; actual deployed client/service versions and configurations remain unpinned."
   protocol_analysis: "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed as obligations; no protocol selected."
   confidence_evidence: "Claim-centred model distinguishes object validity, identity, fragment membership, set completeness, conversation continuity, observer linkage and delivery events; SRC-034/SRC-036 documentary examples added; endpoint-local/minimal-disclosure direction; no numeric score. Not independently validated."
   implementation: none
@@ -80,7 +80,7 @@ completed:
   - "Static audit of all 29 Markdown files: no broken repository-relative links or Markdown image references; no active ZIP/archive-generation instructions."
   - "All 12 unique W1-W4 illustration prompt IDs match the diagram index exactly."
   - "Each W1-W4 document contains aligned definition/comparison blocks and package, message-multiplicity, steganography, animated-carrier and sanitizer distinctions."
-  - "All changed GitHub files were fetched back and exact content verified."
+  - "All changed GitHub files were fetched back and exact content verified. On 2026-11-17, six evidence-bounded route profiles were integrated into thesis §8.2 and lifecycle/observer plus conditional image-carriage decision analysis into §8.8; exact read-back verified."
   - "The operational work area was moved to work/ and its disposable boundary defined."
   - "Thesis lifecycle clarified: one manuscript in staging; production is a frozen release of the same thesis."
   - "The work backlog indexes research, route analysis, thesis synthesis, diagrams, peer review and release integrity."
@@ -95,7 +95,7 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/author record only; full method/evaluation not inspected."
   SRC-049: "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
 next_actions:
-  - "Continue thesis construction by pinning named/versioned route profiles and integrating source-backed lifecycle/observer evidence into §8; determine whether image carriage has a decision-relevant difference against the integrated baseline."
+  - "Continue T-001: seek full texts for SRC-033, SRC-034 and SRC-036; retain partial-review labels until full methods, results and limitations are inspected. Route profiles and lifecycle/observer synthesis are now integrated into thesis §8.2 and §8.8."
   - "Continue seeking complete paper texts for SRC-033, SRC-034 and SRC-036; all three reviews remain partial until full methods, results and limitations are inspected."
   - "Inspect SRC-046–SRC-048 full texts and SRC-047 implementation where available."
   - "Review SRC-049 full paper/formal security argument and complete experimental results; selected code has been read but not run or audited."
@@ -131,11 +131,11 @@ invariants:
   - "Transport acceptance is not endpoint receipt, decryption, display, human reading or comprehension."
   - "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
 verified_working_documents:
-  work/PROJECT_STATE.md: "aecbef0ab6812ba16cfb5991092ecaa7fcc7888f"
+  work/PROJECT_STATE.md: "4aae9b8b7ee8c22a09dc29c241794415009824ad"
   work/WORKPLAN.md: "9d22a5d1b54dff351b60e6cb9348739e66b6a727"
-  work/WORK_LOG.md: "bfc1baa942221ea18f5a4193b91965a4d827618b"
+  work/WORK_LOG.md: "2c2aeaef52ee6fcfec8fd0b8c62a9b2eca7255c2"
 verified_research_documents:
-  thesis.md: "1b61f46a7da317e6c182ccbfa41fcda612cabab1"
+  thesis.md: "81c8dcaf8ce7083cc898d37e2f0930ef68cd6086"
   docs/w1-research-framing.md: "8a772f0c1f63a033d31d77e4ceb3f83ddd94b897"
   docs/traceability.md: "6baf3c2e466a7ac94004d041472ad0beb1c701cd"
   docs/confidence-and-evidence-model.md: "402a83a787977bc4e06ef0e7c0beef241a61c4fa"
