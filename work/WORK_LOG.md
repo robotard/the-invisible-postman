@@ -1463,3 +1463,12 @@ The task registry confirms T-006 is in_progress and next; T-001–T-003 remain i
 - Removed the stale statement that T-001 was the next unblocked action and corrected duplicate numbering in the continuation list.
 - Updated the T-006 registry next action to record the completed sender-attribution integration and direct the next session to the next consequential thesis gap.
 - No task status was changed. T-006 remains in_progress.
+
+
+## 2026-11-17 · Evaluation and traceability integration for relationship authority
+
+- Extended thesis §10.2 with explicit relationship-authority/linkage and receiver-acceptance evaluation domains.
+- Extended W4 E5 with questions and proposed acceptance conditions for authenticated versus inferred relationships, untrusted carrier assertions, distinct receiver states and event-specific acknowledgements.
+- Updated traceability RQ4 and the RQ10 claim/evidence mapping to connect relationship authority and receiver acceptance to the thesis, W3, W4 E5 and the multi-message analysis.
+- Added the in-session cached working-set rule to the copy-ready ChatGPT Project Instructions: hydrate on scope entry, retain baseline blob SHAs while active, expand only for dependencies, and re-fetch after conflict/commit rather than every edit.
+- No new source was obtained. These are conceptual requirements and proposed evaluation criteria, not implemented or tested behaviour.
