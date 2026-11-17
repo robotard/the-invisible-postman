@@ -1362,3 +1362,11 @@ Continue T-001 as recorded in the keyed registry: seek complete SRC-033, SRC-034
 - The JSON digest was refreshed last, parsed successfully after fetch, and its verified map matches the fetched README, WORKPLAN, PROJECT_STATE, WORK_LOG, TASKS.md, TASKS.json and Markdown digest blobs.
 - Corrected the README section heading to make the WORKPLAN link anchor exact; the heading-only correction is in the next commit and was fetched back with exact content.
 - The final digest refresh below records the corrected README blob and current pre-JSON head. The final JSON commit itself is verified by exact read-back after creation; no recursive self-hash is stored.
+
+## Registry status semantics correction · 2026-11-17
+
+Final consistency review caught an over-broad conversion: the initial v3 migration mapped every legacy open task to in_progress. That would falsely imply active execution. Corrected T-004 and T-006 to ready, and T-007 to blocked pending T-006 synthesis/stabilisation. T-001–T-003 remain in_progress because source-acquisition work is active; T-005 remains complete; diagram/review/release gates retain their deferred or blocked states.
+
+- Registry correction commit: 10e4a357c596de3589ca92e4f740b0614d59348f (work/lookup/TASKS.json), exact read-back verified.
+- Human index correction commit: 3a546c229398d0f67a6f216ddba5136333c3e772 (work/lookup/TASKS.md), exact read-back verified.
+- This correction changes workflow metadata only; research priorities, evidence claims and thesis content are unchanged.
