@@ -1355,3 +1355,10 @@ Each of the following commits was followed by fetching its changed file from mai
 ### Exact next action
 
 Continue T-001 as recorded in the keyed registry: seek complete SRC-033, SRC-034 and SRC-036 texts through author/institutional access, retaining partial-review status. Continue T-002/T-003 access work where useful. For every resulting work unit, apply the same pre-commit update, one coherent commit, exact post-commit read-back and factual recording.
+
+## Checkpoint close · 2026-11-17
+
+- Recorded and read-back verified the operational handover updates in commit 5c501f2 (WORK_LOG), 2b5794f (PROJECT_STATE), f1be362 (SESSION_DIGEST.md) and 0ebfd71 (SESSION_DIGEST.json).
+- The JSON digest was refreshed last, parsed successfully after fetch, and its verified map matches the fetched README, WORKPLAN, PROJECT_STATE, WORK_LOG, TASKS.md, TASKS.json and Markdown digest blobs.
+- Corrected the README section heading to make the WORKPLAN link anchor exact; the heading-only correction is in the next commit and was fetched back with exact content.
+- The final digest refresh below records the corrected README blob and current pre-JSON head. The final JSON commit itself is verified by exact read-back after creation; no recursive self-hash is stored.
