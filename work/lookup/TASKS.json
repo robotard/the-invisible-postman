@@ -256,6 +256,28 @@
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-17"
+    },
+    "T-013": {
+      "id": "T-013",
+      "type": "research_model",
+      "title": "Formalise privacy-preserving verifiable message-set closure (Candidate D)",
+      "status": "ready",
+      "priority": 1,
+      "targets": [
+        "thesis.md",
+        "docs/prior-art-comparison.md",
+        "docs/thesis-contribution-and-bias-assessment.md",
+        "docs/source-register.md",
+        "docs/observer-property-matrix.md",
+        "docs/traceability.md"
+      ],
+      "depends_on": [
+        "T-007"
+      ],
+      "next_action": "Define the adversary/collusion model, authenticated publication snapshot and admission boundary, hidden-recipient-predicate retrieval-completeness statement, sender-authenticated hiding manifest and endpoint closure predicate, leakage function and cost model. Compare full APIR/AAD/OMR/GOMR/StOMR/UnifOMR and SRC-052 composition before proposing a new mechanism. Determine whether an existing composition already satisfies the model; otherwise pursue a construction, rigorous impossibility/trade-off result or negative feasibility result. Do not claim novelty before this test.",
+      "blockers": [],
+      "completion_rule": "A formal, source-grounded model and complete nearest-prior-art comparison are integrated into thesis and supporting research; proof obligations, leakage, assumptions, costs and novelty disposition are explicit; commits and exact read-back verified.",
+      "last_updated": "2026-11-18"
     }
   },
   "evidence_access_notes": {
