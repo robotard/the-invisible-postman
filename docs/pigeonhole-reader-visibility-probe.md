@@ -50,7 +50,7 @@ Use one temporary CopyStream, addressed by its source WriteCap, with two envelop
 | C1 · First-write failure control | fails | not attempted | Poll A and B | Confirm no successful prefix exists when the first dispatch fails |
 | C2 · Later-write rejection | succeeds and persists | both intermediate replicas reject | Poll while paused after E1, immediately after E2 failure, and after terminal sender status | Primary AllOrNothing reader-visibility test |
 | C3 · Later-write timeout | succeeds and persists | no qualifying reply before retry budget expires | Poll during retry and after terminal failure | Distinguish replica rejection from transport uncertainty |
-| C4 · Copy-command deduplication | repeat the same Copy command with the same temporary-stream WriteCap during the 30-minute cache TTL, then (only if controllable) after expiry | record cached terminal status versus reprocessing; identical E1 write should be idempotent, unchanged E2 conflict should fail again | Distinguish polling/retransmission from a new processing attempt |
+| C4 · Copy-command deduplication | same stream and identical E1 write | unchanged E2 conflict | Reissue the same Copy command with the same temporary-stream WriteCap during the 30-minute cache TTL, then (only if controllable) after expiry; compare cached terminal status with any genuine reprocessing and read both destinations | Distinguish status polling/retransmission from a new processing attempt |
 
 For C2, the deterministic failure should be a replica rejection such as InvalidSignature or a controlled destination conflict, with the exact error code and per-replica replies recorded. Do not use an uncontrolled network interruption as the only failure case.
 
@@ -67,7 +67,7 @@ At each time point, capture the sender, replica and reader views independently:
 Record three evidence ledgers:
 
 1. **Sender/service:** CopyCommand request ID; WriteCap hash; CopyStatus; ErrorCode; FailedEnvelopeIndex (expected 2 in the C2 two-envelope case); per-envelope dispatch result; both intermediate replica IDs/replies; retries and timestamps.
-2. **Replica persistence:** envelope hash; replica ID; accepted/rejected status; durable-write timestamp; idempotent retry/conflict result. Direct storage inspection is diagnostic evidence, not a substitute for the reader API.
+2. **Replica store:** envelope hash; replica ID; accepted/rejected status; database Put/replica-acceptance timestamp; idempotent retry/conflict result. The inspected path does not explicitly request synchronous RocksDB writes, so do not label this crash-durable persistence. Direct storage inspection is diagnostic evidence, not a substitute for the reader API.
 3. **Recipient endpoint:** ReadCap/API result for A and B at T0–T4; returned envelope IDs and digests; authentication/decryption/validation outcome; explicit endpoint acceptance/rejection state.
 
 The primary observation is the recipient's normal ReadCap path while the test barrier is held. Record a failed read, empty result, timeout and unavailable replica separately; do not silently classify them as “not present”.
