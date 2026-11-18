@@ -29,7 +29,7 @@ Whole-object carriage is not inherently more secure or reliable. Its suitability
 
 ### 2.2 Segmented representation
 
-Where a defined constraint or objective warrants it, the sender may divide the protected object into multiple components for publication or carriage. The recipient collects the relevant components, validates their association and membership, establishes set completeness under the declared rule, and reconstructs the protected object before ordinary endpoint acceptance.
+Where a defined constraint or objective warrants it, the sender may divide the protected object into multiple components for publication or carriage. The recipient collects the relevant components, validates their association and membership from authenticated information carried with the protected set, establishes set completeness under the declared rule, and reconstructs the protected object before ordinary endpoint acceptance. No server, directory, database, fixed address or external resolver is required to identify, link, decrypt or accept the parts.
 
 Segmentation may be useful where object-size limits, partial availability, independent placement, recovery requirements or other measured constraints make whole-object carriage unsuitable. These are conditional motivations, not assumed benefits.
 
@@ -83,11 +83,11 @@ A design may use one carrier for several components, several carriers on one rou
 
 ## 6. Optional linkage granularity
 
-A segmented representation requires the recipient to establish which components belong together. A simple authenticated manifest or equivalent set-binding structure is an obvious baseline against which more elaborate linkage proposals should be compared.
+A segmented representation requires the recipient to establish which components belong together. That relationship must be recoverable and verifiable at the endpoint from authenticated information carried with the components or within the protected set itself. A simple authenticated manifest or equivalent self-contained set-binding structure is an obvious baseline against which more elaborate linkage proposals should be compared; an externally hosted manifest, lookup service or persistent address mapping is not an architectural dependency.
 
 A local-neighbour arrangement is one possible research hypothesis: each component carries or references authenticated information about an adjacent component, with explicit start and termination conditions. It may reduce the need for every component to expose a complete public map, but it does not automatically provide privacy, completeness, availability or resistance to collection-level correlation. An observer who obtains the whole set may reconstruct the chain; missing or conflicting links can also complicate recovery.
 
-Neighbour-bound linkage should therefore remain an optional candidate, not a prescribed architecture. Compare it with a conventional authenticated manifest and simpler indexed multipart formats. Assess what each reveals to the recipient, carrier, storage provider and collection-level observer, and what each costs in retrieval, validation, recovery and failure handling.
+Neighbour-bound linkage should therefore remain an optional candidate, not a prescribed architecture. Compare it with a conventional authenticated manifest and simpler indexed multipart formats. Assess what each reveals to the recipient, carrier and collection-level observer, and what each costs in retrieval, validation, recovery and failure handling. A storage provider may be an incidental carrier in a comparison, but it must not become the authoritative source of set membership or a required reconstruction service.
 
 Cryptographic terminology must remain exact. Salts support specified key-derivation purposes; nonces provide uniqueness or freshness where required by a construction. Neither independently authenticates a relationship. Authenticated linkage needs a defined cryptographic binding, appropriate key scope and context. Encryption alone does not prove that a reference is authentic.
 
