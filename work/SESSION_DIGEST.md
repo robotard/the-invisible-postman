@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-18 · StOMR and UnifOMR primary papers directly reviewed; Pigeonhole probe refined; route/fault matrix staged and audited; T-006 complete; T-001 next"
+checkpoint: "2026-11-18 · StOMR/UnifOMR primary papers reviewed; MRAS/DRAS and GIF code inspected; T-006 complete; T-001–T-003 access active"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only_not_chat_footer
@@ -102,13 +102,13 @@ completed:
   - "Source-inspected pinned MRAS/DRAS MATLAB repositories without execution; recorded code-level limits separately from inaccessible full-paper methods/results."
   - "Audited the route/fault matrix for minimality, separated source-specific diagnostics from common faults, staged the three primary treatments and reassessed Candidate C; no decision-relevant empirical result or rigorous counterexample established."
 source_review_boundaries:
-  SRC-033: "Publisher preview expanded on 2026-11-17: matching recompression, DCT stabilisation/lattice embedding/postprocessing, metrics/comparators and LinkedIn test; full equations/tables/configuration/limitations unavailable. Public MATLAB demo inspected, not run. README-labelled MRAS MATLAB source pinned and inspected; no build or execution."
-  SRC-034: "Publisher preview expanded on 2026-11-17: downward recompression, RoLoS/CARE, PMAS comparison and Q95→Q85/Q80/Q75; full derivation/tables/platform procedure/limitations unavailable. Public MATLAB demo inspected, not run. README-labelled DRAS MATLAB source pinned and inspected; no build or execution."
+  SRC-033: "Publisher preview expanded on 2026-11-17: matching recompression, DCT stabilisation/lattice embedding/postprocessing, metrics/comparators and LinkedIn test; full equations/tables/configuration/limitations unavailable. README-labelled MRAS MATLAB source pinned and inspected; ten-image local QF80 demo, unused midFreqPattern argument and per-image message prefix recorded; no build or execution."
+  SRC-034: "Publisher preview expanded on 2026-11-17: downward recompression, RoLoS/CARE, PMAS comparison and Q95→Q85/Q80/Q75; full derivation/tables/platform procedure/limitations unavailable. README-labelled DRAS MATLAB source pinned and inspected; ten-image local QF95-to-QF80 demo, per-image message prefix and possible STC payload truncation recorded; no build or execution."
   SRC-036: "Publisher preview confirms attack/filtering plus image-quality optimisation CNN, BOSSbase/BOWS2, 8,000/2,000 split and QF75; complete equations/training/results/generalisation remain unavailable."
-  SRC-046: "Abstract/metadata only; OpenReview full-text access blocked by browser verification; no full paper/results."
-  SRC-047: "Author repository located; README inspected (Scaling-Net/SC-Net and external model download); source files/model weights not retrieved."
-  SRC-048: "IEEE abstract/metadata inspected; full method/evaluation not inspected."
-  SRC-049: "Pinned README/selected implementation inspected, not executed; indexed abstract summary added; full paper/formal security argument/results unreviewed."
+  SRC-046: "Abstract/metadata only; OpenReview forum/PDF and IEEE PDF endpoints remain blocked by browser/access checks; no full paper/results."
+  SRC-047: "Author repository tree re-fetched at commit 44474d9ca551bb052d5796fb43181612fb160763; it contains only README.md describing Scaling-Net/SC-Net and an external Baidu model archive. No source files, model weights or test scripts; archive inaccessible."
+  SRC-048: "IEEE abstract/metadata inspected; full method/evaluation not inspected. ResearchGate reports no full text; no author/institutional copy found in the current access pass."
+  SRC-049: "Full repository tree and selected core, sender/receiver, image utility and diffusion pipeline files inspected at pinned commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d. Same group-ID seed is reapplied per frame when crop/drop is enabled, repeating masks and correlating RNG-dependent noise; local .npy key/ground-truth material is persisted; no secure key transport or authenticated message manifest is exposed. No tests, paper PDF, model weights or environment lockfile; no execution or audit. Full paper/formal proof/results remain unreviewed."
   SRC-050: "Full 15-page camera-ready paper directly inspected from user-supplied PDF; S-OMR state evolution, OMR-KEM bootstrap and passive threat model reconciled. Evaluation uses 32-bit tags; Appendix C.1 all-pairs bound is ~0.5 at 2^16 entries (loose, not target-specific); no benchmark reproduced or audit performed."
   SRC-051: "Full 56-page UnifOMR primary paper directly inspected from user-supplied PDF on 2026-11-18. Two-round clue detection plus batch PIR; malicious-detector privacy is distinct from honest-but-curious completeness/soundness; malicious single-server integrity remains open. Algorithm 1 truncates candidates above k̄ without reconciling false-positive candidates with the true-match completeness bound; record as a primary-text accounting ambiguity, not a demonstrated failure. No code/proof/benchmark reproduced."
   SRC-053: "Secondary full-paper assessment read and cross-checked against SRC-051; its capacity-accounting concern is confirmed as a primary-text ambiguity. No implementation or benchmark reproduced."
@@ -118,7 +118,8 @@ source_review_boundaries:
   SRC-043: "Full publisher HTML inspected. Native scheme fragments a file, redundantly embeds each fragment in r images, majority-votes duplicates and marks missing fragment bytes with `?`. Loss benchmark: 1,000 images, 208 fragments, r=4, 832 embedded and 168 non-watermarked; success is restored bytes/total bytes, full recovery at 30% loss and 61.1% byte recovery at 80%. This is partial byte recovery, not authenticated logical-message acceptance."
 next_actions:
   - "T-001: continue seeking complete SRC-033/034/036 papers through author/institutional access; pinned MRAS/DRAS code has been source-inspected but does not replace full-paper methods/results. Preserve partial status if access remains blocked."
-  - "T-002–T-003: continue full-text/code access for SRC-046–SRC-049 where complete methods, results, formal argument or implementation materially affect thesis claims."
+  - "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains only a README and external model archive. Resume only if author/institutional papers or model assets become accessible."
+  - "T-003: SRC-049 repository source review is expanded, but the full paper, formal security argument, complete results and model weights remain unavailable; seek a primary paper copy before making formal-security claims."
   - "T-004 (in_progress): pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available; do not treat public source pins as deployments."
   - "T-007: remain gated until T-001–T-004 evidence work and thesis synthesis stabilise; then run targeted terminology, citation, traceability and cross-document checks."
   - "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
@@ -363,24 +364,39 @@ The T-006 keyed registry entry was re-fetched after a mismatch between its earli
 - Contribution assessment: d992b0da0eb1979416e9f94b0843e406089dd597
 
 source_review_update_2026_11_18:
-  SRC-050: "User-supplied 15-page CCS 2026 camera-ready paper directly inspected. Integrated S-OMR evolving state, OMR-KEM bootstrap, passive-only adversary, identity-binding and state-recovery limits, and 32-bit PRF signal collision caveat into source register, prior-art comparison, thesis and route/fault/evidence matrix. No benchmark reproduction or audit."
+  SRC-033/034: "Pinned MRAS/DRAS MATLAB repositories source-inspected; code-level observations integrated, but full papers and complete methods/results remain inaccessible. No code executed."
+  SRC-036: "Renewed publisher/author/ResearchGate/GitHub search did not locate a full paper or identifiable public implementation; partial-review status retained."
+  SRC-046/048: "Renewed OpenReview/IEEE/ResearchGate access attempts remain blocked or report no full text."
+  SRC-047: "Repository tree contains README only; external Baidu model archive could not be retrieved."
+  SRC-049: "Full repository tree and selected implementation paths inspected; repeated per-frame seed/mask and local key-material limitations recorded. Paper/proof/results remain unreviewed; code not executed."
+  SRC-050: "User-supplied 15-page CCS 2026 camera-ready paper directly inspected. Integrated S-OMR evolving state, OMR-KEM bootstrap, passive-only adversary, identity-binding and state-recovery limits, and 32-bit PRF signal collision caveat. No benchmark reproduction or audit."
+  SRC-051: "User-supplied 56-page UnifOMR primary paper directly inspected; two-round clue-detection/batch-PIR, malicious-detector privacy versus honest-but-curious completeness/soundness, open malicious single-server integrity, and candidate-capacity accounting ambiguity integrated. No code/proof/benchmark reproduced."
+  T-006: "Matrix minimality audit and staged three-treatment evaluation reconciled into thesis, route framework, prior-art comparison and W4; Candidate C remains conditional, no controlled result or route ranking."
+  status: "T-006 complete for current evidence set; T-001–T-003 remain active/blocked on full primary sources or external model assets; T-004 remains gated on controlled accounts/deployment."
 
 
 latest_handover_2026_11_18:
   current_task: T-001
   t006: "Complete for current evidence set; matrix minimality audit and Candidate C reassessment integrated. No route test or decision-relevant empirical result."
-  source_review: "StOMR (SRC-050) and UnifOMR (SRC-051) primary papers directly reviewed. MRAS/DRAS code source-inspected, full papers still partial; SRC-036/046/047/048/049 remain at their recorded partial-review boundaries."
+  source_review: "StOMR (SRC-050) and UnifOMR (SRC-051) primary papers directly reviewed. MRAS/DRAS and SRC-049 code source-inspected without execution; SRC-033/034/036 and SRC-046/047/048/049 primary-text/model limitations remain as recorded."
   route_evaluation: "Three primary treatments: SRC-043-style multi-image set, single-file Dropbox object, raw Pigeonhole AllOrNothing; katzenqt separate application gate; Signal reference profile; OMR-family retrieval comparators."
   contribution: "Candidate C remains a conditional evaluation-method candidate only; no route ranking or image-carriage advantage supported."
-  latest_verified_project_head_before_digest_refresh: "0f9a0cbe5282570e9a46fc0a2d8d5d55eb16e775"
+  latest_verified_project_head_before_digest_refresh: "149719f9de2969343f37980b001011efe664aaff"
   current_blob_pins:
-    thesis.md: "54da888ddce66ce24ec1f67e168031205e9a14ff"
-    docs/route-fault-evidence-matrix.md: "6bb7ae3ce467e717a6d221f900ab7f212c5e8afb"
-    docs/route-comparison-framework.md: "b0604975f404863567f5dd0c0614bfb3f6b7bfbb"
+    thesis.md: "1a5b645b6d1679b4a7b5d6d8284a5152b7407f1b"
+    docs/source-register.md: "2f0b35793f3186ff8e860a4537aa37b2b794983a"
+    docs/route-fault-evidence-matrix.md: "bf63de642cc9ffab54cf7587df57e1ebcaef0ab8"
+    docs/route-comparison-framework.md: "536d27d9f3c5a45c5947bbc3f2d353f6b9fdec50"
     docs/prior-art-comparison.md: "ebb515847ff00de1dd1520a9f67b2158678fafc9"
-    docs/w4-risks-and-evaluation.md: "898877b5ae9f68822dcb55ca873b2a8ab8bfd7b6"
+    docs/w1-research-framing.md: "406ce38487165e100f40bfcb8301188d8473b361"
+    docs/w2-threat-model.md: "b3d92faf114e040efd824d4357735b54b40a1de7"
+    docs/w3-architecture.md: "b671469ea0e793435991e9a8fd818b686b67f618"
+    docs/w4-risks-and-evaluation.md: "54c054779152e39d1da861fcc873376c79d4800c"
+    docs/traceability.md: "4e94084770ec5f8084d2ffe89636cb57769bf674"
     docs/thesis-contribution-and-bias-assessment.md: "e6fe72ab08dede1dfd92f00cf636956d5573c26a"
+    docs/observer-property-matrix.md: "436999f5a4cc0558d2c59184857d39d3aeffba0e"
     work/PROJECT_STATE.md: "19223bb9ccddeb9e955a7e9deacabd771ec2a21c"
-    work/WORK_LOG.md: "73c29f1a17b9237114fa3bf3fd26fe2dda145273"
+    work/WORKPLAN.md: "547e71f806f0d2867513cf9e343e4762d7960fd0"
+    work/WORK_LOG.md: "024225ef5082a1b27312bf65321fb1f387db108c"
     work/lookup/TASKS.json: "b049132c16d91576a4974e82b0119c75a11af17b"
     work/lookup/TASKS.md: "3133405db2e01bf20c585757a1f9c2bf17ad4cf2"
