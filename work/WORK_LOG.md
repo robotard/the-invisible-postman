@@ -11,6 +11,10 @@
 - Defined a leakage function covering snapshot/epoch size, result cardinality, query/access count and pattern, timing, bytes/proof size, retries/aborts and manifest length; added a total-cost model for admission, snapshot, retrieval, proof, verification, manifest and gossip.
 - Added a limited pre-admission-omission indistinguishability proposition: without a pre-admission commitment to an expected set or independent receipt path, two worlds differing only in an unsubmitted intended carrier produce identical authenticated verifier views. This is a bounded negative result, not a proof that all Candidate D constructions are impossible.
 - Refined prior-art and contribution-assessment language to state that generic private/verifiable range retrieval is established prior art and Candidate D is only the narrower OMR-specific dynamic-predicate/admission/manifest-closure hypothesis. No construction or novelty claim is made.
+- Added SRC-059 (Nie et al.'s VPRQ, abstract/introduction only) and SRC-060 (Basudan/Alamer, full 13-page paper reviewed); consolidated duplicate SRC-054/SRC-055 entries in the source register. The register now has 60 unique headings, SRC-001 through SRC-060.
+- Added a property-coverage table and explicit composition test in prior-art §4.1. The comparison distinguishes APIR aggregates, vPIR property proofs, multi-query point consistency, 2024 encrypted range-query schemes, 2026 range APIR, AAD, OMR and SRC-052 service completeness.
+- Consolidated the thesis Candidate D model into one consistent notation aligned with prior-art §4.2 (DB_e, Q_R, X_e, K_e, Y_e, M_o, admission receipts and recovery policy). Removed the duplicate model skeleton and made raw-candidate completeness distinct from final filtered-result soundness; corrected the earlier reversed set-inclusion wording.
+- Updated the observer/property matrix, RQ4/RQ7 traceability, workplan source count and task/state records. Candidate D remains in_progress because SRC-056 and SRC-059 full technical texts remain inaccessible.
 
 ### Evidence judgement and limits
 
@@ -23,11 +27,11 @@
 ### Verification
 
 - Updated thesis, prior-art comparison and contribution assessment were fetched after writing and exact saved content was verified. Source-register entries SRC-054–SRC-060 and observer/traceability integrations were checked against the live repository.
-- All claims preserve the full-text versus indexed/abstract-only evidence distinctions.
+- All claims preserve the full-text versus indexed/abstract-only evidence distinctions. Source-register headings were checked for uniqueness (60/60); duplicate SRC-054/SRC-055 entries were removed. Changed thesis, prior-art, source-register, contribution, observer matrix, traceability, workplan and task files were fetched after writing and exact saved content was verified.
 
 ### Next
 
-Complete T-007's post-T-013 consistency pass: verify source IDs, internal paths and heading anchors; reconcile the stale prior-art section reference in traceability; check Candidate D wording and task/state/digest consistency. Then refresh both session digests at handover (Markdown first, JSON last).
+Complete T-007's post-T-013 consistency pass: verify 60 source IDs, internal paths and heading anchors; reconcile Candidate D wording and task/state/digest consistency. Then refresh both session digests at handover (Markdown first, JSON last). The full SRC-056 APIR-range PDF and SRC-059 VPRQ paper remain the only material primary-text access blockers for this Candidate D comparison.
 
 ---
 
