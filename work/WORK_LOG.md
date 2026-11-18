@@ -1774,3 +1774,21 @@ The new axis is more precise than generic “multipart delivery”, but it is no
 ### Exact next action
 
 - Compare the existing endpoint receiver-acceptance state model with SRC-043, Pigeonhole/katzenqt, Dropbox single-object and Signal per-message scopes plus the closest prior art. State precisely which elements are standard/known, which are merely evidence gaps, and whether any cross-route invariant or evaluation method remains decision-relevant. Do not inflate the framework into a novelty claim.
+## 2026-11-18 · Acceptance-contract contribution challenge
+
+### Work completed
+
+- Added a known-mechanism versus contribution-candidate table to the contribution/bias assessment. It distinguishes established image fragmentation/redundancy, Pigeonhole copy semantics, katzenqt app-level assembly, standard endpoint integrity/completeness obligations and existing private-discovery systems from the remaining route-agnostic receiver-acceptance/evidence contract.
+- Integrated the candidate contract into thesis §8.8: keep carrier observation, retrieval, extraction, authenticated fragment membership, set completeness, reconstruction, whole-object validation, freshness and logical-message acceptance distinct; keep service acknowledgements and observer evidence non-authoritative for endpoint acceptance.
+- Linked SRC-043 partial reconstruction into multi-message analysis §6: partial extraction/byte recovery remains incomplete state; message acceptance waits for authenticated set context, completeness and whole-object validation. Any threshold reconstruction rule must be explicit.
+- Updated T-006 to expand the prior-art crosswalk across SRC-043, Pigeonhole/katzenqt, Dropbox, Signal, OMR/GOMR, Oblivious Signaling, Remise and Echomix. The purpose is to determine what the candidate contract adds and whether it changes a real route decision, not to assert novelty.
+
+### Current judgement
+
+- Fragmentation/redundant image recovery is established prior art; Pigeonhole already specifies AllOrNothing copy semantics; authenticated manifests, membership, completeness and replay handling are standard protocol obligations; private discovery has substantial prior art.
+- The remaining candidate is a route-agnostic endpoint acceptance/evidence contract that keeps native route units and event evidence distinct. It is a systems/analysis synthesis candidate only. It becomes a contribution only if prior-art mapping and a reproducible result/counterexample show decision-relevant value beyond the existing mechanisms.
+- No contribution score or novelty claim was increased. No implementation, experiment, proof, independent review or audit was performed.
+
+### Exact next action
+
+- Complete the prior-art crosswalk and test whether the endpoint acceptance contract adds a decision-relevant invariant or evaluation method beyond the existing route mechanisms. Narrow or retire Candidate C if the distinction is already covered or does not change a route decision.
