@@ -2288,3 +2288,22 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Test whether the OMR signal-membership predicate (including StOMR's batch of public PRF signals) fits an efficient APIR FSS function class; establish whether the APIR predicate count and point-query proofs can be pinned to the same immutable epoch; quantify candidate-count padding and collision/overflow behaviour; and compare the count-plus-point composition against SRC-056–060 and the OMR-family protocols. Then rerun T-007 across all 60 registered source IDs and the updated thesis/supporting documents.
+
+
+## 2026-11-18 · Optional sender-controlled message granularity
+
+### Work completed
+
+- Added `docs/optional-message-granularity.md` as a supporting design note. It treats whole-object representation as the baseline and sender-selectable segmentation as an optional publication-policy choice, independent of carrier or transport.
+- Kept the note bounded: logical-message invariants, membership/completeness/reconstruction obligations, sender selection criteria, metadata and operational costs, prior-art limits, and the neighbour-bound linkage idea as an unselected hypothesis compared against simpler authenticated manifests.
+- Added the representation-flexibility principle to thesis §1.1. It states that changing physical granularity must not change logical identity, authenticated meaning, endpoint security authority or recipient acceptance obligations.
+- Updated RQ4 traceability and recorded the work as T-015. T-014 remains the active next research task.
+
+### Verification and limits
+
+- The new supporting note, thesis insertion, traceability update and task/state records were committed. Exact post-commit read-back verification is being completed.
+- No protocol, carrier, transport, manifest, linkage mechanism, cryptographic construction or security benefit is selected or claimed. No implementation, experiment, proof, benchmark or independent review was performed.
+
+### Exact next action
+
+- Continue T-014: inspect the pinned APIR FSS/predicate/point-query path and determine whether the exact OMR signal-membership predicate can be counted and completely enumerated with authenticated answers bound to one immutable snapshot, without unacceptable scan cost or leakage.
