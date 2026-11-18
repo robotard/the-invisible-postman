@@ -1810,3 +1810,28 @@ The new axis is more precise than generic “multipart delivery”, but it is no
 ### Exact next action
 
 - Stress-test prior-art-comparison §10 row by row against source-register entries and underlying papers/specifications. Check native units, fragment completeness, reconstruction, atomicity, endpoint acceptance, observer leakage and event evidence. Then determine whether the candidate contract changes a concrete route decision or merely restates standard protocol discipline; narrow or retire Candidate C if no decision-relevant difference survives.
+
+## 2026-11-18 · OMR prior-art update: StOMR and UnifOMR
+
+### Work completed
+
+- Rechecked the OMR-family row in prior-art comparison §10 against the source register and current primary publication records. The existing crosswalk omitted two relevant CCS 2026 developments.
+- Added SRC-050, StOMR: official IACR ePrint abstract/metadata, DOI and CCS 2026 programme entry establish a stateful OMR model, private sender/receiver shared state, and an OMR-KEM intended to establish that state without an out-of-band channel. Reported sender-signal-size comparisons are recorded only as abstract claims.
+- Added SRC-051, UnifOMR: official IACR ePrint abstract/metadata and institutional/CCS records establish the stated OMR-to-PIR relationship for strong detection-key unlinkability, and the abstract's reported batch-PIR performance/interaction trade-offs.
+- Both full-text PDF requests returned HTTP 403. Neither paper has received full-text, proof, code or benchmark review. The source register explicitly limits their evidential status to abstracts and bibliographic records.
+- Expanded prior-art-comparison §10's OMR row to distinguish public-key OMR, GOMR, stateful OMR and PIR-related efficiency constructions. Updated thesis related-work and discovery taxonomy, W1, W2, W3, W4, observer/property matrix, route-comparison references, contribution assessment and RQ7 traceability.
+- Corrected the bootstrap framing: out-of-band setup is not a universal property of all private retrieval; StOMR's abstract specifically proposes an OMR-KEM for shared-state establishment without an out-of-band channel. Its detailed security and lifecycle properties remain unknown pending full-text review.
+
+### Research judgement
+
+- These additions deepen the established private-discovery prior art; they do not solve arbitrary multi-carrier endpoint message-set acceptance and do not create a new contribution claim.
+- StOMR makes shared-state bootstrap, refresh, compromise and recovery important comparison questions. UnifOMR makes the PIR lower-bound relationship, two-round interaction and digest-size/server-cost trade-off explicit.
+- Candidate C remains a methodological/systems synthesis candidate only. Its decision relevance remains unproven.
+
+### Exact next action
+
+- Continue source-auditing prior-art-comparison §10 against accessible full texts. Seek an author/institutional full-text route for SRC-050 and SRC-051; until available, keep their claims abstract-level. Compare OMR/PIR and stateful OMR with the other route profiles, then test whether the receiver-acceptance/evidence method changes a concrete route decision beyond prior art.
+
+### Assurance
+
+- Repository file writes are being read-back verified. No implementation, code execution, protocol experiment, proof, benchmark reproduction, independent review or security audit was performed.
