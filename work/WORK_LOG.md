@@ -1792,3 +1792,21 @@ The new axis is more precise than generic “multipart delivery”, but it is no
 ### Exact next action
 
 - Complete the prior-art crosswalk and test whether the endpoint acceptance contract adds a decision-relevant invariant or evaluation method beyond the existing route mechanisms. Narrow or retire Candidate C if the distinction is already covered or does not change a route decision.
+## 2026-11-18 · Cross-route receiver-acceptance prior-art crosswalk
+
+### Work completed
+
+- Added `docs/prior-art-comparison.md` §10, a mechanism-by-mechanism crosswalk covering OMR/PerfOMR/SophOMR/InstantOMR/GOMR, Oblivious Signaling, Remise, dead-drop covert messaging, image-based diffusion covert messaging, SRC-043 multi-image fragmentation, Echomix/Pigeonhole/Katzenpost, Dropbox shared files and Signal protocol messages.
+- Compared native units and set semantics, reconstruction/atomicity, endpoint validation/acceptance, observer/evidence boundaries and the implication for the candidate contract. The table explicitly treats 'not specified in the inspected source' as an evidence boundary, not proof of absent product functionality.
+- Refined Candidate C from a generic route comparison to a route-agnostic receiver-acceptance/evidence comparison. It separates carrier observation, retrieval, extraction, authenticated membership, set completeness, reconstruction, whole-object validation, freshness and logical-message acceptance while retaining route-native semantics.
+- Linked the new §10 crosswalk from thesis §8.8 and the contribution/bias assessment. Updated T-006, TASKS.md and PROJECT_STATE to source-audit the crosswalk row by row and test whether the candidate changes a concrete route decision.
+
+### Provisional judgement
+
+- The constituent mechanisms are established prior art: private retrieval/group pertinence, uniform inbox updates, two-server anonymous access control, public-platform covert pipelines, image covert channels, multi-image redundancy, capability-addressed asynchronous storage, copy batching and application-level incomplete-set gating.
+- The remaining candidate is a methodological/systems synthesis only. It has no novelty status until a source-audited crosswalk and a reproducible result or counterexample show a decision-relevant distinction beyond those mechanisms.
+- No contribution score or novelty claim was increased. No implementation, code execution, experiment, proof, independent review or audit was performed.
+
+### Exact next action
+
+- Stress-test prior-art-comparison §10 row by row against source-register entries and underlying papers/specifications. Check native units, fragment completeness, reconstruction, atomicity, endpoint acceptance, observer leakage and event evidence. Then determine whether the candidate contract changes a concrete route decision or merely restates standard protocol discipline; narrow or retire Candidate C if no decision-relevant difference survives.
