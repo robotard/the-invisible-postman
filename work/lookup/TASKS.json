@@ -65,17 +65,21 @@
       "id": "T-004",
       "type": "route_analysis",
       "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
-      "status": "ready",
+      "status": "in_progress",
       "priority": 5,
       "targets": [
+        "docs/source-register.md",
         "docs/route-comparison-framework.md",
-        "docs/echomix-katzenpost-comparator.md"
+        "docs/echomix-katzenpost-comparator.md",
+        "thesis.md"
       ],
       "depends_on": [],
-      "next_action": "Pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence.",
-      "blockers": [],
+      "next_action": "Public reference pins are recorded: Dropbox browser-link documentation and access-path distinctions; Signal Android/iOS/Desktop client release tags; Katzenpost v0.0.90, thin_client 0.0.23 and katzenqt 0.0.2 source commits. Next, establish whether a controlled Dropbox account/link, actual Signal client/backend/account configuration and running Katzenpost deployment can be inspected. Do not promote public source pins to deployed configuration.",
+      "blockers": [
+        "No live Dropbox account/link configuration, installed Signal client/service/account state, or running Katzenpost deployment is available in this session; current evidence pins public documentation and source releases only."
+      ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
-      "last_updated": "2026-11-17"
+      "last_updated": "2026-11-18"
     },
     "T-005": {
       "id": "T-005",
@@ -112,7 +116,7 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Audit set-level atomicity and partial visibility against SRC-043 multi-image reconstruction, Pigeonhole AllOrNothing, and the native scopes of Dropbox/Signal. Define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result. Preserve the distinction between native atomicity, endpoint-authenticated completeness, service acknowledgements and independent event evidence; do not infer missing product functionality from documentation gaps. T-004 remains ready for actual pinned client/release/account evidence.",
+      "next_action": "Complete the source-level reader-atomicity audit: distinguish the Pigeonhole AllOrNothing protocol copy path from katzenqt 0.0.2's separate app-level chunk assembler; check whether any pinned application path supplies a reader commit gate or capability handoff; refine the minimal read-side fault test and compare it with SRC-043 multi-image recovery and the single-file baseline. Do not call the potential partial-prefix issue a confirmed defect, and do not infer novelty from documentation gaps.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
