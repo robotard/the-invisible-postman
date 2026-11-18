@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-18 · Endpoint-only architecture corrected and cross-document consistency verified; T-007/T-013/T-014/T-015 complete; no unblocked substantive task; SRC-001–SRC-060 registered",
+  "checkpoint": "2026-11-18 · Endpoint-only architecture maintained; targeted multi-message/acquisition terminology reconciliation verified; roadmap and task gates unchanged; T-007/T-013/T-014/T-015 complete; no unblocked substantive task; SRC-001–SRC-060 registered",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_maturity_metadata_not_a_routine_chat_footer",
@@ -16,13 +16,14 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md. The protected message is a standalone endpoint object; identity/key trust, authentication, decryption, multipart association, reconstruction and acceptance remain endpoint responsibilities.",
+    "thesis": "One active manuscript at thesis.md. The protected message is a standalone endpoint object; identity/key trust, authentication, decryption, multipart association, reconstruction and acceptance remain endpoint responsibilities. Thesis scope wording distinguishes route-native acquisition from endpoint protocol functions.",
     "architecture": "No server, directory, database, index, fixed address, rendezvous service, coordinator, orchestration service or external resolver is required for message identity, key resolution, decryption, fragment membership, reconstruction or acceptance. Cryptographic peer identity is distinct from a network address, platform account, storage locator or persistent recipient-to-location relationship. External routes are untrusted, replaceable means of conveying bytes.",
-    "multipart": "Whole-object representation remains baseline. Sender-selectable segmentation is optional and independent of carrier/transport. Any required authenticated membership and reconstruction context travels within the protected representation; no external manifest host or resolver is required.",
-    "route_acquisition": "Recipient acquisition is a route-specific delivery condition and comparative observer topic, not a message-protocol function. OMR/GOMR, Oblivious Signaling, Remise, APIR, vPIR and capability-addressed storage remain external prior-art comparators only.",
+    "multipart": "Whole-object representation remains baseline. Sender-selectable segmentation is optional and independent of carrier/transport. Any required authenticated membership and reconstruction context travels within the protected representation; no external manifest host or resolver is required. The supporting multi-message note's stale source-review instruction has been replaced with current source-review limits and an evidence-triggered reopening condition.",
+    "route_acquisition": "Recipient acquisition is a route-specific delivery condition and comparative observer topic, not a message-protocol function. External discovery/retrieval systems remain prior-art comparators only.",
     "prior_art": "Former Candidate D is retired as an architecture/contribution candidate. Its formal model is retained only as comparative analysis of server-dependent private/verifiable retrieval.",
     "source_register": "60 unique entries, SRC-001 through SRC-060.",
-    "evidence_limits": "No implementation, experiment, platform deployment test, formal proof, independent review or security audit."
+    "evidence_limits": "No implementation, experiment, platform deployment test, formal proof, independent review or security audit.",
+    "latest_alignment": "Targeted consistency corrections in thesis.md, docs/multi-message-linkage-and-steganographic-carriage.md, docs/traceability.md and docs/w3-architecture.md were committed and exact read-back verified. Roadmap, task priorities, dependencies and gates were unchanged."
   },
   "completed": {
     "T-013": "Former Candidate D model retained as comparative prior-art analysis only; no composition or server/database subsystem pursued.",
@@ -55,24 +56,24 @@
     "Preserve partial-source boundaries and distinguish source-inspected, tested, reproduced, audited and independently reviewed."
   ],
   "verified_main_blob_pins": {
-    "thesis.md": "c1a37ae11ce23a25bf8f87fe40277a4c84ebfda4",
+    "thesis.md": "093dd0d27304660c0d916cd7f238e70d344b62b7",
     "docs/w1-research-framing.md": "301f33dfe89dec86bd2718373e96500a7574cf1d",
     "docs/w2-threat-model.md": "cf7f4663e5fa88afda638ac7f0ec929b2b40b6e2",
-    "docs/w3-architecture.md": "4fe685480d15c1bc0fa9c767b206e5bbb4dda7e0",
+    "docs/w3-architecture.md": "f0677e924edf8e2cc0649f3ac24cae17f7564c6a",
     "docs/w4-risks-and-evaluation.md": "8a71a3df58f51582524fc302fc3c722bceda73d3",
-    "docs/traceability.md": "8a87dc3c6855538a248f30f8550ced5b1d4c84c5",
+    "docs/traceability.md": "8eb2efdcbe31163fa901a946d7798cc0e9bdff90",
     "docs/source-register.md": "588f81eedf010cbcdff0cb3f8a2b800282f36ccb",
     "docs/prior-art-comparison.md": "5be042697f843f5a66a914948e173c2961914990",
     "docs/thesis-contribution-and-bias-assessment.md": "72270278bade7b027962365093698733362adb4b",
-    "docs/multi-message-linkage-and-steganographic-carriage.md": "f0e8f2e610f69520c12cd2791967f8d8f0e9dff0",
+    "docs/multi-message-linkage-and-steganographic-carriage.md": "c51cdc8e37da0a5c6746a3caf321a00932a402e8",
     "docs/optional-message-granularity.md": "bc3050d897a53cd471fdb8d564f90875e9b4f22d",
-    "work/PROJECT_STATE.md": "d692b0b89c7ed2f1cb395a122a5722288a599a16",
+    "work/PROJECT_STATE.md": "ae2e859c6f6274e72a8d402522f8022e9a2a83eb",
     "work/WORKPLAN.md": "d63b7579e007ba1ac8624ed632012649a96e943a",
-    "work/WORK_LOG.md": "80fa98e2686732e24bc531b8b0bfb2d604287327",
+    "work/WORK_LOG.md": "2d7402dea21ca6e6d3c092e2fe13639ca6797d47",
     "work/lookup/TASKS.json": "1bb100028ca383ddf441b38d62641614214109f0",
     "work/lookup/TASKS.md": "16563aa9fc4d7d6b040ad463fd580c19aae51df2"
   },
-  "latest_verified_project_head_before_digest_refresh": "8a5746fa639fe9eb4b78aee441982ba812dff68c",
+  "latest_verified_project_head_before_digest_refresh": "8428270fb731b97de93acca92148e8df49d754d2",
   "next": [
     "T-001: resume SRC-033/SRC-034/SRC-036 full-text/source review when publisher, author or institutional access becomes available.",
     "T-002: resume SRC-046–SRC-048 full-text and implementation review when papers/model assets become available.",
@@ -81,6 +82,6 @@
     "Keep diagrams, external peer review and release work gated."
   ],
   "next_task": "T-001 (blocked; resume only when primary-source access becomes available)",
-  "immediate_next_action": "No unblocked substantive task remains. Resume T-001–T-004 only when their recorded source or controlled-environment blockers are resolved; keep diagrams, peer review and release gated.",
+  "immediate_next_action": "No unblocked substantive task remains. Preserve the current roadmap; resume T-001–T-003 only when missing primary papers/artifacts become available and T-004 only when controlled route accounts/configurations/deployment evidence becomes available. Keep diagrams, peer review and release gated.",
   "task_status_correction": "T-013 comparative prior-art only complete; Candidate D retired as architecture/contribution candidate; T-014 APIR dependency audit complete; T-007 post-correction static consistency complete; T-015 optional granularity principle complete; T-001–T-004 remain blocked."
 }
