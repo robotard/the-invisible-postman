@@ -2400,3 +2400,26 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Next action
 
 - Continue only with thesis-first, claim-specific research where a defined evidence gap or contradiction justifies it. T-001–T-004 remain deferred optional evidence expansions, not thesis-construction dependencies. Keep diagrams, independent peer review and release gated.
+
+
+## 2026-11-18 · Sony historical context moved earlier in thesis narrative
+
+### Research and narrative adjustment
+
+- Reframed thesis §2.3 to introduce the author's reported Sony R&D experience as historical context for the later watermarking comparison. The text expressly avoids claiming that the author participated in Galaxy, VWM or the Academy screener system, or that the Sony employment caused the original project idea.
+- Reworked the opening of thesis §8.3 so the distinction between steganographic concealment and watermarking is foregrounded before the detailed platform-transformation discussion.
+- Connected SRC-043 directly to the distinction: it studies multi-image fragment carriage using robust DFT/DCT watermarking and does not demonstrate general steganographic stealth. Connected SRC-061 to Sony's Galaxy/VWM history and the separate recipient-specific Academy screener reporting.
+- Added an explicit evaluation separation: payload extraction/recovery, steganalysis detectability, forensic attribution/linkability and endpoint cryptographic acceptance are different outcomes.
+- Added all three SRC-061 historical references to the thesis working bibliography: Sony's 1999 release, the 2001 VWM Group formation announcement and Rachel Abramowitz's 2005 Los Angeles Times article, *Now you see it ...*.
+- Updated W1, the multi-message linkage/steganographic-carriage analysis and the prior-art comparison to record this as a reflective narrative adjustment and cross-reference the thesis placement.
+
+### Research judgement and limits
+
+- The Sony material is historical context and prior art, not a proposed watermarking subsystem, new architecture or causal origin story.
+- The Academy screener report remains separate from Sony's Galaxy/VWM work; public evidence does not attribute the screener system to Sony.
+- No watermark implementation was inspected or tested. No claim is made that attribution guarantees identification, prevents leaks or provides cryptographic authentication.
+
+### Verification
+
+- Thesis, W1, multi-message linkage analysis and prior-art comparison were committed and fetched back. The thesis bibliography now includes the three sources represented by SRC-061.
+- The changes refine narrative sequence and evidence presentation only; no roadmap, task dependency or architecture decision changed.
