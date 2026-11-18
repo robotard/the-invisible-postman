@@ -41,7 +41,7 @@ The three single-image study profiles are separate literature configurations, no
 
 ## 3. Fault applicability matrix
 
-Legend: **N** = fault maps to the route's native unit; **W** = meaningful only if a test wrapper adds set/version semantics; **?** = current source evidence does not establish route behaviour; **—** = not meaningful for the native unit. A mark describes applicability, not successful detection or mitigation.
+Legend: **N** = fault maps to the route's native unit; **N*** = native only at the named protocol or service sublayer described below; **W** = meaningful only if a test wrapper adds set/version semantics; **?** = current source evidence does not establish route behaviour; **—** = not meaningful for the native unit. A mark describes applicability, not successful detection or mitigation.
 
 The common matrix contains only delivery and acceptance cases that can affect route choice. Source-specific parameter, service-UI and implementation questions are separated below; they are not additional universal fault injections.
 
@@ -95,15 +95,7 @@ For Dropbox, do not invent fragment order for a single file; treat missing viewe
 
 ### Minimum fault cases
 
-1. Complete delivery.
-2. Delayed or withheld item.
-3. Missing item (for SRC-043: one redundant copy missing, then all copies of one fragment missing).
-4. Duplicate item.
-5. Conflicting item at an existing position.
-6. Reordered item.
-7. Stale/replayed protected object or protocol message (service-response replay only where that route exposes it).
-8. Incomplete or divergent candidate view.
-9. Service acknowledgement that precedes, or fails to imply, endpoint acceptance.
+The minimum set is the applicable rows in the common matrix above, not a requirement to inject every row into every route. Keep delayed-but-eventually-available distinct from unavailable at the declared acceptance deadline. For SRC-043, distinguish one redundant copy missing from all copies of one fragment missing; these produce different byte-recovery outcomes. Do not count the expected repeated fragment copies as duplicate-delivery faults.
 
 The Pigeonhole-specific atomicity probe is a later write delayed or rejected after an earlier destination write succeeds, with a recipient who already has the destination capability reading concurrently. Use the thin-client no-retry read variant for timed `BoxIDNotFound` observations; account for the courier's 30-minute same-WriteCap Copy-status cache and distinguish a database Put acceptance event from crash-durable persistence. Record whether the prefix is visible; do not infer it from the sender's error result. Test raw Pigeonhole and the katzenqt application assembler separately. The full test design, timing points, evidence fields and interpretation rules are in [pigeonhole-reader-visibility-probe.md](pigeonhole-reader-visibility-probe.md).
 
