@@ -22,6 +22,7 @@ The unit of comparison is the **observer/property claim**, not the system name. 
 - **Remise (2026):** full USENIX Security 2026 paper inspected; system model, security definition, DORAM/authorization construction, evaluation and limitations.
 - **Dead-drop covert messaging (2024):** full paper inspected; text-based platform pipeline, rendezvous, hints, retrieval, user detection and stated observer exclusions.
 - **Image-diffusion covert messaging (2025):** full paper inspected; generated-image latent channel, pre-shared-key assumption, security model and delivery exclusion.
+- **Authenticated private retrieval comparators (SRC-054–SRC-058):** APIR 2023, AAD 2019, vPIR 2022 and multi-query vPIR 2025 full primary PDFs inspected; APIR range queries (2026) reviewed from official publisher/author records and indexed PDF extracts only because the PDF endpoint returned 403. Preserve this source-maturity difference.
 
 ## 2. Lifecycle comparison
 
@@ -58,6 +59,19 @@ Remise is a particularly important comparator because it combines anonymous bull
 ### Dead-drop and image-diffusion work
 
 The 2024 dead-drop paper already covers a broad text-based public-platform pipeline, including rendezvous, discovery hints, fragmentation, retrieval and user detection, but excludes platform control, fine-grained user actions and IP identifiers in its stated adversary. The 2025 diffusion paper provides formal image-based covert communication but assumes a pre-shared key and leaves delivery to the recipient outside scope. These are related but non-equivalent system models. Wang et al. (2024; SRC-043) add direct multi-image fragment redundancy and reconstruction using robust watermarking; Ker (2007; SRC-044–SRC-045) establishes batch-level pooled steganalysis and a bounded capacity theorem. Neither should be collapsed into the diffusion or dead-drop model.
+
+### Authenticated private retrieval and log structures (Candidate D comparators)
+
+These works address adjacent properties but are not interchangeable:
+
+- **APIR (Colombo et al., 2023; SRC-054):** multi-server constructions authenticate point queries and predicate/aggregate outputs under an anytrust assumption; the single-server construction uses an out-of-band database digest for point queries. Selective-failure attacks are part of the privacy analysis. An authenticated aggregate is not a complete enumeration of all matching records.
+- **vPIR (Ben-David et al., 2022; SRC-057):** a single-server client privately queries one indexed row while verifying a local or global database property. Global properties are restricted to read-once bounded-state computations in the main construction. The proof can establish facts such as sortedness or an exact count, but does not itself return every row satisfying a hidden predicate.
+- **Multi-query vPIR (Hayashi et al., 2025; SRC-058):** combines APIR with a SNARK so multiple point-query answers can be tied to one database with one proof; OCSP is the application example. This is multi-query consistency, not arbitrary variable-size result-set completeness.
+- **APIR for range queries (Youssef et al., 2026; SRC-056):** the publisher-indexed paper text claims soundness and completeness for variable-size range results over a static database whose ADS root is signed by the data owner. It performs repeated per-node PIR accesses. The indexed text explicitly notes that access count, timing and communication volume may reveal range size or position; padding, batching, dummy accesses and ORAM are left as future work. The full PDF was not accessible in this review, so proofs and complete evaluation remain uninspected.
+- **AAD (Tomescu et al., 2019; SRC-055):** proves all-and-only values for a key, append-only consistency and fork consistency. Its AAS server is the sole author of the set and users in the model have no identities/authentication. Fork consistency prevents divergent digests from later merging, but clients still need external comparison/gossip to detect forks; the paper does not adequately model network connectivity for that process. The paper notes VRF compatibility for private path derivation, but does not provide PIR-style access-pattern hiding. Its q-PKE/q-SBDH construction requires trusted setup and reports high memory/append costs.
+- **OMR/StOMR/UnifOMR (SRC-020, SRC-050–SRC-053):** provide recipient-pertinence privacy and retrieval-efficiency/state trade-offs, but their formal completeness, malicious-detector integrity and publication-view boundaries remain distinct. The downstream SRC-052 integration's completeness flag is scoped to service range coverage, not arbitrary sender-manifest closure.
+
+**Candidate D boundary:** generic private, sound and complete range retrieval is now prior art. The remaining research question is narrower: whether an OMR-specific hidden recipient predicate over a dynamic authenticated publication snapshot can have a verifiable complete candidate view, with sender-authenticated admission and multi-carrier manifest closure, without access-volume, cross-epoch or selective-failure leakage. This remains a hypothesis, not a novelty claim; no composition or feasibility result has been established.
 
 ## 4. Cross-layer observations and research implications
 
