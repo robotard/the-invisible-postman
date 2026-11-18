@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · Candidate D drafted as a conditional composition hypothesis; T-007 consistency review active; T-013 formalisation queued  
+**Checkpoint:** 2026-11-18 · T-006 complete; T-007 consistency review complete for prior checkpoint; T-013 Candidate D formalisation active  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
@@ -21,7 +21,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 - The active manuscript is `thesis.md`. Relationship authority, receiver acceptance, cross-route discovery and adversarial event-chain analysis are integrated across the thesis and W1–W4.
 - The six named route profiles are IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE. SRC-043 is a supplemental multi-image fragment/redundancy baseline; OMR-family work is a separate discovery/retrieval comparator.
-- The contribution boundary has been refined. Candidate C remains a conditional reproducible cross-route evaluation method. A new **Candidate D** asks whether OMR-style hidden-predicate retrieval can be composed with authenticated publication snapshots and sender-authenticated multi-carrier manifest closure, without exposing recipient predicates or a public linkage handle. APIR (SRC-054), AAD (SRC-055), OMR and the SRC-052 downstream integration are substantial adjacent prior art; uniqueness is not established. No empirical result or rigorous counterexample exists: Pigeonhole reader visibility remains untested, and the UnifOMR capacity issue remains a paper-text ambiguity.
+- The contribution boundary has been refined. Candidate C remains a conditional reproducible cross-route evaluation method. **Candidate D** asks whether OMR-style hidden-predicate retrieval can be composed with authenticated dynamic publication snapshots, verifiable admission and sender-authenticated multi-carrier manifest closure. Its nearest prior art now includes APIR (SRC-054), AAD (SRC-055), range APIR (SRC-056), vPIR (SRC-057), multi-query vPIR (SRC-058), encrypted range-query schemes (SRC-059/060), OMR-family systems and the SRC-052 downstream integration. Generic private/verifiable range retrieval is prior art; no Candidate D construction or novelty result is established. A formal property model, leakage function, cost model and pre-admission-omission boundary are now recorded in prior-art §4.2.
 - Completeness is typed: carrier inventory, fragment-set completeness, byte reconstruction, storage atomicity, application continuity, retrieval-window coverage, endpoint logical-message acceptance, publication/index completeness and human receipt are not interchangeable.
 - `docs/route-fault-evidence-matrix.md` is the first documentary test sheet. It records route-native units, fault applicability, three evidence ledgers and controlled-access boundaries. It is not an executed experiment.
 
