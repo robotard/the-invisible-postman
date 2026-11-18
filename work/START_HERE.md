@@ -24,6 +24,8 @@ When a conversation starts in The Invisible Postman Project, or the user says co
 - Maintain coherent terminology, argument structure and citations.
 - Integrate multi-message steganographic encapsulation and linkage into the wider architecture.
 - Keep operational bookkeeping subordinate to substantive work.
+- Preserve the approved roadmap and task sequence. Research can recommend improvements, but must not silently create diversions, new workstreams, architecture candidates or dependencies.
+- Before any material change to thesis architecture/research questions, roadmap priorities/sequence, task dependencies, scope or deliverables, present the evidence, rationale, benefit, impact and alternatives to the user and obtain explicit approval. Minor corrections within the approved direction may proceed; when in doubt, flag first.
 - Verify repository changes by fetching saved files.
 
 ## Context-limit recovery
