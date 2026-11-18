@@ -1559,3 +1559,41 @@ The first nine-file write batch was interrupted only after the commits had been 
 
 - Updated the PROJECT_STATE checkpoint heading to reflect the completed discovery decomposition and route-observer integration rather than the preceding relationship-authority-only sprint.
 - Commit: [a25d371](https://github.com/robotard/the-invisible-postman/commit/a25d371d7ecec887d164fe0b1d4afc0b4f0a35c5); fetched blob `e9e17d1f6c318565be9477aa25b735654ce75fce`; exact content equality verified.
+
+
+## 2026-11-18 · T-006 discovery event-chain adversarial pressure test
+
+### Substantive work performed
+
+- Extended thesis §8.4 with a seven-case adversarial pressure test covering bootstrap substitution, malicious publication, index equivocation/suppression, retrieval-service manipulation, cross-role collusion, retention/later disclosure, and suppression/delay ambiguity.
+- Added the core asymmetry: endpoint authentication can validate an object that arrives, but does not prove publication/index completeness or explain why an expected object is absent; service-reported events establish only the reporting service's bounded event, not endpoint identity or acceptance.
+- Distinguished four evidence classes throughout the analysis: endpoint-authenticated protocol facts, service-reported events, externally observed metadata, and analyst-inferred correlations.
+- Explicitly modelled pairwise publisher/index/retrieval collusion and all-role combinations, with candidate join keys, retention windows and clock-alignment uncertainty.
+- Reconciled the attack surface into W2 attacker capabilities and threat rows; W3 discovery-role boundary; W4 E9 evaluation questions and acceptance conditions; the multi-message linkage analysis; the observer/property matrix; the route-comparison lifecycle ledger; thesis §8.8 route-profile rows and §10.2 evaluation domains; and RQ7 traceability.
+- Preserved the boundary that no discovery mechanism, index-consistency mechanism, transparency system, deletion guarantee, wire format or privacy mitigation has been selected.
+
+### Research judgement and evidence limits
+
+- A successful index response is not proof of index completeness; absence from one view is not proof of non-publication.
+- A capability-use record does not identify a human user by itself. Endpoint rejection does not identify which intermediary altered or withheld an object.
+- Provider policy is not observed retention behaviour. Unknown internal service behaviour and retention remain unknown.
+- These are threat-model counterexamples and evaluation obligations, not findings about a named provider or a demonstrated vulnerability in a cited comparator.
+- No new sources were acquired. No implementation, platform measurement, experiment, reproduction, formal proof, independent peer review or audit was performed.
+
+### Files changed and exact read-back verification
+
+| File | Commit | Fetched blob SHA | Result |
+|---|---|---|---|
+| `thesis.md` §8.4 | [977dc55](https://github.com/robotard/the-invisible-postman/commit/977dc55e0af5e8b61547ba69848c35321dfe1569) | `34fd3dde9bba054004cd62d5cf56fb694526357a` | Exact expected blob SHA fetched; required attack cases present |
+| `docs/w2-threat-model.md` | [c795066](https://github.com/robotard/the-invisible-postman/commit/c7950662146619c7160e1794a4edb8afdb2c5bc2) | `ca9e83731a32052d7188db981934e6886e328d1f` | Exact expected blob SHA fetched; new threat rows present |
+| `docs/w4-risks-and-evaluation.md` E9 | [527148c](https://github.com/robotard/the-invisible-postman/commit/527148cb8131360825c3869b8430cfa528134ba4) | `664598b222d98bada990d8b258837d5840c1a1ad` | Exact expected blob SHA fetched; adversarial questions and acceptance criteria present |
+| `docs/multi-message-linkage-and-steganographic-carriage.md` §4.7 | [0449796](https://github.com/robotard/the-invisible-postman/commit/04497966499fe0bec70dc860d32addcd1b3ef377) | `64c9cb8f8b3a820ba5b4edbb535f76c849cfcd15` | Exact expected blob SHA fetched; service manipulation and evidence boundaries present |
+| `docs/observer-property-matrix.md` §4.1 | [d627df1](https://github.com/robotard/the-invisible-postman/commit/d627df1f9dbe0ff9a26741409ace75000d6a10c7) | `7f700e7d3ca5f28cf8d3635b345de9893b5f1e76` | Exact expected blob SHA fetched; seven adversarial cases present |
+| `docs/route-comparison-framework.md` §4 | [8ecc867](https://github.com/robotard/the-invisible-postman/commit/8ecc86779a9e980e5f2648d7be8f344794997b3b) | `b68ebb2b8db2371b95147718d95c48cccc2a99e8` | Exact expected blob SHA fetched; index, retrieval and collusion fields present |
+| `docs/traceability.md` RQ7 | [519d86e](https://github.com/robotard/the-invisible-postman/commit/519d86e0e34df17ffa8640af902fe3ade58e3fb8) | `9e5eebbcf3b09840dd2d267c45ef01c71abac59e` | Exact expected blob SHA fetched; RQ7 mapping aligned |
+| `docs/w3-architecture.md` discovery boundary | [1836cc7](https://github.com/robotard/the-invisible-postman/commit/1836cc7f7a980ed926a0b8c88cac585322aba03f) | `a4d69b9c6e6247635c85b9537b0e44c1555960e4` | Exact expected blob SHA fetched; role/collusion boundary present |
+| `thesis.md` §8.8 and §10.2 | [e59a974](https://github.com/robotard/the-invisible-postman/commit/e59a974cc29bf716afa751ac199c65a0aac294ba), [c317321](https://github.com/robotard/the-invisible-postman/commit/c317321ae13e12cd07f39d3d112b6abd40e1673f) | `f87c6f4b2a8eb9baccd4a4976335f41b0d6ac6a0` | Latest thesis blob fetched; route-profile rows and evaluation domain present |
+
+### Exact next action
+
+- Continue T-006 by testing whether these adversarial cases produce a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles. Keep each profile's native guarantees and evidence class intact; do not infer unobserved service behaviour. Then reconcile any material result into the thesis and W1–W4. T-004 route configuration evidence remains ready in parallel. T-007, diagrams, peer review and release remain gated until substantive synthesis stabilises.
