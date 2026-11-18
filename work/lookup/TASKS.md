@@ -17,19 +17,19 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | blocked | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
 | T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | complete | 1 |
-| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | in_progress | 7 |
+| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | complete | 7 |
 | T-008 | diagram_work | Stabilise diagram arguments and reconcile figure briefs with thesis | blocked_until_research_stable | 8 |
 | T-009 | diagram_work | Create and verify contextual editable thesis diagrams | deferred | 9 |
 | T-010 | peer_review_preparation | Prepare a coherent thesis candidate and scoped peer-review materials | deferred | 10 |
 | T-011 | peer_review | Conduct and reconcile substantive independent peer review | not_started | 11 |
 | T-012 | release_integrity | Verify thesis release integrity and remove disposable work area | deferred | 12 |
-| T-013 | research_model | Formalise privacy-preserving verifiable message-set closure (Candidate D) | ready | 1 |
+| T-013 | research_model | Formalise privacy-preserving verifiable message-set closure (Candidate D) | in_progress | 1 |
 
 ## Current execution
 
-**Current active work:** T-007 final thesis alignment and cross-document consistency review remains active, including new SRC-054/SRC-055 and Candidate D references. T-013 is ready immediately after T-007 to formalise the conditional privacy-preserving verifiable message-set closure hypothesis. Audit thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry; verify cited SRC IDs and internal links; resolve stale or duplicated wording without upgrading partial sources. T-001–T-004 remain blocked on full papers/artifacts or live route configurations. T-006 is complete for the current evidence set. Candidate C remains conditional; no route ranking or image-carriage advantage is supported.
+**Current active work:** T-013 Candidate D formalisation is in progress. The prior-art comparison now includes APIR (SRC-054), full AAD (SRC-055), range APIR (SRC-056, indexed-text only because the PDF returns 403), vPIR (SRC-057) and multi-query vPIR (SRC-058). Generic private, sound and complete range retrieval is prior art; the remaining hypothesis is narrower: OMR-specific hidden-predicate completeness over a dynamic authenticated publication snapshot, sender-authenticated admission and multi-carrier manifest closure, with controlled access-volume, cross-epoch and selective-failure leakage. T-007 was complete for the previous checkpoint and must be rerun after T-013 integration. T-001–T-004 remain blocked on full papers/artifacts or live route configurations. T-006 remains complete for the current evidence set.
 
-**Next:** complete the targeted cross-document consistency audit, reconcile actual discrepancies, and verify every write by fetching the saved file.
+**Next:** formalise the adversary/collusion and admission model, exact soundness/completeness/closure statements, leakage function and cost model; test whether the nearest prior art already satisfies the model before proposing a construction. Full SRC-056 PDF remains inaccessible; preserve indexed-text-only status. Then rerun T-007 consistency checks.
 ## Status meanings
 
 - `ready`: unblocked and not started.
@@ -41,6 +41,6 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Sequence and dependencies
 
-T-006 thesis-first synthesis (complete for current evidence set); T-001–T-003 source review where material; T-004 route evidence (blocked on controlled access); T-005 protocol analysis (complete); T-007 final coherence review active after synthesis stabilised; T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
+T-006 thesis-first synthesis (complete for current evidence set); T-013 Candidate D formalisation (in_progress); T-001–T-003 source review where material; T-004 route evidence (blocked on controlled access); T-005 protocol analysis (complete); T-007 final coherence review (complete for prior checkpoint; rerun after T-013 integration); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
 
 Detailed next actions, targets, blockers and dependencies are stored once in the keyed JSON values. Do not duplicate a second task plan here.
