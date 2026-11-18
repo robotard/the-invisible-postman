@@ -110,10 +110,10 @@
         "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Pressure-test the discovery event chain against the observer/property matrix and W2 threat model, especially malicious or colluding publication/index/retrieval actors, bootstrap-channel substitution, event retention and suppression; preserve the distinction between protocol properties, assumptions and observer inference.",
+      "next_action": "Test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles. Preserve each profile's native guarantees and evidence class; do not infer unobserved service behaviour. Reconcile material findings into thesis and W1–W4. T-004 route configuration evidence remains ready in parallel.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
-      "last_updated": "2026-11-17"
+      "last_updated": "2026-11-18"
     },
     "T-007": {
       "id": "T-007",
