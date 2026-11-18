@@ -304,7 +304,11 @@ Evaluation questions:
 * Does capability delivery merely move the observable link to another channel, and what does the lookup service learn from each request, retry or failure?
 * Can timing and size observations correlate sender and recipient events even when message contents remain encrypted?
 * How do repeated schedules, response intervals, device/platform habits and staged social-engineering prompts affect correlation?
-* Can a malicious intermediary delay, suppress or refuse delivery?
+* Can a malicious intermediary delay, suppress or refuse delivery, and can the recipient distinguish non-publication, index omission, suppression, ordinary delay and route failure from available evidence?
+* Can a bootstrap channel be substituted or raced before peer/key/locator binding is authenticated, and how are re-bootstrap and key-change events verified?
+* Can a publisher post false, stale, duplicated or selectively transformed carriers; can an index equivocate between recipients or omit/inject/reorder candidates; can a retrieval service replay, substitute or selectively withhold responses?
+* Which publisher+index, index+retrieval, publisher+retrieval and all-role collusions are credible, and what join keys, clock uncertainty and retention windows allow their event records to be correlated?
+* Which records survive visible object deletion (account logs, object IDs, access records, backups, moderation and telemetry), and what evidence supports any retention/deletion claim?
 * Are bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence, retrieval authorisation and endpoint conversation association evaluated as separate events?
 * Does a private-retrieval result get incorrectly generalised to publication privacy, sender anonymity, platform unlinkability or endpoint-authenticated continuity?
 * Which party observes out-of-band capability or locator distribution, and does that channel introduce a new identity, timing or collusion dependency?
@@ -318,6 +322,10 @@ Proposed acceptance conditions:
 * An actor-by-actor metadata and observer inventory is recorded, including bootstrap, publication/indexing, candidate enumeration, pertinence/authorisation, retrieval and endpoint association.
 * Privacy claims are scoped to a named event/property and observer; publication privacy, retrieval pertinence privacy, access authorisation, sender anonymity, endpoint authenticity, availability and conversation continuity are not treated as interchangeable.
 * Out-of-band bootstrap/capability channels and collusion assumptions are included in the observer inventory rather than treated as invisible setup.
+* Bootstrap substitution, publication poisoning, index equivocation, retrieval manipulation, cross-role collusion, retention and suppression are each represented as distinct scenarios with an explicit actor, observation window and failure outcome.
+* Service-reported events, endpoint-authenticated protocol facts, externally observed metadata and analyst-inferred correlations are kept as separate evidence classes; absence from one view is not treated as proof that an event did not occur.
+* Index completeness is not inferred from a successful query response unless a specified and evaluated consistency mechanism supports that bounded claim.
+* Timeout, retry and alternate-route policies are evaluated for both availability and the additional access/timing/linkage they expose.
 * Carrier metadata tests distinguish descriptive EXIF/IPTC/XMP fields, filenames and embedded previews from structural/codec information and image-signal fingerprints. Each named platform/route is tested separately for resizing, recompression, transcoding, field retention and extraction success.
 * Retention and access assumptions are documented.
 * Correlation experiments state the observer vantage, dataset, event definition, features, thresholds, false-positive/negative rates and limitations.
