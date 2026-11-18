@@ -37,7 +37,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 ## Active work, in priority order
 
-1. **T-006 · Source-audit the route/fault/evidence matrix.** Next: audit image-specific transformation cells against SRC-035, SRC-033, SRC-034 and SRC-043; then audit Signal, Dropbox and Pigeonhole evidence boundaries. Keep protocol claims separate from product/service behaviour. OMR incomplete/divergent candidate view is a retrieval-native fault; duplicate, conflict, order and replay remain wrapper-level unless a route-native source says otherwise. Preserve the StOMR collision/state caveats and SRC-053's secondary-source boundary.
+1. **T-006 · Source-audit and test-design.** Image-specific transformation cells have been compared with SRC-035, SRC-033, SRC-034 and SRC-043; unsupported transformations remain unknown. Next, design the Pigeonhole successful-prefix/later-failure concurrent-reader probe from pinned v0.0.90 source and thin-client v0.0.23 API/tests. Then finish Signal and Dropbox product/service evidence boundaries. Keep protocol claims separate from product behaviour; preserve OMR candidate-view, StOMR collision/state and SRC-053 secondary-source distinctions.
 2. **T-001–T-003 · Source access.** Continue full-text/code access where it materially resolves a thesis claim, including the incomplete image and sanitizer sources. Partial-review labels remain mandatory; inaccessible sources must not stall unrelated thesis work.
 3. **T-004 · Route configuration evidence.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
 4. **T-007 · Coherence/review.** Terminology, citations, traceability and cross-document audit remain gated until substantive synthesis stabilises.
@@ -45,12 +45,9 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 ## Exact next action
 
-Source-audit `docs/route-fault-evidence-matrix.md` in this order:
-
-1. Image-specific transformation cells: distinguish what each paper actually tested from what would require a controlled platform experiment.
-2. Signal: protocol-level duplicate/replay and out-of-order message-key semantics versus app/service receipts and linked-device behaviour.
-3. Dropbox: direct invitation versus view-only link, owner/editor activity versus configurable viewer information, and account-plan/configuration gaps.
-4. Pigeonhole: specification claims versus pinned source behaviour; keep raw storage/copy separate from the katzenqt application assembler and do not infer reader visibility without a concurrent-reader test.
-5. Reconcile every finding into the thesis/research docs only where it changes an argument or evidence boundary, then update task/digest records.
+1. Design the Pigeonhole successful-prefix/later-failure concurrent-reader probe from pinned v0.0.90 source and thin-client v0.0.23 API/tests. Specify the fault injection, reader timing, observable state, endpoint/service evidence and outcomes that distinguish specification-level AllOrNothing from reader-visible partial persistence. Do not claim the probe has been run.
+2. Audit Signal protocol guarantees separately from product/service behaviour: message-key replay and out-of-order handling, delivery/read receipts, linked devices, backend queues and account state.
+3. Audit Dropbox's direct-invitation and view-only-link paths, owner/editor-visible activity, configurable viewer information, plan-dependent history, Guest views and direct downloads; keep live account configuration explicitly unpinned.
+4. Update the matrix and thesis only where findings change an evidence boundary or route decision. Keep all controlled tests gated on access to the relevant accounts/devices/deployments.
 
 The next controlled tests require accounts, devices or deployments that are not currently available. Do not imply they have been run.
