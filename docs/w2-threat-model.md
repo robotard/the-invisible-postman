@@ -67,7 +67,7 @@ These services may inspect, retain, transform, reorder, suppress, or remove medi
 
 A network observer may learn traffic timing, volume, endpoints, and other metadata, depending on transport protections and platform visibility. This model does not claim to eliminate traffic analysis.
 
-The [observer/property matrix](observer-property-matrix.md) provides a comparative baseline for recipient-retrieval and anonymous-access systems. It must not be treated as proof that their assumptions transfer to an image-hosting or social-platform route. In particular, two-server DORAM privacy depends on server non-collusion, while OMR/GOMR, oblivious signaling and dead-drop systems define different observer views and external setup assumptions.
+The [observer/property matrix](observer-property-matrix.md) provides a comparative baseline for recipient-retrieval and anonymous-access systems. It must not be treated as proof that their assumptions transfer to an image-hosting or social-platform route. In particular, two-server DORAM privacy depends on server non-collusion; OMR/GOMR and OMR/PIR variants expose detector, key and interaction assumptions; StOMR's abstract proposes privately established shared state; Oblivious Signaling moves work to uniform sender-side updates; and dead-drop systems define different observer views and external setup assumptions. SRC-050–SRC-051 remain abstract-level only.
 
 ### 4.5 Active attacker
 
