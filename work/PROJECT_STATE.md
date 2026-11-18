@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · UnifOMR primary paper reviewed; Pigeonhole probe refined; Signal/Dropbox product evidence integrated; T-006 active  
+**Checkpoint:** 2026-11-18 · T-006 documentary synthesis complete; T-001 source access active; UnifOMR, Pigeonhole, Signal and Dropbox evidence reconciled  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
