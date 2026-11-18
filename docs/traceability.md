@@ -86,11 +86,11 @@ This traceability does not assert that any evidence mechanism is implemented or 
 | Missing or duplicated capsules | Completeness and uniqueness validation | E5 | Retry and failure policy |
 | Image transformation | Image route adapter within the transport-route layer | E6 | Supported formats and transformation tolerance |
 | Route-specific exposure or failure | Route manager and route-specific adapters | E6, E9 | Route profiles, metadata, capacity, ordering, fallback and delivery semantics; see profile register and SRC-038–SRC-040 |
-| Metadata correlation | Carrier metadata minimisation, coordinator minimisation and documented platform/host/network exposure | E6, E9 | Format-specific allowlist separating descriptive fields, structural/codec requirements and signal-level fingerprints; output verification and platform-specific tests |
+| Metadata correlation | Carrier metadata minimisation and documented platform/host/network exposure | E6, E9 | Format-specific allowlist separating descriptive fields, structural/codec requirements and signal-level fingerprints; output verification and platform-specific tests |
 | Traffic analysis and flow correlation | Encryption does not hide all timing, size, volume or endpoint metadata; compare carrier rotation with explicit obfuscation approaches | E9 | Observer vantage, event features, correlation method, error rates and overhead; source leads SRC-016, SRC-018 and SRC-019 |
 | Behavioural correlation and social engineering | Human routine and interaction patterns can link otherwise distinct carriage instances | E9 | Behavioural side-channel analysis, adversarial prompt scenarios and proportionate user-facing mitigations |
-| Recipient discovery and rendezvous correlation | Separate authenticated discovery mechanism; no assumption that variable placement is self-discovering | E6, E9 | Compare full-scan, stable locator, one-use capability and oblivious retrieval; channel binding, locator lifetime, query linkability, collusion and access-pattern observer model |
-| Intermediary compromise | Endpoint-held private keys and least privilege | E1, E9 | Exact coordinator permissions |
+| Carrier acquisition and route correlation | Route-specific acquisition information may expose locators, timing and access patterns, but is not part of message decryption or reconstruction | E6, E9 | Compare external prior-art mechanisms and route-native acquisition semantics without selecting a service or fixed locator |
+| External route compromise | Endpoint-held private keys and self-contained authenticated message structure | E1, E9 | Assess observation, transformation, substitution and withholding; no external decryption or acceptance authority |
 | Logging and diagnostics leakage | Endpoint and service secret-handling responsibilities | E8 | Logging and crash-report policy |
 | Recovery collusion or share theft | Optional, separate recovery boundary | E1, E8 | Recovery authority, threshold and collusion model |
 | Endpoint compromise | Explicit endpoint trust boundary | E8 | Device security and compromise response |
@@ -140,7 +140,7 @@ The following decisions must remain open until research and specification justif
 5. Message freshness, replay-state persistence and expiry semantics.
 6. Capsule manifest, indexing, integrity and reconstruction rules.
 7. Supported image formats and realistic transformation tolerance.
-8. Metadata exposure, retention and coordinator permissions.
+8. Metadata exposure and retention at external platforms, hosts and networks.
 9. Recovery authority, threshold, collusion and share-protection assumptions.
 10. Test methods, justified acceptance criteria and independent review scope.
 11. Route-specific assumptions and comparison of image carriage with file/attachment and conventional messaging routes.
