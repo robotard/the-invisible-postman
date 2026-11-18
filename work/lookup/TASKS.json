@@ -5,14 +5,11 @@
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
   "next": [
-    "T-007: complete the static cross-document consistency pass after the endpoint-only architecture correction; verify source citations, links/anchors, traceability and operational records.",
-    "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access; pinned MRAS/DRAS code is source-inspected but does not replace full-paper methods/results.",
-    "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and an inaccessible external model archive. Resume if primary papers or model assets become available.",
-    "T-003: SRC-049 repository code review is expanded, but full paper, formal security argument, complete results and model weights remain unavailable; seek primary paper copy before formal-security claims.",
-    "T-004 (in_progress): pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available; do not treat public source pins as deployments.",
-    "T-006: complete for current evidence set.",
-    "T-007: complete for current checkpoint; reopen only after material thesis/source/architecture changes.",
-    "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
+    "T-001: resume full-text/source review of SRC-033, SRC-034 and SRC-036 when publisher, author or institutional access becomes available.",
+    "T-002: resume SRC-046–SRC-048 full-text and implementation review when papers/model assets become available.",
+    "T-003: resume SRC-049 full-paper/formal-argument review when primary paper and model assets become available.",
+    "T-004: pin Dropbox, Signal and Katzenpost/Pigeonhole profiles only when controlled account/device/deployment access is available.",
+    "Keep diagrams, external peer review and release work gated; do not create implementation or security claims from documentation-only work."
   ],
   "tasks": {
     "T-001": {
@@ -139,7 +136,7 @@
       "id": "T-007",
       "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
-      "status": "in_progress",
+      "status": "complete",
       "priority": 7,
       "targets": [
         "thesis.md",
@@ -147,11 +144,11 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Run a static consistency pass after the endpoint-only architecture correction: verify 60 unique source IDs and citations, local links/anchors, thesis/W1–W4/traceability/prior-art/contribution assessment alignment, and no stale architecture language implying a required train, coordinator, orchestration service, directory, database, fixed address or discovery service.",
+      "next_action": "Complete 2026-11-18. Reopen only after material thesis/source/architecture changes.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18",
-      "completion_note": "Reopened 2026-11-18 after material architecture correction; prior completion note remains historical and does not apply to this new pass."
+      "completion_note": "Post-architecture-correction static consistency pass completed 2026-11-18. Checked 15 core research documents; 60 unique source-register headings (SRC-001–SRC-060), no missing/duplicate source IDs, no unknown citations, no broken anchors among checked core documents, all 22 local link targets exist, and no duplicate heading slugs or stale architecture phrases implying a required train, coordinator, orchestration service or external discovery component. Corrected W3 section references in traceability, Candidate D references and multi-message/prior-art anchors. Static consistency check only; not independent review."
     },
     "T-008": {
       "id": "T-008",
@@ -371,6 +368,6 @@
   },
   "project_status": "Theory only · No implementation · Not audited.",
   "status_semantics": "repository_project_maturity_metadata_not_a_chat_response_footer",
-  "task_status_correction": "T-013 complete as comparative prior-art analysis only; Candidate D retired as architecture/contribution candidate; T-014 APIR server-dependency audit complete; T-007 reopened for post-correction consistency; T-015 optional message-granularity principle remains complete.",
-  "immediate_next_action": "T-007: run the post-correction static consistency pass across thesis, W1–W4, traceability, prior-art, contribution assessment and multipart linkage; verify source citations, links/anchors and absence of stale architectural dependencies."
+  "task_status_correction": "T-013 complete as comparative prior-art analysis only; Candidate D retired as architecture/contribution candidate; T-014 APIR server-dependency audit complete; T-007 post-correction static consistency pass complete; T-015 optional message-granularity principle remains complete. T-001–T-004 remain blocked on primary-source or controlled-environment access.",
+  "immediate_next_action": "No unblocked substantive task remains. Resume T-001–T-004 only when their recorded primary-source or controlled-environment blockers are resolved; keep diagrams, peer review and release gated."
 }
