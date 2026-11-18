@@ -1719,7 +1719,7 @@ The new axis is more precise than generic “multipart delivery”, but it is no
 
 ### Verification and limits
 
-- Thesis, route framework and W4 were written to GitHub; exact read-back verification remains to be recorded in the next checkpoint update.
+- Thesis, route framework and W4, contribution assessment and observer matrix were fetched after writing; required markers and the set-atomicity test cases were present. Exact saved blob SHAs: `thesis.md` `4156ae2aaeac41a79360818e150ec72bfdf8d324`; `docs/route-comparison-framework.md` `12bb0d53157ea7c9d61fd499a74ab5b2d0d83d68`; `docs/w4-risks-and-evaluation.md` `33342224e945e3d4ed3d1816c28c4d9f406a523d`; `docs/thesis-contribution-and-bias-assessment.md` `fa500391d600442c1f7e504757744d1bef28486a`; `docs/observer-property-matrix.md` `e951b74a965dde75ff6984d7879c76b80e971dd8`. Project state, log and task index/registry were also fetched back.
 - No new sources, implementation, deployed configuration, platform measurement, experiment, reproduction, formal proof, independent review or audit was performed.
 
 ### Exact next action
