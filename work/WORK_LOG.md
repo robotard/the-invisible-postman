@@ -1,5 +1,27 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Refined Pigeonhole reader-visibility probe against pinned thin-client API
+
+### Work performed
+
+- Re-read the Pigeonhole test-design record and cross-checked the pinned `katzenpost v0.0.90` courier/replica source plus `thin_client 0.0.23` Rust/Python APIs and tests.
+- Confirmed the courier's `CopyDedupCacheTTL` is 30 minutes and deduplication is keyed by the temporary-stream WriteCap hash. A same-WriteCap reissue during the TTL returns the cached terminal status rather than re-running the copy.
+- Confirmed the normal read API retries `BoxIDNotFound` indefinitely by default, with an explicit no-retry option. The reader-visibility probe now requires no-retry reads during timed observation windows.
+- Confirmed thin-client Copy returns courier completion/failure details but exposes no reader-side commit control. Existing multi-channel tests read only after successful Copy; the inspected failure test rejects the first destination envelope, not a later envelope after a successful prefix.
+- Qualified the replica persistence evidence: the inspected RocksDB write path uses default WriteOptions without explicitly requesting synchronous writes. The probe records Put/replica acceptance, not crash-durable persistence.
+- Updated `docs/pigeonhole-reader-visibility-probe.md`, SRC-040, the Echomix comparator, W4 and the route/fault/evidence matrix. Exact post-write read-back verified.
+
+### Evidence boundary
+
+- The source inspection establishes sequential dispatch, early failure and no rollback in the inspected path; it does not establish recipient-visible partial persistence.
+- The probe remains test design only. No controlled deployment, fault injection, concurrent read, build or test was run.
+
+### Next
+
+Finish the Signal protocol-versus-product/service evidence boundary, then the Dropbox direct-invitation/shared-link and viewer-activity evidence boundary. Keep live account/device/service tests gated on access.
+
+---
+
 ## 2026-11-18 · Direct review of UnifOMR primary paper and capacity-accounting analysis
 
 ### Work performed
