@@ -2330,3 +2330,24 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - No unblocked substantive task remains. Resume T-001–T-004 only when primary-source or controlled-environment blockers are resolved; keep diagrams, peer review and release gated.
+
+
+## 2026-11-18 · Roadmap-preserving multi-message terminology reconciliation
+
+### Work completed
+
+- Reconciled the multi-message supporting note with the endpoint-only architecture and current task state. Replaced its stale instruction to begin SRC-043–SRC-049 source review with an accurate review-status/continuation boundary; retained each source's individual limits in the source register.
+- Clarified that the remaining research question concerns visibility of self-contained authenticated set context and carrier-level correlation, not a discovery/manifest service boundary.
+- Replaced ambiguous endpoint-side discovery wording in the thesis scope with route-native acquisition and endpoint-side collection. Clarified traceability and W3 terminology so multipart context is explicitly self-contained/in-object and fragment indexing means fragment indices, not an external index.
+- Rechecked the newly surfaced SRC-049 GitHub repository lead against the co-author's publication-page Code link. It resolves to the already-pinned author-linked repository at commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d; the recursive tree and core code files are already recorded in SRC-049. No new paper PDF, model assets or test suite were found, so T-003's paper-access blocker remains.
+- Preserved the existing roadmap, task priorities, dependencies and gates. No new task or architecture candidate was created.
+
+### Verification and limits
+
+- thesis.md, docs/multi-message-linkage-and-steganographic-carriage.md, docs/traceability.md and docs/w3-architecture.md were each committed and fetched from main; exact saved-content comparisons passed. A targeted post-write check confirmed the intended endpoint/acquisition terminology in all four files.
+- GitHub repository provenance was corroborated by the co-author's publication page linking to the same repository. Code remains source-inspected only; no build, test, reproduction, paper-proof review or independent audit was performed.
+- WORKPLAN.md and task statuses were not changed. T-001–T-004 remain blocked on their recorded access/configuration conditions; no unblocked substantive task is currently available.
+
+### Exact next action
+
+- Preserve the existing roadmap. Resume T-001–T-003 only when the missing primary papers or artifacts become available, and T-004 only when controlled route accounts/configurations/deployment evidence becomes available. Do not create a parallel research stream to fill the access gap.
