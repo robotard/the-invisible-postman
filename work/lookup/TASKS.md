@@ -26,7 +26,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. Current focus: stress-test the new `docs/prior-art-comparison.md` §10 crosswalk row by row against source-register entries and underlying papers/specifications. Check each claim about native units, fragment completeness, reconstruction, atomicity, endpoint acceptance, observer leakage and event evidence. Then determine whether the route-agnostic acceptance/evidence contract changes a concrete route decision or merely restates standard protocol discipline; narrow or retire Candidate C if no decision-relevant difference survives.
+**Current active task:** T-006. Current focus: continue source-auditing `docs/prior-art-comparison.md` §10 against registered papers/specifications. StOMR (SRC-050) and UnifOMR (SRC-051) are now registered from official abstracts and CCS 2026 records, but their full-text PDF requests returned HTTP 403; retain abstract-level claims and seek an accessible author/institutional copy. Reconcile public-key/stateful OMR, OMR/PIR relation, group retrieval, detector/key assumptions, interaction and cost trade-offs across the route/observer comparison. Then test whether the receiver-acceptance/evidence contract changes a concrete route decision beyond prior art; narrow or retire Candidate C if not.
 
 **Parallel evidence work:** T-001–T-003 remain in_progress for source access where it materially resolves claims. T-004 is now in_progress: public Dropbox/Signal/Katzenpost release and documentation snapshots are pinned, but actual account, installed-client/backend and running-deployment configurations remain unavailable. Continue other unblocked work around these access limits.
 
