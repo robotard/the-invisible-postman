@@ -130,15 +130,15 @@ Candidate C survives only if the matrix produces a reproducible, decision-releva
 
 **Requires controlled access or execution:** live Dropbox account/link configuration; Signal test accounts/devices and product/service behaviour; a compatible Pigeonhole deployment and concurrent-reader probe; repeated image-platform upload/download and transformation capture; and performance/latency/byte measurements. None is implied by this documentary matrix.
 
-The smallest decision-relevant evaluation is staged, not a full factorial test of every fault against every route:
+The smallest decision-relevant evaluation is staged, not a full factorial test of every fault against every route. Its **three primary treatments** are the multi-image route, a single-file Dropbox object and raw Pigeonhole AllOrNothing; the `katzenqt` assembler is a separate application-level observation. Signal remains a protocol/service reference profile, not a primary treatment in this set-atomicity experiment: the cited specifications define per-message state, not an arbitrary multi-message transaction, and no comparable product attachment/set operation has been pinned.
 
 1. **Freeze the common endpoint task:** one protected logical object, identity/session scope, validation policy, freshness rule and declared use case. Add a manifest only for fragmented/set-based routes.
-2. **Run complete-delivery controls** for the four native route families: single file (Dropbox), individual authenticated messages (Signal), capability-addressed copy (Pigeonhole, with katzenqt tested separately), and an SRC-043-style S=2/r=4 multi-image set.
-3. **Run the strongest route-specific omission case:** for SRC-043, first remove one redundant copy, then remove all copies of one fragment and record byte recovery separately from endpoint acceptance; for Pigeonhole, make E1 succeed and E2 fail while a recipient with ReadCap polls concurrently. These are distinct tests, not a shared artificial transaction.
-4. **Capture endpoint, service and observer ledgers independently.** For Dropbox and Signal, add product/service observations only when controlled accounts/devices and the relevant settings are available. Treat OMR/StOMR/UnifOMR as retrieval-model diagnostics, not storage-route substitutes.
-5. **Escalate only where the first result warrants it:** add duplicate, conflict, reorder or replay cases only when the route's native semantics and declared use case make them decision-relevant. Record a route decision and measured costs, not assumed ones.
+2. **Run complete-delivery controls** for the three primary treatments. The Dropbox case is one file object; do not manufacture a multi-file transaction.
+3. **Run the two strongest route-specific omission cases:** for SRC-043, remove one redundant copy and then all copies of one fragment, recording recovered bytes separately from complete authenticated endpoint acceptance; for Pigeonhole, make E1 succeed and E2 fail while a recipient with ReadCap polls concurrently. Run the `katzenqt` application chain-gate case separately from raw ReadCap visibility.
+4. **Capture endpoint, service and observer ledgers independently.** Add Dropbox or Signal product/service observations only when controlled accounts/devices and relevant settings are available. Treat OMR/StOMR/UnifOMR as retrieval-model diagnostics, not storage-route substitutes.
+5. **Escalate conditionally:** add duplicate, conflict, reorder, replay or uncertain-acknowledgement retries only if the initial result and declared use case make them decision-relevant. Record a route decision and measured costs, not assumed ones.
 
-This staging makes the first experiments falsifiable while avoiding a large, low-value route × fault matrix. It does not remove any fault from the research catalogue; it separates the minimum discriminating tests from conditional extensions.
+This staging avoids a large, low-value route × fault matrix. It does not remove faults from the research catalogue; it separates the minimum discriminating tests from conditional extensions.
 
 This remains a test specification, not an executed experiment. Do not begin diagrams or raise contribution status on the basis of the matrix alone.
 
