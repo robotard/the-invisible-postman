@@ -1835,3 +1835,14 @@ The new axis is more precise than generic “multipart delivery”, but it is no
 ### Assurance
 
 - Repository file writes are being read-back verified. No implementation, code execution, protocol experiment, proof, benchmark reproduction, independent review or security audit was performed.
+
+
+### 2026-11-18 correction · StOMR full-text and artifact access
+
+The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copies. A co-author's institutional publication page exposed the complete 15-page CCS 2026 paper, and the public artifact repository supplied the camera-ready PDF and source.
+
+- Full paper reviewed: stateful Signal/Decode semantics, detection-key update during Decode, multi-query receiver-privacy definition, OMR-KEM key flow, correctness/receiver-privacy/IND-CPA definitions, security reductions, threat model and future-work scope.
+- Threat model: passive adversary sees public bulletin board, public keys and all participant communications; it may collude with any party except the target sender and receiver. It does not model active malicious publication/detector deviation. The public-key delivery steps do not themselves define authenticated human/contact identity binding. Stateful group OMR is future work.
+- Artifact pin: yiannisdt/StOMR main c28d02d5dddf6360e9d2d39e5335ed77f73645e0, updated 2026-11-03. Inspected README, artifact appendix, CPU/GPU CLI, CPU setup/run/decode and GPU run/decode paths, and the static/mock test script. The CLI/core executes a local synthetic tag/payload matching-compression-decode pipeline; it is not a networked bulletin-board/detector deployment. No OMR-KEM setup/encapsulation/decapsulation path appears in the inspected entry points.
+- No build, tests, benchmark or code execution performed. The code review is source inspection only.
+- SRC-050, prior-art §10, thesis, W1–W4, observer matrix and contribution assessment updated. UnifOMR SRC-051 remains abstract-level because its ePrint PDF request still returns HTTP 403.
