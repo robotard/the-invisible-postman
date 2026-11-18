@@ -107,9 +107,7 @@ This traceability does not assert that any evidence mechanism is implemented or 
 | Capsule and multipart manager | Package and reconstruct protected messages | Handle fragmented delivery without ambiguous acceptance | E5 |
 | Encapsulation and decapsulation boundary | Add bounded carriage framing; extract the protected object and check structure, lengths, supported format and completeness | Framing is not cryptographic authentication; security-relevant bindings are authenticated by the endpoint protocol | E5, E6 |
 | Transport adapters | Carry opaque protected objects over declared hops; expose route-specific handling and failures | Replaceable carriage without plaintext, key, identity or message-acceptance authority | E6, E9 |
-| Optional orchestration | Coordinate route selection, publication/retrieval, retries and delivery references; may also be a transit participant | Coordination is not mandatory; any transit role has a separate observer view | E6, E9 |
 | Transport-route manager and carrier adapters | Select, describe and invoke carriage routes; encode/extract route-specific carriers and apply image metadata minimisation | Image carriage is required; other routes are comparison profiles | E6, E9 |
-| Coordinator and transport | Route and coordinate delivery | Permit intermediary assistance without granting cryptographic authority | E1, E9 |
 | Lifecycle and local state | Manage replay, expiry and key changes | Give lifecycle claims precise operational meaning | E4, E7 |
 | Optional recovery | Support explicitly authorised recovery if justified | Explore recovery without making it a mandatory trust dependency | E1, E8 |
 
