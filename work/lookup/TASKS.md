@@ -17,21 +17,22 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | blocked | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
 | T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | complete | 1 |
-| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | complete | 7 |
+| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | in_progress | 1 |
 | T-008 | diagram_work | Stabilise diagram arguments and reconcile figure briefs with thesis | blocked_until_research_stable | 8 |
 | T-009 | diagram_work | Create and verify contextual editable thesis diagrams | deferred | 9 |
 | T-010 | peer_review_preparation | Prepare a coherent thesis candidate and scoped peer-review materials | deferred | 10 |
 | T-011 | peer_review | Conduct and reconcile substantive independent peer review | not_started | 11 |
 | T-012 | release_integrity | Verify thesis release integrity and remove disposable work area | deferred | 12 |
 | T-013 | comparative_prior_art | Formal model of server-dependent private/verifiable retrieval (former Candidate D) | complete | 1 |
-| T-014 | prior_art_boundary | Audit APIR server dependencies against endpoint-only message architecture | in_progress | 1 |
+| T-014 | prior_art_boundary | Audit APIR server dependencies against endpoint-only message architecture | complete | 1 |
 | T-015 | design_synthesis | Integrate optional sender-controlled message granularity | complete | 2 |
 
 ## Current execution
 
-**Current active work:** T-013 Candidate D formalisation is complete for the current evidence set. The thesis and prior-art comparison now define the OMR-specific dynamic-predicate/admission/manifest-closure problem, explicit adversary and leakage model, proof obligations, cost dimensions and pre-admission omission boundary. Generic private/verifiable range retrieval is prior art. T-007's post-integration consistency pass is complete: 60 unique source IDs, no missing citations, broken local links or heading anchors in the checked documents, and no duplicate source headings/paragraphs. T-014 is now in_progress: test whether APIR authenticated predicate COUNT plus authenticated point queries can recover all OMR matches without an O(N) scan, leakage or snapshot mismatch. T-001–T-004 retain their source/configuration blockers. T-015 is complete: representation flexibility is stated in thesis §1.1, optional whole-object/segmented publication policy is analysed separately, and RQ4 traceability is aligned.
+**Current active work:** T-013 is complete as comparative prior-art analysis only; former Candidate D is retired as an architecture/contribution candidate. T-014 is complete: pinned APIR source inspection confirms a server-held database, aggregate-only predicate result and separate point queries requiring a known index; findings are integrated as prior art, not as an architecture subsystem. T-007 is reopened to verify thesis/W1–W4/traceability/prior-art/contribution/multipart alignment after the endpoint-only correction. T-001–T-003 remain blocked on primary-source access; T-004 remains blocked on controlled route configuration. T-015 remains complete.
 
-**Next:** inspect the pinned APIR FSS/predicate/point-query code and determine whether the OMR signal-membership predicate and subrange counts are expressible; specify how all matching indices are found; bind count and point answers to one immutable snapshot; calculate leakage/cost and handle collisions, false positives and overflow. Preserve SRC-056 (indexed-text only) and SRC-059 (abstract/introduction only). No construction, proof, build or benchmark is claimed yet.
+**Next:** complete T-007's static source/citation/link/anchor/terminology pass and reconcile the operational records.
+
 ## Status meanings
 
 - `ready`: unblocked and not started.
