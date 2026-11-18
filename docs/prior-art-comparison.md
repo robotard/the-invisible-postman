@@ -136,13 +136,14 @@ Candidate D should advance only if a formal model and comparison show that the O
 
 ### 4.2 Candidate D: formal property model and negative boundary
 
-Candidate D is a conjunction of distinct properties, not a generic claim of “authenticated private retrieval”. Let \(S\) be the sender, \(R\) the recipient, \(P\) the publication/log service, \(D_1\ldots D_k\) the OMR/PIR retrieval services, and \(C_j\) the carrier platforms. Let \(M\) be a sender-authenticated manifest for one logical object; \(DB_e\) the publication database at authenticated epoch \(e\), committed by root \(r_e\); \(Q_R\) the recipient's hidden pertinence predicate; and \(X_e=\{x\in DB_e:Q_R(x)=1\}\) the exact matching set at that epoch. The returned set is \(Y\), with proof material \(\pi\).
+Candidate D is a conjunction of distinct properties, not a generic claim of “authenticated private retrieval”. Let \(S\) be the sender, \(R\) the recipient, \(P\) the publication/admission/log service, \(D_1\ldots D_k\) the OMR/PIR retrieval services, and \(C_j\) the carrier platforms. Let \(M_o\) be a sender-authenticated manifest for logical object \(o\); \(DB_e\) the publication database at authenticated epoch \(e\), committed by root \(r_e\) and checkpoint \(\sigma_e\); \(Q_R\) the recipient's hidden pertinence predicate; and \(X_e=\{x\in DB_e:Q_R(x)=1\}\) the exact matching set at that epoch. Let \(K_e\) be the raw candidate set returned by retrieval, \(Y_e\) the final locally filtered and verified result, and \(\pi\) the proof material.
 
 | Obligation | Required statement | What it does **not** establish by itself |
 |---|---|---|
-| Record soundness | Every \(y\in Y\) is committed in \(DB_e\) and satisfies \(Q_R\) | That every matching record was returned |
-| Predicate completeness | \(Y=X_e\), for the declared predicate and snapshot | That the snapshot contains every carrier the sender intended |
+| Candidate provenance | Every \(k\in K_e\) is committed in \(DB_e\) | That every matching record was returned |
+| Retrieval completeness | \(X_e\subseteq K_e\), for the declared predicate and snapshot | That the snapshot contains every carrier the sender intended |
 | Snapshot consistency | All records, proofs and queries bind to the same \(r_e\)/epoch | Global agreement if clients are shown forks and never compare roots |
+| Local filtering and final soundness | \(Y_e=\operatorname{Filter}_{Q_R}(K_e)=X_e\) | That a raw candidate set containing false positives is itself an accepted result |
 | Append/fork consistency | Later roots extend the declared earlier view; divergent histories cannot silently merge | Availability or inclusion of an event never submitted |
 | Query privacy | A permitted coalition's view is simulatable from an explicit leakage function \(L\) | Network anonymity, account anonymity or protection against a coalition outside the stated threshold |
 | Admission evidence | Each manifest-declared publication has a verifiable acceptance/inclusion receipt by a stated deadline, or its non-admission is attributable | That the sender's manifest captures unexpressed intent |
