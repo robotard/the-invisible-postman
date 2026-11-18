@@ -45,7 +45,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 **T-014 is complete.** The pinned APIR source audit establishes the server-held population and database RPC dependency, predicate aggregate rather than matching-index output, and separate point-query requirement for a caller-known index. The findings are integrated into the prior-art comparison and SRC-054. No database replacement, server-side composition, build, test, benchmark or security review was pursued.
 
-**T-007 is reopened for a final cross-document consistency pass.** The endpoint-only architecture correction changed thesis §8, W1–W4, traceability, multipart linkage and contribution assessment. Recheck 60 source IDs, local links/anchors, task/state alignment and any residual language that implies a required train, coordinator, orchestration service, directory, database, fixed address or discovery service. Distinguish negative references and external prior-art comparators from architectural components.
+**T-007 is complete.** The post-correction static pass checked 15 core research documents: 60 unique source-register headings (SRC-001–SRC-060), no missing/duplicate source IDs, no unknown citations, no broken anchors among the checked core documents, all 22 local link targets exist, and no duplicate heading slugs or stale architecture phrases implying a required train, coordinator, orchestration service or external discovery component. The prior-art and contribution records now mark Candidate D retired. This is a static consistency check, not independent review.
 
 **T-015 remains complete.** Whole-object baseline and optional sender-selectable segmented representation remain independent of carrier/transport; the separate design note carries the optional linkage exploration.
 
@@ -53,6 +53,6 @@ T-001–T-003 retain primary-source access blockers; T-004 retains controlled ro
 
 ## Exact next action
 
-Complete T-007's static cross-document consistency pass after the architecture correction. Verify exact GitHub main read-back for all changed files. Do not reopen Candidate D as an architecture task or design a server/database subsystem.
+No unblocked substantive task remains. T-001–T-003 await primary-source access; T-004 awaits controlled Dropbox/Signal/Katzenpost configuration access. Resume the next blocked task only when its required source or environment becomes available. Diagrams, external review and release remain gated. Do not reopen Candidate D or design a server/database subsystem.
 
 The next controlled tests require accounts, devices or deployments that are not currently available. Do not imply they have been run.
