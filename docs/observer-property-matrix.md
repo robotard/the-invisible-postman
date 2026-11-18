@@ -15,7 +15,8 @@ The unit of comparison is the **observer/property claim**, not the system name. 
 - **OMR (2022):** full paper inspected; single-recipient public bulletin-board retrieval model.
 - **GOMR (2024):** full IACR-hosted paper inspected, including formal models, adversary definitions, constructions, DoS properties, benchmarks and discussion of adjacent private retrieval and MLS work.
 - **PerfOMR (2024), SophOMR (2026), InstantOMR (2026):** full papers inspected as recorded in SRC-024, SRC-028 and SRC-029; treated as OMR-family construction/performance variants, not separate end-to-end delivery architectures.
-- **StOMR and UnifOMR (CCS 2026):** official ePrint abstracts and publication records inspected as SRC-050–SRC-051; full-text PDF requests returned HTTP 403. Their detailed construction, formal security arguments, code and evaluations remain unreviewed.
+- **StOMR (CCS 2026):** full 15-page paper and selected public CPU/GPU artifact source inspected as SRC-050. Its receiver-privacy adversary is passive; it does not model active malicious publication/detector deviation. The inspected artifact is a local synthetic-input matching/compression/decode harness, not a network deployment or OMR-KEM integration.
+- **UnifOMR (CCS 2026):** official ePrint abstract and publication records inspected as SRC-051; full-text PDF remains inaccessible. Detailed construction, proof, code and benchmark methodology remain unreviewed.
 - **Oblivious Signaling (2026):** full USENIX paper inspected; receiver-privacy model, encrypted inbox updates, cost placement and stated limitations.
 - **Remise (2026):** full USENIX Security 2026 paper inspected; system model, security definition, DORAM/authorization construction, evaluation and limitations.
 - **Dead-drop covert messaging (2024):** full paper inspected; text-based platform pipeline, rendezvous, hints, retrieval, user detection and stated observer exclusions.
