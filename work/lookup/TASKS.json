@@ -4,7 +4,16 @@
   "not_for_thesis": true,
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
-  "next": "T-007",
+  "next": [
+    "T-014: test APIR authenticated-count plus authenticated-point-query composition for OMR completeness; verify FSS predicate expressivity, matching-index discovery, same-snapshot binding, leakage, cost, collisions, overflow and manifest/admission limits.",
+    "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access; pinned MRAS/DRAS code is source-inspected but does not replace full-paper methods/results.",
+    "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and an inaccessible external model archive. Resume if primary papers or model assets become available.",
+    "T-003: SRC-049 repository code review is expanded, but full paper, formal security argument, complete results and model weights remain unavailable; seek primary paper copy before formal-security claims.",
+    "T-004 (in_progress): pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available; do not treat public source pins as deployments.",
+    "T-006: complete for current evidence set.",
+    "T-007: complete for current checkpoint; reopen only after material thesis/source/architecture changes.",
+    "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
+  ],
   "tasks": {
     "T-001": {
       "id": "T-001",
@@ -130,7 +139,7 @@
       "id": "T-007",
       "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
-      "status": "in_progress",
+      "status": "complete",
       "priority": 7,
       "targets": [
         "thesis.md",
@@ -138,11 +147,11 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Rerun the final cross-document consistency audit after T-013: verify all source IDs, internal links and heading anchors; reconcile stale prior-art section references, section numbering and Candidate D terminology; confirm thesis/source-register/observer-matrix/traceability/task-state consistency. Do not upgrade SRC-056 or SRC-059 beyond their partial review state.",
+      "next_action": "Complete for current checkpoint. Reopen only after material thesis/source/architecture changes.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18",
-      "completion_note": "Verified 53 unique source-register IDs with no missing citations in the checked thesis/W1-W4/prior-art/route/traceability documents; no broken relative links in the checked active documents; no duplicate thesis paragraphs or numbered heading IDs; route-framework §5.8/§5.9 anchors resolve; source maturity labels and T-001–T-006 statuses reconciled. No independent review, build, controlled test or audit performed."
+      "completion_note": "Post-T-013 consistency pass completed 2026-11-18. Checked 60 unique source-register headings (SRC-001–SRC-060), no missing source citations across thesis/W1–W4/traceability/source register/prior-art/route and observer matrices/contribution assessment, no broken relative links or heading anchors across the 12 checked active documents, no duplicate source headings, no duplicate long paragraphs or heading slugs in thesis/prior-art/observer/traceability, and aligned Candidate D notation/definitions between thesis §8.4 and prior-art §4.2. Fixed stale prior-art section references and repaired W3 thesis anchor. Static consistency check only; not independent review."
     },
     "T-008": {
       "id": "T-008",
@@ -275,14 +284,41 @@
       "depends_on": [
         "T-007"
       ],
-      "next_action": "Test the APIR authenticated-count plus authenticated-point-query composition as a candidate OMR completeness check. Verify whether the OMR signal-membership predicate fits an efficient FSS; bind count and point queries to one immutable epoch; model candidate-count padding, 32-bit collisions, malicious-detector aborts, sender-manifest admission and AAD root history. Compare against SRC-056–060 and decide whether this is a new OMR application, a straightforward prior-art composition, or a negative feasibility result.",
+      "next_action": "Completed. The next task is T-014: test the conditional APIR authenticated-count plus authenticated-point-query path, including FSS predicate expressivity, matching-index discovery, common snapshot binding, leakage, cost, collision/overflow and manifest/admission boundaries.",
       "blockers": [
         "Full publisher PDF for SRC-056 (Authenticated Private Information Retrieval for Range Queries) returned 403; proofs, complete algorithms and evaluation remain indexed-text-only.",
         "Full technical paper for SRC-059 (VPRQ) remains inaccessible; only abstract and publisher-indexed introduction inspected."
       ],
       "completion_rule": "A formal, source-grounded model and complete nearest-prior-art comparison are integrated into thesis and supporting research; proof obligations, leakage, assumptions, costs and novelty disposition are explicit; commits and exact read-back verified.",
       "last_updated": "2026-11-18",
-      "notes": "Formal property model, leakage function, pre-admission-omission boundary and APIR/AAD cost/code findings are drafted in docs/prior-art-comparison.md §4.2; observer leakage is in docs/observer-property-matrix.md §4.3; thesis and contribution assessment now include the conditional count-plus-point path. No construction has been implemented or formally proved."
+      "notes": "Formal property model, leakage function, pre-admission-omission boundary and APIR/AAD cost/code findings are drafted in docs/prior-art-comparison.md §4.2; observer leakage is in docs/observer-property-matrix.md §4.3; thesis and contribution assessment now include the conditional count-plus-point path. No construction has been implemented or formally proved.",
+      "completion_note": "Completed 2026-11-18: formal Candidate D model, adversary/trust assumptions, exact candidate/result-set semantics, admission and manifest boundaries, leakage function, cost vector, proof obligations and pre-admission omission indistinguishability proposition integrated into thesis §8.4 and prior-art §4.2. Added a primitive-coverage and composition test across APIR, AAD, vPIR, multi-query vPIR, 2024 encrypted range-query schemes, 2026 range APIR, OMR and SRC-052. Generic private/verifiable range retrieval is prior art; Candidate D remains a narrowed research hypothesis, not a novelty claim. SRC-056 and SRC-059 remain partial-source blockers. No construction, proof, implementation or benchmark is claimed."
+    },
+    "T-014": {
+      "id": "T-014",
+      "title": "Test APIR authenticated-count plus authenticated-point-query composition for OMR completeness",
+      "priority": 1,
+      "status": "in_progress",
+      "depends_on": [
+        "T-007",
+        "T-013"
+      ],
+      "files": [
+        "docs/source-register.md",
+        "docs/prior-art-comparison.md",
+        "docs/observer-property-matrix.md",
+        "thesis.md",
+        "docs/w4-risks-and-evaluation.md",
+        "work/PROJECT_STATE.md"
+      ],
+      "description": "Assess a conditional route for OMR completeness using APIR authenticated predicate COUNT plus authenticated private point queries. Determine whether FSS can express the exact OMR signal-membership predicate and any index-range/subrange counts; how the client discovers the matching indices rather than merely learning their number; whether count and point answers bind to one immutable database snapshot; what a malicious detector can omit or equivocate about; and how output cardinality, access count, timing and communication volume leak. Include false positives, 32-bit signal collisions, candidate-capacity overflow, admission receipts and sender-manifest closure. Do not assume that a count plus arbitrary point queries enumerates the matches.",
+      "next_action": "Read the pinned APIR artifact code at commit 7a7f2041bc1e0907ef089f8e8e55252ef7f18e0f (predicate client/server, FSS implementation, query representation and point-query path) alongside SRC-054. Formalise a candidate count-to-index-discovery procedure or reject the route if it requires an O(N) scan, leaks the matching indices/cardinality, or cannot bind all answers to one immutable snapshot. Compare any candidate against SRC-056–SRC-060 and the OMR/UnifOMR capacity boundary. No build/test or construction claim without evidence.",
+      "completion_rule": "A source-grounded feasibility assessment states whether the OMR predicate is expressible in APIR FSS; how all matching indices are found; whether count and point answers share one authenticated snapshot; soundness/completeness against a malicious detector; leakage and cost; collision/false-positive/overflow handling; and admission/manifest limitations. Deliver either a defensible construction outline or a negative feasibility result. No proof, implementation or benchmark claim without evidence.",
+      "blockers": [
+        "Full SRC-056 APIR-range PDF and SRC-059 VPRQ technical paper remain inaccessible; retain partial-source status and avoid novelty claims.",
+        "APIR artifact is source-inspected only; no build, test, benchmark or independent security review has been performed."
+      ],
+      "last_updated": "2026-11-18"
     }
   },
   "evidence_access_notes": {
@@ -313,6 +349,6 @@
   },
   "project_status": "Theory only · No implementation · Not audited.",
   "status_semantics": "repository_project_maturity_metadata_not_a_chat_response_footer",
-  "task_status_correction": "T-006 complete for current evidence set. T-007 complete for the previous checkpoint, but must be rerun after T-013 source/thesis integration. T-013 is in_progress and next. T-001–T-004 remain blocked on full primary sources, model assets or controlled route configurations.",
-  "immediate_next_action": "T-013: formalise Candidate D against APIR/AAD, vPIR, multi-query vPIR, 2024 VPRQ/leakage-suppressed range-query schemes, 2026 range APIR, OMR/StOMR/UnifOMR and SRC-052. Generic private/verifiable range retrieval is prior art. Define the narrower OMR-specific dynamic-predicate/admission/manifest-closure problem, its adversary, proof statements, leakage and cost. Full SRC-056 PDF and SRC-059 technical paper remain inaccessible. Then rerun T-007 consistency checks."
+  "task_status_correction": "T-013 Candidate D formalisation complete; T-007 post-integration consistency pass complete. T-014 APIR count-plus-point composition feasibility test is now in_progress. T-001–T-004 retain their existing source/configuration blockers; T-006 remains complete for the current evidence set.",
+  "immediate_next_action": "T-014: inspect the pinned APIR FSS/predicate/point-query code and determine whether authenticated COUNT plus authenticated point queries can recover all OMR matches without an O(N) scan, unbounded query leakage, or snapshot mismatch. Formalise either a construction outline or a negative feasibility result; preserve SRC-056 and SRC-059 partial-source boundaries."
 }
