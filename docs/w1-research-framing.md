@@ -66,7 +66,7 @@ The thesis considers a proposed endpoint-controlled messaging architecture in wh
 - an intermediary that should not possess plaintext or the sole ability to decrypt;
 - optional steganographic concealment as a separate image-route layer;
 - distribution, recipient discovery, collection, decapsulation and route-specific failure behaviour;
-- discovery/retrieval privacy comparisons across recipient-side scanning, stable authenticated locators, short-lived capabilities and private/oblivious retrieval, without prematurely selecting a mechanism;
+- discovery/retrieval privacy comparisons across recipient-side scanning, stable authenticated locators, short-lived capabilities, public-key OMR/PIR-style retrieval and stateful private retrieval, without prematurely selecting a mechanism;
 - format-specific metadata classification that separates descriptive EXIF/IPTC/XMP fields from required container/codec structures and signal-level platform traces;
 - resource-bounded multipart parsing and reconstruction, including explicit size, count, time and memory limits;
 - carrier metadata minimisation, platform/network metadata exposure and human behavioural linkability;
