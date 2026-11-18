@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · Endpoint-only architecture correction integrated; T-013 comparative prior-art disposition and T-014 APIR dependency audit complete; targeted multi-message/acquisition terminology reconciliation committed and read-back verified; Sony forensic-watermark comparison added; source/route access gaps reclassified as deferred non-critical evidence work  
+**Checkpoint:** 2026-11-18 · Endpoint-only architecture correction integrated; T-013 comparative prior-art disposition and T-014 APIR dependency audit complete; targeted multi-message/acquisition terminology reconciliation committed and read-back verified; Sony forensic-watermark comparison integrated into thesis §8.3 and supporting research; supplied papers mapped to existing sources; T-001–T-004 retained as deferred non-critical evidence work  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
