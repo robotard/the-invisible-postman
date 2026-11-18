@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · T-006 complete; T-007 cross-document consistency review active; T-001–T-004 blocked on source copies/live configuration  
+**Checkpoint:** 2026-11-18 · Candidate D drafted as a conditional composition hypothesis; T-007 consistency review active; T-013 formalisation queued  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
@@ -21,7 +21,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 - The active manuscript is `thesis.md`. Relationship authority, receiver acceptance, cross-route discovery and adversarial event-chain analysis are integrated across the thesis and W1–W4.
 - The six named route profiles are IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE. SRC-043 is a supplemental multi-image fragment/redundancy baseline; OMR-family work is a separate discovery/retrieval comparator.
-- The contribution boundary is now narrow: generic endpoint acceptance, authenticated manifests, completeness, whole-object integrity, freshness and replay handling are standard protocol obligations, not a novel mechanism. Candidate C remains a conditional reproducible cross-route evaluation method, not an established contribution. The matrix audit produced no empirical result or rigorous counterexample: Pigeonhole reader visibility remains untested, the UnifOMR capacity issue is a paper-text ambiguity, and SRC-043's partial byte recovery is established prior art.
+- The contribution boundary has been refined. Candidate C remains a conditional reproducible cross-route evaluation method. A new **Candidate D** asks whether OMR-style hidden-predicate retrieval can be composed with authenticated publication snapshots and sender-authenticated multi-carrier manifest closure, without exposing recipient predicates or a public linkage handle. APIR (SRC-054), AAD (SRC-055), OMR and the SRC-052 downstream integration are substantial adjacent prior art; uniqueness is not established. No empirical result or rigorous counterexample exists: Pigeonhole reader visibility remains untested, and the UnifOMR capacity issue remains a paper-text ambiguity.
 - Completeness is typed: carrier inventory, fragment-set completeness, byte reconstruction, storage atomicity, application continuity, retrieval-window coverage, endpoint logical-message acceptance, publication/index completeness and human receipt are not interchangeable.
 - `docs/route-fault-evidence-matrix.md` is the first documentary test sheet. It records route-native units, fault applicability, three evidence ledgers and controlled-access boundaries. It is not an executed experiment.
 
@@ -42,9 +42,10 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 **T-006 is complete for the current evidence set.** The route/fault matrix has been audited for minimality and staged decision relevance; Candidate C remains conditional and no route winner or mechanism-level novelty is established. Reopen this synthesis only if new source evidence materially changes the thesis.
 
 1. **T-007 · Final thesis alignment and cross-document consistency review (in progress).** Audit the active thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry. Verify every cited SRC ID and internal link; reconcile stale or duplicated wording without upgrading partial sources.
-2. **T-001–T-003 · Source access blocked.** Full papers remain unavailable for SRC-033/034/036/046/048/049; SRC-047's GitHub tree is README-only and its external Baidu model archive is inaccessible. Partial-review labels remain mandatory.
-3. **T-004 · Route configuration evidence blocked.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
-4. **Diagrams, external review and release** remain gated. Do not start illustration or release packaging merely because a matrix or checkpoint exists.
+2. **T-013 · Formalise Candidate D (ready).** Define adversary/collusion assumptions, authenticated snapshot and admission scope, hidden-predicate retrieval completeness, sender-manifest closure, leakage and cost. Test composition against SRC-054 APIR, SRC-055 AAD, SRC-020/024–030 OMR/GOMR/efficiency work and SRC-052 before proposing new mechanisms.
+3. **T-001–T-003 · Source access blocked.** Full papers remain unavailable for SRC-033/034/036/046/048/049; SRC-047's GitHub tree is README-only and its external Baidu model archive is inaccessible. Partial-review labels remain mandatory.
+4. **T-004 · Route configuration evidence blocked.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
+5. **Diagrams, external review and release** remain gated. Do not start illustration or release packaging merely because a matrix or checkpoint exists.
 ## Exact next action
 
 1. Run the targeted T-007 consistency audit across thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry. Verify all cited SRC IDs and internal links; resolve only evidenced discrepancies.
