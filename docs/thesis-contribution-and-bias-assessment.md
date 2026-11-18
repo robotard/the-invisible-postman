@@ -198,6 +198,15 @@ The protocol-boundary analysis now makes key hierarchy, authenticated identity/t
 
 The 17 November retrieval pass expanded publisher-preview evidence for MRAS, DRAS and active sanitisation, located and inspected the SRC-047 author repository README, and added abstract-level detail for SRC-049. It did not obtain complete papers for SRC-033, SRC-034, SRC-036, SRC-046 or SRC-048, inspect SRC-047 implementation/model files, or review SRC-049's formal proof and complete results. The relevant source-register entries retain partial-review status. These additions strengthen the prior-art pressure but do not establish any new novelty claim.
 
+
+### Receiver-acceptance candidate narrowed · 18 November 2026
+
+The source-audited crosswalk now rules out treating the endpoint acceptance sequence itself as a novel mechanism. Authenticated membership, completeness, whole-object validation and freshness/replay handling are standard endpoint protocol obligations; StOMR/OMR work concerns private retrieval and state, while SRC-052 demonstrates service-scoped range completeness and retry. None should be relabelled as a new contract.
+
+Candidate C is narrowed to a reproducible cross-route evaluation method: hold the protected endpoint object and validation policy constant, preserve route-native units (image fragment set, single file, per-message protocol state, capability-addressed copy and private retrieval window), inject comparable faults where applicable, and keep endpoint ground truth, service-reported events and observer inference in separate evidence ledgers. Its contribution condition is strict: a controlled result or rigorous counterexample must change a declared route decision, invalidate a material assurance claim, or expose a failure/evidence ambiguity not already made explicit by the closest prior art. A richer matrix or a generic list of protocol obligations is insufficient. If no such result emerges, retain the method as careful synthesis and make no originality claim.
+
+The crosswalk also clarifies the OMR boundary: private retrieval/receiver-privacy does not prove global publication or candidate-view completeness, and endpoint manifest validation does not prove private discovery or availability. These properties must be evaluated independently. SRC-051 UnifOMR remains abstract-level in this review; the source-pinned third-party SRC-052 integration is experimental and its reported test status has not been independently reproduced.
+
 ## 8. Required evidence before claiming originality
 
 1. A focused related-work matrix covering secure messaging architectures, covert/dead-drop messaging, image steganography, recipient discovery/private retrieval, mix networks/traffic analysis and media-platform transformations.
