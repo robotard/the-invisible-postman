@@ -17,7 +17,7 @@ Record before testing:
 - Freshness interval, replay state and expected stale/replay response.
 - Resource limits: object size, fragment/carrier count, retrieval window, retry budget and maximum candidate count.
 - A manifest only where fragmentation/set semantics are actually used. It declares expected unique member IDs, positions/count and protected-object digest. Single-file and per-message baselines do not receive an artificial manifest.
-- Endpoint ground truth for each trial: what was published, made available, received, validated and accepted/rejected.
+- Test-harness ground truth, kept distinct from endpoint evidence: intended/published object and member IDs, submission time and controlled availability window. The receiver endpoint separately records what it actually obtained, validated and accepted/rejected.
 
 For the multi-image comparator use **S=2 fragments, r=4 redundant carriers per fragment (eight stego carriers)**. This is a small semantic fixture, not a reproduction of SRC-043's 1,000-image benchmark. Do not transfer its reported percentages to this fixture.
 
@@ -41,6 +41,7 @@ Legend: **N** = fault maps to the route's native unit; **W** = meaningful only i
 
 | Fault | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal per-message | Pigeonhole copy/stream | OMR retrieval |
 |---|---:|---:|---:|---:|---:|---:|
+| Baseline complete delivery | N | N | N | N | N | N |
 | Delayed or withheld item | N | N | N | N | N | N |
 | Missing object or route-native unit | N | N | N | N | N | N |
 | Duplicate item | W | N | W | N* | N | ? |
@@ -52,7 +53,24 @@ Legend: **N** = fault maps to the route's native unit; **W** = meaningful only i
 
 * Signal's protocol state handles duplicate/replay and out-of-order message-key cases; this does not create an arbitrary multi-message transaction. OMR false positives/candidate selection are not equivalent to duplicated authenticated message-set members.
 
-Apply only faults meaningful to the native route. Mark non-applicable cases rather than manufacturing a common transaction. For image profiles, add route-native transformation faults (resize, recompression, transcoding, metadata rewrite, moderation/removal) separately from message-set faults. For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete.
+Apply only faults meaningful to the native route. Mark non-applicable cases rather than manufacturing a common transaction.
+
+### Image-specific transformation faults
+
+These are separate from message-set faults and apply to image-carriage profiles only. The named study results are not interchangeable or a current universal platform characterisation.
+
+| Transformation fault | Qiao | MRAS | DRAS | SRC-043 multi-image | Required observation |
+|---|---:|---:|---:|---:|---|
+| Resize/resampling | ? | ? | ? | ? | Dimensions before/after, interpolation and extraction result |
+| JPEG recompression / quality reduction | N | N | N | ? | Input/output quality, encoder/client, payload survival and extraction error |
+| Format conversion / transcoding | ? | ? | ? | ? | Source/destination format, colour subsampling, metadata and extraction result |
+| Metadata stripping/rewrite | ? | ? | ? | ? | Exact metadata fields changed; whether payload is in pixels or metadata |
+| Moderation/removal/re-encoding | ? | ? | ? | ? | Post visibility/removal event, resulting bytes and independent service evidence |
+| Carrier loss / unavailable object | N | N | N | N | Missing carrier count, fragment coverage and endpoint acceptance result |
+
+Here **N** means the study/profile includes this transformation or loss as a native comparison condition; **?** means it requires a controlled test or the cited source does not establish it. The current matrix does not claim that any named platform applies a specific transformation universally.
+
+For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete. For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete.
 
 ### Minimum fault cases
 
