@@ -39,21 +39,21 @@ For the multi-image comparator use **S=2 fragments, r=4 redundant carriers per f
 
 Legend: **N** = fault maps to the route's native unit; **W** = meaningful only if a test wrapper adds set/version semantics; **?** = current source evidence does not establish route behaviour; **—** = not meaningful for the native unit. A mark describes applicability, not successful detection or mitigation.
 
-| Fault | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal per-message | Pigeonhole copy/stream | OMR retrieval |
-|---|---:|---:|---:|---:|---:|---:|
-| Baseline complete delivery | N | N | N | N | N | N |
-| Delayed or withheld item | N | N | N | N | N | N |
-| Missing object or route-native unit | N | N | N | N | N | N |
-| Duplicate item | W | N | W | N* | N | ? |
-| Conflicting item at an existing position | W | N | W | W | N | W |
-| Reordering | W | N | — | N* | N | W |
-| Stale/replayed protected object or protocol message | W | W | W | N* | W | W |
-| Incomplete or divergent candidate view | ? | ? | ? | ? | ? | N |
-| Service acknowledgement without endpoint acceptance | N | ? | N | ? | N | N |
+| Fault | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal per-message | Pigeonhole storage/copy | katzenqt app assembler | OMR retrieval |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Baseline complete delivery | N | N | N | N | N | N | N |
+| Delayed or withheld item | N | N | N | N | N | N | N |
+| Missing object or route-native unit | N | N | N | N | N | N | N |
+| Duplicate item | W | N | W | N* | N | N | ? |
+| Conflicting item at an existing position | W | N | W | W | W | N | W |
+| Reordering | W | N | — | N* | W | N | W |
+| Stale/replayed protected object or protocol message | W | W | W | N* | W | W | W |
+| Incomplete or divergent candidate view | ? | ? | ? | ? | ? | ? | N |
+| Service acknowledgement without endpoint acceptance | N | ? | N | ? | N | N | N |
 
 * Signal's protocol state handles duplicate/replay and out-of-order message-key cases; this does not create an arbitrary multi-message transaction. N* applies to protocol messages, not arbitrary service responses or product-level delivery receipts. OMR false positives/candidate selection are not equivalent to duplicated authenticated message-set members.
 
-Apply only faults meaningful to the native route. Mark non-applicable cases rather than manufacturing a common transaction.
+Apply only faults meaningful to the native route. Mark non-applicable cases rather than manufacturing a common transaction. Pigeonhole storage/copy and katzenqt application assembly are separate columns because a conflict or reordering fault may be meaningful only at the application chunk-chain layer. The raw Pigeonhole copy has no common fragment-position manifest in the inspected sender API.
 
 ### Image-specific transformation faults
 
