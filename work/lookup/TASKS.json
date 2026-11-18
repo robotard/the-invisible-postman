@@ -4,15 +4,7 @@
   "not_for_thesis": true,
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
-  "next": [
-    "T-013: formalise Candidate D's exact OMR-specific hidden-predicate completeness, dynamic authenticated publication snapshot, sender-authenticated admission and multi-carrier manifest closure; define adversary, trust/collusion, leakage and cost, and compare nearest prior art before proposing a construction.",
-    "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access; pinned MRAS/DRAS code is source-inspected but does not replace full-paper methods/results.",
-    "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and an inaccessible external model archive. Resume if primary papers or model assets become available.",
-    "T-003: SRC-049 repository code review is expanded, but full paper, formal security argument, complete results and model weights remain unavailable; seek primary paper copy before formal-security claims.",
-    "T-004 (in_progress): pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available; do not treat public source pins as deployments.",
-    "T-007: rerun final consistency review after T-013 source/thesis integration.",
-    "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
-  ],
+  "next": "T-007",
   "tasks": {
     "T-001": {
       "id": "T-001",
@@ -138,7 +130,7 @@
       "id": "T-007",
       "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
-      "status": "complete",
+      "status": "in_progress",
       "priority": 7,
       "targets": [
         "thesis.md",
@@ -146,7 +138,7 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Complete for the previous checkpoint. Rerun the static thesis/source/traceability consistency review after T-013's new source and thesis integration; do not treat the earlier check as covering SRC-056–SRC-060.",
+      "next_action": "Rerun the final cross-document consistency audit after T-013: verify all source IDs, internal links and heading anchors; reconcile stale prior-art section references, section numbering and Candidate D terminology; confirm thesis/source-register/observer-matrix/traceability/task-state consistency. Do not upgrade SRC-056 or SRC-059 beyond their partial review state.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18",
@@ -270,7 +262,7 @@
       "id": "T-013",
       "type": "research_model",
       "title": "Formalise privacy-preserving verifiable message-set closure (Candidate D)",
-      "status": "in_progress",
+      "status": "complete",
       "priority": 1,
       "targets": [
         "thesis.md",
@@ -283,7 +275,7 @@
       "depends_on": [
         "T-007"
       ],
-      "next_action": "Continue formalising Candidate D against APIR (SRC-054), full AAD (SRC-055), range APIR (SRC-056, indexed text only), vPIR (SRC-057), multi-query vPIR (SRC-058), VPRQ (SRC-059, abstract/introduction only) and Basudan/Alamer's 2024 leakage-suppressed range scheme (SRC-060, full paper reviewed), plus OMR/GOMR/StOMR/UnifOMR and SRC-052. Generic private/verifiable range retrieval is prior art. The remaining hypothesis is OMR-specific hidden-predicate completeness over a dynamic authenticated publication snapshot, sender-authenticated admission and multi-carrier manifest closure, with controlled access-volume, cross-epoch and selective-failure leakage. Next formalise adversary/collusion and admission model, exact soundness/completeness/closure statements, leakage function, costs and candidate construction/impossibility. Full SRC-056 PDF and SRC-059 technical paper remain inaccessible; preserve partial-review status.",
+      "next_action": "Completed 2026-11-18 for the current evidence set: formal parties/trust/collusion model, admission and snapshot boundaries, retrieval soundness/completeness, manifest closure, endpoint acceptance, fork/freshness, predicate privacy/selective failure, leakage function, cost model and pre-admission-omission indistinguishability proposition integrated into thesis and prior-art records. Generic private/verifiable range retrieval is prior art; Candidate D remains a conditional OMR-specific composition hypothesis, not a novelty claim. SRC-056 and SRC-059 remain partial with blockers preserved.",
       "blockers": [
         "Full publisher PDF for SRC-056 (Authenticated Private Information Retrieval for Range Queries) returned 403; proofs, complete algorithms and evaluation remain indexed-text-only.",
         "Full technical paper for SRC-059 (VPRQ) remains inaccessible; only abstract and publisher-indexed introduction inspected."
