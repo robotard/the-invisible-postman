@@ -367,6 +367,6 @@
   },
   "project_status": "Theory only · No implementation · Not audited.",
   "status_semantics": "repository_project_maturity_metadata_not_a_chat_response_footer",
-  "task_status_correction": "T-013 complete as comparative prior-art analysis only; Candidate D retired as architecture/contribution candidate; T-014 APIR server-dependency audit complete; T-007 post-correction static consistency pass complete; T-015 optional message-granularity principle remains complete. T-001–T-004 remain blocked on primary-source or controlled-environment access.",
-  "immediate_next_action": "No unblocked substantive task remains. Resume T-001–T-004 only when their recorded primary-source or controlled-environment blockers are resolved; keep diagrams, peer review and release gated."
+  "task_status_correction": "T-005–T-007 and T-013–T-015 are complete for their recorded scope; Candidate D is retired as an architecture/contribution candidate; APIR remains comparative prior art only. T-001–T-003 are deferred optional source-specific evidence expansions; T-004 is deferred optional controlled-route evidence. These are not thesis-construction dependencies. The supplied UnifOMR, StOMR and multi-image papers map to already reviewed SRC-051, SRC-050 and SRC-043 and do not resolve the separate T-001–T-003 source gaps.",
+  "immediate_next_action": "No thesis-critical blocker remains. Continue thesis-first, claim-specific research and cross-document integration where a defined evidence gap or contradiction justifies it. Resume T-001–T-004 only if their evidence becomes material to a specific claim or decision; keep diagrams, independent peer review and release gated."
 }
