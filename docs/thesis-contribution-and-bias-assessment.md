@@ -144,7 +144,7 @@ A theory-led architecture that keeps participant cryptographic authority indepen
 
 **Candidate B — Cross-layer image-platform carriage analysis**
 
-A bounded comparison of ordinary image-platform carriage with established file, conventional messaging and mixnet-backed messaging routes, using common endpoint objectives and explicit observer/event models to identify media-transformation, metadata, discovery, retrieval or failure differences.
+A bounded comparison of ordinary image-platform carriage with established file, conventional messaging and mixnet-backed messaging routes, using common endpoint objectives and explicit observer/event models to identify media-transformation, metadata, route-native acquisition, service-dependent retrieval and failure differences. This compares external route assumptions; it does not propose a discovery service or persistent recipient-to-location relationship.
 
 - Strength: focuses on a route-specific boundary not directly studied by the integrated Echomix messaging design, while retaining the project's required image-carriage scope.
 - Weakness: the difference may be merely descriptive or already covered by image-forensics/dead-drop research. It needs a reproducible, decision-relevant result and must be narrowed or abandoned if no such result survives.
