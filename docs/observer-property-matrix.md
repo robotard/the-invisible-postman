@@ -84,7 +84,7 @@ The observer comparison must not assume that publication, indexing and retrieval
 
 The comparison must separate four evidence classes: endpoint-authenticated protocol facts, service-reported events, externally observed metadata and analyst-inferred correlations. A successful index query does not establish index completeness; a missing result does not establish non-publication; a capability-use record does not establish the human identity of its user; and endpoint rejection does not identify which intermediary altered or withheld an object. Provider policy is not observed retention behaviour. Any claim about absence, deletion or suppression must state its vantage, time window and evidential basis.
 
-This test is a refinement of the common observer model, not a new universal attack claim. If a profile excludes collusion or assumes trusted service behaviour, record that as an explicit assumption and examine the cost of relying on it.
+This test is a refinement of the common observer model, not a new universal attack claim. If a profile excludes collusion or assumes trusted service behaviour, record that as an explicit assumption and examine the cost of relying on it. The application of these seven cases to the six named image, file-host, protocol and mixnet profiles is recorded in the [route-comparison framework §5.8](route-comparison-framework.md#58-cross-profile-adversarial-discovery-comparison) and synthesised in thesis §8.8; preserve the profile-specific evidence classes rather than treating this observer matrix as proof of deployed behaviour.
 
 ## 5. Candidate-contribution pressure test
 
