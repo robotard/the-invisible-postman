@@ -193,6 +193,21 @@ The receiver's acceptance path should keep distinct states: candidate carrier ob
 - Completeness is not conversation continuity.
 - A service acknowledgement is not endpoint receipt, decryption, display or human reading.
 
+The word **complete** must also be scoped. At minimum, distinguish:
+
+| Scope | Meaning | Example / boundary |
+|---|---|---|
+| Carrier inventory | Expected carrier objects are present | A set of images or one Dropbox file; presence does not authenticate fragment membership. |
+| Fragment-set completeness | All authenticated manifest members, or an explicit recovery threshold, are present | SRC-043 can recover partial bytes and marks missing bytes; its byte-recovery rate is not set acceptance. |
+| Storage atomicity | Associated writes become visible all-at-once or not at all | Pigeonhole specifies AllOrNothing, but the inspected server write path is sequential and reader visibility remains untested. |
+| Application continuity | The application exposes only a complete ordered chain | katzenqt gates conversation-log dispatch on a terminal F and contiguous decodable chain; this is not atomic storage. |
+| Retrieval-window coverage | A service has evaluated a requested range without a cache hole or truncation | SRC-052's UnifOMR integration returns a range-scoped `complete` flag and slot-to-height map, with whole-height truncation and cursor retry. It does not prove all expected messages were published or a logical set is complete. |
+| Endpoint logical-message acceptance | The endpoint authenticated membership, established required completeness, reconstructed/validated the object and passed freshness/replay policy | This is the acceptance transition defined by this architecture, not a service-reported retrieval event. |
+| Publication completeness / human receipt | All expected items were published, or a person actually saw/acknowledged the message | These require separate evidence and cannot be inferred from service range coverage, storage success or endpoint acceptance. |
+
+A route adapter must state which scope its `complete` field describes, who asserts it, what records support it, and what happens on truncation, holes, missing members or conflicting data. Never translate a service's range-complete response into logical-message acceptance. See [prior-art comparison §10.2](prior-art-comparison.md#102-completeness-is-typed-and-scoped) for the comparator crosswalk.
+
+
 Incomplete sets remain unaccepted and consume bounded resources under explicit expiry. Identical duplicates may be idempotent under authenticated replay policy; conflicting values for one authenticated fragment position must be rejected or quarantined. No partial plaintext should be exposed before the complete protected object passes required endpoint checks. Keep route-event evidence separate from endpoint-authenticated state and default to endpoint-local linkage records; shared receipts or stable correlation tokens need a stated purpose, recipient, retention period and observer analysis.
 
 SRC-043 is a concrete example of why these states must remain separate: its receiver may reconstruct some bytes while marking missing fragment bytes with `?`, and its reported success rate is restored bytes divided by total file bytes. That is useful recovery output, but it is not a complete authenticated logical message. The project acceptance path must retain partial extraction/reconstruction as incomplete state and withhold message acceptance until the authenticated set context, completeness rule and whole-object validation all pass. If an application chooses threshold reconstruction, the threshold and resulting completeness claim must be explicit; do not silently convert a byte-recovery percentage into delivery or acceptance.
