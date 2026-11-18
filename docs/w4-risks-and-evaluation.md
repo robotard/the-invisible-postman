@@ -143,6 +143,7 @@ Evaluation questions:
 * Can fragments from different messages be combined?
 * Can a partial set be presented as a complete message?
 * Does the route provide native atomic semantics for associated writes/objects, as Pigeonhole AllOrNothing does within its stated reader model, or must endpoint policy handle partial visibility and incomplete sets?
+* When any route or service reports `complete`, what exact scope does it mean: carrier inventory, authenticated fragment-set completeness, byte reconstruction, storage atomicity, application continuity, retrieval-window coverage, endpoint logical-message acceptance, publication/index completeness or human receipt? Is the asserting authority and evidence source explicit?
 * Are index, count, set identity and version authenticated?
 * What happens when a fragment is corrupted or permanently unavailable?
 * Which relationships are endpoint-authenticated, endpoint-local or merely inferred by a route observer?
@@ -154,6 +155,7 @@ Evaluation questions:
 Proposed acceptance conditions:
 
 * Incomplete sets are not silently accepted as complete.
+* A service-reported retrieval-window-complete flag, slot map or cursor-retry guarantee is never promoted to authenticated fragment-set completeness, publication completeness or endpoint logical-message acceptance without separate evidence.
 * Each relationship needed for recipient reconstruction has an explicit authority, scope, visibility, lifetime and failure policy; observer-inferred associations and unauthenticated carrier assertions never authorise endpoint acceptance.
 * Receiver state distinguishes observation, retrieval, bounded extraction, endpoint authentication, membership validation, completeness, reconstruction, replay/freshness and logical-message acceptance.
 * Route-event evidence remains separate from endpoint-authenticated state. Any receipt names the event, observer and evidence source it actually proves.
