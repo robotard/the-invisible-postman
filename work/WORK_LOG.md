@@ -1950,3 +1950,22 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Continue T-006's route/fault/evidence audit. Treat OMR incomplete/divergent candidate view as a native retrieval fault; keep duplicate, conflict, order and replay semantics at the protected-object/application wrapper layer unless a route-native protocol source says otherwise. Next audit the image-specific transformation cells and the Signal/Dropbox/Pigeonhole evidence boundaries, recording which outcomes are documentary and which require controlled tests.
+
+
+## 2026-11-18 · Source audit of image and route-native fault cells
+
+### Work completed
+
+- Audited the image-specific transformation rows against the current source-register evidence: Qiao (SRC-035) supports JPEG/compression-channel conditions; MRAS (SRC-033) supports matching JPEG recompression; DRAS (SRC-034) supports downward quality-factor recompression; SRC-043 supports rotation/scaling/cropping and carrier-loss experiments. Other transformation cells remain unknown because the reviewed sources do not establish them. MRAS/DRAS platform claims remain indexed publisher evidence, not independently checked platform configurations.
+- Clarified the OMR-specific fault rows so StOMR signal-tag collisions, StOMR state rollback/fork, and UnifOMR false-positive candidate/PIR-capacity overflow are not conflated. The latter remains a secondary-assessment question, not a demonstrated defect.
+- Tightened the route-boundary notes: Signal's duplicate/replay/out-of-order handling is limited to protocol-message semantics; Dropbox is a single-file profile whose multi-object ordering requires a wrapper and whose viewer visibility is configuration/plan dependent; Pigeonhole's duplicate-envelope and AllOrNothing specification semantics remain distinct from the inspected sequential courier writes/no-rollback path and unresolved reader-visible partial state; katzenqt's chunk-chain assembly remains a separate application layer.
+- Kept applicability marks distinct from successful detection/mitigation and retained unknowns where a controlled test or deployment-specific evidence is required.
+
+### Verification and limits
+
+- The updated route/fault/evidence matrix was fetched after each commit and exact saved content verified.
+- The image rows are documentary comparisons only. No image transformation test, Dropbox account workflow, Signal service/backend test or Pigeonhole concurrent reader-visibility test was run. Public Signal specifications/client tags and Dropbox documentation do not establish live product/backend behaviour; Pigeonhole source inspection does not resolve reader visibility.
+
+### Exact next action
+
+- Continue the matrix audit against the remaining route-specific source profiles and evaluate whether the current fault cases are minimal and decision-relevant. Prioritise the Pigeonhole successful-prefix/later-failure reader-visibility test design and the unresolved product/service evidence boundaries for Signal and Dropbox; keep actual tests gated on access to controlled configurations/deployments.
