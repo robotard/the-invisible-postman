@@ -93,6 +93,16 @@ This is one animated carrier object with internal frame redundancy. It is not a 
 
 **Research consequence:** Compare frame-level loss/distortion and cross-frame recovery separately from separate-object fragmentation, account/time-window collection analysis and conversation linkage. Do not equate frame count with carrier count or message count.
 
+### 3.8 Forensic watermarking and leak attribution: a historical comparison
+
+Sony's role provides a useful historical anchor, with two distinct strands kept separate. In 1999, Sony joined Hitachi, IBM, NEC and Pioneer in the Galaxy group, unifying proposals for invisible digital-video watermarking intended to carry copy-control instructions and survive analogue conversion and repeated compression/decompression (SRC-061). In 2001, Sony joined a wider Video Watermarking Group with Hitachi, NEC, Pioneer, Digimarc, Macrovision and Philips. Separately, reporting on Academy screeners in 2005 describes individualised watermarks identifying the recipient of each copy, so that a leaked screener could be traced to its source. The available evidence does not establish that this screener system was a Sony programme or used the Galaxy/VWM technology; these are related historical examples, not one continuous implementation.
+
+The author reports having worked in Sony R&D during the relevant period. This is firsthand contextual provenance for the historical comparison, not evidence of participation in the Galaxy/VWM work, the Academy screener system, or any particular watermark design.
+
+The technical connection to this research is a shared survivability problem with a different security objective. A forensic watermark is designed to persist through copying and transformation so that an embedded attribution signal remains recoverable. Steganographic carriage seeks to conceal the presence of a payload; robust watermarking may instead make a signal deliberately persistent and detectable by an authorised investigator. Recipient-specific attribution can therefore improve leak tracing while directly increasing linkability. Neither watermark recovery nor recipient attribution supplies endpoint message authentication, sender/recipient identity assurance, confidentiality, multipart integrity or acceptance semantics.
+
+**Research consequence:** Treat payload recoverability, concealment, attribution and unlinkability as separate properties. A robust carrier signal may improve survival while worsening traceability; that tension is a comparative question, not a reason to select watermarking or alter the endpoint-only architecture.
+
 ## 4. Candidate contribution pressure test
 
 | Candidate | What prior art already establishes | What might remain distinct | Current judgement |

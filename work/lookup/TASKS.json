@@ -5,18 +5,17 @@
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
   "next": [
-    "T-001: resume full-text/source review of SRC-033, SRC-034 and SRC-036 when publisher, author or institutional access becomes available.",
-    "T-002: resume SRC-046–SRC-048 full-text and implementation review when papers/model assets become available.",
-    "T-003: resume SRC-049 full-paper/formal-argument review when primary paper and model assets become available.",
-    "T-004: pin Dropbox, Signal and Katzenpost/Pigeonhole profiles only when controlled account/device/deployment access is available.",
-    "Keep diagrams, external peer review and release work gated; do not create implementation or security claims from documentation-only work."
+    "No thesis-critical task is blocked. T-001–T-003 are deferred source-specific evidence expansions, not dependencies; resume only when a defined thesis claim requires the missing method/proof/results.",
+    "T-004 is deferred optional controlled-route evidence; public documentation/source profiles remain usable for the theoretical comparison and live deployment testing is not a thesis prerequisite.",
+    "Continue thesis-first synthesis or targeted prior-art comparison only where a specific claim, contradiction or evidence gap justifies it.",
+    "Keep diagrams gated until their underlying arguments stabilise; peer review and release remain later sequential gates."
   ],
   "tasks": {
     "T-001": {
       "id": "T-001",
       "type": "source_review",
       "title": "Complete full-text/source review of SRC-033, SRC-034 and SRC-036",
-      "status": "blocked",
+      "status": "deferred",
       "priority": 2,
       "targets": [
         "docs/source-register.md",
@@ -24,10 +23,10 @@
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "Full texts for SRC-033/034/036 remain unavailable after renewed publisher, ResearchGate, author-page and repository searches. The README-labelled MRAS/DRAS MATLAB repositories are pinned and source-inspected, but do not replace the papers; no matching public SRC-036 implementation was located. Resume only if a complete author/institutional manuscript becomes available; preserve partial-review status.",
+      "next_action": "Deferred, not on the thesis critical path. The current thesis and comparative record preserve the source's partial-review boundary. Resume full-text/artifact review only if a specific thesis claim, identified contradiction or novelty assessment requires the missing methods, proofs, results or implementation detail; do not wait for unrelated papers before progressing the manuscript.",
       "blockers": [
-        "Publisher full texts remain access-restricted; no author manuscript copy located in the current search.",
-        "SRC-036 author homepage lists the paper but no PDF; ResearchGate reports no full text. No author contact was sent."
+        "Source-specific access limitation only; it does not block thesis construction or other research. Publisher full texts remain access-restricted; no author manuscript copy located in the current search.",
+        "Source-specific access limitation only; it does not block thesis construction or other research. SRC-036 author homepage lists the paper but no PDF; ResearchGate reports no full text. No author contact was sent."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
@@ -36,17 +35,17 @@
       "id": "T-002",
       "type": "source_review",
       "title": "Review SRC-046–SRC-048 full texts and SRC-047 implementation where available",
-      "status": "blocked",
+      "status": "deferred",
       "priority": 3,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "SRC-046 is indexed as open access but its OpenReview/IEEE PDF endpoints are blocked by browser/access checks. SRC-048 remains closed and ResearchGate reports no full text. SRC-047 repository is README-only at pinned commit; the external Baidu model archive could not be opened. Resume only when full PDFs or retrievable model/source files are supplied.",
+      "next_action": "Deferred, not on the thesis critical path. The current thesis and comparative record preserve the source's partial-review boundary. Resume full-text/artifact review only if a specific thesis claim, identified contradiction or novelty assessment requires the missing methods, proofs, results or implementation detail; do not wait for unrelated papers before progressing the manuscript.",
       "blockers": [
-        "SRC-046/SRC-048 full papers unavailable in this environment.",
-        "SRC-047 GitHub tree contains only README.md; no implementation, weights, test scripts or results. Baidu archive inaccessible."
+        "Source-specific access limitation only; it does not block thesis construction or other research. SRC-046/SRC-048 full papers unavailable in this environment.",
+        "Source-specific access limitation only; it does not block thesis construction or other research. SRC-047 GitHub tree contains only README.md; no implementation, weights, test scripts or results. Baidu archive inaccessible."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
@@ -55,17 +54,17 @@
       "id": "T-003",
       "type": "source_review",
       "title": "Review SRC-049 paper, formal security argument and complete results",
-      "status": "blocked",
+      "status": "deferred",
       "priority": 4,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "Full SRC-049 paper, formal security argument and complete results remain unavailable. The public repository has been reviewed read-only at a pinned commit, including sender/receiver, diffusion, image-distortion, key-storage and dependency paths. New code-level findings are integrated; resume full-paper review when a copy becomes available.",
+      "next_action": "Deferred, not on the thesis critical path. The current thesis and comparative record preserve the source's partial-review boundary. Resume full-text/artifact review only if a specific thesis claim, identified contradiction or novelty assessment requires the missing methods, proofs, results or implementation detail; do not wait for unrelated papers before progressing the manuscript.",
       "blockers": [
-        "SRC-049 full paper, formal argument and complete results unavailable.",
-        "Code was not executed, built, tested or independently audited; no model weights or environment lockfile in the repository."
+        "Source-specific access limitation only; it does not block thesis construction or other research. SRC-049 full paper, formal argument and complete results unavailable.",
+        "Source-specific access limitation only; it does not block thesis construction or other research. Code was not executed, built, tested or independently audited; no model weights or environment lockfile in the repository."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
@@ -74,7 +73,7 @@
       "id": "T-004",
       "type": "route_analysis",
       "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
-      "status": "blocked",
+      "status": "deferred",
       "priority": 5,
       "targets": [
         "docs/source-register.md",
@@ -83,9 +82,9 @@
         "thesis.md"
       ],
       "depends_on": [],
-      "next_action": "Public Dropbox/Signal/Katzenpost references and source pins are integrated. Resume only when a controlled Dropbox account/link, actual Signal client/account/backend configuration or running Katzenpost deployment/service-event capture becomes available.",
+      "next_action": "Deferred, not on the thesis critical path. Public documentation and pinned source profiles already support the current theoretical comparison. Resume controlled account/device/deployment work only if a specific thesis claim or route decision requires service-level evidence; do not treat the absence of a live deployment as a blocker to manuscript progress.",
       "blockers": [
-        "No live Dropbox account/link configuration, installed Signal client/service/account state or running Katzenpost deployment is available."
+        "Source-specific access limitation only; it does not block thesis construction or other research. No live Dropbox account/link configuration, installed Signal client/service/account state or running Katzenpost deployment is available."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"

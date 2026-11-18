@@ -784,3 +784,13 @@ For all three, extraction-error performance is not evidence of message authentic
 This is an evolving bibliography and claim-mapping pass. It is not a systematic literature review, complete bibliography, protocol selection or independent validation. Source-to-thesis integration and full-text examination remain in progress.
 
 **Theory only · No implementation · Not audited.**
+
+
+### SRC-061 · Sony-era digital video watermarking and recipient-specific screener attribution
+
+- **Sources:** Sony Corporation (1999), *Digital Video Watermarking Technologies United*, Sony press release, 17 February 1999; VWM Group formation announcement (2001), joint press release filed with the U.S. Securities and Exchange Commission; Rachel Abramowitz (2005), *Now you see it ...*, Los Angeles Times, 21 February 2005.
+- **Links:** https://www.sony.com/en/SonyInfo/News/Press/199902/99-0217B/ ; https://www.sec.gov/Archives/edgar/data/1089443/000091205701510602/a2046842zex-99_2.txt ; https://www.latimes.com/archives/la-xpm-2005-feb-21-et-screeners21-story.html
+- **Relevant to:** Historical comparison of robust watermark persistence, copy-control signalling, recipient-specific forensic attribution and the distinction between recoverability and concealment.
+- **Supports:** Sony was one of five companies (Hitachi, IBM, NEC, Pioneer and Sony) that announced a unified proposal for invisible digital-video watermarks in 1999. Sony's release states that the watermark was intended to remain detectable after analogue conversion and repeated digital compression/decompression, and to carry copy-control instructions for compliant recording systems. In 2001, Sony joined the broader Video Watermarking Group with Hitachi, NEC, Pioneer, Digimarc, Macrovision and Philips. Separately, a 2005 Los Angeles Times report describes Academy screeners commonly carrying individualised digital watermarks identifying the recipient, allowing leaked copies to be traced.
+- **Does not establish:** That Sony alone invented or owned the consortium technology; that the 2005 Academy screener watermark system was developed or deployed by Sony; that the two historical programmes used the same watermark design; or any cryptographic identity, confidentiality, integrity, anonymity or message-set property.
+- **Review state:** Sony's contemporaneous corporate release, the 2001 joint-group filing and the 2005 screener report inspected on 18 November 2026. Historical claims are bounded to those records; no underlying watermark implementation or technical specification was inspected.

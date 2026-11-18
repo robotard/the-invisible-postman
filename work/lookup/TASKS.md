@@ -11,10 +11,10 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 | Key | Type | Task | Status | Priority |
 |---|---|---|---|---:|
-| T-001 | source_review | Complete full-text/source review of SRC-033, SRC-034 and SRC-036 | blocked | 2 |
-| T-002 | source_review | Review SRC-046–SRC-048 full texts and SRC-047 implementation where available | blocked | 3 |
-| T-003 | source_review | Review SRC-049 paper, formal security argument and complete results | blocked | 4 |
-| T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | blocked | 5 |
+| T-001 | source_review | Complete full-text/source review of SRC-033, SRC-034 and SRC-036 | deferred | 2 |
+| T-002 | source_review | Review SRC-046–SRC-048 full texts and SRC-047 implementation where available | deferred | 3 |
+| T-003 | source_review | Review SRC-049 paper, formal security argument and complete results | deferred | 4 |
+| T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | deferred | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
 | T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | complete | 1 |
 | T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | complete | 1 |
@@ -29,9 +29,9 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active work:** T-013 is complete as comparative prior-art analysis only; former Candidate D is retired as an architecture/contribution candidate. T-014 APIR server-dependency audit is complete. T-007 post-correction static consistency review is complete. T-001–T-003 remain blocked on primary-source access; T-004 remains blocked on controlled Dropbox/Signal/Katzenpost configuration access. T-015 remains complete. No unblocked substantive task remains.
+**Current active work:** T-013 is complete as comparative prior-art analysis only; former Candidate D is retired as an architecture/contribution candidate. T-014 APIR server-dependency audit is complete. T-007 post-correction static consistency review is complete. T-001–T-003 are deferred source-specific evidence expansions; T-004 is deferred controlled-route evidence. None is a dependency of thesis construction. T-015 remains complete. No thesis-critical blocker is recorded.
 
-**Next:** resume T-001–T-004 only when their recorded source or controlled-environment blockers are resolved. Keep diagrams, external review and release gated.
+**Next:** continue thesis-first research where a defined claim or contradiction justifies it. Resume T-001–T-004 only if their missing evidence becomes material to a specific decision or claim. Keep diagrams, external review and release gated.
 
 ## Status meanings
 
@@ -44,6 +44,6 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Sequence and dependencies
 
-T-006 thesis-first synthesis (complete for current evidence set); T-013 former Candidate D comparative model (complete, prior-art only); T-014 APIR server-dependency audit (complete); T-007 final architecture-alignment/consistency review (complete); T-001–T-003 source review (blocked on primary-source access); T-004 route evidence (blocked pending controlled access); T-005 protocol analysis (complete); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
+T-006 thesis-first synthesis (complete for current evidence set); T-013 former Candidate D comparative model (complete, prior-art only); T-014 APIR server-dependency audit (complete); T-007 final architecture-alignment/consistency review (complete); T-001–T-003 optional source review (deferred pending a claim-specific need); T-004 controlled route evidence (deferred, not a thesis dependency); T-005 protocol analysis (complete); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
 
 Detailed next actions, targets, blockers and dependencies are stored once in the keyed JSON values. Do not duplicate a second task plan here.

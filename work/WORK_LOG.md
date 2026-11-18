@@ -2351,3 +2351,25 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Preserve the existing roadmap. Resume T-001–T-003 only when the missing primary papers or artifacts become available, and T-004 only when controlled route accounts/configurations/deployment evidence becomes available. Do not create a parallel research stream to fill the access gap.
+
+
+## 2026-11-18 · Supplied papers reconciled; Sony forensic-watermark comparator added
+
+### Work performed
+
+- Located the user-supplied Library PDFs: `910.pdf` (UnifOMR, ePrint 2026/910), `2369.pdf` and `StOMR-camera-ready.pdf` (StOMR, ePrint 2026/2369 / CCS 2026), and `sensors-24-00627-v2.pdf` (Wang et al., 2024, *Covert Communication through Robust Fragment Hiding in a Large Number of Images*).
+- Mapped them to existing source records SRC-051, SRC-050 and SRC-043 respectively. These are not the separate source items in T-001–T-003. Their presence confirms that the supplied UnifOMR, StOMR and multi-image fragment-hiding papers are already represented in the research record; no new architecture or roadmap change follows from their upload.
+- Added SRC-061 for Sony's documented participation in the 1999 Galaxy digital-video watermarking group, the 2001 VWM Group and the separate 2005 reporting on recipient-specific Academy screener watermarks.
+- Added prior-art comparison §3.8. It records the author's reported Sony R&D experience as contextual provenance only, carefully avoids attributing the screener system to Sony, and distinguishes robust signal persistence/forensic attribution from steganographic concealment, endpoint authentication and unlinkability.
+- Reclassified T-001–T-004 as deferred, non-critical evidence expansions. Their access gaps remain recorded, but none is a dependency of thesis construction. Resume only where a specific claim, contradiction or route decision requires the missing detail.
+
+### Evidence judgement and limits
+
+- Sony's 1999 press release, 2001 VWM Group filing and 2005 Los Angeles Times screener report were inspected. The public evidence does not establish that Sony developed or deployed the Academy screener watermark system or that it used the Galaxy/VWM technology.
+- The author's Sony R&D experience is user-reported contextual provenance, not independent evidence of participation in a named watermarking programme.
+- No architecture, cryptographic protocol, thesis claim of novelty, route selection or implementation requirement was changed. No watermark system was inspected or tested.
+
+### Verification and next action
+
+- Follow-up source-register check confirmed SRC-001–SRC-061 are contiguous and unique; prior-art §3.8 cites SRC-061. Exact post-commit read-back is required before marking this record verified.
+- Continue only where a defined thesis claim or contradiction justifies additional research. T-001–T-004 are not critical-path blockers; diagrams, peer review and release remain gated.
