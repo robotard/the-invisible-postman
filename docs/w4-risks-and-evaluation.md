@@ -203,6 +203,8 @@ The image-carriage route is required within the research scope. Other routes, in
 > **EVALUATION NOTE · Frame errors are not frame erasures**  
 > Cross-frame majority voting combines reconstructed bit decisions from available frames. It does not automatically imply that missing frames can be omitted. The inspected SRC-049 receiver asserts a complete 16-frame/key set; frame-loss tolerance is therefore an open test, not an established property. Evaluate bit errors, whole-frame loss, reordering and missing key material separately.
 >
+> The public SRC-049 distortion harness also resets its random generator to the same group-ID seed on each frame when random crop/drop is enabled, producing repeated rectangular masks across frames. Do not treat those code-level synthetic distortions as independent frame failures or as a platform channel. A controlled evaluation should compare correlated and independently seeded per-frame distortions, and distinguish frame-content damage from complete frame/key omission.
+>
 > **COMPARISON · Sanitizer evaluation conditions**  
 > Separate routine platform processing, an active learned sanitizer (SRC-036, SRC-046–SRC-047), and a keyed counter-adaptation to a known sanitizer (SRC-048). Report sanitizer model/version and access assumptions, input/output image quality, payload extraction, detector performance and endpoint acceptance. A successful extraction after sanitization is not evidence of anonymity or message authenticity.
 >
