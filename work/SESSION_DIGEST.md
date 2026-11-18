@@ -50,8 +50,8 @@ verified_main_blob_pins:
   docs/w4-risks-and-evaluation.md: 8a71a3df58f51582524fc302fc3c722bceda73d3
   docs/traceability.md: 8a87dc3c6855538a248f30f8550ced5b1d4c84c5
   docs/source-register.md: 588f81eedf010cbcdff0cb3f8a2b800282f36ccb
-  docs/prior-art-comparison.md: 1266d91ed8cae6a1b2b8042c82dbf3c09c3658b9
-  docs/thesis-contribution-and-bias-assessment.md: bbeac7250eba4a107047e6a6b0eaa7698c3a87b6
+  docs/prior-art-comparison.md: 5be042697f843f5a66a914948e173c2961914990
+  docs/thesis-contribution-and-bias-assessment.md: 72270278bade7b027962365093698733362adb4b
   docs/multi-message-linkage-and-steganographic-carriage.md: f0e8f2e610f69520c12cd2791967f8d8f0e9dff0
   docs/optional-message-granularity.md: bc3050d897a53cd471fdb8d564f90875e9b4f22d
   work/PROJECT_STATE.md: d692b0b89c7ed2f1cb395a122a5722288a599a16
