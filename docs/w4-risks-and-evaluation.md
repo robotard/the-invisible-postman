@@ -138,6 +138,7 @@ Evaluation questions:
 
 * Can fragments from different messages be combined?
 * Can a partial set be presented as a complete message?
+* Does the route provide native atomic semantics for associated writes/objects, as Pigeonhole AllOrNothing does within its stated reader model, or must endpoint policy handle partial visibility and incomplete sets?
 * Are index, count, set identity and version authenticated?
 * What happens when a fragment is corrupted or permanently unavailable?
 * Which relationships are endpoint-authenticated, endpoint-local or merely inferred by a route observer?
