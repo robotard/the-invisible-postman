@@ -17,6 +17,22 @@ This materially changes the comparison baseline. Earlier work in the repository 
 - Current Katzenpost threat-model documentation also inspected. Its own site states that the live threat-model document is evolving and does not yet incorporate all designs introduced in Echomix. The paper and the operational threat-model document must therefore be treated as separate, versioned sources.
 - No code, benchmarks or security proofs were reproduced. This entry records the paper's claims and stated model, not independent verification.
 
+## 2.1 Reproducible source-release snapshot · 18 November 2026
+
+The canonical Katzenpost build page publishes a mutually compatible source set:
+
+| Component | Repository tag | Resolved commit |
+|---|---|---|
+| Mix server, directory authority, courier, replica and `kpclientd` | `katzenpost v0.0.90` | `d5a6349a34c4a2d4bca587f4be86ce92f2873b12` |
+| Rust/Python thin-client libraries | `thin_client 0.0.23` | `a92a130f136e60152d810557ed7f800743574664` |
+| Qt group-chat client | `katzenqt 0.0.2` | `94175d5f7a0c8cfd1a2ebede83d33d786d7773d2` |
+
+The Go thin client is in the katzenpost repository at `v0.0.90`. These pins resolve the source-version question for a reproducible build candidate, but they do not establish a deployed network configuration, directory-authority set, replica topology, account state, retained service events or observed route behaviour.
+
+The pinned build page explicitly warns that `katzenqt` is in active development and is not appropriate to rely on for anonymity, security or privacy. The repository README describes Katzenpost as pre-alpha and not audited. Accordingly, the strongest comparator remains the **Echomix paper plus Pigeonhole protocol/source specifications**; the source tags make an implementation study reproducible, not security-assured. A future test must pin the actual deployment configuration and treat UI/client maturity as a separate limitation.
+
+Source: [Katzenpost canonical pinned-version/build page](https://katzenpost.network/docs/build_from_source/); [Katzenpost repository README](https://github.com/katzenpost/katzenpost).
+
 ## 3. What the system already integrates
 
 ### 3.1 Network observer and active adversary
