@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-18 · six-profile comparison source-audited; set-level atomicity challenge defined; novelty remains conditional"
+checkpoint: "2026-11-18 · Pigeonhole AllOrNothing source-audited; katzenqt app-level assembly distinguished; T-004 public route pins recorded; runtime configuration remains open"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only_not_chat_footer
@@ -40,8 +40,8 @@ document_roles:
   json_digest: "Compact retrieval/handover format; mirrors Markdown digest."
 operating_loop:
   - "Read live GitHub state, four operational records and only relevant research sources."
-  - "Reconcile completed, remaining, blocked and dependent work; do not repeat recorded work."
-  - "Ask only when a material decision or ambiguity blocks safe/correct progress."
+  - "Reconcile all actionable work across operational records and substantive thesis/research documents; execute all unblocked work in priority order rather than stopping at a plan."
+  - "Ask only for a material decision, permission, access or information only the user can supply; if one item is blocked, continue other unblocked work."
   - "Execute the next useful unblocked action; do not substitute plans or progress narration for work."
   - "Use available turn/token runway; complete coherent work units and continue while useful work remains."
   - "Record actual outcomes and limitations in WORK_LOG.md; reconcile PROJECT_STATE.md."
@@ -60,12 +60,12 @@ next_task: T-006
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "One active manuscript at thesis.md in staging. §8.2 retains six evidence-bounded route profiles. §§8.4, 8.8 and 10.2 now pressure-test bootstrap substitution, malicious publication, index equivocation, retrieval manipulation, cross-role collusion, retention and suppression. The thesis distinguishes endpoint-authenticated facts, service-reported events, observed metadata and inferred correlations; no deployed route advantage is established and originality/review readiness remain open."
+  thesis: "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 10.2 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. The Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source inspection shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; actual reader visibility remains untested. Pinned katzenqt 0.0.2 separately stores received pieces and only dispatches a complete contiguous chain to its conversation log; this is app-level gating, not AllOrNothing or atomic storage, and the client is pre-alpha/not suitable to rely on for privacy. No defect, deployed advantage or novelty is established."
   thesis_argument:
     central_question: "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?"
     proposition: "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence."
     contributions: "Responsibility-separated architecture; common route-comparison method; message-relationship/lifecycle analysis; claim-centred evidence discipline."
-    route_synthesis: "Image studies inform media transformation; Dropbox documents owner/editor file activity and conditional viewer information; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator, with AllOrNothing atomic set semantics and explicit replica/retention constraints. Set-level atomicity/partial visibility is now a comparison dimension; the current matrix is descriptive, not a measured result."
+    route_synthesis: "Image studies inform media transformation; Dropbox direct-invitation and view-only-link paths differ; Signal specifications and public Android/iOS/Desktop release tags do not pin backend/account behaviour; Katzenpost has compatible v0.0.90 / thin_client 0.0.23 / katzenqt 0.0.2 source pins, not a deployed configuration. Pigeonhole AllOrNothing specification claims are in tension with the inspected sequential-write/no-rollback source path; katzenqt uses a separate app-level complete-chain gate. Reader-visible behaviour remains untested; no measured route advantage or novelty is established."
     prior_art_pressure: "Thesis now explicitly confronts OMR/GOMR and PerfOMR/SophOMR/InstantOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert communication; generic private-discovery, whole-pipeline and image-covert-channel novelty claims are not supportable."
     limits: "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
   research_units: "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question."
@@ -74,7 +74,7 @@ current_state:
   steganography: "Separates per-carrier concealment, robust watermarking, extraction/reconstruction, collection-level steganalysis and observer linkage. SRC-043–SRC-045 cover multi-image redundancy and batch detection; SRC-049 covers within-GIF frame redundancy."
   sanitization: "SRC-036 and SRC-046–SRC-047 describe active payload sanitization; SRC-048 describes keyed counter-adaptation to a known sanitizer. These are partial reviews and do not establish deployment by any named platform."
   gif_code_review: "SRC-049 README, core/method_core.py and scripts/run_stego.py inspected at pinned external repo commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d. Two redundancy levels: d-fold repetition within frame and majority voting across 16 frames. Receiver asserts a complete 16-frame/key set; missing-frame erasure tolerance is not established. Raw ChaCha20 path shows no authentication tag; 32-bit NumPy PRNG fallback is labelled TEST ONLY. Local keys/group ID are not an authenticated message-set protocol. Code not executed or audited; paper/formal proof unreviewed."
-  route_profiles: "Six named profiles integrated into thesis §8.2: Qiao, MRAS, DRAS, Dropbox shared link, Signal protocol reference and Echomix/Pigeonhole. Thesis §8.8 integrates lifecycle/observer comparison; actual deployed client/service versions and configurations remain unpinned."
+  route_profiles: "Six named profiles integrated into thesis §8.2 and route framework §§5.8–5.9: Qiao, MRAS, DRAS, Dropbox shared link, Signal protocol reference and Echomix/Pigeonhole. Public pins: Dropbox browser-link documentation/access-path variants; Signal Android v8.35.2, iOS 8.37.0.1993, Desktop v8.35.0; Katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2. No actual Dropbox account/link, Signal backend/account state or running Katzenpost deployment/service-event capture is pinned."
   protocol_analysis: "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed; Signal PQXDH/Double Ratchet, MLS and HPKE compared at distinct scopes; no protocol selected."
   confidence_evidence: "Claim-centred model distinguishes object validity, identity, fragment membership, set completeness, conversation continuity, observer linkage and delivery events; SRC-034/SRC-036 documentary examples added; endpoint-local/minimal-disclosure direction; no numeric score. Not independently validated."
   implementation: none
@@ -106,10 +106,13 @@ source_review_boundaries:
   SRC-047: "Author repository located; README inspected (Scaling-Net/SC-Net and external model download); source files/model weights not retrieved."
   SRC-048: "IEEE abstract/metadata inspected; full method/evaluation not inspected."
   SRC-049: "Pinned README/selected implementation inspected, not executed; indexed abstract summary added; full paper/formal security argument/results unreviewed."
+  SRC-038: "Official Signal protocol specifications plus latest public client release tags checked 18 November 2026: Android v8.35.2, iOS 8.37.0.1993, Desktop v8.35.0. Client source pins only; backend/account/service configuration unverified."
+  SRC-039: "Official Dropbox help pages inspected; direct invitation and view-only shared-link paths distinguished. Account plan, link settings and live activity/viewer records remain untested."
+  SRC-040: "Compatible source tags pinned; selected v0.0.90 courier/client/replica source and katzenqt 0.0.2 receive path inspected, not executed. AllOrNothing spec claims reader atomicity; server path sequentially persists writes and shows no rollback on early failure. katzenqt app stores pieces but gates conversation-log dispatch on complete contiguous chain. Reader-visible protocol atomicity remains untested; client pre-alpha; no deployment/audit."
 next_actions:
-  - "T-006: audit set-level atomicity and partial visibility against SRC-043, Pigeonhole AllOrNothing and the native scopes of Dropbox/Signal; define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result."
+  - "T-006: check whether any pinned Pigeonhole application path supplies a reader commit barrier or capability handoff that resolves the v0.0.90 sequential-write/failed-prefix question; keep raw AllOrNothing separate from katzenqt 0.0.2 app-level assembly; finalise the smallest read-side fault test against SRC-043 and the single-file baseline."
   - "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits."
-  - "T-004: pin actual Dropbox account/plan/link settings, Signal shipped client/service versions and compatible Katzenpost/Pigeonhole release/deployment configuration where authoritative evidence or user-provided access permits; do not treat protocol/source-tree snapshots as deployments."
+  - "T-004 (in_progress): public Dropbox/Signal/Katzenpost source pins are recorded; pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available. Do not treat public source snapshots as deployments."
   - "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks."
   - "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
 source_review_update:
@@ -298,3 +301,13 @@ The exact phrase “Theory only · No implementation · Not audited.” is maint
 - Exact read-back SHAs for thesis, route framework, W4, contribution assessment and observer matrix are recorded in WORK_LOG.md. No implementation, deployment, experiment, reproduction, proof, independent review or audit.
 
 
+
+## 2026-11-18 · Pigeonhole source-level atomicity audit and route pins
+
+- Pinned official Signal client release tags (Android v8.35.2, iOS 8.37.0.1993, Desktop v8.35.0) and compatible Katzenpost source tags/commits (katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2). Dropbox direct-invitation and view-only-link paths were distinguished from current official documentation. These are public reference pins, not live account/deployment configurations.
+- Inspected pinned Pigeonhole client/courier/replica source and tests without executing them. The specification claims reader-side AllOrNothing atomicity; the v0.0.90 copy path dispatches destination envelopes sequentially, persists successful writes independently and returns failure at the first failed envelope without an observed rollback of the successful prefix. Whether an authorised reader can observe that prefix remains untested.
+- Inspected katzenqt 0.0.2 receive path: incoming pieces are persisted; application conversation-log dispatch waits for a terminal F chunk and contiguous decodable chain. This is a separate app-level gate, not AllOrNothing or atomic storage. Client is pre-alpha and not suitable to rely on for privacy.
+- Refined SRC-040, route framework §5.9, thesis §8.8, W4 E5, contribution/bias assessment and observer/property matrix. Specified a minimal reader-side fault schedule; no defect or novelty is claimed.
+- T-004 moved to in_progress with public pins recorded and runtime configuration explicitly blocked pending controlled accounts/deployment. T-006 remains active.
+- Added the standing rule to START_HERE, CHATGPT_PROJECT_INSTRUCTIONS and WORKPLAN: reconcile operational and substantive research documents, execute all unblocked work, and ask only for user-only input/access/decisions.
+- No implementation, code execution, tests, deployment, platform experiment, reproduction, formal proof, independent review or audit.
