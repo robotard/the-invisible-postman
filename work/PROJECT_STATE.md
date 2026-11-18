@@ -109,6 +109,7 @@ The status label below is project metadata describing the repository's verified 
 - Keep endpoint cryptographic validation authoritative; intermediaries do not gain plaintext or sole decryption authority by assumption.
 - Preserve uncertainty, dissent, source provenance and historical work. Distinguish established mechanisms, proposed designs and unverified claims.
 - Never describe drafts as implemented, tested, proven, audited or externally reviewed.
+- Treat “Theory only · No implementation · Not audited.” as GitHub project-maturity metadata; do not append it as a routine footer to chat responses. Keep it in the relevant document headers/assurance fields and update only when the verified maturity changes.
 
 **Research baseline commit:** [c3f0032](https://github.com/robotard/the-invisible-postman/commit/c3f0032c5455682c1c426c6b5b04e26130bc287f). The 2026-11-16 infrastructure checkpoint records the thesis-product lifecycle, `/work/` remit and expanded backlog in `WORK_LOG.md` and both session digests.
 
