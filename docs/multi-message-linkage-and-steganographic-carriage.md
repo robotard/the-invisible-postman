@@ -71,9 +71,9 @@ A keyed derivation or pseudorandom token may let authorised endpoints recognise 
 
 A manifest or equivalent set context must be carried within the protected object or repeated/associated with its parts in an endpoint-authenticated form. It may be encrypted to limit disclosure to carriers and platforms. Its membership, indices, count, content commitments and reconstruction rules must be verifiable from the received protected representation and endpoint-held keys. A design that requires the recipient to fetch the manifest from an external service or resolve a remote reference is outside the self-contained-message requirement.
 
-### 4.5 Capability-based discovery
+### 4.5 Capability-based retrieval (external comparator only)
 
-A one-use or short-lived capability can provide access to a particular set without a stable public recipient identifier. It does not hide the request from the service that receives it, and distribution of the capability becomes a separate authenticated protocol problem. A capability should not be treated as a complete identity proof or a guarantee against correlation.
+Some external systems use one-use or short-lived capabilities to authorise access without a stable public recipient identifier. This is a prior-art comparison, not a proposed message mechanism. It does not hide the request from the service that receives it, and its distribution creates a separate trust and metadata boundary. No capability service or remote resolver is required or assumed by The Invisible Postman.
 
 ### 4.6 Endpoint-local conversation mapping
 
@@ -81,9 +81,9 @@ Distinct per-message identifiers can be mapped to a conversation locally by the 
 
 **Design rule:** distinguish *linkability required for correct recipient reconstruction* from *linkability exposed to observers*. A design cannot simply delete all links; it must decide which party needs which relationship, at what stage, and under which trust assumption.
 
-### 4.7 Discovery is not a single lookup
+### 4.7 External discovery systems are comparative prior art
 
-For comparison and threat analysis, decompose discovery into bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence and retrieval authorisation, and endpoint conversation association. These stages answer different questions and may be controlled by different actors. A recipient may already possess an authenticated capability but still need to locate the relevant carrier; a service may authorise a retrieval without knowing the human identity behind the capability; and an endpoint may authenticate a fragment after retrieval without proving that the publication or retrieval path was private.
+For comparison only, distinguish bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence and retrieval authorisation in systems that use external discovery infrastructure. These are not required stages in the endpoint-only message protocol. The recipient associates and reconstructs received parts from authenticated context carried with the protected representation; an external service does not establish membership, decryption authority or acceptance.
 
 The distinction matters when comparing established systems. OMR/GOMR target recipient-message pertinence under their board/detector models; they do not make publication events disappear or replace endpoint message authentication. Oblivious Signaling shifts work towards uniform sender-side updates and relies on an external anonymous channel for sender anonymity. Remise's two-server privacy depends on non-collusion, while bearer-token distribution remains out of band. Echomix/Pigeonhole integrates capability-derived addressing with asynchronous storage and role separation, but capability distribution and the service/network views remain explicit parts of its model. None should be reduced to the generic label “private discovery”.
 
