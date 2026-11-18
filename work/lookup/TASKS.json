@@ -10,7 +10,7 @@
       "id": "T-001",
       "type": "source_review",
       "title": "Complete full-text/source review of SRC-033, SRC-034 and SRC-036",
-      "status": "in_progress",
+      "status": "blocked",
       "priority": 2,
       "targets": [
         "docs/source-register.md",
@@ -18,9 +18,10 @@
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "The README-labelled MRAS and DRAS MATLAB repositories are now pinned and source-inspected; code evidence is integrated but not built/run and does not substitute for full papers. Continue seeking complete SRC-033/034/036 manuscripts via author/institutional access; if unavailable, preserve partial-review labels and do not infer full method/results from code.",
+      "next_action": "Full texts for SRC-033, SRC-034 and SRC-036 remain unavailable after renewed ScienceDirect, ResearchGate, author publication/ORCID and institutional-repository searches. Resume if a complete author/institutional manuscript or user-supplied PDF becomes available; keep partial-review labels and do not substitute indexed snippets or adjacent papers.",
       "blockers": [
-        "Complete papers/methods/results/limitations not yet accessible; current publisher previews are partial. No matching public code repository was located for SRC-036."
+        "Publisher full texts remain access-restricted; no author manuscript copy located in the current search.",
+        "SRC-036 author homepage lists the paper but no PDF; ResearchGate reports no full text. No author contact was sent."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
@@ -29,43 +30,45 @@
       "id": "T-002",
       "type": "source_review",
       "title": "Review SRC-046–SRC-048 full texts and SRC-047 implementation where available",
-      "status": "in_progress",
+      "status": "blocked",
       "priority": 3,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "Seek complete SRC-046 and SRC-048 papers and a retrievable SRC-047 code/model snapshot; README-only inspection is not code review.",
+      "next_action": "SRC-046 is indexed as open access but its OpenReview/IEEE PDF endpoints are blocked by browser/access checks. SRC-048 remains closed and ResearchGate reports no full text. SRC-047 repository is README-only at pinned commit; the external Baidu model archive could not be opened. Resume only when full PDFs or retrievable model/source files are supplied.",
       "blockers": [
-        "SRC-046/SRC-048 full texts and SRC-047 code/model snapshot unavailable."
+        "SRC-046/SRC-048 full papers unavailable in this environment.",
+        "SRC-047 GitHub tree contains only README.md; no implementation, weights, test scripts or results. Baidu archive inaccessible."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
-      "last_updated": "2026-11-17"
+      "last_updated": "2026-11-18"
     },
     "T-003": {
       "id": "T-003",
       "type": "source_review",
       "title": "Review SRC-049 paper, formal security argument and complete results",
-      "status": "in_progress",
+      "status": "blocked",
       "priority": 4,
       "targets": [
         "docs/source-register.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "Seek SRC-049 full paper, formal security argument and complete results; selected code review remains read-only and unaudited.",
+      "next_action": "Full SRC-049 paper, formal security argument and complete results remain unavailable. The public repository has been reviewed read-only at a pinned commit, including sender/receiver, diffusion, image-distortion, key-storage and dependency paths. New code-level findings are integrated; resume full-paper review when a copy becomes available.",
       "blockers": [
-        "SRC-049 full paper, formal argument and complete results unavailable."
+        "SRC-049 full paper, formal argument and complete results unavailable.",
+        "Code was not executed, built, tested or independently audited; no model weights or environment lockfile in the repository."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
-      "last_updated": "2026-11-17"
+      "last_updated": "2026-11-18"
     },
     "T-004": {
       "id": "T-004",
       "type": "route_analysis",
       "title": "Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles",
-      "status": "in_progress",
+      "status": "blocked",
       "priority": 5,
       "targets": [
         "docs/source-register.md",
@@ -74,9 +77,9 @@
         "thesis.md"
       ],
       "depends_on": [],
-      "next_action": "Public reference pins are recorded: Dropbox browser-link documentation and access-path distinctions; Signal Android/iOS/Desktop client release tags; Katzenpost v0.0.90, thin_client 0.0.23 and katzenqt 0.0.2 source commits. Next, establish whether a controlled Dropbox account/link, actual Signal client/backend/account configuration and running Katzenpost deployment can be inspected. Do not promote public source pins to deployed configuration.",
+      "next_action": "Public Dropbox/Signal/Katzenpost references and source pins are integrated. Resume only when a controlled Dropbox account/link, actual Signal client/account/backend configuration or running Katzenpost deployment/service-event capture becomes available.",
       "blockers": [
-        "No live Dropbox account/link configuration, installed Signal client/service/account state, or running Katzenpost deployment is available in this session; current evidence pins public documentation and source releases only."
+        "No live Dropbox account/link configuration, installed Signal client/service/account state or running Katzenpost deployment is available."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
