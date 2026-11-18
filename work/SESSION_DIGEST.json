@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-18 · cross-route receiver-acceptance prior-art crosswalk added in §10; Candidate C remains a methodological synthesis pending source audit and decision relevance",
+  "checkpoint": "2026-11-18 · prior-art §10.3 and thesis §8.8 narrow Candidate C to a reproducible, decision-relevant cross-route evaluation method; endpoint acceptance itself is standard protocol discipline",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_maturity_metadata_not_a_routine_chat_footer",
@@ -30,9 +30,9 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 10.2 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; the thin-client v0.0.23 API has no reader commit control and its tests omit a later-envelope failure with a concurrent reader. Actual reader visibility remains untested. katzenqt 0.0.2 separately stores received pieces and gates conversation-log dispatch on a complete contiguous chain; this is app-level gating, not AllOrNothing or atomic storage, and the client is pre-alpha/not suitable to rely on for privacy. SRC-043 natively permits partial byte reconstruction, including ? for missing fragment bytes; its 61.1% at 80% loss is a byte-recovery metric, not authenticated message acceptance. The remaining candidate is a route-agnostic endpoint acceptance/evidence comparison method, not a novelty claim.",
+    "thesis": "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 10.2 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; the thin-client v0.0.23 API has no reader commit control and its tests omit a later-envelope failure with a concurrent reader. Actual reader visibility remains untested. katzenqt 0.0.2 separately stores received pieces and gates conversation-log dispatch on a complete contiguous chain; this is app-level gating, not AllOrNothing or atomic storage, and the client is pre-alpha/not suitable to rely on for privacy. SRC-043 permits partial byte reconstruction, including ? for missing fragment bytes; its 61.1% at 80% loss is a byte-recovery metric, not authenticated message acceptance. The endpoint acceptance sequence is standard protocol discipline, not a novel mechanism. Candidate C survives only as a reproducible cross-route evaluation method, conditional on decision-relevant evidence beyond prior art.",
     "research_units": "W1-W4 drafted; W1 RQ7, W4 E5/E9, observer/property matrix §4.1 and thesis §§8.8/10.2 are aligned to the source-audited six-profile adversarial discovery and set-level atomicity comparison. Confidence/evidence remains integrated into RQ10.",
-    "source_register": "49 entries, SRC-001 through SRC-049.",
+    "source_register": "52 entries, SRC-001 through SRC-052.",
     "multi_message_model": "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies. Discovery is decomposed into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; these do not authenticate one another.",
     "steganography": {
       "distinctions": [
@@ -122,10 +122,10 @@
     "thesis_argument": {
       "central_question": "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?",
       "proposition": "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence.",
-      "contributions": "Responsibility-separated architecture; common route-comparison method; message-relationship/lifecycle analysis; claim-centred evidence discipline. The route-agnostic endpoint acceptance/evidence comparison is a methodological/systems synthesis candidate only, not an established novelty claim.",
-      "route_synthesis": "Image studies inform media transformation; SRC-043 already fragments and redundantly carries image fragments, permits partial byte recovery and marks missing bytes; Dropbox direct-invitation and view-only-link paths differ; Signal specs/client tags do not pin backend/account behaviour; Katzenpost source tags are pinned but no deployment is. Pigeonhole AllOrNothing spec claims are in tension with the inspected sequential-write/no-rollback source path; thin-client API/tests do not resolve reader visibility; katzenqt has a separate app-level complete-chain gate. The candidate contribution is a route-agnostic endpoint acceptance/evidence comparison method, still conditional on prior-art and decision relevance.",
-      "prior_art_pressure": "Thesis explicitly confronts OMR/GOMR and PerfOMR/SophOMR/InstantOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert communication. Generic private-discovery, whole-pipeline and image-covert-channel novelty claims are not supportable.",
-      "limits": "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
+      "contributions": "Responsibility-separated architecture; common route-comparison method (conditional on reproducible decision relevance); message-relationship/lifecycle analysis; claim-centred evidence discipline.",
+      "route_synthesis": "Image studies inform media transformation; SRC-043 already fragments/redundantly carries image fragments and permits partial byte recovery; Dropbox direct-invitation and view-only-link paths differ; Signal specs/client tags do not pin backend/account behaviour; Katzenpost source tags are pinned but no deployment is. Pigeonhole AllOrNothing spec claims are in tension with inspected sequential-write/no-rollback source path; reader visibility remains untested. OMR/StOMR/UnifOMR provide private retrieval/state/efficiency mechanisms, while SRC-052 demonstrates experimental service-scoped range completeness and retry. These do not establish global publication completeness or cross-carrier endpoint acceptance.",
+      "prior_art_pressure": "Prior-art comparison §10 now includes OMR/PerfOMR/SophOMR/InstantOMR/GOMR, StOMR, abstract-level UnifOMR, Oblivious Signaling, Remise, dead-drop and diffusion covert messaging, SRC-043, Echomix/Pigeonhole/katzenqt, Dropbox and Signal. Constituent mechanisms are established. The generic endpoint-acceptance sequence is standard protocol discipline; Candidate C is narrowed to a reproducible cross-route evaluation method requiring a decision-relevant result.",
+      "limits": "No deployed route comparison, implementation, experiment, formal proof, independent review or audit. Candidate C has not yet produced a decision-relevant result."
     },
     "source_review_status": {
       "T001": "Publisher previews expanded for SRC-033/034/036, but direct publisher retrieval returned 403; full papers/tables/limitations unavailable. All remain partial.",
@@ -168,7 +168,10 @@
     "Applied the seven-case adversarial discovery pressure test to all six named route profiles; integrated the evidence-bounded comparison into route framework §5.8 and thesis §8.8 without asserting a deployed route advantage.",
     "Source-audited the six profile rows; refined Pigeonhole AllOrNothing/replica-retention semantics and Dropbox owner/editor/viewer-information conditions; linked the comparison from W1 RQ7, W4 E9 and observer/property matrix §4.1.",
     "Added route framework §5.9 and aligned thesis §§8.8/10.2 plus W4 E5 to compare route-native set-level atomicity and partial visibility across six profiles.",
-    "Specified controlled partial-set cases: complete, missing, delayed, identical duplicate, conflicting duplicate, out-of-order, cross-set substitution and retry after uncertain acknowledgement; separated service acknowledgement, partial visibility, endpoint completeness and logical-message acceptance."
+    "Specified controlled partial-set cases: complete, missing, delayed, identical duplicate, conflicting duplicate, out-of-order, cross-set substitution and retry after uncertain acknowledgement; separated service acknowledgement, partial visibility, endpoint completeness and logical-message acceptance.",
+    "Source-audited receiver-acceptance prior art and narrowed Candidate C: endpoint manifest membership, completeness, whole-object validation and freshness/replay are standard protocol obligations, not a novel mechanism.",
+    "Added prior-art comparison §10.3 decision-relevance criteria and minimum cross-route evaluation design; integrated the narrowed contribution boundary into thesis §8.8 and the contribution/bias assessment.",
+    "Read-back verified the substantive files and operational records after writes. No tests, deployment, reproduction, proof, independent review or audit were performed."
   ],
   "source_review_boundaries": {
     "SRC_033": "Publisher-indexed abstract/introduction/method/evaluation snippets plus pinned public MATLAB demo inspection; complete paper methods, tables and limitations remain partial.",
@@ -181,7 +184,10 @@
     "SRC-039": "Official Dropbox help pages inspected; direct invitation and view-only shared-link paths distinguished. Link settings apply to link users; direct invitees and existing access retain separate permissions. Account plan, link settings and live activity/viewer records remain untested.",
     "SRC-040": "Compatible source tags pinned: katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2. Selected v0.0.90 courier/client/replica and thin_client API/tests plus katzenqt 0.0.2 receive path inspected, not executed. AllOrNothing spec claims reader atomicity; server path sequentially persists writes and shows no rollback on early failure; sender API exposes no reader commit control; existing failure test rejects first envelope only. katzenqt app stores pieces but gates conversation-log dispatch on complete contiguous chain. Reader-visible protocol atomicity remains untested; client pre-alpha; no deployment/audit.",
     "SRC-038": "Official Signal protocol specifications plus latest public client release tags checked 18 November 2026: Android v8.35.2 (tag commit d507a800a61cd5819a3670fe71e84e103efa7bda), iOS 8.37.0.1993 (commit 1c925a184f7d0412c64ad754bab2ed2cc09682e9), Desktop v8.35.0 (commit cb584b71326470abb8865bee5dd8c1b4631cbf9c). Client source pins only; backend/account/service configuration unverified.",
-    "SRC-043": "Full publisher HTML inspected. Native scheme fragments a file, redundantly embeds each fragment in r images, majority-votes duplicates and marks missing fragment bytes with ?. Loss benchmark: 1,000 images, 208 fragments, r=4, 832 embedded and 168 non-watermarked; success is restored bytes/total bytes, full recovery at 30% loss and 61.1% byte recovery at 80%. This is partial byte recovery, not authenticated logical-message acceptance."
+    "SRC-043": "Full publisher HTML inspected. Native scheme fragments a file, redundantly embeds each fragment in r images, majority-votes duplicates and marks missing fragment bytes with ?. Loss benchmark: 1,000 images, 208 fragments, r=4, 832 embedded and 168 non-watermarked; success is restored bytes/total bytes, full recovery at 30% loss and 61.1% byte recovery at 80%. This is partial byte recovery, not authenticated logical-message acceptance.",
+    "SRC_050": "Full 15-page CCS 2026 paper reviewed from co-author/institutional copy; selected public artifact source inspected at pinned commit c28d02d5dddf6360e9d2d39e5335ed77f73645e0. No build, tests or benchmark execution; artifact CLI is a local synthetic pipeline, not network deployment.",
+    "SRC_051": "Official ePrint abstract/metadata and CCS/institutional publication records inspected; PDF endpoint still returns HTTP 403. No full-text, proof, code or benchmark review; abstract-level only.",
+    "SRC_052": "Third-party experimental wallet/lightwalletd integration source-inspected at pinned commits; default server build excludes OMR and product notes mark it experimental/opt-in. Self-reported testnet checklist not independently reproduced; no build, live service, funded transaction or audit."
   },
   "next": [
     "T-006: stress-test prior-art-comparison §10 row by row against source-register entries and underlying papers/specifications. Check native units, fragment completeness, reconstruction, atomicity, endpoint acceptance, observer leakage and event evidence. Then determine whether the route-agnostic acceptance/evidence contract changes a concrete route decision or merely restates standard protocol discipline; narrow or retire Candidate C if no decision-relevant difference survives.",
@@ -274,7 +280,7 @@
     "release_rule": "Transfer substantive outcomes to thesis/research records; verify no enduring document depends on work/; then remove it in full."
   },
   "next_task": "T-006",
-  "latest_commit_before_digest_refresh": "e838e4de8d4b85556c7a00368f561a616287c4e1",
+  "latest_commit_before_digest_refresh": "609ebd82a038d0134a4d12ebedec8c7de859074b",
   "thesis_product": {
     "canonical_manuscript": "thesis.md",
     "staging": "The one active thesis manuscript under development.",
@@ -289,8 +295,8 @@
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
   "latest_commit_before_json_digest_refresh": "03e13c62d86cdb0d20c8a3566ff6b8c300e4c7f0",
-  "immediate_next_action": "T-006: source-audit prior-art-comparison §10 row by row against source-register entries and underlying papers/specifications; test whether the route-agnostic acceptance/evidence comparison changes a concrete route decision or restates standard protocol discipline.",
-  "latest_verified_project_head": "03e13c62d86cdb0d20c8a3566ff6b8c300e4c7f0",
+  "immediate_next_action": "T-006: operationalise prior-art comparison §10.3 into a minimal route/fault/evidence matrix. Separate public-source comparisons from tests requiring controlled Dropbox, Signal, Katzenpost or image-platform configurations; identify the smallest decision-relevant experiment. Do not start diagrams or raise novelty status.",
+  "latest_verified_project_head": "609ebd82a038d0134a4d12ebedec8c7de859074b",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -453,18 +459,18 @@
   "verified_current": {
     "work/START_HERE.md": "d575e8d58c683349cc2e04a173da0a32d1281a60",
     "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "b88c44d7021613ebffa958ffe7f171cec5603d21",
-    "work/PROJECT_STATE.md": "4e33624d7204e33bb78ea53feaddc8eb6cb10cb7",
+    "work/PROJECT_STATE.md": "e2be8305c58aca0c56737db11daaefa3fbe538fe",
     "work/WORKPLAN.md": "810a7022c1caa467c0940445b189c98ab03888ae",
-    "work/WORK_LOG.md": "b1146027f0015eb1b0077b16e50eb529e298e5a6",
-    "work/lookup/TASKS.md": "d3f8a0a691ff40c61102c0ad2cb5b83b2c63ff91",
-    "work/lookup/TASKS.json": "54658c3958d1d3231c933de2f8f550056538ed7f",
-    "work/SESSION_DIGEST.md": "523bc6b47c24279b75beb2eebaab368b020b575d",
-    "docs/prior-art-comparison.md": "dbfec4e0dc8ddeed6d3f9b40b197bf31e3d113ec",
+    "work/WORK_LOG.md": "bb0455301594c05fffefddce6b9ec49021046fb5",
+    "work/lookup/TASKS.md": "756e2dcac7bf6bf030e2c3e17f7cfc31c2d747a6",
+    "work/lookup/TASKS.json": "4bb52f1a97bfa1a8a4f5ccedfa4aec6de3533afa",
+    "work/SESSION_DIGEST.md": "abd599a85584119a63bee9a1973273560b71350c",
+    "docs/prior-art-comparison.md": "e937761ceaf3d5cdd784be877b00261abdfc1715",
     "docs/source-register.md": "d5737d1b10684642d0c855110b4290c19b8de7c6",
     "docs/route-comparison-framework.md": "accef69d9343148d94ecc8a651353333a88fabe8",
-    "thesis.md": "5cf2c5417b14ad578c4b0a23db61e65328c794ce",
+    "thesis.md": "60642d83711df0b50ff4fa59e1e872d7c50ff642",
     "docs/w4-risks-and-evaluation.md": "9a0f09af1d867bb49790b6349ecfc77ac8a46e1a",
-    "docs/thesis-contribution-and-bias-assessment.md": "55abbdbc5f5defcdbc2e3b869bd1a9f937e38e31",
+    "docs/thesis-contribution-and-bias-assessment.md": "d992b0da0eb1979416e9f94b0843e406089dd597",
     "docs/observer-property-matrix.md": "268c15736f8146dc7420fbd4242b8a4c79591981",
     "docs/multi-message-linkage-and-steganographic-carriage.md": "7f1663649dedb9365a32d8b3c442047c42771bcf",
     "docs/echomix-katzenpost-comparator.md": "cac1ce39d05264f795fd2740060847a3821c5054"
@@ -476,10 +482,10 @@
     "katzenpost": "Compatible source tags pinned: katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2; no running deployment/configuration or independent audit.",
     "limits": "Public documentation/source pins only; no service deployment, account configuration, platform experiment or runtime evidence."
   },
-  "contribution_status": "Candidate A remains an architectural organising principle; Candidate B (image-route advantage) remains conditional; Candidate C is a route-agnostic endpoint acceptance/evidence comparison method candidate only. Known mechanisms and prior art already cover private retrieval/group pertinence, anonymous inbox updates, two-server access privacy, public-platform covert pipelines, image covert channels, multi-image redundancy, capability-addressed asynchronous storage, copy batching and app-level incomplete-set gating. Candidate C must demonstrate a decision-relevant result beyond those mechanisms.",
+  "contribution_status": "Candidate A remains an architectural organising principle, not a novelty claim. Candidate B (image-route advantage) remains conditional. The generic endpoint-acceptance sequence is standard protocol discipline, not a novelty claim. Candidate C is narrowed to a reproducible cross-route evaluation method; it survives as a contribution only if a controlled result or rigorous counterexample changes a route choice, invalidates a material assurance claim, or exposes a failure/evidence ambiguity beyond prior art.",
   "prior_art_crosswalk": {
     "file": "docs/prior-art-comparison.md §10",
-    "status": "Added and linked from thesis and contribution assessment; source-audit remains next.",
+    "status": "Crosswalk §10 and decision-relevance test §10.3 added; mechanism-level acceptance novelty claim retired. Candidate C narrowed to a reproducible cross-route evaluation method; decision relevance remains unproven.",
     "coverage": [
       "OMR/PerfOMR/SophOMR/InstantOMR/GOMR",
       "Oblivious Signaling",
@@ -491,6 +497,6 @@
       "Dropbox",
       "Signal"
     ],
-    "judgement": "Component mechanisms are established prior art. The route-agnostic receiver-acceptance/evidence comparison is a methodological/systems synthesis candidate only; it must change a concrete route decision or be narrowed/retired."
+    "judgement": "Constituent mechanisms are established prior art. Endpoint acceptance states are standard protocol obligations. Only a reproducible cross-route evaluation method with decision-relevant output remains a possible contribution."
   }
 }
