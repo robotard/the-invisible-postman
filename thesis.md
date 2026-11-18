@@ -547,7 +547,7 @@ Evaluation must be capable of showing that a proposed design is ineffective, too
 | Image route | What capacity and extraction success remain after defined resizing, recompression, transcoding and moderation? |
 | Concealment | Under which detection methods and transformations is concealment detectable or destroyed? |
 | Metadata | Which fields are removed, retained or recreated, and what records remain outside the file? |
-| Discovery and collection | What do bootstrap, publication/indexing, candidate enumeration, recipient pertinence, retrieval authorisation and endpoint association reveal to each observer? How do full-scan, locator/capability, OMR/GOMR, Oblivious Signaling, Remise and oblivious-retrieval approaches compare under their native assumptions? |
+| Discovery and collection | What do bootstrap, publication/indexing, candidate enumeration, recipient pertinence, retrieval authorisation and endpoint association reveal to each observer? How do full-scan, locator/capability, OMR/GOMR, Oblivious Signaling, Remise and oblivious-retrieval approaches compare under their native assumptions? Can bootstrap substitution, malicious publication, index equivocation, retrieval manipulation, cross-role collusion, retention and suppression be detected or bounded? What evidence distinguishes endpoint-authenticated facts, service-reported events, observed metadata and inferred correlations? |
 | Behavioural privacy | Which repeated human or platform patterns permit correlation, and what mitigations are realistic? |
 | Lifecycle | What happens across expiry, revocation, offline devices, key changes and compromised endpoints? |
 | Recovery | What are the collusion, authorisation, availability and share-compromise consequences? |
