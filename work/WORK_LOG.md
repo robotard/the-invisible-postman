@@ -1,5 +1,36 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Candidate D formal model and nearest-prior-art synthesis
+
+### Work performed
+
+- Consolidated the primary-source review of APIR (SRC-054), AAD (SRC-055), vPIR (SRC-057) and multi-query vPIR (SRC-058), alongside the partial APIR-range review (SRC-056), partial VPRQ review (SRC-059), and full Basudan/Alamer range-query review (SRC-060). Existing OMR/StOMR/UnifOMR and downstream SRC-052 boundaries remain separate.
+- Refined the APIR distinction: multi-server point and predicate/aggregate queries use an at-least-one-honest-server model; the single-server out-of-band-digest construction is point-query only. Predicate queries return weighted aggregates, not a variable-length enumeration of every matching record.
+- Integrated the range-query prior art as direct counterexamples to generic private/verifiable range retrieval. APIR-range is indexed-text-only and describes a static owner-signed tree with access-count/timing/volume leakage; VPRQ remains abstract/introduction-only; Basudan/Alamer's full paper uses trusted data owners/seekers and a primarily semi-honest cloud, with its explicit theorem proving trapdoor privacy rather than a separate malicious-cloud soundness theorem.
+- Formalised Candidate D in thesis.md with distinct parties and collusion assumptions, sender intent versus manifest commitment, admission receipts, authenticated snapshot/epoch, retrieval soundness/completeness, manifest closure, endpoint acceptance, fork/freshness, predicate privacy and selective-failure resistance.
+- Defined a leakage function covering snapshot/epoch size, result cardinality, query/access count and pattern, timing, bytes/proof size, retries/aborts and manifest length; added a total-cost model for admission, snapshot, retrieval, proof, verification, manifest and gossip.
+- Added a limited pre-admission-omission indistinguishability proposition: without a pre-admission commitment to an expected set or independent receipt path, two worlds differing only in an unsubmitted intended carrier produce identical authenticated verifier views. This is a bounded negative result, not a proof that all Candidate D constructions are impossible.
+- Refined prior-art and contribution-assessment language to state that generic private/verifiable range retrieval is established prior art and Candidate D is only the narrower OMR-specific dynamic-predicate/admission/manifest-closure hypothesis. No construction or novelty claim is made.
+
+### Evidence judgement and limits
+
+- Candidate D must specify whether its output is an aggregate or a complete variable-length set; point-query consistency and authenticated membership are not result-set completeness.
+- APIR, vPIR, multi-query vPIR, APIR-range, VPRQ, AAD and OMR have different database, trust, leakage, output and update models; their properties cannot be concatenated without a composition proof.
+- SRC-056 and SRC-059 remain partial and are explicitly marked as such. Their missing full texts prevent complete proof/cost assessment; this does not block the bounded model but remains a prior-art review limitation.
+- The pre-admission omission proposition is conditional on the verifier receiving no independent commitment to the sender's expected set. A pre-admission sender-authenticated manifest changes the view, but proves only the set the sender actually committed, not unexpressed intent.
+- No Candidate D implementation, construction proof, benchmark, formal re-proof of source papers, independent review or security audit was performed.
+
+### Verification
+
+- Updated thesis, prior-art comparison and contribution assessment were fetched after writing and exact saved content was verified. Source-register entries SRC-054–SRC-060 and observer/traceability integrations were checked against the live repository.
+- All claims preserve the full-text versus indexed/abstract-only evidence distinctions.
+
+### Next
+
+Complete T-007's post-T-013 consistency pass: verify source IDs, internal paths and heading anchors; reconcile the stale prior-art section reference in traceability; check Candidate D wording and task/state/digest consistency. Then refresh both session digests at handover (Markdown first, JSON last).
+
+---
+
 ## 2026-11-18 · Candidate D: privacy-preserving verifiable message-set closure
 
 ### Work performed
