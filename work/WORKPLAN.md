@@ -17,9 +17,9 @@ See [research practice](../docs/research-practice.md), [collaborative governance
 
 ## Governing principles
 
-- Participant endpoints retain cryptographic authority. Treat bots, platforms, carriers, transport services and storage as untrusted for plaintext confidentiality.
+- Participant endpoints retain all cryptographic authority. The protected message and endpoint acceptance are self-contained: no server, directory, database, fixed address, rendezvous service or external resolver is required for key resolution, decryption, multipart association/reconstruction or acceptance. Treat all external platforms, carriers, transfer services and storage as untrusted, replaceable carriage environments only.
 - Separate message protection, identity verification, sender authentication, carrier encapsulation, transport and optional concealment.
-- Keep carrier encapsulation, transport adapters and orchestration distinct. Orchestration is optional; a service may perform multiple roles, which must be analysed separately.
+- Keep carrier representation and external transfer mechanisms distinct. Do not introduce server-side orchestration, directories, databases, indexes or rendezvous services as architectural dependencies. Services encountered in route comparisons are external carriage environments, not authorities over identity, keys, message membership or acceptance.
 - Preserve the protected object across routes unless an explicit authenticated protocol conversion is defined.
 - Image carriage remains a required research comparison, not a mandatory runtime route.
 - Do not treat carrier uniqueness, public image generation or extra hops as entropy, anonymity or proof of privacy.
