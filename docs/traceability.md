@@ -145,7 +145,7 @@ The following decisions must remain open until research and specification justif
 10. Test methods, justified acceptance criteria and independent review scope.
 11. Route-specific assumptions and comparison of image carriage with file/attachment and conventional messaging routes.
 12. The distinct value, use cases and limitations of image-carried messaging.
-13. Recipient discovery, rendezvous privacy and the information exposed by publication and retrieval.
+13. Route-native carrier acquisition, locator exposure and the information exposed by external publication and retrieval systems.
 14. Carrier metadata allowlist, verification of removal, and metadata introduced by platforms or hosts.
 15. The evidence required to make any bounded claim about concealment or steganalysis resistance.
 16. Key schedule inputs and domain separation; the distinct roles of HKDF salt and info; identity/transcript binding; nonce uniqueness under retries, concurrency, crash recovery and multi-device use; authenticated visible context; replay/order state; and downgrade-resistant route fallback. See [protocol boundary analysis](protocol-boundary-analysis.md) and SRC-041–SRC-042.
