@@ -354,6 +354,7 @@ Do not equate robust extraction with stealth, and do not equate steganalysis res
 - [SRC-050 · StOMR](source-register.md)
 - [SRC-051 · UnifOMR](source-register.md)
 - [SRC-052 · Downstream UnifOMR integration case study](source-register.md)
+- [SRC-053 · UnifOMR secondary technical assessment](source-register.md)
 - [SRC-031 · Remise](source-register.md)
 - [SRC-032 · Echomix](source-register.md)
 - [SRC-033–SRC-037 · Social-platform steganography and steganalysis](source-register.md)
