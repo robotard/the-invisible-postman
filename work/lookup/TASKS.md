@@ -17,7 +17,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | blocked | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
 | T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | complete | 1 |
-| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | blocked | 7 |
+| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | in_progress | 7 |
 | T-008 | diagram_work | Stabilise diagram arguments and reconcile figure briefs with thesis | blocked_until_research_stable | 8 |
 | T-009 | diagram_work | Create and verify contextual editable thesis diagrams | deferred | 9 |
 | T-010 | peer_review_preparation | Prepare a coherent thesis candidate and scoped peer-review materials | deferred | 10 |
@@ -26,9 +26,9 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current blocked work:** T-001–T-003 require full papers and/or retrievable source/model artefacts. SRC-033/034/036 remain partial after renewed publisher, author-page and repository searches; SRC-046/048 PDFs remain inaccessible; SRC-047's complete GitHub tree contains only README.md and its external Baidu model archive could not be opened; SRC-049's code was read at a pinned commit but its full paper/proof/results remain unavailable. T-004 is blocked on actual Dropbox account/link settings, installed Signal client/account/backend state and a running Katzenpost deployment. T-006 is complete for the current evidence set: the matrix separates common delivery faults from source-specific diagnostics and gates optional probes by use case. Candidate C remains conditional; no route ranking or image-carriage advantage is supported.
+**Current active work:** T-007 final thesis alignment and cross-document consistency review is now active after T-006 completed. Audit thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry; verify cited SRC IDs and internal links; resolve stale or duplicated wording without upgrading partial sources. T-001–T-004 remain blocked on full papers/artifacts or live route configurations. T-006 is complete for the current evidence set. Candidate C remains conditional; no route ranking or image-carriage advantage is supported.
 
-**Next:** provide or obtain any full-text copies for SRC-033/034/036/046/048/049 or a retrievable SRC-047 model/source archive. Keep partial-review labels until primary material is directly inspected. Reopen T-006 only if new evidence materially changes the thesis or route comparison.
+**Next:** complete the targeted cross-document consistency audit, reconcile actual discrepancies, and verify every write by fetching the saved file.
 ## Status meanings
 
 - `ready`: unblocked and not started.
