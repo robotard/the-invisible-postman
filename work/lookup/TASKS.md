@@ -14,7 +14,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-001 | source_review | Complete full-text/source review of SRC-033, SRC-034 and SRC-036 | in_progress | 2 |
 | T-002 | source_review | Review SRC-046–SRC-048 full texts and SRC-047 implementation where available | in_progress | 3 |
 | T-003 | source_review | Review SRC-049 paper, formal security argument and complete results | in_progress | 4 |
-| T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | ready | 5 |
+| T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | in_progress | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
 | T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | in_progress | 1 |
 | T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | blocked | 7 |
@@ -26,9 +26,9 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. Draft and integrate the thesis first. Current focus: audit set-level atomicity and partial visibility against SRC-043 multi-image reconstruction, Pigeonhole AllOrNothing and the native scopes of Dropbox/Signal. Define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result. Preserve native guarantees and evidence classes; do not infer unobserved service behaviour.
+**Current active task:** T-006. Current focus: finish the source-level reader-atomicity audit. Distinguish Pigeonhole AllOrNothing's sequential copy implementation from `katzenqt 0.0.2`'s separate app-level chunk assembler; determine whether any pinned application path supplies a reader commit gate or capability handoff; refine the minimal read-side fault test against SRC-043 and the single-file baseline. Do not call the possible partial-prefix issue a confirmed defect or infer novelty from documentation gaps.
 
-**Parallel evidence work:** T-001–T-003 remain in_progress for source access, but these tasks do not block unrelated manuscript drafting. T-004 remains ready. Task status changes only when the underlying work changes.
+**Parallel evidence work:** T-001–T-003 remain in_progress for source access where it materially resolves claims. T-004 is now in_progress: public Dropbox/Signal/Katzenpost release and documentation snapshots are pinned, but actual account, installed-client/backend and running-deployment configurations remain unavailable. Continue other unblocked work around these access limits.
 
 ## Status meanings
 
