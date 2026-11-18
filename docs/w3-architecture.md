@@ -12,7 +12,7 @@ The architecture must support:
 
 * Endpoint-controlled plaintext and private keys.
 * Confidentiality and authenticated sender identity as distinct properties.
-* An intermediary that can coordinate and transport messages without possessing the sole means of decryption.
+* External carriage routes that convey protected bytes without receiving cryptographic, identity, membership or acceptance authority.
 * A first-class transport-route layer, including image-carried message capsules as a required route and other routes as comparison profiles.
 * Route-specific carrier adapters, with concealment treated as optional and separate.
 * Reliable identification and validation of multipart message sets.
@@ -21,7 +21,7 @@ The architecture must support:
 
 The architecture is deliberately divided into responsibilities rather than prematurely committed to a particular deployment topology. The [multi-message linkage and steganographic carriage analysis](multi-message-linkage-and-steganographic-carriage.md) defines the distinctions between protected logical messages, fragment sets, redundant carriers, conversations, retries and cross-route copies. Its package sequence is conceptual, not a final wire format.
 
-**Transport-independence clarification (working architectural rule):** The protected-message core, carrier encapsulation, transport and orchestration are distinct responsibilities. Endpoint protection creates a logically protected object whose cryptographic meaning is independent of its delivery route. Encapsulation adapts that object to a carrier and reverses the packaging; transport adapters move it; optional orchestration may coordinate selection, sequencing, retrieval or retries and may itself also be a transit participant. Orchestration does not define agnostic delivery and is not mandatory. A single service may perform multiple roles, but each role, authority, input, retained state and observer view must be analysed separately. Image carriage is required as a research comparison route, not as a mandatory runtime route. Telegram, InspiroBot and any onward hop are examples only. Multi-hop routes must declare every hop and its added observations; extra hops do not inherently improve privacy. The protected object should remain invariant across routes unless an explicit, authenticated protocol conversion is specified. AEAD nonce uniqueness, salt purpose, identity/context binding and replay rules remain protocol decisions, not properties to improvise around a carrier.
+**Transport-independence clarification (governing architectural rule):** The protected message is a self-contained endpoint object. It carries the authenticated context needed for its validation and, if segmented, the authenticated information needed to associate and reconstruct its parts. Endpoints retain the keys and local trust state required for identity verification, authentication and decryption. No server, directory, database, fixed address, rendezvous service, coordinator or external resolver is required for those operations. Carrier framing and route adaptation are endpoint-side functions; external platforms, hosts and networks merely convey, transform, delay, reorder, copy or withhold bytes. A route may require some practical means of getting bytes to the recipient, but that means does not become part of the message's identity, decryption or reconstruction authority. Image carriage is required as a research comparison route, not as a mandatory runtime route. Telegram, InspiroBot and any onward hop are examples of external carriage/content sources only. Multi-hop routes must declare every hop and its added observations; extra hops do not inherently improve privacy. The protected object remains invariant across routes unless an explicit, authenticated protocol conversion is specified. AEAD nonce uniqueness, salt purpose, identity/context binding and replay rules remain endpoint protocol decisions, not properties to improvise around a carrier.
 
 
 2. Architectural principles
@@ -30,7 +30,7 @@ The architecture is deliberately divided into responsibilities rather than prema
 
 Plaintext creation, encryption, decryption, private-key custody and peer verification belong to participant-controlled endpoints.
 
-The intermediary may coordinate delivery, but must not become the authority that can independently decrypt messages or establish participant identity.
+External routes may convey or withhold bytes, but do not establish participant identity, resolve keys or hold decryption authority.
 
 2.2 Separate security properties
 
@@ -62,15 +62,15 @@ Each route adapter must preserve the opaque protected message or detect when it 
 
 An image is a transport container. It is not a key, identity credential, source of guaranteed entropy, or substitute for authenticated encryption. The protected capsule must remain meaningful independently of optional concealment.
 
-2.4 Passenger topology, encapsulation and the standalone train
+2.4 Endpoint-owned message and carriage boundary
 
 The participant-side cryptographic topology is the primary security architecture. Each participant performs the necessary endpoint role in the agreement/key-establishment, message-protection, authentication and validation process. The intended "anonymous agreement" property requires a precise definition and protocol analysis; this architecture does not claim anonymity merely by naming it.
 
-The train is a standalone transport element with a narrow service contract: carry an already protected object over a selected route. It may apply route-specific carriage handling. Optional orchestration may select or sequence routes and coordinate delivery, but it is a distinct function and may itself also act as a transit participant. It does not establish participant trust, negotiate or own cryptographic keys, encrypt or authenticate messages, decide message validity, or hold decryption authority. It is a transport aid, not a cryptographic participant.
+There is no train, coordinator or orchestration service in the architecture. The sender endpoint selects and invokes whatever carriage means it can use; the recipient endpoint obtains the resulting bytes through an available route. These are operational choices at the endpoints, not a separate authority or persistent service relationship. A platform or host may participate in physical conveyance, but it is external and untrusted.
 
-The encapsulation boundary sits between the protected message/capsule and the train. It packages the opaque protected object for carriage, supplies bounded framing and route information, and supports detection of truncation, substitution, malformed extraction or route failure. It must not reinterpret or silently modify authenticated message semantics. Encapsulation alone is not a security primitive: any security-relevant fields or bindings must be authenticated by the endpoint protocol.
+Any carrier-facing encapsulation is performed by the sender endpoint before transfer and reversed by the recipient endpoint after acquisition. It supplies bounded framing and route-specific representation, and supports detection of truncation, malformed extraction or unsupported transformations. It must not reinterpret or silently modify authenticated message semantics. Encapsulation alone is not a security primitive: any security-relevant fields or bindings must be authenticated by the endpoint protocol.
 
-The train may be low-fidelity and untrusted. It may be inspected, copied, delayed, reordered, transformed, substituted, or unavailable. The passenger-side security topology must remain conceptually intact if the train is replaced or removed. Image carriage remains a required route; steganography or another image technique is a route mechanism within the train, not part of the passenger security topology.
+Every external carriage route is low-trust and replaceable. Its carriers may be inspected, copied, delayed, reordered, transformed, substituted or made unavailable. The endpoint message and its cryptographic operations remain intact if a route is replaced or removed. Image carriage remains a required route comparison; steganography is an optional image-carrier technique, not part of the endpoint security architecture.
 
 ### Multi-message package encapsulation boundary
 
@@ -124,15 +124,15 @@ The package manager and route adapters must preserve a strict distinction betwee
 
 The receiving path must keep its states distinct: carrier observed → retrieved → bounded extraction/framing → endpoint authentication → fragment membership validation → set completeness → reconstruction and object validation → replay/freshness decision → logical-message acceptance. Publication, service acknowledgement, retrieval or extraction must never be treated as endpoint delivery or acceptance. Incomplete sets remain bounded and unaccepted; conflicting duplicates are rejected or quarantined. This is a design obligation, not a selected state machine encoding or wire format. See [the thesis relationship-authority analysis](../thesis.md#731-relationship-authority-what-the-endpoint-knows-and-what-the-route-reveals) and [multi-message linkage analysis](multi-message-linkage-and-steganographic-carriage.md).
 
-2.4.1 Unique image envelopes, variable placement and decapsulation
+2.4.1 Image-carrier variation and route acquisition (comparative analysis)
 
-The train may generate or obtain a distinct image carrier object for each carriage instance and vary that carrier's publication or retrieval placement. Here, "unique" means that a carrier object is not reused for another carriage instance under the proposed policy; it does not mean cryptographic uniqueness, secret entropy, randomness, unpredictability or guaranteed unlinkability. The carrier is not a nonce, key or identity credential. At the receiving side, a transport decapsulation function discovers or obtains the selected carrier, extracts the encapsulated protected object, checks transport framing and extraction completeness, and hands the result to the participant endpoint. The endpoint, not the train, performs cryptographic authentication and acceptance.
+An endpoint may choose a distinct image carrier for a carriage instance, but this is a route-specific option rather than a system requirement. "Distinct" means only that a carrier object is not reused under a stated carriage policy; it does not mean cryptographic uniqueness, secret entropy, randomness, unpredictability or guaranteed unlinkability. The carrier is not a nonce, key or identity credential. The recipient obtains the carrier through whatever route is available; endpoint-side extraction and bounded decapsulation recover the protected object. The recipient endpoint performs cryptographic authentication and acceptance.
 
 This creates a transport-level unlinkability objective: reduce straightforward correlation based on reuse of the same carrier or a stable, predictable publication location. It is a separate contribution of the train and does not replace the participant-side cryptographic topology. It must not be described as guaranteed anonymity. Timing correlation, access logs, network identifiers, hosting metadata, image fingerprints, repeated patterns, and the discovery/rendezvous mechanism may still reveal relationships. This is a carrier/object-level variation, not a traffic-analysis defence. Research comparators such as Loopix use explicit mixing and cover traffic under a defined observer model; those mechanisms introduce additional infrastructure, bandwidth, delay and usability assumptions and are not part of the current proposal (see SRC-016 and SRC-018–SRC-019 in the source register).
 
 Variable placement requires a recipient-discovery mechanism. The design must explain how the intended recipient learns where and when to retrieve a carrier without introducing a stable locator or observable side channel that defeats the intended benefit. Random placement alone is not a delivery protocol.
 
-Discovery must be treated as a separate protocol function with its own privacy and availability contract. Candidate families include: (a) recipient-side scanning of a shared feed, which can hide a query at the cost of bandwidth, storage and client work; (b) a stable authenticated locator or rendezvous service, which is efficient but may expose repeated recipient and access relationships; (c) short-lived or one-use capabilities delivered through a separately authenticated channel, which can reduce identifier reuse but still expose retrieval to the service receiving the request; and (d) private or oblivious retrieval, which aims to hide which item is retrieved from the service but introduces cryptographic, computation, communication and abuse-resistance costs. Liu and Tromer (2022) show that this is a formal message-retrieval problem, not merely URL randomisation; their bulletin-board construction is a comparator, not a selected component. No candidate is adopted here. The comparison must record who observes publication, capability delivery, lookup, download and retries, plus locator lifetime, query linkability, collusion, denial-of-service exposure, bandwidth and usability. The carrier should be treated as disposable and replaceable; decapsulation failure must produce a bounded failure, never silent acceptance of partial or ambiguous content.
+Discovery and retrieval mechanisms are prior-art comparison subjects, not protocol functions required by this architecture. Recipient-side scanning, stable locators, capabilities, OMR/PIR, Oblivious Signaling and DORAM systems each introduce different external assumptions, authorities, leakage and costs. Liu and Tromer (2022) show that private message retrieval is a formal research problem; that does not make a bulletin board or retrieval service necessary to The Invisible Postman. For each comparator, record who observes publication, capability delivery, lookup, download and retries, plus locator lifetime, query linkability, collusion, denial-of-service exposure, bandwidth and usability. None is selected or required. The protected object and any multipart reconstruction context remain self-contained; decapsulation failure must produce a bounded failure, never silent acceptance of partial or ambiguous content.
 
 The discovery boundary should be decomposed further so that unlike properties are not reported as one “private discovery” result: (1) bootstrap and authentication of the initial key, locator or capability; (2) publication and indexing of candidate carriers; (3) candidate enumeration by scanning or querying; (4) recipient pertinence and retrieval authorisation; and (5) endpoint association with an authenticated fragment set or conversation. OMR/GOMR primarily address recipient-message pertinence; Oblivious Signaling changes the cost placement to sender-side uniform updates; Remise adds two-server access-pattern privacy subject to non-collusion and out-of-band token distribution; Echomix/Pigeonhole provides a stronger integrated capability-derived storage and asynchronous messaging comparator. StOMR adds a stateful OMR family in which OMR-KEM establishes shared state without prior communication; the receiver public key is sent to the sender and detection key to the detector. Its full paper models passive receiver privacy, not active malicious publication or authenticated human identity binding; the inspected artifact implements the local matching/compression/decode core, not a networked service or visible OMR-KEM flow (SRC-050). UnifOMR relates strong detection-key unlinkability to PIR and uses a two-round batch-PIR construction (SRC-051, primary paper directly reviewed). Its detector scans the board clues, the recipient performs local range checks, then issues a fixed-capacity batch-PIR query. The paper separates malicious-detector privacy from completeness/soundness, which assume an honest-but-curious detector, and leaves malicious single-server integrity open. Algorithm 1 randomly truncates candidate sets larger than k̄, but the formal completeness bound covers true pertinent messages and does not explain how false-positive candidates fit that capacity; record this as a primary-text ambiguity, not a demonstrated defect. SRC-053 is a secondary assessment now cross-checked against the primary paper. A third-party integration demonstrates explicit digest completeness, slot-to-height mapping, whole-height truncation, cursor retry and PIR/fallback composition (SRC-052); these are service/application semantics, not an UnifOMR paper guarantee or a generic multi-carrier transaction. These mechanisms protect different events and rely on different assumptions. Signal's pinned public server snapshot adds a concrete product/service comparator: per-device mailboxes, client acknowledgement before queue removal, conditional server delivery receipts and queue-drained signalling, with same-recipient transaction grouping but no global transaction across all recipients when writes span shards/chunks (SRC-038). Dropbox adds owner/editor-visible activity and configurable viewer information whose omissions depend on role, plan, guest status and preview/download path, rather than a cryptographic retrieval protocol (SRC-039). The architecture must not infer publication privacy from private retrieval, sender anonymity from receiver-pertinence privacy, endpoint-authenticated conversation continuity from a capability or locator, or global backend observability from a UI receipt/log. For every stage, record its authority, observer view, retained metadata, bootstrap dependency, collusion assumptions and availability failure modes. See [the thesis discovery decomposition](../thesis.md#discovery-is-a-composition-of-distinct-functions) and [the multi-message linkage analysis](multi-message-linkage-and-steganographic-carriage.md#47-discovery-is-not-a-single-lookup).
 
@@ -242,7 +242,7 @@ The receiver must not silently accept incomplete sets, conflicting content for t
 
 Fragmentation is a transport and packaging mechanism. It is not a cryptographic recovery scheme.
 
-3.6 Encapsulation boundary, standalone train and transport-route adapters
+3.6 Endpoint-side encapsulation and external carriage routes
 
 This logical component group defines three connected but distinct responsibilities. They need not be separate services or processes.
 
@@ -256,11 +256,11 @@ The encapsulation format must define bounded lengths, parser limits, unsupported
 
 Resource bounds are a first-class part of this contract, not a later implementation detail. The specification must set justified limits for total encoded size, per-capsule size, fragment count, manifest/header length, nesting, decompression expansion, aggregate memory and disk, CPU/time budget, concurrent incomplete sets and their expiry. The parser should reject inconsistent or excessive declarations before allocation or expensive decoding, use bounded streaming where appropriate, and release temporary resources on every failure path. Go's multipart parser resource-exhaustion incident (SRC-023) is an illustrative implementation case; it does not establish that this capsule format shares the same vulnerability or parsing model. Numerical values remain open pending a target-device and route profile.
 
-**Standalone train**
+**External carriage only**
 
-The train is a replaceable, low-fidelity carriage element. It may select a route, coordinate publication and retrieval, associate transport objects with operational delivery references, and report limited delivery state where observable. It carries opaque protected objects and does not hold plaintext, participant private keys, sole decryption capability or authority to accept a message.
+No standalone train, relay, coordinator or retrieval service is required. A route may expose publication, access or delivery events, but those are external service observations, not architectural state or authority. The endpoint's message remains valid or invalid independently of a service's report. The route must not hold plaintext, participant private keys, sole decryption capability or authority to accept a message.
 
-Recipient discovery is a separate requirement, not something solved by random placement. The recipient needs an authenticated means to learn where and when to retrieve the relevant carrier. The locator, discovery channel, publication schedule and access pattern may themselves expose relationships. Their design remains open and must be evaluated against the observer model.
+A recipient must physically obtain the bytes, but the means by which a route makes them available is outside the message's authentication, decryption and reconstruction protocol. A route may use its own native addressing or access conventions; these are not fixed message identities or required cross-route relationships.
 
 **Transport-route manager and carrier adapters**
 
@@ -281,26 +281,9 @@ If a carrier is transformed, damaged, unavailable or unsupported, the route must
 
 The train's responsibility split must be compared with integrated systems such as [Echomix/Katzenpost](echomix-katzenpost-comparator.md), using the [route comparison framework](route-comparison-framework.md), which separates gateways, mix nodes, service nodes, couriers and storage replicas while coordinating traffic coupling, anonymous storage access and reliability. The existence of multiple components is not itself a distinction. The comparison must state what each actor can observe, which identifiers cross boundaries, how discovery capabilities are issued, how retries are signalled, and what collusion combinations reveal. BACAP's capability-derived pseudorandom box IDs are a substantive discovery design, not equivalent to a changing public locator. No mixnet component is assumed to be part of the proposed architecture.
 
-3.7 Coordinator and transport intermediary
+3.7 No coordinator or intermediary component
 
-Responsible for permitted delivery coordination, routing and capsule-set handling.
-
-It may:
-
-* Receive routing instructions.
-* Associate transport objects with delivery references.
-* Coordinate multipart delivery.
-* Report delivery state where observable.
-* Apply retention and operational policies.
-
-It must not be trusted to:
-
-* Read plaintext.
-* Hold the only decryption capability.
-* Establish participant identity solely through platform identifiers.
-* Guarantee delivery, availability, confidentiality of metadata or carrier preservation.
-
-The coordinator’s exact knowledge and permissions must be minimised and documented.
+There is no coordinator role in the proposed architecture. No external entity is required to receive routing instructions, associate parts, maintain a message-to-location map, coordinate multipart delivery, resolve recipient identity, supply decryption state or decide acceptance. External services may independently carry or host bytes and may report their own actions, but those reports do not establish endpoint receipt, completeness or acceptance. Any optional local route-selection logic remains under endpoint control and does not create a persistent service relationship.
 
 3.8 Lifecycle and local state
 
@@ -356,7 +339,7 @@ The following is a logical lifecycle, not an implementation sequence. It separat
 6. Encapsulation: the sender-side boundary adds bounded carriage framing and route-format context without claiming cryptographic protection.
 7. Route-specific encoding: the selected adapter packages the encapsulated object for the declared profile. For image carriage, this may include image-carrier encoding and optional concealment as a distinct image-route sub-layer; other routes use their own native file, attachment, messaging or mixnet framing.
 8. Route-specific handling and publication: apply only the metadata, access-control and publication operations relevant to the selected profile. Image metadata minimisation is image-specific; file hosts and messaging services require their own identifier, account, activity and retention analysis.
-9. Transport coordination and discovery: the route carries the object; any coordinator may assist but is optional. The intended recipient obtains the locator, capability or retrieval instruction through the profile's separately evaluated discovery mechanism.
+9. Route-specific conveyance: the sender uses an available route to convey the object or its independently carried parts. No coordinator or discovery service is required by the message protocol; any route-specific acquisition information is external to message identity, decryption and reconstruction.
 10. Retrieval and route-specific decoding: the receiving-side adapter obtains the route object and recovers the framed protected capsule, checking structural completeness and parser limits.
 11. Capsule-set validation: the endpoint validates the authenticated manifest and message-set context, reassembling valid pieces independently of arrival order while rejecting incomplete, conflicting, substituted or ambiguous sets.
 12. Cryptographic validation and local acceptance: the endpoint verifies authenticity, integrity, peer/session context and freshness before decrypting and presenting plaintext.
@@ -402,9 +385,9 @@ These responses are architectural intentions, not demonstrated mitigations.
 
 The minimum logical topology is:
 
-Sender endpoint → protected message/capsules → sender-side encapsulation → route adapter/carrier → standalone train and untrusted intermediary → recipient discovery/retrieval → route adapter/decapsulation → recipient endpoint validation.
+Sender endpoint → self-contained protected message (whole or segmented) → endpoint-side carrier encapsulation → one or more independent external carriage routes → recipient endpoint acquisition and decapsulation → local authenticated association/reconstruction → cryptographic validation and decryption.
 
-The recipient endpoint, not the train or decapsulation function, performs authenticated set validation, cryptographic verification and decryption.
+The recipient endpoint performs authenticated set validation, cryptographic verification, reconstruction and decryption using only the received protected representation and endpoint-held state.
 
 The cryptographic protection boundary remains between the participant endpoints. Carrier processing and transport sit outside that boundary.
 
@@ -473,7 +456,7 @@ W3 intentionally does not settle:
 10. Metadata minimisation, retention and operational visibility.
 11. Expiry, revocation, device replacement and compromise response.
 12. Whether recovery is justified, and if so, its threat model.
-13. Recipient discovery/rendezvous, locator privacy and access-pattern exposure. The current [observer/property matrix](observer-property-matrix.md) compares OMR/GOMR, oblivious signaling and two-server DORAM as distinct retrieval/access families. None is assumed to be a drop-in component. Their setup, collusion, cover-traffic, bearer-token, integrity and network-observer assumptions must be compared against the intended route before any mechanism is selected.
+13. Route-specific carrier acquisition, locator exposure and access-pattern observations. The [observer/property matrix](observer-property-matrix.md) compares OMR/GOMR, Oblivious Signaling and two-server DORAM as external prior art only. None is a required component or drop-in mechanism. Compare their setup, collusion, cover-traffic, bearer-token, integrity and network-observer assumptions without importing their server, directory or database dependencies into the architecture.
 14. Carrier metadata allowlist, verification of removal and platform-added metadata.
 15. Observer models for transport unlinkability and behavioural correlation.
 16. Whether any traffic-obfuscation, padding, delay, batching, cover-traffic or mix-network mechanism belongs in scope, and what costs it would impose.
@@ -482,9 +465,9 @@ These decisions require protocol-level research and evaluation before implementa
 
 11. W3 conclusion
 
-The research supports a modular, endpoint-controlled architecture in which cryptographic authority remains with participants and the intermediary is restricted to transport and coordination.
+The research supports an endpoint-only architecture in which the protected message is self-contained and all cryptographic, identity, membership, reconstruction and acceptance authority remains with the communicating endpoints. External routes are replaceable means of conveying bytes, not architectural components or authorities.
 
-The image carrier is deliberately subordinate to the cryptographic message format. The train and its encapsulation/decapsulation boundary are replaceable carriage mechanisms, not cryptographic authorities. Multipart handling is treated as an integrity and context-binding problem: valid out-of-order arrivals may be reconstructed, while ambiguous or conflicting sets fail safely. Lifecycle semantics are constrained by what endpoints can actually enforce.
+The image carrier is deliberately subordinate to the cryptographic message format. Any encapsulation/decapsulation is performed at the endpoints; no train, coordinator, directory, database or rendezvous service is part of the design. Multipart handling is treated as an integrity and context-binding problem: valid out-of-order arrivals may be reconstructed, while ambiguous or conflicting sets fail safely. Lifecycle semantics are constrained by what endpoints can actually enforce.
 
 The architecture therefore establishes responsibilities and trust boundaries before fixing a protocol or deployment topology. It also treats confidence as a verifier's evidence-bounded judgement rather than a system-wide badge: claims must expose their scope, provenance, assumptions, freshness and unresolved alternatives, while minimising the metadata generated by verification. Further complexity remains conditional on evidence that it improves a stated research objective.
 
