@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-18 · StOMR/UnifOMR primary papers reviewed; MRAS/DRAS and GIF code inspected; T-006 complete; T-001–T-003 access active"
+checkpoint: "2026-11-18 · T-006/T-013/T-007/T-015 complete; T-014 APIR count-plus-point feasibility active; SRC-001–SRC-060 registered"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only_not_chat_footer
@@ -56,9 +56,13 @@ read_first:
   - work/WORKPLAN.md
   - work/WORK_LOG.md
   - "Then inspect only the task registry and research documents required for the next unblocked action."
-next_task: T-001
+next_task: T-014
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v3
+representation_flexibility:
+  principle: "Sender-selectable whole-object or segmented representation is an optional publication-policy choice, independent of carrier/transport; logical identity, authenticated meaning, endpoint authority and acceptance semantics remain invariant."
+  supporting_note: docs/optional-message-granularity.md
+  disposition: "Whole-object baseline retained; segmentation optional; neighbour-bound linkage is an unselected hypothesis, not a protocol or novelty claim."
 current_state:
   thesis: "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 10.2 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; the thin-client v0.0.23 API has no reader commit control and its tests omit a later-envelope failure with a concurrent reader. Actual reader visibility remains untested. katzenqt 0.0.2 separately stores received pieces and gates conversation-log dispatch on a complete contiguous chain; this is app-level gating, not AllOrNothing or atomic storage, and the client is pre-alpha/not suitable to rely on for privacy. SRC-043 natively permits partial byte reconstruction, including `?` for missing fragment bytes; its 61.1% at 80% loss is a byte-recovery metric, not authenticated message acceptance. The endpoint acceptance sequence is standard protocol discipline, not a novel mechanism. Candidate C remains a conditional reproducible cross-route evaluation method, not an established contribution. The matrix now uses three primary treatments (SRC-043-style multi-image set, single-file Dropbox object, raw Pigeonhole AllOrNothing), a separate katzenqt application-gate observation, Signal as a reference profile and OMR-family work as retrieval comparators. No controlled route result or rigorous counterexample currently changes a route choice or exposes a gap beyond prior art."
   thesis_argument:
@@ -101,6 +105,7 @@ completed:
   - "Directly reviewed the full user-supplied StOMR camera-ready paper and the full 56-page UnifOMR primary paper; integrated state, OMR-KEM, passive threat model, collision caveat, OMR/PIR reduction, two-round batch-PIR design and candidate-capacity ambiguity."
   - "Source-inspected pinned MRAS/DRAS MATLAB repositories without execution; recorded code-level limits separately from inaccessible full-paper methods/results."
   - "Audited the route/fault matrix for minimality, separated source-specific diagnostics from common faults, staged the three primary treatments and reassessed Candidate C; no decision-relevant empirical result or rigorous counterexample established."
+  - "Added representation flexibility to thesis §1.1; created docs/optional-message-granularity.md for optional sender-controlled whole-object/segmented publication, invariants, costs, prior-art limits and unselected neighbour-linkage hypothesis; aligned RQ4 traceability and verified all changed files."
 source_review_boundaries:
   SRC-033: "Publisher preview expanded on 2026-11-17: matching recompression, DCT stabilisation/lattice embedding/postprocessing, metrics/comparators and LinkedIn test; full equations/tables/configuration/limitations unavailable. README-labelled MRAS MATLAB source pinned and inspected; ten-image local QF80 demo, unused midFreqPattern argument and per-image message prefix recorded; no build or execution."
   SRC-034: "Publisher preview expanded on 2026-11-17: downward recompression, RoLoS/CARE, PMAS comparison and Q95→Q85/Q80/Q75; full derivation/tables/platform procedure/limitations unavailable. README-labelled DRAS MATLAB source pinned and inspected; ten-image local QF95-to-QF80 demo, per-image message prefix and possible STC payload truncation recorded; no build or execution."
