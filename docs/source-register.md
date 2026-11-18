@@ -2,7 +2,7 @@
 
 **Purpose:** Track authoritative technical specifications, standards, protocol designs and research literature used to ground the thesis.  
 **Research status:** Initial source-reconciliation pass · Not a completed literature review  
-**Last checked:** 2026-11-16  
+**Last checked:** 2026-11-18  
 **Assurance:** Theory only · No implementation · Not audited.
 
 ## 1. How to use this register
@@ -650,6 +650,28 @@ For all three, extraction-error performance is not evidence of message authentic
 - **SRC-047 Zhu et al.:** Abstract and author-indexed source-code availability inspected. Scaling-Net and SC-Net are described as separate sanitization paths, with a discriminator for image-quality optimisation. The repository and complete results remain to be inspected.
 - **SRC-048 Zhu et al.:** IEEE abstract and author publication record inspected. The reported countermeasure is a secret-seed-conditioned decoder jointly optimised with the sanitizing network. Full method/evaluation unavailable; treat as a counter-adaptation concept, not a demonstrated general bypass.
 - **SRC-049 Wang et al.:** IEEE metadata, author-linked README, core/method_core.py and scripts/run_stego.py inspected. The implementation uses intra-frame repetition and inter-frame majority voting across 16 frames; each frame has separate key/nonce material in the PyCryptodome path. The receiver asserts a full 16-frame set, so missing-frame erasure tolerance is not established. The inspected ChaCha20 path exposes no authentication tag; the fallback is a 32-bit NumPy PRNG explicitly marked TEST ONLY. The demo stores per-frame keys and ground truth locally and writes frame PNGs. These are code-reading observations, not an audit. The paper/formal security argument remains unreviewed.
+
+
+### SRC-050 · StOMR: Stateful Oblivious Message Retrieval
+
+- **Source:** Gouert, C., Lee, K., Mouris, D., Tselekounis, Y. and Watson, J.-L. (2026), *StOMR: Stateful Oblivious Message Retrieval*, ACM Conference on Computer and Communications Security (CCS 2026). DOI: 10.1145/3830454.3846701. Cryptology ePrint 2026/2369.
+- **Publisher/status:** CCS 2026 paper; official IACR ePrint record identifies publication at CCS and supplies the DOI.
+- **Links:** https://eprint.iacr.org/2026/2369 ; https://doi.org/10.1145/3830454.3846701 ; https://www.sigsac.org/ccs/CCS2026/program/schedule.html
+- **Relevant to:** Thesis §§5 and 8; W1 RQ7; W2 discovery and receiver-privacy observers; W3 bootstrap, shared state and retrieval; W4 privacy/cost evaluation.
+- **Supports at abstract level:** A stateful OMR model in which senders and receivers maintain lightweight private state; an OMR-KEM intended to establish that shared state without an out-of-band channel; and reported sender-signal-size reductions relative to PerfOMR, SophOMR and InstantOMR while preserving detector performance.
+- **Does not yet establish for this review:** The detailed OMR-KEM construction, formal security definitions, setup/refresh/recovery assumptions, state compromise behaviour, complete leakage model, exact evaluation conditions or whether the stateful model changes the endpoint message-set acceptance problem. Do not infer these from the abstract.
+- **Review state:** Official IACR ePrint metadata/abstract and the ACM CCS 2026 programme entry inspected. The linked full-text PDF request returned HTTP 403 in this review; the paper has **not** received full-text, construction, proof, code or benchmark review. Claims are therefore abstract-level only.
+
+
+### SRC-051 · UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency
+
+- **Source:** Fisch, B., Liu, Z., Tromer, E. and Wang, Y. (2026), *UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency*, ACM Conference on Computer and Communications Security (CCS 2026); Cryptology ePrint 2026/910.
+- **Publisher/status:** CCS 2026 accepted/published-work record is corroborated by the authors' institutional publication listings; the IACR ePrint record identifies a major revision and publication elsewhere at CCS 2026.
+- **Links:** https://eprint.iacr.org/2026/910 ; https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html ; https://yacl.cs.yale.edu/
+- **Relevant to:** Thesis §8; W1 RQ7; W2 receiver-privacy and retrieval-service observers; W3 OMR/PIR comparison; W4 communication, latency and interaction costs.
+- **Supports at abstract level:** The paper states that OMR with strong detection-key unlinkability is at least as hard as PIR and that existing OMR constructions satisfy this property. It presents UnifOMR using batch PIR, reporting 20×–1080× faster server runtime than SophOMR under stated practical parameter settings, with trade-offs including an asymptotically linear digest, two detector/client interaction rounds and substantial server time spent in batch PIR.
+- **Does not yet establish for this review:** The full reduction proof, exact formal definitions and assumptions, complete benchmark methodology, implementation details, robustness/correctness boundaries or implications for a multi-carrier endpoint acceptance protocol. Abstract-level claims must not be treated as independently checked theorem or reproduced performance.
+- **Review state:** Official IACR ePrint metadata/abstract and institutional/CCS publication listings inspected. The linked full-text PDF request returned HTTP 403 in this review; the paper has **not** received full-text, proof, code or benchmark review. Claims are therefore abstract-level only.
 
 ## 7. Status
 
