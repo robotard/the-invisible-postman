@@ -2324,9 +2324,9 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 
 ### Verification
 
-- Substantive writes were committed to GitHub main. Exact post-write read-back and the final cross-document consistency pass remain in progress.
-- T-007 reopened to check citations, source IDs, local links/anchors, cross-document terminology and task/state alignment after this material architecture correction.
+- Substantive thesis/research and operational writes were committed to GitHub main and fetched back by exact path. The 15-document static pass found 60 unique source IDs, no missing/duplicate IDs, no unknown citations, all 22 local link targets present, no broken anchors among checked core documents, no duplicate heading slugs and no stale architecture phrases implying a required train/coordinator/orchestration service.
+- Exact GitHub main read-back was performed for the changed thesis, W1–W4, traceability, prior-art, source register, contribution assessment, multipart linkage, optional granularity and operational records. Static check only; no independent review, implementation, experiment, proof or security audit.
 
 ### Exact next action
 
-- Complete T-007's static consistency pass across the updated thesis, W1–W4, traceability, prior-art, contribution assessment and multipart linkage; then reconcile state, workplan, task registry and session digests.
+- No unblocked substantive task remains. Resume T-001–T-004 only when primary-source or controlled-environment blockers are resolved; keep diagrams, peer review and release gated.
