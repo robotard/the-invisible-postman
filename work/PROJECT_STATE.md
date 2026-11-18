@@ -21,7 +21,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 - The active manuscript is `thesis.md`. Relationship authority, receiver acceptance, cross-route discovery and adversarial event-chain analysis are integrated across the thesis and W1–W4.
 - The six named route profiles are IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE. SRC-043 is a supplemental multi-image fragment/redundancy baseline; OMR-family work is a separate discovery/retrieval comparator.
-- The contribution boundary is now narrow: generic endpoint acceptance, authenticated manifests, completeness, whole-object integrity, freshness and replay handling are standard protocol obligations, not a novel mechanism. Candidate C survives only as a reproducible cross-route evaluation method if a controlled result changes a route decision, invalidates a material assurance claim or exposes a failure/evidence ambiguity not already explicit in prior art.
+- The contribution boundary is now narrow: generic endpoint acceptance, authenticated manifests, completeness, whole-object integrity, freshness and replay handling are standard protocol obligations, not a novel mechanism. Candidate C remains a conditional reproducible cross-route evaluation method, not an established contribution. The matrix audit produced no empirical result or rigorous counterexample: Pigeonhole reader visibility remains untested, the UnifOMR capacity issue is a paper-text ambiguity, and SRC-043's partial byte recovery is established prior art.
 - Completeness is typed: carrier inventory, fragment-set completeness, byte reconstruction, storage atomicity, application continuity, retrieval-window coverage, endpoint logical-message acceptance, publication/index completeness and human receipt are not interchangeable.
 - `docs/route-fault-evidence-matrix.md` is the first documentary test sheet. It records route-native units, fault applicability, three evidence ledgers and controlled-access boundaries. It is not an executed experiment.
 
@@ -37,6 +37,8 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 ## Active work, in priority order
 
+**T-006 is complete for the current evidence set.** The route/fault matrix has been audited for minimality and staged decision relevance; Candidate C remains conditional and no route winner or mechanism-level novelty is established. Reopen this synthesis only if new source evidence materially changes the thesis.
+
 1. **T-001–T-003 · Source access.** Continue full-text/code access where it materially resolves claims, including the incomplete image and sanitizer sources. SRC-033/034 now have pinned, source-inspected MATLAB repositories, but their full papers remain partial; SRC-036 remains partial and no matching public code repository was located. No full manuscript copy was located in the 18 November 2026 search. Partial-review labels remain mandatory; inaccessible sources must not stall unrelated thesis work.
 2. **T-004 · Route configuration evidence.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
 3. **T-007 · Coherence/review.** Terminology, citations, traceability and cross-document audit remain gated until substantive synthesis stabilises.
@@ -45,6 +47,6 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 1. Continue T-001 full-text access work for SRC-033, SRC-034 and SRC-036 through author/institutional repositories. The MRAS/DRAS code repositories have been source-inspected but do not replace the papers; no matching SRC-036 code artifact was found. Do not replace inaccessible papers with abstracts or related follow-up work.
 2. Continue T-002 and T-003 access work for SRC-046–SRC-049 where complete papers, methods/results and code materially affect thesis claims.
-3. Keep T-004 live service configurations and all controlled route tests gated on accounts, devices or deployments. Reopen T-006 only when new source evidence materially changes the thesis or route comparison.
+3. Keep T-004 live service configurations and all controlled route tests gated on accounts, devices or deployments. Reopen completed T-006 only when new source evidence materially changes the thesis or route comparison.
 
 The next controlled tests require accounts, devices or deployments that are not currently available. Do not imply they have been run.
