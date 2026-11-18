@@ -41,7 +41,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 - **SRC-049:** the complete public repository tree is pinned and all core sender/receiver, diffusion, image-distortion and dependency files have been read. The receiver asserts a complete 16-frame/key set; same-seed crop/drop masks repeat across frames; per-frame key/nonce and ground-truth watermark are stored in local `.npy` files; raw ChaCha20 has no authentication tag visible in the inspected path; fallback is TEST ONLY. No test suite, paper PDF, model weights or environment lockfile is present. Code was not run; the paper/proof/results remain inaccessible.
 ## Active work, in priority order
 
-**T-015 is complete.** The thesis principle, supporting design note and RQ4 traceability are integrated and read-back verification is pending. T-014 remains the active next research task.
+**T-015 is complete.** The thesis principle, supporting design note and RQ4 traceability are integrated and exact post-commit read-back verified. T-014 remains the active next research task.
 
 **T-006 is complete for the current evidence set.** The route/fault matrix has been audited for minimality and staged decision relevance; Candidate C remains conditional and no route winner or mechanism-level novelty is established. Reopen this synthesis only if new source evidence materially changes the thesis.
 
