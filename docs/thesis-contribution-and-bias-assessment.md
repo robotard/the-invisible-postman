@@ -157,6 +157,20 @@ A route abstraction and comparative evaluation framework in which one protected 
 
 **Current direction:** A remains the architectural organising principle, not a novelty claim. Candidate C supplies the comparison method. Candidate B is now narrowed to image-platform carriage and must earn its place through a measurable, decision-relevant difference against the stronger integrated baseline. No contribution ranking is final.
 
+### Cross-profile discovery challenge result · 18 November 2026
+
+The source-audited six-profile comparison now gives Candidate B and Candidate C a sharper test, but it does not yet satisfy either candidate's contribution condition.
+
+- The comparison is a documentary evidence map across three image-literature profiles, one file-host documentation profile, one protocol reference and one integrated mixnet/messaging comparator. The evidence types are intentionally asymmetric.
+- It identifies a recurring evidence boundary: endpoint authentication can reject an invalid object that arrives, while a service-reported event supports only a bounded claim about that service's own action. Neither alone proves intended publication, complete candidate enumeration, endpoint acceptance or the cause of absence.
+- This is not a newly demonstrated attack, a new privacy guarantee or a measured cross-route outcome. The falsifiable test plan is specified but has not been executed.
+- Pigeonhole's AllOrNothing stream already defines atomic success/failure for associated writes from the replica/second-party reader's perspective. Any novelty claim around atomic set delivery must therefore be narrower than generic multi-object completeness and must be compared against Pigeonhole's native semantics.
+- Dropbox's viewer information is conditional: owner/editor file activity, configurable viewer information, plan-dependent history, Guest treatment and direct-download limits must be preserved. Do not claim that every link access is attributable to a named person.
+- Signal remains a protocol reference, not a product/service profile. Its protocol specifications cannot be used to infer missing product behaviour.
+- No actual Dropbox account/link, shipped Signal client/service configuration or compatible Katzenpost deployment is pinned. The six-profile result therefore remains documentary and cannot support a deployment ranking.
+
+**Current contribution judgement:** Candidate A remains an architectural organising principle, not a novelty claim. Candidate C remains a possible method contribution only if a repeatable route-comparison procedure produces decision-relevant outputs beyond the current table. Candidate B remains conditional on identifying and measuring a specific image-platform difference that is not already covered by media-forensics, dead-drop or integrated messaging work. No contribution score is increased. If a pinned evaluation cannot produce such a difference, narrow or retire Candidate B rather than protecting it by assertion.
+
 ### Protocol-composition boundary
 
 The protocol-boundary analysis now makes key hierarchy, authenticated identity/transcript binding, HKDF salt versus `info`, AEAD nonce uniqueness, associated-data visibility, replay/order state, multipart validation and downgrade-resistant fallback explicit. These are necessary correctness obligations for any credible route-independent messaging architecture; their enumeration is not, by itself, a novel contribution. The underlying primitives and many of the relevant protocol mechanisms are established in standards and prior systems. Any eventual contribution must be demonstrated at the system boundary: for example, a defensible model of how endpoint-authenticated message and set semantics remain invariant across replaceable routes while route-specific observers, discovery, transformation and delivery events differ. That proposition remains theoretical and unvalidated. See [protocol boundary analysis](protocol-boundary-analysis.md), W2–W4 and RQ2/RQ4 traceability.
