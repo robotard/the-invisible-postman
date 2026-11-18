@@ -18,7 +18,7 @@
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "Full texts for SRC-033, SRC-034 and SRC-036 remain unavailable after renewed ScienceDirect, ResearchGate, author publication/ORCID and institutional-repository searches. Resume if a complete author/institutional manuscript or user-supplied PDF becomes available; keep partial-review labels and do not substitute indexed snippets or adjacent papers.",
+      "next_action": "Full texts for SRC-033/034/036 remain unavailable after renewed publisher, ResearchGate, author-page and repository searches. The README-labelled MRAS/DRAS MATLAB repositories are pinned and source-inspected, but do not replace the papers; no matching public SRC-036 implementation was located. Resume only if a complete author/institutional manuscript becomes available; preserve partial-review status.",
       "blockers": [
         "Publisher full texts remain access-restricted; no author manuscript copy located in the current search.",
         "SRC-036 author homepage lists the paper but no PDF; ResearchGate reports no full text. No author contact was sent."
@@ -130,7 +130,7 @@
       "id": "T-007",
       "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
-      "status": "blocked",
+      "status": "in_progress",
       "priority": 7,
       "targets": [
         "thesis.md",
@@ -138,12 +138,10 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Run final thesis, traceability, source-status and cross-document consistency review after substantive synthesis stabilises.",
-      "blockers": [
-        "Depends on T-006 synthesis and a stable thesis candidate; do not mark active before that work begins."
-      ],
+      "next_action": "Run the final consistency review across thesis, source register, W1-W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry. Verify all cited SRC IDs and internal links; resolve stale/duplicated wording and reconcile partial-source statuses. Keep diagrams and release preparation gated.",
+      "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
-      "last_updated": "2026-11-17"
+      "last_updated": "2026-11-18"
     },
     "T-008": {
       "id": "T-008",
