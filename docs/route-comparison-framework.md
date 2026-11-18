@@ -65,9 +65,11 @@ Every profile should map the following events to its actors and retained observa
 | Identity preparation | What authenticates the participant? What is visible to a platform or service? |
 | Session establishment | Who sees the key exchange, peer binding, timing and network endpoint? |
 | Message protection | What is authenticated, encrypted, signed or otherwise protected? |
-| Publication / send | What object, account, destination, size, timestamp and status are exposed? |
-| Discovery / rendezvous | How does the recipient learn where to look? Who can link the lookup to the recipient or sender? |
-| Retrieval / read | What query, access pattern, polling rate, receipt or read state is visible? |
+| Publication / send | What object, account, destination, size, timestamp and status are exposed? Can the publisher inject, substitute, duplicate or selectively withhold objects? |
+| Indexing / candidate view | Who creates the index view; can it be stale, poisoned, equivocal or incomplete; what consistency evidence, if any, is independently checkable? |
+| Discovery / rendezvous | How does the recipient learn where to look? Who can link the lookup to the recipient or sender? Can bootstrap material be substituted or raced? |
+| Retrieval / read | What query, access pattern, polling rate, receipt or read state is visible? Can the service replay, substitute, delay or selectively withhold results? |
+| Collusion / record joining | Which role combinations can combine object IDs, capabilities, account/device provenance, source, timing, sizes and retries; what retention and clock-alignment assumptions apply? |
 | Transformation | What bytes, pixels, metadata, identifiers or content properties change? |
 | Decapsulation / reconstruction | What is checked before the protected object reaches the endpoint protocol? |
 | Validation / acceptance | Which endpoint checks determine authenticity, completeness, freshness and correct context? |
