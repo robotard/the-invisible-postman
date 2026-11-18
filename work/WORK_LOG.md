@@ -1660,3 +1660,41 @@ Each substantive file was fetched after writing. Marker checks passed for all si
 ### Exact next action
 
 - Continue T-006 with a source-by-source audit of every row in route framework §5.8 and thesis §8.8 against the source register and cited review boundaries. Tighten any claim that exceeds the evidence. Then continue T-006 synthesis or advance ready T-004 route configuration work where authoritative version/configuration evidence is obtainable.
+
+
+## 2026-11-18 · T-006 source audit and profile-boundary refinement
+
+### Source-by-source audit
+
+- **IMG-QIAO-2023 / SRC-035:** The source register confirms a full-paper review of a bounded 50-image experiment across stated Facebook, Twitter and WeChat paths/modes. It supports platform-specific extraction observations, not authenticated bootstrap, indexing, provider access logs or a complete discovery protocol.
+- **IMG-MRAS-2026 / SRC-033:** Publisher-indexed text reports LinkedIn testing, but complete methods, parameters, platform configuration and limitations remain unavailable. The pinned public demo is per-image and locally recompressed; it is not a live discovery client.
+- **IMG-DRAS-2026 / SRC-034:** Publisher-indexed text reports WhatsApp, LinkedIn and X tests, but full methods, data/settings, platform paths and limitations remain unavailable. The pinned public demo is per-image with local recompression; it does not define message-set discovery.
+- **FILE-DROPBOX-LINK / SRC-039:** Refined the evidence boundary using the official file-activity and viewer-information help pages. File activity is visible to owners/editors; viewer information is separately configurable; viewer history is plan-dependent; unsigned link viewers appear as Guest; direct downloads without a dropbox.com preview do not appear in viewer information. No account/plan/link workflow was tested.
+- **E2E-SIGNAL-PROTOCOL / SRC-038:** The cited PQXDH and Double Ratchet documents remain protocol references. They establish protocol-level key/session mechanics but not product-level service index completeness, access logs, selective withholding, retention or deployment metadata. Public GitHub version-stamp commits are source-tree observations, not proof of a shipped App Store/Play Store build; no Signal client version is claimed as pinned.
+- **MIX-ECHOMIX-PIGEONHOLE / SRC-032/SRC-040:** Inspected the current Pigeonhole specification in addition to the full Echomix paper and project documentation. The spec defines AllOrNothing streams with atomic success/failure semantics from the replica/second-party reader's perspective, courier-mediated operations, duplicate-envelope handling, a replica-epoch acceptance window corresponding to roughly two weeks at the stated one-week default epoch, and a minimum four-replica condition for the stated intermediate/final replica disjointness property. These are protocol/deployment requirements, not captured measurements of a running deployment. Capability bootstrap remains out of band; role-specific/colluding observers remain explicit. This nuance was integrated without implying that Pigeonhole supplies an independent external audit trail across publication, complete candidate view, retrieval and endpoint acceptance.
+
+### Cross-document reconciliation
+
+- Updated SRC-039 to cite the Dropbox viewer-information help page and clarify plan/settings conditions.
+- Updated SRC-040 and the Echomix comparator with Pigeonhole AllOrNothing, retention-window and replica-topology requirements.
+- Refined thesis §8.8 and route framework §5.8 to preserve Echomix's native atomic set semantics while distinguishing protocol guarantees from independent deployment evidence.
+- Linked observer/property matrix §4.1 and W4 E9 to route framework §5.8; W1 RQ7 now names the adversarial event boundaries.
+- No source was upgraded beyond its recorded review state. No deployment, experiment, reproduction, implementation, formal proof, peer review or audit was performed.
+
+### Latest exact read-back verification
+
+| File | Fetched blob SHA |
+|---|---|
+| `docs/source-register.md` | `8a49f35f05d33a91bcf7f358a63c2cfc5f1f7ea5` |
+| `docs/echomix-katzenpost-comparator.md` | `cff6972ecdab2de723baa57f93e97424a2ec722b` |
+| `docs/route-comparison-framework.md` | `d5739b0d07735b1771b10fb582ade03c7c1189c3` |
+| `thesis.md` | `f4e6ca892c11dccebdd58a7ee9b36deb154f6614` |
+| `docs/observer-property-matrix.md` | `1380f082a0ea69f6074a1c3d16b6125b8a799a86` |
+| `docs/w4-risks-and-evaluation.md` | `e0cbafb35380fed7ce202e54ed856a31caf1b6e5` |
+| `docs/w1-research-framing.md` | `24247221c32dbbdfa2bb486cb28ba04a7595ad5d` |
+
+All required semantic markers were present in the read-back. The comparison remains documentary; no deployment evidence has been collected.
+
+### Exact next action
+
+- Challenge whether the six-profile comparison supports a decision-relevant thesis contribution beyond a descriptive evidence map. Use the observer/property matrix and contribution/bias assessment to test novelty and falsifiability. Keep T-004 ready for actual pinned client/release/account evidence; do not promote protocol or source-tree snapshots to deployed configurations.
