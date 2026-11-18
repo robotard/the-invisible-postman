@@ -43,21 +43,19 @@ The three single-image study profiles are separate literature configurations, no
 
 Legend: **N** = fault maps to the route's native unit; **W** = meaningful only if a test wrapper adds set/version semantics; **?** = current source evidence does not establish route behaviour; **—** = not meaningful for the native unit. A mark describes applicability, not successful detection or mitigation.
 
-| Fault | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal protocol/service | Pigeonhole storage/copy | katzenqt app assembler | OMR retrieval |
+| Fault / event distinction | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal protocol/service | Pigeonhole storage/copy | katzenqt app assembler | OMR retrieval |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Baseline complete delivery | N | N | N | N | N | N | N |
 | Delayed or withheld item | N | N | N | N | N | N | N |
 | Missing object or route-native unit | N | N | N | N | N | N | N |
 | Duplicate item | W | N | W | N* | W | N | W |
 | UnifOMR false-positive candidate overflow / random truncation at fixed PIR capacity | — | — | — | — | — | — | N* |
-| Signal PQXDH initial-message replay without one-time prekey | — | — | — | N* | — | — | — |
 | Signal delivery acknowledgement versus optional Read receipt | — | — | — | N* | — | — | — |
 | Signal per-device queue expiry / linked-device inactivity | — | — | — | N* | — | — | — |
 | Signal multi-recipient fanout across shard/chunk transactions | — | — | — | N* | — | — | — |
 | Dropbox viewer-info omission (Guest, direct download or disabled setting) | — | — | N* | — | — | — | — |
-| Dropbox link restrictions not applying to direct/existing access | — | — | N* | — | — | — | — |
 | Dropbox file activity omitting edits made outside Dropbox | — | — | N* | — | — | — | — |
-| Dropbox direct-sharing Can view includes download/share; download disable is link-only | — | — | N* | — | — | — | — |
+| Dropbox direct/existing access outside link settings; Can view may still download/share | — | — | N* | — | — | — | — |
 | StOMR signal-tag collision | — | — | — | — | — | — | N* |
 | Stateful counter rollback/fork or concurrent sender state | — | — | — | — | — | — | N* |
 | Conflicting item at an existing position | W | N | W | W | W | N | W |
