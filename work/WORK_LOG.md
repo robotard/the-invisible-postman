@@ -1868,3 +1868,23 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Compare the remaining multi-carrier acceptance/freshness/evidence requirements against the image, file/link and conventional messaging profiles. Determine whether the route-agnostic contract adds a decision-relevant invariant beyond StOMR, UnifOMR's available abstract, and the SRC-052 integration; narrow or retire Candidate C if not.
+
+## 2026-11-18 · Receiver-acceptance candidate narrowed after prior-art stress test
+
+### Work completed
+
+- Reconciled the latest OMR and multi-route findings against the existing receiver-acceptance sequence and crosswalk. Authenticated manifest membership, completeness, whole-object validation and freshness/replay handling are standard endpoint protocol obligations; OMR/StOMR/UnifOMR concern private retrieval, receiver privacy, state and retrieval efficiency rather than a universal multi-carrier acceptance transaction.
+- Added prior-art comparison §10.3 defining a decision-relevance test for the only surviving Candidate C: a reproducible cross-route evaluation method that holds the protected endpoint object and validation policy constant, preserves route-native semantics, injects applicable faults, and separates endpoint ground truth, service reports and observer inference.
+- Added minimum route baselines and fault/evidence requirements, including explicit limits on forcing equivalence between image fragment sets, a single file, per-message protocol state, OMR retrieval windows and capability-addressed asynchronous copies.
+- Integrated the narrowed contribution boundary into thesis §8.8 and the contribution/bias assessment. The thesis now states that the endpoint acceptance contract is not itself a novelty claim and that Candidate C earns contribution status only through a controlled result or rigorous counterexample that changes a stated route choice, invalidates a material assurance claim, or exposes a gap beyond prior art.
+- Rechecked the public UnifOMR ePrint record: the PDF endpoint still returns HTTP 403; the accessible record confirms abstract-level claims only. SRC-051 remains correctly marked abstract-level. SRC-052 remains a third-party experimental source inspection, not reproduced deployment evidence.
+- Read-back fetched docs/prior-art-comparison.md, thesis.md and docs/thesis-contribution-and-bias-assessment.md; the new sections/paragraphs and exact saved blob SHAs were confirmed.
+
+### Research judgement and limits
+
+- The mechanism-level novelty claim for a generic route-independent receiver-acceptance contract is retired unless a specific uncovered property survives further prior-art review. The evaluation-method candidate remains conditional and unproven.
+- No route ranking, image-carriage advantage, implementation, test execution, platform experiment, benchmark reproduction, formal proof, independent review or audit is claimed.
+
+### Exact next action
+
+- Operationalise the §10.3 decision test into a minimal route/fault/evidence matrix. Separate comparisons that can be evaluated from pinned public sources from those requiring controlled Dropbox/Signal/Katzenpost configurations or an image-platform experiment. Use that matrix to identify the smallest decision-relevant experiment; do not start diagrams or raise novelty status.
