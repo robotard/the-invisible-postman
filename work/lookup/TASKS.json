@@ -272,5 +272,7 @@
     "canonical": "work/lookup/TASKS.json",
     "human_index": "work/lookup/TASKS.md",
     "authority": "The thesis and enduring research documents remain authoritative for substantive arguments/evidence; PROJECT_STATE is authoritative for current project position; WORKPLAN for roadmap; WORK_LOG for chronology."
-  }
+  },
+  "project_status": "Theory only · No implementation · Not audited.",
+  "status_semantics": "repository_project_maturity_metadata_not_a_chat_response_footer"
 }
