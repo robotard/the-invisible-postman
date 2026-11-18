@@ -43,7 +43,7 @@ The three single-image study profiles are separate literature configurations, no
 
 Legend: **N** = fault maps to the route's native unit; **W** = meaningful only if a test wrapper adds set/version semantics; **?** = current source evidence does not establish route behaviour; **—** = not meaningful for the native unit. A mark describes applicability, not successful detection or mitigation.
 
-| Fault | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal per-message | Pigeonhole storage/copy | katzenqt app assembler | OMR retrieval |
+| Fault | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal protocol/service | Pigeonhole storage/copy | katzenqt app assembler | OMR retrieval |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Baseline complete delivery | N | N | N | N | N | N | N |
 | Delayed or withheld item | N | N | N | N | N | N | N |
@@ -84,7 +84,7 @@ These are separate from message-set faults and apply to image-carriage profiles 
 
 Here **N** means the cited study explicitly includes this transformation/loss as a comparison condition; **?** means the current source review does not establish it and a controlled test would be needed. Applicability alone does not mean a paper has tested the fault. The current matrix does not claim that any named platform applies a specific transformation universally.
 
-For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete.
+For Dropbox, do not invent fragment order for a single file; treat missing viewer-info as absent from the owner-facing UI only, not provider-side event absence. For Signal, keep protocol ratchet state, server delivery acknowledgement, optional client Read receipt and human receipt separate. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete.
 
 ### Minimum fault cases
 
