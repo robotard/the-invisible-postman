@@ -124,6 +124,8 @@ Candidate D cannot use a single undifferentiated “server” observer. Each com
 
 The leakage function \(L\) must therefore state whether it includes database size and root/epoch changes; publication/append timing; query rounds and padded capacity; actual result cardinality; APIR-tree access count, timing and bytes; AAD key or VRF token; carrier/proof sizes; manifest or set-token visibility; retries, aborts and acceptance outcomes; network/account/device identifiers; and cross-service timing correlations. A privacy claim must name the permitted collusion coalition and the honest-party threshold for every component. In particular, APIR's selective-failure guarantee does not automatically compose with an OMR detector and an AAD log, and a visible manifest can defeat the relationship privacy that the hidden query was intended to preserve.
 
+For the proposed APIR count-plus-point check, the FSS predicate query returns the match count to the recipient while hiding the predicate from the permitted server coalition. The subsequent point-query count can still reveal the number of candidates unless it is padded; the OMR detector may also learn the size of the candidate list it constructs. The count must refer to the same immutable epoch as every authenticated point record. This composition can make detector omission detectable, but it changes the leakage and availability profile rather than eliminating either.
+
 ## 5. Candidate-contribution pressure test
 
 | Candidate | New pressure from this comparison | Current judgement |
