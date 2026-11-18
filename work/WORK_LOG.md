@@ -1698,3 +1698,30 @@ All required semantic markers were present in the read-back. The comparison rema
 ### Exact next action
 
 - Challenge whether the six-profile comparison supports a decision-relevant thesis contribution beyond a descriptive evidence map. Use the observer/property matrix and contribution/bias assessment to test novelty and falsifiability. Keep T-004 ready for actual pinned client/release/account evidence; do not promote protocol or source-tree snapshots to deployed configurations.
+
+
+## 2026-11-18 · T-006 set-level atomicity and contribution challenge
+
+### Research work performed
+
+- Challenged the six-profile documentary result against the contribution/bias assessment and observer/property matrix.
+- Confirmed the comparison is not yet a demonstrated attack, new privacy guarantee, measured cross-route result or novelty finding. Candidate A remains an architectural organising principle; Candidate B remains conditional; Candidate C requires reproducible, decision-relevant output beyond a descriptive table.
+- Identified a narrower, falsifiable comparison axis: route-native set-level atomicity versus endpoint-managed partial-set detection and completeness.
+- Added route framework §5.9 with six profile rows and controlled cases: complete set, missing item, delayed item, identical duplicate, conflicting duplicate, out-of-order arrival, cross-set substitution and retry after uncertain acknowledgement.
+- Added set-level atomicity/completeness to the route comparison dimensions, thesis §8.8 and §10.2, and W4 E5.
+- Preserved Pigeonhole AllOrNothing as a native atomic success/failure guarantee for associated writes from the replica/second-party reader's perspective. This is not proof of human receipt, external publication completeness or an independently audited event history.
+- Explicitly treated absent equivalent semantics in image, Dropbox and Signal source material as an evidence boundary, not proof those products lack such functionality.
+- Updated the contribution/bias assessment and observer/property matrix to state that the six-profile result remains descriptive pending a repeatable evaluation.
+
+### Current judgement
+
+The new axis is more precise than generic “multipart delivery”, but it is not yet a contribution. It may become decision-relevant if an evaluation demonstrates that separately published image carriers create partial-visibility, completeness or linkage costs not present, or differently handled, in a single-file route or Pigeonhole's native atomic stream. If no measurable difference survives a fair comparison, do not preserve Candidate B by assertion.
+
+### Verification and limits
+
+- Thesis, route framework and W4 were written to GitHub; exact read-back verification remains to be recorded in the next checkpoint update.
+- No new sources, implementation, deployed configuration, platform measurement, experiment, reproduction, formal proof, independent review or audit was performed.
+
+### Exact next action
+
+- Audit set-level atomicity and partial visibility against SRC-043, Pigeonhole AllOrNothing, and the native scopes of Dropbox/Signal. Define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result. T-004 remains available for pinned client/release/account evidence; no deployment claim is authorised.
