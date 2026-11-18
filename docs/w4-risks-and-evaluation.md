@@ -290,7 +290,7 @@ The integrated Echomix/Katzenpost design is a required comparative baseline for 
 
 ### E9 · Metadata, traffic analysis, discovery and availability
 
-Use the [route comparison framework](route-comparison-framework.md) as the common event/observer ledger across image, file/attachment, conventional messaging and mixnet-backed profiles. It is a comparison protocol for research planning, not a report of completed measurements.
+Use the [route comparison framework](route-comparison-framework.md) as the common event/observer ledger across image, file/attachment, conventional messaging and mixnet-backed profiles. It is a comparison protocol for research planning, not a report of completed measurements. Its six-profile adversarial discovery application is in [§5.8](route-comparison-framework.md#58-cross-profile-adversarial-discovery-comparison); use the profile-specific evidence classes and deployment gaps there when defining test fixtures, rather than assuming that every profile exposes the same events.
 
 Threats: traffic analysis, participant correlation, timing and volume observation, locator disclosure, access-pattern correlation, behavioural inference and delivery suppression.
 
