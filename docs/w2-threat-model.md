@@ -93,6 +93,12 @@ Unless a later, narrower deployment model says otherwise, assume an attacker may
 - mix fragments from different messages or participants;
 - attempt to substitute public keys or exploit weak identity verification;
 - compromise or misuse an intermediary account or service;
+- control or substitute an unauthenticated bootstrap channel, locator, capability or rendezvous instruction;
+- publish false, stale, duplicated or selectively transformed carriers, or manipulate publication timing and provenance;
+- make an index or board equivocate between recipients, omit or reorder candidates, or return stale/injected results;
+- selectively withhold, replay, delay or substitute retrieval responses, and retain capability-use or access records;
+- collude across publisher, index, retrieval, platform, network or storage roles and combine their event records;
+- retain or later disclose upload/download logs, account links, object identifiers, access records, backups or telemetry;
 - inspect public repository contents and design rationale; and
 - exploit implementation mistakes, parser bugs, logging leaks, or unsafe recovery procedures if those exist.
 
@@ -160,7 +166,10 @@ These are target properties, not claims that the current proposal satisfies them
 | Metadata and message-linkage correlation | Participants, fragment sets, conversations, retries or communication patterns are inferred | Document visible identifiers, manifests, sequence values, timing, sizes, carrier provenance and access patterns; separate required endpoint linkage from observer-visible linkage |
 | Collection-level steganalysis | Weak per-image signals accumulate across a batch | Evaluate per-image and pooled/set-level detection on realistic collections; do not assume independent images or that lower per-image payload reduces overall detectability |
 | Traffic analysis and flow correlation | Encrypted contents remain confidential while timing, size, volume, endpoint or access patterns reveal communication relationships or activity | Define observer vantage and retained records; examine timing/size correlation and the cost of any padding, delay, batching or cover-traffic countermeasure; see source leads SRC-016 and SRC-018–SRC-019 |
-| Discovery and rendezvous correlation | A stable locator, publication schedule or retrieval pattern links a recipient to a carrier | Treat discovery as an explicit protocol function; authenticate retrieval instructions and evaluate locator lifetime, publication timing and access patterns |
+| Discovery and rendezvous correlation | A stable locator, publication schedule or retrieval pattern links a recipient to a carrier | Treat discovery as an explicit protocol function; authenticate bootstrap and retrieval instructions; evaluate locator lifetime, publication timing, access patterns and channel substitution |
+| Malicious publication, index equivocation and retrieval manipulation | False or stale candidates, inconsistent recipient views, selective withholding, replay or substituted results can undermine completeness and availability while exposing event metadata | Test publisher/index/retrieval roles separately and in collusion; distinguish endpoint-authenticated objects from service-reported events and inferred correlations; do not treat one index response as proof of complete publication |
+| Retention and later disclosure | Upload, index, retrieval, account, backup or telemetry records may preserve links after visible carriers or locators expire | Record data classes, operator, retention window, access assumptions and deletion evidence; unknown retention remains unknown |
+| Suppression and ambiguous silence | A missing response may reflect non-publication, index omission, selective suppression, ordinary delay or route failure | Define event-specific timeouts and failure states; do not infer suppression or non-publication from silence alone; assess retry and alternate-route leakage |
 | Behavioural probing | Repeated routines or social-engineering prompts elicit linkable responses | Model behavioural side channels and realistic probes; avoid relying on constant user vigilance or deceptive camouflage |
 | Intermediary compromise | Routing, availability, or metadata abuse | Minimize intermediary privileges and retained data; keep plaintext and decryption authority at endpoints |
 | Logging or diagnostics leak | Plaintext, keys, or tokens escape the protocol boundary | Secret-safe logging policy and adversarial inspection of logs and crash paths |
