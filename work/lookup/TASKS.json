@@ -108,17 +108,18 @@
       "status": "in_progress",
       "priority": 1,
       "targets": [
-        "docs/prior-art-comparison.md",
+        "docs/route-fault-evidence-matrix.md",
+        "docs/source-register.md",
         "docs/route-comparison-framework.md",
         "docs/observer-property-matrix.md",
+        "docs/prior-art-comparison.md",
         "docs/multi-message-linkage-and-steganographic-carriage.md",
         "thesis.md",
         "docs/w4-risks-and-evaluation.md",
-        "docs/traceability.md",
-        "docs/source-register.md"
+        "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Operationalise prior-art comparison §10.3 into a minimal route/fault/evidence matrix. Keep the mechanism-level endpoint-acceptance novelty claim retired; Candidate C survives only as a reproducible evaluation method if a controlled result or rigorous counterexample changes a route choice, invalidates a material assurance claim, or exposes a gap beyond prior art. Separate public-source comparisons from tests requiring controlled Dropbox, Signal, Katzenpost or image-platform configurations. SRC-051 UnifOMR remains abstract-level; SRC-052 remains an experimental third-party source review, not reproduced deployment evidence.",
+      "next_action": "Source-audit each fault-applicability cell in docs/route-fault-evidence-matrix.md against the pinned route profiles and source-register entries. Separate route-native faults from wrapper-only faults; verify image transformation cases, Signal protocol-vs-product scope, Dropbox single-object semantics, Pigeonhole reader visibility and OMR candidate-view completeness. Mark every documentary claim versus controlled test dependency. Then determine whether a controlled result changes a route choice or exposes a material failure/evidence gap beyond prior art; otherwise retain Candidate C as a comparison method only.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
