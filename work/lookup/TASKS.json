@@ -108,16 +108,16 @@
       "status": "in_progress",
       "priority": 1,
       "targets": [
-        "thesis.md",
+        "docs/prior-art-comparison.md",
+        "docs/source-register.md",
         "docs/route-comparison-framework.md",
-        "docs/multi-message-linkage-and-steganographic-carriage.md",
-        "docs/w4-risks-and-evaluation.md",
-        "docs/thesis-contribution-and-bias-assessment.md",
         "docs/observer-property-matrix.md",
-        "docs/source-register.md"
+        "docs/thesis-contribution-and-bias-assessment.md",
+        "thesis.md",
+        "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Expand the prior-art crosswalk for the route-agnostic endpoint acceptance contract. Map what SRC-043, Pigeonhole/katzenqt, Dropbox, Signal, OMR/GOMR, Oblivious Signaling, Remise and Echomix already provide for fragment membership, set completeness, reconstruction, atomicity, delivery evidence and observer privacy. Identify precisely what the contract adds, whether it changes a real route decision, and whether a repeatable evaluation/counterexample supports Candidate C. Treat it as a synthesis candidate, not novelty, until this comparison is complete.",
+      "next_action": "Stress-test the new prior-art-comparison §10 crosswalk row by row against its source-register entries and the underlying papers/specifications. Check each statement about native units, fragment completeness, reconstruction, atomicity, endpoint acceptance, observer leakage and event evidence. Then determine whether the route-agnostic acceptance/evidence contract changes a concrete route decision or merely restates standard protocol discipline; narrow or retire Candidate C if no decision-relevant difference survives.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
