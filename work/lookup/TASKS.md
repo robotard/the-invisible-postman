@@ -26,7 +26,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. Current focus: expand the prior-art crosswalk for the route-agnostic endpoint acceptance contract. Map what SRC-043, Pigeonhole/katzenqt, Dropbox, Signal, OMR/GOMR, Oblivious Signaling, Remise and Echomix already provide for fragment membership, set completeness, reconstruction, atomicity, delivery evidence and observer privacy. Identify precisely what the contract adds, whether it changes a real route decision, and whether a repeatable evaluation/counterexample supports Candidate C. Treat it as a synthesis candidate, not novelty, until this comparison is complete.
+**Current active task:** T-006. Current focus: stress-test the new `docs/prior-art-comparison.md` §10 crosswalk row by row against source-register entries and underlying papers/specifications. Check each claim about native units, fragment completeness, reconstruction, atomicity, endpoint acceptance, observer leakage and event evidence. Then determine whether the route-agnostic acceptance/evidence contract changes a concrete route decision or merely restates standard protocol discipline; narrow or retire Candidate C if no decision-relevant difference survives.
 
 **Parallel evidence work:** T-001–T-003 remain in_progress for source access where it materially resolves claims. T-004 is now in_progress: public Dropbox/Signal/Katzenpost release and documentation snapshots are pinned, but actual account, installed-client/backend and running-deployment configurations remain unavailable. Continue other unblocked work around these access limits.
 
