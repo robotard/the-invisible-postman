@@ -39,7 +39,7 @@ Model the system as a graph, not just a sequence of files.
 - **Fragment node:** a bounded piece or coded block derived from the protected object.
 - **Carrier node:** an image or other object that transports one or more fragments.
 - **Publication event:** an upload/post/send event for a carrier.
-- **Discovery event:** a signal or query that tells a recipient where to look.
+- **Acquisition event:** a route-specific signal, instruction or action through which a recipient obtains or locates carrier bytes; it is not an endpoint message-protocol authority.
 - **Retrieval event:** a download/access event.
 - **Conversation/session edge:** intentional continuity between distinct logical messages.
 - **Fragment-membership edge:** a fragment's authenticated membership in one logical-message set.
@@ -177,7 +177,7 @@ The design must specify:
 
 A content digest can detect mismatch only if the expected digest is itself authenticated. A public set ID does not authenticate membership. An image-level watermark's recovery success does not establish endpoint sender authentication. The endpoint must reject a recovered object whose cryptographic validation or authenticated set policy fails.
 
-For multiple independent messages in one conversation, define continuity separately. Candidate controls include authenticated per-message sequence/context, ratchet state, message identifiers and endpoint-local conversation mapping. A stable session identifier may be operationally useful but can create a durable correlation handle if exposed in carrier metadata or discovery requests.
+For multiple independent messages in one conversation, define continuity separately. Candidate controls include authenticated per-message sequence/context, ratchet state, message identifiers and endpoint-local conversation mapping. A stable session identifier may be operationally useful but can create a durable correlation handle if exposed in carrier metadata or route-specific acquisition requests.
 
 ### 6.1 Relationship authority and acceptance-state separation
 
@@ -232,7 +232,7 @@ It also does not collapse cryptographic validity into unique sender attribution.
 | Shared-key fingerprinting | Repeated embedding key or algorithm leaves common structure | Analyse key scope, rotation and detector access; do not claim key secrecy solves statistical signatures |
 | Cross-message correlation | Distinct messages share a visible session ID or repeated timing | Separate intended endpoint continuity from observer-visible linkage |
 | Cross-route equality | Same ciphertext appears on image and file/messaging routes | Assess equality and timing leakage; route wrappers do not automatically hide the inner object |
-| Discovery correlation | Recipient queries or retrieves several related carriers | Model locator/capability use, polling, batching, access patterns and network observers |
+| Acquisition correlation | Recipient obtains or retrieves several related carriers through a route | Model route-native locator/capability use, polling, batching, access patterns and network observers; these are delivery conditions, not message-protocol dependencies |
 | Active carrier attack | Resize, recompress, crop, reorder, remove, duplicate or replace carriers | Define transformation profile, recovery threshold and authenticated rejection behaviour |
 | Behavioural linkage | Predictable schedules, response patterns or image styles group events | Treat as a separate human/network side channel; do not imply cryptography solves it |
 
@@ -280,7 +280,7 @@ SRC-044 establishes that steganalysis can aggregate evidence across a batch and 
 
 SRC-026 independently studies a broader public-platform dead-drop messaging pipeline with fragmentation, hints, rendezvous and retrieval, albeit using generated text rather than image carriers and with a bounded observer model. SRC-033–SRC-037 cover robust social-platform image steganography, active payload-removal and the wider steganalysis field. SRC-024–SRC-032 cover recipient retrieval, group privacy, anonymous publication and integrated messaging baselines.
 
-Any remaining contribution must therefore be narrower and demonstrated. Candidate questions include whether a route-neutral endpoint-protected object can preserve authenticated set semantics across heterogeneous carrier adapters; whether a clearly specified observer model exposes different linkage than the direct prior-art systems; whether a particular discovery/manifest boundary changes measurable disclosure or cost; and whether the proposed architecture provides a better documented separation between endpoint identity/message authority and carrier-level reconstruction. These are research questions, not novelty claims. The comparison may show that existing systems already solve the relevant problem better.
+Any remaining contribution must therefore be narrower and demonstrated. Candidate questions include whether a route-neutral endpoint-protected object can preserve authenticated set semantics across heterogeneous carrier adapters; whether a clearly specified observer model exposes different linkage than the direct prior-art systems; whether the visibility of self-contained authenticated set context changes measurable carrier correlation or disclosure; and whether the proposed architecture provides a better documented separation between endpoint identity/message authority and carrier-level reconstruction. These are research questions, not novelty claims. The comparison may show that existing systems already solve the relevant problem better.
 
 ## 10. Open decisions and immediate research tasks
 
@@ -297,6 +297,6 @@ Any remaining contribution must therefore be narrower and demonstrated. Candidat
 | Cross-route semantics | Is the same protected object retried or carried elsewhere; what equality, replay and nonce implications follow? |
 | Conversation continuity | What is authenticated across distinct messages and what stable identifier, if any, is exposed? |
 
-**Immediate next work:** complete a source-level review of SRC-043–SRC-049, map their exact mechanisms and assumptions into the prior-art and observer matrices, then update W2/W3/W4 and thesis §7–§8. Do not design a final fragment format or select a steganographic method before this comparison is reconciled.
+**Review status and continuation boundary:** The SRC-043–SRC-049 comparison has been integrated into the thesis and the relevant prior-art, route and observer records. The individual source-register entries remain authoritative for each source's access and review limits; in particular, full-paper access remains unavailable for SRC-046 and SRC-048, SRC-047 is README-only, and the SRC-049 paper's formal argument and complete results remain unreviewed. Source-code inspection is not a substitute for those papers, and no code execution or independent reproduction is implied. Reopen this comparison only when the missing primary material becomes available or new evidence materially changes an existing thesis claim. Do not infer a new workstream or final fragment format from this supporting note.
 
 **Theory only · No implementation · Not audited.**
