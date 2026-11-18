@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-18 · discovery event-chain adversarial pressure test integrated"
+checkpoint: "2026-11-18 · six-profile discovery comparison source-audited; Pigeonhole and Dropbox evidence boundaries refined"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only_not_chat_footer
@@ -65,7 +65,7 @@ current_state:
     central_question: "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?"
     proposition: "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence."
     contributions: "Responsibility-separated architecture; common route-comparison method; message-relationship/lifecycle analysis; claim-centred evidence discipline."
-    route_synthesis: "Image studies inform media transformation; Dropbox documents shared-link/file-host visibility; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator. Documentary evidence is asymmetric; no overall ranking."
+    route_synthesis: "Image studies inform media transformation; Dropbox documents owner/editor file activity and conditional viewer information; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator, with AllOrNothing atomic set semantics and explicit replica/retention constraints. Documentary evidence is asymmetric; no overall ranking or pinned deployment."
     prior_art_pressure: "Thesis now explicitly confronts OMR/GOMR and PerfOMR/SophOMR/InstantOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert communication; generic private-discovery, whole-pipeline and image-covert-channel novelty claims are not supportable."
     limits: "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
   research_units: "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question."
@@ -107,9 +107,9 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/metadata inspected; full method/evaluation not inspected."
   SRC-049: "Pinned README/selected implementation inspected, not executed; indexed abstract summary added; full paper/formal security argument/results unreviewed."
 next_actions:
-  - "T-006: test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles; preserve native guarantees and evidence classes, and do not infer unobserved service behaviour."
+  - "T-006: challenge whether the source-audited six-profile discovery comparison supports a decision-relevant thesis contribution beyond a descriptive evidence map; use the observer/property matrix and contribution/bias assessment to test novelty and falsifiability."
   - "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits."
-  - "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits."
+  - "T-004: pin actual Dropbox account/plan/link settings, Signal shipped client/service versions and compatible Katzenpost/Pigeonhole release/deployment configuration where authoritative evidence or user-provided access permits; do not treat protocol/source-tree snapshots as deployments."
   - "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks."
   - "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
 source_review_update:
@@ -147,20 +147,20 @@ invariants:
   - "Transport acceptance is not endpoint receipt, decryption, display, human reading or comprehension."
   - "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
 verified_working_documents:
-  work/lookup/TASKS.md: "1561731adf5b2608a45f57209c555bd44eb3dfa3"
-  work/lookup/TASKS.json: "7c49fca455074620bfe05cab5ed32544c03dc6f5"
-  work/PROJECT_STATE.md: "494486517e1fd86852c5eef83fe42755d3bad79f"
+  work/lookup/TASKS.md: "ff5199ac9c10a58ab7a6dcf2f992f5ccd0ebe52d"
+  work/lookup/TASKS.json: "a4559bd03eb43eb7f2ae9b49be7e3dbc21c5d867"
+  work/PROJECT_STATE.md: "2ba132173b8fd81e943e01e4637fff786c183db7"
   work/WORKPLAN.md: "2ddb360e796fa51be2a7e3c4f9d04c6cd58d10b4"
-  work/WORK_LOG.md: "6da4820d6eaae98dc7178ac2e1715123fc4f5fc3"
+  work/WORK_LOG.md: "eb499505a9511bd7a3fe27caae40ef927b20ebc9"
 verified_research_documents:
-  thesis.md: "cbc06935901d007542cec32a44332ac8b975baa6"
-  docs/w1-research-framing.md: "8a772f0c1f63a033d31d77e4ceb3f83ddd94b897"
+  thesis.md: "f4e6ca892c11dccebdd58a7ee9b36deb154f6614"
+  docs/w1-research-framing.md: "24247221c32dbbdfa2bb486cb28ba04a7595ad5d"
   docs/traceability.md: "6baf3c2e466a7ac94004d041472ad0beb1c701cd"
   docs/confidence-and-evidence-model.md: "402a83a787977bc4e06ef0e7c0beef241a61c4fa"
-  docs/source-register.md: "87b4866d9a4cc2f5d4f9efb8b1714e26887dd673"
+  docs/source-register.md: "8a49f35f05d33a91bcf7f358a63c2cfc5f1f7ea5"
   docs/protocol-boundary-analysis.md: "14a56004e515ebf1caae2a656f1402aef9d28609"
   docs/w2-threat-model.md: "d6996524d4c847ce5bb67b3e41be41d8c4b385ca"
-  docs/w4-risks-and-evaluation.md: "f53da96c10753b16ddfab2ccce77cceb4ed14682"
+  docs/w4-risks-and-evaluation.md: "e0cbafb35380fed7ce202e54ed856a31caf1b6e5"
   docs/thesis-contribution-and-bias-assessment.md: "d8d3879f41251fcdbf9cf40c1e42cc04a849520d"
 latest_verified_project_head: "576e11685153fdb0439f56cf435a34e5fe0bfec2"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
@@ -208,21 +208,21 @@ automatic_reentry:
 verified_current:
   work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
   work/CHATGPT_PROJECT_INSTRUCTIONS.md: "62e36bf75dd0519e7f1983c847013af2134d9f9d"
-  work/PROJECT_STATE.md: "3cabe3e0a82db623c87c7f75a2b2f1dfcd690191"
+  work/PROJECT_STATE.md: "2ba132173b8fd81e943e01e4637fff786c183db7"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
-  work/WORK_LOG.md: "7240fa8792a461e7e85fe2cf42c3a64e829cf580"
+  work/WORK_LOG.md: "eb499505a9511bd7a3fe27caae40ef927b20ebc9"
   work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
   README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
-  work/lookup/TASKS.md: "7791fcc56b7f0b622b3850cddf9a09186ce4a73a"
-  work/lookup/TASKS.json: "fbe91a5af3e68a3896bd9139cfe9a700e3bf07cd"
-  thesis.md: "f87c6f4b2a8eb9baccd4a4976335f41b0d6ac6a0"
+  work/lookup/TASKS.md: "ff5199ac9c10a58ab7a6dcf2f992f5ccd0ebe52d"
+  work/lookup/TASKS.json: "a4559bd03eb43eb7f2ae9b49be7e3dbc21c5d867"
+  thesis.md: "f4e6ca892c11dccebdd58a7ee9b36deb154f6614"
   docs/w3-architecture.md: "a4d69b9c6e6247635c85b9537b0e44c1555960e4"
   docs/multi-message-linkage-and-steganographic-carriage.md: "64c9cb8f8b3a820ba5b4edbb535f76c849cfcd15"
-  docs/w4-risks-and-evaluation.md: "664598b222d98bada990d8b258837d5840c1a1ad"
+  docs/w4-risks-and-evaluation.md: "e0cbafb35380fed7ce202e54ed856a31caf1b6e5"
   docs/traceability.md: "9e5eebbcf3b09840dd2d267c45ef01c71abac59e"
   docs/w2-threat-model.md: "ca9e83731a32052d7188db981934e6886e328d1f"
-  docs/observer-property-matrix.md: "7f700e7d3ca5f28cf8d3635b345de9893b5f1e76"
-  docs/route-comparison-framework.md: "b68ebb2b8db2371b95147718d95c48cccc2a99e8"
+  docs/observer-property-matrix.md: "1380f082a0ea69f6074a1c3d16b6125b8a799a86"
+  docs/route-comparison-framework.md: "d5739b0d07735b1771b10fb582ade03c7c1189c3"
 
 
 ## 2026-11-17 · Thesis-first sprint
@@ -278,3 +278,14 @@ verified_current:
 ## Project-maturity wording rule · 2026-11-18
 
 The exact phrase “Theory only · No implementation · Not audited.” is maintained as verified project-maturity metadata in the repository's relevant headers, assurance fields and handover records. It is not a required conversational sign-off and must not be appended to ordinary assistant replies. Update the wording only when evidence supports a genuine maturity change. Do not use it to imply that research, analysis or specification work is prohibited.
+
+## 2026-11-18 · Six-profile discovery comparison and source audit
+
+- Added route framework §5.8 and thesis §8.8 cross-profile analysis for IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE.
+- Source-audited the six rows. Qiao is bounded full-paper evidence; MRAS/DRAS remain publisher-indexed partial reviews; Dropbox is account/plan/setting-dependent documentation; Signal remains a protocol reference; Echomix/Pigeonhole has the richest integrated model but no pinned compatible deployment.
+- Refined Pigeonhole's native AllOrNothing atomic set semantics, replica-epoch retention window and minimum replica-topology requirement from its current specification. These are protocol/deployment requirements, not independently captured service-event evidence.
+- Refined Dropbox's file-activity and viewer-information boundaries: owner/editor visibility, configurable viewer info, plan-dependent viewer history, Guest treatment and direct-download limits.
+- Linked the profile comparison from W1 RQ7, W4 E9 and observer/property matrix §4.1; updated the source register and Echomix comparator.
+- No actual service deployment, account configuration, platform experiment, reproduction, implementation, proof, independent review or audit was performed.
+- Next: challenge whether the comparison supports a decision-relevant contribution beyond a descriptive evidence map; T-004 remains available for actual pinned client/release/account/deployment evidence.
+
