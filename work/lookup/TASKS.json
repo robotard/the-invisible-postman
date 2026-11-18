@@ -4,7 +4,15 @@
   "not_for_thesis": true,
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
-  "next": "T-013",
+  "next": [
+    "T-013: formalise Candidate D's exact OMR-specific hidden-predicate completeness, dynamic authenticated publication snapshot, sender-authenticated admission and multi-carrier manifest closure; define adversary, trust/collusion, leakage and cost, and compare nearest prior art before proposing a construction.",
+    "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access; pinned MRAS/DRAS code is source-inspected but does not replace full-paper methods/results.",
+    "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and an inaccessible external model archive. Resume if primary papers or model assets become available.",
+    "T-003: SRC-049 repository code review is expanded, but full paper, formal security argument, complete results and model weights remain unavailable; seek primary paper copy before formal-security claims.",
+    "T-004 (in_progress): pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available; do not treat public source pins as deployments.",
+    "T-007: rerun final consistency review after T-013 source/thesis integration.",
+    "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
+  ],
   "tasks": {
     "T-001": {
       "id": "T-001",
@@ -138,7 +146,7 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Complete for the prior checkpoint. Re-run the static thesis/source/traceability consistency review after T-013's new source and thesis integration; do not treat the earlier check as covering SRC-056–SRC-058.",
+      "next_action": "Complete for the previous checkpoint. Rerun the static thesis/source/traceability consistency review after T-013's new source and thesis integration; do not treat the earlier check as covering SRC-056–SRC-060.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18",
@@ -275,9 +283,10 @@
       "depends_on": [
         "T-007"
       ],
-      "next_action": "Started on 2026-11-18. Integrated APIR (SRC-054), full AAD (SRC-055), indexed-only range APIR (SRC-056), vPIR (SRC-057) and multi-query vPIR (SRC-058) into the thesis, prior-art comparison, observer matrix and traceability. Generic private complete range retrieval is prior art; the remaining hypothesis is OMR-specific hidden-predicate completeness over a dynamic authenticated publication snapshot, sender-authenticated admission and multi-carrier manifest closure with controlled access-volume, cross-epoch and selective-failure leakage. Next formalise adversary/collusion and admission model, proof statements, leakage function, costs and candidate construction/impossibility. Full SRC-056 PDF remains inaccessible; preserve partial-review status.",
+      "next_action": "Continue formalising Candidate D against APIR (SRC-054), full AAD (SRC-055), range APIR (SRC-056, indexed text only), vPIR (SRC-057), multi-query vPIR (SRC-058), VPRQ (SRC-059, abstract/introduction only) and Basudan/Alamer's 2024 leakage-suppressed range scheme (SRC-060, full paper reviewed), plus OMR/GOMR/StOMR/UnifOMR and SRC-052. Generic private/verifiable range retrieval is prior art. The remaining hypothesis is OMR-specific hidden-predicate completeness over a dynamic authenticated publication snapshot, sender-authenticated admission and multi-carrier manifest closure, with controlled access-volume, cross-epoch and selective-failure leakage. Next formalise adversary/collusion and admission model, exact soundness/completeness/closure statements, leakage function, costs and candidate construction/impossibility. Full SRC-056 PDF and SRC-059 technical paper remain inaccessible; preserve partial-review status.",
       "blockers": [
-        "Full publisher PDF for SRC-056 (Authenticated Private Information Retrieval for Range Queries) returned 403; proofs, complete algorithms and evaluation remain indexed-text-only pending an accessible copy."
+        "Full publisher PDF for SRC-056 (Authenticated Private Information Retrieval for Range Queries) returned 403; proofs, complete algorithms and evaluation remain indexed-text-only.",
+        "Full technical paper for SRC-059 (VPRQ) remains inaccessible; only abstract and publisher-indexed introduction inspected."
       ],
       "completion_rule": "A formal, source-grounded model and complete nearest-prior-art comparison are integrated into thesis and supporting research; proof obligations, leakage, assumptions, costs and novelty disposition are explicit; commits and exact read-back verified.",
       "last_updated": "2026-11-18"
@@ -311,6 +320,6 @@
   },
   "project_status": "Theory only · No implementation · Not audited.",
   "status_semantics": "repository_project_maturity_metadata_not_a_chat_response_footer",
-  "task_status_correction": "T-006 complete for current evidence set. T-007 complete for the previous checkpoint, but must be rerun after T-013 source/thesis integration. T-013 is now in_progress and next. T-001–T-004 remain blocked on full primary sources, model assets or controlled route configurations.",
-  "immediate_next_action": "T-013: formalise Candidate D against APIR (SRC-054), AAD (SRC-055), range APIR (SRC-056), vPIR (SRC-057), multi-query vPIR (SRC-058), OMR/GOMR/StOMR/UnifOMR and SRC-052. Generic private complete range retrieval is prior art. Define OMR-specific hidden-predicate completeness over a dynamic authenticated snapshot, sender-authenticated admission and manifest closure, leakage and cost. Full SRC-056 PDF remains inaccessible. Then rerun T-007 consistency checks."
+  "task_status_correction": "T-006 complete for current evidence set. T-007 complete for the previous checkpoint, but must be rerun after T-013 source/thesis integration. T-013 is in_progress and next. T-001–T-004 remain blocked on full primary sources, model assets or controlled route configurations.",
+  "immediate_next_action": "T-013: formalise Candidate D against APIR/AAD, vPIR, multi-query vPIR, 2024 VPRQ/leakage-suppressed range-query schemes, 2026 range APIR, OMR/StOMR/UnifOMR and SRC-052. Generic private/verifiable range retrieval is prior art. Define the narrower OMR-specific dynamic-predicate/admission/manifest-closure problem, its adversary, proof statements, leakage and cost. Full SRC-056 PDF and SRC-059 technical paper remain inaccessible. Then rerun T-007 consistency checks."
 }
