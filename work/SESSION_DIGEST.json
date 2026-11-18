@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-18 · StOMR/UnifOMR primary papers reviewed; MRAS/DRAS and GIF code inspected; T-006 complete; T-001–T-003 source access active",
+  "checkpoint": "2026-11-18 · T-006/T-013/T-007/T-015 complete; T-014 APIR count-plus-point feasibility active; SRC-001–SRC-060 registered",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_maturity_metadata_not_a_routine_chat_footer",
@@ -30,10 +30,10 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 11 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; thin-client v0.0.23 API/tests omit later-envelope failure with concurrent reader visibility. Actual reader visibility remains untested. katzenqt 0.0.2 separately gates conversation-log dispatch on a complete contiguous chain; this is application-level gating, not AllOrNothing or atomic storage. SRC-043 permits partial byte reconstruction, not authenticated logical-message acceptance. The endpoint acceptance sequence is standard protocol discipline, not a novel mechanism. The minimum evaluation is staged around three primary treatments: SRC-043-style multi-image set, single-file Dropbox object and raw Pigeonhole AllOrNothing; katzenqt is separate, Signal is a reference profile and OMR-family systems are retrieval comparators. Candidate C remains conditional; no controlled route result or rigorous counterexample establishes contribution.",
+    "thesis": "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 11 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; thin-client v0.0.23 API/tests omit later-envelope failure with concurrent reader visibility. Actual reader visibility remains untested. katzenqt 0.0.2 separately gates conversation-log dispatch on a complete contiguous chain; this is application-level gating, not AllOrNothing or atomic storage. SRC-043 permits partial byte reconstruction, not authenticated logical-message acceptance. The endpoint acceptance sequence is standard protocol discipline, not a novel mechanism. The minimum evaluation is staged around three primary treatments: SRC-043-style multi-image set, single-file Dropbox object and raw Pigeonhole AllOrNothing; katzenqt is separate, Signal is a reference profile and OMR-family systems are retrieval comparators. Candidate C remains conditional; no controlled route result or rigorous counterexample establishes contribution. Thesis §1.1 now states representation flexibility: sender-selectable whole-object or segmented representation is optional and independent of carrier/transport, while logical identity, authenticated meaning, endpoint authority and acceptance semantics remain invariant.",
     "research_units": "W1-W4 drafted; W1/W2/W3/W4 and traceability reviewed against the latest OMR and route evidence. Confidence/evidence remains integrated into RQ10. Matrix minimality and staged evaluation are reconciled into thesis §§8.8/11, prior-art comparison §10.3, route framework and W4.",
-    "source_register": "53 entries, SRC-001 through SRC-053.",
-    "multi_message_model": "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies. Discovery is decomposed into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; these do not authenticate one another.",
+    "source_register": "60 entries, SRC-001 through SRC-060.",
+    "multi_message_model": "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies. Discovery is decomposed into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; these do not authenticate one another. Sender-selectable granularity is an optional publication-policy dimension: whole-object remains the baseline; segmentation is optional and must justify linkage, completeness, reconstruction, metadata and failure costs.",
     "steganography": {
       "distinctions": [
         "per-carrier concealment",
@@ -144,7 +144,12 @@
     "discovery_model": "Discovery is decomposed into bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation, retrieval, extraction, endpoint validation and conversation association. Seven adversarial cases are integrated: bootstrap substitution, malicious publication, index equivocation/suppression, retrieval manipulation, cross-role collusion, retention/later disclosure and suppression/delay ambiguity. Endpoint-authenticated facts, service-reported events, observed metadata and inferred correlations remain distinct; index response does not prove completeness, and silence does not identify why a carrier is absent. No discovery mechanism, index-consistency mechanism or deletion guarantee is selected.",
     "route_synthesis": "The minimum controlled evaluation is staged, not full-factorial: three primary treatments (SRC-043-style multi-image set, single-file Dropbox object, raw Pigeonhole AllOrNothing); katzenqt is a separate application-gate observation; Signal is a protocol/service reference; OMR-family systems are retrieval comparators. First discriminating omissions are one redundant image copy missing/delayed, all copies of one fragment missing, and Pigeonhole E1 success followed by E2 delay/rejection while an already-authorised reader polls. No test has been run.",
     "set_level_atomicity": "Pigeonhole specification claims reader-side AllOrNothing atomicity; pinned v0.0.90 source shows sequential destination-envelope dispatch, independent persistence and no rollback of a successful prefix on the inspected failure path. Thin-client v0.0.23 API is sender-side only with no recipient ReadCap/reader commit control; tests cover success and first-envelope failure, not later failure with concurrent reader. katzenqt 0.0.2 separately persists received pieces and gates conversation-log dispatch on a terminal F plus contiguous decodable chain; this is app-level gating, not AllOrNothing or atomic storage. SRC-043 permits partial byte reconstruction; acceptance remains separate. No code/tests executed.",
-    "prior_art_pressure": "Prior-art comparison §10 crosswalks OMR/GOMR and efficiency variants, StOMR stateful retrieval/OMR-KEM, UnifOMR OMR/PIR, Oblivious Signaling, Remise, dead-drop and diffusion covert messaging, SRC-043, Echomix/Pigeonhole/katzenqt, Dropbox and Signal. StOMR and UnifOMR primary papers are directly reviewed. StOMR's passive model, key-identity boundary, state recovery limits and 32-bit collision caveat are explicit. UnifOMR's malicious-detector integrity boundary and candidate-capacity accounting ambiguity are explicit. Component mechanisms are established; Candidate C remains a conditional reproducible cross-route method only."
+    "prior_art_pressure": "Prior-art comparison §10 crosswalks OMR/GOMR and efficiency variants, StOMR stateful retrieval/OMR-KEM, UnifOMR OMR/PIR, Oblivious Signaling, Remise, dead-drop and diffusion covert messaging, SRC-043, Echomix/Pigeonhole/katzenqt, Dropbox and Signal. StOMR and UnifOMR primary papers are directly reviewed. StOMR's passive model, key-identity boundary, state recovery limits and 32-bit collision caveat are explicit. UnifOMR's malicious-detector integrity boundary and candidate-capacity accounting ambiguity are explicit. Component mechanisms are established; Candidate C remains a conditional reproducible cross-route method only.",
+    "representation_flexibility": {
+      "principle": "Sender-selectable whole-object or segmented representation is an optional publication-policy choice, independent of carrier/transport; logical identity, authenticated meaning, endpoint authority and acceptance semantics remain invariant.",
+      "supporting_note": "docs/optional-message-granularity.md",
+      "disposition": "Whole-object baseline retained; segmentation optional; neighbour-bound linkage is an unselected hypothesis, not a protocol or novelty claim."
+    }
   },
   "completed": [
     "Rewrote thesis abstract and tightened central research question/proposition around endpoint-authenticated message semantics, replaceable carriage and observer-bounded evidence.",
@@ -184,7 +189,8 @@
     "Read-back verified the substantive files and operational records after writes. No tests, deployment, reproduction, proof, independent review or audit were performed.",
     "Directly reviewed the full user-supplied StOMR camera-ready paper and full 56-page UnifOMR primary paper; integrated state/OMR-KEM, passive threat model, collision caveat, OMR/PIR construction and candidate-capacity ambiguity.",
     "Source-inspected pinned MRAS/DRAS MATLAB repositories and the full SRC-049 repository tree plus selected GIF implementation paths without execution; recorded implementation boundaries separately from inaccessible papers/results.",
-    "Reconciled T-006 route/fault matrix minimality audit and staged three-treatment evaluation into thesis, route framework, prior-art comparison, W4 and contribution assessment; Candidate C remains conditional with no empirical result or route ranking."
+    "Reconciled T-006 route/fault matrix minimality audit and staged three-treatment evaluation into thesis, route framework, prior-art comparison, W4 and contribution assessment; Candidate C remains conditional with no empirical result or route ranking.",
+    "Added representation flexibility to thesis §1.1; created docs/optional-message-granularity.md for optional sender-controlled whole-object/segmented publication, invariants, costs, prior-art limits and unselected neighbour-linkage hypothesis; aligned RQ4 traceability and verified all changed files."
   ],
   "source_review_boundaries": {
     "SRC_033": "Publisher-indexed article sections plus pinned MRAS MATLAB source inspected; ten-image local QF80 demo, unused midFreqPattern parameter and per-image message prefix recorded. Complete paper methods, tables and limitations remain partial; no code executed.",
@@ -204,12 +210,12 @@
     "SRC-053": "Secondary full-paper assessment read and cross-checked against SRC-051; candidate-capacity concern confirmed as a primary-text accounting ambiguity, not a demonstrated defect."
   },
   "next": [
-    "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access; pinned MRAS/DRAS code is source-inspected but does not replace full-paper methods/results.",
-    "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and an inaccessible external model archive. Resume if primary papers or model assets become available.",
-    "T-003: SRC-049 repository code review is expanded, but full paper, formal security argument, complete results and model weights remain unavailable; seek primary paper copy before formal-security claims.",
-    "T-004 (in_progress): pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available; do not treat public source pins as deployments.",
-    "T-007: remain gated until source access and substantive synthesis stabilise; then run targeted terminology, citation, traceability and cross-document checks.",
-    "Keep diagrams, external peer review and release work gated; keep confidence/evidence within RQ10 and do not introduce a universal confidence score."
+    "T-014: inspect the pinned APIR FSS/predicate/point-query code and determine whether the exact OMR signal-membership predicate can be counted and completely enumerated with authenticated answers bound to one immutable snapshot, without unacceptable scan cost or leakage.",
+    "T-001: full SRC-033/034/036 papers remain inaccessible; pinned MRAS/DRAS repositories are source-inspected but do not replace full-paper methods/results.",
+    "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and its external model archive is inaccessible.",
+    "T-003: SRC-049 full paper, formal argument and complete results remain unavailable; source inspection is not execution or audit.",
+    "T-004: public Dropbox/Signal/Katzenpost references are pinned; live account/backend/deployment evidence remains blocked pending controlled access.",
+    "T-005/T-006/T-007/T-013/T-015 are complete for their current evidence scopes; T-008/T-009 diagrams, T-010/T-011 peer review and T-012 release remain gated."
   ],
   "defer": [
     "Create actual diagrams only after comparative argument and evidence stabilise; never use ASCII art.",
@@ -235,12 +241,12 @@
   "verified": {
     "work/START_HERE.md": "d575e8d58c683349cc2e04a173da0a32d1281a60",
     "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "b88c44d7021613ebffa958ffe7f171cec5603d21",
-    "work/PROJECT_STATE.md": "19223bb9ccddeb9e955a7e9deacabd771ec2a21c",
+    "work/PROJECT_STATE.md": "05c156e8a055df6f536b139b7b6385969defc190",
     "work/WORKPLAN.md": "547e71f806f0d2867513cf9e343e4762d7960fd0",
-    "work/WORK_LOG.md": "024225ef5082a1b27312bf65321fb1f387db108c",
-    "work/lookup/TASKS.md": "3133405db2e01bf20c585757a1f9c2bf17ad4cf2",
-    "work/lookup/TASKS.json": "b049132c16d91576a4974e82b0119c75a11af17b",
-    "work/SESSION_DIGEST.md": "67c205cb828c8adef26d30290fbf64ae184a5a68",
+    "work/WORK_LOG.md": "a4ac4a0c9986b985a4dae370a5c080c148f9a9a9",
+    "work/lookup/TASKS.md": "5323a52cc2d08147735e7eb23ef1f2e6fa8a6437",
+    "work/lookup/TASKS.json": "9092a9bb48408e6fa28525ee740979e9cc6a7215",
+    "work/SESSION_DIGEST.md": "a5f18164d33773b5a70d6564f497acea5d8fa36b",
     "docs/source-register.md": "2f0b35793f3186ff8e860a4537aa37b2b794983a",
     "docs/route-fault-evidence-matrix.md": "bf63de642cc9ffab54cf7587df57e1ebcaef0ab8",
     "docs/route-comparison-framework.md": "536d27d9f3c5a45c5947bbc3f2d353f6b9fdec50",
@@ -249,10 +255,11 @@
     "docs/w2-threat-model.md": "b3d92faf114e040efd824d4357735b54b40a1de7",
     "docs/w3-architecture.md": "b671469ea0e793435991e9a8fd818b686b67f618",
     "docs/w4-risks-and-evaluation.md": "54c054779152e39d1da861fcc873376c79d4800c",
-    "docs/traceability.md": "4e94084770ec5f8084d2ffe89636cb57769bf674",
+    "docs/traceability.md": "309ac23777772a163558a495467a78a2f47079f6",
     "docs/thesis-contribution-and-bias-assessment.md": "e6fe72ab08dede1dfd92f00cf636956d5573c26a",
     "docs/observer-property-matrix.md": "436999f5a4cc0558d2c59184857d39d3aeffba0e",
-    "thesis.md": "1a5b645b6d1679b4a7b5d6d8284a5152b7407f1b"
+    "thesis.md": "c9547344ea9f779fc7175fd778190e342dceef2a",
+    "docs/optional-message-granularity.md": "535035fb812f9dbc31fecea95f3ed8daa9c0c967"
   },
   "close_rule": "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md; fetch and verify all three; refresh SESSION_DIGEST.md; refresh SESSION_DIGEST.json last; fetch and verify both digests against the working documents.",
   "checkpoint_protocol": [
@@ -293,8 +300,8 @@
     "internal_ids": "C-### and T-### are private lookup handles only; never thesis references.",
     "release_rule": "Transfer substantive outcomes to thesis/research records; verify no enduring document depends on work/; then remove it in full."
   },
-  "next_task": "T-001",
-  "latest_commit_before_digest_refresh": "149719f9de2969343f37980b001011efe664aaff",
+  "next_task": "T-014",
+  "latest_commit_before_digest_refresh": "f9d3f6326d2d5dd32ef3b7255ec9ab7e78058528",
   "thesis_product": {
     "canonical_manuscript": "thesis.md",
     "staging": "The one active thesis manuscript under development.",
@@ -308,8 +315,8 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "4885310415c84b6197b10f700aebf08f752b806a",
-  "immediate_next_action": "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access. MRAS/DRAS code repositories are source-inspected but do not replace full-paper methods/results; preserve partial status. Continue T-002–T-003 access for SRC-046–SRC-049 where papers, formal arguments, model assets or complete results materially affect claims. T-004 remains gated on controlled Dropbox/Signal/Katzenpost accounts or deployments. T-006 is complete for the current evidence set and reopens only if new evidence materially changes the thesis.",
+  "latest_commit_before_json_digest_refresh": "f9d3f6326d2d5dd32ef3b7255ec9ab7e78058528",
+  "immediate_next_action": "T-014: inspect the pinned APIR FSS/predicate/point-query code and determine whether the exact OMR signal-membership predicate can be counted and completely enumerated with authenticated answers bound to one immutable snapshot, without unacceptable scan cost or leakage.",
   "latest_verified_project_head": "4885310415c84b6197b10f700aebf08f752b806a",
   "work_registry": {
     "schema": "tip.work.registry.v3",
@@ -435,7 +442,7 @@
     "final_digest": "work/SESSION_DIGEST.json",
     "final_digest_rule": "JSON digest is written last, then fetched and parsed; its own commit SHA is reported in the handover rather than self-referenced."
   },
-  "task_status_correction": "T-004 remains in_progress with public Dropbox/Signal/Katzenpost reference pins; account/backend/deployment configuration is blocked pending controlled access. T-006 is complete for the current evidence set: the route/fault matrix is staged and audited, and Candidate C remains a conditional evaluation-method candidate with no controlled route result or rigorous counterexample. T-001–T-003 remain in_progress; T-001 is next.",
+  "task_status_correction": "T-013 Candidate D formalisation complete; T-007 post-integration consistency pass complete; T-014 APIR count-plus-point composition feasibility test remains in_progress; T-015 optional sender-controlled message granularity note and thesis principle integrated and read-back verified.",
   "project_instructions": {
     "source": "work/CHATGPT_PROJECT_INSTRUCTIONS.md",
     "purpose": "Concise operating instructions for external ChatGPT Project settings.",
