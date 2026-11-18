@@ -26,7 +26,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. Current focus: finish the source-level reader-atomicity audit. Distinguish Pigeonhole AllOrNothing's sequential copy implementation from `katzenqt 0.0.2`'s separate app-level chunk assembler; determine whether any pinned application path supplies a reader commit gate or capability handoff; refine the minimal read-side fault test against SRC-043 and the single-file baseline. Do not call the possible partial-prefix issue a confirmed defect or infer novelty from documentation gaps.
+**Current active task:** T-006. Current focus: compare the existing endpoint receiver-acceptance model with the six route profiles and closest prior art. Keep SRC-043 byte-level partial reconstruction distinct from authenticated logical-message acceptance; keep Pigeonhole's AllOrNothing specification, sequential-write implementation, sender-only API/test coverage and katzenqt app-level assembly distinct; compare with Dropbox single-object and Signal per-message scopes. Identify what is already known versus a potentially defensible cross-route invariant/evaluation contribution. Tighten thesis and contribution assessment without claiming novelty from evidence gaps.
 
 **Parallel evidence work:** T-001–T-003 remain in_progress for source access where it materially resolves claims. T-004 is now in_progress: public Dropbox/Signal/Katzenpost release and documentation snapshots are pinned, but actual account, installed-client/backend and running-deployment configurations remain unavailable. Continue other unblocked work around these access limits.
 
