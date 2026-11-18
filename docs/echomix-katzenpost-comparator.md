@@ -1,6 +1,6 @@
 # Echomix / Katzenpost Comparator: Integrated Messaging and Observer Boundaries
 
-**Checkpoint:** 2026-11-16  
+**Checkpoint:** 2026-11-18  
 **Source:** SRC-032  
 **Status:** Theory only · No implementation · Not audited.
 
@@ -39,7 +39,7 @@ This is directly relevant to the project's discovery question. Echomix does not 
 
 ### 3.4 Reliability, retries and user behaviour
 
-The paper treats acknowledgements, retransmissions and online-state inference as privacy-sensitive. Couriers separate acknowledgement/retry handling from box identifiers; read requests and retries are shaped to reduce query-rate leakage; acknowledgements and retransmissions are not automatic in the long-term reliability design, but are opportunistically coupled to user-initiated activity. It also describes all-or-nothing backfills to avoid revealing partial progress.
+The paper treats acknowledgements, retransmissions and online-state inference as privacy-sensitive. Couriers separate acknowledgement/retry handling from box identifiers; read requests and retries are shaped to reduce query-rate leakage; acknowledgements and retransmissions are not automatic in the long-term reliability design, but are opportunistically coupled to user-initiated activity. The current Pigeonhole specification makes the associated set semantics more precise: an AllOrNothing stream is intended to succeed or fail atomically from the replica/second-party reader's point of view, avoiding disclosure of partial transmission progress. It uses a temporary stream and a courier-mediated copy operation, not a generic proof of completeness for arbitrary external publication feeds. The specification also defines a roughly two-week data TTL from its one-week replica-epoch window and requires at least four storage replicas for the stated intermediate/final replica disjointness property. These are normative protocol/deployment conditions, not measurements of a live deployment.
 
 Crucially, the authors acknowledge that correlated human online behaviour can still reveal relationships. The architecture reduces some service and traffic observations; it does not make human routines irrelevant.
 
