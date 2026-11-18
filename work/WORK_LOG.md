@@ -1,5 +1,34 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Signal service-source transaction and acknowledgement boundary reconciled
+
+### Work performed
+
+- Re-opened the pinned public Signal-Server snapshot at commit `cbbfc3966a89a87b3b2d3592b0b22d4d6fe4f758` and checked `MessageDispatcher.java`, `ReceiptSender.java`, `FoundationDbMessageStore.java` and `FoundationDbMessageStream.java` at their recorded blobs.
+- Confirmed the source documents per-device message streaming, client acknowledgement, queue removal on acknowledgement, conditional server delivery receipts and a queue-empty signal scoped to messages waiting when the device connected (which may wait for messages arriving during the stream).
+- Confirmed the FoundationDB source groups all messages for the same recipient in one transaction for the insertion operation, while multi-recipient work may be split by shard and transaction-size chunks. This creates a transaction-boundary question; no partial-fanout failure was injected or observed.
+- Reconciled the source snapshot and product support limits into thesis §§8.2/8.4/8.8, W1, W2, W3, W4 E9, the route-comparison framework and route/fault/evidence matrix. The matrix now includes a separate Signal multi-recipient transaction-boundary case.
+- Reconciled Dropbox's direct invitation/shared-folder/view-only-link permissions, owner/editor activity, configurable viewer information, Guest and direct-download omissions, and direct-sharing download-control limits across SRC-039, thesis, W2/W4 and route comparison.
+- Reconciled the RQ7 traceability source range to include SRC-038–SRC-039.
+
+### Evidence judgement and limits
+
+- The Signal source is a pinned public repository snapshot, not proof that the production backend runs that commit or configuration. No server was built, deployed or tested; no queue, transaction or receipt behaviour was observed live.
+- The FoundationDB code shows transaction grouping/splitting but does not establish the outcome of a controlled mid-operation failure across recipients/shards.
+- Dropbox material remains official documentation only. No account, plan, role, link, admin setting or live event record was available.
+- Product support indicators, server-generated delivery receipts and optional Read receipts remain distinct evidence types. None establishes human comprehension or arbitrary multi-message atomic acceptance.
+
+### Verification
+
+- Changed thesis/research/traceability files were fetched after writing and exact saved content was verified.
+- No build, test, deployment, failure injection, independent reproduction, formal proof, independent review or security audit was performed.
+
+### Next
+
+Audit the route/fault/evidence matrix for minimal, non-duplicative, decision-relevant cases. Then reassess Candidate C against the current prior-art and route evidence; keep it conditional unless a controlled result or rigorous counterexample changes a route decision, invalidates a material assurance claim or exposes a gap beyond prior art.
+
+---
+
 ## 2026-11-18 · Signal and Dropbox product-evidence boundaries integrated
 
 ### Work performed
