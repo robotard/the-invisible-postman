@@ -117,7 +117,7 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Compare the existing endpoint receiver-acceptance state model with the six route profiles and closest prior art. Keep SRC-043 byte-level partial reconstruction distinct from authenticated logical-message acceptance; keep Pigeonhole AllOrNothing specification, sequential-write implementation, sender-only thin-client API/test coverage and katzenqt app-level assembly distinct; compare these with Dropbox single-object and Signal per-message scopes. Identify what is an already-known mechanism versus a potentially defensible cross-route invariant or evaluation contribution. Tighten thesis/contribution assessment without claiming novelty from evidence gaps.",
+      "next_action": "Expand the prior-art crosswalk for the route-agnostic endpoint acceptance contract. Map what SRC-043, Pigeonhole/katzenqt, Dropbox, Signal, OMR/GOMR, Oblivious Signaling, Remise and Echomix already provide for fragment membership, set completeness, reconstruction, atomicity, delivery evidence and observer privacy. Identify precisely what the contract adds, whether it changes a real route decision, and whether a repeatable evaluation/counterexample supports Candidate C. Treat it as a synthesis candidate, not novelty, until this comparison is complete.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
