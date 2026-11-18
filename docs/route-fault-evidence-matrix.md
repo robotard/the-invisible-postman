@@ -33,7 +33,7 @@ For the multi-image comparator use **S=2 fragments, r=4 redundant carriers per f
 | **E2E-SIGNAL-PROTOCOL** (SRC-038) | Individual authenticated protocol messages within PQXDH/Double Ratchet session state | Key establishment, message authentication/ratchet state, skipped-message and replay semantics at protocol level | Not an app/service deployment; delivery/read receipts, backend queue, account and linked-device state are not established by protocol documents |
 | **MIX-ECHOMIX-PIGEONHOLE** (SRC-032, SRC-040) | Capability-addressed asynchronous storage/copy and stream relationships | Published role/observer model, capabilities, storage semantics and compatible pinned source versions | No running deployment, topology, directory state, service-event capture or reader-visibility experiment; AllOrNothing spec/source discrepancy unresolved |
 
-**Separate discovery/retrieval comparators, not storage baselines:** OMR/GOMR, PerfOMR, SophOMR, InstantOMR, StOMR and UnifOMR (SRC-020, SRC-024, SRC-028–SRC-030, SRC-050–SRC-051) concern recipient pertinence, private retrieval, state and efficiency. SRC-052 is a third-party experimental UnifOMR wallet/server integration. Its service-range `complete` flag, slot map, whole-height truncation and cursor retry are retrieval-window semantics, not proof that a logical message's entire carrier set was published or accepted. StOMR's full paper and selected artifact source are reviewed; UnifOMR's paper remains abstract-level. SRC-052's deployment/test claims are self-reported and not reproduced.
+\n\nThe three single-image study profiles are separate literature configurations, not one common live platform deployment. A result from one paper or platform mode must not be copied into another profile.\n**Separate discovery/retrieval comparators, not storage baselines:** OMR/GOMR, PerfOMR, SophOMR, InstantOMR, StOMR and UnifOMR (SRC-020, SRC-024, SRC-028–SRC-030, SRC-050–SRC-051) concern recipient pertinence, private retrieval, state and efficiency. SRC-052 is a third-party experimental UnifOMR wallet/server integration. Its service-range `complete` flag, slot map, whole-height truncation and cursor retry are retrieval-window semantics, not proof that a logical message's entire carrier set was published or accepted. StOMR's full paper and selected artifact source are reviewed; UnifOMR's paper remains abstract-level. SRC-052's deployment/test claims are self-reported and not reproduced.
 
 ## 3. Fault applicability matrix
 
@@ -42,11 +42,11 @@ Legend: **N** = fault maps to the route's native unit; **W** = meaningful only i
 | Fault | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal per-message | Pigeonhole copy/stream | OMR retrieval |
 |---|---:|---:|---:|---:|---:|---:|
 | Delayed or withheld item | N | N | N | N | N | N |
-| Missing object/member | N | N | N | N | N | N |
+| Missing object or route-native unit | N | N | N | N | N | N |
 | Duplicate item | W | N | W | N* | N | ? |
 | Conflicting item at an existing position | W | N | W | W | N | W |
 | Reordering | W | N | — | N* | N | W |
-| Stale/replayed object or response | W | W | W | N | W | N |
+| Stale/replayed object or response | W | W | W | N | W | W |
 | Incomplete or divergent candidate view | ? | ? | ? | ? | ? | N |
 | Service acknowledgement without endpoint acceptance | N | ? | N | ? | N | N |
 
