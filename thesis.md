@@ -615,6 +615,9 @@ The following sources are cited in the current working text. This list is provis
 - Pasquini, C., Amerini, I., & Boato, G. (2021). Media forensics on social media platforms: a survey. *EURASIP Journal on Information Security, 2021*, Article 4. https://doi.org/10.1186/s13635-021-00117-2
 - Piotrowska, A. M., Hayes, J., Elahi, T., Meiser, S., & Danezis, G. (2017). The Loopix Anonymity System. In *Proceedings of the 26th USENIX Security Symposium* (pp. 1199–1216). USENIX Association. https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/piotrowska
 - Steinmetz, K. F., Pimentel, A., & Goe, W. R. (2021). Performing social engineering: A qualitative study of information security deceptions. *Computers in Human Behavior, 124*, Article 106930. https://doi.org/10.1016/j.chb.2021.106930
+- Abramowitz, R. (2005, February 21). *Now you see it ...*. *Los Angeles Times*. https://www.latimes.com/archives/la-xpm-2005-feb-21-et-screeners21-story.html
+- Sony Corporation. (1999, February 17). *Digital Video Watermarking Technologies United*. https://www.sony.com/en/SonyInfo/News/Press/199902/99-0217B/
+- Video Watermarking Group. (2001). *Formation announcement* [Joint announcement filed with the U.S. Securities and Exchange Commission]. https://www.sec.gov/Archives/edgar/data/1089443/000091205701510602/a2046842zex-99_2.txt
 - Tor Project. (n.d.). *Tor Rendezvous Specification – Version 3*. https://spec.torproject.org/rend-spec/rendezvous-protocol.html
 - Liu, Z., Tromer, E., & Wang, Y. (2024). Group Oblivious Message Retrieval. In *Proceedings of the 45th IEEE Symposium on Security and Privacy* (pp. 4367–4385). https://doi.org/10.1109/SP54263.2024.00115
 - Gouert, C., Lee, K., Mouris, D., Tselekounis, Y., & Watson, J.-L. (2026). StOMR: Stateful Oblivious Message Retrieval. In *Proceedings of the ACM Conference on Computer and Communications Security (CCS 2026)*. https://doi.org/10.1145/3830454.3846701
