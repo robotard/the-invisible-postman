@@ -66,6 +66,26 @@ The 2024 dead-drop paper already covers a broad text-based public-platform pipel
 6. **Human behaviour remains weakly covered.** None of the reviewed cryptographic retrieval systems establishes that varied carriers or hidden access patterns prevent correlation through human routines or social-engineering probes.
 7. **The strongest potential analytical value is in assumption compatibility, not component accumulation.** The research must show a concrete cross-layer incompatibility, leakage path or evaluation method that is not already exposed by these systems' own models. If it cannot, the emergent proposition must be narrowed, displaced or abandoned.
 
+
+
+### 4.1 Adversarial discovery-event pressure test
+
+The observer comparison must not assume that publication, indexing and retrieval services follow the protocol or expose only their intended interface. The following counterexamples extend the matrix without claiming that any cited system is vulnerable in the same way or that a mitigation has been selected:
+
+| Adversarial case | Relevant observer combination | Property placed under pressure | Evidence boundary / test question |
+|---|---|---|---|
+| Bootstrap substitution or race | Bootstrap-channel operator; intended peer; network observer | Initial peer/key/locator authenticity and privacy of setup | What independently authenticated binding detects substitution or a changed key? Which identities and timings does the setup channel expose? |
+| Malicious or selective publisher | Publisher + platform; potentially index | Publication provenance, object availability and event correlation | Can false, stale, duplicated or selectively transformed objects be injected? What endpoint checks reject them, and what cannot be inferred about omitted objects? |
+| Index equivocation, poisoning or omission | Index/board + different recipients; index + network observer | Candidate-view consistency, completeness and retrieval privacy | Can recipients be shown different candidate sets? Is there a specified, independently checkable consistency mechanism, or only a service response? |
+| Retrieval manipulation | Retrieval service + capability holder; service + network observer | Access authorisation, pertinence privacy and availability | Can the service replay, substitute, delay or withhold responses while recording capability use, source and timing? What does an authenticated response actually attest? |
+| Cross-role collusion | Publisher+index; index+retrieval; publisher+retrieval; all roles; add network/platform where credible | Correlation across otherwise separate events | Which object IDs, capabilities, account/device identifiers, source addresses, sizes, timestamps and retries join records? Are operators genuinely independent? |
+| Retention and later disclosure | Any service role + platform/account records; later recipient of retained logs | Longitudinal unlinkability and deletion claims | Which logs, backups, moderation and telemetry survive object/locator expiry? Is retention observed, documented or unknown? |
+| Suppression and ambiguous silence | Publisher, index, retrieval and network roles; recipient | Availability and ability to attribute a missing event | Can non-publication, index omission, suppression, ordinary delay and route failure be distinguished within the declared observation window? |
+
+The comparison must separate four evidence classes: endpoint-authenticated protocol facts, service-reported events, externally observed metadata and analyst-inferred correlations. A successful index query does not establish index completeness; a missing result does not establish non-publication; a capability-use record does not establish the human identity of its user; and endpoint rejection does not identify which intermediary altered or withheld an object. Provider policy is not observed retention behaviour. Any claim about absence, deletion or suppression must state its vantage, time window and evidential basis.
+
+This test is a refinement of the common observer model, not a new universal attack claim. If a profile excludes collusion or assumes trusted service behaviour, record that as an explicit assumption and examine the cost of relying on it.
+
 ## 5. Candidate-contribution pressure test
 
 | Candidate | New pressure from this comparison | Current judgement |
