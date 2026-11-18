@@ -68,7 +68,7 @@ These are separate from message-set faults and apply to image-carriage profiles 
 | Moderation/removal/re-encoding | ? | ? | ? | ? | Post visibility/removal event, resulting bytes and independent service evidence |
 | Carrier loss / unavailable object | N | N | N | N | Missing carrier count, fragment coverage and endpoint acceptance result |
 
-Here **N** means the study/profile includes this transformation or loss as a native comparison condition; **?** means it requires a controlled test or the cited source does not establish it. The current matrix does not claim that any named platform applies a specific transformation universally.
+Here **N** means the cited study explicitly includes this transformation/loss as a comparison condition; **?** means the current source review does not establish it and a controlled test would be needed. Applicability alone does not mean a paper has tested the fault. The current matrix does not claim that any named platform applies a specific transformation universally.
 
 For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete. For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete.
 
