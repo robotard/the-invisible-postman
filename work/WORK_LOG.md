@@ -1604,3 +1604,23 @@ The first nine-file write batch was interrupted only after the commits had been 
 ### Exact next action
 
 - Continue T-006 by testing whether these adversarial cases produce a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles. Keep each profile's native guarantees and evidence class intact; do not infer unobserved service behaviour. Then reconcile any material result into the thesis and W1–W4. T-004 route configuration evidence remains ready in parallel. T-007, diagrams, peer review and release remain gated until substantive synthesis stabilises.
+
+
+## 2026-11-18 · Project-maturity wording and chat-footer correction
+
+### User clarification
+
+The phrase “Theory only · No implementation · Not audited.” is to remain accurate project-maturity metadata in the GitHub working/research records. It is not a mandatory sign-off for ordinary assistant responses. The previous response incorrectly appended it despite the repository's existing instruction that it is metadata, not a conversational refrain.
+
+### Changes made
+
+- Strengthened `work/CHATGPT_PROJECT_INSTRUCTIONS.md` and `work/START_HERE.md`: explicitly prohibit appending the status phrase as a routine chat footer.
+- Added matching operating constraints to `work/PROJECT_STATE.md` and `work/WORKPLAN.md`.
+- Added project-maturity metadata and its non-chat-footer semantics to `work/README.md`, `work/WORK_LOG.md`, `work/lookup/TASKS.md` and `work/lookup/TASKS.json`.
+- Kept the paired session digests' project status as structured metadata.
+- Moved the confidence/evidence model's project-assurance statement into its opening metadata rather than leaving it only at the end.
+- Existing README, thesis, W1–W4 and supporting research documents already carry relevant status/assurance metadata; no blanket footer was added to every paragraph or historical log entry.
+
+### Verification
+
+Every changed file was fetched after its write and compared byte-for-byte with the submitted content. Exact saved blob SHAs are recorded in the current session digest. No research claim, task completion status or project maturity level was changed by this administrative correction.
