@@ -113,13 +113,12 @@
         "docs/route-comparison-framework.md",
         "docs/observer-property-matrix.md",
         "docs/prior-art-comparison.md",
-        "docs/multi-message-linkage-and-steganographic-carriage.md",
-        "thesis.md",
         "docs/w4-risks-and-evaluation.md",
-        "docs/traceability.md"
+        "docs/traceability.md",
+        "thesis.md"
       ],
       "depends_on": [],
-      "next_action": "Continue source-auditing each fault-applicability cell in docs/route-fault-evidence-matrix.md against pinned route profiles. OMR incomplete/divergent candidate view is a native retrieval fault; keep duplicate, conflict, ordering and replay semantics at the protected-object/application wrapper layer unless a route-native protocol source establishes otherwise. Preserve SRC-053 as a third-party full-paper assessment of UnifOMR, not our direct paper review: malicious-detector recipient privacy does not itself establish correct/complete candidate recovery, and the reported T/F/B capacity question is unresolved rather than a demonstrated defect. Next audit image-specific transformation cells and Signal/Dropbox/Pigeonhole evidence boundaries; mark documentary claims versus controlled-test dependencies. Then determine whether any result changes a route choice or exposes a material gap beyond prior art; otherwise retain Candidate C as an evaluation method only.",
+      "next_action": "Audit the image-specific transformation cells in docs/route-fault-evidence-matrix.md against SRC-035, SRC-033, SRC-034 and SRC-043, preserving full-text versus abstract/indexed-source limits. Then audit Signal, Dropbox and Pigeonhole evidence boundaries: Signal protocol replay/out-of-order semantics versus product/service receipts; Dropbox direct-invite versus shared-link activity and live account configuration; Pigeonhole specification versus pinned source and concurrent-reader visibility, with katzenqt kept as a separate application assembler. OMR cells must keep incomplete/divergent candidate views native to retrieval while duplicate/conflict/order/replay remain wrapper-level unless a route-native source says otherwise. Preserve StOMR's 32-bit collision/state continuity caveats and SRC-053's unverified UnifOMR T+F<=B capacity question. Mark documentary claims versus controlled tests; Candidate C remains an evaluation method only unless a controlled result changes route choice or exposes a material gap.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
