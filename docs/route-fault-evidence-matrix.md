@@ -144,7 +144,7 @@ This remains a test specification, not an executed experiment. Do not begin diag
 
 ## 7. Links and source boundaries
 
-- [Prior-art comparison §10.3](prior-art-comparison.md#103-decision-relevance-test-and-candidate-boundary)
+- [Prior-art comparison §10.3](prior-art-comparison.md#51-decision-relevance-test-and-candidate-boundary)
 - [Route comparison framework](route-comparison-framework.md)
 - [Observer/property matrix](observer-property-matrix.md)
 - [Multi-message linkage and steganographic carriage](multi-message-linkage-and-steganographic-carriage.md)
