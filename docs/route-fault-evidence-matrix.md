@@ -43,32 +43,37 @@ The three single-image study profiles are separate literature configurations, no
 
 Legend: **N** = fault maps to the route's native unit; **W** = meaningful only if a test wrapper adds set/version semantics; **?** = current source evidence does not establish route behaviour; **—** = not meaningful for the native unit. A mark describes applicability, not successful detection or mitigation.
 
+The common matrix contains only delivery and acceptance cases that can affect route choice. Source-specific parameter, service-UI and implementation questions are separated below; they are not additional universal fault injections.
+
 | Fault / event distinction | Single-image studies (Qiao/MRAS/DRAS) | SRC-043 multi-image set | Dropbox single file | Signal protocol/service | Pigeonhole storage/copy | katzenqt app assembler | OMR retrieval |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Baseline complete delivery | N | N | N | N | N | N | N |
-| Delayed or withheld item | N | N | N | N | N | N | N |
-| Missing object or route-native unit | N | N | N | N | N | N | N |
-| Duplicate item | W | N | W | N* | W | N | W |
-| UnifOMR false-positive candidate overflow / random truncation at fixed PIR capacity | — | — | — | — | — | — | N* |
-| Signal delivery acknowledgement versus optional Read receipt | — | — | — | N* | — | — | — |
-| Signal per-device queue expiry / linked-device inactivity | — | — | — | N* | — | — | — |
-| Signal multi-recipient fanout across shard/chunk transactions | — | — | — | N* | — | — | — |
-| Dropbox viewer-info omission (Guest, direct download or disabled setting) | — | — | N* | — | — | — | — |
-| Dropbox file activity omitting edits made outside Dropbox | — | — | N* | — | — | — | — |
-| Dropbox direct/existing access outside link settings; Can view may still download/share | — | — | N* | — | — | — | — |
-| StOMR signal-tag collision | — | — | — | — | — | — | N* |
-| Stateful counter rollback/fork or concurrent sender state | — | — | — | — | — | — | N* |
-| Conflicting item at an existing position | W | N | W | W | W | N | W |
-| Reordering | W | N | — | N* | W | N | W |
+| Complete-delivery control | N | N | N | N | N | N | N |
+| Delayed or withheld native unit (measured against a declared deadline) | N | N | N | N | N | N | N |
+| Native unit unavailable/missing at the acceptance deadline | N | N | N | N | N | N | N |
+| Duplicate delivery of the same native unit | W | N | W | N* | W | N | W |
+| Conflicting member at an existing position/identifier | W | N | W | W | W | N | W |
+| Reordering where native order/position matters | — | N | — | N* | W | N | W |
 | Stale/replayed protected object or protocol message | W | W | W | N* | W | W | W |
-| Incomplete or divergent candidate view | ? | ? | ? | ? | ? | ? | N |
-| Service acknowledgement without endpoint acceptance | N | ? | N | N* | N | N | N |
+| Incomplete or divergent recipient candidate view | ? | ? | ? | ? | ? | ? | N |
+| Route/service acknowledgement without endpoint acceptance | N | ? | N | N* | N | N | N |
 
-* Signal N* rows have different layers: PQXDH revision 3 warns that an initial message without a one-time prekey may be replayed and accepted; Double Ratchet revision 4 supports out-of-order receipt using skipped message keys bounded by MAX_SKIP, consuming a skipped key when used. These are protocol behaviours, not general application idempotency or multi-message atomicity. Service/product semantics are separate: Sent means sent to the service, Delivered means delivered to a recipient device, Read is optional and requires both parties to enable it; server delivery receipts are distinct from Read receipts. None of these statuses proves human comprehension or endpoint acceptance of an arbitrary logical-message set. Per-device queues and linked-device expiry are service/product behaviour, not protocol guarantees; do not collapse the documented 45-day mailbox, 30-day inactive Desktop queue drop, 30-day primary-phone online requirement and 45-day linked-device unlinking into one TTL. The pinned public Signal-Server FoundationDB source says all messages for the same recipient are committed in one transaction, but a group/multi-recipient insertion can be split across shards and transaction-size chunks; this creates a transaction-boundary question, not an observed partial-fanout failure. Test it only if multi-recipient delivery is within the declared use case; it is not part of the smallest 1:1 fixture. No failure injection or live queue inspection has been performed. Dropbox N* rows describe only documented owner-facing surfaces and permission semantics: Guest identity masking, direct-download omission or disabled viewer info do not establish absence of provider-side records; direct-link settings do not govern direct/existing access; direct Can view membership can still allow download/share/comment; download disabling is a shared-link control, not a direct-sharing control; edits outside Dropbox are not in file activity. The OMR N* rows are source-specific: StOMR's 32-bit PRF signal outputs have an Appendix C.1 all-pairs upper bound of about 0.5 at a 2^16-entry board (not a target-specific false-match estimate), and its stateful counter model leaves production rollback/fork/concurrent-state recovery unspecified. UnifOMR's primary Algorithm 1 truncates a candidate set larger than k̄, while the formal completeness condition bounds only true pertinent messages; the proof does not reconcile false-positive candidates with fixed PIR capacity. SRC-051 records this as a primary-text accounting ambiguity, not a demonstrated failure. SRC-053 raised the same question independently and is now cross-checked against the paper. OMR false positives/candidate selection are not equivalent to duplicated authenticated message-set members.
+*Signal's native protocol and product/service layers must not be collapsed. PQXDH revision 3 warns that an initial message without a one-time prekey may be replayed and accepted; Double Ratchet revision 4 supports out-of-order receipt using skipped message keys bounded by MAX_SKIP, consuming a skipped key when used. These are protocol behaviours, not general application idempotency or multi-message atomicity. Sent means sent to the service, Delivered means delivered to a recipient device, and Read is optional and requires both parties to enable receipts. None proves human comprehension or acceptance of an arbitrary logical-message set.
 
-The source-specific OMR, StOMR, Signal and Dropbox rows are diagnostic probes derived from the cited primary papers, public code snapshot or product documentation; they are not extra universal fault cases and should be selected only when the corresponding route and use case are in scope. In particular, Signal's multi-recipient transaction-boundary probe is conditional on group/multi-recipient delivery; it is not part of the smallest 1:1 fixture. The UnifOMR capacity question and StOMR collision/state cases are parameter/model checks, not ordinary delivery-fault injections. Dropbox viewer-info and permission rows test owner-facing evidence scope, not backend event absence.
+The image studies use different paper-specific transformations and configurations; the three single-image profiles are not one common live deployment. For SRC-043, repeated copies of a numbered fragment are native redundancy, while a conflicting fragment at an existing number is a set-integrity case. Its partial byte reconstruction remains distinct from authenticated endpoint acceptance.
 
-Apply only faults meaningful to the native route. Mark non-applicable cases rather than manufacturing a common transaction. Pigeonhole storage/copy and katzenqt application assembly are separate columns because a conflict or reordering fault may be meaningful only at the application chunk-chain layer. The raw Pigeonhole copy has no common fragment-position manifest in the inspected sender API.
+Pigeonhole storage/copy and katzenqt application assembly remain separate: the raw sender API has no common fragment-position manifest, while katzenqt has application-level chunk-chain semantics. Do not infer atomic storage from application-level gating or reader visibility from a sender's terminal Copy result.
+
+### Route-specific diagnostic checks (not universal fault injections)
+
+| Profile / source | Diagnostic question | Evidence boundary |
+|---|---|---|
+| **UnifOMR (SRC-051)** | Does fixed candidate capacity account for false-positive candidates as well as true pertinent messages? Algorithm 1 randomly truncates candidate sets above k̄; the completeness condition bounds true pertinent messages but does not explain how all true matches survive truncation. | Primary-text capacity-accounting ambiguity, not a demonstrated failure; no implementation or joint candidate-distribution experiment reproduced. |
+| **StOMR (SRC-050)** | What concrete collision margin follows from 32-bit PRF signal outputs, and how are sender/receiver states recovered after rollback, fork or concurrent use? | Appendix C.1's all-pairs upper bound is about 0.5 at a 2^16-entry board, not a target-specific false-match estimate. Production rollback/fork/concurrent-state recovery is unspecified. |
+| **Signal (SRC-038)** | What do Sent/Delivered/optional Read receipts establish; what happens at per-device queue expiry/inactivity; can multi-recipient fanout cross shard/transaction boundaries? | Product statuses and queue lifecycle are not protocol guarantees. Public server source shows same-recipient writes grouped transactionally and multi-recipient work potentially chunked; no failure injection or live service observation. Include fanout only for a declared multi-recipient use case. |
+| **Dropbox (SRC-039)** | What does the owner-facing activity/viewer-info surface omit for Guest, direct-download, disabled-setting and direct/existing-access paths? | UI omission is not backend event absence. Direct-link settings do not govern all direct/existing access; Can view membership may still allow download/share/comment. |
+| **Pigeonhole (SRC-040)** | Can a reader observe a successful destination-write prefix before a later envelope fails? Does same-WriteCap retry reprocess or return cached status? | Reader visibility remains untested. The 30-minute Copy dedup cache returns terminal status for same-WriteCap reissue during TTL; no-retry reads are required for timed BoxIDNotFound observations. RocksDB Put acceptance is not crash-durability evidence. |
+
+Apply only faults meaningful to the native route. Source-specific checks are parameter/model or product/service evidence questions, not a second copy of the common delivery matrix. Dropbox viewer-info and permission checks concern owner-facing evidence scope, not backend event absence. The OMR checks concern recipient retrieval, not duplicate or conflicting authenticated message-set members.
 
 ### Image-specific transformation faults
 
