@@ -44,6 +44,6 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Sequence and dependencies
 
-T-006 thesis-first synthesis (complete for current evidence set); T-013 Candidate D formalisation (complete for current evidence set); T-007 final coherence review (complete after T-013 integration); T-014 APIR count-plus-point feasibility test (in_progress); T-001–T-003 source review (blocked on primary-source access); T-004 route evidence (in_progress, gated on controlled access); T-005 protocol analysis (complete); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
+T-006 thesis-first synthesis (complete for current evidence set); T-013 former Candidate D comparative model (complete, prior-art only); T-014 APIR server-dependency audit (complete); T-007 final architecture-alignment/consistency review (complete); T-001–T-003 source review (blocked on primary-source access); T-004 route evidence (blocked pending controlled access); T-005 protocol analysis (complete); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
 
 Detailed next actions, targets, blockers and dependencies are stored once in the keyed JSON values. Do not duplicate a second task plan here.
