@@ -1846,3 +1846,25 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 - Artifact pin: yiannisdt/StOMR main c28d02d5dddf6360e9d2d39e5335ed77f73645e0, updated 2026-11-03. Inspected README, artifact appendix, CPU/GPU CLI, CPU setup/run/decode and GPU run/decode paths, and the static/mock test script. The CLI/core executes a local synthetic tag/payload matching-compression-decode pipeline; it is not a networked bulletin-board/detector deployment. No OMR-KEM setup/encapsulation/decapsulation path appears in the inspected entry points.
 - No build, tests, benchmark or code execution performed. The code review is source inspection only.
 - SRC-050, prior-art §10, thesis, W1–W4, observer matrix and contribution assessment updated. UnifOMR SRC-051 remains abstract-level because its ePrint PDF request still returns HTTP 403.
+
+## 2026-11-18 · Downstream UnifOMR integration pressure test
+
+### Work completed
+
+- Located and source-pinned a third-party downstream UnifOMR integration in Nighthawk Apps' wallet and lightwalletd repositories: wallet commit 44d41aecd5d4944cb1f43731635dfd2e6164ca4d (2026-11-13), server commit d5ea5730be86501f65534b74a986f56d22c1d560 (2026-11-10). Registered as SRC-052; explicitly not the paper authors' official artifact or a peer-reviewed source.
+- Inspected the server feature gate, digest and PIR handlers, UnifOMR detector, PIR server, clue-key directory, client sync path and verification checklist.
+- Confirmed the integration's own source describes an opt-in `fhe-omr` server feature; Cargo default features are empty and the default server is trial-decryption only. The wallet docs describe OMR as experimental/not maintained until mainnet contracts are live.
+- The service returns a digest `complete` flag and slot-to-height map, stops before cache holes, truncates only at whole-height boundaries, and lets the client clamp its scan cursor so uncovered heights are retried. It uses striped batch PIR for matching payloads and retains full-window trial-decryption fallback.
+- The integration also includes a clue-key registration/ownership proof binding network byte, key version, payment public key and clue public key; fixed-size decoy clue keys and timing padding; rate/size/concurrency limits; and explicit service-side completeness/recovery semantics.
+- The repository's checklist reports a testnet registration/digest matrix, but funded end-to-end receive/send and full cross-client parity remain unchecked. These are self-reported claims; no build, test, live service or funded transaction was run or independently reproduced.
+- Added SRC-052, linked it from the route framework, and integrated the case study into prior-art §10, thesis related work, W1–W4, observer matrix, contribution assessment and RQ7 traceability.
+
+### Research consequence
+
+- Generic range-completeness flags, slot maps, whole-unit truncation and retryable cursors are already demonstrated in an application-level OMR integration; they cannot be claimed as novel.
+- This does not itself solve arbitrary multi-carrier manifest membership, whole-logical-message acceptance, freshness or cross-route evidence provenance. Those distinctions must be made explicit and shown to alter a route decision before Candidate C survives.
+- T-006 now tests that narrower boundary. UnifOMR's own full paper remains abstract-level in this review; StOMR is full-text reviewed.
+
+### Exact next action
+
+- Compare the remaining multi-carrier acceptance/freshness/evidence requirements against the image, file/link and conventional messaging profiles. Determine whether the route-agnostic contract adds a decision-relevant invariant beyond StOMR, UnifOMR's available abstract, and the SRC-052 integration; narrow or retire Candidate C if not.
