@@ -1725,3 +1725,30 @@ The new axis is more precise than generic “multipart delivery”, but it is no
 ### Exact next action
 
 - Audit set-level atomicity and partial visibility against SRC-043, Pigeonhole AllOrNothing, and the native scopes of Dropbox/Signal. Define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result. T-004 remains available for pinned client/release/account evidence; no deployment claim is authorised.
+
+## 2026-11-18 · T-006 source-level atomicity audit and T-004 route pins
+
+### Work completed
+
+- Pinned the current public route references: Dropbox's direct-invitation versus view-only shared-link distinction; official Signal Android/iOS/Desktop client release tags; and the mutually compatible Katzenpost source set (`katzenpost v0.0.90`, `thin_client 0.0.23`, `katzenqt 0.0.2`) with resolved commit IDs.
+- Read the Pigeonhole specification and inspected selected source files at `katzenpost v0.0.90` / commit `d5a6349a34c4a2d4bca587f4be86ce92f2873b12`: client envelope construction, courier Copy processing/dispatch, replica write handling/state, and Copy dispatch/status tests. No code or tests were executed.
+- Source observation: `processCopyCommand` dispatches decoded destination envelopes sequentially; a later failure returns `CopyStatusFailed` with a 1-based failed-envelope index. Earlier successful destination writes are independently persisted by the replica state path. No rollback of that successful prefix appears in the inspected failure path. Temporary-stream tombstoning is launched on the success path after all envelopes, not before an early failure return.
+- This creates a specification/implementation question because the Pigeonhole specification claims reader-side atomic success/failure. It does **not** establish that a recipient can read the prefix: reader capability distribution, poll timing and any application-level gate remain material.
+- Inspected pinned `katzenqt 0.0.2` README and receive path. The app persists received BACAP pieces but only dispatches a message to the conversation log when its own assembler finds a terminal `F` chunk and contiguous decodable chain. This is an application-level display/acceptance gate, not AllOrNothing or atomic storage. The README identifies the client as pre-alpha and warns against relying on it for anonymity/security/privacy.
+- Refined route framework §5.9, thesis §8.8, W4 E5, the contribution/bias assessment and observer/property matrix to distinguish specification claim, server write behaviour and application-level message assembly.
+- Specified the smallest fair evaluation: two image carriers; one single-file object; raw Pigeonhole AllOrNothing with an already-authorised reader and a capability-shared-after-success control; and a separate katzenqt application-assembly observation. Faults: success, delayed second write, deterministic second-write failure after first success, and retry after uncertain acknowledgement. Record storage, reader visibility, app display, endpoint acceptance, cleanup/rollback and observer events separately. Signal remains outside this first atomicity experiment because the cited protocol specs do not define arbitrary multi-message transactions.
+- Updated T-004 to `in_progress` with public source pins and an explicit runtime-configuration blocker. Updated T-006's next action to inspect any application-level commit barrier/capability handoff and finish the read-side test specification.
+- Added the standing work-cycle rule to START_HERE, CHATGPT_PROJECT_INSTRUCTIONS and WORKPLAN: reconcile operational and substantive research documents, execute all unblocked work, and ask only for genuinely user-only input/access/decisions.
+
+### Evidence boundaries
+
+- The Pigeonhole partial-prefix issue is a **potential reader-visibility gap**, not a confirmed defect or vulnerability. No reader-side integration test, code execution or deployment was performed.
+- The katzenqt assembler is a separate app-level mechanism. It does not validate AllOrNothing, and the client is pre-alpha/not suitable to rely on for privacy.
+- Signal tags pin public client source releases, not backend/service version or account settings.
+- Dropbox documentation pins the access-path distinctions, not a live account, link configuration or actual viewer/activity events.
+- Katzenpost source tags are reproducible build pins, not a running deployment, configured topology or independent audit.
+- No implementation, platform experiment, reproduction, formal proof, independent review or audit was performed.
+
+### Exact next action
+
+- Check the pinned Pigeonhole application path for any explicit reader commit barrier or capability handoff that could explain the specification's reader-atomicity claim; distinguish it from the separate katzenqt chunk-assembly gate. Then finalise the smallest read-side fault-test specification against SRC-043 multi-image recovery and the single-file baseline. Keep T-004 runtime configuration blocked only at the point it genuinely needs controlled accounts/deployment access.
