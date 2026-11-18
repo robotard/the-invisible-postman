@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-17 · discovery decomposition and route observer integration",
+  "checkpoint": "2026-11-18 · discovery event-chain adversarial pressure test integrated",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_metadata_only",
@@ -29,7 +29,7 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md in staging. §8.2 retains six evidence-bounded route profiles; §8.4 now decomposes discovery into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/authorisation and endpoint association, with a compositional observer analysis. §8.8 and §10.2 separate candidate enumeration, retrieval/authorisation, endpoint validation and conversation association across route profiles. No deployed route advantage is established; originality and review readiness remain open.",
+    "thesis": "One active manuscript at thesis.md in staging. §8.2 retains six evidence-bounded route profiles. §§8.4, 8.8 and 10.2 pressure-test bootstrap substitution, malicious publication, index equivocation, retrieval manipulation, cross-role collusion, retention and suppression. The thesis distinguishes endpoint-authenticated facts, service-reported events, externally observed metadata and analyst-inferred correlations. No deployed route advantage is established; originality and review readiness remain open.",
     "research_units": "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
     "multi_message_model": "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies. Discovery is decomposed into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; these do not authenticate one another.",
@@ -136,7 +136,7 @@
       "T002": "SRC-047 README inspected; implementation/model assets not retrieved. SRC-046 OpenReview access blocked by browser verification; SRC-048 IEEE abstract/metadata only.",
       "T003": "SRC-049 indexed abstract summary located; full paper/formal proof/complete results remain unreviewed. Selected code read only, not run/audited."
     },
-    "discovery_model": "The thesis and supporting documents distinguish bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint conversation association. Publication privacy, retrieval pertinence privacy, access authorisation, sender anonymity, endpoint authenticity, availability and conversation continuity are separate properties. OMR/GOMR, Oblivious Signaling, Remise and Echomix/Pigeonhole retain distinct threat, trust, collusion and cost assumptions."
+    "discovery_model": "Discovery is decomposed into bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation, retrieval, extraction, endpoint validation and conversation association. Seven adversarial cases are integrated: bootstrap substitution, malicious publication, index equivocation/suppression, retrieval manipulation, cross-role collusion, retention/later disclosure and suppression/delay ambiguity. Endpoint-authenticated facts, service-reported events, observed metadata and inferred correlations remain distinct; index response does not prove completeness, and silence does not identify why a carrier is absent. No discovery mechanism, index-consistency mechanism or deletion guarantee is selected."
   },
   "completed": [
     "Rewrote thesis abstract and tightened central research question/proposition around endpoint-authenticated message semantics, replaceable carriage and observer-bounded evidence.",
@@ -178,7 +178,7 @@
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed."
   },
   "next": [
-    "T-006: pressure-test the discovery event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression.",
+    "T-006: test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles; preserve native guarantees and evidence classes, and do not infer unobserved service behaviour.",
     "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits.",
     "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits.",
     "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks.",
@@ -276,9 +276,9 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "f51470c42d51b20ae9312b63d975cddac0835a6c",
-  "immediate_next_action": "Pressure-test the discovery event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression; preserve the distinction between protocol properties, assumptions and observer inference.",
-  "latest_verified_project_head": "b83a691cdba8a1fdb88195036cd9b5a2a6a84b0e",
+  "latest_commit_before_json_digest_refresh": "c7635b453f2fc310f0a278a8d522e8aa4986a9b8",
+  "immediate_next_action": "T-006: test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles; preserve native guarantees and evidence classes, and do not infer unobserved service behaviour.",
+  "latest_verified_project_head": "c7635b453f2fc310f0a278a8d522e8aa4986a9b8",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -439,16 +439,22 @@
     "project_instructions": "Copy-ready Project Instructions now explicitly require in-session scope caching with baseline blob SHAs; no user local clone is required."
   },
   "verified_current": {
-    "work/PROJECT_STATE.md": "e9e17d1f6c318565be9477aa25b735654ce75fce",
-    "work/WORK_LOG.md": "6228c8316733432af093795b3bacab28f1373494",
-    "work/lookup/TASKS.md": "0ae365bceac7971d543c72159bb5a930cba7dfe5",
-    "work/lookup/TASKS.json": "91803f2fc91ac876362674ac3246ae40cf56a21d",
-    "thesis.md": "deaee671bff4f15c805f89d836c18dd3dd4f1a5b",
-    "docs/w3-architecture.md": "9ad8f905ce2a015dfeda5ebf3ba51556dc4bf46b",
-    "docs/multi-message-linkage-and-steganographic-carriage.md": "49a31755a13dd47f7b0ff80833b1711250c68b4f",
-    "docs/w4-risks-and-evaluation.md": "2393502288434425e4cbaae1000e0a95a0aba3a2",
-    "docs/traceability.md": "838b3b3133ea496335e7a2b32d284c2e031b5fae",
-    "docs/route-comparison-framework.md": "e701005693341d35565b7c18a17db81537cebc18",
-    "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
+    "work/START_HERE.md": "36749a44b6596fcc6b3592425e682554e44a5fc7",
+    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "62e36bf75dd0519e7f1983c847013af2134d9f9d",
+    "work/PROJECT_STATE.md": "3cabe3e0a82db623c87c7f75a2b2f1dfcd690191",
+    "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a",
+    "work/WORK_LOG.md": "7240fa8792a461e7e85fe2cf42c3a64e829cf580",
+    "work/SESSION_DIGEST.md": "6eb7e20bc34362f421aa605eb035e5eb6cd39c48",
+    "work/lookup/TASKS.md": "7791fcc56b7f0b622b3850cddf9a09186ce4a73a",
+    "work/lookup/TASKS.json": "fbe91a5af3e68a3896bd9139cfe9a700e3bf07cd",
+    "README.md": "9f3d4d36a930d0a6ad14fe828e719f841b42a294",
+    "thesis.md": "f87c6f4b2a8eb9baccd4a4976335f41b0d6ac6a0",
+    "docs/w2-threat-model.md": "ca9e83731a32052d7188db981934e6886e328d1f",
+    "docs/w3-architecture.md": "a4d69b9c6e6247635c85b9537b0e44c1555960e4",
+    "docs/w4-risks-and-evaluation.md": "664598b222d98bada990d8b258837d5840c1a1ad",
+    "docs/multi-message-linkage-and-steganographic-carriage.md": "64c9cb8f8b3a820ba5b4edbb535f76c849cfcd15",
+    "docs/observer-property-matrix.md": "7f700e7d3ca5f28cf8d3635b345de9893b5f1e76",
+    "docs/route-comparison-framework.md": "b68ebb2b8db2371b95147718d95c48cccc2a99e8",
+    "docs/traceability.md": "9e5eebbcf3b09840dd2d267c45ef01c71abac59e"
   }
 }
