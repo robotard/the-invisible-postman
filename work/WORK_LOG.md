@@ -1,3 +1,10 @@
+# Work Log — The Invisible Postman
+
+**Project maturity:** Theory only · No implementation · Not audited.  
+**Record rule:** Entries document the work actually performed and its evidence limits. This metadata is not a required chat-response footer.
+
+---
+
 ## 2026-11-16 · Expanded thesis related-work pressure test
 
 ### Work performed
