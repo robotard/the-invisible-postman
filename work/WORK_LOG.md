@@ -25,7 +25,7 @@
 
 ### Next
 
-Continue T-006 by auditing the image-specific transformation cells in `docs/route-fault-evidence-matrix.md` against SRC-035, SRC-033, SRC-034 and SRC-043. Preserve full-text versus publisher-indexed/partial evidence boundaries; then continue Signal, Dropbox and Pigeonhole source boundaries.
+Continue T-006 with the live workplan's next action: design the Pigeonhole successful-prefix/later-failure concurrent-reader probe from the pinned v0.0.90 courier/replica write path and thin-client v0.0.23 API/tests. Then finish Signal and Dropbox product/service evidence boundaries. Image transformation cells have already been source-audited with unknowns preserved.
 
 ---
 
