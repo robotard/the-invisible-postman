@@ -2243,3 +2243,25 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Continue the matrix audit against the remaining route-specific source profiles and evaluate whether the current fault cases are minimal and decision-relevant. Prioritise the Pigeonhole successful-prefix/later-failure reader-visibility test design and the unresolved product/service evidence boundaries for Signal and Dropbox; keep actual tests gated on access to controlled configurations/deployments.
+
+## 2026-11-18 · Candidate D formalisation and APIR count-plus-point path
+
+### Work completed
+
+- Directly inspected the full APIR paper through the USENIX Security 2023 PDF and the full AAD paper through the Yale-hosted CCS 2019 PDF. Rechecked the APIR companion repository at current-main commit 7a7f2041bc1e0907ef089f8e8e55252ef7f18e0f; inspected its predicate client/server path and FSS/query code. Rechecked the AAD C++ proof headers at commit 2f31566bbdac4891df45eee2e9268bc4681533dd. No code was built or run.
+- Clarified the prior-art boundary: APIR predicate queries return authenticated weighted aggregates, not arbitrary result-set enumeration; AAD provides complete keyed lookup and append-only/fork-consistent proofs but not PIR-style query privacy. AAD's formal assumptions are q-SBDH/q-PKE; its implementation security estimate is separately reported under q-SDH. The abstract reports a 94 KiB lookup proof while the evaluation reports a 95 KiB average.
+- Formalised Candidate D's separate obligations in docs/prior-art-comparison.md §4.2: record soundness, predicate completeness, snapshot consistency, append/fork consistency, query privacy, admission evidence, manifest closure and endpoint acceptance. Added an explicit leakage function, source/cost comparison and the pre-admission-omission indistinguishability boundary.
+- Added the Candidate D observer/collusion matrix to docs/observer-property-matrix.md §4.3 and updated the thesis and contribution/bias assessment to preserve the distinction between authenticated snapshot completeness, sender intent, service admission and endpoint object closure.
+- Identified a conditional APIR composition path: an authenticated FSS predicate count plus authenticated point retrieval of detector-returned candidate indices. If the same OMR predicate is efficiently FSS-shareable and both query types use one immutable snapshot, unique authenticated matching records equal to the authenticated count establish candidate-set completeness relative to that snapshot. Omission is detected and causes rejection; availability is not guaranteed. This remains a composition hypothesis, not a proved or evaluated construction.
+- Updated T-013 to test the count-plus-point path, including FSS expressivity for a batched OMR signal set, same-epoch binding, query-count padding, signal collisions, manifest closure and admission evidence. T-007 remains complete for the prior checkpoint and must be rerun after T-013 integration.
+
+### Verification and limits
+
+- The APIR and AAD source-register updates, prior-art section, observer matrix, thesis and contribution assessment were fetched after each write and matched the submitted contents exactly.
+- APIR's current public code is a PGP-specific proof of concept; its predicate path returns a scalar aggregate and its SUM branch is unimplemented. The README warns against production use. AAD code exposes complete-membership and append-only proof paths. Neither codebase was built, tested or audited.
+- The count-plus-point argument depends on a common immutable database snapshot and an FSS for the exact OMR signal predicate. The OMR detector may still cause denial of service; padding and dynamic epoch binding are unresolved. The count is over signal matches, including collisions, not necessarily true logical messages.
+- SRC-056's full range-APIR paper remains unavailable; SRC-059 remains abstract/introduction-level; SRC-060 is reviewed within its stated semi-honest/trusted-party model. No novelty claim is made. No construction, formal proof, implementation, benchmark, controlled test or independent review was completed.
+
+### Exact next action
+
+- Test whether the OMR signal-membership predicate (including StOMR's batch of public PRF signals) fits an efficient APIR FSS function class; establish whether the APIR predicate count and point-query proofs can be pinned to the same immutable epoch; quantify candidate-count padding and collision/overflow behaviour; and compare the count-plus-point composition against SRC-056–060 and the OMR-family protocols. Then rerun T-007 across all 60 registered source IDs and the updated thesis/supporting documents.
