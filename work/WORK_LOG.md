@@ -1752,3 +1752,25 @@ The new axis is more precise than generic “multipart delivery”, but it is no
 ### Exact next action
 
 - Check the pinned Pigeonhole application path for any explicit reader commit barrier or capability handoff that could explain the specification's reader-atomicity claim; distinguish it from the separate katzenqt chunk-assembly gate. Then finalise the smallest read-side fault-test specification against SRC-043 multi-image recovery and the single-file baseline. Keep T-004 runtime configuration blocked only at the point it genuinely needs controlled accounts/deployment access.
+
+## 2026-11-18 · Receiver acceptance versus partial reconstruction
+
+### Work completed
+
+- Extended SRC-043 review with exact native semantics: the paper's loss experiment uses 1,000 images, 208 fragments and redundancy r=4 (832 embedded carriers plus 168 non-watermarked images). Its success metric is restored bytes / total file bytes; full recovery is reported at 30% carrier loss and 61.1% byte recovery at 80% loss. The extraction procedure majority-votes duplicate fragment copies and marks missing fragment bytes with `?`.
+- Read the publisher's full method and experiment text. The result is partial byte reconstruction, not authenticated logical-message acceptance or proof of sender/session/set authenticity.
+- Inspected the pinned thin-client v0.0.23 sender API and tests. `start_resending_copy_command` accepts the temporary stream WriteCap and optional courier identity/queue, then waits for the courier result; it exposes no recipient ReadCap or reader-side commit control. Multi-channel tests read after success; the existing failure test deliberately fails on the first envelope. No inspected test covers a successful prefix followed by a later failure with a concurrent reader.
+- Corrected the minimum image comparison: preserve SRC-043's native redundancy with a small semantic fixture of S=2 fragments and r=4 carriers per fragment (8 stego images); test one redundant copy missing/delayed and all copies of one fragment missing. Keep the paper's 1,000/208/r=4 benchmark separate; do not transfer its reported percentages to the small fixture.
+- Integrated the distinction between carrier receipt, fragment extraction, byte-level reconstruction, complete-set validation and endpoint acceptance into route framework §5.9, thesis §8.8, W4 E5, the contribution/bias assessment, observer/property matrix and multi-message analysis §6.
+- Updated T-006's next action: compare the existing receiver-acceptance state model with the six route profiles and closest prior art; identify already-known mechanisms versus any potentially defensible cross-route invariant/evaluation contribution. Updated PROJECT_STATE accordingly.
+
+### Evidence judgement and limits
+
+- SRC-043 explicitly tolerates missing carriers and can output a partial file. Its success rate is a byte-recovery metric; it is not an authenticated-message success rate.
+- Pigeonhole's spec/code/test distinction remains unresolved at the reader boundary: sequential persisted writes and sender-side completion status are documented, but no concurrent reader test has been run.
+- `katzenqt 0.0.2` app-level chunk assembly is a separate display/acceptance gate, not AllOrNothing or atomic storage; the client is pre-alpha and unsuitable to rely on for privacy.
+- No implementation, test execution, platform experiment, reproduction, deployment, formal proof, independent review or audit was performed.
+
+### Exact next action
+
+- Compare the existing endpoint receiver-acceptance state model with SRC-043, Pigeonhole/katzenqt, Dropbox single-object and Signal per-message scopes plus the closest prior art. State precisely which elements are standard/known, which are merely evidence gaps, and whether any cross-route invariant or evaluation method remains decision-relevant. Do not inflate the framework into a novelty claim.
