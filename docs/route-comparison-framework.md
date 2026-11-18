@@ -316,6 +316,8 @@ Use one of four outcomes per field: **supported by source**, **measured in the d
 9. Record negative results, non-comparable dimensions and route-specific failure cases.
 10. Revise the research scope if the image route produces no distinct decision-relevant finding.
 
+Operational worksheet: use the [route/fault/evidence matrix](route-fault-evidence-matrix.md) to instantiate the common endpoint fixture, route-native fault cases and three evidence ledgers. It is a documentary test specification until controlled route configurations are pinned and tests are executed.
+
 Operational worksheet: use the [route/fault/evidence matrix](route-fault-evidence-matrix.md) to instantiate the common endpoint fixture, route-native fault cases and three evidence ledgers. It is a documentary test specification until the controlled route configurations are pinned and the tests are executed.
 
 ## 8. Current analytical judgement
