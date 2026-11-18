@@ -1,5 +1,29 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · MRAS/DRAS author-code review and T-006 closure
+
+### Work performed
+
+- Pinned and inspected the README-labelled MRAS repository at `R4K35H-K/MRAS-JPEG-Steganography`, commit `a14777047f82715bdbefcfed2cbb85427add23bc`, and DRAS repository at `R4K35H-K/DRAS-JPEG-Steganography`, commit `ad81f8785b473e03765ec3a859dad7ceb73ff9ea`.
+- MRAS code exposes same-QF JPEG recompression, iterative block preprocessing, lattice/frequency selection and STC embedding; its demo uses ten sample covers, 10% payload, QF80 and local MATLAB `imwrite`. The passed `midFreqPattern` is not used by `MRAS_GetLoc`; the current code randomises all 63 AC frequency lattices. The post-processing branch is triggered by an immediate post-write extraction check, not the demo's later channel-recompression BER result; full-paper Algorithm 3 is unavailable to reconcile that path.
+- DRAS code exposes downward-QF recompression, odd-multiple quantisation-ratio selection, predictive channel modelling and STC. Its demo uses ten sample covers, 10% payload and local MATLAB QF95+-to-QF80 recompression. If STC capacity is short, the embedder truncates the requested message and the demo computes BER over the resulting actual length; requested and achieved payload must be reported separately.
+- Both repositories process the first JPEG component, load a sample-message prefix separately for each image, include Windows `.mexw64` binaries without MEX source/build instructions, and omit full benchmark datasets, baseline implementations and live-platform test harnesses. Their code demonstrates per-image JPEG-channel routines, not cross-image message linkage. No code was built or run.
+- Rechecked publisher/ResearchGate/author pages for SRC-033/034/036. The complete MRAS/DRAS papers remain inaccessible; a bounded GitHub search found no matching public SRC-036 implementation. Publisher-indexed text remains partial evidence.
+- Integrated findings into SRC-033/034/036, prior-art comparison, multi-message carriage analysis, route-comparison framework, route/fault matrix and thesis evidence table. Exact post-write read-back verified.
+- T-006 is complete for this documentary checkpoint: the route/fault matrix is minimalised and decision-relevance assessed; W1–W4, traceability, prior-art and thesis records are reconciled. Candidate C remains a conditional evaluation method only; no route winner, mechanism-level novelty or image-carriage advantage is established.
+
+### Evidence limits
+
+- Full papers, complete method/result tables, platform acquisition details and limitations for SRC-033/034/036 remain unavailable.
+- Paper-reported LinkedIn/WhatsApp/X results remain author-reported; the available MRAS/DRAS demos are local simulations and were not reproduced.
+- No independent code review, build, test, platform interaction or security audit was performed.
+
+### Next
+
+Continue T-001 by seeking complete SRC-033/034/036 manuscripts through author or institutional access. The inspected code is useful source evidence but does not replace the papers; do not stall unrelated thesis work if access remains blocked. Then continue T-002 and T-003 source access.
+
+---
+
 ## 2026-11-18 · Route/fault matrix minimality audit and Candidate C reassessment
 
 ### Work performed
