@@ -105,12 +105,15 @@
       "priority": 1,
       "targets": [
         "thesis.md",
+        "docs/w1-research-framing.md",
+        "docs/route-comparison-framework.md",
+        "docs/w2-threat-model.md",
         "docs/w3-architecture.md",
-        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "docs/w4-risks-and-evaluation.md",
         "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles. Preserve each profile's native guarantees and evidence class; do not infer unobserved service behaviour. Reconcile material findings into thesis and W1–W4. T-004 route configuration evidence remains ready in parallel.",
+      "next_action": "Source-audit the six-profile adversarial discovery matrix in route framework §5.8 and thesis §8.8 row by row against the source register and review boundaries; tighten unsupported claims, preserve each profile's native guarantees/evidence class, and do not infer unobserved service behaviour. Then continue T-006 synthesis or advance ready T-004 route configuration evidence where authoritative sources are obtainable.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
