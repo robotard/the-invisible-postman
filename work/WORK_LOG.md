@@ -1,5 +1,34 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Direct review of UnifOMR primary paper and capacity-accounting analysis
+
+### Work performed
+
+- Read the complete 56-page user-supplied `910.pdf` for UnifOMR (ePrint 2026/910), including its OMR definitions, threat model, OMR-to-PIR reduction, construction, Theorem 6.1, parameter selection, benchmarks, appendices and open questions.
+- Upgraded SRC-051 from abstract-level to direct primary-paper review. Recorded the two-round RLWE/BFV clue-detection plus batch-PIR retrieval flow, the OMR-to-PIR reduction and stated 1/N² security loss, the asymptotically linear digest/recipient-work trade-off, author-reported benchmark parameters, and the separation between malicious-detector privacy and honest-but-curious completeness/soundness.
+- Cross-checked SRC-053's candidate-capacity concern against Algorithm 1 and Theorem 6.1. The paper bounds k̄ by true pertinent messages, but Algorithm 1 randomly truncates a candidate set larger than k̄; the proof does not explain how true matches survive when false-positive candidates consume capacity. At N=2^19, the stated per-item false-positive bounds permit expected false-positive counts up to approximately 16 (Param1) and 0.125 (Param2). Recorded this as a source-text accounting ambiguity, not a demonstrated failure.
+- Inspected the paper's cited GitHub repository README and tree. Its README identifies a proof-of-concept for the 2021 OMR paper; the inspected tree does not expose identifiable UnifOMR/VecBatchPIR code or 2026 evaluation scripts. No code was built or run.
+- Integrated the primary-paper review into the source register, prior-art comparison, thesis §8.4, route/fault/evidence matrix, W2, W3, W4 and observer/property matrix.
+
+### Research judgement and limits
+
+- UnifOMR materially strengthens the established prior-art baseline for private candidate retrieval and its concrete efficiency trade-offs; it is not a complete publication/index integrity or endpoint message-set acceptance protocol.
+- The paper explicitly leaves malicious single-server detector integrity open. Privacy against a malicious detector must not be conflated with correct/complete candidate output.
+- The fixed-capacity candidate truncation and formal completeness statement require clarification or an exact implementation/author response. The expected false-positive calculations sum the stated per-message bounds; they do not assume independence and do not establish an observed failure.
+- The cited repository check is bounded to its README/tree and does not prove that no separate UnifOMR artifact exists elsewhere.
+- Author-reported performance figures, proofs and implementation behaviour were not reproduced or independently audited.
+
+### Verification
+
+- Each changed thesis/research file was fetched after writing and exact saved content was verified.
+- No UnifOMR build, test, benchmark reproduction, formal re-proof, independent review or security audit was performed.
+
+### Next
+
+Continue T-006 by auditing the image-specific transformation cells in `docs/route-fault-evidence-matrix.md` against SRC-035, SRC-033, SRC-034 and SRC-043. Preserve full-text versus publisher-indexed/partial evidence boundaries; then continue Signal, Dropbox and Pigeonhole source boundaries.
+
+---
+
 **Project maturity:** Theory only · No implementation · Not audited.  
 **Record rule:** Entries document the work actually performed and its evidence limits. This metadata is not a required chat-response footer.
 
