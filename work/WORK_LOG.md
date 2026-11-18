@@ -2301,7 +2301,7 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 
 ### Verification and limits
 
-- The new supporting note, thesis insertion, traceability update and task/state records were committed. Exact post-commit read-back verification is being completed.
+- The new supporting note, thesis insertion, traceability update and task/state records were committed. All seven changed files were fetched after commit; exact saved-content checks passed for the new note, thesis principle, traceability, task registry, state and log.
 - No protocol, carrier, transport, manifest, linkage mechanism, cryptographic construction or security benefit is selected or claimed. No implementation, experiment, proof, benchmark or independent review was performed.
 
 ### Exact next action
