@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · Endpoint-only architecture correction integrated; T-013 comparative prior-art disposition and T-014 APIR dependency audit complete; T-007 consistency review reopened  
+**Checkpoint:** 2026-11-18 · Endpoint-only architecture correction integrated; T-013 comparative prior-art disposition and T-014 APIR dependency audit complete; T-007 post-correction consistency review complete  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
