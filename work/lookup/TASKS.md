@@ -1,5 +1,8 @@
 # Internal work backlog and continuation keys
 
+**Project maturity:** Theory only · No implementation · Not audited.  
+**Scope:** Internal task coordination only; task status does not imply implementation, testing, audit or independent review.
+
 **Canonical registry:** [TASKS.json](TASKS.json)  
 **Schema:** `tip.work.registry.v3`  
 **Rule:** JSON is the keyed source for task lookup; this file is its human-readable index. The thesis and enduring research records remain authoritative for substantive work.
