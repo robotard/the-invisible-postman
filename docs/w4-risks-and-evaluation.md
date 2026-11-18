@@ -338,7 +338,7 @@ The evaluation must distinguish a baseline that merely rotates carriers or varie
 
 Proposed acceptance conditions:
 
-* An actor-by-actor metadata and observer inventory is recorded, including bootstrap, publication/indexing, candidate enumeration, pertinence/authorisation, retrieval and endpoint association.
+* An actor-by-actor metadata and observer inventory is recorded for external prior-art comparators, including bootstrap, publication/indexing, candidate enumeration, pertinence/authorisation, retrieval and endpoint association; these are not assumed architecture roles.
 * Privacy claims are scoped to a named event/property and observer; publication privacy, retrieval pertinence privacy, access authorisation, sender anonymity, endpoint authenticity, availability and conversation continuity are not treated as interchangeable.
 * Out-of-band bootstrap/capability channels and collusion assumptions are included in the observer inventory rather than treated as invisible setup.
 * Bootstrap substitution, publication poisoning, index equivocation, retrieval manipulation, cross-role collusion, retention and suppression are each represented as distinct scenarios with an explicit actor, observation window and failure outcome.
