@@ -190,7 +190,7 @@ No external entity coordinates multipart delivery, resolves a recipient, supplie
 | Platform ID treated as identity | Cryptographic identity binding | Define identity lifecycle |
 | Ciphertext or metadata alteration | Authenticated message protection | Specify complete envelope |
 | Replay | Message IDs and freshness state | Define replay policy and storage |
-| Fragment mixing, conflicting indices or invalid set construction | Authenticated manifest and capsule context; safe reconstruction independent of arrival order | Define manifest, duplicate and rejection rules |
+| Fragment mixing, conflicting indices or invalid set construction | In-object authenticated set context and capsule bindings; safe reconstruction independent of arrival order | Define manifest, duplicate and rejection rules |
 | Missing or duplicate capsules | Strict completeness and uniqueness checks | Define failure and retry behaviour |
 | Image transformation | Separate carrier boundary and fail-safe extraction | Test realistic platform transformations |
 | Metadata correlation | Minimise unnecessary endpoint-generated carrier metadata; document platform, host, network and access observations | Define metadata allowlist and route-specific retention evidence |
