@@ -92,7 +92,7 @@ For Dropbox, do not invent fragment order for a single file. For Signal, do not 
 8. Incomplete or divergent candidate view.
 9. Service acknowledgement that precedes, or fails to imply, endpoint acceptance.
 
-The Pigeonhole-specific atomicity probe is a later write delayed or rejected after an earlier destination write succeeds, with a recipient who already has the destination capability reading concurrently. Record whether the prefix is visible; do not infer it from the sender's error result. Test raw Pigeonhole and the katzenqt application assembler separately. The full test design, timing points, evidence fields and interpretation rules are in [pigeonhole-reader-visibility-probe.md](pigeonhole-reader-visibility-probe.md).
+The Pigeonhole-specific atomicity probe is a later write delayed or rejected after an earlier destination write succeeds, with a recipient who already has the destination capability reading concurrently. Use the thin-client no-retry read variant for timed `BoxIDNotFound` observations; account for the courier's 30-minute same-WriteCap Copy-status cache and distinguish a database Put acceptance event from crash-durable persistence. Record whether the prefix is visible; do not infer it from the sender's error result. Test raw Pigeonhole and the katzenqt application assembler separately. The full test design, timing points, evidence fields and interpretation rules are in [pigeonhole-reader-visibility-probe.md](pigeonhole-reader-visibility-probe.md).
 
 ## 4. Three evidence ledgers
 
