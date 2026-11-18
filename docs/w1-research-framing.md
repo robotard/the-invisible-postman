@@ -167,7 +167,7 @@ This framing does not yet settle:
 
 These are open design questions, not details to silently fill with assumptions.
 
-The related-work comparison has been extended to Group Oblivious Message Retrieval (GOMR) and Remise. These systems show that group recipient privacy, anonymous publication, access-pattern hiding and authorised reader access/revocation are already substantial research areas. The intended contribution must not be framed as introducing private retrieval or a whole delivery lifecycle. The [observer/property matrix](observer-property-matrix.md) records the current cross-system comparison; originality remains unestablished.
+The related-work comparison includes OMR/GOMR, PerfOMR, SophOMR, InstantOMR, Oblivious Signaling, Remise and the abstract-level CCS 2026 StOMR and UnifOMR records. These works cover recipient pertinence privacy, group retrieval, stateful shared-state establishment, PIR-related efficiency limits, anonymous publication and authorised access. The intended contribution must not be framed as introducing private retrieval or a whole delivery lifecycle. StOMR and UnifOMR still require full-text review; see SRC-050–SRC-051 and the [observer/property matrix](observer-property-matrix.md). Originality remains unestablished.
 
 ## 10. Status
 
