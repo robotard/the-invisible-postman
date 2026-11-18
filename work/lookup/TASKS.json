@@ -5,7 +5,7 @@
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
   "next": [
-    "T-014: audit pinned APIR as server-dependent prior art against the endpoint-only, self-contained-message requirement; document fixed database/snapshot/retrieval dependencies and stop the former Candidate D composition path.",
+    "T-007: complete the static cross-document consistency pass after the endpoint-only architecture correction; verify source citations, links/anchors, traceability and operational records.",
     "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access; pinned MRAS/DRAS code is source-inspected but does not replace full-paper methods/results.",
     "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and an inaccessible external model archive. Resume if primary papers or model assets become available.",
     "T-003: SRC-049 repository code review is expanded, but full paper, formal security argument, complete results and model weights remain unavailable; seek primary paper copy before formal-security claims.",
@@ -139,7 +139,7 @@
       "id": "T-007",
       "type": "thesis_synthesis",
       "title": "Final thesis alignment and cross-document consistency review",
-      "status": "complete",
+      "status": "in_progress",
       "priority": 7,
       "targets": [
         "thesis.md",
@@ -147,11 +147,11 @@
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Complete for current checkpoint. Reopen only after material thesis/source/architecture changes.",
+      "next_action": "Run a static consistency pass after the endpoint-only architecture correction: verify 60 unique source IDs and citations, local links/anchors, thesis/W1–W4/traceability/prior-art/contribution assessment alignment, and no stale architecture language implying a required train, coordinator, orchestration service, directory, database, fixed address or discovery service.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18",
-      "completion_note": "Post-T-013 consistency pass completed 2026-11-18. Checked 60 unique source-register headings (SRC-001–SRC-060), no missing source citations across thesis/W1–W4/traceability/source register/prior-art/route and observer matrices/contribution assessment, no broken relative links or heading anchors across the 12 checked active documents, no duplicate source headings, no duplicate long paragraphs or heading slugs in thesis/prior-art/observer/traceability, and aligned Candidate D notation/definitions between thesis §8.4 and prior-art §4.2. Fixed stale prior-art section references and repaired W3 thesis anchor. Static consistency check only; not independent review."
+      "completion_note": "Reopened 2026-11-18 after material architecture correction; prior completion note remains historical and does not apply to this new pass."
     },
     "T-008": {
       "id": "T-008",
@@ -298,7 +298,7 @@
       "id": "T-014",
       "title": "Audit APIR server dependencies against endpoint-only message architecture",
       "priority": 1,
-      "status": "in_progress",
+      "status": "complete",
       "depends_on": [
         "T-007",
         "T-013"
@@ -312,13 +312,14 @@
         "work/PROJECT_STATE.md"
       ],
       "description": "Use the pinned APIR artifact as comparative prior art only. Identify its server/database/snapshot/predicate/point-query dependencies and the properties they provide; compare those assumptions with the self-contained endpoint message requirement. Do not design or compose a server/database subsystem.",
-      "next_action": "Inspect the pinned APIR predicate and point-query paths only far enough to document the server-side population, database/snapshot and retrieval relationships they require, what query privacy/authentication they provide, and which assumptions conflict with the endpoint-only architecture. Preserve SRC-056 (indexed-text only) and SRC-059 (abstract/introduction only) review boundaries. Conclude with a bounded compatibility finding; do not propose a replacement database or Candidate D composition.",
+      "next_action": "Complete 2026-11-18. The pinned APIR predicate path returns an authenticated scalar aggregate over a server-held database; the separate point-PIR path requires an index already known to the client. The gRPC server loads a local PGP population and exposes database-info/query RPCs. Integrated as comparative prior art only; no server-side composition or replacement database is proposed.",
       "completion_rule": "A concise, source-grounded APIR dependency/compatibility finding is integrated into the prior-art comparison and thesis where material; source limits are preserved; exact GitHub read-back verified. No construction or benchmark required.",
       "blockers": [
         "Full SRC-056 APIR-range PDF and SRC-059 VPRQ technical paper remain inaccessible; retain partial-source status and avoid novelty claims.",
         "APIR artifact is source-inspected only; no build, test, benchmark or independent security review has been performed."
       ],
-      "last_updated": "2026-11-18"
+      "last_updated": "2026-11-18",
+      "completion_note": "Completed 2026-11-18. Source-inspected APIR at commit 7a7f2041bc1e0907ef089f8e8e55252ef7f18e0f: predicate server iterates db.NumColumns and accumulates an authenticated scalar aggregate, not matching record identifiers; separate point-PIR requires a caller-supplied index; gRPC server loads local PGP files and exposes database-info/query RPCs; pointVPIR Merkle mode uses precomputed proofs checked against a root obtained through the server database-info path. Findings integrated into prior-art comparison §§4.1–4.2, thesis §8.4 and SRC-054. SRC-056 and SRC-059 partial-source limits preserved. No build, test, benchmark, construction, proof or independent security review."
     },
     "T-015": {
       "id": "T-015",
@@ -370,6 +371,6 @@
   },
   "project_status": "Theory only · No implementation · Not audited.",
   "status_semantics": "repository_project_maturity_metadata_not_a_chat_response_footer",
-  "task_status_correction": "T-013 formal model retained as comparative prior-art analysis only; Candidate D retired as an architectural/contribution candidate; T-014 reframed to audit APIR server dependencies against the endpoint-only architecture; T-015 optional sender-controlled message granularity remains complete.",
-  "immediate_next_action": "T-014: inspect the pinned APIR predicate and point-query paths only to document their server/database/snapshot/retrieval dependencies and compatibility limits against the endpoint-only, self-contained-message architecture. Do not compose or design a server/database subsystem; preserve SRC-056 and SRC-059 partial-source boundaries."
+  "task_status_correction": "T-013 complete as comparative prior-art analysis only; Candidate D retired as architecture/contribution candidate; T-014 APIR server-dependency audit complete; T-007 reopened for post-correction consistency; T-015 optional message-granularity principle remains complete.",
+  "immediate_next_action": "T-007: run the post-correction static consistency pass across thesis, W1–W4, traceability, prior-art, contribution assessment and multipart linkage; verify source citations, links/anchors and absence of stale architectural dependencies."
 }
