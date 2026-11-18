@@ -29,7 +29,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active work:** T-013 is complete as comparative prior-art analysis only; former Candidate D is retired as an architecture/contribution candidate. T-014 APIR server-dependency audit is complete. T-007 post-correction static consistency review is complete. T-001–T-003 are deferred source-specific evidence expansions; T-004 is deferred controlled-route evidence. None is a dependency of thesis construction. T-015 remains complete. No thesis-critical blocker is recorded.
+**Current position:** T-005–T-007 and T-013–T-015 are complete for their recorded scope. Former Candidate D is retired as an architecture/contribution candidate; APIR remains comparative prior art only. T-001–T-003 are deferred source-specific evidence expansions; T-004 is deferred controlled-route evidence. None is a dependency of thesis construction. No thesis-critical blocker is recorded.
 
 **Next:** continue thesis-first research where a defined claim or contradiction justifies it. Resume T-001–T-004 only if their missing evidence becomes material to a specific decision or claim. Keep diagrams, external review and release gated.
 
