@@ -347,6 +347,8 @@ Do not equate robust extraction with stealth, and do not equate steganalysis res
 - [SRC-025 · Oblivious Signaling](source-register.md)
 - [SRC-026 · Dead-drop covert messaging](source-register.md)
 - [SRC-030 · GOMR](source-register.md)
+- [SRC-050 · StOMR](source-register.md)
+- [SRC-051 · UnifOMR](source-register.md)
 - [SRC-031 · Remise](source-register.md)
 - [SRC-032 · Echomix](source-register.md)
 - [SRC-033–SRC-037 · Social-platform steganography and steganalysis](source-register.md)
