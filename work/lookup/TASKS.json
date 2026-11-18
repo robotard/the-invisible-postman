@@ -119,7 +119,7 @@
         "docs/traceability.md"
       ],
       "depends_on": [],
-      "next_action": "Source-audit each fault-applicability cell in docs/route-fault-evidence-matrix.md against the pinned route profiles and source-register entries. Separate route-native faults from wrapper-only faults; verify image transformation cases, Signal protocol-vs-product scope, Dropbox single-object semantics, Pigeonhole reader visibility and OMR candidate-view completeness. Mark every documentary claim versus controlled test dependency. Then determine whether a controlled result changes a route choice or exposes a material failure/evidence gap beyond prior art; otherwise retain Candidate C as a comparison method only.",
+      "next_action": "Continue source-auditing each fault-applicability cell in docs/route-fault-evidence-matrix.md against pinned route profiles. OMR incomplete/divergent candidate view is a native retrieval fault; keep duplicate, conflict, ordering and replay semantics at the protected-object/application wrapper layer unless a route-native protocol source establishes otherwise. Preserve SRC-053 as a third-party full-paper assessment of UnifOMR, not our direct paper review: malicious-detector recipient privacy does not itself establish correct/complete candidate recovery, and the reported T/F/B capacity question is unresolved rather than a demonstrated defect. Next audit image-specific transformation cells and Signal/Dropbox/Pigeonhole evidence boundaries; mark documentary claims versus controlled-test dependencies. Then determine whether any result changes a route choice or exposes a material gap beyond prior art; otherwise retain Candidate C as an evaluation method only.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
@@ -263,7 +263,8 @@
     "T001": "Publisher previews expanded; full papers remain inaccessible; reviews partial.",
     "T002": "SRC-047 README inspected; code/model material not retrieved. SRC-046/048 full texts not obtained.",
     "T003": "SRC-049 indexed abstract/summary only; full paper/proof/results not obtained.",
-    "T005": "Protocol analysis integrated and comparator scope clarified; no protocol selection or tests."
+    "T005": "Protocol analysis integrated and comparator scope clarified; no protocol selection or tests.",
+    "SRC053": "Third-party technical assessment reports full 56-page UnifOMR paper/proof/appendix and selected backend inspection. This project read the assessment, not the underlying paper; its claims/calculations are not independently reproduced."
   },
   "description": "Canonical keyed work registry. The tasks object is keyed by immutable internal task IDs; Markdown is a human-readable index only.",
   "status_vocabulary": [
