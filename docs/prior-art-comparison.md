@@ -103,6 +103,8 @@ The technical connection to this research is a shared survivability problem with
 
 **Research consequence:** Treat payload recoverability, concealment, attribution and unlinkability as separate properties. A robust carrier signal may improve survival while worsening traceability; that tension is a comparative question, not a reason to select watermarking or alter the endpoint-only architecture.
 
+**Thesis-narrative placement:** The historical context is introduced briefly in §2.3 as reflective research provenance, then the technical distinction is foregrounded at the opening of §8.3 alongside SRC-043. This sequencing makes the research evolution legible without implying that Sony's programmes caused the project or that the author participated in them.
+
 ## 4. Candidate contribution pressure test
 
 | Candidate | What prior art already establishes | What might remain distinct | Current judgement |
