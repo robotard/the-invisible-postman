@@ -1,5 +1,33 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Candidate D: privacy-preserving verifiable message-set closure
+
+### Work performed
+
+- Directly inspected the attached 56-page UnifOMR paper and 15-page StOMR camera-ready paper as the current OMR baselines; their exact source findings and limitations remain recorded in SRC-051 and SRC-050.
+- Expanded the related-work comparison to authenticated private information retrieval (APIR; Colombo et al., USENIX Security 2023) and append-only authenticated dictionaries (AAD; Tomescu et al., CCS 2019). The APIR review covers its integrity model, multi-server point and predicate/aggregate queries, single-server point-query database-digest assumption and selective-failure concern. The AAD review covers complete keyed lookup, append-only consistency and fork consistency.
+- Identified a conditional research direction: a recipient-private proof that every matching record in a declared authenticated publication snapshot was retrieved, followed by endpoint verification that the retrieved carriers close into a sender-authenticated, hiding multi-carrier manifest.
+- Added SRC-054 (APIR) and SRC-055 (AAD), a new thesis subsection defining admission/snapshot scope, private retrieval completeness, logical-object closure and endpoint acceptance as separate proof obligations, and Candidate D in the prior-art and contribution assessments.
+- Explicitly bounded the proposal: APIR's predicate constructions are not a generic arbitrary result-set enumeration proof; AAD does not provide query privacy; SRC-052 already implements service-scoped completeness/cursor recovery; a log cannot prove an item was never submitted; and a manifest proves only the sender-committed set. Candidate D is not yet a novelty claim.
+- Preserved two secondary research questions: UnifOMR candidate-capacity accounting remains an unresolved primary-text ambiguity, not a demonstrated defect; StOMR rollback/fork/concurrent-state recovery is an operational gap to investigate, not an assumed novelty.
+
+### Evidence and judgement
+
+- The strongest potential differentiation is compositional: OMR-style hidden recipient predicates + authenticated snapshot/result completeness + sender-authenticated multi-carrier object closure, without a public linkage handle.
+- This is a plausible research gap, not a confirmed unique contribution. It requires a full technical comparison of APIR/AAD/OMR composition, a formal leakage and collusion model, and a construction, impossibility result or cost/leakage trade-off analysis.
+- No cryptographic construction, formal proof, implementation, experiment, benchmark reproduction or independent review was performed.
+
+### Verification
+
+- Exact post-write read-back verified for `thesis.md`, `docs/source-register.md`, `docs/prior-art-comparison.md` and `docs/thesis-contribution-and-bias-assessment.md`.
+- All four source/research files were fetched after each write and matched the intended saved content.
+
+### Next
+
+Complete T-007 cross-document consistency for the new SRC-054/SRC-055 and Candidate D references. Then start T-013: formalise Candidate D's adversary, snapshot/admission model, hidden-predicate completeness statement, manifest closure predicate, leakage function and feasibility boundary. Check whether existing APIR/AAD/OMR primitives already compose to satisfy it before proposing a new mechanism.
+
+---
+
 ## 2026-11-18 · Sanitisation source access and GIF implementation review
 
 ### Work performed
