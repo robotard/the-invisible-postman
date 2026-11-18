@@ -1685,8 +1685,8 @@ Each substantive file was fetched after writing. Marker checks passed for all si
 
 | File | Fetched blob SHA |
 |---|---|
-| `docs/source-register.md` | `8a49f35f05d33a91bcf7f358a63c2cfc5f1f7ea5` |
-| `docs/echomix-katzenpost-comparator.md` | `cff6972ecdab2de723baa57f93e97424a2ec722b` |
+| `docs/source-register.md` | `fd7c4cd552e1c2a23643843965b3d0a8ff840d51` |
+| `docs/echomix-katzenpost-comparator.md` | `cac1ce39d05264f795fd2740060847a3821c5054` |
 | `docs/route-comparison-framework.md` | `d5739b0d07735b1771b10fb582ade03c7c1189c3` |
 | `thesis.md` | `f4e6ca892c11dccebdd58a7ee9b36deb154f6614` |
 | `docs/observer-property-matrix.md` | `1380f082a0ea69f6074a1c3d16b6125b8a799a86` |
