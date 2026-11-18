@@ -1888,3 +1888,25 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Operationalise the §10.3 decision test into a minimal route/fault/evidence matrix. Separate comparisons that can be evaluated from pinned public sources from those requiring controlled Dropbox/Signal/Katzenpost configurations or an image-platform experiment. Use that matrix to identify the smallest decision-relevant experiment; do not start diagrams or raise novelty status.
+
+
+## 2026-11-18 · Route/fault/evidence matrix created
+
+### Work completed
+
+- Created docs/route-fault-evidence-matrix.md as the operational form of prior-art comparison §10.3 and thesis §8.8.
+- Defined one common endpoint fixture without imposing an artificial manifest on single-file or per-message routes; specified a small S=2/r=4 multi-image semantic fixture, explicitly not a reproduction of SRC-043's benchmark.
+- Recorded the six named route profiles (Qiao, MRAS, DRAS, Dropbox, Signal, Echomix/Pigeonhole), SRC-043 as a supplemental multi-image set baseline, and OMR/StOMR/UnifOMR as separate discovery/retrieval comparators.
+- Added a fault-applicability matrix covering delay/withholding, missing, duplicate, conflict, reordering, stale/replay, incomplete candidate view and service acknowledgement without endpoint acceptance. The legend distinguishes native faults, wrapper-only faults, unknown behaviour and non-applicable cases.
+- Added three independent evidence ledgers: endpoint ground truth/authenticated transitions; route/service reports; observer-visible/inferred events. Added decision output and the boundary between documentary work and controlled tests.
+- Linked the matrix from prior-art §10.3, route-comparison framework §7, thesis §8.8, W4 E5 and traceability RQ4/RQ10. Updated WORKPLAN, TASKS.md, TASKS.json and PROJECT_STATE with the completed matrix and next source-audit action.
+
+### Verification and limits
+
+- New matrix file was fetched back from GitHub and its seven section headings, all six route profiles, fault cases, three ledgers and explicit non-execution boundary were checked.
+- This is a documentary test design, not an executed experiment. No Dropbox account, Signal app/service, Pigeonhole deployment, image-platform upload/download or performance measurement was available or run.
+- Candidate C remains only a reproducible evaluation-method candidate. The matrix itself does not establish originality, a route ranking or an image-carriage advantage.
+
+### Exact next action
+
+- Source-audit each fault-applicability cell against pinned source-register entries and route profiles. Separate route-native faults from wrapper-only faults; distinguish protocol claims from product/service behaviour; mark each controlled test dependency. Then decide whether any controlled result can change a route choice or expose a material evidence/failure gap beyond prior art.
