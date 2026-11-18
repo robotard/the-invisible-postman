@@ -275,13 +275,14 @@
       "depends_on": [
         "T-007"
       ],
-      "next_action": "Completed 2026-11-18 for the current evidence set: formal parties/trust/collusion model, admission and snapshot boundaries, retrieval soundness/completeness, manifest closure, endpoint acceptance, fork/freshness, predicate privacy/selective failure, leakage function, cost model and pre-admission-omission indistinguishability proposition integrated into thesis and prior-art records. Generic private/verifiable range retrieval is prior art; Candidate D remains a conditional OMR-specific composition hypothesis, not a novelty claim. SRC-056 and SRC-059 remain partial with blockers preserved.",
+      "next_action": "Test the APIR authenticated-count plus authenticated-point-query composition as a candidate OMR completeness check. Verify whether the OMR signal-membership predicate fits an efficient FSS; bind count and point queries to one immutable epoch; model candidate-count padding, 32-bit collisions, malicious-detector aborts, sender-manifest admission and AAD root history. Compare against SRC-056–060 and decide whether this is a new OMR application, a straightforward prior-art composition, or a negative feasibility result.",
       "blockers": [
         "Full publisher PDF for SRC-056 (Authenticated Private Information Retrieval for Range Queries) returned 403; proofs, complete algorithms and evaluation remain indexed-text-only.",
         "Full technical paper for SRC-059 (VPRQ) remains inaccessible; only abstract and publisher-indexed introduction inspected."
       ],
       "completion_rule": "A formal, source-grounded model and complete nearest-prior-art comparison are integrated into thesis and supporting research; proof obligations, leakage, assumptions, costs and novelty disposition are explicit; commits and exact read-back verified.",
-      "last_updated": "2026-11-18"
+      "last_updated": "2026-11-18",
+      "notes": "Formal property model, leakage function, pre-admission-omission boundary and APIR/AAD cost/code findings are drafted in docs/prior-art-comparison.md §4.2; observer leakage is in docs/observer-property-matrix.md §4.3; thesis and contribution assessment now include the conditional count-plus-point path. No construction has been implemented or formally proved."
     }
   },
   "evidence_access_notes": {
