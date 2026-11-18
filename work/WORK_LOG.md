@@ -1,5 +1,34 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Signal and Dropbox product-evidence boundaries integrated
+
+### Work performed
+
+- Re-opened the current official Signal support pages for message status, read receipts, linked devices, message details and delivery issues, alongside the pinned PQXDH and Double Ratchet specifications.
+- Recorded the product distinction between Sent (to Signal service), Delivered (to recipient device) and optional Read (both parties enable receipts). Delivery issues can be ambiguous between direct and group origin; resends may retain original timestamps. Linked-device support documentation describes synchronisation, a five-device limit, primary-phone online requirements and inactivity unlinking. These are product-facing support statements, not a backend audit or proof of human comprehension.
+- Re-opened current Dropbox Help pages for file activity, viewer information, view-only links and sharing permissions. Recorded owner/editor versus viewer access to activity, separate/configurable viewer information, plan-dependent history, unsigned Guest views, direct-download omission from the viewer-info surface and no-account view-only link access. Explicitly distinguished owner-facing UI omissions from absence of backend records.
+- Integrated these boundaries into SRC-038–SRC-039, thesis §8.2 and §8.4, W2, W4 E9, the route-comparison framework, the route/fault/evidence matrix and RQ7 traceability.
+- Refined the matrix so Signal's service acknowledgement without endpoint acceptance is marked as a native product-event case; retained separate rows for protocol replay, delivery/read status, linked-device expiry and Dropbox viewer-info omissions.
+- Corrected the Pigeonhole probe's C4 table alignment and changed its persistence ledger from “durable-write timestamp” to database Put/replica-acceptance timestamp, reflecting the lack of explicitly synchronous RocksDB writes in the inspected path.
+
+### Evidence judgement and limits
+
+- Signal protocol guarantees, user-visible support statuses and linked-device lifecycle statements are distinct evidence layers. No Signal account, client workflow, service backend, queue or receipt event was tested.
+- Dropbox file activity and viewer information are owner-facing documentation surfaces. Missing viewer information is not proof that Dropbox's backend did not observe an access or download. No account, plan, link or workflow was tested.
+- The Signal and Dropbox public documentation boundaries are now integrated; actual service-profile pinning remains blocked on access to the relevant accounts/settings and service-side evidence.
+- The Pigeonhole reader-visibility probe remains design only. No controlled test, build, deployment or concurrent reader observation was run.
+
+### Verification
+
+- Each changed research/traceability file was fetched after writing and exact saved content was verified.
+- No product test, service/backend inspection, implementation, benchmark reproduction, independent review or security audit was performed.
+
+### Next
+
+Audit the route/fault/evidence matrix for minimality and decision relevance, then reconcile any remaining W1/W3/traceability terminology gaps. Assess whether the documentary route findings identify a defensible gap beyond prior art; retain Candidate C as a conditional evaluation method unless a controlled, decision-relevant result supports more.
+
+---
+
 ## 2026-11-18 · Refined Pigeonhole reader-visibility probe against pinned thin-client API
 
 ### Work performed
