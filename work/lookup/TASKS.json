@@ -4,7 +4,7 @@
   "not_for_thesis": true,
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
-  "next": "T-001",
+  "next": "T-007",
   "tasks": {
     "T-001": {
       "id": "T-001",
