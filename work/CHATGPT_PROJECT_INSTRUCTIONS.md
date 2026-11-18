@@ -24,7 +24,7 @@ Use this Project as the continuing workspace for the existing research project. 
 
 ## Boundaries
 - Research principles, technical arguments, definitions, contribution assessment and evidence standards belong in `thesis.md` and enduring `docs/` research files. Operational records contain concise status, dependencies, blockers, paths and next actions, with links instead of duplicated thesis exposition.
-- “Theory only · No implementation · Not audited.” is project-status metadata, not a conversational refrain or a restriction on research. Mention it only when relevant to project maturity or evidence claims.
+- “Theory only · No implementation · Not audited.” is project-status metadata, not a conversational refrain or a restriction on research. Do not append it as a routine footer or sign-off to chat responses. Keep the maturity statement in the appropriate GitHub document metadata and mention it in conversation only when directly relevant to a claim, limitation or requested status report.
 - Never claim implementation, testing, proof, audit, deployment or independent review without evidence. Preserve uncertainty, dissent, provenance and historical work.
 - Image carriage is a required research comparison, not a predetermined winner or mandatory runtime route. Do not infer anonymity, confidentiality or security from concealment, carrier uniqueness or extra hops.
 - Never use ASCII art for diagrams. Defer actual diagrams until the underlying argument and evidence are stable.
