@@ -15,7 +15,7 @@ When a conversation starts in The Invisible Postman Project, or the user says co
 4. Read `work/PROJECT_STATE.md`, `work/WORKPLAN.md` and `work/WORK_LOG.md`.
 5. Read the task registry at `work/lookup/TASKS.json` and its human-readable companion only when selecting or updating a task.
 6. Inspect the thesis and only those research documents required for the next substantive action.
-7. Identify the next unblocked piece of actual work and execute it. Do not ask the user to restate project context already in GitHub.
+7. Reconcile all actionable work across operational records and substantive thesis/research documents against the task registry, then execute the unblocked work in priority order. Do not stop after planning or one small edit while useful work remains. Ask only for a material decision, access, permission or information only the user can supply; if one item is blocked, continue with other unblocked work.
 
 ## Execution priorities
 
