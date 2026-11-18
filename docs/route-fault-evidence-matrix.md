@@ -49,7 +49,6 @@ Legend: **N** = fault maps to the route's native unit; **W** = meaningful only i
 | Delayed or withheld item | N | N | N | N | N | N | N |
 | Missing object or route-native unit | N | N | N | N | N | N | N |
 | Duplicate item | W | N | W | N* | W | N | W |
-| False-positive candidate overflow / padded PIR capacity | — | — | — | — | — | — | N* |
 | UnifOMR false-positive candidate overflow / padded PIR capacity | — | — | — | — | — | — | N* |
 | StOMR signal-tag collision | — | — | — | — | — | — | N* |
 | Stateful counter rollback/fork or concurrent sender state | — | — | — | — | — | — | N* |
