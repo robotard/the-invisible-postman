@@ -17,7 +17,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | blocked | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
 | T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | complete | 1 |
-| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | in_progress | 1 |
+| T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | complete | 1 |
 | T-008 | diagram_work | Stabilise diagram arguments and reconcile figure briefs with thesis | blocked_until_research_stable | 8 |
 | T-009 | diagram_work | Create and verify contextual editable thesis diagrams | deferred | 9 |
 | T-010 | peer_review_preparation | Prepare a coherent thesis candidate and scoped peer-review materials | deferred | 10 |
@@ -29,9 +29,9 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active work:** T-013 is complete as comparative prior-art analysis only; former Candidate D is retired as an architecture/contribution candidate. T-014 is complete: pinned APIR source inspection confirms a server-held database, aggregate-only predicate result and separate point queries requiring a known index; findings are integrated as prior art, not as an architecture subsystem. T-007 is reopened to verify thesis/W1–W4/traceability/prior-art/contribution/multipart alignment after the endpoint-only correction. T-001–T-003 remain blocked on primary-source access; T-004 remains blocked on controlled route configuration. T-015 remains complete.
+**Current active work:** T-013 is complete as comparative prior-art analysis only; former Candidate D is retired as an architecture/contribution candidate. T-014 APIR server-dependency audit is complete. T-007 post-correction static consistency review is complete. T-001–T-003 remain blocked on primary-source access; T-004 remains blocked on controlled Dropbox/Signal/Katzenpost configuration access. T-015 remains complete. No unblocked substantive task remains.
 
-**Next:** complete T-007's static source/citation/link/anchor/terminology pass and reconcile the operational records.
+**Next:** resume T-001–T-004 only when their recorded source or controlled-environment blockers are resolved. Keep diagrams, external review and release gated.
 
 ## Status meanings
 
