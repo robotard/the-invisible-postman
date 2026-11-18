@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · T-006 complete; T-007 consistency review complete for prior checkpoint; T-013 Candidate D formalisation active  
+**Checkpoint:** 2026-11-18 · T-006/T-013/T-007 complete for current evidence set; T-014 APIR count-plus-point feasibility test active  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
@@ -42,16 +42,18 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 **T-006 is complete for the current evidence set.** The route/fault matrix has been audited for minimality and staged decision relevance; Candidate C remains conditional and no route winner or mechanism-level novelty is established. Reopen this synthesis only if new source evidence materially changes the thesis.
 
-**T-013 is in progress.** The formal property model, leakage function, pre-admission omission boundary and nearest-prior-art comparison are drafted. A conditional APIR authenticated-count plus authenticated-point-query path is now under test; its FSS expressivity, common snapshot binding, padding, collision handling, admission evidence and manifest closure remain unresolved. No construction, proof or evaluation is established.
+**T-013 is complete for the current evidence set.** The formal property model, adversary/trust assumptions, candidate/result-set semantics, admission and manifest boundaries, leakage function, cost dimensions, proof obligations and pre-admission omission proposition are integrated into thesis §8.4 and prior-art §4.2. Generic private/verifiable range retrieval is prior art; Candidate D remains a narrowed OMR-specific dynamic-predicate/admission/manifest research hypothesis, not a novelty claim. SRC-056 and SRC-059 remain partial-source blockers.
 
-1. **T-007 · Final thesis alignment and cross-document consistency review (complete for the previous checkpoint).** The prior static audit found no missing SRC IDs, broken relative links or duplicate thesis paragraphs in the checked documents. Rerun after T-013's current integration, including heading anchors, source maturity, cross-document terminology and task/state alignment.
+**T-014 is in progress.** Test whether APIR authenticated predicate COUNT plus authenticated private point queries can recover all OMR matches. FSS expressivity, matching-index discovery, common snapshot binding, malicious-detector integrity, access-volume/timing leakage, collisions, false positives, capacity/overflow, admission and manifest closure remain unresolved. No construction, proof, build or benchmark is claimed.
+
+1. **T-007 · Final thesis alignment and cross-document consistency review (complete).** Post-T-013 audit checked 60 unique source IDs, no missing citations, no broken local paths or heading anchors across the 12 checked active documents, no duplicate source headings, no duplicate long paragraphs or heading slugs in thesis/prior-art/observer/traceability, and consistent Candidate D notation between thesis §8.4 and prior-art §4.2. Stale section references were repaired. Static check only; not independent review.
 2. **T-001–T-003 · Source access blocked.** Full papers remain unavailable for SRC-033/034/036/046/048/049; SRC-047's GitHub tree is README-only and its external Baidu model archive is inaccessible. SRC-056 and SRC-059 remain partial by explicit review boundary.
 3. **T-004 · Route configuration evidence blocked.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
 4. **Diagrams, external review and release** remain gated. Do not start illustration or release packaging merely because a matrix or checkpoint exists.
 ## Exact next action
 
-1. Test the APIR count-plus-point candidate path: confirm the exact OMR signal field and predicate, FSS feasibility for the batched signal set, same-epoch binding across predicate and point queries, fixed-capacity padding, collision handling and abort semantics. Compare against SRC-056–060; do not assume the composition is novel.
-2. Resolve whether AAD is needed only for public append-only root history, and define the separate sender-manifest/admission evidence needed to distinguish intended from merely committed carriers.
-3. After T-013's result is integrated, rerun T-007 across the thesis, source register, W1–W4, prior-art, observer matrix, traceability and work records. Keep diagrams and release gated.
+1. Read the pinned APIR artifact code at commit 7a7f2041bc1e0907ef089f8e8e55252ef7f18e0f: predicate client/server, FSS implementation, query representation and point-query path. Determine whether exact OMR signal membership and subrange counts are expressible.
+2. Specify how all matching indices are discovered rather than merely learning their count; bind count and point responses to one immutable snapshot; assess malicious omission/equivocation, query-count/access-volume leakage, padding, collisions, false positives, capacity/overflow and total cost. Compare against SRC-056–060 and the UnifOMR capacity boundary.
+3. Keep admission receipts and sender-manifest closure separate from the APIR query proof. If the path requires O(N) scanning or leaks the result cardinality outside the allowed leakage function, record the negative feasibility result. No build/test/benchmark without a concrete, reviewed design. Keep diagrams and release gated.
 
 The next controlled tests require accounts, devices or deployments that are not currently available. Do not imply they have been run.
