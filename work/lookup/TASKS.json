@@ -18,12 +18,12 @@
         "docs/multi-message-linkage-and-steganographic-carriage.md"
       ],
       "depends_on": [],
-      "next_action": "Seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional access; retain partial-review status.",
+      "next_action": "The README-labelled MRAS and DRAS MATLAB repositories are now pinned and source-inspected; code evidence is integrated but not built/run and does not substitute for full papers. Continue seeking complete SRC-033/034/036 manuscripts via author/institutional access; if unavailable, preserve partial-review labels and do not infer full method/results from code.",
       "blockers": [
-        "Complete papers/methods/results/limitations not yet accessible; current publisher previews are partial."
+        "Complete papers/methods/results/limitations not yet accessible; current publisher previews are partial. No matching public code repository was located for SRC-036."
       ],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
-      "last_updated": "2026-11-17"
+      "last_updated": "2026-11-18"
     },
     "T-002": {
       "id": "T-002",
