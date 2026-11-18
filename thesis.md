@@ -113,7 +113,7 @@ The required image-carriage route is examined without presuming it is superior. 
 
 ### 3.3 Scope
 
-The research includes endpoint-controlled key custody and plaintext handling; explicit peer verification; authenticated key establishment; authenticated encryption; sender authentication; versioned message context; self-contained envelope and multipart validation; a first-class carriage layer; image carriage as a required route comparison; external carriage-profile analysis; optional steganographic concealment; metadata minimisation; endpoint-side discovery and collection; expiry, revocation and key rotation; and the possible inclusion of separately governed recovery. Server-side coordination, directories, databases and rendezvous services are not architectural components or dependencies.
+The research includes endpoint-controlled key custody and plaintext handling; explicit peer verification; authenticated key establishment; authenticated encryption; sender authentication; versioned message context; self-contained envelope and multipart validation; a first-class carriage layer; image carriage as a required route comparison; external carriage-profile analysis; optional steganographic concealment; metadata minimisation; route-native acquisition and endpoint-side collection; expiry, revocation and key rotation; and the possible inclusion of separately governed recovery. Server-side coordination, directories, databases and rendezvous services are not architectural components or dependencies.
 
 ### 3.4 Integrated anonymous-messaging comparators
 
