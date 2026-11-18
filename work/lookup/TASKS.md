@@ -23,8 +23,8 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-010 | peer_review_preparation | Prepare a coherent thesis candidate and scoped peer-review materials | deferred | 10 |
 | T-011 | peer_review | Conduct and reconcile substantive independent peer review | not_started | 11 |
 | T-012 | release_integrity | Verify thesis release integrity and remove disposable work area | deferred | 12 |
-| T-013 | research_model | Formalise privacy-preserving verifiable message-set closure (Candidate D) | complete | 1 |
-| T-014 | feasibility_analysis | Test APIR authenticated-count plus authenticated-point-query composition for OMR completeness | in_progress | 1 |
+| T-013 | comparative_prior_art | Formal model of server-dependent private/verifiable retrieval (former Candidate D) | complete | 1 |
+| T-014 | prior_art_boundary | Audit APIR server dependencies against endpoint-only message architecture | in_progress | 1 |
 | T-015 | design_synthesis | Integrate optional sender-controlled message granularity | complete | 2 |
 
 ## Current execution
