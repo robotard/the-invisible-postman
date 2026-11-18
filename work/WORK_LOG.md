@@ -2307,3 +2307,26 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Continue T-014: inspect the pinned APIR FSS/predicate/point-query path and determine whether the exact OMR signal-membership predicate can be counted and completely enumerated with authenticated answers bound to one immutable snapshot, without unacceptable scan cost or leakage.
+
+
+## 2026-11-18 · Endpoint-only architecture correction and APIR boundary audit
+
+### Research and architecture decisions
+
+- Reaffirmed the protected message as the standalone architectural entity. Endpoints own identity/key trust, message protection, authentication, decryption, multipart association, reconstruction and acceptance.
+- Explicitly excluded server, directory, database, index, fixed address, rendezvous service, coordinator, external resolver and orchestration service as required architecture components. Cryptographic peer identity is distinct from a network address, account handle or storage locator.
+- Clarified that external platforms, hosts, networks and carriers are untrusted, replaceable means of conveying bytes. Route-native acquisition is a delivery condition and comparative observer topic, not a message-protocol function.
+- Required multipart membership and reconstruction context to travel within the authenticated protected representation. No external manifest host, lookup, directory or coordinator may be required.
+- Rewrote W3 around the endpoint-only boundary; aligned thesis §8, W1–W4, traceability and the multi-message linkage analysis. Carrier variation and placement remain comparative conditions, not assumed privacy mechanisms.
+- Retired Candidate D as an architectural/contribution candidate. Its server-dependent formal model remains comparative prior-art analysis only.
+- Completed T-014's pinned APIR source audit. Predicate COUNT returns an authenticated scalar aggregate over a server-held population; it does not return matching indices. The separate point-PIR path requires an index already known to the client. The gRPC server loads local PGP files and exposes database-info/query RPCs. The pointVPIR Merkle path checks precomputed proofs against a root obtained through the server's database-info path. Findings are integrated in prior-art §§4.1–4.2, thesis §8.4 and SRC-054.
+- Preserved SRC-056 indexed-text-only and SRC-059 abstract/introduction-only boundaries. No server/database replacement, composition, build, test, benchmark, proof or independent security review was pursued.
+
+### Verification
+
+- Substantive writes were committed to GitHub main. Exact post-write read-back and the final cross-document consistency pass remain in progress.
+- T-007 reopened to check citations, source IDs, local links/anchors, cross-document terminology and task/state alignment after this material architecture correction.
+
+### Exact next action
+
+- Complete T-007's static consistency pass across the updated thesis, W1–W4, traceability, prior-art, contribution assessment and multipart linkage; then reconcile state, workplan, task registry and session digests.
