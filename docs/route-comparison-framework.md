@@ -1,6 +1,6 @@
 # Route Comparison Framework: Common Message Semantics Across Carriage Profiles
 
-**Checkpoint:** 2026-11-16  
+**Checkpoint:** 2026-11-18  
 **Roadmap alignment:** W0.3 source reconciliation · W6 comparative evaluation  
 **Status:** Theory only · No implementation · Not audited.
 
