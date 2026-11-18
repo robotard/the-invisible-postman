@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · T-006/T-013/T-007 complete for current evidence set; T-014 APIR count-plus-point feasibility test active  
+**Checkpoint:** 2026-11-18 · T-006/T-013/T-007/T-015 complete for current evidence set; T-014 APIR count-plus-point feasibility test active  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
@@ -20,6 +20,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 ## Current research position
 
 - The active manuscript is `thesis.md`. Relationship authority, receiver acceptance, cross-route discovery and adversarial event-chain analysis are integrated across the thesis and W1–W4.
+- Representation flexibility is now explicit in thesis §1.1: sender-selectable whole-object or segmented representation is an optional publication-policy choice, independent of carrier/transport and subordinate to invariant logical identity, authenticated meaning and endpoint acceptance. The supporting analysis is `docs/optional-message-granularity.md`; neighbour-bound linkage remains a hypothesis, not an architecture decision.
 - The six named route profiles are IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE. SRC-043 is a supplemental multi-image fragment/redundancy baseline; OMR-family work is a separate discovery/retrieval comparator.
 - The contribution boundary has been refined. Candidate C remains a conditional reproducible cross-route evaluation method. **Candidate D** asks whether OMR-style hidden-predicate retrieval can be composed with authenticated dynamic publication snapshots, verifiable admission and sender-authenticated multi-carrier manifest closure. Its nearest prior art now includes APIR (SRC-054), AAD (SRC-055), range APIR (SRC-056), vPIR (SRC-057), multi-query vPIR (SRC-058), encrypted range-query schemes (SRC-059/060), OMR-family systems and the SRC-052 downstream integration. Generic private/verifiable range retrieval is prior art; no Candidate D construction or novelty result is established. A formal property model, leakage function, cost model and pre-admission-omission boundary are now recorded in prior-art §4.2.
 - Completeness is typed: carrier inventory, fragment-set completeness, byte reconstruction, storage atomicity, application continuity, retrieval-window coverage, endpoint logical-message acceptance, publication/index completeness and human receipt are not interchangeable.
@@ -39,6 +40,8 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 - **SRC-046–SRC-048:** SRC-046 is indexed as open access and an author-linked OpenReview record exists, but OpenReview and IEEE PDF endpoints are blocked by browser/access checks. SRC-047's complete GitHub tree at commit `44474d9ca551bb052d5796fb43181612fb160763` contains only README.md; the README points to a Baidu model archive that could not be opened. SRC-048 remains closed at the publisher and ResearchGate reports no full text. These are abstract/README-level boundaries, not full-paper or code reviews.
 - **SRC-049:** the complete public repository tree is pinned and all core sender/receiver, diffusion, image-distortion and dependency files have been read. The receiver asserts a complete 16-frame/key set; same-seed crop/drop masks repeat across frames; per-frame key/nonce and ground-truth watermark are stored in local `.npy` files; raw ChaCha20 has no authentication tag visible in the inspected path; fallback is TEST ONLY. No test suite, paper PDF, model weights or environment lockfile is present. Code was not run; the paper/proof/results remain inaccessible.
 ## Active work, in priority order
+
+**T-015 is complete.** The thesis principle, supporting design note and RQ4 traceability are integrated and read-back verification is pending. T-014 remains the active next research task.
 
 **T-006 is complete for the current evidence set.** The route/fault matrix has been audited for minimality and staged decision relevance; Candidate C remains conditional and no route winner or mechanism-level novelty is established. Reopen this synthesis only if new source evidence materially changes the thesis.
 
