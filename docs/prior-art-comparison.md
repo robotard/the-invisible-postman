@@ -1,6 +1,6 @@
 # Prior-Art Comparison: Recipient Retrieval and Covert-Carriage Pipelines
 
-**Checkpoint:** 2026-11-15  
+**Checkpoint:** 2026-11-18  
 **Role:** Working literature synthesis for W0.3/W6  
 **Status:** Theory only · No implementation · Not audited.
 
