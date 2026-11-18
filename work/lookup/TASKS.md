@@ -11,10 +11,10 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 | Key | Type | Task | Status | Priority |
 |---|---|---|---|---:|
-| T-001 | source_review | Complete full-text/source review of SRC-033, SRC-034 and SRC-036 | in_progress | 2 |
-| T-002 | source_review | Review SRC-046–SRC-048 full texts and SRC-047 implementation where available | in_progress | 3 |
-| T-003 | source_review | Review SRC-049 paper, formal security argument and complete results | in_progress | 4 |
-| T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | in_progress | 5 |
+| T-001 | source_review | Complete full-text/source review of SRC-033, SRC-034 and SRC-036 | blocked | 2 |
+| T-002 | source_review | Review SRC-046–SRC-048 full texts and SRC-047 implementation where available | blocked | 3 |
+| T-003 | source_review | Review SRC-049 paper, formal security argument and complete results | blocked | 4 |
+| T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | blocked | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
 | T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | complete | 1 |
 | T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | blocked | 7 |
@@ -26,9 +26,9 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active work:** T-001–T-003 source access, with T-004 route-configuration evidence continuing where controlled access becomes available. T-006 is complete for the current evidence set: the matrix now separates common delivery faults from source-specific diagnostics and uses a staged three-treatment minimum; katzenqt remains a separate application-gate observation, Signal a reference profile, and OMR-family work retrieval comparators. The Candidate C contribution condition remains unmet: Pigeonhole reader visibility is untested, UnifOMR's capacity issue is a primary-text ambiguity rather than a demonstrated failure, and SRC-043 already establishes multi-image partial byte recovery. No route ranking or image-carriage advantage is supported.
+**Current blocked work:** T-001–T-003 require full papers and/or retrievable source/model artefacts. SRC-033/034/036 remain partial after renewed publisher, author-page and repository searches; SRC-046/048 PDFs remain inaccessible; SRC-047's complete GitHub tree contains only README.md and its external Baidu model archive could not be opened; SRC-049's code was read at a pinned commit but its full paper/proof/results remain unavailable. T-004 is blocked on actual Dropbox account/link settings, installed Signal client/account/backend state and a running Katzenpost deployment. T-006 is complete for the current evidence set: the matrix separates common delivery faults from source-specific diagnostics and gates optional probes by use case. Candidate C remains conditional; no route ranking or image-carriage advantage is supported.
 
-**Next:** continue T-001–T-003 full-text/code access where it materially resolves methods, results, limitations or implementation claims. T-004 remains bounded by lack of actual Dropbox account/link settings, installed Signal client/account/backend state and a running Katzenpost deployment. Reopen T-006 only if new evidence materially changes the thesis or route comparison.
+**Next:** provide or obtain any full-text copies for SRC-033/034/036/046/048/049 or a retrievable SRC-047 model/source archive. Keep partial-review labels until primary material is directly inspected. Reopen T-006 only if new evidence materially changes the thesis or route comparison.
 ## Status meanings
 
 - `ready`: unblocked and not started.
