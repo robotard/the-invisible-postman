@@ -121,7 +121,7 @@
         "thesis.md"
       ],
       "depends_on": [],
-      "next_action": "Completed for the current evidence set: the route/fault matrix has been audited for minimality and staged decision relevance; findings are integrated into thesis §§8.8/11, prior-art comparison §10.3, route-comparison framework, W4 and the contribution assessment. Candidate C remains a conditional evaluation-method candidate; no controlled route result or rigorous counterexample supports originality. Reopen only if new source evidence materially changes the thesis or route comparison.",
+      "next_action": "Completed for the current evidence set: the route/fault matrix has been audited for minimality and staged decision relevance; findings are integrated into thesis §§8.8/11, prior-art comparison §5.1, route-comparison framework, W4 and the contribution assessment. Candidate C remains a conditional evaluation-method candidate; no controlled route result or rigorous counterexample supports originality. Reopen only if new source evidence materially changes the thesis or route comparison.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
