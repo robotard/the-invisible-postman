@@ -1910,3 +1910,23 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Source-audit each fault-applicability cell against pinned source-register entries and route profiles. Separate route-native faults from wrapper-only faults; distinguish protocol claims from product/service behaviour; mark each controlled test dependency. Then decide whether any controlled result can change a route choice or expose a material evidence/failure gap beyond prior art.
+
+## 2026-11-18 · User-supplied StOMR camera-ready paper reviewed
+
+### Work completed
+
+- Directly inspected the complete 15-page `StOMR-camera-ready.pdf` supplied in this conversation; title, authors, DOI and CCS 2026 camera-ready identity match SRC-050.
+- Reconciled the paper's S-OMR evolving sender/receiver state, detection-key refresh and OMR-KEM shared-state bootstrap with the existing prior-art account. Preserved the distinction between private retrieval/state establishment and authenticated human identity, global candidate-view completeness or multi-carrier logical-message acceptance.
+- Reconfirmed the stated threat model is passive and protocol-following; active malicious publication, detector deviation and service omission are outside that model. The paper's state syntax is not a production crash/rollback/fork recovery protocol; group S-OMR is future work.
+- Identified a concrete-parameter caveat: experiments use 32-bit PRF signal outputs and include boards up to 2^16 entries, while Appendix C.1 gives an all-pairs cross-user collision upper bound of `binom(|BB|, 2) / 2^m`, approximately 0.5 at that point. Recorded that this is a loose bound, not a target-specific false-match estimate; the paper provides no tighter concrete privacy-advantage calculation or collision stress test for the largest board. Kept this distinct from the ≥128-bit BFV parameter claim.
+- Updated SRC-050 in `docs/source-register.md`, the decision boundary in `docs/prior-art-comparison.md`, the related-work analysis in `thesis.md`, and the OMR comparator notes in `docs/route-fault-evidence-matrix.md`.
+
+### Verification and limits
+
+- All four substantive GitHub changes were fetched back and exact saved content verified.
+- The state checkpoint and this work-log entry were also fetched back and verified.
+- The paper's reported performance remains author-reported. No code was built or executed, no benchmark reproduced, no formal proof re-proved, and no independent review or audit performed.
+
+### Exact next action
+
+- Continue the source audit of the route/fault/evidence matrix. Preserve the StOMR signal-collision and passive-adversary caveats in the OMR row; next resolve the remaining fault-applicability cells against pinned image, Dropbox, Signal and Pigeonhole evidence, separating documentary claims from controlled tests.
