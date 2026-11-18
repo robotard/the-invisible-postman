@@ -130,15 +130,17 @@ Candidate C survives only if the matrix produces a reproducible, decision-releva
 
 **Requires controlled access or execution:** live Dropbox account/link configuration; Signal test accounts/devices and product/service behaviour; a compatible Pigeonhole deployment and concurrent-reader probe; repeated image-platform upload/download and transformation capture; and performance/latency/byte measurements. None is implied by this documentary matrix.
 
-The smallest decision-relevant controlled fixture is:
+The smallest decision-relevant evaluation is staged, not a full factorial test of every fault against every route:
 
-1. One protected object and endpoint validation policy.
-2. A single-file Dropbox baseline, a per-message Signal protocol baseline (or product test only if available), a raw Pigeonhole copy plus separate katzenqt assembler, and an SRC-043-style S=2/r=4 image fragment set.
-3. Complete, delayed/withheld, missing, duplicate/reordered, stale/replayed and uncertain-acknowledgement cases, with only route-applicable faults injected.
-4. The three ledgers above, captured independently.
-5. A route-decision statement tied to the declared use case.
+1. **Freeze the common endpoint task:** one protected logical object, identity/session scope, validation policy, freshness rule and declared use case. Add a manifest only for fragmented/set-based routes.
+2. **Run complete-delivery controls** for the four native route families: single file (Dropbox), individual authenticated messages (Signal), capability-addressed copy (Pigeonhole, with katzenqt tested separately), and an SRC-043-style S=2/r=4 multi-image set.
+3. **Run the strongest route-specific omission case:** for SRC-043, first remove one redundant copy, then remove all copies of one fragment and record byte recovery separately from endpoint acceptance; for Pigeonhole, make E1 succeed and E2 fail while a recipient with ReadCap polls concurrently. These are distinct tests, not a shared artificial transaction.
+4. **Capture endpoint, service and observer ledgers independently.** For Dropbox and Signal, add product/service observations only when controlled accounts/devices and the relevant settings are available. Treat OMR/StOMR/UnifOMR as retrieval-model diagnostics, not storage-route substitutes.
+5. **Escalate only where the first result warrants it:** add duplicate, conflict, reorder or replay cases only when the route's native semantics and declared use case make them decision-relevant. Record a route decision and measured costs, not assumed ones.
 
-This is a test specification, not an executed experiment. Do not begin diagrams or raise contribution status on the basis of the matrix alone.
+This staging makes the first experiments falsifiable while avoiding a large, low-value route × fault matrix. It does not remove any fault from the research catalogue; it separates the minimum discriminating tests from conditional extensions.
+
+This remains a test specification, not an executed experiment. Do not begin diagrams or raise contribution status on the basis of the matrix alone.
 
 ## 7. Links and source boundaries
 
