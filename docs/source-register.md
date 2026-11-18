@@ -701,6 +701,22 @@ For all three, extraction-error performance is not evidence of message authentic
 - **Relevance:** This downstream case shows that practical OMR integration needs more than the paper's detection primitive: clue-key registration/ownership, identity binding to an application key, decoy lookup, range completeness, cursor recovery, PIR payload retrieval, service limits and fallback policy. The explicit digest `complete`/slot map and whole-height re-scan are an existing application-level completeness mechanism. They are not arbitrary multi-carrier manifest acceptance, but they narrow any generic novelty claim for endpoint completeness/recovery.
 - **Review state:** Selected source/docs inspected at exact commits. No code execution, live service access, build, funded transaction, independent test or security audit performed. Treat all runtime/test claims as repository self-report.
 
+### SRC-054 · Authenticated Private Information Retrieval
+
+- **Source:** Colombo, S., Nikitin, K., Corrigan-Gibbs, H., Wu, D. J. and Ford, B. (2023), *Authenticated Private Information Retrieval*, USENIX Security 2023. Full version: IACR ePrint 2023/297.
+- **Links:** https://www.usenix.org/conference/usenixsecurity23/presentation/colombo ; https://eprint.iacr.org/2023/297.pdf
+- **Supports:** APIR augments retrieval privacy with output authenticity. Its multi-server constructions support point queries and predicate/aggregate queries with integrity in an anytrust model (at least one honest server); its single-server point-query construction relies on the client obtaining a short database digest out of band. The paper explicitly treats selective-failure attacks as a privacy concern.
+- **Does not establish:** A generic malicious-single-server proof of completeness for arbitrary hidden-predicate result sets; authenticated publication of all intended messages; a private, complete OMR candidate view; or multi-carrier logical-message manifest acceptance. Its query types and trust assumptions must be preserved when comparing it with OMR.
+- **Review state:** The full ePrint text and USENIX publication record were inspected on 2026-11-18, including the model, integrity definitions, multi-server predicate-query construction and single-server digest assumption. No implementation was built or run and no result was independently reproduced.
+
+### SRC-055 · Transparency Logs via Append-Only Authenticated Dictionaries
+
+- **Source:** Tomescu, A., Bhupatiraju, V., Papadopoulos, D., Papamanthou, C., Triandopoulos, N. and Devadas, S. (2019), *Transparency Logs via Append-Only Authenticated Dictionaries*, ACM CCS 2019.
+- **Link:** https://www.cs.yale.edu/homes/cpap/published/logs-ccs19.pdf
+- **Supports:** The append-only authenticated dictionary (AAD) construction targets both succinct append-only consistency proofs and succinct lookup proofs. Its lookup goal is to prove that a server returned all and only the values registered for a key; the paper also identifies fork consistency as necessary to detect divergent log views.
+- **Does not establish:** Query privacy, OMR-compatible hidden recipient predicates, admission of every externally intended carrier, or endpoint acceptance of a multi-carrier message. The paper identifies append-time and memory costs as practical limitations.
+- **Review state:** Full paper abstract and introduction/model framing inspected on 2026-11-18, including the stated lookup, append-only and fork-consistency requirements and the construction's efficiency caveats. This is a bounded initial review, not a complete technical reproduction or systematic comparison.
+
 ### SRC-053 · UnifOMR full-paper technical assessment (secondary source)
 
 - **Source:** *UnifOMR evidence and integration assessment*, published at Cyber / soft3 / mudra, review dated 2026-09-12: https://cyber.page/soft3/mudra/audit/signature-optimality/unifomr-evidence/ . This is a third-party technical assessment, not an author publication, peer-reviewed paper or official UnifOMR artifact.
