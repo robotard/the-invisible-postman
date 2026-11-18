@@ -105,16 +105,14 @@
       "priority": 1,
       "targets": [
         "thesis.md",
-        "docs/w1-research-framing.md",
-        "docs/source-register.md",
         "docs/route-comparison-framework.md",
-        "docs/observer-property-matrix.md",
-        "docs/echomix-katzenpost-comparator.md",
+        "docs/w4-risks-and-evaluation.md",
         "docs/thesis-contribution-and-bias-assessment.md",
-        "docs/w4-risks-and-evaluation.md"
+        "docs/observer-property-matrix.md",
+        "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Challenge whether the source-audited six-profile discovery comparison supports a decision-relevant thesis contribution beyond a descriptive evidence map. Use docs/observer-property-matrix.md and docs/thesis-contribution-and-bias-assessment.md to test novelty and falsifiability. Preserve Pigeonhole AllOrNothing semantics, Dropbox viewer-information conditions, native profile guarantees and evidence classes; do not infer unobserved service behaviour. Keep ready T-004 for actual pinned client/release/account evidence.",
+      "next_action": "Audit set-level atomicity and partial visibility against SRC-043 multi-image reconstruction, Pigeonhole AllOrNothing, and the native scopes of Dropbox/Signal. Define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result. Preserve the distinction between native atomicity, endpoint-authenticated completeness, service acknowledgements and independent event evidence; do not infer missing product functionality from documentation gaps. T-004 remains ready for actual pinned client/release/account evidence.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
