@@ -1,5 +1,28 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Route/fault matrix minimality audit and Candidate C reassessment
+
+### Work performed
+
+- Audited the route/fault/evidence matrix for duplicated universal fault cases, route-native applicability and decision relevance.
+- Separated the common delivery/acceptance fault catalogue from source-specific diagnostic checks: UnifOMR candidate-capacity accounting; StOMR collision/state assumptions; Signal receipt, queue and conditional fanout semantics; Dropbox owner-facing activity/permission omissions; and Pigeonhole copy/read visibility.
+- Removed the repeated minimum-fault list and clarified that delayed-but-eventually-available differs from unavailable at the acceptance deadline; SRC-043 redundant fragment copies are not themselves duplicate-delivery faults.
+- Replaced the full-factorial minimum test proposal with a staged design: three primary treatments (SRC-043-style multi-image set, single-file Dropbox object, raw Pigeonhole AllOrNothing); a separate katzenqt application-gate observation; Signal as a reference profile unless a comparable product-level set operation is established; OMR-family work as retrieval comparators. The first discriminating omissions are one redundant image copy missing/delayed, all copies of one fragment missing, and Pigeonhole E1 success followed by E2 delay/rejection with an already-authorised concurrent reader.
+- Reconciled the staged design into the route-comparison framework, prior-art comparison §10.3, thesis §§8.8 and 11, W4 and the contribution assessment. Reviewed W1, W2, W3 and traceability: their source and terminology boundaries remain aligned; no further edits were required. Cleaned a duplicated W4 cross-route evidence bullet and its malformed emphasis.
+- Reassessed Candidate C against the documentary record. The matrix audit itself is not an empirical result. Pigeonhole reader-visible partial persistence remains untested; UnifOMR's candidate-capacity issue remains a primary-text ambiguity, not a demonstrated failure; SRC-043's partial byte recovery is established prior art. No controlled route comparison or rigorous counterexample currently changes a route choice, invalidates an assurance claim or exposes a gap beyond prior art. Candidate C remains a conditional evaluation-method candidate, not an established contribution. No route ranking or image-carriage advantage is supported.
+
+### Verification and evidence boundary
+
+- Exact post-write read-back verified for every changed file.
+- No controlled route test, deployment, benchmark, fault injection, reader-visibility observation, code execution, independent reproduction, formal re-proof, independent review or security audit was performed.
+- T-006's specified synthesis and matrix-audit work is integrated into the thesis and enduring research documents; it is closed pending materially new source evidence. T-001–T-004 remain open for source access and controlled-configuration evidence.
+
+### Next
+
+Continue T-001–T-003 source access where full methods, results, limitations or code materially affect thesis claims, prioritising complete MRAS/DRAS and sanitisation evidence. Continue T-004 only where actual Dropbox account/link settings, Signal client/account/backend state or a running Katzenpost deployment can be obtained. Preserve partial-review and deployment boundaries; do not let inaccessible sources block other thesis work.
+
+---
+
 ## 2026-11-18 · Matrix minimality audit and renewed image-source access search
 
 ### Work performed
