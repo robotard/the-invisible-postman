@@ -1624,3 +1624,39 @@ The phrase “Theory only · No implementation · Not audited.” is to remain a
 ### Verification
 
 Every changed file was fetched after its write and compared byte-for-byte with the submitted content. Exact saved blob SHAs are recorded in the current session digest. No research claim, task completion status or project maturity level was changed by this administrative correction.
+
+
+## 2026-11-18 · T-006 six-profile adversarial discovery comparison
+
+### Substantive work performed
+
+- Applied the seven-case discovery pressure test to all six named profiles: IMG-QIAO-2023, IMG-MRAS-2026, IMG-DRAS-2026, FILE-DROPBOX-LINK, E2E-SIGNAL-PROTOCOL and MIX-ECHOMIX-PIGEONHOLE.
+- Added route framework §5.8 with profile-specific bootstrap/publication, index/retrieval/collusion, retention/suppression and evidence-limit analysis.
+- Integrated the comparative result into thesis §8.8: the current source set does not close the full publication-to-acceptance chain for any pinned deployment; Echomix/Pigeonhole has the richest documented role/collusion model, but compatible deployment and captured service events remain unpinned.
+- Specified a falsifiable deployment evaluation using endpoint ground truth and independently timestamped publication, candidate-view, retrieval and endpoint-acceptance evidence; controlled false/stale/duplicate candidates, divergent views, delayed/withheld retrievals and selected collusions; and explicit classification of non-publication, indexing omission, retrieval withholding, invalid/replayed content and endpoint acceptance.
+- Expanded W1 RQ7 to include bootstrap, publication/index integrity, candidate enumeration, retrieval authorisation, cross-role collusion, retention, suppression and evidence distinguishing these events.
+- Preserved all source-review limits. No provider vulnerability, mitigation, index-consistency mechanism or deployed behaviour is asserted.
+
+### Evidence judgement and limits
+
+- IMG-QIAO-2023 supports bounded published image-transfer/extraction observations, not a messaging discovery protocol.
+- IMG-MRAS-2026 and IMG-DRAS-2026 remain partial literature profiles; publisher-indexed platform claims are not upgraded to verified platform configurations, and inspected public demos remain local per-image operations.
+- Dropbox evidence remains shared-link/activity documentation, not proof of cryptographic identity, complete candidate enumeration or universal retention.
+- Signal evidence remains PQXDH/Double Ratchet protocol reference, not product-level service metadata, retrieval or retention evidence.
+- Echomix/Pigeonhole is the strongest documentary integrated comparator for capability discovery, role separation and collusion analysis; deployment/version and captured service-event evidence remain open.
+- A service record supports only a bounded claim about the reporting service's event. Endpoint authentication does not prove publication/index completeness or explain absence. Silence remains ambiguous.
+- No new sources, implementation, platform measurements, experiment, reproduction, formal proof, independent peer review or audit were added.
+
+### GitHub writes and exact read-back verification
+
+| File | Commit | Fetched blob SHA | Result |
+|---|---|---|---|
+| `docs/route-comparison-framework.md` §5.8 | `73fe93c3f2417eed8b4b58457977ad581926cb9c` | `707cf1e9f66b04d1c9822976ecf9893340680c07` | Required six profile rows and comparative/falsifiable result present |
+| `thesis.md` §8.8 | `6c2828243c94404b23efdaccf79a3052accc6f76` | `717b91e8f928cc42f772b68a19137d55b0b48569` | Thesis synthesis and bounded evaluation present |
+| `docs/w1-research-framing.md` RQ7 | `265a2fd5b78fe8b88b472164e9bf0b8ff3d25a8c` | `24247221c32dbbdfa2bb486cb28ba04a7595ad5d` | Research question aligned with adversarial event chain |
+
+Each substantive file was fetched after writing. Marker checks passed for all six profile identifiers and the thesis synthesis. One auxiliary literal-string check for the token "no-publication" did not match because the prose uses the equivalent phrase "non-publication"; this was a check-string mismatch, not missing content. The route and thesis read-back SHA values match the write responses.
+
+### Exact next action
+
+- Continue T-006 with a source-by-source audit of every row in route framework §5.8 and thesis §8.8 against the source register and cited review boundaries. Tighten any claim that exceeds the evidence. Then continue T-006 synthesis or advance ready T-004 route configuration work where authoritative version/configuration evidence is obtainable.
