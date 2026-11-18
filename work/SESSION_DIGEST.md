@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-17 · discovery decomposition and route observer integration"
+checkpoint: "2026-11-18 · discovery event-chain adversarial pressure test integrated"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only
@@ -59,7 +59,7 @@ next_task: T-006
 work_backlog: work/lookup/TASKS.md
 work_backlog_schema: tip.work.tasks.v2
 current_state:
-  thesis: "One active manuscript at thesis.md in staging. §8.2 retains six evidence-bounded route profiles; §8.4 now decomposes discovery into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/authorisation and endpoint association, with a compositional observer analysis. §8.8 and §10.2 now separate candidate enumeration, retrieval/authorisation, endpoint validation and conversation association across route profiles. The route framework §5.6–§5.7 has matching event rows. No deployed route advantage is established; originality and review readiness remain open."
+  thesis: "One active manuscript at thesis.md in staging. §8.2 retains six evidence-bounded route profiles. §§8.4, 8.8 and 10.2 now pressure-test bootstrap substitution, malicious publication, index equivocation, retrieval manipulation, cross-role collusion, retention and suppression. The thesis distinguishes endpoint-authenticated facts, service-reported events, observed metadata and inferred correlations; no deployed route advantage is established and originality/review readiness remain open."
   thesis_argument:
     central_question: "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?"
     proposition: "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence."
@@ -106,7 +106,7 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/metadata inspected; full method/evaluation not inspected."
   SRC-049: "Pinned README/selected implementation inspected, not executed; indexed abstract summary added; full paper/formal security argument/results unreviewed."
 next_actions:
-  - "T-006: pressure-test the discovery event chain against the observer/property matrix and W2 threat model, especially malicious/colluding publication, index and retrieval actors, bootstrap substitution, event retention and suppression."
+  - "T-006: test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles; preserve native guarantees and evidence classes, and do not infer unobserved service behaviour."
   - "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits."
   - "T-004: pin actual Dropbox, Signal and Katzenpost/Pigeonhole client/release/account configurations and service-side lifecycle evidence where authoritative access permits."
   - "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks."
@@ -161,7 +161,7 @@ verified_research_documents:
   docs/w2-threat-model.md: "d6996524d4c847ce5bb67b3e41be41d8c4b385ca"
   docs/w4-risks-and-evaluation.md: "f53da96c10753b16ddfab2ccce77cceb4ed14682"
   docs/thesis-contribution-and-bias-assessment.md: "d8d3879f41251fcdbf9cf40c1e42cc04a849520d"
-latest_verified_project_head: "b83a691cdba8a1fdb88195036cd9b5a2a6a84b0e"
+latest_verified_project_head: "576e11685153fdb0439f56cf435a34e5fe0bfec2"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
@@ -207,19 +207,21 @@ automatic_reentry:
 verified_current:
   work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
   work/CHATGPT_PROJECT_INSTRUCTIONS.md: "62e36bf75dd0519e7f1983c847013af2134d9f9d"
-  work/PROJECT_STATE.md: "e9e17d1f6c318565be9477aa25b735654ce75fce"
+  work/PROJECT_STATE.md: "3cabe3e0a82db623c87c7f75a2b2f1dfcd690191"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
-  work/WORK_LOG.md: "6228c8316733432af093795b3bacab28f1373494"
+  work/WORK_LOG.md: "7240fa8792a461e7e85fe2cf42c3a64e829cf580"
   work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
   README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
-  work/lookup/TASKS.md: "0ae365bceac7971d543c72159bb5a930cba7dfe5"
-  work/lookup/TASKS.json: "91803f2fc91ac876362674ac3246ae40cf56a21d"
-  thesis.md: "deaee671bff4f15c805f89d836c18dd3dd4f1a5b"
-  docs/w3-architecture.md: "9ad8f905ce2a015dfeda5ebf3ba51556dc4bf46b"
-  docs/multi-message-linkage-and-steganographic-carriage.md: "49a31755a13dd47f7b0ff80833b1711250c68b4f"
-  docs/w4-risks-and-evaluation.md: "2393502288434425e4cbaae1000e0a95a0aba3a2"
-  docs/traceability.md: "838b3b3133ea496335e7a2b32d284c2e031b5fae"
-  docs/route-comparison-framework.md: "e701005693341d35565b7c18a17db81537cebc18"
+  work/lookup/TASKS.md: "7791fcc56b7f0b622b3850cddf9a09186ce4a73a"
+  work/lookup/TASKS.json: "fbe91a5af3e68a3896bd9139cfe9a700e3bf07cd"
+  thesis.md: "f87c6f4b2a8eb9baccd4a4976335f41b0d6ac6a0"
+  docs/w3-architecture.md: "a4d69b9c6e6247635c85b9537b0e44c1555960e4"
+  docs/multi-message-linkage-and-steganographic-carriage.md: "64c9cb8f8b3a820ba5b4edbb535f76c849cfcd15"
+  docs/w4-risks-and-evaluation.md: "664598b222d98bada990d8b258837d5840c1a1ad"
+  docs/traceability.md: "9e5eebbcf3b09840dd2d267c45ef01c71abac59e"
+  docs/w2-threat-model.md: "ca9e83731a32052d7188db981934e6886e328d1f"
+  docs/observer-property-matrix.md: "7f700e7d3ca5f28cf8d3635b345de9893b5f1e76"
+  docs/route-comparison-framework.md: "b68ebb2b8db2371b95147718d95c48cccc2a99e8"
 
 
 ## 2026-11-17 · Thesis-first sprint
@@ -260,3 +262,13 @@ verified_current:
 
 
 - Project checkpoint heading aligned with the discovery decomposition handover; PROJECT_STATE and WORK_LOG were fetched back with exact content equality.
+
+
+## 2026-11-18 · Discovery event-chain adversarial pressure test
+
+- Thesis §8.4 now contains seven explicit adversarial cases: bootstrap substitution, malicious publication, index equivocation/suppression, retrieval manipulation, cross-role collusion, retention/later disclosure, and suppression/delay ambiguity.
+- Reconciled the model into thesis §§8.8/10.2, W2 threats/capabilities, W3 discovery boundary, W4 E9, multi-message analysis §4.7, observer/property matrix §4.1, route-comparison ledger and RQ7 traceability.
+- Distinguished endpoint-authenticated protocol facts, service-reported events, externally observed metadata and analyst-inferred correlations. A successful index response does not prove completeness; silence does not identify the cause of an absent carrier.
+- All eight substantive files were fetched after their writes and their expected blob SHAs and required content markers matched. Work log, state and task registry/index were also fetched and checked.
+- T-006 remains active. Next: test whether the adversarial cases yield a concrete, defensible cross-profile comparison or falsifiable result across the six named route profiles. T-004 remains ready in parallel.
+- No new sources, implementation, experiments, formal proof, independent review or audit. Diagrams, peer review and release remain gated pending stable research synthesis.
