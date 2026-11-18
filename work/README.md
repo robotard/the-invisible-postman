@@ -1,5 +1,8 @@
 # Temporary thesis-development work area
 
+**Project maturity:** Theory only · No implementation · Not audited.  
+**Status semantics:** Repository-level maturity metadata; not a required chat-response footer. Detailed assurance and evidence limits belong in the relevant research records.
+
 **Role:** the temporary store of work to be done to bring the thesis to its intended research standard.
 
 The thesis is the product. `thesis.md` is the single active manuscript in development (staging) and the source of the released thesis. Staging and production are lifecycle states of the same thesis, not separate products or parallel thesis identities. A production release is a frozen, versioned release of the thesis after evidence reconciliation, quality checks and substantive peer scrutiny; it must not silently diverge from the staged manuscript.
