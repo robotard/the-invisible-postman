@@ -308,7 +308,7 @@ Threats: traffic analysis, participant correlation, timing and volume observatio
 
 Evaluation questions:
 
-* What can each observer see: endpoint, coordinator, platform, image host, storage provider, network/ISP observer or a more capable colluding observer?
+* What can each observer see: endpoint, external service operator, platform, image host, storage provider, network/ISP observer or a more capable colluding observer?
 * Which identifiers, timestamps, sizes, flow durations, packet/byte counts, service endpoints, carrier fingerprints and routing relationships are exposed?
 * What information is retained, by whom, for how long and under which access assumptions?
 * Can a stable locator, publication schedule or retrieval pattern link a recipient to a carrier?
