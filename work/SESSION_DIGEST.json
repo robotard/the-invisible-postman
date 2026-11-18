@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-18 · Pigeonhole AllOrNothing source-audited; katzenqt app-level assembly distinguished; T-004 public route pins recorded; runtime configuration remains open",
+  "checkpoint": "2026-11-18 · Pigeonhole sender/API/test gap and SRC-043 partial recovery integrated; route-agnostic acceptance contract remains a prior-art-dependent contribution candidate",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_maturity_metadata_not_a_routine_chat_footer",
@@ -30,7 +30,7 @@
     "Then inspect only the task registry and research documents required for the next unblocked action."
   ],
   "current": {
-    "thesis": "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 10.2 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. The Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source inspection shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; actual reader visibility remains untested. Pinned katzenqt 0.0.2 separately stores received pieces and only dispatches a complete contiguous chain to its conversation log; this is app-level gating, not AllOrNothing or atomic storage, and the client is pre-alpha/not suitable to rely on for privacy. No defect, deployed advantage or novelty is established.",
+    "thesis": "One active manuscript at thesis.md in staging. §§8.4, 8.8 and 10.2 analyse adversarial discovery, cross-profile event evidence and set-level atomicity. Pigeonhole specification claims reader-side AllOrNothing atomicity, but pinned v0.0.90 source shows sequential destination writes, independent persistence and no rollback of a successful prefix in the inspected failure path; the thin-client v0.0.23 API has no reader commit control and its tests omit a later-envelope failure with a concurrent reader. Actual reader visibility remains untested. katzenqt 0.0.2 separately stores received pieces and gates conversation-log dispatch on a complete contiguous chain; this is app-level gating, not AllOrNothing or atomic storage, and the client is pre-alpha/not suitable to rely on for privacy. SRC-043 natively permits partial byte reconstruction, including ? for missing fragment bytes; its 61.1% at 80% loss is a byte-recovery metric, not authenticated message acceptance. The remaining candidate is a route-agnostic endpoint acceptance/evidence contract, not yet a novelty claim.",
     "research_units": "W1-W4 drafted; W1 RQ7, W4 E5/E9, observer/property matrix §4.1 and thesis §§8.8/10.2 are aligned to the source-audited six-profile adversarial discovery and set-level atomicity comparison. Confidence/evidence remains integrated into RQ10.",
     "source_register": "49 entries, SRC-001 through SRC-049.",
     "multi_message_model": "Distinguishes logical messages, protected objects, fragment sets, redundant carriage, independent-message batches, conversation/session continuity, retries/duplicates and cross-route copies. Discovery is decomposed into bootstrap, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation and endpoint association; these do not authenticate one another.",
@@ -43,7 +43,7 @@
         "observer-inferred carrier/message linkage"
       ],
       "sources": {
-        "SRC_043": "Multi-image fragment carriage and redundant reconstruction using robust DFT/DCT watermarking; not a generic steganographic stealth result.",
+        "SRC_043": "Multi-image file fragmentation and redundant DFT/DCT watermark carriage; majority-voted duplicate fragments; missing fragment bytes marked with ?. Published 1,000-image/208-fragment/r=4 loss test reports byte recovery (full at 30% loss, 61.1% at 80%), not authenticated logical-message acceptance.",
         "SRC_044": "Batch steganography and pooled steganalysis under stated assumptions.",
         "SRC_045": "Formal asymptotic square-root capacity theorem under explicit cover-capacity, detector-response, independence and known-batch assumptions.",
         "SRC_049": "Two redundancy levels: d-fold repetition within each frame and majority voting across 16 frame secrets. Code read at pinned repository revision; no execution/audit."
@@ -68,7 +68,7 @@
       ],
       "limits": "Code read only, not executed or audited; paper/formal security argument and complete experimental results unreviewed."
     },
-    "route_profiles": "Six named profiles are integrated into thesis §8.2 and route framework §§5.8–5.9: Qiao, MRAS, DRAS, Dropbox shared link, Signal protocol reference and Echomix/Pigeonhole. Public pins: Dropbox browser-link documentation/access-path variants; Signal Android v8.35.2, iOS 8.37.0.1993, Desktop v8.35.0; Katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2. No actual Dropbox account/link, Signal backend/account state or running Katzenpost deployment/service-event capture is pinned.",
+    "route_profiles": "Six named profiles integrated into thesis §8.2 and route framework §§5.8–5.9: Qiao, MRAS, DRAS, Dropbox shared link, Signal protocol reference and Echomix/Pigeonhole. Public pins: Dropbox browser-link documentation/access-path variants; Signal Android v8.35.2, iOS 8.37.0.1993, Desktop v8.35.0; Katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2. No actual Dropbox account/link, Signal backend/account state or running Katzenpost deployment/service-event capture is pinned.",
     "protocol_analysis": "Key scope, HKDF salt/info, transcript binding, nonce uniqueness, AAD, replay, ordering and safe fallback analysed. Signal PQXDH/Double Ratchet (1:1), MLS (group) and HPKE (lower-level composition) compared at distinct scopes. No protocol or primitive suite selected.",
     "implementation": null,
     "independent_audit": null,
@@ -122,13 +122,8 @@
     "thesis_argument": {
       "central_question": "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?",
       "proposition": "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence.",
-      "contributions": [
-        "Responsibility-separated architecture",
-        "Common route-comparison method",
-        "Message-relationship and lifecycle analysis",
-        "Claim-centred evidence discipline"
-      ],
-      "route_synthesis": "Image studies inform media transformation; Dropbox direct-invitation and view-only-link paths differ; Signal specifications and public Android/iOS/Desktop release tags do not pin backend/account behaviour; Katzenpost has compatible v0.0.90 / thin_client 0.0.23 / katzenqt 0.0.2 source pins, not a deployed configuration. Pigeonhole AllOrNothing specification claims are in tension with the inspected sequential-write/no-rollback source path; katzenqt uses a separate app-level complete-chain gate. Reader-visible behaviour remains untested; no measured route advantage or novelty is established.",
+      "contributions": "Responsibility-separated architecture; common route-comparison method; message-relationship/lifecycle analysis; claim-centred evidence discipline. The route-agnostic endpoint acceptance/evidence contract is a candidate synthesis, not an established novelty claim.",
+      "route_synthesis": "Image studies inform media transformation; SRC-043 already fragments and redundantly carries image fragments, permits partial byte recovery and marks missing bytes; Dropbox direct-invitation and view-only-link paths differ; Signal specs/client tags do not pin backend/account behaviour; Katzenpost source tags are pinned but no deployment is. Pigeonhole AllOrNothing spec claims are in tension with the inspected sequential-write/no-rollback source path; thin-client API/tests do not resolve reader visibility; katzenqt has a separate app-level complete-chain gate. The candidate contribution is a route-agnostic endpoint acceptance/evidence contract, still conditional on prior-art and decision relevance.",
       "prior_art_pressure": "Thesis explicitly confronts OMR/GOMR and PerfOMR/SophOMR/InstantOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert communication. Generic private-discovery, whole-pipeline and image-covert-channel novelty claims are not supportable.",
       "limits": "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
     },
@@ -139,7 +134,7 @@
     },
     "discovery_model": "Discovery is decomposed into bootstrap/trust establishment, publication/indexing, candidate enumeration, recipient pertinence/retrieval authorisation, retrieval, extraction, endpoint validation and conversation association. Seven adversarial cases are integrated: bootstrap substitution, malicious publication, index equivocation/suppression, retrieval manipulation, cross-role collusion, retention/later disclosure and suppression/delay ambiguity. Endpoint-authenticated facts, service-reported events, observed metadata and inferred correlations remain distinct; index response does not prove completeness, and silence does not identify why a carrier is absent. No discovery mechanism, index-consistency mechanism or deletion guarantee is selected.",
     "route_synthesis": "Image studies inform media transformation; Dropbox documents owner/editor file activity and conditional viewer information; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator, with AllOrNothing atomic set semantics and explicit replica/retention constraints. Set-level atomicity/partial visibility is now a comparison dimension; the current matrix is descriptive, not a measured result.",
-    "set_level_atomicity": "Pigeonhole specification claims reader-side AllOrNothing atomicity; pinned v0.0.90 source shows sequential destination-envelope dispatch, independent persistence and no rollback of a successful prefix on the inspected failure path. Reader visibility is untested. katzenqt 0.0.2 separately persists received pieces and gates conversation-log dispatch on a terminal F plus contiguous decodable chain; this is application-level gating, not AllOrNothing or atomic storage. No code/tests executed."
+    "set_level_atomicity": "Pigeonhole specification claims reader-side AllOrNothing atomicity; pinned v0.0.90 source shows sequential destination-envelope dispatch, independent persistence and no rollback of a successful prefix on the inspected failure path. Thin-client v0.0.23 API is sender-side only with no recipient ReadCap/reader commit control; tests cover success and first-envelope failure, not later failure with concurrent reader. katzenqt 0.0.2 separately persists received pieces and gates conversation-log dispatch on a terminal F plus contiguous decodable chain; this is app-level gating, not AllOrNothing or atomic storage. SRC-043 permits partial byte reconstruction; acceptance remains separate. No code/tests executed."
   },
   "completed": [
     "Rewrote thesis abstract and tightened central research question/proposition around endpoint-authenticated message semantics, replaceable carriage and observer-bounded evidence.",
@@ -184,11 +179,12 @@
     "SRC_048": "IEEE abstract/author record only; full method/evaluation not inspected.",
     "SRC_049": "Pinned README and selected implementation files inspected; no execution/audit. Full paper/formal security argument and complete results unreviewed.",
     "SRC-039": "Official Dropbox help pages inspected; direct invitation and view-only shared-link paths distinguished. Link settings apply to link users; direct invitees and existing access retain separate permissions. Account plan, link settings and live activity/viewer records remain untested.",
-    "SRC-040": "Compatible source tags pinned: katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2. Selected v0.0.90 courier/client/replica source and katzenqt 0.0.2 receive path inspected, not executed. AllOrNothing spec claims reader atomicity; server path sequentially persists writes and shows no rollback on early failure. katzenqt app stores pieces but gates conversation-log dispatch on complete contiguous chain. Reader-visible protocol atomicity remains untested; client pre-alpha; no deployment/audit.",
-    "SRC-038": "Official Signal protocol specifications plus latest public client release tags checked 18 November 2026: Android v8.35.2 (tag commit d507a800a61cd5819a3670fe71e84e103efa7bda), iOS 8.37.0.1993 (commit 1c925a184f7d0412c64ad754bab2ed2cc09682e9), Desktop v8.35.0 (commit cb584b71326470abb8865bee5dd8c1b4631cbf9c). Client source pins only; backend/account/service configuration unverified."
+    "SRC-040": "Compatible source tags pinned: katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2. Selected v0.0.90 courier/client/replica and thin_client API/tests plus katzenqt 0.0.2 receive path inspected, not executed. AllOrNothing spec claims reader atomicity; server path sequentially persists writes and shows no rollback on early failure; sender API exposes no reader commit control; existing failure test rejects first envelope only. katzenqt app stores pieces but gates conversation-log dispatch on complete contiguous chain. Reader-visible protocol atomicity remains untested; client pre-alpha; no deployment/audit.",
+    "SRC-038": "Official Signal protocol specifications plus latest public client release tags checked 18 November 2026: Android v8.35.2 (tag commit d507a800a61cd5819a3670fe71e84e103efa7bda), iOS 8.37.0.1993 (commit 1c925a184f7d0412c64ad754bab2ed2cc09682e9), Desktop v8.35.0 (commit cb584b71326470abb8865bee5dd8c1b4631cbf9c). Client source pins only; backend/account/service configuration unverified.",
+    "SRC-043": "Full publisher HTML inspected. Native scheme fragments a file, redundantly embeds each fragment in r images, majority-votes duplicates and marks missing fragment bytes with ?. Loss benchmark: 1,000 images, 208 fragments, r=4, 832 embedded and 168 non-watermarked; success is restored bytes/total bytes, full recovery at 30% loss and 61.1% byte recovery at 80%. This is partial byte recovery, not authenticated logical-message acceptance."
   },
   "next": [
-    "T-006: check whether any pinned Pigeonhole application path supplies a reader commit barrier or capability handoff that resolves the v0.0.90 sequential-write/failed-prefix question; keep raw AllOrNothing separate from katzenqt 0.0.2 app-level assembly; finalise the smallest read-side fault test against SRC-043 and the single-file baseline.",
+    "T-006: expand the prior-art crosswalk for the route-agnostic endpoint acceptance contract. Map what SRC-043, Pigeonhole/katzenqt, Dropbox, Signal, OMR/GOMR, Oblivious Signaling, Remise and Echomix already provide for fragment membership, set completeness, reconstruction, atomicity, delivery evidence and observer privacy. Identify precisely what the contract adds, whether it changes a real route decision, and whether a repeatable evaluation/counterexample supports Candidate C. Treat it as a synthesis candidate, not novelty, until this comparison is complete.",
     "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits.",
     "T-004 (in_progress): public Dropbox/Signal/Katzenpost source pins are recorded; pursue actual Dropbox account/link settings, Signal installed client/backend/account state and a running Katzenpost deployment only where controlled access is available. Do not treat public source snapshots as deployments.",
     "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks.",
@@ -292,9 +288,9 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "a8ca673b84d1f2d20d62f7d38514e03601f4046c",
-  "immediate_next_action": "T-006: inspect whether the pinned Pigeonhole application path has an explicit reader commit barrier or capability handoff that explains the AllOrNothing reader-atomicity claim; distinguish this from katzenqt 0.0.2 app-level assembly; finalise the smallest read-side fault-test specification against SRC-043 and the single-file baseline.",
-  "latest_verified_project_head": "a8ca673b84d1f2d20d62f7d38514e03601f4046c",
+  "latest_commit_before_json_digest_refresh": "ff8a47984f172f55a249ee8f133d10f935f5e17b",
+  "immediate_next_action": "T-006: expand the prior-art crosswalk for the route-agnostic endpoint acceptance contract; map the existing guarantees and evidence boundaries across SRC-043, Pigeonhole/katzenqt, Dropbox, Signal, OMR/GOMR, Oblivious Signaling, Remise and Echomix; identify whether the contract adds a decision-relevant invariant or repeatable evaluation method.",
+  "latest_verified_project_head": "ff8a47984f172f55a249ee8f133d10f935f5e17b",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -419,7 +415,7 @@
     "final_digest": "work/SESSION_DIGEST.json",
     "final_digest_rule": "JSON digest is written last, then fetched and parsed; its own commit SHA is reported in the handover rather than self-referenced."
   },
-  "task_status_correction": "T-004 is now in_progress: public Dropbox/Signal/Katzenpost reference pins recorded, runtime/account/deployment configuration remains blocked pending controlled access. T-006 remains in_progress with a source-level Pigeonhole reader-atomicity question and a minimal read-side evaluation specified.",
+  "task_status_correction": "T-004 is in_progress: public Dropbox/Signal/Katzenpost reference pins recorded, runtime/account/deployment configuration remains blocked pending controlled access. T-006 remains in_progress; the current candidate is a route-agnostic endpoint acceptance/evidence contract requiring a prior-art crosswalk and decision-relevance test.",
   "project_instructions": {
     "source": "work/CHATGPT_PROJECT_INSTRUCTIONS.md",
     "purpose": "Concise operating instructions for external ChatGPT Project settings.",
@@ -457,19 +453,20 @@
   "verified_current": {
     "work/START_HERE.md": "d575e8d58c683349cc2e04a173da0a32d1281a60",
     "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "b88c44d7021613ebffa958ffe7f171cec5603d21",
-    "work/PROJECT_STATE.md": "33f919a2c59114de7a25785ea4525a29030ca983",
+    "work/PROJECT_STATE.md": "e5ab86341eeb365fc0f2fc0cc3794b33521cba06",
     "work/WORKPLAN.md": "810a7022c1caa467c0940445b189c98ab03888ae",
-    "work/WORK_LOG.md": "362eb9f34fcb0e4b6991c503fad104426f7ab102",
-    "work/lookup/TASKS.md": "a92c7872736b85818248ea7eb8e70a097cb967a5",
-    "work/lookup/TASKS.json": "85f687bd41526dbac4d7b754f536292f5599835d",
-    "work/SESSION_DIGEST.md": "de66fd071e4d9e5e883d3313971a96ef859192d1",
-    "docs/source-register.md": "72a95ddae99df5dd0cedb3633287efe13ebeb80c",
-    "docs/echomix-katzenpost-comparator.md": "cac1ce39d05264f795fd2740060847a3821c5054",
-    "docs/route-comparison-framework.md": "cf636bc72dba2358b3848f4dc2ab544415aab253",
-    "thesis.md": "d114204038a559606b571921e5d008cf13d21cfe",
-    "docs/w4-risks-and-evaluation.md": "bc2d810ef081dae96ee9c6ed8c2ada38a2d3b632",
-    "docs/thesis-contribution-and-bias-assessment.md": "f60991458674dc72da7d386690db0f5ce05863df",
-    "docs/observer-property-matrix.md": "89e64cb32be4121b2ae44c360827e20fc576fbcf"
+    "work/WORK_LOG.md": "692ec21edbd26672829849f777aef0e4cb3d6fbb",
+    "work/lookup/TASKS.md": "121b2ee76e912917722fd5b3547a735829bf0208",
+    "work/lookup/TASKS.json": "40295227bfeb5d2885d50f58aaf312d11f81ae59",
+    "work/SESSION_DIGEST.md": "7f7772bfcebc01df3c2197912f1a2ec7bc452394",
+    "docs/source-register.md": "d5737d1b10684642d0c855110b4290c19b8de7c6",
+    "docs/route-comparison-framework.md": "accef69d9343148d94ecc8a651353333a88fabe8",
+    "thesis.md": "c529d0f33169585195f3c0f9dad9c0c3e7fc3cb1",
+    "docs/w4-risks-and-evaluation.md": "9a0f09af1d867bb49790b6349ecfc77ac8a46e1a",
+    "docs/thesis-contribution-and-bias-assessment.md": "09b2e6e352fc181bd3ad7c2829406492921e8463",
+    "docs/observer-property-matrix.md": "268c15736f8146dc7420fbd4242b8a4c79591981",
+    "docs/multi-message-linkage-and-steganographic-carriage.md": "7f1663649dedb9365a32d8b3c442047c42771bcf",
+    "docs/echomix-katzenpost-comparator.md": "cac1ce39d05264f795fd2740060847a3821c5054"
   },
   "route_profile_pin_update": {
     "date": "2026-11-18",
@@ -477,5 +474,6 @@
     "signal": "Official client release tags pinned: Android v8.35.2, iOS 8.37.0.1993, Desktop v8.35.0; these do not pin backend or account configuration.",
     "katzenpost": "Compatible source tags pinned: katzenpost v0.0.90, thin_client 0.0.23, katzenqt 0.0.2; no running deployment/configuration or independent audit.",
     "limits": "Public documentation/source pins only; no service deployment, account configuration, platform experiment or runtime evidence."
-  }
+  },
+  "contribution_status": "Candidate A remains an architectural organising principle; Candidate B (image-route advantage) remains conditional; Candidate C is a route-agnostic endpoint acceptance/evidence contract candidate only. Known mechanisms and prior art already cover multi-image fragmentation/redundancy, Pigeonhole AllOrNothing, app-level incomplete-set gating, cryptographic completeness obligations and private discovery. Candidate C must demonstrate a decision-relevant invariant or repeatable evaluation beyond those mechanisms."
 }
