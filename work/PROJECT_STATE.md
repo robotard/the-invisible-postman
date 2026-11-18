@@ -41,14 +41,14 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 **T-006 is complete for the current evidence set.** The route/fault matrix has been audited for minimality and staged decision relevance; Candidate C remains conditional and no route winner or mechanism-level novelty is established. Reopen this synthesis only if new source evidence materially changes the thesis.
 
-1. **T-007 · Final thesis alignment and cross-document consistency review (in progress).** Audit the active thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry. Verify every cited SRC ID and internal link; reconcile stale or duplicated wording without upgrading partial sources.
+1. **T-007 · Final thesis alignment and cross-document consistency review (complete for this checkpoint).** The static check found 53 unique source-register IDs, no missing citations in checked thesis/W1–W4/prior-art/route/traceability documents, no broken relative links in the checked active documents, no duplicate thesis paragraphs or numbered heading IDs, and valid route-framework §5.8/§5.9 anchors. Partial-source labels were preserved. This is not independent review.
 2. **T-013 · Formalise Candidate D (ready).** Define adversary/collusion assumptions, authenticated snapshot and admission scope, hidden-predicate retrieval completeness, sender-manifest closure, leakage and cost. Test composition against SRC-054 APIR, SRC-055 AAD, SRC-020/024–030 OMR/GOMR/efficiency work and SRC-052 before proposing new mechanisms.
 3. **T-001–T-003 · Source access blocked.** Full papers remain unavailable for SRC-033/034/036/046/048/049; SRC-047's GitHub tree is README-only and its external Baidu model archive is inaccessible. Partial-review labels remain mandatory.
 4. **T-004 · Route configuration evidence blocked.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
 5. **Diagrams, external review and release** remain gated. Do not start illustration or release packaging merely because a matrix or checkpoint exists.
 ## Exact next action
 
-1. Run the targeted T-007 consistency audit across thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry. Verify all cited SRC IDs and internal links; resolve only evidenced discrepancies.
+1. Continue thesis-first refinement of the typed relationship and acceptance invariants in §7.3, preserving the distinction between fragment-set membership, retry equivalence, cross-route equivalence and conversation continuity. Do not freeze a wire format or identifier scheme without evidence; keep diagrams gated. Reopen T-001–T-004 only when new primary sources, retrievable artifacts or controlled route configurations become available.
 2. Preserve T-001–T-004 blockers exactly: full-paper/artifact access for SRC-033/034/036/046/047/048/049 and controlled Dropbox/Signal/Katzenpost configurations. Do not upgrade partial reviews or imply live tests.
 3. Reassess whether the thesis candidate is coherent enough to unblock later diagram/review planning; Candidate C remains conditional and no route winner is established.
 
