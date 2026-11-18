@@ -2371,5 +2371,5 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 
 ### Verification and next action
 
-- Follow-up source-register check confirmed SRC-001–SRC-061 are contiguous and unique; prior-art §3.8 cites SRC-061. Exact post-commit read-back is required before marking this record verified.
+- Follow-up source-register check confirmed SRC-001–SRC-061 are contiguous and unique; prior-art §3.8 cites SRC-061. After commit, all seven changed files were fetched from `main`; the source-register write was checked against its intended content, and the remaining files were checked for the new Sony section, task-status changes, updated state/roadmap and this work-log entry. Read-back checks passed.
 - Continue only where a defined thesis claim or contradiction justifies additional research. T-001–T-004 are not critical-path blockers; diagrams, peer review and release remain gated.
