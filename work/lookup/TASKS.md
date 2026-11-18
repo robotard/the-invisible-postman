@@ -23,7 +23,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. Draft and integrate the thesis first. Current focus: pressure-test the discovery event chain against the observer/property matrix and W2 threat model, including malicious/colluding publication, index and retrieval actors, bootstrap substitution, retention and suppression.
+**Current active task:** T-006. Draft and integrate the thesis first. Current focus: test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles. Preserve native guarantees and evidence classes; do not infer unobserved service behaviour.
 
 **Parallel evidence work:** T-001–T-003 remain in_progress for source access, but these tasks do not block unrelated manuscript drafting. T-004 remains ready. Task status changes only when the underlying work changes.
 
