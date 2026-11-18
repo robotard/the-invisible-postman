@@ -26,10 +26,9 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-001. The README-labelled MRAS and DRAS MATLAB repositories are now pinned and source-inspected; their ten-image local JPEG demos, per-image message prefixes, Windows MEX dependencies and payload/channel-model caveats are integrated. Their full papers remain inaccessible, and SRC-036 has no matching public code repository located. Continue seeking author/institutional copies; do not promote code inspection or publisher-indexed text to full-paper review. T-002 and T-003 remain active source-access tasks. T-006 is complete for the current documentary checkpoint: route/source findings are integrated, the matrix is audited for minimality, and Candidate C remains conditional. Actual service and controlled route tests remain gated on accounts, devices or deployments.
+**Current active work:** T-001–T-003 source access, with T-004 route-configuration evidence continuing where controlled access becomes available. T-006 is complete for the current evidence set: the matrix now separates common delivery faults from source-specific diagnostics and uses a staged three-treatment minimum; katzenqt remains a separate application-gate observation, Signal a reference profile, and OMR-family work retrieval comparators. The Candidate C contribution condition remains unmet: Pigeonhole reader visibility is untested, UnifOMR's capacity issue is a primary-text ambiguity rather than a demonstrated failure, and SRC-043 already establishes multi-image partial byte recovery. No route ranking or image-carriage advantage is supported.
 
-**Parallel evidence work:** T-001–T-003 remain in_progress for source access where it materially resolves claims. T-004 is now in_progress: public Dropbox/Signal/Katzenpost release and documentation snapshots are pinned, but actual account, installed-client/backend and running-deployment configurations remain unavailable. Continue other unblocked work around these access limits.
-
+**Next:** continue T-001–T-003 full-text/code access where it materially resolves methods, results, limitations or implementation claims. T-004 remains bounded by lack of actual Dropbox account/link settings, installed Signal client/account/backend state and a running Katzenpost deployment. Reopen T-006 only if new evidence materially changes the thesis or route comparison.
 ## Status meanings
 
 - `ready`: unblocked and not started.
