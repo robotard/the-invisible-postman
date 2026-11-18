@@ -1,6 +1,6 @@
 {
   "schema": "tip.session-digest.v2",
-  "checkpoint": "2026-11-18 · prior-art §10.3 and thesis §8.8 narrow Candidate C to a reproducible, decision-relevant cross-route evaluation method; endpoint acceptance itself is standard protocol discipline",
+  "checkpoint": "2026-11-18 · supplied StOMR camera-ready paper directly reviewed; 32-bit signal-collision caveat integrated; route/fault/evidence matrix updated",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
   "status_semantics": "project_maturity_metadata_not_a_routine_chat_footer",
@@ -96,7 +96,8 @@
       "SRC_033": "Publisher-indexed pass clarified extraction-error, PSNR/SSIM and classifier-error metrics, named comparators, BOSSbase and LinkedIn evaluation. Complete parameters, result tables and limitations remain unavailable.",
       "SRC_034": "Publisher-indexed pass clarified RoLoS ablation, PMAS comparison, Q95-to-Q85/Q80/Q75 scenarios and author-reported approximately 87% extraction-error reduction / order-of-magnitude runtime claims. Full tables and platform procedure remain unavailable.",
       "SRC_036": "Publisher-indexed pass clarified attack/filtering plus optimisation modules, joint loss, BOSSbase 8,000/2,000 split, BOWS2 and QF75 context. Full equations, training details, result tables and generalisation limits remain unavailable.",
-      "review_status": "T-001 remains open. All three reviews remain partial; no complete paper text, experiment reproduction or audit obtained."
+      "review_status": "T-001 remains open. All three reviews remain partial; no complete paper text, experiment reproduction or audit obtained.",
+      "SRC_050": "User-supplied 15-page CCS 2026 camera-ready paper directly inspected. S-OMR evolving state, OMR-KEM bootstrap, passive-only adversary, identity-binding and state-recovery limits, and 32-bit PRF signal-collision caveat integrated into source register, prior-art comparison, thesis and route/fault/evidence matrix. No benchmark reproduced or audit performed."
     },
     "confidence_model": {
       "status": "Provisional thesis organising principle; usefulness, originality, usability and privacy cost remain unevaluated.",
@@ -295,7 +296,7 @@
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
   "latest_commit_before_json_digest_refresh": "03e13c62d86cdb0d20c8a3566ff6b8c300e4c7f0",
-  "immediate_next_action": "T-006: operationalise prior-art comparison §10.3 into a minimal route/fault/evidence matrix. Separate public-source comparisons from tests requiring controlled Dropbox, Signal, Katzenpost or image-platform configurations; identify the smallest decision-relevant experiment. Do not start diagrams or raise novelty status.",
+  "immediate_next_action": "T-006: continue source-auditing docs/route-fault-evidence-matrix.md against pinned profiles and the reviewed SRC-050 camera-ready paper. Preserve the 32-bit signal-collision and passive-adversary caveats; check native units, fragment completeness, reconstruction, atomicity, endpoint acceptance, observer leakage and event evidence. Separate documentary claims from controlled tests. Do not start diagrams or raise novelty status.",
   "latest_verified_project_head": "2c43f3ce9ae3c45f4dec126e74605443eb6a12ea",
   "work_registry": {
     "schema": "tip.work.registry.v3",
@@ -485,7 +486,7 @@
   "contribution_status": "Candidate A remains an architectural organising principle, not a novelty claim. Candidate B (image-route advantage) remains conditional. The generic endpoint-acceptance sequence is standard protocol discipline, not a novelty claim. Candidate C is narrowed to a reproducible cross-route evaluation method; it survives as a contribution only if a controlled result or rigorous counterexample changes a route choice, invalidates a material assurance claim, or exposes a failure/evidence ambiguity beyond prior art.",
   "prior_art_crosswalk": {
     "file": "docs/prior-art-comparison.md §10",
-    "status": "Crosswalk §10 and decision-relevance test §10.3 added; mechanism-level acceptance novelty claim retired. Candidate C narrowed to a reproducible cross-route evaluation method; decision relevance remains unproven.",
+    "status": "Crosswalk §10 and decision-relevance test §10.3 added; endpoint-acceptance mechanism novelty claim retired. StOMR camera-ready paper directly reviewed; 32-bit signal-collision caveat and passive threat-model boundary recorded. Candidate C remains a reproducible cross-route evaluation method, conditional on decision-relevant evidence.",
     "coverage": [
       "OMR/PerfOMR/SophOMR/InstantOMR/GOMR",
       "Oblivious Signaling",
@@ -497,6 +498,6 @@
       "Dropbox",
       "Signal"
     ],
-    "judgement": "Constituent mechanisms are established prior art. Endpoint acceptance states are standard protocol obligations. Only a reproducible cross-route evaluation method with decision-relevant output remains a possible contribution."
+    "judgement": "Constituent mechanisms are established prior art. StOMR adds stateful private retrieval and OMR-KEM bootstrap, but does not establish human identity, global candidate-view completeness or multi-carrier acceptance; its 32-bit evaluated tags have a separate concrete collision-bound caveat. Only a reproducible cross-route method with decision-relevant output remains a possible contribution."
   }
 }
