@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · UnifOMR primary paper directly reviewed; candidate-capacity ambiguity integrated; T-006 source audit active  
+**Checkpoint:** 2026-11-18 · UnifOMR primary paper reviewed; Pigeonhole reader-visibility probe refined against pinned API semantics; T-006 active  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
@@ -28,7 +28,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 ## Material evidence boundaries
 
 - **SRC-043:** multi-image file fragmentation and redundant carriage; majority-voted copies; partial byte recovery with missing bytes marked `?`. Its reported 61.1% at 80% carrier loss is a byte-recovery metric, not authenticated logical-message acceptance.
-- **Pigeonhole / Katzenpost (SRC-040):** the specification claims reader-side AllOrNothing semantics; the pinned server source path writes destination envelopes sequentially without rollback on the inspected early-failure path. Concurrent reader visibility remains untested. `katzenqt 0.0.2` separately gates conversation-log dispatch on a complete contiguous chain; this is application-level gating, not atomic storage.
+- **Pigeonhole / Katzenpost (SRC-040):** the specification claims reader-side AllOrNothing semantics; the pinned server source path writes destination envelopes sequentially without rollback on the inspected early-failure path. Concurrent reader visibility remains untested. The probe now accounts for the thin-client's default uncapped BoxIDNotFound retry, the 30-minute same-WriteCap Copy-status cache, and the fact that RocksDB Put acceptance is not crash-durability evidence. `katzenqt 0.0.2` separately gates conversation-log dispatch on a complete contiguous chain; this is application-level gating, not atomic storage.
 - **StOMR (SRC-050):** full camera-ready paper and selected CPU/GPU artifact source inspected. Its adversary is passive and protocol-following; OMR-KEM key delivery does not authenticate a human/contact identity; stateful group OMR is future work; the inspected artifact is a local synthetic matching/compression/decode harness, not a networked deployment or visible OMR-KEM integration. The evaluation uses 32-bit PRF signal outputs; Appendix C.1's all-pairs collision upper bound is approximately 0.5 at a (2^{16})-entry board. This is a loose global bound, not a target-specific false-match estimate, and is separate from the ≥128-bit BFV parameter claim. Production rollback/fork/concurrent-state recovery is not specified.
 - **UnifOMR (SRC-051):** the complete 56-page primary paper is directly reviewed. It uses a two-round clue-detection plus batch-PIR flow; privacy against malicious/colluding parties is distinct from completeness/soundness under an honest-but-curious detector, and malicious single-server integrity is an open problem. Algorithm 1 randomly truncates candidate sets larger than k̄, but the formal completeness condition bounds true pertinent messages and does not reconcile false-positive candidates with that capacity. This is a primary-text accounting ambiguity, not a demonstrated failure. SRC-053 is a secondary assessment now cross-checked against the primary paper. The cited GitHub repository appears to be the older 2021 OMR proof of concept, not an identifiable UnifOMR artifact.
 - **SRC-052:** third-party experimental wallet/lightwalletd integration, not the paper authors' official artifact or production evidence. It implements service-range completeness, slot maps, whole-height truncation, cursor retry, striped PIR and trial-decrypt fallback. Its default server build excludes OMR and funded end-to-end checks remain open.
@@ -37,7 +37,7 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 ## Active work, in priority order
 
-1. **T-006 · Source-audit and test-design.** Image-specific transformation cells have been compared with SRC-035, SRC-033, SRC-034 and SRC-043; unsupported transformations remain unknown. Next, design the Pigeonhole successful-prefix/later-failure concurrent-reader probe from pinned v0.0.90 source and thin-client v0.0.23 API/tests. Then finish Signal and Dropbox product/service evidence boundaries. Keep protocol claims separate from product behaviour; preserve OMR candidate-view, StOMR collision/state and the directly reviewed UnifOMR candidate-capacity ambiguity (SRC-051), with SRC-053 as secondary corroboration.
+1. **T-006 · Source-audit and test-design.** Image-specific transformation cells have been compared with SRC-035, SRC-033, SRC-034 and SRC-043; unsupported transformations remain unknown. The Pigeonhole successful-prefix/later-failure concurrent-reader probe has been refined against pinned v0.0.90 source and thin-client v0.0.23 API/tests, but remains unexecuted. Next, finish Signal and Dropbox product/service evidence boundaries. Keep protocol claims separate from product behaviour; preserve OMR candidate-view, StOMR collision/state and the directly reviewed UnifOMR candidate-capacity ambiguity (SRC-051), with SRC-053 as secondary corroboration.
 2. **T-001–T-003 · Source access.** Continue full-text/code access where it materially resolves a thesis claim, including the incomplete image and sanitizer sources. Partial-review labels remain mandatory; inaccessible sources must not stall unrelated thesis work.
 3. **T-004 · Route configuration evidence.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
 4. **T-007 · Coherence/review.** Terminology, citations, traceability and cross-document audit remain gated until substantive synthesis stabilises.
@@ -45,9 +45,8 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 ## Exact next action
 
-1. Design the Pigeonhole successful-prefix/later-failure concurrent-reader probe from pinned v0.0.90 source and thin-client v0.0.23 API/tests. Specify the fault injection, reader timing, observable state, endpoint/service evidence and outcomes that distinguish specification-level AllOrNothing from reader-visible partial persistence. Do not claim the probe has been run.
-2. Audit Signal protocol guarantees separately from product/service behaviour: message-key replay and out-of-order handling, delivery/read receipts, linked devices, backend queues and account state.
-3. Audit Dropbox's direct-invitation and view-only-link paths, owner/editor-visible activity, configurable viewer information, plan-dependent history, Guest views and direct downloads; keep live account configuration explicitly unpinned.
-4. Update the matrix and thesis only where findings change an evidence boundary or route decision. Keep all controlled tests gated on access to the relevant accounts/devices/deployments.
+1. Audit Signal protocol guarantees separately from product/service behaviour: message-key replay and out-of-order handling, delivery/read receipts, linked devices, backend queues and account state.
+2. Audit Dropbox's direct-invitation and view-only-link paths, owner/editor-visible activity, configurable viewer information, plan-dependent history, Guest views and direct downloads; keep live account configuration explicitly unpinned.
+3. Update the matrix and thesis only where findings change an evidence boundary or route decision. Keep all controlled tests gated on access to the relevant accounts/devices/deployments.
 
 The next controlled tests require accounts, devices or deployments that are not currently available. Do not imply they have been run.
