@@ -1,6 +1,6 @@
 ---
 schema: tip.session-digest.v2
-checkpoint: "2026-11-18 · six-profile discovery comparison source-audited; Pigeonhole and Dropbox evidence boundaries refined"
+checkpoint: "2026-11-18 · six-profile comparison source-audited; set-level atomicity challenge defined; novelty remains conditional"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
 status_semantics: project_metadata_only_not_chat_footer
@@ -65,7 +65,7 @@ current_state:
     central_question: "How can endpoint-controlled messaging preserve authenticated message semantics across replaceable, untrusted carriage routes, including image carriage, and what can route-specific evidence establish under defined observer models?"
     proposition: "Transport independence requires authenticated message semantics to remain under endpoint control across route-specific encapsulation and delivery, with explicit observer evidence."
     contributions: "Responsibility-separated architecture; common route-comparison method; message-relationship/lifecycle analysis; claim-centred evidence discipline."
-    route_synthesis: "Image studies inform media transformation; Dropbox documents owner/editor file activity and conditional viewer information; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator, with AllOrNothing atomic set semantics and explicit replica/retention constraints. Documentary evidence is asymmetric; no overall ranking or pinned deployment."
+    route_synthesis: "Image studies inform media transformation; Dropbox documents owner/editor file activity and conditional viewer information; Signal specifications inform protocol mechanics but not the full service; Echomix/Pigeonhole is the strongest integrated comparator, with AllOrNothing atomic set semantics and explicit replica/retention constraints. Set-level atomicity/partial visibility is now a comparison dimension; the current matrix is descriptive, not a measured result."
     prior_art_pressure: "Thesis now explicitly confronts OMR/GOMR and PerfOMR/SophOMR/InstantOMR, Oblivious Signaling, Remise, dead-drop covert messaging and image-diffusion covert communication; generic private-discovery, whole-pipeline and image-covert-channel novelty claims are not supportable."
     limits: "No deployed route comparison, implementation, experiment, formal proof, independent review or audit."
   research_units: "W1-W4 drafted; W1 and traceability aligned to ten thesis research questions, with confidence/evidence integrated into RQ10 rather than a separate eleventh question."
@@ -107,7 +107,7 @@ source_review_boundaries:
   SRC-048: "IEEE abstract/metadata inspected; full method/evaluation not inspected."
   SRC-049: "Pinned README/selected implementation inspected, not executed; indexed abstract summary added; full paper/formal security argument/results unreviewed."
 next_actions:
-  - "T-006: challenge whether the source-audited six-profile discovery comparison supports a decision-relevant thesis contribution beyond a descriptive evidence map; use the observer/property matrix and contribution/bias assessment to test novelty and falsifiability."
+  - "T-006: audit set-level atomicity and partial visibility against SRC-043, Pigeonhole AllOrNothing and the native scopes of Dropbox/Signal; define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result."
   - "T-001–T-003: continue full-text/code access only where it materially resolves a thesis claim; preserve partial-review status and exact access limits."
   - "T-004: pin actual Dropbox account/plan/link settings, Signal shipped client/service versions and compatible Katzenpost/Pigeonhole release/deployment configuration where authoritative evidence or user-provided access permits; do not treat protocol/source-tree snapshots as deployments."
   - "T-007: remain gated until substantive synthesis stabilises; then run targeted terminology, citation, traceability and cross-document checks."
@@ -147,22 +147,22 @@ invariants:
   - "Transport acceptance is not endpoint receipt, decryption, display, human reading or comprehension."
   - "Prefer endpoint-local evidence and minimum necessary disclosure; no central confidence ledger or universal score by default."
 verified_working_documents:
-  work/lookup/TASKS.md: "ff5199ac9c10a58ab7a6dcf2f992f5ccd0ebe52d"
-  work/lookup/TASKS.json: "a4559bd03eb43eb7f2ae9b49be7e3dbc21c5d867"
-  work/PROJECT_STATE.md: "2ba132173b8fd81e943e01e4637fff786c183db7"
+  work/lookup/TASKS.md: "a8f90e7619eac0f0fdbb2b291c6af0e5eff89c66"
+  work/lookup/TASKS.json: "8259fcc0833d2452342c8d48bee74d8011183f7d"
+  work/PROJECT_STATE.md: "09652ea3855ff8f39284d79b8256614d858bbaf8"
   work/WORKPLAN.md: "2ddb360e796fa51be2a7e3c4f9d04c6cd58d10b4"
-  work/WORK_LOG.md: "eb499505a9511bd7a3fe27caae40ef927b20ebc9"
+  work/WORK_LOG.md: "24244a9b766f0dc4a037cec37923a3c747081db7"
 verified_research_documents:
-  thesis.md: "f4e6ca892c11dccebdd58a7ee9b36deb154f6614"
+  thesis.md: "4156ae2aaeac41a79360818e150ec72bfdf8d324"
   docs/w1-research-framing.md: "24247221c32dbbdfa2bb486cb28ba04a7595ad5d"
   docs/traceability.md: "6baf3c2e466a7ac94004d041472ad0beb1c701cd"
   docs/confidence-and-evidence-model.md: "402a83a787977bc4e06ef0e7c0beef241a61c4fa"
   docs/source-register.md: "8a49f35f05d33a91bcf7f358a63c2cfc5f1f7ea5"
   docs/protocol-boundary-analysis.md: "14a56004e515ebf1caae2a656f1402aef9d28609"
   docs/w2-threat-model.md: "d6996524d4c847ce5bb67b3e41be41d8c4b385ca"
-  docs/w4-risks-and-evaluation.md: "e0cbafb35380fed7ce202e54ed856a31caf1b6e5"
-  docs/thesis-contribution-and-bias-assessment.md: "d8d3879f41251fcdbf9cf40c1e42cc04a849520d"
-latest_verified_project_head: "576e11685153fdb0439f56cf435a34e5fe0bfec2"
+  docs/w4-risks-and-evaluation.md: "33342224e945e3d4ed3d1816c28c4d9f406a523d"
+  docs/thesis-contribution-and-bias-assessment.md: "fa500391d600442c1f7e504757744d1bef28486a"
+latest_verified_project_head: "158fd8467a7f3d5f2d0ae41652a36cbc5b52252e"
 latest_commit_before_infrastructure_checkpoint: "a38ad832d634ca297698a5d0b8abdabdfdcb3f94"
 checkpoint_close_order:
   - "Reconcile PROJECT_STATE.md, WORKPLAN.md and WORK_LOG.md."
@@ -208,21 +208,21 @@ automatic_reentry:
 verified_current:
   work/START_HERE.md: "36749a44b6596fcc6b3592425e682554e44a5fc7"
   work/CHATGPT_PROJECT_INSTRUCTIONS.md: "62e36bf75dd0519e7f1983c847013af2134d9f9d"
-  work/PROJECT_STATE.md: "2ba132173b8fd81e943e01e4637fff786c183db7"
+  work/PROJECT_STATE.md: "09652ea3855ff8f39284d79b8256614d858bbaf8"
   work/WORKPLAN.md: "033a4ef2a2535bbc976bec388aa0914044eb1b0a"
-  work/WORK_LOG.md: "eb499505a9511bd7a3fe27caae40ef927b20ebc9"
+  work/WORK_LOG.md: "24244a9b766f0dc4a037cec37923a3c747081db7"
   work/README.md: "80bba3a0824e627ff6afb881105114e0dba0dd69"
   README.md: "9f3d4d36a930d0a6ad14fe828e719f841b42a294"
-  work/lookup/TASKS.md: "ff5199ac9c10a58ab7a6dcf2f992f5ccd0ebe52d"
-  work/lookup/TASKS.json: "a4559bd03eb43eb7f2ae9b49be7e3dbc21c5d867"
-  thesis.md: "f4e6ca892c11dccebdd58a7ee9b36deb154f6614"
+  work/lookup/TASKS.md: "a8f90e7619eac0f0fdbb2b291c6af0e5eff89c66"
+  work/lookup/TASKS.json: "8259fcc0833d2452342c8d48bee74d8011183f7d"
+  thesis.md: "4156ae2aaeac41a79360818e150ec72bfdf8d324"
   docs/w3-architecture.md: "a4d69b9c6e6247635c85b9537b0e44c1555960e4"
   docs/multi-message-linkage-and-steganographic-carriage.md: "64c9cb8f8b3a820ba5b4edbb535f76c849cfcd15"
-  docs/w4-risks-and-evaluation.md: "e0cbafb35380fed7ce202e54ed856a31caf1b6e5"
+  docs/w4-risks-and-evaluation.md: "33342224e945e3d4ed3d1816c28c4d9f406a523d"
   docs/traceability.md: "9e5eebbcf3b09840dd2d267c45ef01c71abac59e"
   docs/w2-threat-model.md: "ca9e83731a32052d7188db981934e6886e328d1f"
-  docs/observer-property-matrix.md: "1380f082a0ea69f6074a1c3d16b6125b8a799a86"
-  docs/route-comparison-framework.md: "d5739b0d07735b1771b10fb582ade03c7c1189c3"
+  docs/observer-property-matrix.md: "e951b74a965dde75ff6984d7879c76b80e971dd8"
+  docs/route-comparison-framework.md: "12bb0d53157ea7c9d61fd499a74ab5b2d0d83d68"
 
 
 ## 2026-11-17 · Thesis-first sprint
@@ -287,5 +287,14 @@ The exact phrase “Theory only · No implementation · Not audited.” is maint
 - Refined Dropbox's file-activity and viewer-information boundaries: owner/editor visibility, configurable viewer info, plan-dependent viewer history, Guest treatment and direct-download limits.
 - Linked the profile comparison from W1 RQ7, W4 E9 and observer/property matrix §4.1; updated the source register and Echomix comparator.
 - No actual service deployment, account configuration, platform experiment, reproduction, implementation, proof, independent review or audit was performed.
-- Next: challenge whether the comparison supports a decision-relevant contribution beyond a descriptive evidence map; T-004 remains available for actual pinned client/release/account/deployment evidence.
+- Next: audit set-level atomicity and partial visibility against SRC-043, Pigeonhole AllOrNothing and the native scopes of Dropbox/Signal; define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result.
+
+## 2026-11-18 · Set-level atomicity and contribution challenge
+
+- Added route framework §5.9 to compare atomicity/partial visibility across the six profiles, and integrated the axis into thesis §§8.8/10.2 and W4 E5.
+- Pigeonhole AllOrNothing specifies atomic success/failure for associated writes from the replica/second-party reader's perspective. This narrows generic novelty claims around atomic multi-object delivery; it is not a proof of human receipt or an external audit trail.
+- Defined controlled cases: complete, missing, delayed, identical duplicate, conflicting duplicate, out-of-order, cross-set substitution and retry after uncertain acknowledgement.
+- Contribution assessment remains unchanged: Candidate A is an organising principle, Candidate B conditional, Candidate C requires repeatable decision-relevant output. No novelty or deployed route advantage is established.
+- Exact read-back SHAs for thesis, route framework, W4, contribution assessment and observer matrix are recorded in WORK_LOG.md. No implementation, deployment, experiment, reproduction, proof, independent review or audit.
+
 
