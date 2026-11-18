@@ -3,10 +3,10 @@
   "checkpoint": "2026-11-18 · discovery event-chain adversarial pressure test integrated",
   "branch": "main",
   "status": "Theory only · No implementation · Not audited.",
-  "status_semantics": "project_metadata_only",
+  "status_semantics": "project_maturity_metadata_not_a_routine_chat_footer",
   "authority": "Live GitHub files and commit history are authoritative. Digests are retrieval aids, not substitutes for working documents.",
   "operating_instruction_boundary": {
-    "chatgpt_project_instructions": "Use work/CHATGPT_PROJECT_INSTRUCTIONS.md as the copy-ready external Project instruction text. Thin operating layer only; no thesis exposition. External installation is manual and is not changed by GitHub.",
+    "chatgpt_project_instructions": "Use work/CHATGPT_PROJECT_INSTRUCTIONS.md as the copy-ready external Project instruction text. It explicitly prohibits appending the project-maturity phrase as a routine chat footer. External installation is manual and is not changed by GitHub.",
     "thesis_research_rules": "Substantive methodology, terminology, technical constraints, arguments and evidence standards remain in thesis/research documents.",
     "repository_records": "Operational documents record verified progress, dependencies, blockers and next actions.",
     "external_settings": "ChatGPT Project Instructions are managed outside GitHub; repository records the boundary but cannot edit ChatGPT settings.",
@@ -16,7 +16,8 @@
       "workplan": "Stable roadmap, priorities, sequence and dependencies; change only for genuine workflow or priority changes.",
       "work_log": "Chronological record of actions actually performed, evidence, limitations and verification.",
       "session_digests": "Paired compact Markdown/JSON retrieval and handover formats, refreshed from the other three records."
-    }
+    },
+    "project_maturity_wording": "The phrase Theory only · No implementation · Not audited. belongs in relevant GitHub document headers/assurance fields and handover metadata. Do not append it to ordinary assistant replies. Change it only when verified project maturity changes."
   },
   "read_first": [
     "work/START_HERE.md",
@@ -276,9 +277,9 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "c7635b453f2fc310f0a278a8d522e8aa4986a9b8",
+  "latest_commit_before_json_digest_refresh": "70f6d6ba61f51b86094066b0a1df0c5ec52b1157",
   "immediate_next_action": "T-006: test whether the integrated adversarial discovery cases yield a concrete, defensible cross-layer comparison or falsifiable result across the six named route profiles; preserve native guarantees and evidence classes, and do not infer unobserved service behaviour.",
-  "latest_verified_project_head": "c7635b453f2fc310f0a278a8d522e8aa4986a9b8",
+  "latest_verified_project_head": "70f6d6ba61f51b86094066b0a1df0c5ec52b1157",
   "work_registry": {
     "schema": "tip.work.registry.v3",
     "canonical": "work/lookup/TASKS.json",
@@ -439,14 +440,14 @@
     "project_instructions": "Copy-ready Project Instructions now explicitly require in-session scope caching with baseline blob SHAs; no user local clone is required."
   },
   "verified_current": {
-    "work/START_HERE.md": "36749a44b6596fcc6b3592425e682554e44a5fc7",
-    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "62e36bf75dd0519e7f1983c847013af2134d9f9d",
-    "work/PROJECT_STATE.md": "3cabe3e0a82db623c87c7f75a2b2f1dfcd690191",
-    "work/WORKPLAN.md": "033a4ef2a2535bbc976bec388aa0914044eb1b0a",
-    "work/WORK_LOG.md": "7240fa8792a461e7e85fe2cf42c3a64e829cf580",
-    "work/SESSION_DIGEST.md": "6eb7e20bc34362f421aa605eb035e5eb6cd39c48",
-    "work/lookup/TASKS.md": "7791fcc56b7f0b622b3850cddf9a09186ce4a73a",
-    "work/lookup/TASKS.json": "fbe91a5af3e68a3896bd9139cfe9a700e3bf07cd",
+    "work/START_HERE.md": "9a0af795013de6a8024982d7bbfa3bdb8ddd79ee",
+    "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "e5fb48f318ae5e4de2d8ddf454aae074a8705969",
+    "work/PROJECT_STATE.md": "ec50998c6165fcfb2e1c06a6982dd0a6f7b4191d",
+    "work/WORKPLAN.md": "33f7cf06bdffa1c756505653cff8f43be487aabc",
+    "work/WORK_LOG.md": "e098662756a694ed73c1a7a85f907bea26c34488",
+    "work/SESSION_DIGEST.md": "7d7c082ba349489d6b920aec647cb0b653d9e273",
+    "work/lookup/TASKS.md": "8880be54e2499133cb45e676d067fde9b2d75b48",
+    "work/lookup/TASKS.json": "1494c2eca39d90edb164c4db5d4f306ab9441fe0",
     "README.md": "9f3d4d36a930d0a6ad14fe828e719f841b42a294",
     "thesis.md": "f87c6f4b2a8eb9baccd4a4976335f41b0d6ac6a0",
     "docs/w2-threat-model.md": "ca9e83731a32052d7188db981934e6886e328d1f",
@@ -455,6 +456,8 @@
     "docs/multi-message-linkage-and-steganographic-carriage.md": "64c9cb8f8b3a820ba5b4edbb535f76c849cfcd15",
     "docs/observer-property-matrix.md": "7f700e7d3ca5f28cf8d3635b345de9893b5f1e76",
     "docs/route-comparison-framework.md": "b68ebb2b8db2371b95147718d95c48cccc2a99e8",
-    "docs/traceability.md": "9e5eebbcf3b09840dd2d267c45ef01c71abac59e"
+    "docs/traceability.md": "9e5eebbcf3b09840dd2d267c45ef01c71abac59e",
+    "work/README.md": "8566815a066a43f0bd1f41eeceecc95e1a325a3e",
+    "docs/confidence-and-evidence-model.md": "403d137ef2d3dc7cbf973dfb2297bead0e327b5e"
   }
 }
