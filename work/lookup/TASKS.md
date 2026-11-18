@@ -23,10 +23,11 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-010 | peer_review_preparation | Prepare a coherent thesis candidate and scoped peer-review materials | deferred | 10 |
 | T-011 | peer_review | Conduct and reconcile substantive independent peer review | not_started | 11 |
 | T-012 | release_integrity | Verify thesis release integrity and remove disposable work area | deferred | 12 |
+| T-013 | research_model | Formalise privacy-preserving verifiable message-set closure (Candidate D) | ready | 1 |
 
 ## Current execution
 
-**Current active work:** T-007 final thesis alignment and cross-document consistency review is now active after T-006 completed. Audit thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry; verify cited SRC IDs and internal links; resolve stale or duplicated wording without upgrading partial sources. T-001–T-004 remain blocked on full papers/artifacts or live route configurations. T-006 is complete for the current evidence set. Candidate C remains conditional; no route ranking or image-carriage advantage is supported.
+**Current active work:** T-007 final thesis alignment and cross-document consistency review remains active, including new SRC-054/SRC-055 and Candidate D references. T-013 is ready immediately after T-007 to formalise the conditional privacy-preserving verifiable message-set closure hypothesis. Audit thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry; verify cited SRC IDs and internal links; resolve stale or duplicated wording without upgrading partial sources. T-001–T-004 remain blocked on full papers/artifacts or live route configurations. T-006 is complete for the current evidence set. Candidate C remains conditional; no route ranking or image-carriage advantage is supported.
 
 **Next:** complete the targeted cross-document consistency audit, reconcile actual discrepancies, and verify every write by fetching the saved file.
 ## Status meanings
