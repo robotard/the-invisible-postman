@@ -2,6 +2,8 @@
 
 **Purpose:** Define how The Invisible Postman makes bounded claims about what can be known, verified and inferred across endpoint protection, message relationships and delivery routes.
 
+**Project assurance:** Theory only · No implementation · Not audited.
+
 **Status:** Proposed research model for integration and challenge. It is not a protocol specification, implementation, calibrated probability model, assurance certification or demonstrated property.
 
 ## 1. Foundational proposition
@@ -147,5 +149,3 @@ These examples are not independent validation of the confidence model. They are 
 ## 11. Research status and falsifiability
 
 The model is a proposed conceptual framework to integrate into W1–W4 and the thesis. Its usefulness, usability, completeness and privacy cost have not been empirically evaluated. It does not establish a novel contribution. It should be revised or removed if it adds terminology without improving claim precision, evidence traceability or evaluation.
-
-**Current maturity:** Theory only · No implementation · Not audited.
