@@ -32,7 +32,7 @@ See [research practice](../docs/research-practice.md), [collaborative governance
 
 ## Document boundaries and status semantics
 
-The exact status string **Theory only · No implementation · Not audited.** is project-status metadata. It describes the current verified state; it is not a standing instruction for every conversation and does not prohibit research, architectural exploration, specification work or future changes in project maturity.
+The exact status string **Theory only · No implementation · Not audited.** is project-status metadata. It describes the current verified state; it is not a standing instruction for every conversation and must not be appended as a routine chat footer. Keep it in relevant GitHub document headers/assurance fields, and revise it only when the verified project maturity changes. It does not prohibit research, architectural exploration, specification work or future changes in project maturity.
 
 - **Thesis and research-supporting documents:** hold the substantive research argument, technical principles, evidence, contribution assessment, uncertainty and limitations.
 - **Operational documents:** hold concise verified status, work priorities, dependencies, blockers, paths and next actions. Link to research documents instead of duplicating thesis exposition.
