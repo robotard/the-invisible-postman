@@ -26,7 +26,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. Draft and integrate the thesis first. Current focus: challenge whether the source-audited six-profile discovery comparison supports a decision-relevant thesis contribution beyond a descriptive evidence map. Use the observer/property matrix and contribution/bias assessment to test novelty and falsifiability. Preserve native guarantees and evidence classes; do not infer unobserved service behaviour.
+**Current active task:** T-006. Draft and integrate the thesis first. Current focus: audit set-level atomicity and partial visibility against SRC-043 multi-image reconstruction, Pigeonhole AllOrNothing and the native scopes of Dropbox/Signal. Define the smallest fair evaluation that could confirm or reject a decision-relevant Candidate B/C result. Preserve native guarantees and evidence classes; do not infer unobserved service behaviour.
 
 **Parallel evidence work:** T-001–T-003 remain in_progress for source access, but these tasks do not block unrelated manuscript drafting. T-004 remains ready. Task status changes only when the underlying work changes.
 
