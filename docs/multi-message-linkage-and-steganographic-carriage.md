@@ -9,7 +9,7 @@
 
 A system that sends one protected message in one image has a different problem from a system that distributes one message across several images, repeats fragments for resilience, or links several independent messages into a conversation. These cases are often collapsed under the word *multipart*. That is too imprecise for either protocol design or privacy analysis.
 
-The distinction is especially important for steganography. Hiding a fragment inside an image does not hide the relationship between images. A receiver may need fragment numbers, a set identifier, a manifest, a rendezvous capability, a retrieval schedule or a shared embedding context. Each can create an observable relationship. Conversely, omitting or randomising linkage information may make reconstruction, loss recovery, recipient discovery and safe rejection harder.
+The distinction is especially important for steganography. Hiding a fragment inside an image does not hide the relationship between images. A recipient needs authenticated fragment membership and reconstruction context; that information must be carried within the protected representation and must not depend on a rendezvous capability, external manifest, directory or retrieval schedule. Each can create an observable relationship. Conversely, omitting or randomising linkage information may make reconstruction, loss recovery, recipient discovery and safe rejection harder.
 
 The literature already contains direct work on fragmented covert communication across many images and social platforms. Wang et al. (2024) fragment a secret file, embed each fragment redundantly in multiple image carriers, encode fragment number and content, and reconstruct after receiving enough carriers using majority voting over redundant copies. The authors explicitly distinguish steganography from watermarking; the system's core carrier mechanism is a robust DFT/DCT watermarking method used for covert communication, not a demonstration that ordinary steganographic embedding survives social-platform transformations. Their reported experiments include recovery under stated image attacks and carrier loss (SRC-043). Ker's batch-steganography analysis shows that a warden can pool evidence across a collection of covers, and that distributing payload across more covers is not automatically safer (SRC-044). These works make generic claims to novelty in multi-image fragmentation, redundant image-carried fragments, or whole-message reconstruction untenable without a much narrower, evidenced distinction.
 
@@ -47,7 +47,7 @@ Model the system as a graph, not just a sequence of files.
 - **Retry edge:** a later attempt to deliver the same logical object.
 - **Route-equivalence edge:** carriage of the same protected object through another declared route.
 
-The endpoint may need to know the full graph. A platform, host, coordinator, network observer or human observer sees only a projection of it. The privacy question is whether those projections nevertheless let an observer reconstruct edges through shared identifiers, timing, size, access patterns, image features, accounts, embedding artefacts or behaviour.
+The endpoint may need to know the full graph. A platform, host, external service operator, network observer or human observer sees only a projection of it. The privacy question is whether those projections nevertheless let an observer reconstruct edges through shared identifiers, timing, size, access patterns, image features, accounts, embedding artefacts or behaviour.
 
 The graph must distinguish a relationship that is **intentionally visible to the recipient** from one that is **unintentionally visible to a carrier, platform or observer**. A value being encrypted inside a carrier does not make its publication pattern invisible. A hidden fragment index does not hide a common upload account or repeated timing.
 
@@ -67,9 +67,9 @@ A fresh random identifier can avoid obvious global naming, but it is still a sta
 
 A keyed derivation or pseudorandom token may let authorised endpoints recognise set membership without publishing a plain identifier. Its security depends on key scope, domain separation, recipient/group scope, rotation and the observer's access to the token. Reuse of a stable token creates linkability even if the token's meaning is opaque. The derivation and any associated manifest still require authenticated context.
 
-### 4.4 Encrypted manifest or out-of-band manifest
+### 4.4 Self-contained authenticated manifest
 
-A manifest can carry the mapping between logical message, fragments, indices, counts, digests, expiry and retrieval hints. Encrypting it can reduce direct disclosure to a carrier platform, but the act of retrieving it, its delivery channel, size and timing may expose relationships. An out-of-band channel may create a separate identity and metadata dependency.
+A manifest or equivalent set context must be carried within the protected object or repeated/associated with its parts in an endpoint-authenticated form. It may be encrypted to limit disclosure to carriers and platforms. Its membership, indices, count, content commitments and reconstruction rules must be verifiable from the received protected representation and endpoint-held keys. A design that requires the recipient to fetch the manifest from an external service or resolve a remote reference is outside the self-contained-message requirement.
 
 ### 4.5 Capability-based discovery
 
@@ -262,7 +262,7 @@ Evaluate both payload-presence detection and event/set clustering. Report ROC/pr
 
 ### Level D — End-to-end observer and lifecycle analysis
 
-For each route, map publication, discovery, retrieval, retry, acknowledgement, expiry and human interaction events to platform, host, coordinator, network, global and colluding observers. Measure whether an observer can link:
+For each route, map publication, acquisition, retrieval, retry, acknowledgement, expiry and human interaction events to platform, host, external service, network, global and colluding observers. Measure whether an observer can link:
 - Multiple carriers to one logical message.
 - Multiple messages to one conversation/session.
 - A sender's publication to a recipient's retrieval.
@@ -290,7 +290,7 @@ Any remaining contribution must therefore be narrower and demonstrated. Candidat
 | Fragmentation | What object is split, and why is splitting preferable to one carrier or another route? |
 | Redundancy | Is it repetition, erasure coding or another scheme; what loss threshold and overhead are justified? |
 | Linkage | Which parties need set/conversation linkage, and what can each observer see? |
-| Manifest | Where is it stored, how is it authenticated, how is it discovered and what does its retrieval reveal? |
+| Manifest | How is its self-contained authenticated context carried with the protected object/parts, and what does each carrier reveal? |
 | Steganographic method | Is the claim concealment, robust recovery, watermarking or a hybrid? |
 | Collection model | How many images/events can an observer collect, over what time window and with what side information? |
 | Platform route | Which platform/client/version/processing path is in scope, and how are current conditions pinned? |
