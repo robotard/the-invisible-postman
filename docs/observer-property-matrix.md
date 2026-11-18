@@ -89,6 +89,10 @@ The comparison must separate four evidence classes: endpoint-authenticated proto
 
 This test is a refinement of the common observer model, not a new universal attack claim. If a profile excludes collusion or assumes trusted service behaviour, record that as an explicit assumption and examine the cost of relying on it. The application of these seven cases to the six named image, file-host, protocol and mixnet profiles is recorded in the [route-comparison framework §5.8](route-comparison-framework.md#58-cross-profile-adversarial-discovery-comparison) and synthesised in thesis §8.8; preserve the profile-specific evidence classes rather than treating this observer matrix as proof of deployed behaviour.
 
+### 4.2 Completeness scope and evidence authority
+
+A service or application `complete` signal must be interpreted only at its declared layer. SRC-043 reports byte recovery and can mark missing bytes; Pigeonhole's specification claims AllOrNothing storage/copy semantics while the inspected server path is sequential and reader visibility remains untested; katzenqt gates conversation-log dispatch on a contiguous chain; SRC-052's UnifOMR integration reports service cache-range coverage/truncation through a `complete` flag and slot-to-height map. These are byte reconstruction, storage atomicity, application continuity and retrieval-window coverage respectively. None is automatically authenticated fragment-set completeness or endpoint logical-message acceptance. Record the asserting actor, evidence source, scope, observer and failure/retry semantics.
+
 ## 5. Candidate-contribution pressure test
 
 | Candidate | New pressure from this comparison | Current judgement |
