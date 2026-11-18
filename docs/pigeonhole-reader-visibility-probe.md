@@ -26,9 +26,13 @@ Repository: katzenpost/katzenpost, tag v0.0.90, commit d5a6349a34c4a2d4bca587f4b
 
 The protocol specification's reader-side AllOrNothing claim and the source observations above must remain separate. The source review establishes sequential dispatch and no rollback in the inspected path; it does **not** establish that a concurrent reader can see a prefix.
 
+The pinned thin-client 0.0.23 review adds two controls that the probe must respect. In the Rust/Python API, `start_resending_copy_command` returns the courier's terminal result and maps copy failure to a typed error carrying the replica error code and failed-envelope index; it does not expose a recipient-side commit operation. The ordinary read path retries `BoxIDNotFound` until the box appears (the Python API documents this as uncapped); use `no_retry_on_box_id_not_found=True` or the Rust no-retry variant for timed observations, otherwise the read may wait through the very absence interval being measured. The current multi-channel tests read destinations only after successful copy; the failure test rejects the first destination envelope and does not test a successful prefix or concurrent reader.
+
+The courier deduplicates Copy commands by the hash of the temporary-stream WriteCap and retains terminal status for `CopyDedupCacheTTL = 30 minutes`. Reissuing the same command during that period returns the cached terminal result rather than re-running the stream. After expiry it may reprocess; identical earlier destination writes are idempotent, while the same later conflict will still fail unless the underlying condition changes. Treat this as a separate retry/deduplication case, not an immediate recovery path. Finally, the inspected replica write uses RocksDB's default `WriteOptions` without explicitly enabling synchronous writes; record the database Put/replica acceptance event, not crash-durable persistence.
+
 ## 3. Test topology and fixture
 
-Use a valid two-envelope CopyStream with two distinct destination boxes, A and B, under one WriteCap. The recipient holds the corresponding ReadCap(s) before the test begins.
+Use one temporary CopyStream, addressed by its source WriteCap, with two envelopes targeting distinct destination boxes A and B under their respective destination WriteCaps. The recipient holds the corresponding destination ReadCap(s) before the test begins.
 
 - Envelope E1 writes destination A.
 - Envelope E2 writes destination B.
@@ -46,7 +50,7 @@ Use a valid two-envelope CopyStream with two distinct destination boxes, A and B
 | C1 · First-write failure control | fails | not attempted | Poll A and B | Confirm no successful prefix exists when the first dispatch fails |
 | C2 · Later-write rejection | succeeds and persists | both intermediate replicas reject | Poll while paused after E1, immediately after E2 failure, and after terminal sender status | Primary AllOrNothing reader-visibility test |
 | C3 · Later-write timeout | succeeds and persists | no qualifying reply before retry budget expires | Poll during retry and after terminal failure | Distinguish replica rejection from transport uncertainty |
-| C4 · Retry after failure | repeat C2, then retry the same WriteCap/stream according to supported client semantics | record idempotent/conflict result and reader view | Determine whether retry changes visibility or only terminal status |
+| C4 · Copy-command deduplication | repeat the same Copy command with the same temporary-stream WriteCap during the 30-minute cache TTL, then (only if controllable) after expiry | record cached terminal status versus reprocessing; identical E1 write should be idempotent, unchanged E2 conflict should fail again | Distinguish polling/retransmission from a new processing attempt |
 
 For C2, the deterministic failure should be a replica rejection such as InvalidSignature or a controlled destination conflict, with the exact error code and per-replica replies recorded. Do not use an uncontrolled network interruption as the only failure case.
 
@@ -95,7 +99,7 @@ This tests katzenqt's application continuity gate. It must not be reported as Pi
 
 ## 8. Existing coverage and remaining gap
 
-The pinned courier tests exercise single-envelope dispatch outcomes, error propagation, and concurrent polling of Copy status. The status tests stub the worker; they do not observe destination reads. No inspected test covers E1 success followed by E2 failure while a recipient concurrently reads both destinations.
+The pinned courier tests exercise single-envelope dispatch outcomes, error propagation, and concurrent polling of Copy status. The status tests stub the worker; they do not observe destination reads. The thin-client 0.0.23 integration tests exercise successful multi-channel Copy and read destinations after completion; the failure test rejects the first destination envelope. No inspected test covers E1 success followed by E2 failure while a recipient concurrently reads both destinations. The courier's 30-minute dedup cache also means a same-WriteCap retry during that period is only a cached-status read, not a new test of the write path.
 
 The new test should therefore retain the real sequential processCopyCommand loop and real recipient ReadCap path. If a test seam is required, inject only the second-envelope replica outcome or a barrier; do not replace the worker whose sequencing is under test.
 
@@ -105,9 +109,9 @@ The probe design is complete when the test can:
 
 1. deterministically make E1 succeed and E2 fail after E1 persistence;
 2. pause between the writes and poll the normal recipient ReadCap path;
-3. capture the terminal Copy status and FailedEnvelopeIndex;
+3. capture the terminal Copy status and FailedEnvelopeIndex, and distinguish cached status polling from actual reprocessing;
 4. distinguish replica persistence from reader visibility and application display;
-5. reproduce C0 and C1 controls; and
+5. reproduce C0 and C1 controls using the normal reader API with automatic BoxIDNotFound retries disabled for observation; and
 6. report an outcome as consistent, inconsistent or inconclusive without extrapolating beyond the tested topology.
 
 **Execution status:** not run. No implementation, deployment, benchmark, security proof or independent audit is claimed.
