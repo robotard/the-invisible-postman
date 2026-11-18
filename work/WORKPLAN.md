@@ -64,7 +64,7 @@ Work units produce independently useful outputs for the thesis. Actionable work 
 
 - [x] **W0.1 Repository foundation:** authoritative paths, repository baseline, navigation and GitHub-first workflow.
 - [~] **W0.2 Research practice:** core self-review, governance, attribution and contribution documents exist. Routine administration is deferred; external review and ratification remain outstanding.
-- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (52 entries). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial article reviews pending complete methods/results. Author-linked MRAS/DRAS MATLAB repositories for SRC-033/034 are now pinned and source-inspected; this is not a full-paper review or independent reproduction. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
+- [~] **W0.3 Source reconciliation:** substantial prior-art work and source register exist (53 entries, SRC-001–SRC-053). Full text inspected for SRC-035 and SRC-037; SRC-033, SRC-034 and SRC-036 remain partial article reviews pending complete methods/results. Author-linked MRAS/DRAS MATLAB repositories for SRC-033/034 are now pinned and source-inspected; this is not a full-paper review or independent reproduction. An initial six-profile register and documentary comparison matrix now exist; still open: pin live service versions/configurations, complete service-level evidence and test the image-platform boundary against strong comparators.
 
 ### Phase 2 · Research foundations
 
