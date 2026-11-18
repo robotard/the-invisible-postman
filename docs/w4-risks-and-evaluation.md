@@ -26,14 +26,14 @@ The evaluation must be capable of rejecting the proposed architecture or requiri
 
 ### Transport independence, role separation and route composition
 
-**Threats:** a transport or coordinator becomes an implicit security authority; a service's multiple roles are collapsed into one trust assumption; route conversion changes authenticated message semantics; multi-hop delivery creates unrecognised correlation or failure surfaces; fallback silently weakens security.
+**Threats:** an external carrier or service is mistaken for an architectural security authority; a provider's multiple observable roles are collapsed into one trust assumption; route conversion changes authenticated message semantics; multi-hop delivery creates unrecognised correlation or failure surfaces; fallback silently weakens security.
 
 **Evaluation questions:**
 
 * Can the same endpoint-protected message be carried over more than one declared route without changing its cryptographic meaning?
 * Does encapsulation alter only the outer carrier representation, and are malformed or unsupported conversions rejected?
-* Which functions are endpoint protection, encapsulation, transport, orchestration or external carrier generation, and what does each observe?
-* If one provider performs orchestration and transit, are its coordination and carriage disclosures separately recorded?
+* Which functions are endpoint protection and endpoint-side encapsulation, and what do external carriage routes or carrier-generation services observe?
+* If one provider performs multiple external carriage functions, are its distinct disclosures separately recorded?
 * For every hop, what identifiers, objects, timing, access events and transformations are visible to each observer?
 * Does route fallback preserve the protected object, authentication, replay rules and nonce/key safety?
 
@@ -44,7 +44,7 @@ The evaluation must be capable of rejecting the proposed architecture or requiri
 Proposed acceptance conditions:**
 
 * The architecture documents role-specific inputs, outputs, authority, retained state and observer views.
-* Orchestration is explicitly optional; no central coordinator is required for the definition of transport independence.
+* No orchestration, coordinator, directory, database or rendezvous service is an architectural component or requirement; transport independence is defined by the self-contained endpoint message.
 * Every multi-hop route is enumerated and assessed hop by hop, without assuming additional hops improve privacy.
 * Protected-object invariance is maintained, or any protocol conversion is explicitly specified and separately analysed.
 * Fallback and retry behaviour cannot silently weaken authentication, replay handling or cryptographic parameter safety.
@@ -229,9 +229,9 @@ This is an evaluation plan, not a report of measured results. Each profile must 
 
 Across all profiles, record: confidentiality boundary; sender and peer authentication assumptions; metadata visible to each actor; capacity and size constraints; transformations; ordering and duplicate delivery; publication, discovery and retrieval; timing and availability; usability/accessibility; operational dependencies; and safe failure behaviour. Where a dimension cannot be compared fairly, state why rather than forcing a score.
 
-The evaluation must distinguish the participant-side cryptographic topology from the standalone train. The train is assessed as a low-fidelity, replaceable carriage element, not as a source of cryptographic protection. Sender-side encapsulation and receiving-side decapsulation are assessed for bounded framing, declared-length handling, format/version checks, parser limits, truncation detection, extraction completeness and safe failure. These structural checks do not prove origin or authenticity. Any security-relevant route or capsule binding must be authenticated by the endpoint protocol and verified by the endpoint.
+The evaluation must distinguish endpoint cryptographic authority from external carriage, which is assessed only as a replaceable means of conveying bytes. Sender-side encapsulation and receiving-side decapsulation are assessed for bounded framing, declared-length handling, format/version checks, parser limits, truncation detection, extraction completeness and safe failure. These structural checks do not prove origin or authenticity. Any security-relevant route or capsule binding must be authenticated by the endpoint protocol and verified by the endpoint.
 
-A separate transport-level unlinkability objective may be evaluated for the train: unique image envelopes per carriage instance and variable carrier placement may make simple correlation through carrier reuse or predictable location less straightforward. Evaluate this narrowly under an explicit observer model; do not equate it with participant anonymity.
+Carrier variation and placement may be evaluated as route-specific conditions, but no transport-level unlinkability benefit is presumed. Evaluate any claimed effect narrowly under an explicit observer model; do not equate it with participant anonymity.
 
 Metadata minimisation is a required route-processing objective. Define an allowlist of fields that must remain and remove unnecessary embedded image metadata and identifying file-level fields before publication. Evaluate the actual output, including metadata added by subsequent hosting or platform processing. Distinguish carrier metadata that can be stripped from server-side logs, network identifiers, access records, timing, size and other observations that the train cannot erase.
 
@@ -240,11 +240,11 @@ The evaluation must include human behavioural linkability and social-engineering
 Evaluation questions:
 
 * What route profiles are in scope, and what assumptions does each make about the transport service?
-* Can the train be removed or replaced without changing the participant-side cryptographic trust model?
+* Can any external carriage route be replaced or removed without changing the endpoint cryptographic trust model or protected-message semantics?
 * Which encapsulation fields are merely operational route metadata, and which require endpoint-authenticated binding?
-* Can the recipient discover the changing carrier through a mechanism that is authenticated without creating a stable, observable rendezvous point?
+* What route-native or independently arranged means convey the carrier bytes to the recipient, and what locator, timing or access information do they expose? No discovery service is assumed by the message protocol.
 * Are carrier metadata removal and the retained-field allowlist verified on the actual output and after relevant platform processing?
-* Does any failure of the train, route adapter, discovery channel or decapsulation layer cause unsafe reinterpretation, partial release or false acceptance?
+* Does any failure of an external route, endpoint-side adapter or decapsulation step cause unsafe reinterpretation, partial release or false acceptance?
 * What capacity, size, ordering, metadata, timing and delivery-state information does each route expose or constrain?
 * Which image transformations are expected to preserve capsule data, and which cause extraction failure?
 * How do route substitution, duplicate delivery, delayed delivery, loss and cross-route retries affect message-set validation?
@@ -406,7 +406,7 @@ Evaluation should include scenarios that combine multiple threats rather than te
 
 Candidate scenarios:
 
-1. A malicious coordinator substitutes a recipient key during first contact.
+1. A malicious external service or carrier source attempts to substitute a recipient key during first contact.
 2. An attacker replays an otherwise valid message after its intended acceptance period.
 3. A platform recompresses an image carrying one capsule in a multipart message.
 4. An attacker combines valid capsules from two different message sets.
