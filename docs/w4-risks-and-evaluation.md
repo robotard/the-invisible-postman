@@ -162,6 +162,7 @@ Proposed acceptance conditions:
 * Acceptance reports distinguish object integrity under a key, attribution to a protocol key/session, and any separate claim about a real-world participant; shared-key possession is not reported as unique sender proof.
 * Authenticated logical indices and manifest context permit valid capsules to be reassembled when transport delivery order differs from logical order; arrival order alone is not treated as proof of tampering.
 * A duplicate capsule is never counted as an additional distinct piece. The policy for identical duplicates is explicit; conflicting content for the same index, cross-message substitution, invalid indices and ambiguous manifests fail closed.
+* Cross-route fault applicability and evidence capture follow the [route/fault/evidence matrix](route-fault-evidence-matrix.md). Inject only faults meaningful to the native route; preserve endpoint ground truth, route/service reports and observer inference in separate ledgers.
 * Reconstruction produces the original protected message object or fails, with explicit size, count, timeout and resource limits.
 * Tests exercise declared-length mismatches, excessive fragment counts, oversized manifests/headers, malformed nesting, decompression expansion, repeated retries and concurrent incomplete sets; record CPU, memory, disk and elapsed-time behaviour.
 * Limits are justified against an explicit device and route profile, and rejection occurs before unbounded allocation or expensive decoding where possible.
