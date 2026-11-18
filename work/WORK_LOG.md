@@ -1,5 +1,33 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Sanitisation source access and GIF implementation review
+
+### Work performed
+
+- Rechecked T-002 access for SRC-046–SRC-048. SRC-046 is indexed as open access and has an author-linked OpenReview record, but OpenReview forum/PDF and IEEE PDF endpoints are blocked by browser/access checks. SRC-048 remains closed at the publisher and ResearchGate reports no full text.
+- Re-fetched the complete recursive tree for the author-linked SRC-047 repository at commit 44474d9ca551bb052d5796fb43181612fb160763. It contains only README.md; the README describes Scaling-Net/SC-Net and points to an external Baidu model archive, which could not be opened. No source files, model weights, test scripts or results are present in the GitHub tree.
+- Re-opened the complete SRC-049 repository tree at commit 4a5d2503623b06d17517ecf7a8b7527e1edc315d and inspected the remaining core modules, image utilities, inverse/modified diffusion pipelines, requirements and sender/receiver code paths.
+- Added source-level qualifications to SRC-049: the receiver asserts a full 16-frame/key set; the same group-ID seed is reapplied per frame when random crop/drop is enabled, repeating rectangular masks and correlating subsequent RNG-dependent noise; crop/drop are fixed-size synthetic masks; key/nonce and ground-truth watermark are persisted in local .npy files; the inspected path provides no secure key transport or authenticated message manifest; the repository has no tests, paper PDF, model weights or environment lockfile, and AnimateDiff/model weights are external.
+- Integrated the SRC-049 correlated-distortion and key-material boundaries into the thesis and W4 evaluation plan. The paper's formal proof and full experimental tables remain unreviewed.
+
+### Evidence judgement and limits
+
+- SRC-046/048 full papers remain unavailable. SRC-047's README is implementation-discovery evidence only; repository presence is not code access.
+- SRC-049 code has been read at a pinned commit but not executed, modified, tested or independently audited. The same-seed finding is a direct code-path observation; its effect on reported paper results is unknown because the paper and evaluation protocol were not fully reviewed.
+- No claim is made that the paper's formal security theorem is invalidated by the repository limitations. The code-level key, frame-loss and synthetic-distortion boundaries are not substitutes for a full-paper review.
+- No model was downloaded from Baidu; no author contact was sent.
+
+### Verification
+
+- SRC-047 repository tree and SRC-049 full tree were fetched at pinned commits. Updated source-register, thesis and W4 files were fetched after writing and exact saved content was verified.
+- No code build, model execution, benchmark, reproduction, formal re-proof, independent review or security audit was performed.
+
+### Next
+
+The current source-access tasks are blocked on full-paper copies and, for SRC-047, the external model archive. Keep the partial-review labels. Resume any source only when an author/institutional copy or retrievable artifact becomes available; do not substitute abstracts, READMEs or adjacent papers for the missing primary text.
+
+---
+
 ## 2026-11-18 · MRAS/DRAS author-code review and T-006 closure
 
 ### Work performed
