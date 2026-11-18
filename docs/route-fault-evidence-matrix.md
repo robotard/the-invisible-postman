@@ -47,11 +47,11 @@ Legend: **N** = fault maps to the route's native unit; **W** = meaningful only i
 | Duplicate item | W | N | W | N* | N | ? |
 | Conflicting item at an existing position | W | N | W | W | N | W |
 | Reordering | W | N | — | N* | N | W |
-| Stale/replayed object or response | W | W | W | N | W | W |
+| Stale/replayed protected object or protocol message | W | W | W | N* | W | W |
 | Incomplete or divergent candidate view | ? | ? | ? | ? | ? | N |
 | Service acknowledgement without endpoint acceptance | N | ? | N | ? | N | N |
 
-* Signal's protocol state handles duplicate/replay and out-of-order message-key cases; this does not create an arbitrary multi-message transaction. OMR false positives/candidate selection are not equivalent to duplicated authenticated message-set members.
+* Signal's protocol state handles duplicate/replay and out-of-order message-key cases; this does not create an arbitrary multi-message transaction. N* applies to protocol messages, not arbitrary service responses or product-level delivery receipts. OMR false positives/candidate selection are not equivalent to duplicated authenticated message-set members.
 
 Apply only faults meaningful to the native route. Mark non-applicable cases rather than manufacturing a common transaction.
 
@@ -62,15 +62,16 @@ These are separate from message-set faults and apply to image-carriage profiles 
 | Transformation fault | Qiao | MRAS | DRAS | SRC-043 multi-image | Required observation |
 |---|---:|---:|---:|---:|---|
 | Resize/resampling | ? | ? | ? | ? | Dimensions before/after, interpolation and extraction result |
+| Rotation / scaling / cropping | ? | ? | ? | N | Geometry before/after and extraction/reconstruction result |
 | JPEG recompression / quality reduction | N | N | N | ? | Input/output quality, encoder/client, payload survival and extraction error |
 | Format conversion / transcoding | ? | ? | ? | ? | Source/destination format, colour subsampling, metadata and extraction result |
 | Metadata stripping/rewrite | ? | ? | ? | ? | Exact metadata fields changed; whether payload is in pixels or metadata |
 | Moderation/removal/re-encoding | ? | ? | ? | ? | Post visibility/removal event, resulting bytes and independent service evidence |
-| Carrier loss / unavailable object | N | N | N | N | Missing carrier count, fragment coverage and endpoint acceptance result |
+| Carrier loss / unavailable object | ? | ? | ? | N | Missing carrier count, fragment coverage and endpoint acceptance result |
 
 Here **N** means the cited study explicitly includes this transformation/loss as a comparison condition; **?** means the current source review does not establish it and a controlled test would be needed. Applicability alone does not mean a paper has tested the fault. The current matrix does not claim that any named platform applies a specific transformation universally.
 
-For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete. For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete.
+For Dropbox, do not invent fragment order for a single file. For Signal, do not infer service receipts from protocol authentication. For Pigeonhole, separate sender/courier result from recipient-visible state. For OMR, separate private candidate retrieval from proof that the candidate view is globally complete.
 
 ### Minimum fault cases
 
@@ -80,7 +81,7 @@ For Dropbox, do not invent fragment order for a single file. For Signal, do not 
 4. Duplicate item.
 5. Conflicting item at an existing position.
 6. Reordered item.
-7. Stale/replayed object or response.
+7. Stale/replayed protected object or protocol message (service-response replay only where that route exposes it).
 8. Incomplete or divergent candidate view.
 9. Service acknowledgement that precedes, or fails to imply, endpoint acceptance.
 
