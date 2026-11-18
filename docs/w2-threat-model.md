@@ -210,7 +210,7 @@ The following remain open and must be resolved before protocol-level security cl
 - key-schedule input semantics, including the distinction between KDF salt and context-specific information, and the authenticated provenance of identity/session context;
 - replay state, message expiry semantics, and clock assumptions;
 - permitted metadata exposure and retention;
-- recipient discovery, rendezvous and locator lifetime;
+- route-specific carrier acquisition, locator exposure and external service assumptions;
 - discovery alternatives and their privacy/cost trade-offs, including recipient-side scanning, stable locators, short-lived capabilities and oblivious retrieval;
 - explicit parser and reassembly resource budgets for bytes, fragments, headers, decompression, CPU, memory, disk, concurrency and incomplete-set retention;
 - the observer model for timing, size, volume, flow correlation and access patterns;
