@@ -1930,3 +1930,23 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 ### Exact next action
 
 - Continue the source audit of the route/fault/evidence matrix. Preserve the StOMR signal-collision and passive-adversary caveats in the OMR row; next resolve the remaining fault-applicability cells against pinned image, Dropbox, Signal and Pigeonhole evidence, separating documentary claims from controlled tests.
+
+
+## 2026-11-18 · UnifOMR full-paper secondary assessment integrated
+
+### Work completed
+
+- The direct IACR ePrint PDF request for UnifOMR 2026/910 remained HTTP 403. Located and read a detailed third-party technical assessment dated 2026-09-12 that reports full inspection of the 56-page paper, its cited implementation URL and upstream VecBatchPIR backend. The assessment is recorded as SRC-053, separate from the primary paper entry SRC-051 and downstream wallet integration SRC-052.
+- Preserved the provenance boundary: SRC-053's claimed PDF hash, paper extraction, proof/appendix inspection, arithmetic and source review are reported by that assessor and were not independently repeated here. The primary UnifOMR PDF, proof and experiment scripts were not directly inspected in this project.
+- Integrated the reported two-round clue-digest/batch-PIR retrieval flow, detector work linear in the board, and distinction between malicious-detector recipient privacy and correct/complete recovery into the thesis and prior-art comparison.
+- Recorded the assessment's unresolved candidate-capacity accounting question (T true matches, F false positives, B padded PIR capacity; lossless retrieval requires T + F <= B). At the representative Param1 values, the assessor calculates an expected false-positive upper bound of about 16. This is a potential capacity/slack issue, not a demonstrated defect; no implementation failure is asserted.
+- Updated the OMR row commentary in the route/fault/evidence matrix and the contribution/bias assessment. OMR candidate-view completeness remains distinct from duplicate/conflict semantics for authenticated message-set members.
+
+### Verification and limits
+
+- docs/source-register.md, thesis.md, docs/prior-art-comparison.md, docs/route-fault-evidence-matrix.md and docs/thesis-contribution-and-bias-assessment.md were each fetched after commit and their saved contents matched the submitted content exactly.
+- Official author project-page claims were cross-checked against the secondary assessment. The direct paper link remains HTTP 403 in this environment. The secondary report's claims and calculations were not independently reproduced; no UnifOMR code was built, run or benchmarked, and no theorem was re-proved.
+
+### Exact next action
+
+- Continue T-006's route/fault/evidence audit. Treat OMR incomplete/divergent candidate view as a native retrieval fault; keep duplicate, conflict, order and replay semantics at the protected-object/application wrapper layer unless a route-native protocol source says otherwise. Next audit the image-specific transformation cells and the Signal/Dropbox/Pigeonhole evidence boundaries, recording which outcomes are documentary and which require controlled tests.
