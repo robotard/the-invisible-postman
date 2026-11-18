@@ -1,5 +1,28 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Post-integration consistency pass and APIR count-plus-point investigation
+
+### Work performed
+
+- Completed T-007 after T-013 integration. Checked 60 unique source-register headings (SRC-001–SRC-060), no missing source citations across the 12 checked active documents, no broken local paths or heading anchors, no duplicate source headings, and no duplicate long paragraphs or heading slugs in thesis/prior-art/observer/traceability.
+- Aligned Candidate D notation and semantics between thesis §8.4 and prior-art §4.2. Raw candidates, final filtered results, retrieval completeness, candidate provenance, sender manifest, admission receipts and endpoint closure now use one consistent model. The earlier reversed candidate-set inclusion wording was removed.
+- Repaired stale internal references: W3's thesis section anchor, route-fault matrix's prior-art section reference, traceability's Candidate D section reference and the contribution assessment's comparative-matrix link. Updated the T-006 task record to current prior-art section numbering.
+- Closed T-013 for the current evidence set. Its formal model, adversary/trust assumptions, leakage function, cost dimensions, proof obligations, pre-admission omission proposition and nearest-prior-art composition test are integrated. Candidate D remains a narrowed research hypothesis, not a novelty claim.
+- Started T-014 to test whether APIR authenticated predicate COUNT plus authenticated point queries can recover every OMR match. The immediate source target is the pinned APIR artifact at commit 7a7f2041bc1e0907ef089f8e8e55252ef7f18e0.
+
+### Evidence and limitations
+
+- All changed GitHub files were fetched after writing and exact saved content verified.
+- The consistency pass is static documentary validation, not independent review.
+- No APIR code was built or run; no proof, benchmark or security test was reproduced.
+- SRC-056 (2026 APIR range queries) remains indexed-text-only because its PDF endpoint returned 403. SRC-059 (2024 VPRQ) remains abstract/introduction-only. SRC-060 is a full paper review, but its threat model is trusted data owner/seeker and primarily semi-honest cloud; no separate fully malicious-cloud soundness theorem was located in the inspected security section.
+
+### Next
+
+Inspect the pinned APIR predicate client/server, FSS implementation, query representation and point-query path. Determine whether the OMR signal-membership predicate and subrange counts are expressible; how all matching indices are found; whether count and point responses bind to one immutable snapshot; and what the privacy/cost trade-offs are. If the method requires an O(N) scan or leaks the matching set outside the declared leakage, record that negative feasibility result. Keep admission receipts and sender-manifest closure distinct from APIR query integrity. Diagrams and release remain gated.
+
+---
+
 ## 2026-11-18 · Candidate D formal model and nearest-prior-art synthesis
 
 ### Work performed
