@@ -3,9 +3,10 @@ schema: tip.session-digest.v2
 checkpoint: "2026-11-18 · discovery event-chain adversarial pressure test integrated"
 branch: main
 project_status: "Theory only · No implementation · Not audited."
-status_semantics: project_metadata_only
+status_semantics: project_metadata_only_not_chat_footer
+chat_status_footer: prohibited
 operating_instruction_boundary:
-  chatgpt_project_instructions: "Thin operating layer for continuation, execution and verification; follow live GitHub records."
+  chatgpt_project_instructions: "Thin operating layer for continuation, execution and verification; follow live GitHub records. The project-maturity phrase is document metadata, never a routine chat footer."
   thesis_research_rules: "Substantive methodology, terminology, technical constraints, arguments and evidence standards stay in thesis/research documents."
   repository_authority: "Live GitHub files and commit history; digests are retrieval aids only."
   external_settings: "ChatGPT Project Instructions are managed outside GitHub; repository records the boundary but cannot edit ChatGPT settings."
@@ -272,3 +273,8 @@ verified_current:
 - All eight substantive files were fetched after their writes and their expected blob SHAs and required content markers matched. Work log, state and task registry/index were also fetched and checked.
 - T-006 remains active. Next: test whether the adversarial cases yield a concrete, defensible cross-profile comparison or falsifiable result across the six named route profiles. T-004 remains ready in parallel.
 - No new sources, implementation, experiments, formal proof, independent review or audit. Diagrams, peer review and release remain gated pending stable research synthesis.
+
+
+## Project-maturity wording rule · 2026-11-18
+
+The exact phrase “Theory only · No implementation · Not audited.” is maintained as verified project-maturity metadata in the repository's relevant headers, assurance fields and handover records. It is not a required conversational sign-off and must not be appended to ordinary assistant replies. Update the wording only when evidence supports a genuine maturity change. Do not use it to imply that research, analysis or specification work is prohibited.
