@@ -5,7 +5,7 @@
   "thesis_product": "thesis.md",
   "staging_and_production": "One thesis product; staging is active development and production is a frozen release of the same thesis.",
   "next": [
-    "T-014: test APIR authenticated-count plus authenticated-point-query composition for OMR completeness; verify FSS predicate expressivity, matching-index discovery, same-snapshot binding, leakage, cost, collisions, overflow and manifest/admission limits.",
+    "T-014: audit pinned APIR as server-dependent prior art against the endpoint-only, self-contained-message requirement; document fixed database/snapshot/retrieval dependencies and stop the former Candidate D composition path.",
     "T-001: continue seeking complete SRC-033/034/036 primary papers through author/institutional access; pinned MRAS/DRAS code is source-inspected but does not replace full-paper methods/results.",
     "T-002: SRC-046/048 full texts remain blocked; SRC-047 repository contains README only and an inaccessible external model archive. Resume if primary papers or model assets become available.",
     "T-003: SRC-049 repository code review is expanded, but full paper, formal security argument, complete results and model weights remain unavailable; seek primary paper copy before formal-security claims.",
@@ -270,7 +270,7 @@
     "T-013": {
       "id": "T-013",
       "type": "research_model",
-      "title": "Formalise privacy-preserving verifiable message-set closure (Candidate D)",
+      "title": "Comparative formal model of server-dependent private/verifiable retrieval (former Candidate D)",
       "status": "complete",
       "priority": 1,
       "targets": [
@@ -284,19 +284,19 @@
       "depends_on": [
         "T-007"
       ],
-      "next_action": "Completed. The next task is T-014: test the conditional APIR authenticated-count plus authenticated-point-query path, including FSS predicate expressivity, matching-index discovery, common snapshot binding, leakage, cost, collision/overflow and manifest/admission boundaries.",
+      "next_action": "Completed as comparative prior-art analysis only. Its server-side publication, admission, snapshot and retrieval model is not an Invisible Postman subsystem or contribution candidate. Retain the formal model to explain assumptions, leakage and limitations of APIR/AAD/vPIR/range-query/OMR systems.",
       "blockers": [
         "Full publisher PDF for SRC-056 (Authenticated Private Information Retrieval for Range Queries) returned 403; proofs, complete algorithms and evaluation remain indexed-text-only.",
         "Full technical paper for SRC-059 (VPRQ) remains inaccessible; only abstract and publisher-indexed introduction inspected."
       ],
       "completion_rule": "A formal, source-grounded model and complete nearest-prior-art comparison are integrated into thesis and supporting research; proof obligations, leakage, assumptions, costs and novelty disposition are explicit; commits and exact read-back verified.",
       "last_updated": "2026-11-18",
-      "notes": "Formal property model, leakage function, pre-admission-omission boundary and APIR/AAD cost/code findings are drafted in docs/prior-art-comparison.md §4.2; observer leakage is in docs/observer-property-matrix.md §4.3; thesis and contribution assessment now include the conditional count-plus-point path. No construction has been implemented or formally proved.",
-      "completion_note": "Completed 2026-11-18: formal Candidate D model, adversary/trust assumptions, exact candidate/result-set semantics, admission and manifest boundaries, leakage function, cost vector, proof obligations and pre-admission omission indistinguishability proposition integrated into thesis §8.4 and prior-art §4.2. Added a primitive-coverage and composition test across APIR, AAD, vPIR, multi-query vPIR, 2024 encrypted range-query schemes, 2026 range APIR, OMR and SRC-052. Generic private/verifiable range retrieval is prior art; Candidate D remains a narrowed research hypothesis, not a novelty claim. SRC-056 and SRC-059 remain partial-source blockers. No construction, proof, implementation or benchmark is claimed."
+      "notes": "Former Candidate D formal model is retained only as a comparative analysis of server-dependent retrieval. It is not an architecture proposal. The endpoint-only requirement excludes server/database/directory/rendezvous dependencies for message decryption, multipart association or acceptance.",
+      "completion_note": "Completed 2026-11-18 as comparative prior-art analysis only. The formal property model, adversary/trust assumptions, result-set semantics, admission and manifest boundaries, leakage function, cost vector and pre-admission omission proposition explain the assumptions and limits of server-dependent retrieval systems. Candidate D is retired as an architectural/contribution candidate; no composition, construction, proof, implementation or benchmark is pursued for The Invisible Postman. SRC-056 and SRC-059 remain partial-source blockers."
     },
     "T-014": {
       "id": "T-014",
-      "title": "Test APIR authenticated-count plus authenticated-point-query composition for OMR completeness",
+      "title": "Audit APIR server dependencies against endpoint-only message architecture",
       "priority": 1,
       "status": "in_progress",
       "depends_on": [
@@ -311,9 +311,9 @@
         "docs/w4-risks-and-evaluation.md",
         "work/PROJECT_STATE.md"
       ],
-      "description": "Assess a conditional route for OMR completeness using APIR authenticated predicate COUNT plus authenticated private point queries. Determine whether FSS can express the exact OMR signal-membership predicate and any index-range/subrange counts; how the client discovers the matching indices rather than merely learning their number; whether count and point answers bind to one immutable database snapshot; what a malicious detector can omit or equivocate about; and how output cardinality, access count, timing and communication volume leak. Include false positives, 32-bit signal collisions, candidate-capacity overflow, admission receipts and sender-manifest closure. Do not assume that a count plus arbitrary point queries enumerates the matches.",
-      "next_action": "Read the pinned APIR artifact code at commit 7a7f2041bc1e0907ef089f8e8e55252ef7f18e0f (predicate client/server, FSS implementation, query representation and point-query path) alongside SRC-054. Formalise a candidate count-to-index-discovery procedure or reject the route if it requires an O(N) scan, leaks the matching indices/cardinality, or cannot bind all answers to one immutable snapshot. Compare any candidate against SRC-056–SRC-060 and the OMR/UnifOMR capacity boundary. No build/test or construction claim without evidence.",
-      "completion_rule": "A source-grounded feasibility assessment states whether the OMR predicate is expressible in APIR FSS; how all matching indices are found; whether count and point answers share one authenticated snapshot; soundness/completeness against a malicious detector; leakage and cost; collision/false-positive/overflow handling; and admission/manifest limitations. Deliver either a defensible construction outline or a negative feasibility result. No proof, implementation or benchmark claim without evidence.",
+      "description": "Use the pinned APIR artifact as comparative prior art only. Identify its server/database/snapshot/predicate/point-query dependencies and the properties they provide; compare those assumptions with the self-contained endpoint message requirement. Do not design or compose a server/database subsystem.",
+      "next_action": "Inspect the pinned APIR predicate and point-query paths only far enough to document the server-side population, database/snapshot and retrieval relationships they require, what query privacy/authentication they provide, and which assumptions conflict with the endpoint-only architecture. Preserve SRC-056 (indexed-text only) and SRC-059 (abstract/introduction only) review boundaries. Conclude with a bounded compatibility finding; do not propose a replacement database or Candidate D composition.",
+      "completion_rule": "A concise, source-grounded APIR dependency/compatibility finding is integrated into the prior-art comparison and thesis where material; source limits are preserved; exact GitHub read-back verified. No construction or benchmark required.",
       "blockers": [
         "Full SRC-056 APIR-range PDF and SRC-059 VPRQ technical paper remain inaccessible; retain partial-source status and avoid novelty claims.",
         "APIR artifact is source-inspected only; no build, test, benchmark or independent security review has been performed."
@@ -370,6 +370,6 @@
   },
   "project_status": "Theory only · No implementation · Not audited.",
   "status_semantics": "repository_project_maturity_metadata_not_a_chat_response_footer",
-  "task_status_correction": "T-013 Candidate D formalisation complete; T-007 post-integration consistency pass complete; T-014 APIR count-plus-point composition feasibility test remains in_progress; T-015 optional sender-controlled message granularity note and thesis principle integrated and read-back verified.",
-  "immediate_next_action": "T-014: inspect the pinned APIR FSS/predicate/point-query code and determine whether authenticated COUNT plus authenticated point queries can recover all OMR matches without an O(N) scan, unbounded query leakage, or snapshot mismatch. Formalise either a construction outline or a negative feasibility result; preserve SRC-056 and SRC-059 partial-source boundaries."
+  "task_status_correction": "T-013 formal model retained as comparative prior-art analysis only; Candidate D retired as an architectural/contribution candidate; T-014 reframed to audit APIR server dependencies against the endpoint-only architecture; T-015 optional sender-controlled message granularity remains complete.",
+  "immediate_next_action": "T-014: inspect the pinned APIR predicate and point-query paths only to document their server/database/snapshot/retrieval dependencies and compatibility limits against the endpoint-only, self-contained-message architecture. Do not compose or design a server/database subsystem; preserve SRC-056 and SRC-059 partial-source boundaries."
 }
