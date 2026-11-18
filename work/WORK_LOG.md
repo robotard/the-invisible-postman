@@ -2373,3 +2373,30 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 
 - Follow-up source-register check confirmed SRC-001–SRC-061 are contiguous and unique; prior-art §3.8 cites SRC-061. After commit, all seven changed files were fetched from `main`; the source-register write was checked against its intended content, and the remaining files were checked for the new Sony section, task-status changes, updated state/roadmap and this work-log entry. Read-back checks passed.
 - Continue only where a defined thesis claim or contradiction justifies additional research. T-001–T-004 are not critical-path blockers; diagrams, peer review and release remain gated.
+
+
+## 2026-11-18 · Cross-document integration of supplied papers and Sony watermark comparison
+
+### Work performed
+
+- Reconciled the user-supplied UnifOMR, StOMR and multi-image fragment-hiding papers against their existing source records SRC-051, SRC-050 and SRC-043. Confirmed that these are not the separate incomplete source items in T-001–T-003 and do not create new architecture or roadmap dependencies.
+- Integrated the bounded Sony-era forensic-watermark comparison from SRC-061 and prior-art §3.8 into thesis §8.3. The thesis now distinguishes robust watermark persistence and recipient-specific forensic attribution from steganographic concealment, and records the possible linkability cost of attribution.
+- Preserved the provenance boundary: the author's reported Sony R&D experience is contextual only; public evidence does not establish that the Academy screener watermark system was a Sony programme or used Galaxy/VWM technology.
+- Cross-referenced the finding in W1 research framing, W4 evaluation, the observer/property matrix, contribution/bias assessment and RQ6 traceability.
+- Corrected operational drift: WORKPLAN W0.3 now describes the supplied papers and remaining optional evidence gaps accurately; TASKS.md and TASKS.json handover metadata no longer describe T-001–T-004 as blocked or imply that T-013 is current active work; PROJECT_STATE records the paper mapping and thesis integration.
+
+### Evidence and limitations
+
+- SRC-043, SRC-050 and SRC-051 remain the existing reviewed source records; no duplicate source entries were created.
+- SRC-061 remains a bounded historical comparison. No watermark implementation was inspected or tested; no inference is made about Sony's involvement in the Academy screener system.
+- No architecture, protocol, route, contribution claim or roadmap priority was changed. No new task or dependency was created.
+- This work is documentary integration and cross-document reconciliation, not implementation, testing, reproduction, formal proof, independent review or audit.
+
+### Verification
+
+- All ten changed thesis/research/operational files were fetched after writing. Required new sections, citations, task-state corrections and cross-references were present in the saved content.
+- Exact read-back verified for each changed file. Session digests are refreshed separately at handover, Markdown first and JSON last.
+
+### Next action
+
+- Continue only with thesis-first, claim-specific research where a defined evidence gap or contradiction justifies it. T-001–T-004 remain deferred optional evidence expansions, not thesis-construction dependencies. Keep diagrams, independent peer review and release gated.
