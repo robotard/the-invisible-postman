@@ -339,3 +339,19 @@ The exact phrase “Theory only · No implementation · Not audited.” is maint
 - No implementation, test execution, platform experiment, benchmark reproduction, formal proof, independent review, audit or route ranking.
 - Operational count reconciliation: PROJECT_STATE.md and WORKPLAN.md now correctly report 52 source-register entries (SRC-001–SRC-052); both were fetched back and verified.
 - Exact next action: operationalise §10.3 into a minimal route/fault/evidence matrix; separate public-source comparisons from tests requiring controlled Dropbox, Signal, Katzenpost or image-platform configurations; identify the smallest decision-relevant experiment.
+
+
+## Final registry correction · 18 November 2026
+
+The T-006 keyed registry entry was re-fetched after a mismatch between its earlier read-back and the current branch, then corrected and verified. Its next action now matches the current project checkpoint: operationalise prior-art §10.3 into a minimal route/fault/evidence matrix; retain Candidate C only as a reproducible evaluation method subject to decision-relevant evidence. Verified TASKS.json blob: 5f9e2b419466eec7d9426cf3d1bc77f70ff957fe.
+
+### Latest handover file pins
+
+- PROJECT_STATE.md: b381f36bc81f6456480518de543be4d0e637bffb
+- WORKPLAN.md: 358342bd1333178c258fa5d56a172da0c01c4e2f
+- WORK_LOG.md: bb0455301594c05fffefddce6b9ec49021046fb5
+- TASKS.md: 756e2dcac7bf6bf030e2c3e17f7cfc31c2d747a6
+- TASKS.json: 5f9e2b419466eec7d9426cf3d1bc77f70ff957fe
+- Prior-art comparison: e937761ceaf3d5cdd784be877b00261abdfc1715
+- Thesis: 60642d83711df0b50ff4fa59e1e872d7c50ff642
+- Contribution assessment: d992b0da0eb1979416e9f94b0843e406089dd597
