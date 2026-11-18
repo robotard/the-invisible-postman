@@ -108,6 +108,22 @@ This test is a refinement of the common observer model, not a new universal atta
 
 A service or application `complete` signal must be interpreted only at its declared layer. SRC-043 reports byte recovery and can mark missing bytes; Pigeonhole's specification claims AllOrNothing storage/copy semantics while the inspected server path is sequential and reader visibility remains untested; katzenqt gates conversation-log dispatch on a contiguous chain; SRC-052's UnifOMR integration reports service cache-range coverage/truncation through a `complete` flag and slot-to-height map. These are byte reconstruction, storage atomicity, application continuity and retrieval-window coverage respectively. None is automatically authenticated fragment-set completeness or endpoint logical-message acceptance. Record the asserting actor, evidence source, scope, observer and failure/retry semantics.
 
+### 4.3 Candidate D observer leakage and collusion boundary
+
+Candidate D cannot use a single undifferentiated “server” observer. Each component has a different native view and trust threshold:
+
+| Observer | Native view or leakage | Native protection and residual limit |
+|---|---|---|
+| OMR detector/publication board | Board size, clue format and count, scan/query timing, candidate capacity and response volume; platform-facing publication metadata may be visible separately | OMR/UnifOMR hide the recipient predicate under their stated cryptographic model, but do not by themselves prove that a malicious detector returned every matching candidate |
+| APIR retrieval servers | Database size/version, query rounds and message sizes; individual query shares under the FSS/PIR protocol | Multi-server privacy assumes at least one honest replica; all-server collusion defeats the anytrust guarantee. APIR predicate queries authenticate aggregates, not full result-set enumeration |
+| AAD log server | Key/path or VRF-derived lookup token, append timing, dictionary version and proof-request volume | AAD authenticates complete keyed lookup and append-only/fork consistency, but does not provide PIR-style access-pattern privacy; VRF path derivation is not a general hidden-predicate protocol |
+| Range-APIR server | Repeated PIR node requests, access count, timing and communication volume | Individual node indices may be hidden, but query-dependent request count/volume can reveal range size or position; the reviewed 2026 full paper remains unavailable |
+| Carrier platform/host | Account/device/IP, upload and access times, media dimensions/size, transformations, moderation and available viewer/activity records | Endpoint cryptography does not hide platform-visible metadata or establish actual retention/deletion behaviour |
+| Sender | Full manifest, intended fragment set, coding policy and publication attempts | A public manifest or stable set token can reveal cross-carrier linkage; an encrypted manifest hides its contents from the service but does not let that service verify closure |
+| Network observer | Addresses, timing, packet/byte volume, retries and cross-service correlation | PIR/OMR query privacy is not network anonymity; transport and account-layer protections need separate assumptions |
+
+The leakage function \(L\) must therefore state whether it includes database size and root/epoch changes; publication/append timing; query rounds and padded capacity; actual result cardinality; APIR-tree access count, timing and bytes; AAD key or VRF token; carrier/proof sizes; manifest or set-token visibility; retries, aborts and acceptance outcomes; network/account/device identifiers; and cross-service timing correlations. A privacy claim must name the permitted collusion coalition and the honest-party threshold for every component. In particular, APIR's selective-failure guarantee does not automatically compose with an OMR detector and an AAD log, and a visible manifest can defeat the relationship privacy that the hidden query was intended to preserve.
+
 ## 5. Candidate-contribution pressure test
 
 | Candidate | New pressure from this comparison | Current judgement |
