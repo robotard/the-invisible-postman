@@ -39,7 +39,7 @@ A full conversation is historical project context, not disposable scratch work. 
 
 - Thesis and enduring `docs/` files hold research reasoning and evidence.
 - `work/` holds coordination, task state and continuity.
-- "Theory only · No implementation · Not audited." is status metadata, not a conversational refrain or a restriction on research.
+- "Theory only · No implementation · Not audited." is project-maturity metadata for GitHub records, not a conversational refrain. Never append it as a routine chat footer; preserve accurate maturity/assurance metadata in the relevant project and research documents.
 - Never claim work, testing, implementation, audit or review that has not happened.
 - Do not create diagrams until the argument and evidence are stable; never use ASCII art for diagrams.
 
