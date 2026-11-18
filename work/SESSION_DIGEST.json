@@ -241,7 +241,7 @@
   "verified": {
     "work/START_HERE.md": "d575e8d58c683349cc2e04a173da0a32d1281a60",
     "work/CHATGPT_PROJECT_INSTRUCTIONS.md": "b88c44d7021613ebffa958ffe7f171cec5603d21",
-    "work/PROJECT_STATE.md": "05c156e8a055df6f536b139b7b6385969defc190",
+    "work/PROJECT_STATE.md": "a550fc35d76de65b83be234686be913f46562b80",
     "work/WORKPLAN.md": "547e71f806f0d2867513cf9e343e4762d7960fd0",
     "work/WORK_LOG.md": "a4ac4a0c9986b985a4dae370a5c080c148f9a9a9",
     "work/lookup/TASKS.md": "5323a52cc2d08147735e7eb23ef1f2e6fa8a6437",
@@ -315,7 +315,7 @@
   "work_backlog": "work/lookup/TASKS.md",
   "latest_commit_before_infrastructure_checkpoint": "a38ad832d634ca297698a5d0b8abdabdfdcb3f94",
   "infrastructure_checkpoint": "TIP-WORK-INFRA-2026-11-16",
-  "latest_commit_before_json_digest_refresh": "f9d3f6326d2d5dd32ef3b7255ec9ab7e78058528",
+  "latest_commit_before_json_digest_refresh": "e7b1551aca364f0cace2beb1cc0d85bd09d54f2d",
   "immediate_next_action": "T-014: inspect the pinned APIR FSS/predicate/point-query code and determine whether the exact OMR signal-membership predicate can be counted and completely enumerated with authenticated answers bound to one immutable snapshot, without unacceptable scan cost or leakage.",
   "latest_verified_project_head": "4885310415c84b6197b10f700aebf08f752b806a",
   "work_registry": {
