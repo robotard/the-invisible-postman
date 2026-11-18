@@ -110,13 +110,14 @@
       "targets": [
         "thesis.md",
         "docs/route-comparison-framework.md",
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
         "docs/w4-risks-and-evaluation.md",
         "docs/thesis-contribution-and-bias-assessment.md",
         "docs/observer-property-matrix.md",
         "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Complete the source-level reader-atomicity audit: distinguish the Pigeonhole AllOrNothing protocol copy path from katzenqt 0.0.2's separate app-level chunk assembler; check whether any pinned application path supplies a reader commit gate or capability handoff; refine the minimal read-side fault test and compare it with SRC-043 multi-image recovery and the single-file baseline. Do not call the potential partial-prefix issue a confirmed defect, and do not infer novelty from documentation gaps.",
+      "next_action": "Compare the existing endpoint receiver-acceptance state model with the six route profiles and closest prior art. Keep SRC-043 byte-level partial reconstruction distinct from authenticated logical-message acceptance; keep Pigeonhole AllOrNothing specification, sequential-write implementation, sender-only thin-client API/test coverage and katzenqt app-level assembly distinct; compare these with Dropbox single-object and Signal per-message scopes. Identify what is an already-known mechanism versus a potentially defensible cross-route invariant or evaluation contribution. Tighten thesis/contribution assessment without claiming novelty from evidence gaps.",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
