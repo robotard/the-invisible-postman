@@ -37,16 +37,14 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 ## Active work, in priority order
 
-1. **T-006 · Source-audit and test-design.** Image-specific transformation cells have been compared with SRC-035, SRC-033, SRC-034 and SRC-043; unsupported transformations remain unknown. The Pigeonhole successful-prefix/later-failure concurrent-reader probe has been refined against pinned v0.0.90 source and thin-client v0.0.23 API/tests, but remains unexecuted. Signal and Dropbox product-facing evidence boundaries are now integrated into SRC-038–SRC-039, thesis §8, W2/W4, the route framework and the fault matrix; live account/service evidence remains unpinned. Next, audit the matrix for minimality and decision relevance, then reconcile remaining W1/W3/traceability gaps. Keep protocol claims separate from product behaviour; preserve OMR candidate-view, StOMR collision/state and the directly reviewed UnifOMR candidate-capacity ambiguity (SRC-051), with SRC-053 as secondary corroboration.
-2. **T-001–T-003 · Source access.** Continue full-text/code access where it materially resolves a thesis claim, including the incomplete image and sanitizer sources. Partial-review labels remain mandatory; inaccessible sources must not stall unrelated thesis work.
-3. **T-004 · Route configuration evidence.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
-4. **T-007 · Coherence/review.** Terminology, citations, traceability and cross-document audit remain gated until substantive synthesis stabilises.
-5. **Diagrams, external review and release** remain gated. Do not start illustration or release packaging merely because a matrix or checkpoint exists.
-
+1. **T-001–T-003 · Source access.** Continue full-text/code access where it materially resolves claims, including the incomplete image and sanitizer sources. SRC-033/034/036 remain partial after a renewed 18 November 2026 publisher/author-page search; no full manuscript copy was located. Partial-review labels remain mandatory; inaccessible sources must not stall unrelated thesis work.
+2. **T-004 · Route configuration evidence.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
+3. **T-007 · Coherence/review.** Terminology, citations, traceability and cross-document audit remain gated until substantive synthesis stabilises.
+4. **Diagrams, external review and release** remain gated. Do not start illustration or release packaging merely because a matrix or checkpoint exists.
 ## Exact next action
 
-1. Audit `docs/route-fault-evidence-matrix.md` for minimal, non-duplicative fault cases and verify that each row can change a route decision, invalidate an assurance claim or expose an evidence ambiguity beyond prior art.
-2. Reassess Candidate C against the completed documentary prior-art and route evidence; keep it conditional unless a controlled, decision-relevant result or rigorous counterexample supports a stronger contribution.
-3. Keep Signal/Dropbox account tests and Pigeonhole reader-visibility/multi-recipient failure tests gated on controlled accounts, devices or deployments. The documentary probe designs are not executed results.
+1. Continue T-001 full-text access work for SRC-033, SRC-034 and SRC-036 through author/institutional repositories; do not replace inaccessible papers with abstracts or related follow-up work.
+2. Continue T-002 and T-003 access work for SRC-046–SRC-049 where complete papers, methods/results and code materially affect thesis claims.
+3. Keep T-004 live service configurations and all controlled route tests gated on accounts, devices or deployments. Reopen T-006 only when new source evidence materially changes the thesis or route comparison.
 
 The next controlled tests require accounts, devices or deployments that are not currently available. Do not imply they have been run.
