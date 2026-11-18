@@ -108,20 +108,17 @@
       "status": "in_progress",
       "priority": 1,
       "targets": [
-        "docs/source-register.md",
         "docs/prior-art-comparison.md",
-        "docs/observer-property-matrix.md",
         "docs/route-comparison-framework.md",
-        "docs/w1-research-framing.md",
-        "docs/w2-threat-model.md",
-        "docs/w3-architecture.md",
+        "docs/observer-property-matrix.md",
+        "docs/multi-message-linkage-and-steganographic-carriage.md",
+        "thesis.md",
         "docs/w4-risks-and-evaluation.md",
-        "docs/thesis-contribution-and-bias-assessment.md",
         "docs/traceability.md",
-        "thesis.md"
+        "docs/source-register.md"
       ],
       "depends_on": [],
-      "next_action": "Operationalise prior-art comparison §10.3 into a minimal route/fault/evidence matrix. Keep the mechanism-level endpoint-acceptance novelty claim retired; Candidate C survives only as a reproducible evaluation method if a controlled result or rigorous counterexample changes a route choice, invalidates a material assurance claim, or exposes a gap beyond prior art. Separate public-source comparisons from tests requiring controlled Dropbox, Signal, Katzenpost or image-platform configurations. SRC-051 UnifOMR remains abstract-level; SRC-052 remains an experimental third-party source review, not reproduced deployment evidence.",
+      "next_action": "Apply the typed-completeness model in prior-art-comparison §10.2 to each named route profile: distinguish carrier inventory, authenticated fragment-set completeness, byte reconstruction, storage atomicity, application continuity, retrieval-window coverage, endpoint logical-message acceptance, publication/index completeness and human receipt. Verify each route's asserting authority, evidence source, scope, observer and failure/retry semantics. The key remaining candidate is authenticated cross-carrier manifest membership plus endpoint acceptance of the complete reconstructed object. Test whether that property changes a concrete route decision or closes a material failure/evidence gap beyond SRC-043, Pigeonhole/katzenqt, StOMR and the SRC-052 UnifOMR integration; narrow Candidate C to a comparison method or retire it if no distinct result survives. UnifOMR paper full-text remains abstract-level (SRC-051).",
       "blockers": [],
       "completion_rule": "Outcome reconciled into thesis and/or enduring research records; evidence limits and disposition recorded; commit and exact read-back verified.",
       "last_updated": "2026-11-18"
