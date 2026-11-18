@@ -1,5 +1,32 @@
 # Work Log — The Invisible Postman
 
+## 2026-11-18 · Matrix minimality audit and renewed image-source access search
+
+### Work performed
+
+- Audited the route/fault/evidence matrix against its nine common minimum fault cases and the profile-specific OMR, StOMR, Signal and Dropbox rows. Clarified that source-specific rows are diagnostic probes, not universal tests; group/multi-recipient Signal transaction-boundary testing is conditional on that use case, while the smallest comparison fixture remains 1:1.
+- Reassessed the decision-relevance rule against the integrated thesis and prior-art comparison. The current documentary evidence establishes different native route semantics and evidence surfaces, but no controlled result or rigorous counterexample that changes a route choice, invalidates a material assurance claim or exposes a gap beyond prior art. Candidate C remains a conditional reproducible evaluation method; no mechanism-level novelty claim is restored.
+- Rechecked full-text access for SRC-033, SRC-034 and SRC-036 using ScienceDirect, ResearchGate, author publication/ORCID pages and the SRC-036 author's public homepage. Publisher full text remains access-restricted; ResearchGate reports no full text for SRC-036 and provides an author-request route; the author page lists the paper but no copy. A distinct 2023 scaling-aware sanitisation follow-up was identified but not substituted for SRC-036.
+- Updated SRC-033/034/036 review states with the renewed access result. Their current full-paper methods, tables and limitations remain unreviewed.
+
+### Evidence judgement and limits
+
+- The matrix now separates common route-fault cases from source-specific parameter and product-behaviour probes. No controlled route test was run.
+- No route winner, image-carriage advantage or new protocol mechanism is established by the documentary comparison.
+- SRC-033/034/036 remain partial reviews; the search did not locate full author manuscripts. No author contact was sent.
+- Candidate C survives only as a conditional evaluation method pending a decision-relevant result beyond prior art.
+
+### Verification
+
+- Changed matrix, source-register and thesis/research records were fetched after writing and exact saved content was verified.
+- No experiment, build, model execution, benchmark, independent reproduction, formal proof, peer review or security audit was performed.
+
+### Next
+
+Continue T-001–T-003 source access where complete papers, methods/results, limitations or code materially affect the thesis. Start with any newly available author/institutional copy for SRC-033/034/036; otherwise retain partial status and move to the next accessible source. Keep T-004 live service configurations gated on access.
+
+---
+
 ## 2026-11-18 · Signal service-source transaction and acknowledgement boundary reconciled
 
 ### Work performed
