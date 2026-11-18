@@ -23,13 +23,14 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-010 | peer_review_preparation | Prepare a coherent thesis candidate and scoped peer-review materials | deferred | 10 |
 | T-011 | peer_review | Conduct and reconcile substantive independent peer review | not_started | 11 |
 | T-012 | release_integrity | Verify thesis release integrity and remove disposable work area | deferred | 12 |
-| T-013 | research_model | Formalise privacy-preserving verifiable message-set closure (Candidate D) | in_progress | 1 |
+| T-013 | research_model | Formalise privacy-preserving verifiable message-set closure (Candidate D) | complete | 1 |
+| T-014 | feasibility_analysis | Test APIR authenticated-count plus authenticated-point-query composition for OMR completeness | in_progress | 1 |
 
 ## Current execution
 
-**Current active work:** T-013 Candidate D feasibility test is active. Its formal property model, leakage function, pre-admission-omission boundary, nearest-prior-art comparison and observer matrix are drafted. The APIR authenticated-count plus authenticated-point-query path is now under test; FSS support for the OMR signal set, common snapshot binding, padding, collision handling, admission evidence and manifest closure remain unresolved. No construction, proof or evaluation is established. T-007 is complete for the previous checkpoint and must be rerun after T-013 integration. T-001–T-004 remain blocked on full papers/artifacts or live route configurations.
+**Current active work:** T-013 Candidate D formalisation is complete for the current evidence set. The thesis and prior-art comparison now define the OMR-specific dynamic-predicate/admission/manifest-closure problem, explicit adversary and leakage model, proof obligations, cost dimensions and pre-admission omission boundary. Generic private/verifiable range retrieval is prior art. T-007's post-integration consistency pass is complete: 60 unique source IDs, no missing citations, broken local links or heading anchors in the checked documents, and no duplicate source headings/paragraphs. T-014 is now in_progress: test whether APIR authenticated predicate COUNT plus authenticated point queries can recover all OMR matches without an O(N) scan, leakage or snapshot mismatch. T-001–T-004 retain their source/configuration blockers.
 
-**Next:** test the APIR count-plus-point composition against the exact OMR signal predicate and SRC-056–060; determine whether the required FSS and same-epoch binding are practical and whether the composition is already implied by prior art. Then rerun T-007 and preserve partial-review boundaries.
+**Next:** inspect the pinned APIR FSS/predicate/point-query code and determine whether the OMR signal-membership predicate and subrange counts are expressible; specify how all matching indices are found; bind count and point answers to one immutable snapshot; calculate leakage/cost and handle collisions, false positives and overflow. Preserve SRC-056 (indexed-text only) and SRC-059 (abstract/introduction only). No construction, proof, build or benchmark is claimed yet.
 ## Status meanings
 
 - `ready`: unblocked and not started.
@@ -41,6 +42,6 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Sequence and dependencies
 
-T-006 thesis-first synthesis (complete for current evidence set); T-013 Candidate D formalisation (complete for current evidence set); T-001–T-003 source review (blocked on primary-source access); T-004 route evidence (blocked on controlled access); T-005 protocol analysis (complete); T-007 final coherence review (in_progress after T-013 integration); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
+T-006 thesis-first synthesis (complete for current evidence set); T-013 Candidate D formalisation (complete for current evidence set); T-007 final coherence review (complete after T-013 integration); T-014 APIR count-plus-point feasibility test (in_progress); T-001–T-003 source review (blocked on primary-source access); T-004 route evidence (in_progress, gated on controlled access); T-005 protocol analysis (complete); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
 
 Detailed next actions, targets, blockers and dependencies are stored once in the keyed JSON values. Do not duplicate a second task plan here.
