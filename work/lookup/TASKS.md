@@ -16,7 +16,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-003 | source_review | Review SRC-049 paper, formal security argument and complete results | in_progress | 4 |
 | T-004 | route_analysis | Pin versioned Dropbox, Signal and Katzenpost/Pigeonhole profiles | in_progress | 5 |
 | T-005 | protocol_analysis | Reconcile protocol-boundary analysis into W2/W3/W4, decisions and thesis | complete | 5 |
-| T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | in_progress | 1 |
+| T-006 | research_synthesis | Reconcile new route/source findings into W1–W4 and thesis | complete | 1 |
 | T-007 | thesis_synthesis | Final thesis alignment and cross-document consistency review | blocked | 7 |
 | T-008 | diagram_work | Stabilise diagram arguments and reconcile figure briefs with thesis | blocked_until_research_stable | 8 |
 | T-009 | diagram_work | Create and verify contextual editable thesis diagrams | deferred | 9 |
@@ -26,7 +26,7 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Current execution
 
-**Current active task:** T-006. The documentary route/fault/evidence matrix is created, linked and source-audited for image-specific transformations and route-native fault scope. Qiao/MRAS/DRAS recompression and SRC-043 rotation/scaling/cropping and carrier-loss claims are separated from unknown transformation cells; Pigeonhole storage/copy is separated from the katzenqt application assembler; Signal protocol replay/out-of-order, product receipt and linked-device evidence are separate; Dropbox owner/editor activity and viewer-info visibility are distinct from backend records; OMR candidate-view, StOMR collision/state and UnifOMR candidate-capacity faults remain distinct. SRC-051 is a direct review of the full UnifOMR paper; SRC-053 remains secondary corroboration. The Pigeonhole successful-prefix/later-failure concurrent-reader probe is refined against pinned source and thin-client API semantics, including no-retry reads, 30-minute Copy deduplication and non-durable Put qualification; it remains unexecuted. Next: audit the matrix for minimal, non-duplicative, decision-relevant cases, then reassess Candidate C against prior art. Signal server-source, W1/W3 and RQ7 traceability reconciliation is integrated. Actual Signal/Dropbox account tests and Pigeonhole reader-visibility/multi-recipient failure tests remain gated on controlled configurations/deployments.
+**Current active task:** T-001. Seek full texts for SRC-033, SRC-034 and SRC-036 through author/institutional repositories; retain partial-review status where no full paper is available. The 18 November 2026 search rechecked ScienceDirect, ResearchGate and author publication pages without locating full manuscripts. T-002 and T-003 remain active source-access tasks. T-006 is complete for the current documentary checkpoint: route/source findings are integrated, the matrix is audited for minimality, and Candidate C remains conditional. Actual service and controlled route tests remain gated on accounts, devices or deployments.
 
 **Parallel evidence work:** T-001–T-003 remain in_progress for source access where it materially resolves claims. T-004 is now in_progress: public Dropbox/Signal/Katzenpost release and documentation snapshots are pinned, but actual account, installed-client/backend and running-deployment configurations remain unavailable. Continue other unblocked work around these access limits.
 
