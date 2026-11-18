@@ -37,7 +37,11 @@ The evaluation must be capable of rejecting the proposed architecture or requiri
 * For every hop, what identifiers, objects, timing, access events and transformations are visible to each observer?
 * Does route fallback preserve the protected object, authentication, replay rules and nonce/key safety?
 
-**Proposed acceptance conditions:**
+****Source-audit question · Pigeonhole AllOrNothing:** The Pigeonhole specification claims atomic success/failure from a replica/second-party reader's perspective. In the pinned `v0.0.90` source, the courier dispatches destination envelopes sequentially; if a later envelope fails, it returns a failed index after earlier successful writes may already have been persisted. The inspected failure path contains no rollback of that prefix. Do not report this as a confirmed reader-visible flaw: test whether a recipient who already holds the destination ReadCap can read the prefix during/after a failed copy, and compare with a control where the capability is disclosed only after sender success. See SRC-040 and route framework §5.9.
+
+**Minimum falsification schedule:** two associated writes; successful control; delayed second write; deterministic failure of the second after the first succeeds; retry after an uncertain acknowledgement. Capture sender status/index, per-box persistence, concurrent reader results, endpoint acceptance, rollback/cleanup and observer-visible events. A successful courier status is not automatically proof of recipient receipt; a failed status is not proof that no earlier destination write became visible.
+
+Proposed acceptance conditions:**
 
 * The architecture documents role-specific inputs, outputs, authority, retained state and observer views.
 * Orchestration is explicitly optional; no central coordinator is required for the definition of transport independence.
