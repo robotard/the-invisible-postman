@@ -1,6 +1,6 @@
 # Route / Fault / Evidence Matrix
 
-**Purpose:** Operational test sheet for prior-art comparison §10.3 and thesis §8.8.  
+**Purpose:** Operational test sheet for prior-art comparison §5.1 and thesis §8.8.  
 **Status:** Documentary design only. No route test, implementation, platform experiment or benchmark has been run.
 
 This matrix turns the decision-relevance test into a small, falsifiable comparison. It does not force one common transaction onto routes whose native units differ. A single file, a per-message ratchet, a capability-addressed asynchronous copy, a multi-image fragment set and an OMR retrieval window are not interchangeable objects.
