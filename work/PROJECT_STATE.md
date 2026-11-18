@@ -1,6 +1,6 @@
 # The Invisible Postman: Project State
 
-**Checkpoint:** 2026-11-18 · T-006 documentary synthesis complete; T-001–T-004 blocked on source copies/live configuration; UnifOMR, Pigeonhole, Signal and Dropbox evidence reconciled  
+**Checkpoint:** 2026-11-18 · T-006 complete; T-007 cross-document consistency review active; T-001–T-004 blocked on source copies/live configuration  
 **Branch:** `main`  
 **Maturity:** Theory only · No implementation · Not audited.
 
@@ -41,14 +41,14 @@ Operational documents have distinct roles: `PROJECT_STATE.md` is current state; 
 
 **T-006 is complete for the current evidence set.** The route/fault matrix has been audited for minimality and staged decision relevance; Candidate C remains conditional and no route winner or mechanism-level novelty is established. Reopen this synthesis only if new source evidence materially changes the thesis.
 
-1. **T-001–T-003 · Source access blocked.** Full papers remain unavailable for SRC-033/034/036/046/048/049; SRC-047's GitHub tree is README-only and its Baidu model archive is inaccessible. Partial-review labels remain mandatory.
-2. **T-004 · Route configuration evidence blocked.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
-3. **T-007 · Coherence/review blocked.** Final cross-document review remains gated until the remaining source and route evidence can be resolved or formally frozen as unavailable.
+1. **T-007 · Final thesis alignment and cross-document consistency review (in progress).** Audit the active thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry. Verify every cited SRC ID and internal link; reconcile stale or duplicated wording without upgrading partial sources.
+2. **T-001–T-003 · Source access blocked.** Full papers remain unavailable for SRC-033/034/036/046/048/049; SRC-047's GitHub tree is README-only and its external Baidu model archive is inaccessible. Partial-review labels remain mandatory.
+3. **T-004 · Route configuration evidence blocked.** Public Dropbox/Signal/Katzenpost references are pinned. Actual Dropbox account/link settings, installed Signal client/backend/account configuration and a running Katzenpost deployment/service-event capture remain unavailable.
 4. **Diagrams, external review and release** remain gated. Do not start illustration or release packaging merely because a matrix or checkpoint exists.
 ## Exact next action
 
-1. Obtain or upload full-text copies for SRC-033/034/036/046/048/049, or provide a retrievable SRC-047 model/source archive. The two attached OMR primary papers are already reviewed and integrated; these remaining image/sanitisation sources are separate blockers.
-2. If no primary copies are available, retain the partial/README-level evidence boundaries and do not upgrade the claims from abstracts, snippets or adjacent papers.
-3. Keep T-004 live service configurations and all controlled route tests gated on accounts, devices or deployments. Reopen T-006 only when new source evidence materially changes the thesis or route comparison.
+1. Run the targeted T-007 consistency audit across thesis, source register, W1–W4, prior-art comparison, route-comparison/fault matrices, traceability, workplan and task registry. Verify all cited SRC IDs and internal links; resolve only evidenced discrepancies.
+2. Preserve T-001–T-004 blockers exactly: full-paper/artifact access for SRC-033/034/036/046/047/048/049 and controlled Dropbox/Signal/Katzenpost configurations. Do not upgrade partial reviews or imply live tests.
+3. Reassess whether the thesis candidate is coherent enough to unblock later diagram/review planning; Candidate C remains conditional and no route winner is established.
 
 The next controlled tests require accounts, devices or deployments that are not currently available. Do not imply they have been run.
