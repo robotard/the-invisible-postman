@@ -141,7 +141,7 @@ These are target properties, not claims that the current proposal satisfies them
 >
 > **Illustrated diagram placeholder · W2-F01 — Observer projections of a linked-message graph**  
 > **Placement:** Beside §7 Threats and required mitigations to evaluate.  
-> **Prompt for later illustration:** Draw one endpoint-side graph containing logical messages, a fragment set, redundant carriers, a separate conversation edge, retries and cross-route copies. Around it show distinct observer projections for recipient endpoint, image platform, host, coordinator, network observer and human observer. For each observer, show only the identifiers, timing, sizes, provenance and events they can actually observe under the stated assumptions. Distinguish endpoint-authenticated relationships from observer-inferred correlations.  
+ > **Prompt for later illustration:** Draw one endpoint-side graph containing logical messages, a fragment set, redundant carriers, a separate conversation edge, retries and cross-route copies. Around it show distinct observer projections for recipient endpoint, image platform, host, external service operator, network observer and human observer. For each observer, show only the identifiers, timing, sizes, provenance and events they can actually observe under the stated assumptions. Distinguish endpoint-authenticated relationships from observer-inferred correlations.  
 > **Must not imply:** That an observer sees the complete graph, that encryption hides timing/access patterns, or that multiple hops automatically improve anonymity.
 >
 > **COMPARISON · Passive media processing versus active sanitization**  
