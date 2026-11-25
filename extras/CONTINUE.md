@@ -34,6 +34,46 @@ Give each document one job. A small project may use different names, but the rol
 
 Do not make the operational records a second copy of the substantive work. Put durable reasoning and evidence where they belong; let coordination records point to them.
 
+## Human-readable and machine-friendly records
+
+Use two views when a project benefits from both careful human review and fast assistant re-entry:
+
+- **Readable Markdown** explains the current state, rationale, caveats, decisions, and next step in a form people can inspect and discuss.
+- **Structured JSON** carries stable fields that an assistant or small tool can locate and process quickly: task IDs, statuses, dependencies, paths, blockers, and concise next actions.
+
+These are companion views of the same operational state, not competing sources of truth and not two places to develop the substantive work. Markdown should remain understandable on its own; JSON should remain useful without encoding long prose. When both are maintained, keep their shared facts aligned and make the relationship explicit in each file. If they disagree, check the live substantive records and commit history, resolve the mismatch, and record which values changed.
+
+A practical implementation is to pair records only where structure helps:
+
+| Human-readable view | Structured companion | Use |
+| --- | --- | --- |
+| `work/SESSION_DIGEST.md` | `work/SESSION_DIGEST.json` | Short handover context |
+| `work/lookup/TASKS.md` | `work/lookup/TASKS.json` | Task lookup and machine-readable status |
+| `work/PROJECT_STATE.md`, `WORKPLAN.md`, `WORK_LOG.md` | Optional, only when a stable schema adds value | State, priorities, and chronology |
+
+Do not convert every document to JSON. Use structured records for repeated fields and retrieval; use Markdown for explanation, judgement, evidence, and dissent. Keep schemas small, version them when their shape changes, and avoid copying full research or deliverable text into the machine view.
+
+## Put the pattern in place
+
+For a new project, add the smallest useful set in this order:
+
+1. **Choose the durable home.** Use a GitHub repository and an agreed branch or review path as the shared record. State what is authoritative and how changes are reviewed.
+2. **Write a bootstrap.** Create a short entry file that tells a person or assistant what to read, in what order, and how to resume.
+3. **Define document roles.** Add readable state, plan, log, and task registry files only when the project needs them. Give each one a distinct job.
+4. **Add structured companions selectively.** Pair JSON with the task registry or session digest when quick lookup is useful. Define stable keys, a schema/version, status vocabulary, and references to the readable records.
+5. **Set the collaboration agreement.** State what the human decides, what the assistant may carry forward, when to ask, how to handle scope changes, and how to retain disagreement.
+6. **Adopt a work loop.** Each session re-enters from the bootstrap, reconciles records with actual deliverables, performs the next unblocked work, updates affected records, and leaves a specific next step.
+7. **Set verification expectations.** Read every saved change back from GitHub. Add automated schema or consistency checks only when they reduce real recurring errors; automation should check record shape and workflow, not pronounce claims true.
+8. **Try it on a real handoff.** Have a fresh session continue from the repository alone. Fix missing instructions or inconsistent paired records that prevent a smooth resume.
+
+Start with Markdown if the work is small. Add structured files when the same facts are repeatedly searched, filtered, or used to resume work. The additional format is worthwhile only if its maintenance cost stays lower than the retrieval effort it saves.
+
+## What gives this approach credence
+
+This guide is grounded in a working repository pattern: it has an ordered bootstrap, separate current-state/plan/log/task roles, paired Markdown and JSON task/session records, explicit evidence limits, stable task identifiers, and a practice of fetching saved files for read-back verification. Those concrete records show the process being used and make it inspectable.
+
+That is evidence of an implemented documentation workflow, not proof that it is universally optimal, faster by a measured amount, or that the underlying substantive claims are correct. No comparative timing study or controlled usability evaluation is claimed here. Treat the guide as a reusable, field-tested pattern to adapt and assess in another project, not a standard that others must adopt unchanged.
+
 ## The continuous cycle
 
 ### 1. Re-enter from the record
