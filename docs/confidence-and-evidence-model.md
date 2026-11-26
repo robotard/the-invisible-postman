@@ -35,16 +35,32 @@ Confidence should be represented as an inspectable relationship between a claim 
 
 1. **Claim:** the exact proposition being assessed.
 2. **Scope:** object, message, set, conversation, event, route, time interval and population covered.
-3. **Verifier:** endpoint, user, reviewer, service or observer making the judgement.
+3. **Verifier:** endpoint, user, reviewer, service or observer making the judgement, including the relevant vantage.
 4. **Evidence:** cryptographic verification result, authenticated context, receipt, log, source, measurement, review or user confirmation.
 5. **Evidence provenance:** who or what produced it, how it was obtained, and whether it can be independently checked.
-6. **Mechanism:** the protocol, process or measurement supporting the inference, including version and configuration where relevant.
-7. **Assumptions and threat model:** trusted components, adversary capabilities, collusion assumptions and verifier vantage.
-8. **Freshness and lifecycle:** timestamp or epoch, expiry, revocation state, key changes and whether the evidence remains applicable.
-9. **Alternatives and gaps:** plausible explanations not excluded, missing evidence, unavailable sources and known failure modes.
-10. **Disposition:** verified within scope, supported but incomplete, indeterminate, contradicted, expired or revoked.
+6. **Source dependence:** whether evidence items share an author/group, account, codebase, dataset, implementation, platform, measurement pipeline or underlying source. Separate artefacts must not be counted as independent corroboration merely because they have different titles or file locations.
+7. **Mechanism:** the protocol, process or measurement supporting the inference, including version and configuration where relevant.
+8. **Assumptions and threat model:** trusted components, adversary capabilities, collusion assumptions and verifier vantage.
+9. **Freshness and lifecycle:** timestamp or epoch, expiry, revocation state, key changes and whether the evidence remains applicable.
+10. **Counterevidence and dissent:** contrary observations, failed cases, negative results, plausible competing explanations and unresolved reviewer disagreement, with their provenance.
+11. **Gaps and alternatives:** missing evidence, unavailable sources, untested assumptions and explanations not excluded.
 
-Not every claim needs every field. Omitting a field must not be silently interpreted as satisfying it. A verifier should be able to distinguish "not checked", "not available", "failed", "not applicable" and "unknown".
+Do not compress four different questions into one status label:
+
+| Dimension | Example values | Question answered |
+|---|---|---|
+| Evidence availability | Not sought; unavailable; partial; available; not applicable | Is the relevant evidence present and accessible? |
+| Verification outcome | Not checked; passed; failed; inconclusive; not applicable | What happened when the stated check was performed? |
+| Claim disposition | Supported within scope; supported with limitations; indeterminate; contradicted | What conclusion is justified about the proposition? |
+| Evidence lifecycle | Current; stale; expired; revoked; superseded | Does the evidence still apply at the relevant time? |
+
+"Not checked" is not "passed"; "unavailable" is not "failed"; "contradicted" is not merely "unknown"; and "expired" describes lifecycle, not the truth value of the original observation. Omitted fields must not be silently interpreted as satisfied.
+
+### 3.1 Minimum record and proportionality
+
+A material claim normally needs a minimum record containing the claim, scope, verifier/vantage, evidence and provenance/dependence, assumptions, counterevidence or gaps, claim disposition and freshness/lifecycle. Mechanism versions, quantitative calibration, recipient/retention/linkability details and other extensions are conditional on the claim. Do not collect personal identifiers, behavioural traces or telemetry merely to fill a template. The record is sufficient only if it makes the inference and its limits inspectable.
+
+
 
 ## 4. Evidence classes and claim boundaries
 
@@ -118,7 +134,11 @@ The model is useful only if it can be challenged. Evaluation should ask:
 - Can it distinguish endpoint-authenticated linkage from observer correlation?
 - Does it report the exact delivery event evidenced, without upgrading it to reading?
 - Does it expose missing, stale, revoked or contradictory evidence?
-- Can a verifier inspect provenance, assumptions, scope and unresolved alternatives?
+- Can a verifier inspect provenance, source dependence, assumptions, scope, counterevidence and unresolved alternatives?
+- Can separate artefacts be recognised as dependent when they share an author group, account, dataset, codebase or measurement pipeline?
+- Are evidence availability, verification outcome, claim disposition and lifecycle state reported separately?
+- Are failed cases, contradictory observations and reviewer dissent retained rather than omitted from the summary?
+- Can a proportionate minimum record remain useful without a central ledger or additional behavioural telemetry?
 - Does the evidence model leak more metadata than it protects?
 - Can two independent reviewers reach compatible conclusions from the same evidence record?
 - Does the model resist confidence inflation caused by polished interfaces, green ticks, numeric scores or unqualified words such as "verified"?
@@ -142,10 +162,12 @@ Consider the author-reported claim in SRC-034 that DRAS reduces message-extracti
 
 This record supports the statement that the authors report the result under their study conditions. It does not support a claim that the result was reproduced, generalises to all platforms, establishes endpoint authenticity, proves message-set completeness, or demonstrates delivery security. The publisher's indexed content and a code repository are distinct evidence items; neither should be silently upgraded into full-text review or independent reproduction.
 
+The related SNP StegoLab repository (SRC-062) illustrates why source dependence must be recorded. It is hosted by the same GitHub account as the MRAS/DRAS repositories and is a companion code artifact, not an independent replication. Its batch runner skips failed embedding/transmission/extraction cases, truncates unequal bit vectors for BER, and measures PSNR/SSIM before channel transmission. Those limitations are counterevidence against treating its README summary as an independently verified platform result.
+
 SRC-036 provides a complementary example. Its indexed description of an attack/filtering module and image-quality optimisation module, plus the stated BOSSbase/BOWS2 and JPEG QF75 context, supports a bounded description of the proposed sanitization approach. It does not establish that a named platform deploys that model or that the method defeats every current embedding scheme. The missing training configuration, complete results and generalisation limits remain material.
 
 These examples are not independent validation of the confidence model. They are a practical check that its fields can preserve author attribution, study scope, evidence provenance and unresolved limitations without turning a reported result into a stronger claim.
 
 ## 11. Research status and falsifiability
 
-The model is a proposed conceptual framework to integrate into W1–W4 and the thesis. Its usefulness, usability, completeness and privacy cost have not been empirically evaluated. It does not establish a novel contribution. It should be revised or removed if it adds terminology without improving claim precision, evidence traceability or evaluation.
+The model is a proposed conceptual framework to integrate into W1–W4 and the thesis. The 2026-11-26 documentary challenge adds source-dependence, counterevidence/dissent and separate evidence-availability, verification, claim-disposition and lifecycle axes. Its usefulness, usability, reviewer agreement, completeness and privacy cost have not been empirically evaluated. It does not establish a novel contribution. It should be revised or removed if it adds terminology without improving claim precision, evidence traceability or evaluation.

@@ -2,7 +2,7 @@
 
 **Purpose:** Track authoritative technical specifications, standards, protocol designs and research literature used to ground the thesis.  
 **Research status:** Initial source-reconciliation pass · Not a completed literature review  
-**Last checked:** 2026-11-18  
+**Last checked:** 2026-11-26  
 **Assurance:** Theory only · No implementation · Not audited.
 
 ## 1. How to use this register
@@ -794,3 +794,53 @@ This is an evolving bibliography and claim-mapping pass. It is not a systematic 
 - **Supports:** Sony was one of five companies (Hitachi, IBM, NEC, Pioneer and Sony) that announced a unified proposal for invisible digital-video watermarks in 1999. Sony's release states that the watermark was intended to remain detectable after analogue conversion and repeated digital compression/decompression, and to carry copy-control instructions for compliant recording systems. In 2001, Sony joined the broader Video Watermarking Group with Hitachi, NEC, Pioneer, Digimarc, Macrovision and Philips. Separately, a 2005 Los Angeles Times report describes Academy screeners commonly carrying individualised digital watermarks identifying the recipient, allowing leaked copies to be traced.
 - **Does not establish:** That Sony alone invented or owned the consortium technology; that the 2005 Academy screener watermark system was developed or deployed by Sony; that the two historical programmes used the same watermark design; or any cryptographic identity, confidentiality, integrity, anonymity or message-set property.
 - **Review state:** Sony's contemporaneous corporate release, the 2001 joint-group filing and the 2005 screener report inspected on 18 November 2026. Historical claims are bounded to those records; no underlying watermark implementation or technical specification was inspected.
+
+### SRC-062 · SNP StegoLab: Robust JPEG Steganography over Social Networks (source-code repository)
+
+- **Source:** R4K35H-K (2026-06-10), *SNP StegoLab: Robust JPEG Steganography over Social Networks* [source code], initial commit `a73a7c2ada4589a5aff4c534636038d639124dc9`.
+- **Link:** https://github.com/R4K35H-K/Robust-JPEG-Steganography-App/tree/a73a7c2ada4589a5aff4c534636038d639124dc9
+- **Related lineage:** The same GitHub account hosts the previously inspected MRAS and DRAS MATLAB repositories (SRC-033/034). Treat this as a companion code artifact, not independent corroboration of those papers.
+- **Relevant to:** Source-level comparison of per-image robust JPEG embedding, fixed-grid QIM with error correction, and local/Telegram/Discord carriage-test paths.
+- **Supports:** The pinned tree and core files expose Python paths for MRAS and DRAS, a fixed-grid low-frequency DCT-QIM routine with Reed–Solomon error correction, local JPEG recompression/resizing, Telethon photo upload/download, Discord webhook upload/retrieval, and a batch-test harness.
+- **Does not establish:** Independent replication of the papers; verified platform transformation or success; robust concealment or steganalysis resistance; authenticated multi-carrier set membership; endpoint message acceptance; route-neutral message semantics; or observer privacy.
+- **Code-review limitations:** The batch runner skips failed embedding, transmission and extraction cases and reports only completed results; its BER helper truncates unequal bit vectors to their common length; PSNR/SSIM are measured before channel transmission; Telegram retrieval uses a fixed two-second wait; Discord retrieval does not verify that the proxy image was transformed. The MRAS module executes matrix loading at import from a hard-coded external Windows path to `common.cpp`, which is absent from the repository tree; the batch tester and worker module import that path at module load. The inspected tree contains no test suite, recorded experimental report or dependency lockfile.
+- **Review state:** Commit, tree, README, core algorithm modules, adapters, batch tester, workers and requirements inspected. No build, execution, test or platform call was made. Import and reporting concerns are static source-inspection findings, not reproduced failures.
+
+### SRC-063 · CEDAR: Downward recompression robust JPEG steganography via efficient content-adaptive embedding
+
+- **Source:** Kumar, R., Bansal, S. and Bansal, R. K. (2025), *Downward recompression robust JPEG steganography via efficient content-adaptive embedding*. *Multimedia Tools and Applications*, 84, 49905–49928.
+- **Link:** https://doi.org/10.1007/s11042-025-21136-y
+- **Relevant to:** Robust JPEG embedding under downward recompression and the related author group's method lineage.
+- **Supports:** The publisher abstract describes CEDAR as selecting resilient DCT coefficient locations by analysing the cover and anticipated channel quantisation tables, then applying adaptive parity modification. The abstract states that CEDAR uses no error-correcting code and reports low extraction error, improved statistical undetectability, visual quality and lower computational complexity across its benchmark tests.
+- **Does not establish:** Exact performance values or full experimental conditions beyond the abstract; current live-platform deployment; authenticated messaging; sender/recipient identity; multi-carrier set semantics; cross-route acceptance; or independent reproduction.
+- **Provenance:** Same author group as SRC-033/034/064/065. These publications form a related research lineage and must not be counted as independent corroborations without a method-specific independence analysis.
+- **Review state:** Springer metadata and abstract reviewed on 2026-11-26. The publisher page identifies the full article as subscription content; no full-text review or reproduction was possible.
+
+### SRC-064 · Robust Data Hiding for High Fidelity JPEG Images Over Social Networking Platforms
+
+- **Source:** Kumar, R., Bansal, S. and Bansal, R. K. (2025), *Robust Data Hiding for High Fidelity JPEG Images Over Social Networking Platforms*. In Hasteer, N., McLoone, S., Sharma, P. and Nallamalli, R. (eds), *Adaptive Intelligence*, InCITe 2024, Lecture Notes in Electrical Engineering, vol. 1280, pp. 353–362.
+- **Link:** https://doi.org/10.1007/978-981-97-9045-6_29
+- **Relevant to:** High-fidelity JPEG steganography under social-network recompression.
+- **Supports:** The publisher abstract describes adaptive DCT coefficient selection and minimal coefficient modification. For the test cases reported, it claims 96% recovery after recompression from quality factor 95 to 70, with favourable imperceptibility and statistical-undetectability results across evaluated payload sizes.
+- **Does not establish:** The complete method, sample sizes, exact payload conditions, live named-platform behaviour, cryptographic message protection, authenticated multi-carrier membership, route-neutral transport, or independent reproduction. The abstract does not justify generalising its reported accuracy to all platforms or transformations.
+- **Provenance:** Same author group as SRC-033/034/063/065; treat as part of the related Kumar/Bansal research lineage.
+- **Review state:** Springer bibliographic page and abstract reviewed on 2026-11-26. The full chapter is subscription content and was not available for inspection.
+
+### SRC-065 · A Resilient Approach to Robust JPEG Steganography: Ensuring Hidden Data Integrity
+
+- **Source:** Kumar, R., Bansal, S. and Bansal, R. K. (2023), *A Resilient Approach to Robust JPEG Steganography: Ensuring Hidden Data Integrity*. 2023 International Conference on Integrated Intelligence and Communication Systems (ICIICS), pp. 1–6.
+- **Link:** https://doi.org/10.1109/ICIICS59993.2023.10421695
+- **Relevant to:** Earlier DCT-domain JPEG steganography under same-quality recompression.
+- **Supports:** The IEEE abstract describes selective DCT coefficient embedding and reports less than 1% message-extraction error in most of its same-quality recompression test cases, PSNR values of 51–62 dB and computational times in the tens of milliseconds.
+- **Does not establish:** Downward-recompression performance; named current-platform deployment; complete method or evaluation details; cryptographic identity binding; authenticated multi-carrier sets; route-neutral delivery; or independent reproduction.
+- **Provenance:** Same author group as SRC-033/034/063/064. Treat as an earlier stage of the related research lineage, not independent corroboration of later papers.
+- **Review state:** IEEE abstract and bibliographic record reviewed on 2026-11-26. ResearchGate reports no full text; no implementation or code was inspected.
+
+### SRC-066 · Robust Hybrid Image Steganography with Reed-Solomon Error Correction for JPEG-Resilient Covert Communication on Messaging Platforms
+
+- **Source:** Khegay, V., Aldosh, B., Lisnevskyi, R., Lisnevskyi, V., Syssoyev, A. and Aliyev, B. (2026), *Robust Hybrid Image Steganography with Reed-Solomon Error Correction for JPEG-Resilient Covert Communication on Messaging Platforms*. 2026 International Conference on Cybersecurity, Digital Forensics, and AI Applications (ICCSDFAI), pp. 393–398.
+- **Link:** https://doi.org/10.1109/ICCSDFAI70505.2026.11648064
+- **Relevant to:** Direct prior art combining authenticated encryption, key encapsulation, forward error correction, DCT image embedding and messaging-platform carriage.
+- **Supports:** The IEEE publisher abstract describes AES-256-GCM, RSA-based key encapsulation, Reed–Solomon RS(255,223) forward error correction with approximately 12.5% redundancy and bit interleaving, and content-aware mid-frequency DCT embedding in the luminance channel. It reports a manually collected dataset of 50 natural HD images (720 × 1280 pixels), 50–150-byte payloads, average embedding time of approximately 1.4 seconds, a 100% success rate in the stated small-payload evaluation, PSNR above 34.8 dB and SSIM above 0.80. The abstract says payloads of 200 bytes or more exceeded the available capacity and separately reports high recovery in Telegram photo mode, with sensitivity to image resizing.
+- **Does not establish:** That the 100% figure applies specifically to Telegram; the key-to-human identity binding; the complete sender-authentication or key-lifecycle model; authenticated multi-carrier set membership; cross-route equivalence; a transport-neutral message protocol; or observer-specific privacy. The abstract does not provide enough detail to infer these properties or their absence.
+- **Review state:** IEEE Xplore publisher abstract and conference metadata reviewed on 2026-11-26; the direct IEEE page/PDF could not be accessed in this environment. No full-text review, code inspection or reproduction was performed. All reported metrics remain author-reported.

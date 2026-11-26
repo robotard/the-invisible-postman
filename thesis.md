@@ -160,6 +160,8 @@ This is not a claim that the system can manufacture certainty, that confidence i
 
 Confidence must therefore remain attached to a claim rather than presented as one system-wide score. A useful claim record identifies the proposition, scope, verifier, evidence and provenance, mechanism, assumptions, observer vantage, freshness, plausible alternatives, missing evidence and current disposition. "Not checked", "unavailable", "failed", "unknown", "expired" and "not applicable" are different states. A missing check is not a successful check.
 
+Evidence independence must also be explicit. Separate papers, repositories, demos or reports that share an author group, GitHub account, codebase, dataset, implementation, platform or measurement pipeline are not independent corroboration merely because they are separate artefacts. The record must preserve counterevidence, failed cases, negative results and unresolved dissent alongside supporting evidence. Evidence availability, verification outcome, claim disposition and evidence lifecycle must remain separate; otherwise "not checked", "unavailable", "failed", "contradicted" and "expired" can collapse into a misleading status.
+
 This framing requires strict distinctions:
 
 - **Trust** is a decision to rely on an actor, key, device, service or process; it may include social and institutional judgement beyond cryptographic evidence.
@@ -386,6 +388,10 @@ Sony's participation in the 1999 Galaxy group and 2001 Video Watermarking Group 
 
 The distinction is also explicit in multi-image prior art. SRC-043 studies fragmented covert communication across many images but expressly distinguishes steganography from watermarking and uses a robust DFT/DCT watermarking mechanism for fragment carriage. Its recovery results therefore do not establish general steganographic stealth, collection-level undetectability, endpoint authentication or authenticated message-set semantics. Together, SRC-043 and SRC-061 show why the thesis must not use "steganography", "watermarking", "robustness" and "concealment" interchangeably.
 
+The image-carriage baseline has since widened. A related Kumar/Bansal publication line covers same-quality JPEG robustness (2023), high-fidelity social-network JPEG hiding (2025), CEDAR's downward-recompression method (2025), and MRAS/DRAS (2026; SRC-033/034 and SRC-063–SRC-065). The companion SNP StegoLab repository (SRC-062) combines Python MRAS/DRAS paths, fixed-grid QIM with Reed–Solomon error correction, and local/Telegram/Discord test adapters. A separate 2026 conference paper describes AES-256-GCM, RSA-based key encapsulation, RS(255,223) forward error correction and DCT embedding, with Telegram photo-mode tests (SRC-066). These sources establish robust image embedding, encryption, error correction and basic platform-specific carriage as prior art; the thesis must not claim that generic combination as novel. The accessible abstracts do not establish authenticated multi-carrier set membership, route-neutral transport semantics, cross-route equivalence or a common endpoint-acceptance model. Those remain questions for comparison, not claims of absence or originality. All reported performance figures are author-reported; no new source has been reproduced here.
+
+Source inspection of SRC-062 also limits its evidential weight: its batch runner excludes failed attempts from the summary, truncates unequal bit vectors for BER, and measures PSNR/SSIM before channel transmission. Its Telegram/Discord adapters are code paths, not independently reproduced service results.
+
 Platforms may resize, recompress, transcode, strip metadata, moderate or otherwise transform media. Image-carriage analysis must distinguish per-image extraction from set reconstruction and collection-level detection: multiple images can provide redundancy for recovery while also giving an observer more evidence to pool or correlate. Ker's batch-steganalysis work (SRC-044) establishes this as a distinct analytical problem under bounded assumptions; it does not supply universal quantitative predictions for current platforms. The research must define tested image formats, payload-capacity assumptions, transformation profiles and extraction-failure behaviour. A route that only works when a platform preserves exact bytes may be unsuitable for that platform, even if a controlled laboratory demonstration succeeds.
 
 The evaluation must therefore report at least four separate outcomes: payload extraction/recovery, steganalysis detectability, forensic attribution/linkability and endpoint cryptographic acceptance. None implies another. Watermark recovery does not establish confidentiality or sender identity; concealment does not establish integrity or anonymity; successful extraction does not establish that a complete authenticated message or fragment set was received. The historical comparison adds no watermarking requirement and does not change the endpoint-only architecture.
@@ -551,6 +557,8 @@ The evaluation must test whether the architecture reports what its evidence actu
 - distinguish endpoint-authenticated linkage from observer-inferred correlation;
 - distinguish service acceptance, relay, endpoint receipt, validation, decryption, display, open signal and human acknowledgement;
 - represent missing, stale, revoked, contradictory and unavailable evidence without converting absence into success;
+- record shared source lineage and counterevidence so companion artefacts are not counted as independent corroboration;
+- report evidence availability, verification outcome, claim disposition and lifecycle state separately;
 - test whether different observers receive only the evidence appropriate to their role;
 - test whether evidence records create stable identifiers, access patterns or unnecessary behavioural telemetry; and
 - examine whether users and reviewers interpret status labels and evidence limitations correctly.
@@ -650,6 +658,12 @@ The following sources are cited in the current working text. This list is provis
 - Liu, Z., Tromer, E., & Wang, Y. (2024). *PerfOMR: Oblivious Message Retrieval with Reduced Communication and Computation*. USENIX Security 2024. https://www.usenix.org/conference/usenixsecurity24/presentation/liu-zeyu
 - Shuhan, M. K. B., Baldimtsi, F., & Ateniese, G. (2026). *Oblivious Signaling*. USENIX Security 2026, 4207–4226. https://www.usenix.org/conference/usenixsecurity26/presentation/shuhan
 - Go project. (2023). *net/http, net/textproto, mime/multipart: denial of service from excessive resource consumption* (CVE-2023-24536), issue #59153. https://github.com/golang/go/issues/59153
+
+- R4K35H-K. (2026, June 10). *SNP StegoLab: Robust JPEG Steganography over Social Networks* [Source code, commit a73a7c2]. GitHub. https://github.com/R4K35H-K/Robust-JPEG-Steganography-App/tree/a73a7c2ada4589a5aff4c534636038d639124dc9
+- Kumar, R., Bansal, S., & Bansal, R. K. (2023). *A Resilient Approach to Robust JPEG Steganography: Ensuring Hidden Data Integrity*. 2023 International Conference on Integrated Intelligence and Communication Systems (ICIICS), 1–6. https://doi.org/10.1109/ICIICS59993.2023.10421695
+- Kumar, R., Bansal, S., & Bansal, R. K. (2025). *Downward recompression robust JPEG steganography via efficient content-adaptive embedding*. *Multimedia Tools and Applications, 84*, 49905–49928. https://doi.org/10.1007/s11042-025-21136-y
+- Kumar, R., Bansal, S., & Bansal, R. K. (2025). *Robust Data Hiding for High Fidelity JPEG Images Over Social Networking Platforms*. In *Adaptive Intelligence* (Lecture Notes in Electrical Engineering, Vol. 1280, pp. 353–362). Springer. https://doi.org/10.1007/978-981-97-9045-6_29
+- Khegay, V., Aldosh, B., Lisnevskyi, R., Lisnevskyi, V., Syssoyev, A., & Aliyev, B. (2026). *Robust Hybrid Image Steganography with Reed-Solomon Error Correction for JPEG-Resilient Covert Communication on Messaging Platforms*. 2026 International Conference on Cybersecurity, Digital Forensics, and AI Applications (ICCSDFAI), 393–398. https://doi.org/10.1109/ICCSDFAI70505.2026.11648064
 
 ## Appendix A. Terminology
 

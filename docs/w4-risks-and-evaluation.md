@@ -382,23 +382,26 @@ Proposed acceptance conditions:
 
 ### E11 · Confidence, evidence provenance and claim semantics
 
-**Research question:** Does the architecture allow a verifier to determine exactly what a claim is supported by, what remains unknown, and which stronger conclusions are not justified?
+**Research question:** Does the architecture allow a verifier to determine exactly what a claim is supported by, what remains unknown, which evidence items are dependent, and which stronger conclusions are not justified?
 
-**Threats:** confidence inflation through interface labels; treating a valid signature as real-world identity proof; treating cryptographic integrity as semantic truth; mistaking a partial fragment for a complete set; treating observer correlation as authenticated linkage; upgrading service acceptance to endpoint delivery or human reading; stale verification after key revocation or compromise; and evidence records that leak metadata.
+**Threats:** confidence inflation through interface labels; treating a valid signature as real-world identity proof; treating cryptographic integrity as semantic truth; mistaking a partial fragment for a complete set; treating observer correlation as authenticated linkage; upgrading service acceptance to endpoint delivery or human reading; stale verification after key revocation or compromise; treating companion papers/repositories as independent corroboration; omitting failed cases or contradictory evidence; collapsing evidence availability, verification result, claim disposition and lifecycle into one status; and evidence records that leak metadata.
 
 **Evaluation dimensions:**
 
 - Claim specificity: each material claim names the object/event, scope, verifier and time.
-- Provenance: evidence origin, acquisition method and independent checkability are recorded.
+- Provenance and dependence: evidence origin, acquisition method and independent checkability are recorded, together with shared author/account, codebase, dataset, implementation, platform or measurement-pipeline lineage.
+- Counterevidence and dissent: supporting and contradicting observations, failed cases, negative results, competing explanations and unresolved reviewer disagreement remain visible.
 - Mechanism and assumptions: protocol/version, key binding, observer vantage, collusion and trusted components are explicit.
 - Freshness: key epoch, expiry, revocation and changed assumptions are reflected.
-- Negative and missing evidence: not checked, unavailable, failed, unknown, contradicted and not applicable remain distinct.
+- State separation: evidence availability, verification outcome, claim disposition and evidence lifecycle are separate dimensions.
 - Multiplicity: object validity, fragment membership, set completeness, reconstruction, conversation continuity, retry identity and cross-route equivalence are separately tested.
 - Delivery semantics: submission, service acceptance, relay/publication, endpoint retrieval, receipt, validation, decryption, display/open, acknowledgement and human comprehension are not conflated.
-- Privacy: evaluate whether receipts, stable identifiers or central evidence records create linkability or behavioural telemetry.
+- Privacy and proportionality: evaluate whether receipts, stable identifiers or central evidence records create linkability or behavioural telemetry; collect no additional personal data merely to populate a template.
 - Interpretability: assess whether users and independent reviewers understand what each status does and does not establish.
 
-**Acceptance boundary:** No universal numeric confidence score is proposed. Any future score requires a defined proposition, calibration dataset, population, error costs, dependence assumptions and uncertainty bounds. A successful cryptographic check supports only the cryptographic claim tested. This evaluation domain is currently conceptual; no user study, implementation test or independent review has been performed. See the [confidence and evidence model](confidence-and-evidence-model.md).
+**Acceptance boundary:** No universal numeric confidence score is proposed. Any future score requires a defined proposition, calibration dataset, population, error costs, dependence assumptions and uncertainty bounds. A successful cryptographic check supports only the cryptographic claim tested. The minimum record must remain proportionate and endpoint-local where possible. This evaluation domain is currently conceptual; no user study, implementation test or independent review has been performed. See the [confidence and evidence model](confidence-and-evidence-model.md).
+
+
 
 ## 4. Cross-cutting adversarial evaluation
 

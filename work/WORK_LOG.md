@@ -2423,3 +2423,37 @@ The initial 403 result applied to the IACR ePrint PDF endpoint, not to all copie
 
 - Thesis, W1, multi-message linkage analysis and prior-art comparison were committed and fetched back. The thesis bibliography now includes the three sources represented by SRC-061.
 - The changes refine narrative sequence and evidence presentation only; no roadmap, task dependency or architecture decision changed.
+## 2026-11-26 · Robust JPEG/SNP prior-art expansion and confidence-model challenge
+
+### Repository reconciliation
+
+- Verified `main` at `0cae9921ef7fbc1f32271ccee7149f76e8bef327` (26 November 2026). The four commits since the previous 18 November checkpoint add operational handoff/installer guidance; they do not represent new thesis research.
+- Compared other branches with `main`. `work/reconcile-research-and-repository` is diverged, 28 commits ahead and 1,342 behind; it contains an older `project/` structure and old Mermaid diagrams. `diagnostics/chatgpt-write-check-20261114` is also diverged and 1,342 commits behind. Neither branch was merged or treated as authoritative.
+- Confirmed `WORKPLAN.md` remains unchanged and continues to be the stable roadmap.
+
+### New source inspection and prior-art integration
+
+- Added SRC-062, the pinned SNP StegoLab code repository at commit `a73a7c2ada4589a5aff4c534636038d639124dc9`. Inspected the README, MRAS/DRAS/QIM modules, Telegram/Discord adapters, batch tester, workers and requirements. No code was run.
+- Source inspection found that the batch tester skips failed embedding/transmission/extraction cases, reports only completed results, truncates unequal BER vectors, and calculates PSNR/SSIM before channel transmission. Telegram retrieval uses a fixed two-second wait; the Discord path does not establish that its proxy URL represents a transformed image. The MRAS module loads an external `common.cpp` matrix file from a hard-coded Windows path at import; the file is absent from the repository tree and is imported by the batch/worker paths. These are static code findings, not reproduced execution failures.
+- Added SRC-063 (CEDAR, 2025), SRC-064 (Robust Data Hiding for High Fidelity JPEG Images, 2025), SRC-065 (A Resilient Approach to Robust JPEG Steganography, 2023) and SRC-066 (Khegay et al., 2026 hybrid JPEG/Telegram system). Full-text access remains unavailable for these additions; the stated performance figures are publisher/author-abstract claims, not reproduced results.
+- SRC-063–SRC-065 share the Kumar/Bansal author group with SRC-033/034; SRC-062 is hosted by the same GitHub account as the MRAS/DRAS repositories. They are recorded as a related lineage, not independent replications.
+- SRC-066 is a direct and materially important comparator: its IEEE abstract combines AES-256-GCM, RSA-based key encapsulation, RS(255,223) FEC, DCT embedding and Telegram photo-mode tests. It prevents a generic novelty claim around encryption + FEC + robust image embedding + Telegram. Its abstract does not establish authenticated multi-carrier set semantics, route-neutral transport, cross-route equivalence or the identity/key-binding details needed for stronger conclusions. The 100% small-payload success figure is not explicitly attributed to Telegram; Telegram is separately reported as high recovery.
+- Integrated these findings into the source register, prior-art comparison, thesis §8.3 and bibliography, contribution/bias assessment, route-comparison framework, observer/property matrix and multi-message linkage analysis. Candidate B is narrowed to cross-route and observer/evidence analysis; Candidate C remains a methodological candidate only, with originality unestablished.
+
+### Confidence/evidence model challenge
+
+- Added source-dependence provenance so companion papers, repositories, datasets and measurement pipelines are not counted as independent corroboration without justification.
+- Added explicit counterevidence, failed cases and dissent.
+- Separated evidence availability, verification outcome, claim disposition and evidence lifecycle into distinct axes.
+- Added proportionality/minimisation language so the claim record does not require a central ledger or unnecessary behavioural telemetry.
+- Integrated the changes into thesis §§4.1 and 10.5, the confidence/evidence model, RQ10 traceability and W4 E11.
+
+### Task and packaging position
+
+- T-007 is reopened for a targeted 66-source post-commit consistency pass; it is not yet marked complete in this commit.
+- Added T-016 for the requested upload-ready working repository ZIP. It is blocked on T-009 corrected diagrams, which depends on T-008 research stability. T-016 is separate from T-012's frozen production thesis release.
+- No ZIP was generated. No diagrams were created or corrected. No implementation, test execution, platform call, independent review or audit was performed.
+
+### Verification state
+
+- This commit contains the research integration and a pending post-commit verification checkpoint. Exact read-back, source-ID/citation validation and task-registry consistency must be completed before T-007 is marked complete.

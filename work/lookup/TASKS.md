@@ -26,12 +26,13 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 | T-013 | comparative_prior_art | Formal model of server-dependent private/verifiable retrieval (former Candidate D) | complete | 1 |
 | T-014 | prior_art_boundary | Audit APIR server dependencies against endpoint-only message architecture | complete | 1 |
 | T-015 | design_synthesis | Integrate optional sender-controlled message granularity | complete | 2 |
+| T-016 | packaging | Produce and verify the upload-ready working repository ZIP | blocked | 9 |
 
 ## Current execution
 
-**Current position:** T-005–T-007 and T-013–T-015 are complete for their recorded scope. Former Candidate D is retired as an architecture/contribution candidate; APIR remains comparative prior art only. T-001–T-003 are deferred source-specific evidence expansions; T-004 is deferred controlled-route evidence. None is a dependency of thesis construction. No thesis-critical blocker is recorded.
+**Current position:** T-005–T-007 and T-013–T-015 were complete for their prior recorded scope; T-007 is reopened for the targeted 66-source consistency pass after SRC-062–SRC-066 integration. Former Candidate D is retired as an architecture/contribution candidate; APIR remains comparative prior art only. T-001–T-004 remain deferred optional evidence expansions. T-008 is blocked pending research stability; T-009 remains deferred; T-010–T-012 remain later review/release gates. T-016 records the requested working ZIP and is blocked on T-009. No ZIP has been generated.
 
-**Next:** continue thesis-first research where a defined claim or contradiction justifies it. Resume T-001–T-004 only if their missing evidence becomes material to a specific decision or claim. Keep diagrams, external review and release gated.
+**Next:** complete the post-commit 66-source consistency check, then continue thesis-first research where a defined claim or contradiction justifies it. Do not start T-016 until T-009 is complete. Keep `WORKPLAN.md` as the stable roadmap.
 
 ## Status meanings
 
@@ -44,6 +45,6 @@ Task keys are immutable internal lookup handles, not thesis references, source I
 
 ## Sequence and dependencies
 
-T-006 thesis-first synthesis (complete for current evidence set); T-013 former Candidate D comparative model (complete, prior-art only); T-014 APIR server-dependency audit (complete); T-007 final architecture-alignment/consistency review (complete); T-001–T-003 optional source review (deferred pending a claim-specific need); T-004 controlled route evidence (deferred, not a thesis dependency); T-005 protocol analysis (complete); T-008–T-009 diagrams only after research stabilises; T-010–T-011 peer-review preparation and actual review; T-012 release integrity and eventual disposal of `/work/`.
+T-006 thesis-first synthesis (complete for current evidence set); T-013 former Candidate D comparative model (complete, prior-art only); T-014 APIR server-dependency audit (complete); T-007 final architecture-alignment/consistency review (complete); T-001–T-003 optional source review (deferred pending a claim-specific need); T-004 controlled route evidence (deferred, not a thesis dependency); T-005 protocol analysis (complete); T-008–T-009 diagrams only after research stabilises; T-016 working ZIP after T-009 and separate from T-012; T-010–T-011 peer-review preparation and actual review; T-012 frozen release integrity and eventual disposal of `/work/`.
 
 Detailed next actions, targets, blockers and dependencies are stored once in the keyed JSON values. Do not duplicate a second task plan here.

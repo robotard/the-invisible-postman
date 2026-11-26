@@ -71,7 +71,7 @@ The architecture has gained useful components: endpoint keys, identity verificat
 
 ### B3 · Novelty-by-combination
 
-Combining known cryptography, steganography, media transport, rendezvous and lifecycle mechanisms does not automatically create a novel contribution.
+Combining known cryptography, steganography, media transport, rendezvous and lifecycle mechanisms does not automatically create a novel contribution. SRC-066 is a direct warning: its abstract already combines AES-GCM, RSA-based key encapsulation, Reed–Solomon error correction, DCT image embedding and Telegram carriage. The generic combination cannot be claimed as new.
 
 **Countermeasure:** Identify the precise gap in prior work, explain why existing architectures do not already address it, and show what new model, distinction, evaluation method or result this thesis contributes. “Integrated architecture” is not enough unless the integration produces a demonstrable insight.
 
@@ -89,9 +89,9 @@ Adding every conceivable observer and human factor may make the thesis broad but
 
 ### B6 · Source-confirmation bias
 
-Sources can be selected because they support existing design decisions, while contradictory or more recent work is missed.
+Sources can be selected because they support existing design decisions, while contradictory or more recent work is missed. Separate papers, repositories and demos may also share an author group, GitHub account, dataset, implementation or measurement pipeline; they are not automatically independent corroboration.
 
-**Countermeasure:** Maintain a prior-art challenge list for each proposed contribution. Search for the strongest competing system and the strongest argument that the proposed contribution is already known. Record adverse findings, not only supporting citations.
+**Countermeasure:** Maintain a prior-art challenge list for each proposed contribution. Search for the strongest competing system and the strongest argument that the proposed contribution is already known. Record adverse findings, source dependence, failed cases and dissent, not only supporting citations.
 
 ### B7 · Metaphor and terminology bias
 
@@ -240,6 +240,14 @@ The comparison has **not yet produced a decision-relevant substantive contributi
 The six-profile matrix identifies where the sources place authority and which event/evidence classes they document. It does not measure a common deployment. The current strongest comparator, Echomix/Pigeonhole, has native capability-based access, role separation, AllOrNothing stream semantics and explicit collusion analysis; the current compatible source tags are now pinned, but the implementation is pre-alpha/unaudited, the Qt client is explicitly not suitable to rely on for anonymity/security/privacy, and no configured deployment or service-event capture has been evaluated. Dropbox's view-only-link and direct-invitation paths expose different identity/permission conditions; Signal's client release tags do not pin its backend or account behaviour. These details improve the profile definition, not the evidence maturity.
 
 The 18 November matrix audit removed source-specific parameter and product-UI diagnostics from the common fault-injection table and separated the minimum discriminating cases from conditional duplicate/conflict/order/replay extensions. The first controlled comparison is staged around three primary treatments: SRC-043-style multi-image carriage, a single-file Dropbox object and raw Pigeonhole AllOrNothing; `katzenqt` is a separate application-gate observation, Signal remains a protocol/service reference, and OMR-family systems remain retrieval comparators. This is a smaller and more defensible experiment than a full route-by-fault factorial. It is still only a design: no controlled result exists. The Pigeonhole source/specification tension is not a rigorous counterexample until concurrent reader visibility is observed; UnifOMR's capacity question is a paper-text ambiguity, not a demonstrated failure; SRC-043's partial byte recovery is established prior art. Therefore the matrix audit does not satisfy Candidate C's contribution condition.
+
+### Additional image-carriage prior-art pressure test · 26 November 2026
+
+The newly integrated source set SRC-062–SRC-066 materially narrows the image-route claim. The Kumar/Bansal 2023–2026 publications and the same-account SNP StegoLab repository form a related research lineage, not a set of independent replications. More importantly, the separate Khegay et al. 2026 IEEE paper directly describes a system combining authenticated symmetric encryption, RSA-based key encapsulation, Reed–Solomon forward error correction, DCT image embedding and Telegram photo-mode carriage. The abstract is not a full protocol specification, but it is enough to reject generic novelty claims around that combination.
+
+Candidate B is therefore narrowed to cross-route analysis that preserves route-native semantics and compares endpoint authority, acquisition, observer exposure and acceptance across materially different routes. Candidate C remains a methodological candidate only: it must demonstrate that authenticated multi-carrier membership and endpoint acceptance produce a decision-relevant distinction beyond known image-carrier, file, messaging and mixnet mechanisms. Neither candidate has yet produced a reproducible result or established originality.
+
+The companion code review adds a second evidence lesson. SRC-062 is not independent corroboration of SRC-033/034, and its batch reporting omits failed cases and truncates unequal BER vectors. The confidence/evidence model must record source dependence and counterevidence explicitly rather than treating each publication, repository and README as a separate vote.
 
 **Contribution disposition:** retain Candidate A as an architectural organising principle, not a novelty claim; retain Candidate C as a comparison method that must be made reproducible and decision-relevant; keep Candidate B as a research target, not an established contribution. Candidate B earns a place only if a defined use case and controlled, version-pinned comparison reveal a measurable route-specific benefit, leakage, failure mode or decision that is not already explained by the closest image-forensics, dead-drop, private-retrieval or integrated-messaging literature. If no such result emerges, report that negative result and narrow the thesis rather than inflate the framework into a novelty claim.
 

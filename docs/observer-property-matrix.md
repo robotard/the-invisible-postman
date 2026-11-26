@@ -1,6 +1,6 @@
 # Observer / Property Matrix: Delivery Lifecycle Comparators
 
-**Checkpoint:** 2026-11-18  
+**Checkpoint:** 2026-11-26  
 **Role:** Working analytical artefact for W0.3/W6 and RQ7–RQ8  
 **Status:** Theory only · No implementation · Not audited.
 
@@ -158,15 +158,19 @@ This proposition is deliberately weaker and more conditional than a claim that t
 
 ## 9. Image-platform steganography, multi-carrier linkage, active sanitization and animated-carrier prior art
 
-The image-carriage column must be read against a mature and active technical literature, not treated as an empty space. SRC-033 (MRAS, 2026) and SRC-034 (DRAS, 2026) address JPEG robustness under social-network processing, with reported real-platform tests. SRC-035 compares robust methods under simulated and practical social-network channels. SRC-036 studies image processing designed to destroy robust hidden payloads while preserving image quality. SRC-037 surveys image embedding and detection research.
+The image-carriage column must be read against a mature and active technical literature, not treated as an empty space. SRC-033 (MRAS, 2026) and SRC-034 (DRAS, 2026) address JPEG robustness under social-network processing; SRC-035 compares robust methods under simulated and practical social-network channels; SRC-036 studies image processing designed to destroy robust hidden payloads; and SRC-037 surveys image embedding and detection research. The supplementary lineage SRC-063–SRC-065 adds earlier same-quality, high-fidelity and downward-recompression methods from the related Kumar/Bansal author group. SRC-062 is a companion code artifact from the same GitHub account as the MRAS/DRAS repositories. These are related sources, not independent replications.
+
+SRC-066 is a separate and direct hybrid comparator: its IEEE abstract describes AES-256-GCM, RSA-based key encapsulation, Reed–Solomon forward error correction, DCT embedding and Telegram photo-mode tests. Generic encryption + error correction + image embedding + Telegram carriage is therefore established prior art, not a new combination. The abstract does not establish cross-route semantics, authenticated multi-carrier set membership or endpoint-acceptance evidence.
 
 | Property | Established research coverage | Consequence for this project |
 |---|---|---|
-| JPEG recompression survival | MRAS and DRAS propose methods targeted at social-platform recompression; earlier comparative work measures real service behaviour. | Payload survival alone is not a novel contribution. Evaluate the specific route and transformations independently. |
-| Multiple/unknown channel operations | Comparative work identifies gaps between simplified compression models and real platform channels. | Name and version every platform path; do not extrapolate a single JPEG quality factor to an entire platform. |
+| JPEG recompression survival | MRAS/DRAS and the related SRC-063–SRC-065 lineage propose multiple methods for same-quality, high-fidelity and downward recompression; SRC-035 compares simulated and practical social-network channels. | Payload survival alone is not a novel contribution. Evaluate the specific route and transformations independently. |
+| Integrated cryptography and image carriage | SRC-066 describes AES-256-GCM, RSA-based key encapsulation, RS FEC and DCT embedding with Telegram photo-mode tests. | Do not claim this generic combination as novel. Compare key binding, message semantics, route scope and evidence limits only where full text supports the inference. |
+| Companion implementations and test harnesses | SRC-062 packages MRAS/DRAS code paths, QIM+RS and local/Telegram/Discord adapters; its reporting and import-path limitations are source-inspected. | Basic per-image carrier testing and platform-adapter code are prior art, but the repository is not independent reproduction or verified platform evidence. |
+| Multiple/unknown channel operations | Comparative work identifies gaps between simplified compression models and real platform channels; SRC-062's adapters do not independently establish transformations. | Name and version every platform path; do not extrapolate a single JPEG quality factor to an entire platform. |
 | Active payload removal | Learned image-processing attacks have been proposed to remove hidden data while maintaining image quality. | Treat carrier transformation as potentially adversarial; extraction success must be tested after realistic and adversarial processing. |
 | Steganalysis | A broad survey covers embedding and detection approaches. | Declare detector, dataset, payload, cover source, operating point and false-positive/negative measures. |
-| End-to-end message semantics | These carrier-focused works do not by themselves establish sender authentication, recipient authentication, freshness, context binding or secure reassembly. | Keep endpoint security claims separate from carrier robustness and concealment. |
+| End-to-end message semantics | Carrier-focused works do not by themselves establish sender authentication, recipient authentication, freshness, context binding or secure reassembly; SRC-066's accessible abstract does not specify those properties. | Keep endpoint security claims separate from carrier robustness and concealment; do not infer absence from an abstract. |
 | Discovery and observer privacy | The cited carrier works do not establish private recipient discovery, anonymous retrieval or protection from platform account/engagement records. | Evaluate those as distinct lifecycle properties, without assuming the absence of coverage in one paper establishes novelty. |
 
 The route-comparison study must separate extraction reliability, detectability, endpoint authenticity/integrity and observer privacy. These are not interchangeable outcomes.
@@ -178,8 +182,10 @@ The completed full-text inspection of SRC-035 and SRC-037 sharpens this matrix:
 - **Robustness does not imply concealment.** Extraction error and complete recovery measure payload survival; PSNR/SSIM address image quality; detector error addresses a particular steganalysis setup. None establishes endpoint authenticity or privacy from platform/account observers.
 - **Steganalysis generalisation is limited.** The SRC-037 survey's taxonomy and cross-paper synthesis caution against assuming one detector generalises across embedding schemes, cover sources and processing pipelines.
 - **Active removal is a separate adversarial capability.** SRC-036 describes an image-quality-preserving learned attack against robust hidden payloads. Its full-text details remain only partially inspected, so this matrix records the capability class, not a universal attacker guarantee.
+- **Source dependence matters.** The Kumar/Bansal papers and SRC-062 share author/account lineage; their separate publication and repository forms must not be counted as independent experimental corroboration. SRC-066 is a separate author group but remains abstract-only and unreproduced.
 
 The image-route evidence ledger must therefore name the exact client path and distinguish source-reported facts, direct measurements (if later authorised), and unresolved assumptions. It must also record safe receiver behaviour when extraction is incomplete or authentication fails.
+
 
 
 ## 8. Integrated comparator · Echomix / Katzenpost
