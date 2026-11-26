@@ -53,6 +53,24 @@ A practical implementation is to pair records only where structure helps:
 
 Do not convert every document to JSON. Use structured records for repeated fields and retrieval; use Markdown for explanation, judgement, evidence, and dissent. Keep schemas small, version them when their shape changes, and avoid copying full research or deliverable text into the machine view.
 
+## Use the same work docs with ChatGPT and Codex
+
+Keep the project memory in the repository. Treat each AI product as a way to read and work with that memory, not as the place where the only copy lives. The durable core—Markdown records, optional JSON companions, deliverables, and Git history—does not depend on a particular vendor.
+
+### ChatGPT
+
+For a long-running effort, create or use a ChatGPT Project. Add a short project instruction that tells ChatGPT to begin with `work/START_HERE.md`, treat the repository as the durable record, and resume from the next unblocked task. Make the work docs available to the project by attaching the relevant files or connecting the repository where supported. A new chat in the same project can then use the project context and the repository checkpoint.
+
+### Codex
+
+Open the repository folder or checkout in Codex. Keep a short `AGENTS.md` at the repository root when you want supported Codex/agent surfaces to load operating instructions automatically; have it point to `work/START_HERE.md` instead of copying the whole workflow into the instruction file. Codex can then work on the actual repository files, with Git providing the durable history.
+
+### Moving between them
+
+Use the same GitHub repository and branch as the handoff point. Before switching tools, save material progress to the work docs and deliverables, update the task and checkpoint records, and commit or otherwise save the changes. In the other tool, ask it to start from `work/START_HERE.md` and verify the live repository state. Chat histories do not need to move between products for the work to continue.
+
+The setup differs by product and may change over time: ChatGPT Projects and Codex do not necessarily load the same files or instructions automatically. Confirm that the chosen surface can see the repository records, and keep a short product-specific adapter where manual setup is needed. The work-docs method itself stays the common layer.
+
 ## Put the pattern in place
 
 For a new project, add the smallest useful set in this order:
